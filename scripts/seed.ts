@@ -2187,6 +2187,23 @@ const main = async () => {
           ...u,
           activeCourseId: 1,
         });
+
+        // Auto-complete challenges according to their earned XP
+        const points = u.points || 0;
+        const countToComplete = Math.floor(points / 10);
+        if (countToComplete > 0) {
+          const allCurriculumChallenges = await db.query.challenges.findMany({
+            orderBy: (ch, { asc }) => [asc(ch.id)],
+          });
+          const sliceToComplete = allCurriculumChallenges.slice(0, countToComplete);
+          for (const ch of sliceToComplete) {
+            await db.insert(schema.challengeProgress).values({
+              userId: u.userId,
+              challengeId: ch.id,
+              completed: true,
+            });
+          }
+        }
       }
     }
 
