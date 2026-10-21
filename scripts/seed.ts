@@ -15,13 +15,17 @@ const main = async () => {
   try {
     console.log("Seeding database with Croatian kid curriculum and HD audio...");
 
+    // Backup existing user progress & subscriptions so kids never lose XP or hearts
+    const savedUserProgress = await db.query.userProgress.findMany();
+    const savedSubscriptions = await db.query.userSubscription.findMany();
+
     await db.delete(schema.courses);
-    await db.delete(schema.userProgress);
     await db.delete(schema.units);
     await db.delete(schema.lessons);
     await db.delete(schema.challenges);
     await db.delete(schema.challengeOptions);
     await db.delete(schema.challengeProgress);
+    await db.delete(schema.userProgress);
     await db.delete(schema.userSubscription);
 
     // 1. COURSES
@@ -888,6 +892,20 @@ const main = async () => {
       { challengeId: 59, correct: false, text: "Ne hvala", audioSrc: "/audio/hr/ne_hvala.mp3" },
       { challengeId: 59, correct: false, text: "Oprosti", audioSrc: "/audio/hr/oprosti.mp3" },
     ]);
+
+    // Restore existing users and subscriptions
+    if (savedUserProgress.length > 0) {
+      console.log(`Restoring progress for ${savedUserProgress.length} user(s)...`);
+      for (const u of savedUserProgress) {
+        await db.insert(schema.userProgress).values(u);
+      }
+    }
+
+    if (savedSubscriptions.length > 0) {
+      for (const s of savedSubscriptions) {
+        await db.insert(schema.userSubscription).values(s);
+      }
+    }
 
     console.log("Croatian curriculum seeding finished successfully with HD audio! (5 Units, 15 Lessons, 59 Challenges)");
   } catch (error) {
