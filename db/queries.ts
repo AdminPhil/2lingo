@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
+import { shuffleArray } from "@/lib/utils";
 import { 
   challengeProgress,
   courses, 
@@ -190,7 +191,13 @@ export const getLesson = cache(async (id?: number) => {
       && challenge.challengeProgress.length > 0
       && challenge.challengeProgress.every((progress) => progress.completed)
 
-    return { ...challenge, completed };
+    return { 
+      ...challenge, 
+      completed,
+      challengeOptions: challenge.challengeOptions 
+        ? shuffleArray(challenge.challengeOptions) 
+        : [],
+    };
   });
 
   return { ...data, challenges: normalizedChallenges }
