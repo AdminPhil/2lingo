@@ -7,10 +7,9 @@ import { StickyWrapper } from "@/components/sticky-wrapper";
 import { getTopTenUsers, getUserProgress, getUserSubscription } from "@/db/queries";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
 
-const LearderboardPage = async () => {
+const LeaderboardPage = async () => {
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
   const leaderboardData = getTopTenUsers();
@@ -26,7 +25,7 @@ const LearderboardPage = async () => {
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
-    redirect("/courses");
+    redirect("/learn");
   }
 
   const isPro = !!userSubscription?.isActive;
@@ -40,9 +39,6 @@ const LearderboardPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {!isPro && (
-          <Promo />
-        )}
         <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
@@ -57,7 +53,7 @@ const LearderboardPage = async () => {
             Leaderboard
           </h1>
           <p className="text-muted-foreground text-center text-lg mb-6">
-            See where you stand among other learners in the community.
+            See where you stand among other young learners!
           </p>
           <Separator className="mb-4 h-0.5 rounded-full" />
           {leaderboard.map((userProgress, index) => (
@@ -88,4 +84,4 @@ const LearderboardPage = async () => {
   );
 };
  
-export default LearderboardPage;
+export default LeaderboardPage;

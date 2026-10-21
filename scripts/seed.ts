@@ -28,27 +28,12 @@ const main = async () => {
     await db.delete(schema.userProgress);
     await db.delete(schema.userSubscription);
 
-    // 1. COURSES
+    // 1. COURSES (Croatian only)
     await db.insert(schema.courses).values([
       {
         id: 1,
         title: "Croatian",
         imageSrc: "/hr.svg",
-      },
-      {
-        id: 2,
-        title: "Spanish",
-        imageSrc: "/es.svg",
-      },
-      {
-        id: 3,
-        title: "Italian",
-        imageSrc: "/it.svg",
-      },
-      {
-        id: 4,
-        title: "French",
-        imageSrc: "/fr.svg",
       },
     ]);
 
@@ -897,7 +882,10 @@ const main = async () => {
     if (savedUserProgress.length > 0) {
       console.log(`Restoring progress for ${savedUserProgress.length} user(s)...`);
       for (const u of savedUserProgress) {
-        await db.insert(schema.userProgress).values(u);
+        await db.insert(schema.userProgress).values({
+          ...u,
+          activeCourseId: 1,
+        });
       }
     }
 
