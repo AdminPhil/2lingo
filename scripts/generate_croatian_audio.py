@@ -90,6 +90,22 @@ PHRASES = {
     "volim_te_mama": "Volim te mama",
     "jako_je_ukusno": "Jako je ukusno!",
     "ne_hvala": "Ne hvala",
+
+    # Unit 6: My Room & Home (Moja soba i kuća)
+    "kuca": "Kuća",
+    "soba": "Soba",
+    "krevet": "Krevet",
+    "stol": "Stol",
+    "vrata": "Vrata",
+    "prozor": "Prozor",
+    "igracka": "Igračka",
+    "knjiga": "Knjiga",
+    "moja_soba": "Moja soba",
+    "velika_kuca": "Velika kuća",
+    "moj_krevet": "Moj krevet",
+    "gdje_je_igracka": "Gdje je igračka?",
+    "to_je_moja_knjiga": "To je moja knjiga",
+    "otvori_prozor": "Otvori prozor",
 }
 
 async def generate_audio():

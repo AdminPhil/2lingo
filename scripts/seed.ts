@@ -74,6 +74,13 @@ const main = async () => {
         description: "Ukusna hrana i poslastice (Yummy Food & Drinks)",
         order: 5,
       },
+      {
+        id: 6,
+        courseId: 1,
+        title: "Unit 6",
+        description: "Moja soba i kuća (My Room & Home)",
+        order: 6,
+      },
     ]);
 
     // 3. LESSONS FOR ALL 5 UNITS
@@ -109,6 +116,11 @@ const main = async () => {
       { id: 18, unitId: 3, order: 4, title: "👑 Super Izazov: Šaptač životinjama (Animal Whisperer Trophy)" },
       { id: 19, unitId: 4, order: 4, title: "👑 Super Izazov: Majstor boja i brojeva (Color & Number Master)" },
       { id: 20, unitId: 5, order: 4, title: "👑 Super Izazov: Mali kuhar (Little Chef Trophy)" },
+      // Unit 6 Lessons (21-24)
+      { id: 21, unitId: 6, order: 1, title: "Kuća i soba (House & Room)" },
+      { id: 22, unitId: 6, order: 2, title: "Vrata i prozori (Doors, Windows & Toys)" },
+      { id: 23, unitId: 6, order: 3, title: "U mojoj sobi (In My Room)" },
+      { id: 24, unitId: 6, order: 4, title: "👑 Super Izazov: Arhitekt sobe (Room Architect Trophy)" },
     ]);
 
     // 4. CHALLENGES
@@ -634,6 +646,40 @@ const main = async () => {
       { id: 87, lessonId: 20, type: "ASSIST", order: 4, question: '"I am hungry"' },
       { id: 88, lessonId: 20, type: "SELECT", order: 5, question: 'Which one means "May I have ice cream, please?"' },
       { id: 89, lessonId: 20, type: "ASSIST", order: 6, question: '"Very tasty / Delicious!"' },
+      // ==========================================
+      // UNIT 6: LESSON 21 (Kuća i soba)
+      // ==========================================
+      { id: 90, lessonId: 21, type: "SELECT", order: 1, question: 'Which one of these is "House / Home"?' },
+      { id: 91, lessonId: 21, type: "SELECT", order: 2, question: 'Which one of these is "Room"?' },
+      { id: 92, lessonId: 21, type: "SELECT", order: 3, question: 'Which one of these is "Bed"?' },
+      { id: 93, lessonId: 21, type: "ASSIST", order: 4, question: '"Table / Desk"' },
+
+      // ==========================================
+      // UNIT 6: LESSON 22 (Vrata i prozori)
+      // ==========================================
+      { id: 94, lessonId: 22, type: "SELECT", order: 1, question: 'Which one of these is "Door"?' },
+      { id: 95, lessonId: 22, type: "SELECT", order: 2, question: 'Which one of these is "Window"?' },
+      { id: 96, lessonId: 22, type: "SELECT", order: 3, question: 'Which one of these is "Toy"?' },
+      { id: 97, lessonId: 22, type: "ASSIST", order: 4, question: '"Book"' },
+
+      // ==========================================
+      // UNIT 6: LESSON 23 (U mojoj sobi)
+      // ==========================================
+      { id: 98, lessonId: 23, type: "ASSIST", order: 1, question: '"My room"' },
+      { id: 99, lessonId: 23, type: "ASSIST", order: 2, question: '"Big house"' },
+      { id: 100, lessonId: 23, type: "ASSIST", order: 3, question: '"My bed"' },
+      { id: 101, lessonId: 23, type: "ASSIST", order: 4, question: '"That is my book"' },
+
+      // ==========================================
+      // UNIT 6: LESSON 24 (👑 SUPER IZAZOV)
+      // ==========================================
+      { id: 102, lessonId: 24, type: "SELECT", order: 1, question: 'Which one of these is "House"?' },
+      { id: 103, lessonId: 24, type: "SELECT", order: 2, question: 'Which one of these is "Bed"?' },
+      { id: 104, lessonId: 24, type: "SELECT", order: 3, question: 'Which one of these is "Toy"?' },
+      { id: 105, lessonId: 24, type: "ASSIST", order: 4, question: '"Open the window"' },
+      { id: 106, lessonId: 24, type: "ASSIST", order: 5, question: '"Where is the toy?"' },
+      { id: 107, lessonId: 24, type: "ASSIST", order: 6, question: '"That is my book"' },
+
 
     ]);
 
@@ -1057,6 +1103,82 @@ const main = async () => {
       { challengeId: 89, correct: true, text: "Jako je ukusno!", audioSrc: "/audio/hr/jako_je_ukusno.mp3" },
       { challengeId: 89, correct: false, text: "Ne hvala", audioSrc: "/audio/hr/ne_hvala.mp3" },
       { challengeId: 89, correct: false, text: "Oprosti", audioSrc: "/audio/hr/oprosti.mp3" },
+      // --- UNIT 6 LESSON 21 OPTIONS ---
+      { challengeId: 90, correct: true, text: "Kuća", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kuca.mp3" },
+      { challengeId: 90, correct: false, text: "Soba", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/soba.mp3" },
+      { challengeId: 90, correct: false, text: "Krevet", imageSrc: "/points.svg", audioSrc: "/audio/hr/krevet.mp3" },
+
+      { challengeId: 91, correct: true, text: "Soba", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/soba.mp3" },
+      { challengeId: 91, correct: false, text: "Kuća", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/kuca.mp3" },
+      { challengeId: 91, correct: false, text: "Stol", imageSrc: "/points.svg", audioSrc: "/audio/hr/stol.mp3" },
+
+      { challengeId: 92, correct: true, text: "Krevet", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/krevet.mp3" },
+      { challengeId: 92, correct: false, text: "Vrata", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/vrata.mp3" },
+      { challengeId: 92, correct: false, text: "Prozor", imageSrc: "/points.svg", audioSrc: "/audio/hr/prozor.mp3" },
+
+      { challengeId: 93, correct: true, text: "Stol", audioSrc: "/audio/hr/stol.mp3" },
+      { challengeId: 93, correct: false, text: "Krevet", audioSrc: "/audio/hr/krevet.mp3" },
+      { challengeId: 93, correct: false, text: "Soba", audioSrc: "/audio/hr/soba.mp3" },
+
+      // --- UNIT 6 LESSON 22 OPTIONS ---
+      { challengeId: 94, correct: true, text: "Vrata", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/vrata.mp3" },
+      { challengeId: 94, correct: false, text: "Prozor", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/prozor.mp3" },
+      { challengeId: 94, correct: false, text: "Stol", imageSrc: "/points.svg", audioSrc: "/audio/hr/stol.mp3" },
+
+      { challengeId: 95, correct: true, text: "Prozor", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/prozor.mp3" },
+      { challengeId: 95, correct: false, text: "Vrata", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/vrata.mp3" },
+      { challengeId: 95, correct: false, text: "Kuća", imageSrc: "/points.svg", audioSrc: "/audio/hr/kuca.mp3" },
+
+      { challengeId: 96, correct: true, text: "Igračka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/igracka.mp3" },
+      { challengeId: 96, correct: false, text: "Knjiga", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/knjiga.mp3" },
+      { challengeId: 96, correct: false, text: "Krevet", imageSrc: "/points.svg", audioSrc: "/audio/hr/krevet.mp3" },
+
+      { challengeId: 97, correct: true, text: "Knjiga", audioSrc: "/audio/hr/knjiga.mp3" },
+      { challengeId: 97, correct: false, text: "Igračka", audioSrc: "/audio/hr/igracka.mp3" },
+      { challengeId: 97, correct: false, text: "Prozor", audioSrc: "/audio/hr/prozor.mp3" },
+
+      // --- UNIT 6 LESSON 23 OPTIONS ---
+      { challengeId: 98, correct: true, text: "Moja soba", audioSrc: "/audio/hr/moja_soba.mp3" },
+      { challengeId: 98, correct: false, text: "Moj krevet", audioSrc: "/audio/hr/moj_krevet.mp3" },
+      { challengeId: 98, correct: false, text: "Velika kuća", audioSrc: "/audio/hr/velika_kuca.mp3" },
+
+      { challengeId: 99, correct: true, text: "Velika kuća", audioSrc: "/audio/hr/velika_kuca.mp3" },
+      { challengeId: 99, correct: false, text: "Moja soba", audioSrc: "/audio/hr/moja_soba.mp3" },
+      { challengeId: 99, correct: false, text: "Veliki pas", audioSrc: "/audio/hr/veliki_pas.mp3" },
+
+      { challengeId: 100, correct: true, text: "Moj krevet", audioSrc: "/audio/hr/moj_krevet.mp3" },
+      { challengeId: 100, correct: false, text: "Moja soba", audioSrc: "/audio/hr/moja_soba.mp3" },
+      { challengeId: 100, correct: false, text: "Mala mačka", audioSrc: "/audio/hr/mala_macka.mp3" },
+
+      { challengeId: 101, correct: true, text: "To je moja knjiga", audioSrc: "/audio/hr/to_je_moja_knjiga.mp3" },
+      { challengeId: 101, correct: false, text: "To je mama", audioSrc: "/audio/hr/to_je_mama.mp3" },
+      { challengeId: 101, correct: false, text: "Gdje je igračka?", audioSrc: "/audio/hr/gdje_je_igracka.mp3" },
+
+      // --- UNIT 6 LESSON 24 (BOSS QUEST) OPTIONS ---
+      { challengeId: 102, correct: true, text: "Kuća", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kuca.mp3" },
+      { challengeId: 102, correct: false, text: "Soba", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/soba.mp3" },
+      { challengeId: 102, correct: false, text: "Vrata", imageSrc: "/points.svg", audioSrc: "/audio/hr/vrata.mp3" },
+
+      { challengeId: 103, correct: true, text: "Krevet", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/krevet.mp3" },
+      { challengeId: 103, correct: false, text: "Stol", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/stol.mp3" },
+      { challengeId: 103, correct: false, text: "Prozor", imageSrc: "/points.svg", audioSrc: "/audio/hr/prozor.mp3" },
+
+      { challengeId: 104, correct: true, text: "Igračka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/igracka.mp3" },
+      { challengeId: 104, correct: false, text: "Knjiga", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/knjiga.mp3" },
+      { challengeId: 104, correct: false, text: "Kuća", imageSrc: "/points.svg", audioSrc: "/audio/hr/kuca.mp3" },
+
+      { challengeId: 105, correct: true, text: "Otvori prozor", audioSrc: "/audio/hr/otvori_prozor.mp3" },
+      { challengeId: 105, correct: false, text: "Vrata", audioSrc: "/audio/hr/vrata.mp3" },
+      { challengeId: 105, correct: false, text: "Moja soba", audioSrc: "/audio/hr/moja_soba.mp3" },
+
+      { challengeId: 106, correct: true, text: "Gdje je igračka?", audioSrc: "/audio/hr/gdje_je_igracka.mp3" },
+      { challengeId: 106, correct: false, text: "To je moja knjiga", audioSrc: "/audio/hr/to_je_moja_knjiga.mp3" },
+      { challengeId: 106, correct: false, text: "Kako si?", audioSrc: "/audio/hr/kako_si.mp3" },
+
+      { challengeId: 107, correct: true, text: "To je moja knjiga", audioSrc: "/audio/hr/to_je_moja_knjiga.mp3" },
+      { challengeId: 107, correct: false, text: "Gdje je igračka?", audioSrc: "/audio/hr/gdje_je_igracka.mp3" },
+      { challengeId: 107, correct: false, text: "Velika kuća", audioSrc: "/audio/hr/velika_kuca.mp3" },
+
 
     ]);
 
@@ -1077,7 +1199,7 @@ const main = async () => {
       }
     }
 
-    console.log("Croatian curriculum seeding finished successfully with HD audio! (5 Units, 20 Lessons (including 5 Boss Quests), 89 Challenges)");
+    console.log("Croatian curriculum seeding finished successfully with HD audio! (6 Units, 24 Lessons (including 6 Boss Quests), 107 Challenges)");
   } catch (error) {
     console.error(error);
     throw new Error("Failed to seed the database");
