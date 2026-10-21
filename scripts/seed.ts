@@ -109,6 +109,41 @@ const main = async () => {
         description: "Vrijeme i osjećaji (Weather & Feelings)",
         order: 10,
       },
+      {
+        id: 11,
+        courseId: 1,
+        title: "Unit 11",
+        description: "Moji dnevni pokreti i radnje (Daily Actions & Verbs)",
+        order: 11,
+      },
+      {
+        id: 12,
+        courseId: 1,
+        title: "Unit 12",
+        description: "U gradu i parku (Out in the Town & Park)",
+        order: 12,
+      },
+      {
+        id: 13,
+        courseId: 1,
+        title: "Unit 13",
+        description: "Gdje je to? Prostor i smjer (Where is it? Positions & Prepositions)",
+        order: 13,
+      },
+      {
+        id: 14,
+        courseId: 1,
+        title: "Unit 14",
+        description: "U pekari i na tržnici (At the Bakery & Farmer's Market)",
+        order: 14,
+      },
+      {
+        id: 15,
+        courseId: 1,
+        title: "Unit 15",
+        description: "Igra, sport i zabava (Sports, Games & Celebration)",
+        order: 15,
+      },
     ]);
 
     // 3. LESSONS FOR ALL 5 UNITS
@@ -172,6 +207,35 @@ const main = async () => {
       { id: 38, unitId: 10, order: 2, title: "Toplo ili hladno? (Hot & Cold)" },
       { id: 39, unitId: 10, order: 3, title: "Kako se osjećaš? (How are you feeling?)" },
       { id: 40, unitId: 10, order: 4, title: "👑 Super Izazov: Vremenski čuvar (Weather Explorer Trophy)" },
+      // Unit 11 Lessons (41-44)
+      { id: 41, unitId: 11, order: 1, title: "Što radim? (What Am I Doing? - Core Verbs)" },
+      { id: 42, unitId: 11, order: 2, title: "Pogledaj i poslušaj (Look, Listen & Learn)" },
+      { id: 43, unitId: 11, order: 3, title: "U akciji! (In Action - Verb Pairs)" },
+      { id: 44, unitId: 11, order: 4, title: "👑 Super Izazov: Mali Aktivac (Busy Bee Trophy)" },
+
+      // Unit 12 Lessons (45-48)
+      { id: 45, unitId: 12, order: 1, title: "U parku (At the Park - Equipment & Nature)" },
+      { id: 46, unitId: 12, order: 2, title: "Na ulici (On the Street & Vehicles)" },
+      { id: 47, unitId: 12, order: 3, title: "Idemo van! (Let's Go Outside!)" },
+      { id: 48, unitId: 12, order: 4, title: "👑 Super Izazov: Istraživač Parka (Park Explorer Trophy)" },
+
+      // Unit 13 Lessons (49-52)
+      { id: 49, unitId: 13, order: 1, title: "Ovdje i tamo (Here, There & Heights)" },
+      { id: 50, unitId: 13, order: 2, title: "Gdje se skriva? (In, On & Under)" },
+      { id: 51, unitId: 13, order: 3, title: "Skrivača! (Hide-and-Seek Clues)" },
+      { id: 52, unitId: 13, order: 4, title: "👑 Super Izazov: Mali Navigator (Little Navigator Trophy)" },
+
+      // Unit 14 Lessons (53-56)
+      { id: 53, unitId: 14, order: 1, title: "Fina pekara (The Yummy Bakery)" },
+      { id: 54, unitId: 14, order: 2, title: "Šarena tržnica (The Colorful Market)" },
+      { id: 55, unitId: 14, order: 3, title: "Kupujemo zajedno (Ordering Politely)" },
+      { id: 56, unitId: 14, order: 4, title: "👑 Super Izazov: Glavni Kupac (Master Shopper Trophy)" },
+
+      // Unit 15 Lessons (57-60)
+      { id: 57, unitId: 15, order: 1, title: "Lopta i nogomet (Ball & Soccer)" },
+      { id: 58, unitId: 15, order: 2, title: "Pjesma i crtanje (Music & Art)" },
+      { id: 59, unitId: 15, order: 3, title: "Zabava i navijanje (Fun & Cheering)" },
+      { id: 60, unitId: 15, order: 4, title: "👑 Super Izazov: Zlatni Prvak (Golden Champion Trophy)" },
     ]);
 
     // 4. CHALLENGES
@@ -829,6 +893,131 @@ const main = async () => {
       { id: 177, lessonId: 40, type: "ASSIST", order: 4, question: '"It is raining"' },
       { id: 178, lessonId: 40, type: "ASSIST", order: 5, question: '"The sun is shining"' },
       { id: 179, lessonId: 40, type: "ASSIST", order: 6, question: '"I am happy!"' },
+      // ==========================================
+      // UNIT 11: ACTIONS & VERBS (Lessons 41-44)
+      // ==========================================
+      { id: 180, lessonId: 41, type: "SELECT", order: 1, question: 'Which one of these is "I sleep"?' },
+      { id: 181, lessonId: 41, type: "SELECT", order: 2, question: 'Which one of these is "I eat"?' },
+      { id: 182, lessonId: 41, type: "SELECT", order: 3, question: 'Which one of these is "I drink"?' },
+      { id: 183, lessonId: 41, type: "ASSIST", order: 4, question: '"I play / I am playing"' },
+
+      { id: 184, lessonId: 42, type: "SELECT", order: 1, question: 'Which one of these is "I watch / look"?' },
+      { id: 185, lessonId: 42, type: "SELECT", order: 2, question: 'Which one of these is "I read"?' },
+      { id: 186, lessonId: 42, type: "SELECT", order: 3, question: 'Which one of these is "I sing"?' },
+      { id: 187, lessonId: 42, type: "ASSIST", order: 4, question: '"I learn / I study"' },
+
+      { id: 188, lessonId: 43, type: "ASSIST", order: 1, question: '"I drink water"' },
+      { id: 189, lessonId: 43, type: "ASSIST", order: 2, question: '"I eat an apple"' },
+      { id: 190, lessonId: 43, type: "ASSIST", order: 3, question: '"I read a book"' },
+      { id: 191, lessonId: 43, type: "ASSIST", order: 4, question: '"I play with the dog"' },
+
+      { id: 192, lessonId: 44, type: "SELECT", order: 1, question: 'Which one of these is "I sleep"?' },
+      { id: 193, lessonId: 44, type: "SELECT", order: 2, question: 'Which one of these is "I eat"?' },
+      { id: 194, lessonId: 44, type: "SELECT", order: 3, question: 'Which one of these is "I read"?' },
+      { id: 195, lessonId: 44, type: "ASSIST", order: 4, question: '"I sing and dance!"' },
+      { id: 196, lessonId: 44, type: "ASSIST", order: 5, question: '"I drink milk"' },
+      { id: 197, lessonId: 44, type: "ASSIST", order: 6, question: '"I love learning!"' },
+
+      // ==========================================
+      // UNIT 12: TOWN & PARK (Lessons 45-48)
+      // ==========================================
+      { id: 198, lessonId: 45, type: "SELECT", order: 1, question: 'Which one of these is "Park"?' },
+      { id: 199, lessonId: 45, type: "SELECT", order: 2, question: 'Which one of these is "Swing"?' },
+      { id: 200, lessonId: 45, type: "SELECT", order: 3, question: 'Which one of these is "Slide"?' },
+      { id: 201, lessonId: 45, type: "ASSIST", order: 4, question: '"Grass"' },
+
+      { id: 202, lessonId: 46, type: "SELECT", order: 1, question: 'Which one of these is "Tree"?' },
+      { id: 203, lessonId: 46, type: "SELECT", order: 2, question: 'Which one of these is "Car"?' },
+      { id: 204, lessonId: 46, type: "SELECT", order: 3, question: 'Which one of these is "Bicycle"?' },
+      { id: 205, lessonId: 46, type: "ASSIST", order: 4, question: '"Street"' },
+
+      { id: 206, lessonId: 47, type: "ASSIST", order: 1, question: '"Let\'s go to the park!"' },
+      { id: 207, lessonId: 47, type: "ASSIST", order: 2, question: '"I ride a bicycle"' },
+      { id: 208, lessonId: 47, type: "ASSIST", order: 3, question: '"Fast car"' },
+      { id: 209, lessonId: 47, type: "ASSIST", order: 4, question: '"Green tree"' },
+
+      { id: 210, lessonId: 48, type: "SELECT", order: 1, question: 'Which one of these is "Slide"?' },
+      { id: 211, lessonId: 48, type: "SELECT", order: 2, question: 'Which one of these is "Swing"?' },
+      { id: 212, lessonId: 48, type: "SELECT", order: 3, question: 'Which one of these is "Bicycle"?' },
+      { id: 213, lessonId: 48, type: "ASSIST", order: 4, question: '"Let\'s go to the park!"' },
+      { id: 214, lessonId: 48, type: "ASSIST", order: 5, question: '"I swing high!"' },
+      { id: 215, lessonId: 48, type: "ASSIST", order: 6, question: '"I ride a bicycle"' },
+
+      // ==========================================
+      // UNIT 13: SPACE & DIRECTIONS (Lessons 49-52)
+      // ==========================================
+      { id: 216, lessonId: 49, type: "SELECT", order: 1, question: 'Which one of these is "Here"?' },
+      { id: 217, lessonId: 49, type: "SELECT", order: 2, question: 'Which one of these is "There"?' },
+      { id: 218, lessonId: 49, type: "SELECT", order: 3, question: 'Which one of these is "Up / Above"?' },
+      { id: 219, lessonId: 49, type: "ASSIST", order: 4, question: '"Down / Below"' },
+
+      { id: 220, lessonId: 50, type: "SELECT", order: 1, question: 'Which one of these is "In / Inside"?' },
+      { id: 221, lessonId: 50, type: "SELECT", order: 2, question: 'Which one of these is "On / Atop"?' },
+      { id: 222, lessonId: 50, type: "SELECT", order: 3, question: 'Which one of these is "Under"?' },
+      { id: 223, lessonId: 50, type: "ASSIST", order: 4, question: '"Near / Close"' },
+
+      { id: 224, lessonId: 51, type: "ASSIST", order: 1, question: '"Where is the dog? Under the table!"' },
+      { id: 225, lessonId: 51, type: "ASSIST", order: 2, question: '"The book is on the table"' },
+      { id: 226, lessonId: 51, type: "ASSIST", order: 3, question: '"The cat is in the room"' },
+      { id: 227, lessonId: 51, type: "ASSIST", order: 4, question: '"Look up!"' },
+
+      { id: 228, lessonId: 52, type: "SELECT", order: 1, question: 'Which one of these is "Under"?' },
+      { id: 229, lessonId: 52, type: "SELECT", order: 2, question: 'Which one of these is "Up"?' },
+      { id: 230, lessonId: 52, type: "SELECT", order: 3, question: 'Which one of these is "Here"?' },
+      { id: 231, lessonId: 52, type: "ASSIST", order: 4, question: '"Under the bed"' },
+      { id: 232, lessonId: 52, type: "ASSIST", order: 5, question: '"On the table"' },
+      { id: 233, lessonId: 52, type: "ASSIST", order: 6, question: '"I am here!"' },
+
+      // ==========================================
+      // UNIT 14: BAKERY & MARKET (Lessons 53-56)
+      // ==========================================
+      { id: 234, lessonId: 53, type: "SELECT", order: 1, question: 'Which one of these is "Bakery"?' },
+      { id: 235, lessonId: 53, type: "SELECT", order: 2, question: 'Which one of these is "Roll / Croissant"?' },
+      { id: 236, lessonId: 53, type: "SELECT", order: 3, question: 'Which one of these is "Bread"?' },
+      { id: 237, lessonId: 53, type: "ASSIST", order: 4, question: '"Burek (Pastry)"' },
+
+      { id: 238, lessonId: 54, type: "SELECT", order: 1, question: 'Which one of these is "Cheese"?' },
+      { id: 239, lessonId: 54, type: "SELECT", order: 2, question: 'Which one of these is "Tomato"?' },
+      { id: 240, lessonId: 54, type: "SELECT", order: 3, question: 'Which one of these is "Orange"?' },
+      { id: 241, lessonId: 54, type: "ASSIST", order: 4, question: '"Shop / Store"' },
+
+      { id: 242, lessonId: 55, type: "ASSIST", order: 1, question: '"One roll, please!"' },
+      { id: 243, lessonId: 55, type: "ASSIST", order: 2, question: '"Here you go!"' },
+      { id: 244, lessonId: 55, type: "ASSIST", order: 3, question: '"Fresh cheese"' },
+      { id: 245, lessonId: 55, type: "ASSIST", order: 4, question: '"Sweet orange"' },
+
+      { id: 246, lessonId: 56, type: "SELECT", order: 1, question: 'Which one of these is "Bakery"?' },
+      { id: 247, lessonId: 56, type: "SELECT", order: 2, question: 'Which one of these is "Roll / Croissant"?' },
+      { id: 248, lessonId: 56, type: "SELECT", order: 3, question: 'Which one of these is "Cheese"?' },
+      { id: 249, lessonId: 56, type: "ASSIST", order: 4, question: '"One roll, please!"' },
+      { id: 250, lessonId: 56, type: "ASSIST", order: 5, question: '"Thank you and goodbye!"' },
+      { id: 251, lessonId: 56, type: "ASSIST", order: 6, question: '"Here you go!"' },
+
+      // ==========================================
+      // UNIT 15: SPORTS & GAMES (Lessons 57-60)
+      // ==========================================
+      { id: 252, lessonId: 57, type: "SELECT", order: 1, question: 'Which one of these is "Ball"?' },
+      { id: 253, lessonId: 57, type: "SELECT", order: 2, question: 'Which one of these is "Soccer / Football"?' },
+      { id: 254, lessonId: 57, type: "SELECT", order: 3, question: 'Which one of these is "Goal!"?' },
+      { id: 255, lessonId: 57, type: "ASSIST", order: 4, question: '"Game / Play"' },
+
+      { id: 256, lessonId: 58, type: "SELECT", order: 1, question: 'Which one of these is "Music"?' },
+      { id: 257, lessonId: 58, type: "SELECT", order: 2, question: 'Which one of these is "Song"?' },
+      { id: 258, lessonId: 58, type: "SELECT", order: 3, question: 'Which one of these is "Drawing / Painting"?' },
+      { id: 259, lessonId: 58, type: "ASSIST", order: 4, question: '"Victory / Win!"' },
+
+      { id: 260, lessonId: 59, type: "ASSIST", order: 1, question: '"Score a goal!"' },
+      { id: 261, lessonId: 59, type: "ASSIST", order: 2, question: '"Pass the ball!"' },
+      { id: 262, lessonId: 59, type: "ASSIST", order: 3, question: '"Beautiful song"' },
+      { id: 263, lessonId: 59, type: "ASSIST", order: 4, question: '"Well done / Bravo!"' },
+
+      { id: 264, lessonId: 60, type: "SELECT", order: 1, question: 'Which one of these is "Ball"?' },
+      { id: 265, lessonId: 60, type: "SELECT", order: 2, question: 'Which one of these is "Soccer"?' },
+      { id: 266, lessonId: 60, type: "SELECT", order: 3, question: 'Which one of these is "Victory!"?' },
+      { id: 267, lessonId: 60, type: "ASSIST", order: 4, question: '"Score a goal!"' },
+      { id: 268, lessonId: 60, type: "ASSIST", order: 5, question: '"Pass the ball!"' },
+      { id: 269, lessonId: 60, type: "ASSIST", order: 6, question: '"We are the champions!"' },
+
 
 
 
@@ -1620,6 +1809,371 @@ const main = async () => {
       { challengeId: 179, correct: true, text: "Ja sam sretan!", audioSrc: "/audio/hr/ja_sam_sretan.mp3" },
       { challengeId: 179, correct: false, text: "Pada kiša", audioSrc: "/audio/hr/pada_kisa.mp3" },
       { challengeId: 179, correct: false, text: "Sija sunce", audioSrc: "/audio/hr/sija_sunce.mp3" },
+      // --- UNIT 11 OPTIONS ---
+      { challengeId: 180, correct: true, text: "Spavam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/spavam.mp3" },
+      { challengeId: 180, correct: false, text: "Jedem", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/jedem.mp3" },
+      { challengeId: 180, correct: false, text: "Pijem", imageSrc: "/points.svg", audioSrc: "/audio/hr/pijem.mp3" },
+
+      { challengeId: 181, correct: true, text: "Jedem", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/jedem.mp3" },
+      { challengeId: 181, correct: false, text: "Spavam", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/spavam.mp3" },
+      { challengeId: 181, correct: false, text: "Igram se", imageSrc: "/points.svg", audioSrc: "/audio/hr/igram_se.mp3" },
+
+      { challengeId: 182, correct: true, text: "Pijem", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pijem.mp3" },
+      { challengeId: 182, correct: false, text: "Jedem", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/jedem.mp3" },
+      { challengeId: 182, correct: false, text: "Čitam", imageSrc: "/points.svg", audioSrc: "/audio/hr/citam.mp3" },
+
+      { challengeId: 183, correct: true, text: "Igram se", audioSrc: "/audio/hr/igram_se.mp3" },
+      { challengeId: 183, correct: false, text: "Spavam", audioSrc: "/audio/hr/spavam.mp3" },
+      { challengeId: 183, correct: false, text: "Učim", audioSrc: "/audio/hr/ucim.mp3" },
+
+      { challengeId: 184, correct: true, text: "Gledam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/gledam.mp3" },
+      { challengeId: 184, correct: false, text: "Čitam", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/citam.mp3" },
+      { challengeId: 184, correct: false, text: "Pjevam", imageSrc: "/points.svg", audioSrc: "/audio/hr/pjevam.mp3" },
+
+      { challengeId: 185, correct: true, text: "Čitam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/citam.mp3" },
+      { challengeId: 185, correct: false, text: "Gledam", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/gledam.mp3" },
+      { challengeId: 185, correct: false, text: "Učim", imageSrc: "/points.svg", audioSrc: "/audio/hr/ucim.mp3" },
+
+      { challengeId: 186, correct: true, text: "Pjevam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pjevam.mp3" },
+      { challengeId: 186, correct: false, text: "Pijem", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/pijem.mp3" },
+      { challengeId: 186, correct: false, text: "Spavam", imageSrc: "/points.svg", audioSrc: "/audio/hr/spavam.mp3" },
+
+      { challengeId: 187, correct: true, text: "Učim", audioSrc: "/audio/hr/ucim.mp3" },
+      { challengeId: 187, correct: false, text: "Pjevam", audioSrc: "/audio/hr/pjevam.mp3" },
+      { challengeId: 187, correct: false, text: "Čitam", audioSrc: "/audio/hr/citam.mp3" },
+
+      { challengeId: 188, correct: true, text: "Pijem vodu", audioSrc: "/audio/hr/pijem_vodu.mp3" },
+      { challengeId: 188, correct: false, text: "Jedem jabuku", audioSrc: "/audio/hr/jedem_jabuku.mp3" },
+      { challengeId: 188, correct: false, text: "Čitam knjigu", audioSrc: "/audio/hr/citam_knjigu.mp3" },
+
+      { challengeId: 189, correct: true, text: "Jedem jabuku", audioSrc: "/audio/hr/jedem_jabuku.mp3" },
+      { challengeId: 189, correct: false, text: "Pijem vodu", audioSrc: "/audio/hr/pijem_vodu.mp3" },
+      { challengeId: 189, correct: false, text: "Igram se s psom", audioSrc: "/audio/hr/igram_se_s_psom.mp3" },
+
+      { challengeId: 190, correct: true, text: "Čitam knjigu", audioSrc: "/audio/hr/citam_knjigu.mp3" },
+      { challengeId: 190, correct: false, text: "Pjevam i plešem!", audioSrc: "/audio/hr/pjevam_i_plesem.mp3" },
+      { challengeId: 190, correct: false, text: "Jedem jabuku", audioSrc: "/audio/hr/jedem_jabuku.mp3" },
+
+      { challengeId: 191, correct: true, text: "Igram se s psom", audioSrc: "/audio/hr/igram_se_s_psom.mp3" },
+      { challengeId: 191, correct: false, text: "Pijem vodu", audioSrc: "/audio/hr/pijem_vodu.mp3" },
+      { challengeId: 191, correct: false, text: "Čitam knjigu", audioSrc: "/audio/hr/citam_knjigu.mp3" },
+
+      { challengeId: 192, correct: true, text: "Spavam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/spavam.mp3" },
+      { challengeId: 192, correct: false, text: "Jedem", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/jedem.mp3" },
+      { challengeId: 192, correct: false, text: "Čitam", imageSrc: "/points.svg", audioSrc: "/audio/hr/citam.mp3" },
+
+      { challengeId: 193, correct: true, text: "Jedem", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/jedem.mp3" },
+      { challengeId: 193, correct: false, text: "Pijem", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/pijem.mp3" },
+      { challengeId: 193, correct: false, text: "Pjevam", imageSrc: "/points.svg", audioSrc: "/audio/hr/pjevam.mp3" },
+
+      { challengeId: 194, correct: true, text: "Čitam", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/citam.mp3" },
+      { challengeId: 194, correct: false, text: "Gledam", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/gledam.mp3" },
+      { challengeId: 194, correct: false, text: "Spavam", imageSrc: "/points.svg", audioSrc: "/audio/hr/spavam.mp3" },
+
+      { challengeId: 195, correct: true, text: "Pjevam i plešem!", audioSrc: "/audio/hr/pjevam_i_plesem.mp3" },
+      { challengeId: 195, correct: false, text: "Pijem mlijeko", audioSrc: "/audio/hr/pijem_mlijeko.mp3" },
+      { challengeId: 195, correct: false, text: "Volim učiti!", audioSrc: "/audio/hr/volim_uciti.mp3" },
+
+      { challengeId: 196, correct: true, text: "Pijem mlijeko", audioSrc: "/audio/hr/pijem_mlijeko.mp3" },
+      { challengeId: 196, correct: false, text: "Jedem jabuku", audioSrc: "/audio/hr/jedem_jabuku.mp3" },
+      { challengeId: 196, correct: false, text: "Pjevam i plešem!", audioSrc: "/audio/hr/pjevam_i_plesem.mp3" },
+
+      { challengeId: 197, correct: true, text: "Volim učiti!", audioSrc: "/audio/hr/volim_uciti.mp3" },
+      { challengeId: 197, correct: false, text: "Čitam knjigu", audioSrc: "/audio/hr/citam_knjigu.mp3" },
+      { challengeId: 197, correct: false, text: "Pijem vodu", audioSrc: "/audio/hr/pijem_vodu.mp3" },
+
+      // --- UNIT 12 OPTIONS ---
+      { challengeId: 198, correct: true, text: "Park", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/park.mp3" },
+      { challengeId: 198, correct: false, text: "Ulica", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/ulica.mp3" },
+      { challengeId: 198, correct: false, text: "Drvo", imageSrc: "/points.svg", audioSrc: "/audio/hr/drvo.mp3" },
+
+      { challengeId: 199, correct: true, text: "Ljuljačka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ljuljacka.mp3" },
+      { challengeId: 199, correct: false, text: "Tobogan", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/tobogan.mp3" },
+      { challengeId: 199, correct: false, text: "Trava", imageSrc: "/points.svg", audioSrc: "/audio/hr/trava.mp3" },
+
+      { challengeId: 200, correct: true, text: "Tobogan", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/tobogan.mp3" },
+      { challengeId: 200, correct: false, text: "Ljuljačka", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/ljuljacka.mp3" },
+      { challengeId: 200, correct: false, text: "Bicikl", imageSrc: "/points.svg", audioSrc: "/audio/hr/bicikl.mp3" },
+
+      { challengeId: 201, correct: true, text: "Trava", audioSrc: "/audio/hr/trava.mp3" },
+      { challengeId: 201, correct: false, text: "Drvo", audioSrc: "/audio/hr/drvo.mp3" },
+      { challengeId: 201, correct: false, text: "Park", audioSrc: "/audio/hr/park.mp3" },
+
+      { challengeId: 202, correct: true, text: "Drvo", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/drvo.mp3" },
+      { challengeId: 202, correct: false, text: "Trava", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/trava.mp3" },
+      { challengeId: 202, correct: false, text: "Auto", imageSrc: "/points.svg", audioSrc: "/audio/hr/auto.mp3" },
+
+      { challengeId: 203, correct: true, text: "Auto", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/auto.mp3" },
+      { challengeId: 203, correct: false, text: "Bicikl", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/bicikl.mp3" },
+      { challengeId: 203, correct: false, text: "Ulica", imageSrc: "/points.svg", audioSrc: "/audio/hr/ulica.mp3" },
+
+      { challengeId: 204, correct: true, text: "Bicikl", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/bicikl.mp3" },
+      { challengeId: 204, correct: false, text: "Auto", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/auto.mp3" },
+      { challengeId: 204, correct: false, text: "Tobogan", imageSrc: "/points.svg", audioSrc: "/audio/hr/tobogan.mp3" },
+
+      { challengeId: 205, correct: true, text: "Ulica", audioSrc: "/audio/hr/ulica.mp3" },
+      { challengeId: 205, correct: false, text: "Park", audioSrc: "/audio/hr/park.mp3" },
+      { challengeId: 205, correct: false, text: "Auto", audioSrc: "/audio/hr/auto.mp3" },
+
+      { challengeId: 206, correct: true, text: "Idemo u park!", audioSrc: "/audio/hr/idemo_u_park.mp3" },
+      { challengeId: 206, correct: false, text: "Vozim bicikl", audioSrc: "/audio/hr/vozim_bicikl.mp3" },
+      { challengeId: 206, correct: false, text: "Brzi auto", audioSrc: "/audio/hr/brzi_auto.mp3" },
+
+      { challengeId: 207, correct: true, text: "Vozim bicikl", audioSrc: "/audio/hr/vozim_bicikl.mp3" },
+      { challengeId: 207, correct: false, text: "Idemo u park!", audioSrc: "/audio/hr/idemo_u_park.mp3" },
+      { challengeId: 207, correct: false, text: "Zeleno drvo", audioSrc: "/audio/hr/zeleno_drvo.mp3" },
+
+      { challengeId: 208, correct: true, text: "Brzi auto", audioSrc: "/audio/hr/brzi_auto.mp3" },
+      { challengeId: 208, correct: false, text: "Vozim bicikl", audioSrc: "/audio/hr/vozim_bicikl.mp3" },
+      { challengeId: 208, correct: false, text: "Zeleno drvo", audioSrc: "/audio/hr/zeleno_drvo.mp3" },
+
+      { challengeId: 209, correct: true, text: "Zeleno drvo", audioSrc: "/audio/hr/zeleno_drvo.mp3" },
+      { challengeId: 209, correct: false, text: "Brzi auto", audioSrc: "/audio/hr/brzi_auto.mp3" },
+      { challengeId: 209, correct: false, text: "Idemo u park!", audioSrc: "/audio/hr/idemo_u_park.mp3" },
+
+      { challengeId: 210, correct: true, text: "Tobogan", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/tobogan.mp3" },
+      { challengeId: 210, correct: false, text: "Ljuljačka", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/ljuljacka.mp3" },
+      { challengeId: 210, correct: false, text: "Trava", imageSrc: "/points.svg", audioSrc: "/audio/hr/trava.mp3" },
+
+      { challengeId: 211, correct: true, text: "Ljuljačka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ljuljacka.mp3" },
+      { challengeId: 211, correct: false, text: "Tobogan", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/tobogan.mp3" },
+      { challengeId: 211, correct: false, text: "Drvo", imageSrc: "/points.svg", audioSrc: "/audio/hr/drvo.mp3" },
+
+      { challengeId: 212, correct: true, text: "Bicikl", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/bicikl.mp3" },
+      { challengeId: 212, correct: false, text: "Auto", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/auto.mp3" },
+      { challengeId: 212, correct: false, text: "Ulica", imageSrc: "/points.svg", audioSrc: "/audio/hr/ulica.mp3" },
+
+      { challengeId: 213, correct: true, text: "Idemo u park!", audioSrc: "/audio/hr/idemo_u_park.mp3" },
+      { challengeId: 213, correct: false, text: "Ljuljam se visoko!", audioSrc: "/audio/hr/ljuljam_se_visoko.mp3" },
+      { challengeId: 213, correct: false, text: "Brzi auto", audioSrc: "/audio/hr/brzi_auto.mp3" },
+
+      { challengeId: 214, correct: true, text: "Ljuljam se visoko!", audioSrc: "/audio/hr/ljuljam_se_visoko.mp3" },
+      { challengeId: 214, correct: false, text: "Vozim bicikl", audioSrc: "/audio/hr/vozim_bicikl.mp3" },
+      { challengeId: 214, correct: false, text: "Idemo u park!", audioSrc: "/audio/hr/idemo_u_park.mp3" },
+
+      { challengeId: 215, correct: true, text: "Vozim bicikl", audioSrc: "/audio/hr/vozim_bicikl.mp3" },
+      { challengeId: 215, correct: false, text: "Ljuljam se visoko!", audioSrc: "/audio/hr/ljuljam_se_visoko.mp3" },
+      { challengeId: 215, correct: false, text: "Zeleno drvo", audioSrc: "/audio/hr/zeleno_drvo.mp3" },
+
+      // --- UNIT 13 OPTIONS ---
+      { challengeId: 216, correct: true, text: "Ovdje", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ovdje.mp3" },
+      { challengeId: 216, correct: false, text: "Tamo", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/tamo.mp3" },
+      { challengeId: 216, correct: false, text: "Gore", imageSrc: "/points.svg", audioSrc: "/audio/hr/gore.mp3" },
+
+      { challengeId: 217, correct: true, text: "Tamo", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/tamo.mp3" },
+      { challengeId: 217, correct: false, text: "Ovdje", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/ovdje.mp3" },
+      { challengeId: 217, correct: false, text: "Dolje", imageSrc: "/points.svg", audioSrc: "/audio/hr/dolje.mp3" },
+
+      { challengeId: 218, correct: true, text: "Gore", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/gore.mp3" },
+      { challengeId: 218, correct: false, text: "Dolje", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/dolje.mp3" },
+      { challengeId: 218, correct: false, text: "Ispod", imageSrc: "/points.svg", audioSrc: "/audio/hr/ispod.mp3" },
+
+      { challengeId: 219, correct: true, text: "Dolje", audioSrc: "/audio/hr/dolje.mp3" },
+      { challengeId: 219, correct: false, text: "Gore", audioSrc: "/audio/hr/gore.mp3" },
+      { challengeId: 219, correct: false, text: "Blizu", audioSrc: "/audio/hr/blizu.mp3" },
+
+      { challengeId: 220, correct: true, text: "U", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/u.mp3" },
+      { challengeId: 220, correct: false, text: "Na", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/na.mp3" },
+      { challengeId: 220, correct: false, text: "Ispod", imageSrc: "/points.svg", audioSrc: "/audio/hr/ispod.mp3" },
+
+      { challengeId: 221, correct: true, text: "Na", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/na.mp3" },
+      { challengeId: 221, correct: false, text: "U", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/u.mp3" },
+      { challengeId: 221, correct: false, text: "Blizu", imageSrc: "/points.svg", audioSrc: "/audio/hr/blizu.mp3" },
+
+      { challengeId: 222, correct: true, text: "Ispod", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ispod.mp3" },
+      { challengeId: 222, correct: false, text: "Na", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/na.mp3" },
+      { challengeId: 222, correct: false, text: "Gore", imageSrc: "/points.svg", audioSrc: "/audio/hr/gore.mp3" },
+
+      { challengeId: 223, correct: true, text: "Blizu", audioSrc: "/audio/hr/blizu.mp3" },
+      { challengeId: 223, correct: false, text: "Tamo", audioSrc: "/audio/hr/tamo.mp3" },
+      { challengeId: 223, correct: false, text: "Ovdje", audioSrc: "/audio/hr/ovdje.mp3" },
+
+      { challengeId: 224, correct: true, text: "Ispod stola", audioSrc: "/audio/hr/ispod_stola.mp3" },
+      { challengeId: 224, correct: false, text: "Na stolu", audioSrc: "/audio/hr/na_stolu.mp3" },
+      { challengeId: 224, correct: false, text: "U sobi", audioSrc: "/audio/hr/u_sobi.mp3" },
+
+      { challengeId: 225, correct: true, text: "Na stolu", audioSrc: "/audio/hr/na_stolu.mp3" },
+      { challengeId: 225, correct: false, text: "Ispod stola", audioSrc: "/audio/hr/ispod_stola.mp3" },
+      { challengeId: 225, correct: false, text: "Pogledaj gore!", audioSrc: "/audio/hr/pogledaj_gore.mp3" },
+
+      { challengeId: 226, correct: true, text: "U sobi", audioSrc: "/audio/hr/u_sobi.mp3" },
+      { challengeId: 226, correct: false, text: "Ispod kreveta", audioSrc: "/audio/hr/ispod_kreveta.mp3" },
+      { challengeId: 226, correct: false, text: "Na stolu", audioSrc: "/audio/hr/na_stolu.mp3" },
+
+      { challengeId: 227, correct: true, text: "Pogledaj gore!", audioSrc: "/audio/hr/pogledaj_gore.mp3" },
+      { challengeId: 227, correct: false, text: "Ovdje sam!", audioSrc: "/audio/hr/ovdje_sam.mp3" },
+      { challengeId: 227, correct: false, text: "Ispod stola", audioSrc: "/audio/hr/ispod_stola.mp3" },
+
+      { challengeId: 228, correct: true, text: "Ispod", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ispod.mp3" },
+      { challengeId: 228, correct: false, text: "Na", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/na.mp3" },
+      { challengeId: 228, correct: false, text: "Gore", imageSrc: "/points.svg", audioSrc: "/audio/hr/gore.mp3" },
+
+      { challengeId: 229, correct: true, text: "Gore", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/gore.mp3" },
+      { challengeId: 229, correct: false, text: "Dolje", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/dolje.mp3" },
+      { challengeId: 229, correct: false, text: "Ovdje", imageSrc: "/points.svg", audioSrc: "/audio/hr/ovdje.mp3" },
+
+      { challengeId: 230, correct: true, text: "Ovdje", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ovdje.mp3" },
+      { challengeId: 230, correct: false, text: "Tamo", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/tamo.mp3" },
+      { challengeId: 230, correct: false, text: "Ispod", imageSrc: "/points.svg", audioSrc: "/audio/hr/ispod.mp3" },
+
+      { challengeId: 231, correct: true, text: "Ispod kreveta", audioSrc: "/audio/hr/ispod_kreveta.mp3" },
+      { challengeId: 231, correct: false, text: "Na stolu", audioSrc: "/audio/hr/na_stolu.mp3" },
+      { challengeId: 231, correct: false, text: "Pogledaj gore!", audioSrc: "/audio/hr/pogledaj_gore.mp3" },
+
+      { challengeId: 232, correct: true, text: "Na stolu", audioSrc: "/audio/hr/na_stolu.mp3" },
+      { challengeId: 232, correct: false, text: "Ispod kreveta", audioSrc: "/audio/hr/ispod_kreveta.mp3" },
+      { challengeId: 232, correct: false, text: "Ovdje sam!", audioSrc: "/audio/hr/ovdje_sam.mp3" },
+
+      { challengeId: 233, correct: true, text: "Ovdje sam!", audioSrc: "/audio/hr/ovdje_sam.mp3" },
+      { challengeId: 233, correct: false, text: "Pogledaj gore!", audioSrc: "/audio/hr/pogledaj_gore.mp3" },
+      { challengeId: 233, correct: false, text: "Ispod stola", audioSrc: "/audio/hr/ispod_stola.mp3" },
+
+      // --- UNIT 14 OPTIONS ---
+      { challengeId: 234, correct: true, text: "Pekara", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pekara.mp3" },
+      { challengeId: 234, correct: false, text: "Trgovina", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/trgovina.mp3" },
+      { challengeId: 234, correct: false, text: "Kruh", imageSrc: "/points.svg", audioSrc: "/audio/hr/kruh.mp3" },
+
+      { challengeId: 235, correct: true, text: "Kiflica", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kiflica.mp3" },
+      { challengeId: 235, correct: false, text: "Burek", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/burek.mp3" },
+      { challengeId: 235, correct: false, text: "Sir", imageSrc: "/points.svg", audioSrc: "/audio/hr/sir.mp3" },
+
+      { challengeId: 236, correct: true, text: "Kruh", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kruh.mp3" },
+      { challengeId: 236, correct: false, text: "Kiflica", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/kiflica.mp3" },
+      { challengeId: 236, correct: false, text: "Pekara", imageSrc: "/points.svg", audioSrc: "/audio/hr/pekara.mp3" },
+
+      { challengeId: 237, correct: true, text: "Burek", audioSrc: "/audio/hr/burek.mp3" },
+      { challengeId: 237, correct: false, text: "Kiflica", audioSrc: "/audio/hr/kiflica.mp3" },
+      { challengeId: 237, correct: false, text: "Sir", audioSrc: "/audio/hr/sir.mp3" },
+
+      { challengeId: 238, correct: true, text: "Sir", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/sir.mp3" },
+      { challengeId: 238, correct: false, text: "Rajčica", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/rajcica.mp3" },
+      { challengeId: 238, correct: false, text: "Naranča", imageSrc: "/points.svg", audioSrc: "/audio/hr/naranca.mp3" },
+
+      { challengeId: 239, correct: true, text: "Rajčica", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/rajcica.mp3" },
+      { challengeId: 239, correct: false, text: "Naranča", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/naranca.mp3" },
+      { challengeId: 239, correct: false, text: "Sir", imageSrc: "/points.svg", audioSrc: "/audio/hr/sir.mp3" },
+
+      { challengeId: 240, correct: true, text: "Naranča", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/naranca.mp3" },
+      { challengeId: 240, correct: false, text: "Rajčica", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/rajcica.mp3" },
+      { challengeId: 240, correct: false, text: "Burek", imageSrc: "/points.svg", audioSrc: "/audio/hr/burek.mp3" },
+
+      { challengeId: 241, correct: true, text: "Trgovina", audioSrc: "/audio/hr/trgovina.mp3" },
+      { challengeId: 241, correct: false, text: "Pekara", audioSrc: "/audio/hr/pekara.mp3" },
+      { challengeId: 241, correct: false, text: "Sir", audioSrc: "/audio/hr/sir.mp3" },
+
+      { challengeId: 242, correct: true, text: "Molim jednu kiflicu!", audioSrc: "/audio/hr/molim_jednu_kiflicu.mp3" },
+      { challengeId: 242, correct: false, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+      { challengeId: 242, correct: false, text: "Svježi sir", audioSrc: "/audio/hr/svjezi_sir.mp3" },
+
+      { challengeId: 243, correct: true, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+      { challengeId: 243, correct: false, text: "Molim jednu kiflicu!", audioSrc: "/audio/hr/molim_jednu_kiflicu.mp3" },
+      { challengeId: 243, correct: false, text: "Hvala i doviđenja!", audioSrc: "/audio/hr/hvala_i_dovidenja.mp3" },
+
+      { challengeId: 244, correct: true, text: "Svježi sir", audioSrc: "/audio/hr/svjezi_sir.mp3" },
+      { challengeId: 244, correct: false, text: "Slatka naranča", audioSrc: "/audio/hr/slatka_naranca.mp3" },
+      { challengeId: 244, correct: false, text: "Molim jednu kiflicu!", audioSrc: "/audio/hr/molim_jednu_kiflicu.mp3" },
+
+      { challengeId: 245, correct: true, text: "Slatka naranča", audioSrc: "/audio/hr/slatka_naranca.mp3" },
+      { challengeId: 245, correct: false, text: "Svježi sir", audioSrc: "/audio/hr/svjezi_sir.mp3" },
+      { challengeId: 245, correct: false, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+
+      { challengeId: 246, correct: true, text: "Pekara", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pekara.mp3" },
+      { challengeId: 246, correct: false, text: "Trgovina", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/trgovina.mp3" },
+      { challengeId: 246, correct: false, text: "Sir", imageSrc: "/points.svg", audioSrc: "/audio/hr/sir.mp3" },
+
+      { challengeId: 247, correct: true, text: "Kiflica", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kiflica.mp3" },
+      { challengeId: 247, correct: false, text: "Burek", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/burek.mp3" },
+      { challengeId: 247, correct: false, text: "Kruh", imageSrc: "/points.svg", audioSrc: "/audio/hr/kruh.mp3" },
+
+      { challengeId: 248, correct: true, text: "Sir", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/sir.mp3" },
+      { challengeId: 248, correct: false, text: "Rajčica", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/rajcica.mp3" },
+      { challengeId: 248, correct: false, text: "Naranča", imageSrc: "/points.svg", audioSrc: "/audio/hr/naranca.mp3" },
+
+      { challengeId: 249, correct: true, text: "Molim jednu kiflicu!", audioSrc: "/audio/hr/molim_jednu_kiflicu.mp3" },
+      { challengeId: 249, correct: false, text: "Hvala i doviđenja!", audioSrc: "/audio/hr/hvala_i_dovidenja.mp3" },
+      { challengeId: 249, correct: false, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+
+      { challengeId: 250, correct: true, text: "Hvala i doviđenja!", audioSrc: "/audio/hr/hvala_i_dovidenja.mp3" },
+      { challengeId: 250, correct: false, text: "Molim jednu kiflicu!", audioSrc: "/audio/hr/molim_jednu_kiflicu.mp3" },
+      { challengeId: 250, correct: false, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+
+      { challengeId: 251, correct: true, text: "Izvolite!", audioSrc: "/audio/hr/izvolite.mp3" },
+      { challengeId: 251, correct: false, text: "Hvala i doviđenja!", audioSrc: "/audio/hr/hvala_i_dovidenja.mp3" },
+      { challengeId: 251, correct: false, text: "Svježi sir", audioSrc: "/audio/hr/svjezi_sir.mp3" },
+
+      // --- UNIT 15 OPTIONS ---
+      { challengeId: 252, correct: true, text: "Lopta", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/lopta.mp3" },
+      { challengeId: 252, correct: false, text: "Nogomet", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/nogomet.mp3" },
+      { challengeId: 252, correct: false, text: "Gol!", imageSrc: "/points.svg", audioSrc: "/audio/hr/gol.mp3" },
+
+      { challengeId: 253, correct: true, text: "Nogomet", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/nogomet.mp3" },
+      { challengeId: 253, correct: false, text: "Lopta", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/lopta.mp3" },
+      { challengeId: 253, correct: false, text: "Igra", imageSrc: "/points.svg", audioSrc: "/audio/hr/igra.mp3" },
+
+      { challengeId: 254, correct: true, text: "Gol!", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/gol.mp3" },
+      { challengeId: 254, correct: false, text: "Pobjeda!", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/pobjeda.mp3" },
+      { challengeId: 254, correct: false, text: "Lopta", imageSrc: "/points.svg", audioSrc: "/audio/hr/lopta.mp3" },
+
+      { challengeId: 255, correct: true, text: "Igra", audioSrc: "/audio/hr/igra.mp3" },
+      { challengeId: 255, correct: false, text: "Nogomet", audioSrc: "/audio/hr/nogomet.mp3" },
+      { challengeId: 255, correct: false, text: "Glazba", audioSrc: "/audio/hr/glazba.mp3" },
+
+      { challengeId: 256, correct: true, text: "Glazba", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/glazba.mp3" },
+      { challengeId: 256, correct: false, text: "Pjesma", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/pjesma.mp3" },
+      { challengeId: 256, correct: false, text: "Crtanje", imageSrc: "/points.svg", audioSrc: "/audio/hr/crtanje.mp3" },
+
+      { challengeId: 257, correct: true, text: "Pjesma", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pjesma.mp3" },
+      { challengeId: 257, correct: false, text: "Glazba", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/glazba.mp3" },
+      { challengeId: 257, correct: false, text: "Pobjeda!", imageSrc: "/points.svg", audioSrc: "/audio/hr/pobjeda.mp3" },
+
+      { challengeId: 258, correct: true, text: "Crtanje", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/crtanje.mp3" },
+      { challengeId: 258, correct: false, text: "Glazba", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/glazba.mp3" },
+      { challengeId: 258, correct: false, text: "Igra", imageSrc: "/points.svg", audioSrc: "/audio/hr/igra.mp3" },
+
+      { challengeId: 259, correct: true, text: "Pobjeda!", audioSrc: "/audio/hr/pobjeda.mp3" },
+      { challengeId: 259, correct: false, text: "Igra", audioSrc: "/audio/hr/igra.mp3" },
+      { challengeId: 259, correct: false, text: "Pjesma", audioSrc: "/audio/hr/pjesma.mp3" },
+
+      { challengeId: 260, correct: true, text: "Zabij gol!", audioSrc: "/audio/hr/zabij_gol.mp3" },
+      { challengeId: 260, correct: false, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 260, correct: false, text: "Bravo!", audioSrc: "/audio/hr/bravo.mp3" },
+
+      { challengeId: 261, correct: true, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 261, correct: false, text: "Zabij gol!", audioSrc: "/audio/hr/zabij_gol.mp3" },
+      { challengeId: 261, correct: false, text: "Lijepa pjesma", audioSrc: "/audio/hr/lijepa_pjesma.mp3" },
+
+      { challengeId: 262, correct: true, text: "Lijepa pjesma", audioSrc: "/audio/hr/lijepa_pjesma.mp3" },
+      { challengeId: 262, correct: false, text: "Bravo!", audioSrc: "/audio/hr/bravo.mp3" },
+      { challengeId: 262, correct: false, text: "Zabij gol!", audioSrc: "/audio/hr/zabij_gol.mp3" },
+
+      { challengeId: 263, correct: true, text: "Bravo!", audioSrc: "/audio/hr/bravo.mp3" },
+      { challengeId: 263, correct: false, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 263, correct: false, text: "Pobjeda!", audioSrc: "/audio/hr/pobjeda.mp3" },
+
+      { challengeId: 264, correct: true, text: "Lopta", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/lopta.mp3" },
+      { challengeId: 264, correct: false, text: "Nogomet", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/nogomet.mp3" },
+      { challengeId: 264, correct: false, text: "Gol!", imageSrc: "/points.svg", audioSrc: "/audio/hr/gol.mp3" },
+
+      { challengeId: 265, correct: true, text: "Nogomet", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/nogomet.mp3" },
+      { challengeId: 265, correct: false, text: "Lopta", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/lopta.mp3" },
+      { challengeId: 265, correct: false, text: "Pobjeda!", imageSrc: "/points.svg", audioSrc: "/audio/hr/pobjeda.mp3" },
+
+      { challengeId: 266, correct: true, text: "Pobjeda!", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pobjeda.mp3" },
+      { challengeId: 266, correct: false, text: "Gol!", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/gol.mp3" },
+      { challengeId: 266, correct: false, text: "Igra", imageSrc: "/points.svg", audioSrc: "/audio/hr/igra.mp3" },
+
+      { challengeId: 267, correct: true, text: "Zabij gol!", audioSrc: "/audio/hr/zabij_gol.mp3" },
+      { challengeId: 267, correct: false, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 267, correct: false, text: "Mi smo prvaci!", audioSrc: "/audio/hr/mi_smo_prvaci.mp3" },
+
+      { challengeId: 268, correct: true, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 268, correct: false, text: "Zabij gol!", audioSrc: "/audio/hr/zabij_gol.mp3" },
+      { challengeId: 268, correct: false, text: "Bravo!", audioSrc: "/audio/hr/bravo.mp3" },
+
+      { challengeId: 269, correct: true, text: "Mi smo prvaci!", audioSrc: "/audio/hr/mi_smo_prvaci.mp3" },
+      { challengeId: 269, correct: false, text: "Dodaj loptu!", audioSrc: "/audio/hr/dodaj_loptu.mp3" },
+      { challengeId: 269, correct: false, text: "Bravo!", audioSrc: "/audio/hr/bravo.mp3" },
+
 
 
 
@@ -1642,7 +2196,7 @@ const main = async () => {
       }
     }
 
-    console.log("Croatian curriculum seeding finished successfully with HD audio! (10 Units, 40 Lessons (including 10 Boss Quests), 179 Challenges)");
+    console.log("Croatian curriculum seeding finished successfully with HD audio! (15 Units, 60 Lessons (including 15 Boss Quests), 269 Challenges)");
   } catch (error) {
     console.error(error);
     throw new Error("Failed to seed the database");
