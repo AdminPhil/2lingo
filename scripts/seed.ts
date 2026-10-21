@@ -102,6 +102,13 @@ const main = async () => {
       { id: 13, unitId: 5, order: 1, title: "Voće i poslastice (Fruits & Treats)" },
       { id: 14, unitId: 5, order: 2, title: "Pića i hrana (Drinks & Food)" },
       { id: 15, unitId: 5, order: 3, title: "Vrijeme za jelo (Snack Time!)" },
+
+      // Unit 1-5 Boss Quests (Order 4 Capstone for each unit)
+      { id: 16, unitId: 1, order: 4, title: "👑 Super Izazov: Prvi koraci (First Steps Trophy)" },
+      { id: 17, unitId: 2, order: 4, title: "👑 Super Izazov: Obiteljski heroj (Family Hero Trophy)" },
+      { id: 18, unitId: 3, order: 4, title: "👑 Super Izazov: Šaptač životinjama (Animal Whisperer Trophy)" },
+      { id: 19, unitId: 4, order: 4, title: "👑 Super Izazov: Majstor boja i brojeva (Color & Number Master)" },
+      { id: 20, unitId: 5, order: 4, title: "👑 Super Izazov: Mali kuhar (Little Chef Trophy)" },
     ]);
 
     // 4. CHALLENGES
@@ -578,6 +585,56 @@ const main = async () => {
         order: 3,
         question: '"Very tasty / Delicious!"',
       },
+      // ==========================================
+      // UNIT 1 BOSS QUEST: SUPER IZAZOV (Lesson 16)
+      // ==========================================
+      { id: 60, lessonId: 16, type: "SELECT", order: 1, question: 'Which one of these is "Hello / Hi"?' },
+      { id: 61, lessonId: 16, type: "ASSIST", order: 2, question: '"Good day"' },
+      { id: 62, lessonId: 16, type: "SELECT", order: 3, question: 'Which one of these is "Thank you"?' },
+      { id: 63, lessonId: 16, type: "ASSIST", order: 4, question: '"Good night"' },
+      { id: 64, lessonId: 16, type: "ASSIST", order: 5, question: '"How are you?"' },
+      { id: 65, lessonId: 16, type: "SELECT", order: 6, question: 'Which one of these is "Goodbye"?' },
+
+      // ==========================================
+      // UNIT 2 BOSS QUEST: SUPER IZAZOV (Lesson 17)
+      // ==========================================
+      { id: 66, lessonId: 17, type: "SELECT", order: 1, question: 'Which one of these is "Mom"?' },
+      { id: 67, lessonId: 17, type: "SELECT", order: 2, question: 'Which one of these is "Dad"?' },
+      { id: 68, lessonId: 17, type: "SELECT", order: 3, question: 'Which one of these is "Boy"?' },
+      { id: 69, lessonId: 17, type: "SELECT", order: 4, question: 'Which one of these is "Girl"?' },
+      { id: 70, lessonId: 17, type: "ASSIST", order: 5, question: '"That is mom"' },
+      { id: 71, lessonId: 17, type: "ASSIST", order: 6, question: '"I love you"' },
+
+      // ==========================================
+      // UNIT 3 BOSS QUEST: SUPER IZAZOV (Lesson 18)
+      // ==========================================
+      { id: 72, lessonId: 18, type: "SELECT", order: 1, question: 'Which one of these is "Dog"?' },
+      { id: 73, lessonId: 18, type: "SELECT", order: 2, question: 'Which one of these is "Cat"?' },
+      { id: 74, lessonId: 18, type: "SELECT", order: 3, question: 'Which one of these is "Horse"?' },
+      { id: 75, lessonId: 18, type: "ASSIST", order: 4, question: '"Big dog"' },
+      { id: 76, lessonId: 18, type: "ASSIST", order: 5, question: '"Little cat"' },
+      { id: 77, lessonId: 18, type: "ASSIST", order: 6, question: '"Good dog"' },
+
+      // ==========================================
+      // UNIT 4 BOSS QUEST: SUPER IZAZOV (Lesson 19)
+      // ==========================================
+      { id: 78, lessonId: 19, type: "SELECT", order: 1, question: 'Which one of these is "Red"?' },
+      { id: 79, lessonId: 19, type: "SELECT", order: 2, question: 'Which one of these is "Green"?' },
+      { id: 80, lessonId: 19, type: "SELECT", order: 3, question: 'Which one of these is "Four"?' },
+      { id: 81, lessonId: 19, type: "ASSIST", order: 4, question: '"Blue"' },
+      { id: 82, lessonId: 19, type: "SELECT", order: 5, question: 'Which one of these is "One"?' },
+      { id: 83, lessonId: 19, type: "SELECT", order: 6, question: 'Which one of these is "Ten"?' },
+
+      // ==========================================
+      // UNIT 5 BOSS QUEST: SUPER IZAZOV (Lesson 20)
+      // ==========================================
+      { id: 84, lessonId: 20, type: "SELECT", order: 1, question: 'Which one of these is "Apple"?' },
+      { id: 85, lessonId: 20, type: "SELECT", order: 2, question: 'Which one of these is "Ice cream"?' },
+      { id: 86, lessonId: 20, type: "SELECT", order: 3, question: 'Which one of these is "Water"?' },
+      { id: 87, lessonId: 20, type: "ASSIST", order: 4, question: '"I am hungry"' },
+      { id: 88, lessonId: 20, type: "SELECT", order: 5, question: 'Which one means "May I have ice cream, please?"' },
+      { id: 89, lessonId: 20, type: "ASSIST", order: 6, question: '"Very tasty / Delicious!"' },
+
     ]);
 
     // 5. CHALLENGE OPTIONS (WITH HD CROATIAN NEURAL AUDIO)
@@ -876,6 +933,131 @@ const main = async () => {
       { challengeId: 59, correct: true, text: "Jako je ukusno!", audioSrc: "/audio/hr/jako_je_ukusno.mp3" },
       { challengeId: 59, correct: false, text: "Ne hvala", audioSrc: "/audio/hr/ne_hvala.mp3" },
       { challengeId: 59, correct: false, text: "Oprosti", audioSrc: "/audio/hr/oprosti.mp3" },
+      // --- BOSS QUEST 1 (Unit 1) OPTIONS ---
+      { challengeId: 60, correct: true, text: "Bok", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/bok.mp3" },
+      { challengeId: 60, correct: false, text: "Doviđenja", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/dovidenja.mp3" },
+      { challengeId: 60, correct: false, text: "Molim", imageSrc: "/points.svg", audioSrc: "/audio/hr/molim.mp3" },
+
+      { challengeId: 61, correct: true, text: "Dobar dan", audioSrc: "/audio/hr/dobar_dan.mp3" },
+      { challengeId: 61, correct: false, text: "Laku noć", audioSrc: "/audio/hr/laku_noc.mp3" },
+      { challengeId: 61, correct: false, text: "Hvala", audioSrc: "/audio/hr/hvala.mp3" },
+
+      { challengeId: 62, correct: true, text: "Hvala", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/hvala.mp3" },
+      { challengeId: 62, correct: false, text: "Oprosti", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/oprosti.mp3" },
+      { challengeId: 62, correct: false, text: "Ne", imageSrc: "/points.svg", audioSrc: "/audio/hr/ne.mp3" },
+
+      { challengeId: 63, correct: true, text: "Laku noć", audioSrc: "/audio/hr/laku_noc.mp3" },
+      { challengeId: 63, correct: false, text: "Dobar dan", audioSrc: "/audio/hr/dobar_dan.mp3" },
+      { challengeId: 63, correct: false, text: "Bok", audioSrc: "/audio/hr/bok.mp3" },
+
+      { challengeId: 64, correct: true, text: "Kako si?", audioSrc: "/audio/hr/kako_si.mp3" },
+      { challengeId: 64, correct: false, text: "Dobro sam!", audioSrc: "/audio/hr/dobro_sam.mp3" },
+      { challengeId: 64, correct: false, text: "Molim", audioSrc: "/audio/hr/molim.mp3" },
+
+      { challengeId: 65, correct: true, text: "Doviđenja", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/dovidenja.mp3" },
+      { challengeId: 65, correct: false, text: "Bok", imageSrc: "/mascot_sad.svg", audioSrc: "/audio/hr/bok.mp3" },
+      { challengeId: 65, correct: false, text: "Da", imageSrc: "/points.svg", audioSrc: "/audio/hr/da.mp3" },
+
+      // --- BOSS QUEST 2 (Unit 2) OPTIONS ---
+      { challengeId: 66, correct: true, text: "Mama", imageSrc: "/woman.svg", audioSrc: "/audio/hr/mama.mp3" },
+      { challengeId: 66, correct: false, text: "Tata", imageSrc: "/man.svg", audioSrc: "/audio/hr/tata.mp3" },
+      { challengeId: 66, correct: false, text: "Baka", imageSrc: "/woman.svg", audioSrc: "/audio/hr/baka.mp3" },
+
+      { challengeId: 67, correct: true, text: "Tata", imageSrc: "/man.svg", audioSrc: "/audio/hr/tata.mp3" },
+      { challengeId: 67, correct: false, text: "Djed", imageSrc: "/man.svg", audioSrc: "/audio/hr/djed.mp3" },
+      { challengeId: 67, correct: false, text: "Brat", imageSrc: "/boy.svg", audioSrc: "/audio/hr/brat.mp3" },
+
+      { challengeId: 68, correct: true, text: "Dječak", imageSrc: "/boy.svg", audioSrc: "/audio/hr/djecak.mp3" },
+      { challengeId: 68, correct: false, text: "Djevojčica", imageSrc: "/girl.svg", audioSrc: "/audio/hr/djevojcica.mp3" },
+      { challengeId: 68, correct: false, text: "Beba", imageSrc: "/boy.svg", audioSrc: "/audio/hr/beba.mp3" },
+
+      { challengeId: 69, correct: true, text: "Djevojčica", imageSrc: "/girl.svg", audioSrc: "/audio/hr/djevojcica.mp3" },
+      { challengeId: 69, correct: false, text: "Dječak", imageSrc: "/boy.svg", audioSrc: "/audio/hr/djecak.mp3" },
+      { challengeId: 69, correct: false, text: "Sestra", imageSrc: "/girl.svg", audioSrc: "/audio/hr/sestra.mp3" },
+
+      { challengeId: 70, correct: true, text: "To je mama", imageSrc: "/woman.svg", audioSrc: "/audio/hr/to_je_mama.mp3" },
+      { challengeId: 70, correct: false, text: "To je tata", imageSrc: "/man.svg", audioSrc: "/audio/hr/tata.mp3" },
+      { challengeId: 70, correct: false, text: "Volim te", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/volim_te.mp3" },
+
+      { challengeId: 71, correct: true, text: "Volim te", audioSrc: "/audio/hr/volim_te.mp3" },
+      { challengeId: 71, correct: false, text: "Hvala lijepa", audioSrc: "/audio/hr/hvala_lijepa.mp3" },
+      { challengeId: 71, correct: false, text: "Dobar dan", audioSrc: "/audio/hr/dobar_dan.mp3" },
+
+      // --- BOSS QUEST 3 (Unit 3) OPTIONS ---
+      { challengeId: 72, correct: true, text: "Pas", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pas.mp3" },
+      { challengeId: 72, correct: false, text: "Mačka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/macka.mp3" },
+      { challengeId: 72, correct: false, text: "Krava", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/krava.mp3" },
+
+      { challengeId: 73, correct: true, text: "Mačka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/macka.mp3" },
+      { challengeId: 73, correct: false, text: "Pas", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/pas.mp3" },
+      { challengeId: 73, correct: false, text: "Riba", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/riba.mp3" },
+
+      { challengeId: 74, correct: true, text: "Konj", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/konj.mp3" },
+      { challengeId: 74, correct: false, text: "Patka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/patka.mp3" },
+      { challengeId: 74, correct: false, text: "Ptica", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/ptica.mp3" },
+
+      { challengeId: 75, correct: true, text: "Veliki pas", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/veliki_pas.mp3" },
+      { challengeId: 75, correct: false, text: "Mala mačka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/mala_macka.mp3" },
+      { challengeId: 75, correct: false, text: "Dobar pas", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/dobar_pas.mp3" },
+
+      { challengeId: 76, correct: true, text: "Mala mačka", audioSrc: "/audio/hr/mala_macka.mp3" },
+      { challengeId: 76, correct: false, text: "Veliki pas", audioSrc: "/audio/hr/veliki_pas.mp3" },
+      { challengeId: 76, correct: false, text: "Dobar pas", audioSrc: "/audio/hr/dobar_pas.mp3" },
+
+      { challengeId: 77, correct: true, text: "Dobar pas", audioSrc: "/audio/hr/dobar_pas.mp3" },
+      { challengeId: 77, correct: false, text: "Veliki pas", audioSrc: "/audio/hr/veliki_pas.mp3" },
+      { challengeId: 77, correct: false, text: "Mala mačka", audioSrc: "/audio/hr/mala_macka.mp3" },
+
+      // --- BOSS QUEST 4 (Unit 4) OPTIONS ---
+      { challengeId: 78, correct: true, text: "Crvena", imageSrc: "/heart.svg", audioSrc: "/audio/hr/crvena.mp3" },
+      { challengeId: 78, correct: false, text: "Plava", imageSrc: "/learn.svg", audioSrc: "/audio/hr/plava.mp3" },
+      { challengeId: 78, correct: false, text: "Žuta", imageSrc: "/points.svg", audioSrc: "/audio/hr/zuta.mp3" },
+
+      { challengeId: 79, correct: true, text: "Zelena", imageSrc: "/learn.svg", audioSrc: "/audio/hr/zelena.mp3" },
+      { challengeId: 79, correct: false, text: "Crvena", imageSrc: "/heart.svg", audioSrc: "/audio/hr/crvena.mp3" },
+      { challengeId: 79, correct: false, text: "Plava", imageSrc: "/points.svg", audioSrc: "/audio/hr/plava.mp3" },
+
+      { challengeId: 80, correct: true, text: "Četiri", imageSrc: "/points.svg", audioSrc: "/audio/hr/cetiri.mp3" },
+      { challengeId: 80, correct: false, text: "Pet", imageSrc: "/points.svg", audioSrc: "/audio/hr/pet.mp3" },
+      { challengeId: 80, correct: false, text: "Šest", imageSrc: "/points.svg", audioSrc: "/audio/hr/sest.mp3" },
+
+      { challengeId: 81, correct: true, text: "Plava", audioSrc: "/audio/hr/plava.mp3" },
+      { challengeId: 81, correct: false, text: "Žuta", audioSrc: "/audio/hr/zuta.mp3" },
+      { challengeId: 81, correct: false, text: "Zelena", audioSrc: "/audio/hr/zelena.mp3" },
+
+      { challengeId: 82, correct: true, text: "Jedan", audioSrc: "/audio/hr/jedan.mp3" },
+      { challengeId: 82, correct: false, text: "Dva", audioSrc: "/audio/hr/dva.mp3" },
+      { challengeId: 82, correct: false, text: "Tri", audioSrc: "/audio/hr/tri.mp3" },
+
+      { challengeId: 83, correct: true, text: "Deset", imageSrc: "/points.svg", audioSrc: "/audio/hr/deset.mp3" },
+      { challengeId: 83, correct: false, text: "Devet", imageSrc: "/points.svg", audioSrc: "/audio/hr/devet.mp3" },
+      { challengeId: 83, correct: false, text: "Sedam", imageSrc: "/points.svg", audioSrc: "/audio/hr/sedam.mp3" },
+
+      // --- BOSS QUEST 5 (Unit 5) OPTIONS ---
+      { challengeId: 84, correct: true, text: "Jabuka", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/jabuka.mp3" },
+      { challengeId: 84, correct: false, text: "Banana", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/banana.mp3" },
+      { challengeId: 84, correct: false, text: "Kruh", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/kruh.mp3" },
+
+      { challengeId: 85, correct: true, text: "Sladoled", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/sladoled.mp3" },
+      { challengeId: 85, correct: false, text: "Čokolada", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/cokolada.mp3" },
+      { challengeId: 85, correct: false, text: "Voda", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/voda.mp3" },
+
+      { challengeId: 86, correct: true, text: "Voda", audioSrc: "/audio/hr/voda.mp3" },
+      { challengeId: 86, correct: false, text: "Mlijeko", audioSrc: "/audio/hr/mlijeko.mp3" },
+      { challengeId: 86, correct: false, text: "Sok", audioSrc: "/audio/hr/sok.mp3" },
+
+      { challengeId: 87, correct: true, text: "Gladan sam", audioSrc: "/audio/hr/gladan_sam.mp3" },
+      { challengeId: 87, correct: false, text: "Hvala lijepa", audioSrc: "/audio/hr/hvala_lijepa.mp3" },
+      { challengeId: 87, correct: false, text: "Jako je ukusno!", audioSrc: "/audio/hr/jako_je_ukusno.mp3" },
+
+      { challengeId: 88, correct: true, text: "Mogu li dobiti sladoled, molim?", imageSrc: "/mascot.svg", audioSrc: "/audio/hr/mogu_li_dobiti_sladoled_molim.mp3" },
+      { challengeId: 88, correct: false, text: "Dobar dan, kako si?", imageSrc: "/woman.svg", audioSrc: "/audio/hr/kako_si.mp3" },
+      { challengeId: 88, correct: false, text: "Laku noć", imageSrc: "/man.svg", audioSrc: "/audio/hr/laku_noc.mp3" },
+
+      { challengeId: 89, correct: true, text: "Jako je ukusno!", audioSrc: "/audio/hr/jako_je_ukusno.mp3" },
+      { challengeId: 89, correct: false, text: "Ne hvala", audioSrc: "/audio/hr/ne_hvala.mp3" },
+      { challengeId: 89, correct: false, text: "Oprosti", audioSrc: "/audio/hr/oprosti.mp3" },
+
     ]);
 
     // Restore existing users and subscriptions
@@ -895,7 +1077,7 @@ const main = async () => {
       }
     }
 
-    console.log("Croatian curriculum seeding finished successfully with HD audio! (5 Units, 15 Lessons, 59 Challenges)");
+    console.log("Croatian curriculum seeding finished successfully with HD audio! (5 Units, 20 Lessons (including 5 Boss Quests), 89 Challenges)");
   } catch (error) {
     console.error(error);
     throw new Error("Failed to seed the database");

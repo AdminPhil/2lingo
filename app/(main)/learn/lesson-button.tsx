@@ -51,6 +51,8 @@ export const LessonButton = ({
 
   const href = isCompleted ? `/lesson/${id}` : "/lesson";
 
+  const buttonVariant = locked ? "locked" : isLast ? "golden" : "secondary";
+
   return (
     <Link 
       href={href} 
@@ -66,17 +68,25 @@ export const LessonButton = ({
       >
         {current ? (
           <div className="h-[102px] w-[102px] relative">
-            <div className="absolute -top-6 left-2.5 px-3 py-2.5 border-2 font-bold uppercase text-green-500 bg-white rounded-xl animate-bounce tracking-wide z-10">
-              Start
+            <div className={cn(
+              "absolute -top-7 px-3 py-1.5 border-2 font-extrabold uppercase rounded-xl animate-bounce tracking-wide z-10 text-xs whitespace-nowrap shadow-md",
+              isLast 
+                ? "bg-amber-50 text-amber-700 border-amber-400 left-[-8px]"
+                : "bg-white text-green-500 border-green-400 left-2.5"
+            )}>
+              {isLast ? "👑 Super Izazov" : "Start"}
               <div
-                className="absolute left-1/2 -bottom-2 w-0 h-0 border-x-8 border-x-transparent border-t-8 transform -translate-x-1/2"
+                className={cn(
+                  "absolute left-1/2 -bottom-2 w-0 h-0 border-x-8 border-x-transparent border-t-8 transform -translate-x-1/2",
+                  isLast ? "border-t-amber-400" : "border-t-green-400"
+                )}
               />
             </div>
             <CircularProgressbarWithChildren
               value={Number.isNaN(percentage) ? 0 : percentage}
               styles={{
                 path: {
-                  stroke: "#4ade80",
+                  stroke: isLast ? "#f59e0b" : "#4ade80",
                 },
                 trail: {
                   stroke: "#e5e7eb",
@@ -85,15 +95,20 @@ export const LessonButton = ({
             >
               <Button
                 size="rounded"
-                variant={locked ? "locked" : "secondary"}
-                className="h-[70px] w-[70px] border-b-8"
+                variant={buttonVariant}
+                className={cn(
+                  "h-[70px] w-[70px] border-b-8",
+                  isLast && !locked && "ring-4 ring-amber-300/60 ring-offset-2 animate-pulse"
+                )}
               >
                 <Icon
                   className={cn(
                     "h-10 w-10",
                     locked
-                    ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
-                    : "fill-primary-foreground text-primary-foreground",
+                      ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
+                      : isLast
+                      ? "fill-amber-950 text-amber-950"
+                      : "fill-primary-foreground text-primary-foreground",
                     isCompleted && "fill-none stroke-[4]"
                   )}
                 />
@@ -103,15 +118,20 @@ export const LessonButton = ({
         ) : (
           <Button
             size="rounded"
-            variant={locked ? "locked" : "secondary"}
-            className="h-[70px] w-[70px] border-b-8"
+            variant={buttonVariant}
+            className={cn(
+              "h-[70px] w-[70px] border-b-8",
+              isLast && !locked && "ring-2 ring-amber-300"
+            )}
           >
             <Icon
               className={cn(
                 "h-10 w-10",
                 locked
-                ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
-                : "fill-primary-foreground text-primary-foreground",
+                  ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
+                  : isLast
+                  ? "fill-amber-950 text-amber-950"
+                  : "fill-primary-foreground text-primary-foreground",
                 isCompleted && "fill-none stroke-[4]"
               )}
             />
