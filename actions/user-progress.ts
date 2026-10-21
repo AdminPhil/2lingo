@@ -135,3 +135,59 @@ export const refillHearts = async () => {
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
 };
+
+// Kid-friendly free refill so children are never blocked from learning
+export const freeRefillHearts = async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const currentUserProgress = await getUserProgress();
+
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
+
+  await db.update(userProgress).set({
+    hearts: 5,
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
+
+  revalidatePath("/shop");
+  revalidatePath("/learn");
+  revalidatePath("/quests");
+  revalidatePath("/leaderboard");
+
+  return { success: true };
+};
+
+// Allows kids to spend earned points on real parent rewards (e.g. screen time, treats)
+export const redeemReward = async (cost: number, rewardTitle: string) => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const currentUserProgress = await getUserProgress();
+
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
+
+  if (currentUserProgress.points < cost) {
+    throw new Error("Not enough points to redeem this reward");
+  }
+
+  await db.update(userProgress).set({
+    points: currentUserProgress.points - cost,
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
+
+  revalidatePath("/shop");
+  revalidatePath("/learn");
+  revalidatePath("/quests");
+  revalidatePath("/leaderboard");
+
+  return { success: true, rewardTitle };
+};

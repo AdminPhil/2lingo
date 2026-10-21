@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { useCallback } from "react";
 import { useAudio, useKey } from "react-use";
+import { Volume2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { challenges } from "@/db/schema";
+import { speakText } from "@/lib/tts";
 
 type Props = {
   id: number;
@@ -32,12 +34,20 @@ export const Card = ({
 }: Props) => {
   const [audio, _, controls] = useAudio({ src: audioSrc || "" });
 
+  const playSound = useCallback(() => {
+    if (audioSrc) {
+      controls.play();
+    } else {
+      speakText(text);
+    }
+  }, [audioSrc, controls, text]);
+
   const handleClick = useCallback(() => {
     if (disabled) return;
 
-    controls.play();
+    playSound();
     onClick();
-  }, [disabled, onClick, controls]);
+  }, [disabled, playSound, onClick]);
 
   useKey(shortcut, handleClick, {}, [handleClick]);
 
@@ -64,12 +74,12 @@ export const Card = ({
         </div>
       )}
       <div className={cn(
-        "flex items-center justify-between",
+        "flex items-center justify-between gap-x-2",
         type === "ASSIST" && "flex-row-reverse",
       )}>
         {type === "ASSIST" && <div />}
         <p className={cn(
-          "text-neutral-600 text-sm lg:text-base",
+          "text-neutral-600 text-sm lg:text-base font-medium",
           selected && "text-sky-500",
           selected && status === "correct" 
             && "text-green-500",
@@ -78,15 +88,29 @@ export const Card = ({
         )}>
           {text}
         </p>
-        <div className={cn(
-          "lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-[15px] text-xs font-semibold",
-          selected && "border-sky-300 text-sky-500",
-          selected && status === "correct" 
-            && "border-green-500 text-green-500",
-          selected && status === "wrong" 
-            && "border-rose-500 text-rose-500",
-        )}>
-          {shortcut}
+        <div className="flex items-center gap-x-1.5">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              playSound();
+            }}
+            className="p-1 hover:bg-black/10 rounded-md transition text-neutral-400 hover:text-sky-600"
+            title="Read aloud"
+            aria-label="Read aloud"
+          >
+            <Volume2 className="h-4 w-4" />
+          </button>
+          <div className={cn(
+            "lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-[15px] text-xs font-semibold",
+            selected && "border-sky-300 text-sky-500",
+            selected && status === "correct" 
+              && "border-green-500 text-green-500",
+            selected && status === "wrong" 
+              && "border-rose-500 text-rose-500",
+          )}>
+            {shortcut}
+          </div>
         </div>
       </div>
     </div>

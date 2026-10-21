@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import Image from "next/image";
 import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { useAudio, useWindowSize, useMount } from "react-use";
 
 import { reduceHearts } from "@/actions/user-progress";
@@ -39,8 +39,15 @@ export const Quiz = ({
   initialLessonChallenges,
   userSubscription,
 }: Props) => {
-  const { open: openHeartsModal } = useHeartsModal();
+  const { open: openHeartsModal, setOnRefillCallback } = useHeartsModal();
   const { open: openPracticeModal } = usePracticeModal();
+
+  useEffect(() => {
+    setOnRefillCallback(() => {
+      setHearts(5);
+    });
+    return () => setOnRefillCallback(undefined);
+  }, [setOnRefillCallback]);
 
   useMount(() => {
     if (initialPercentage === 100) {

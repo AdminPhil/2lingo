@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { toast } from "sonner";
 
 import {
   Dialog,
@@ -14,17 +14,27 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useHeartsModal } from "@/store/use-hearts-modal";
+import { freeRefillHearts } from "@/actions/user-progress";
 
 export const HeartsModal = () => {
-  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
-  const { isOpen, close } = useHeartsModal();
+  const [pending, startTransition] = useTransition();
+  const { isOpen, close, onRefillCallback } = useHeartsModal();
 
   useEffect(() => setIsClient(true), []);
 
-  const onClick = () => {
-    close();
-    router.push("/store");
+  const onRefill = () => {
+    startTransition(() => {
+      freeRefillHearts()
+        .then(() => {
+          toast.success("❤️ Hearts refilled! Keep having fun!");
+          onRefillCallback?.();
+          close();
+        })
+        .catch(() => {
+          toast.error("Could not refill hearts. Try again!");
+        });
+    });
   };
 
   if (!isClient) {
@@ -37,36 +47,37 @@ export const HeartsModal = () => {
         <DialogHeader>
           <div className="flex items-center w-full justify-center mb-5">
             <Image
-              src="/mascot_bad.svg"
+              src="/mascot.svg"
               alt="Mascot"
               height={80}
               width={80}
             />
           </div>
-          <DialogTitle className="text-center font-bold text-2xl">
-            You ran out of hearts!
+          <DialogTitle className="text-center font-bold text-2xl text-neutral-800">
+            Don&apos;t Give Up! 🌟
           </DialogTitle>
-          <DialogDescription className="text-center text-base">
-            Get Pro for unlimited hearts, or purchase them in the store.
+          <DialogDescription className="text-center text-base text-neutral-600">
+            Mistakes help our brains grow bigger and smarter! Refill your hearts for free and keep going.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="mb-4">
           <div className="flex flex-col gap-y-4 w-full">
             <Button 
               variant="primary" 
-              className="w-full" 
+              className="w-full text-base font-bold" 
               size="lg" 
-              onClick={onClick}
+              disabled={pending}
+              onClick={onRefill}
             >
-              Get unlimited hearts
+              ❤️ Free Heart Refill
             </Button>
             <Button
               variant="primaryOutline" 
-              className="w-full" 
+              className="w-full text-base" 
               size="lg" 
               onClick={close}
             >
-              No thanks
+              Keep Practicing
             </Button>
           </div>
         </DialogFooter>
