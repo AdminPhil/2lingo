@@ -2,24 +2,36 @@ export const POINTS_TO_REFILL = 10;
 
 export const quests = [
   {
-    title: "Earn 20 XP",
-    value: 20,
-  },
-  {
-    title: "Earn 50 XP",
+    title: "Earn 50 XP (Mali Početnik)",
     value: 50,
   },
   {
-    title: "Earn 100 XP",
+    title: "Earn 100 XP (Mali Istraživač)",
     value: 100,
   },
   {
-    title: "Earn 500 XP",
+    title: "Earn 250 XP (Prijatelj Riječi)",
+    value: 250,
+  },
+  {
+    title: "Earn 500 XP (Jadranski Mornar)",
     value: 500,
   },
   {
-    title: "Earn 1000 XP",
+    title: "Earn 1,000 XP (Vitez Znanja)",
     value: 1000,
+  },
+  {
+    title: "Earn 2,500 XP (Sokol Velebita)",
+    value: 2500,
+  },
+  {
+    title: "Earn 5,000 XP (Majstor Jezika)",
+    value: 5000,
+  },
+  {
+    title: "Earn 10,000 XP (Hrvatska Legenda)",
+    value: 10000,
   },
 ];
 

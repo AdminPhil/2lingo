@@ -45,14 +45,15 @@ const QuestsPage = async () => {
             width={90}
           />
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
-            Quests
+            Quests & Achievements
           </h1>
           <p className="text-muted-foreground text-center text-lg mb-6">
-            Complete fun quests by practicing and earning stars!
+            Complete milestone quests by practicing and earning stars!
           </p>
           <ul className="w-full">
             {quests.map((quest) => {
-              const progress = (userProgress.points / quest.value) * 100;
+              const progress = Math.min((userProgress.points / quest.value) * 100, 100);
+              const isCompleted = userProgress.points >= quest.value;
 
               return (
                 <div
@@ -66,9 +67,16 @@ const QuestsPage = async () => {
                     height={60}
                   />
                   <div className="flex flex-col gap-y-2 w-full">
-                    <p className="text-neutral-700 text-xl font-bold">
-                      {quest.title}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-neutral-700 text-lg font-bold">
+                        {quest.title}
+                      </p>
+                      {isCompleted && (
+                        <span className="text-xs font-extrabold uppercase px-2.5 py-1 bg-green-100 text-green-700 rounded-lg">
+                          Completed ✓
+                        </span>
+                      )}
+                    </div>
                     <Progress value={progress} className="h-3" />
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Check, Crown, Star } from "lucide-react";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
@@ -53,6 +54,20 @@ export const LessonButton = ({
 
   const buttonVariant = locked ? "locked" : isLast ? "golden" : "secondary";
 
+  const currentButtonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (current && currentButtonRef.current) {
+      const timer = setTimeout(() => {
+        currentButtonRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [current]);
+
   return (
     <Link 
       href={href} 
@@ -60,6 +75,8 @@ export const LessonButton = ({
       style={{ pointerEvents: locked ? "none" : "auto" }}
     >
       <div
+        ref={current ? currentButtonRef : undefined}
+        id={current ? "current-lesson" : undefined}
         className="relative"
         style={{
           right: `${rightPosition}px`,

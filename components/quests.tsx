@@ -10,6 +10,11 @@ type Props = {
 };
 
 export const Quests = ({ points }: Props) => {
+  const uncompletedQuests = quests.filter((q) => points < q.value);
+  const displayedQuests = uncompletedQuests.length > 0 
+    ? uncompletedQuests.slice(0, 3) 
+    : quests.slice(-3);
+
   return (
     <div className="border-2 rounded-xl p-4 space-y-4">
       <div className="flex items-center justify-between w-full space-y-2">
@@ -26,8 +31,8 @@ export const Quests = ({ points }: Props) => {
         </Link>
       </div>
       <ul className="w-full space-y-4">
-        {quests.map((quest) => {
-          const progress = (points / quest.value) * 100;
+        {displayedQuests.map((quest) => {
+          const progress = Math.min((points / quest.value) * 100, 100);
 
           return (
             <div
