@@ -26,9 +26,10 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
   - Archived Concepts B and C into `docs/HEARTS_AND_GAMIFICATION.md` roadmap backlog.
 
 ### Fixed
-- **[BUG-001] Heart Click Inactivity in Lesson Header & Production Deploy Sync:**
+- **[BUG-001] ✅ RESOLVED & VERIFIED - Heart Click Inactivity in Lesson Header & Production Deploy Sync:**
   - Resolved issue where clicking the Heart icon at top-right inside an active lesson (`app/lesson/header.tsx`) was a non-interactive static `div`. Converted to an interactive button that displays the Practice Recharge modal (`Need a Heart? Current: X/5 ❤️`) with one-click routing to `/lesson/practice`.
-  - Triggered Render deployment synchronization so all voluntary practice triggers in `components/user-progress.tsx` and `app/lesson/header.tsx` are live in production.
+  - Triggered Render deployment synchronization (`dep-dbd315vavr4c73998im0`) so all voluntary practice triggers in `components/user-progress.tsx` and `app/lesson/header.tsx` are live in production.
+  - Verified and passed end-to-end testing with active learner Silvia (4 hearts).
 
 ---
 
