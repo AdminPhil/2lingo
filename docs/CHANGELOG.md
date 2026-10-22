@@ -25,6 +25,11 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
   - Enabled voluntary practice: clicking the Heart counter in `UserProgress` anytime when hearts < 5 opens a recharge dialog without requiring the child to fail first.
   - Archived Concepts B and C into `docs/HEARTS_AND_GAMIFICATION.md` roadmap backlog.
 
+### Fixed
+- **[BUG-001] Heart Click Inactivity in Lesson Header & Production Deploy Sync:**
+  - Resolved issue where clicking the Heart icon at top-right inside an active lesson (`app/lesson/header.tsx`) was a non-interactive static `div`. Converted to an interactive button that displays the Practice Recharge modal (`Need a Heart? Current: X/5 ❤️`) with one-click routing to `/lesson/practice`.
+  - Triggered Render deployment synchronization so all voluntary practice triggers in `components/user-progress.tsx` and `app/lesson/header.tsx` are live in production.
+
 ---
 
 ## [2026-10-22] - Stage 4 Deployment, Visual Scaffolding & Leaderboard Governance
