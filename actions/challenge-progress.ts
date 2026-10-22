@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 
 import db from "@/db/drizzle";
 import { calculateStreak } from "@/lib/streak";
+import { awardPodXp } from "@/actions/pod";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
 
@@ -69,6 +70,8 @@ export const upsertChallengeProgress = async (challengeId: number) => {
       lastActiveDate,
     }).where(eq(userProgress.userId, userId));
 
+    await awardPodXp(userId, 10);
+
     revalidatePath("/learn");
     revalidatePath("/lesson");
     revalidatePath("/quests");
@@ -88,6 +91,8 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     streak,
     lastActiveDate,
   }).where(eq(userProgress.userId, userId));
+
+  await awardPodXp(userId, 10);
 
   revalidatePath("/learn");
   revalidatePath("/lesson");

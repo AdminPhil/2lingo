@@ -128,6 +128,9 @@ export const pods = pgTable("pods", {
   inviteCode: text("invite_code").notNull().unique(),
   ownerId: text("owner_id").notNull(),
   targetXp: integer("target_xp").default(1000),
+  currentXp: integer("current_xp").default(0).notNull(),
+  celebrationUnlocked: boolean("celebration_unlocked").default(false).notNull(),
+  weekNumber: integer("week_number").default(1).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

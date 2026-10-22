@@ -79,3 +79,16 @@ Should Concept A require expansion or alternative modes in the future, the follo
 2. **Path Auto-Scroll:**
    - Navigation to `/learn` automatically scrolls the viewport smoothly to `#current-lesson`.
 
+
+---
+
+## 🌟 7. Collaborative Team Celebration Meter (CR-006)
+
+1. **Knowledgehook Collective Celebration Model:**
+   - Instead of purely zero-sum individual competition, learning pods share a weekly collective point target (`target_xp` default 1,000 XP).
+   - Prevents discouragement for younger learners by allowing family members to pool their points toward a shared milestone.
+2. **Multi-Pod XP Propagation:**
+   - Every lesson completed and practice session finished awards +10 XP that simultaneously boosts the weekly celebration meter of every pod the child belongs to via `awardPodXp()`.
+3. **Interactive Celebration Thermometer (`<PodCelebrationMeter />`):**
+   - Renders at the top of the Leaderboard with real-time percentage fill, remaining XP countdown, and celebration status.
+   - When 1,000 XP is achieved (or previewed), it triggers full-screen celebratory confetti (`react-confetti`) and opens the celebratory dialog modal with animated dancing mascot.

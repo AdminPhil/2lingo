@@ -7,6 +7,7 @@ import { auth, currentUser } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
 import { calculateStreak } from "@/lib/streak";
+import { awardPodXp } from "@/actions/pod";
 import { POINTS_TO_REFILL } from "@/constants";
 import { getCourseById, getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
@@ -163,6 +164,8 @@ export const awardPracticeSessionHeart = async () => {
     streak,
     lastActiveDate,
   }).where(eq(userProgress.userId, currentUserProgress.userId));
+
+  await awardPodXp(currentUserProgress.userId, 10);
 
   revalidatePath("/learn");
   revalidatePath("/quests");

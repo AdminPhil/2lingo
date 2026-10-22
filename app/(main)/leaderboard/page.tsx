@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Quests } from "@/components/quests";
 import { PodHeader } from "@/components/pod-header";
+import { PodCelebrationMeter } from "@/components/pod-celebration-meter";
 
 const LeaderboardPage = async () => {
   const userProgressData = getUserProgress();
@@ -65,6 +66,12 @@ const LeaderboardPage = async () => {
             podName={userPod?.pod?.name} 
             inviteCode={userPod?.pod?.inviteCode} 
             memberCount={leaderboard.length} 
+          />
+          <PodCelebrationMeter
+            podName={userPod?.pod?.name}
+            currentXp={userPod?.pod?.currentXp ?? 740}
+            targetXp={userPod?.pod?.targetXp ?? 1000}
+            celebrationUnlocked={userPod?.pod?.celebrationUnlocked ?? false}
           />
           {leaderboard.map((userProgress, index) => (
             <div 

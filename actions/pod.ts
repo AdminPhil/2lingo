@@ -83,3 +83,28 @@ export const createPod = async (name: string) => {
 
   return { success: true, pod: newPod };
 };
+
+
+export const awardPodXp = async (userId: string, xp: number = 10) => {
+  try {
+    const memberships = await db.query.podMembers.findMany({
+      where: eq(podMembers.userId, userId),
+      with: {
+        pod: true,
+      },
+    });
+
+    for (const m of memberships) {
+      if (m.pod) {
+        const newXp = (m.pod.currentXp ?? 0) + xp;
+        const unlocked = newXp >= (m.pod.targetXp ?? 1000);
+        await db.update(pods).set({
+          currentXp: newXp,
+          celebrationUnlocked: unlocked,
+        }).where(eq(pods.id, m.pod.id));
+      }
+    }
+  } catch (error) {
+    console.error("Failed to award pod XP:", error);
+  }
+};
