@@ -4,6 +4,20 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Landing Page Course Alignment & Uncovered Flags Removal (CR-008)
+
+### Changed
+- **[CR-008] Landing Page Course Alignment & Uncovered Flags Removal:**
+  - Removed placeholder buttons and flags for uncovered languages (Spanish, French, Italian, and Japanese) from `app/(marketing)/footer.tsx`.
+  - Aligned the public marketing footer to celebrate 2lingo's bespoke Croatian language features:
+    - 🇭🇷 **Hrvatski (Croatian)** — Authentic 20-unit curriculum
+    - 🔥 **Daily Streaks** — Habit flame retention engine
+    - ❤️ **Practice for Hearts** — Low-stress heart practice mini-game
+    - 🏡 **Family Pods & Teams** — Collaborative sister learning circles
+  - Ensures 100% truth in advertising for parents and young learners.
+
+---
+
 ## [2026-10-22] - Peer High-Fives & Social Cheer Engine (CR-007)
 
 ### Added

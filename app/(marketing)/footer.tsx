@@ -1,59 +1,49 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="hidden lg:block h-20 w-full border-t-2 border-slate-200 p-2">
-      <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
-        <Button size="lg" variant="ghost" className="w-full">
+    <footer className="hidden lg:block h-20 w-full border-t-2 border-slate-200 p-2 bg-white">
+      <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full text-slate-700">
+        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent font-bold">
           <Image 
             src="/hr.svg" 
             alt="Croatian" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
+            height={28} 
+            width={36}
+            className="mr-3 rounded-md border"
           />
-          Croatian
+          Hrvatski (Croatian)
         </Button>
-        <Button size="lg" variant="ghost" className="w-full">
+        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent text-amber-600 font-bold">
           <Image 
-            src="/es.svg" 
-            alt="Spanish" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
+            src="/streak.svg" 
+            alt="Daily Streaks" 
+            height={24} 
+            width={24}
+            className="mr-2"
           />
-          Spanish
+          Daily Streaks
         </Button>
-        <Button size="lg" variant="ghost" className="w-full">
+        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent text-rose-600 font-bold">
           <Image 
-            src="/fr.svg" 
-            alt="French" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
+            src="/heart.svg" 
+            alt="Heart Practice" 
+            height={24} 
+            width={24}
+            className="mr-2"
           />
-          French
+          Practice for Hearts
         </Button>
-        <Button size="lg" variant="ghost" className="w-full">
+        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent text-lime-700 font-bold">
           <Image 
-            src="/it.svg" 
-            alt="Italian" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
+            src="/leaderboard.svg" 
+            alt="Family Pods" 
+            height={26} 
+            width={26}
+            className="mr-2"
           />
-          Italian
-        </Button>
-        <Button size="lg" variant="ghost" className="w-full">
-          <Image 
-            src="/jp.svg" 
-            alt="Japanese" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
-          />
-          Japanese
+          Family Pods & Teams
         </Button>
       </div>
     </footer>
