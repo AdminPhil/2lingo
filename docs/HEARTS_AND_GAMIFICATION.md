@@ -92,3 +92,17 @@ Should Concept A require expansion or alternative modes in the future, the follo
 3. **Interactive Celebration Thermometer (`<PodCelebrationMeter />`):**
    - Renders at the top of the Leaderboard with real-time percentage fill, remaining XP countdown, and celebration status.
    - When 1,000 XP is achieved (or previewed), it triggers full-screen celebratory confetti (`react-confetti`) and opens the celebratory dialog modal with animated dancing mascot.
+
+---
+
+## 👋 8. Peer High-Fives & Social Cheer Engine (CR-007)
+
+1. **Low-Stress Social Loop:**
+   - Learners can acknowledge each other's progress and streaks by tapping the **"High-Five 👋"** button next to any family member on the Leaderboard.
+2. **Anti-Spam & COPPA Design:**
+   - Pre-set positive canned reactions only (`high_five`, `star`, `flame`). No open chat or free text input.
+   - Built-in rate limiting: maximum 1 cheer per recipient per calendar day.
+3. **Notification & Micro-Bonus:**
+   - Unread cheers trigger the animated `<CheerBanner />` on `/learn` and `/leaderboard`:
+     *"🎉 [Sender] sent you a High-Five! Tap to claim +5 XP! 👋"*
+   - Claiming awards **+5 XP** to the recipient and contributes +5 XP to all active family pods.

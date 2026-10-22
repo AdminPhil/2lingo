@@ -16,6 +16,8 @@ import { upsertUserProgress } from "@/actions/user-progress";
 
 import { Unit } from "./unit";
 import { Header } from "./header";
+import { CheerBanner } from "@/components/cheer-banner";
+import { getUnseenCheers } from "@/db/queries";
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();
@@ -23,6 +25,7 @@ const LearnPage = async () => {
   const lessonPercentageData = getLessonPercentage();
   const unitsData = getUnits();
   const userSubscriptionData = getUserSubscription();
+  const unseenCheersData = getUnseenCheers();
 
   const [
     userProgress,
@@ -30,12 +33,14 @@ const LearnPage = async () => {
     courseProgress,
     lessonPercentage,
     userSubscription,
+    unseenCheers,
   ] = await Promise.all([
     userProgressData,
     unitsData,
     courseProgressData,
     lessonPercentageData,
     userSubscriptionData,
+    unseenCheersData,
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
@@ -63,6 +68,7 @@ const LearnPage = async () => {
       </StickyWrapper>
       <FeedWrapper>
         <Header title={userProgress.activeCourse.title} />
+        <CheerBanner cheers={unseenCheers} />
         {units.map((unit) => (
           <div key={unit.id} className="mb-10">
             <Unit

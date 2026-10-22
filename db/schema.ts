@@ -152,3 +152,22 @@ export const podMembersRelations = relations(podMembers, ({ one }) => ({
     references: [pods.id],
   }),
 }));
+
+
+export const podReactions = pgTable("pod_reactions", {
+  id: serial("id").primaryKey(),
+  podId: integer("pod_id").references(() => pods.id, { onDelete: "cascade" }),
+  senderId: text("sender_id").notNull(),
+  senderName: text("sender_name").notNull(),
+  receiverId: text("receiver_id").notNull(),
+  type: text("type").notNull().default("high_five"),
+  seen: boolean("seen").notNull().default(false),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const podReactionsRelations = relations(podReactions, ({ one }) => ({
+  pod: one(pods, {
+    fields: [podReactions.podId],
+    references: [pods.id],
+  }),
+}));

@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { and, eq, inArray } from "drizzle-orm";
+import { and, eq, gte, inArray } from "drizzle-orm";
 import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
@@ -13,7 +13,8 @@ import {
   userProgress,
   userSubscription,
   podMembers,
-  pods
+  pods,
+  podReactions
 } from "@/db/schema";
 
 export const getUserProgress = cache(async () => {
@@ -381,4 +382,39 @@ export const getPracticeLesson = cache(async () => {
   }));
 
   return normalizedChallenges;
+});
+
+export const getUnseenCheers = cache(async () => {
+  const { userId } = await auth();
+  if (!userId) return [];
+
+  const cheers = await db.query.podReactions.findMany({
+    where: and(
+      eq(podReactions.receiverId, userId),
+      eq(podReactions.seen, false),
+    ),
+    orderBy: (podReactions, { desc }) => [desc(podReactions.createdAt)],
+  });
+
+  return cheers;
+});
+
+export const getTodayCheeredUserIds = cache(async () => {
+  const { userId } = await auth();
+  if (!userId) return [];
+
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+
+  const cheers = await db.query.podReactions.findMany({
+    where: and(
+      eq(podReactions.senderId, userId),
+      gte(podReactions.createdAt, startOfToday),
+    ),
+    columns: {
+      receiverId: true,
+    },
+  });
+
+  return cheers.map((c) => c.receiverId);
 });

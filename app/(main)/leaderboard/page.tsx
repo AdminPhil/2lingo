@@ -4,7 +4,9 @@ import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
-import { getTopTenUsers, getUserPod, getUserProgress, getUserSubscription } from "@/db/queries";
+import { getTodayCheeredUserIds, getTopTenUsers, getUnseenCheers, getUserPod, getUserProgress, getUserSubscription } from "@/db/queries";
+import { CheerButton } from "@/components/cheer-button";
+import { CheerBanner } from "@/components/cheer-banner";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Quests } from "@/components/quests";
@@ -16,17 +18,23 @@ const LeaderboardPage = async () => {
   const userSubscriptionData = getUserSubscription();
   const leaderboardData = getTopTenUsers();
   const userPodData = getUserPod();
+  const todayCheeredData = getTodayCheeredUserIds();
+  const unseenCheersData = getUnseenCheers();
 
   const [
     userProgress,
     userSubscription,
     leaderboard,
     userPod,
+    todayCheeredUserIds,
+    unseenCheers,
   ] = await Promise.all([
     userProgressData,
     userSubscriptionData,
     leaderboardData,
     userPodData,
+    todayCheeredData,
+    unseenCheersData,
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
@@ -62,6 +70,7 @@ const LeaderboardPage = async () => {
             See where you stand among other young learners!
           </p>
           <Separator className="mb-4 h-0.5 rounded-full" />
+          <CheerBanner cheers={unseenCheers} />
           <PodHeader 
             podName={userPod?.pod?.name} 
             inviteCode={userPod?.pod?.inviteCode} 
@@ -73,9 +82,9 @@ const LeaderboardPage = async () => {
             targetXp={userPod?.pod?.targetXp ?? 1000}
             celebrationUnlocked={userPod?.pod?.celebrationUnlocked ?? false}
           />
-          {leaderboard.map((userProgress, index) => (
+          {leaderboard.map((user, index) => (
             <div 
-              key={userProgress.userId}
+              key={user.userId}
               className="flex items-center w-full p-2 px-4 rounded-xl hover:bg-gray-200/50"
             >
               <p className="font-bold text-lime-700 mr-4">{index + 1}</p>
@@ -84,28 +93,36 @@ const LeaderboardPage = async () => {
               >
                 <AvatarImage
                   className="object-cover"
-                  src={userProgress.userImageSrc}
+                  src={user.userImageSrc}
                 />
               </Avatar>
               <div className="flex-1 flex flex-col justify-center">
                 <p className="font-bold text-neutral-800">
-                  {userProgress.userName}
+                  {user.userName}
                 </p>
                 <p className="text-xs text-muted-foreground flex items-center gap-x-1.5 mt-0.5">
                   <span className="flex items-center gap-x-1 text-amber-600 font-medium">
                     <span>🔥</span>
-                    <span>{userProgress.streak ?? 1} {(userProgress.streak ?? 1) === 1 ? "day" : "days"}</span>
+                    <span>{user.streak ?? 1} {(userProgress.streak ?? 1) === 1 ? "day" : "days"}</span>
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-x-1">
                     <span>💔</span>
-                    <span>{userProgress.heartsUsed ?? 0} hearts used</span>
+                    <span>{user.heartsUsed ?? 0} hearts used</span>
                   </span>
                 </p>
               </div>
-              <p className="text-muted-foreground font-semibold">
-                {userProgress.points} XP
-              </p>
+              <div className="flex items-center gap-x-3">
+                <CheerButton
+                  receiverId={user.userId}
+                  receiverName={user.userName}
+                  isCurrentUser={user.userId === userProgress.userId}
+                  hasCheeredToday={todayCheeredUserIds.includes(user.userId)}
+                />
+                <p className="text-muted-foreground font-semibold min-w-[65px] text-right">
+                  {user.points} XP
+                </p>
+              </div>
             </div>
           ))}
         </div>
