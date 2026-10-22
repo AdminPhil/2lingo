@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useAudio, useKey } from "react-use";
 import { Volume2 } from "lucide-react";
 
@@ -32,6 +32,7 @@ export const Card = ({
   disabled,
   type,
 }: Props) => {
+  const [hasImageError, setHasImageError] = useState(false);
   const [audio, _, controls] = useAudio({ src: audioSrc || "" });
 
   const playSound = useCallback(() => {
@@ -66,11 +67,16 @@ export const Card = ({
       )}
     >
       {audio}
-      {imageSrc && (
+      {imageSrc && !hasImageError && (
         <div
           className="relative aspect-square mb-4 max-h-[80px] lg:max-h-[150px] w-full"
         >
-          <Image src={imageSrc} fill alt={text} />
+          <Image 
+            src={imageSrc} 
+            fill 
+            alt={text} 
+            onError={() => setHasImageError(true)} 
+          />
         </div>
       )}
       <div className={cn(
