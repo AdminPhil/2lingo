@@ -17,20 +17,38 @@ Every unit in the curriculum contains exactly 4 lessons:
 
 ---
 
-## 🧠 2. Deductive Elimination ("Aha!" Discovery Rule)
+## 🧠 2. Deductive Elimination ("Aha!" Discovery Rule & Systematic Underpinning)
 
-When introducing a net-new word in text multiple choice (without pictures):
-- **NEVER use random, unmastered words as distractors.**
-- **All 3 incorrect options MUST be words the child has ALREADY mastered in previous units.**
+Whenever a net-new word or action is introduced in a text-only format (e.g., in Lesson 3 Progressive Fading, Lesson 2 active recall, or any challenge where `image_src` is null):
+- **NEVER use random, unmastered words as distractors.** Introducing an unfamiliar target alongside unfamiliar distractors forces a blind 25% guess, producing anxiety, unearned heart loss, and guessing habits.
+- **The Golden Rule:** All 3 distractor options MUST be words the learner has **already mastered in earlier units**.
+
+### Systematic Architecture & Underpinning Rules
+1. **Target Word Isolation:** Exactly one choice is the net-new target (e.g., *Skoči* for "Jump!").
+2. **Mastered Distractor Pool:** The 3 incorrect choices must be sampled strictly from prior units with high recognition (e.g., Unit 1 *Jabuka*, Unit 3 *Pas*, Unit 6 *Kuća*).
+3. **Semantic Divergence:** Distractors should intentionally span different semantic domains (e.g., one food noun, one animal, one household object) to ensure zero semantic ambiguity.
+4. **Immediate Deduction ("Aha!" Moment):** The child reads the card:
+   - *"Jabuka? No, that's Apple."*
+   - *"Kuća? No, that's House."*
+   - *"Pas? No, that's Dog."*
+   - *"Skoči MUST be Jump!"*
+   This dopamine-triggering deductive discovery creates an active mental anchor, encoding the word into long-term memory far deeper than passive flashcard viewing or blind guessing.
+5. **Chained Reinforcement:** In sequential challenges within the same lesson, a newly deduced word can immediately serve as a known distractor for the NEXT new word (e.g., in Unit 7 Lesson 3 Ch 2, *Skoči* serves as a known distractor when introducing *Trči*).
+6. **Curriculum-Wide Applicability:** This standard applies across all 20 units. Any script introducing new vocabulary in faded or text-only challenges must strictly pull its 3 distractors from the mastered prior-unit vocabulary pool.
 
 ```
-Example: Introducing "Jump!" (Skoči) in Unit 7:
-✓ Correct:   Skoči  (New Target)
-✗ Distractor: Jabuka (Mastered in Unit 1)
-✗ Distractor: Kuća   (Mastered in Unit 6)
-✗ Distractor: Pas    (Mastered in Unit 3)
+Example: Introducing "Jump!" (Skoči) in Unit 7 Lesson 3:
+✓ Correct:   Skoči   (New Target — Jump!)
+✗ Distractor: Jabuka  (Mastered Unit 1 — Apple)
+✗ Distractor: Kuća    (Mastered Unit 6 — House)
+✗ Distractor: Pas     (Mastered Unit 3 — Dog)
+
+Next Challenge: Introducing "Run!" (Trči) in Unit 7 Lesson 3:
+✓ Correct:   Trči    (New Target — Run!)
+✗ Distractor: Skoči   (Deduced in Challenge 1 — Jump!)
+✗ Distractor: Mačka   (Mastered Unit 3 — Cat)
+✗ Distractor: Voda    (Mastered Unit 1 — Water)
 ```
-*Cognitive Result:* The child deduces the answer via process-of-elimination, triggering a dopamine release that cements permanent memory without blind guessing.
 
 ---
 

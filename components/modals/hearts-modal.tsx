@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useTransition } from "react";
-import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import {
   Dialog,
@@ -14,32 +14,27 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useHeartsModal } from "@/store/use-hearts-modal";
-import { freeRefillHearts } from "@/actions/user-progress";
 
 export const HeartsModal = () => {
+  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
-  const [pending, startTransition] = useTransition();
-  const { isOpen, close, onRefillCallback } = useHeartsModal();
+  const { isOpen, close } = useHeartsModal();
 
   useEffect(() => setIsClient(true), []);
-
-  const onRefill = () => {
-    startTransition(() => {
-      freeRefillHearts()
-        .then(() => {
-          toast.success("❤️ Hearts refilled! Keep having fun!");
-          onRefillCallback?.();
-          close();
-        })
-        .catch(() => {
-          toast.error("Could not refill hearts. Try again!");
-        });
-    });
-  };
 
   if (!isClient) {
     return null;
   }
+
+  const onStartPractice = () => {
+    close();
+    router.push("/lesson/practice");
+  };
+
+  const onBackToMap = () => {
+    close();
+    router.push("/learn");
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>
@@ -54,30 +49,29 @@ export const HeartsModal = () => {
             />
           </div>
           <DialogTitle className="text-center font-bold text-2xl text-neutral-800">
-            Don&apos;t Give Up! 🌟
+            Out of Hearts? Let&apos;s Recharge! ⚡
           </DialogTitle>
           <DialogDescription className="text-center text-base text-neutral-600">
-            Mistakes help our brains grow bigger and smarter! Refill your hearts for free and keep going.
+            Mistakes help our brains grow bigger and smarter! Complete 3 quick review questions to earn back a heart.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="mb-4">
           <div className="flex flex-col gap-y-4 w-full">
             <Button 
               variant="primary" 
-              className="w-full text-base font-bold" 
+              className="w-full text-base font-bold bg-green-600 hover:bg-green-700" 
               size="lg" 
-              disabled={pending}
-              onClick={onRefill}
+              onClick={onStartPractice}
             >
-              ❤️ Free Heart Refill
+              💪 Practice to Earn a Heart (+1 ❤️)
             </Button>
             <Button
               variant="primaryOutline" 
               className="w-full text-base" 
               size="lg" 
-              onClick={close}
+              onClick={onBackToMap}
             >
-              Keep Practicing
+              Back to Map
             </Button>
           </div>
         </DialogFooter>

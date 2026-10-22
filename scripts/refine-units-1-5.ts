@@ -500,10 +500,16 @@ async function main() {
     { text: "Deset", correct: false, audioSrc: "/audio/hr/deset.mp3" },
   ]);
   await setCoordOptions(4, 3, 4, [
-    { text: "Deset", correct: true, imageSrc: "/ten.svg", audioSrc: "/audio/hr/deset.mp3" },
-    { text: "Devet", correct: false, imageSrc: "/nine.svg", audioSrc: "/audio/hr/devet.mp3" },
-    { text: "Sedam", correct: false, imageSrc: "/seven.svg", audioSrc: "/audio/hr/sedam.mp3" },
-    { text: "Osam", correct: false, imageSrc: "/eight.svg", audioSrc: "/audio/hr/osam.mp3" },
+    { text: "Devet", correct: true, audioSrc: "/audio/hr/devet.mp3" },
+    { text: "Sedam", correct: false, audioSrc: "/audio/hr/sedam.mp3" },
+    { text: "Osam", correct: false, audioSrc: "/audio/hr/osam.mp3" },
+    { text: "Šest", correct: false, audioSrc: "/audio/hr/sest.mp3" },
+  ]);
+  await setCoordOptions(4, 3, 5, [
+    { text: "Deset", correct: true, audioSrc: "/audio/hr/deset.mp3" },
+    { text: "Devet", correct: false, audioSrc: "/audio/hr/devet.mp3" },
+    { text: "Osam", correct: false, audioSrc: "/audio/hr/osam.mp3" },
+    { text: "Sedam", correct: false, audioSrc: "/audio/hr/sedam.mp3" },
   ]);
 
   // L4: Boss Quest

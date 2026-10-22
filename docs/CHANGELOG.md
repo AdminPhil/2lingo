@@ -4,6 +4,29 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Pedagogical Upgrades: Deductive Elimination, Practice-to-Earn & Accuracy Leaderboard (CR-001, CR-002, CR-003)
+
+### Added
+- **[CR-001] Deductive Elimination ("Aha!" Discovery Standard):**
+  - Updated Unit 7 Lesson 3 ("Jump!" / "Skoči" and "Run!" / "Trči") to use mastered words from earlier units as distractors (*Jabuka*, *Kuća*, *Pas*).
+  - Eliminates blind 25% guessing in text-only challenges; children deduce the answer via process-of-elimination.
+  - Codified as the pedagogical rule in `docs/CURRICULUM_STANDARDS.md` underpinning all 20 units.
+- **[CR-003] Hearts-Used Metric on Leaderboard:**
+  - Added `hearts_used` column to `user_progress` and migrated Neon DB.
+  - Increment counter automatically on `reduceHearts()` when mistakes occur.
+  - Displayed `💔 [N] hearts used` alongside XP under each learner's name on the leaderboard.
+  - Seeded initial baseline accuracy: Adriana (4 hearts used), Vanessa (7 hearts used), Silvia (15 hearts used).
+- **[CR-002] Practice-to-Earn-a-Heart Engine (Concept A) & Voluntary Practice:**
+  - Replaced unmetered "Free Refill" button with "💪 Practice to Earn a Heart (+1 ❤️)".
+  - Built dedicated `/lesson/practice` review route with interactive `PracticeQuiz`.
+  - Questions dynamically sourced from completed review challenges via `getPracticeLesson()`.
+  - Mistakes in practice mode never deduct hearts.
+  - Completing the 3 questions awards +1 Heart (capped at 5) and +10 XP via `awardPracticeSessionHeart()`.
+  - Enabled voluntary practice: clicking the Heart counter in `UserProgress` anytime when hearts < 5 opens a recharge dialog without requiring the child to fail first.
+  - Archived Concepts B and C into `docs/HEARTS_AND_GAMIFICATION.md` roadmap backlog.
+
+---
+
 ## [2026-10-22] - Stage 4 Deployment, Visual Scaffolding & Leaderboard Governance
 
 ### Added

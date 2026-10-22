@@ -236,30 +236,30 @@ async function main() {
     { text: "Usta", correct: false, audioSrc: "/audio/hr/usta.mp3" },
   ]);
 
-  // L3: Pokret i akcija
+  // L3: Pokret i akcija (Deductive Elimination Standard)
   await setCoordOptions(7, 3, 1, [
     { text: "Skoči", correct: true, audioSrc: "/audio/hr/skoci.mp3" },
-    { text: "Trči", correct: false, audioSrc: "/audio/hr/trci.mp3" },
-    { text: "Spavaj", correct: false, audioSrc: "/audio/hr/spavam.mp3" },
-    { text: "Pjevaj", correct: false, audioSrc: "/audio/hr/pjevam.mp3" },
+    { text: "Jabuka", correct: false, audioSrc: "/audio/hr/jabuka.mp3" },
+    { text: "Kuća", correct: false, audioSrc: "/audio/hr/kuca.mp3" },
+    { text: "Pas", correct: false, audioSrc: "/audio/hr/pas.mp3" },
   ]);
   await setCoordOptions(7, 3, 2, [
     { text: "Trči", correct: true, audioSrc: "/audio/hr/trci.mp3" },
     { text: "Skoči", correct: false, audioSrc: "/audio/hr/skoci.mp3" },
-    { text: "Gledaj", correct: false, audioSrc: "/audio/hr/gledam.mp3" },
-    { text: "Čitaj", correct: false, audioSrc: "/audio/hr/citam.mp3" },
+    { text: "Mačka", correct: false, audioSrc: "/audio/hr/macka.mp3" },
+    { text: "Voda", correct: false, audioSrc: "/audio/hr/voda.mp3" },
   ]);
   await setCoordOptions(7, 3, 3, [
     { text: "Ruke gore", correct: true, audioSrc: "/audio/hr/ruke_gore.mp3" },
-    { text: "Digni ruku", correct: false, audioSrc: "/audio/hr/digni_ruku.mp3" },
-    { text: "Plješći rukama", correct: false, audioSrc: "/audio/hr/pljesci_rukama.mp3" },
-    { text: "Brzo trči", correct: false, audioSrc: "/audio/hr/brzo_trci.mp3" },
+    { text: "Dobar dan", correct: false, audioSrc: "/audio/hr/dobar_dan.mp3" },
+    { text: "Veliki pas", correct: false, audioSrc: "/audio/hr/veliki_pas.mp3" },
+    { text: "Moja soba", correct: false, audioSrc: "/audio/hr/moja_soba.mp3" },
   ]);
   await setCoordOptions(7, 3, 4, [
     { text: "Plješći rukama", correct: true, audioSrc: "/audio/hr/pljesci_rukama.mp3" },
     { text: "Ruke gore", correct: false, audioSrc: "/audio/hr/ruke_gore.mp3" },
-    { text: "Digni ruku", correct: false, audioSrc: "/audio/hr/digni_ruku.mp3" },
-    { text: "Brzo trči", correct: false, audioSrc: "/audio/hr/brzo_trci.mp3" },
+    { text: "To je mama", correct: false, audioSrc: "/audio/hr/to_je_mama.mp3" },
+    { text: "Hvala lijepa", correct: false, audioSrc: "/audio/hr/hvala_lijepa.mp3" },
   ]);
 
   // L4: Boss Quest

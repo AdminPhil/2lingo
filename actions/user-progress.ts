@@ -101,6 +101,7 @@ export const reduceHearts = async (challengeId: number) => {
 
   await db.update(userProgress).set({
     hearts: Math.max(currentUserProgress.hearts - 1, 0),
+    heartsUsed: (currentUserProgress.heartsUsed ?? 0) + 1,
   }).where(eq(userProgress.userId, userId));
 
   revalidatePath("/shop");
@@ -134,6 +135,33 @@ export const refillHearts = async () => {
   revalidatePath("/learn");
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
+};
+
+// Awards +1 Heart (max 5) and +10 XP upon completing a 3-question practice review session
+export const awardPracticeSessionHeart = async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const currentUserProgress = await getUserProgress();
+
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
+
+  await db.update(userProgress).set({
+    hearts: Math.min(currentUserProgress.hearts + 1, 5),
+    points: currentUserProgress.points + 10,
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
+
+  revalidatePath("/learn");
+  revalidatePath("/quests");
+  revalidatePath("/leaderboard");
+  revalidatePath("/lesson");
+
+  return { success: true };
 };
 
 // Kid-friendly free refill so children are never blocked from learning

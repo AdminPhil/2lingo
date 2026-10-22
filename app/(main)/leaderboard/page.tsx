@@ -70,10 +70,16 @@ const LeaderboardPage = async () => {
                   src={userProgress.userImageSrc}
                 />
               </Avatar>
-              <p className="font-bold text-neutral-800 flex-1">
-                {userProgress.userName}
-              </p>
-              <p className="text-muted-foreground">
+              <div className="flex-1 flex flex-col justify-center">
+                <p className="font-bold text-neutral-800">
+                  {userProgress.userName}
+                </p>
+                <p className="text-xs text-muted-foreground flex items-center gap-x-1 mt-0.5">
+                  <span>💔</span>
+                  <span>{userProgress.heartsUsed ?? 0} hearts used</span>
+                </p>
+              </div>
+              <p className="text-muted-foreground font-semibold">
                 {userProgress.points} XP
               </p>
             </div>

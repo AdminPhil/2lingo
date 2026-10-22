@@ -1,11 +1,12 @@
 import { cache } from "react";
-import { eq, inArray } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
 import { shuffleArray } from "@/lib/utils";
 import { 
   challengeProgress,
+  challenges,
   courses, 
   lessons, 
   units, 
@@ -263,8 +264,63 @@ export const getTopTenUsers = cache(async () => {
       userName: true,
       userImageSrc: true,
       points: true,
+      heartsUsed: true,
     },
   });
 
   return data;
+});
+
+export const getPracticeLesson = cache(async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return null;
+  }
+
+  // Find challenges completed by this user
+  const completedProgress = await db.query.challengeProgress.findMany({
+    where: and(
+      eq(challengeProgress.userId, userId),
+      eq(challengeProgress.completed, true),
+    ),
+    columns: { challengeId: true },
+  });
+
+  const completedIds = Array.from(new Set(completedProgress.map((p) => p.challengeId)));
+  let selectedIds: number[] = [];
+
+  if (completedIds.length >= 3) {
+    selectedIds = shuffleArray(completedIds).slice(0, 3);
+  } else if (completedIds.length > 0) {
+    selectedIds = [...completedIds];
+  }
+
+  // If fewer than 3, backfill from early Unit 1 beginner challenges
+  if (selectedIds.length < 3) {
+    const starterChallenges = await db.query.challenges.findMany({
+      orderBy: (challenges, { asc }) => [asc(challenges.id)],
+      limit: 6,
+      columns: { id: true },
+    });
+    for (const sc of starterChallenges) {
+      if (!selectedIds.includes(sc.id) && selectedIds.length < 3) {
+        selectedIds.push(sc.id);
+      }
+    }
+  }
+
+  const challengesData = await db.query.challenges.findMany({
+    where: inArray(challenges.id, selectedIds),
+    with: {
+      challengeOptions: true,
+    },
+  });
+
+  const normalizedChallenges = challengesData.map((challenge) => ({
+    ...challenge,
+    completed: true,
+  }));
+
+  return normalizedChallenges;
 });
