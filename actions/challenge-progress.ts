@@ -5,6 +5,7 @@ import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 import db from "@/db/drizzle";
+import { calculateStreak } from "@/lib/streak";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
 
@@ -40,6 +41,10 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   });
 
   const isPractice = !!existingChallengeProgress;
+  const { streak, lastActiveDate } = calculateStreak(
+    currentUserProgress.streak,
+    currentUserProgress.lastActiveDate,
+  );
 
   if (
     currentUserProgress.hearts === 0 && 
@@ -60,6 +65,8 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     await db.update(userProgress).set({
       hearts: Math.min(currentUserProgress.hearts + 1, 5),
       points: currentUserProgress.points + 10,
+      streak,
+      lastActiveDate,
     }).where(eq(userProgress.userId, userId));
 
     revalidatePath("/learn");
@@ -78,6 +85,8 @@ export const upsertChallengeProgress = async (challengeId: number) => {
 
   await db.update(userProgress).set({
     points: currentUserProgress.points + 10,
+    streak,
+    lastActiveDate,
   }).where(eq(userProgress.userId, userId));
 
   revalidatePath("/learn");

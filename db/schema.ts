@@ -100,6 +100,8 @@ export const userProgress = pgTable("user_progress", {
   hearts: integer("hearts").notNull().default(5),
   points: integer("points").notNull().default(0),
   heartsUsed: integer("hearts_used").notNull().default(0),
+  streak: integer("streak").notNull().default(0),
+  lastActiveDate: text("last_active_date"),
 });
 
 export const userProgressRelations = relations(userProgress, ({ one }) => ({

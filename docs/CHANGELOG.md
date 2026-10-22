@@ -4,6 +4,20 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Daily Streak Counter & Habit Flame Engine (CR-004)
+
+### Added
+- **[CR-004] Daily Streak Counter & Habit Flame Engine:**
+  - Added `streak` (integer, default 0) and `last_active_date` (text `YYYY-MM-DD`) columns to `user_progress` with automated migration.
+  - Implemented consecutive calendar day streak calculation algorithm in `lib/streak.ts` (`calculateStreak`).
+  - Wired streak tracking into lesson completion (`upsertChallengeProgress`) and practice sessions (`awardPracticeSessionHeart`).
+  - Designed custom flame badge asset (`public/streak.svg`) and integrated it into the `UserProgress` header bar across `/learn`, `/leaderboard`, and `/quests`.
+  - Added interactive Daily Streak Modal with celebratory animations and habit guidance when clicking the flame icon.
+  - Integrated streak metrics into the Leaderboard (`🔥 [N] day(s) • 💔 [N] hearts used`).
+  - Baseline initialization safely preserved all existing XP, hearts, and progress for Adriana, Vanessa, and Silvia with zero disruption.
+
+---
+
 ## [2026-10-22] - Pedagogical Upgrades: Deductive Elimination, Practice-to-Earn & Accuracy Leaderboard (CR-001, CR-002, CR-003)
 
 ### Added

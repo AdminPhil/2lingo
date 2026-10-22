@@ -37,6 +37,7 @@ const LeaderboardPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
+          streak={userProgress.streak}
           hasActiveSubscription={isPro}
         />
         <Quests points={userProgress.points} />
@@ -74,9 +75,16 @@ const LeaderboardPage = async () => {
                 <p className="font-bold text-neutral-800">
                   {userProgress.userName}
                 </p>
-                <p className="text-xs text-muted-foreground flex items-center gap-x-1 mt-0.5">
-                  <span>💔</span>
-                  <span>{userProgress.heartsUsed ?? 0} hearts used</span>
+                <p className="text-xs text-muted-foreground flex items-center gap-x-1.5 mt-0.5">
+                  <span className="flex items-center gap-x-1 text-amber-600 font-medium">
+                    <span>🔥</span>
+                    <span>{userProgress.streak ?? 1} {(userProgress.streak ?? 1) === 1 ? "day" : "days"}</span>
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-x-1">
+                    <span>💔</span>
+                    <span>{userProgress.heartsUsed ?? 0} hearts used</span>
+                  </span>
                 </p>
               </div>
               <p className="text-muted-foreground font-semibold">

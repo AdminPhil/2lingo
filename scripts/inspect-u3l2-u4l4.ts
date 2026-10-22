@@ -20,7 +20,7 @@ async function main() {
     if (!u3l2Map.has(r.id)) u3l2Map.set(r.id, { question: r.question, order: r.order, options: [] });
     u3l2Map.get(r.id).options.push(`${r.text} (${r.correct ? 'T' : 'F'})`);
   }
-  for (const [id, data] of u3l2Map.entries()) {
+  for (const [id, data] of Array.from(u3l2Map.entries())) {
     console.log(`Ch ${data.order} (ID ${id}): "${data.question}" -> [${data.options.join(", ")}]`);
   }
 
@@ -37,7 +37,7 @@ async function main() {
     if (!u4l4Map.has(r.id)) u4l4Map.set(r.id, { question: r.question, order: r.order, options: [] });
     u4l4Map.get(r.id).options.push(`${r.text} (${r.correct ? 'T' : 'F'})`);
   }
-  for (const [id, data] of u4l4Map.entries()) {
+  for (const [id, data] of Array.from(u4l4Map.entries())) {
     console.log(`Ch ${data.order} (ID ${id}): "${data.question}" -> [${data.options.join(", ")}]`);
   }
 }

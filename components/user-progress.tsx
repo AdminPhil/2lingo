@@ -21,6 +21,7 @@ type Props = {
   activeCourse: typeof courses.$inferSelect;
   hearts: number;
   points: number;
+  streak?: number;
   hasActiveSubscription: boolean;
 };
 
@@ -28,10 +29,12 @@ export const UserProgress = ({
   activeCourse, 
   points, 
   hearts, 
+  streak = 0,
   hasActiveSubscription
 }: Props) => {
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHeartModalOpen, setIsHeartModalOpen] = useState(false);
+  const [isStreakModalOpen, setIsStreakModalOpen] = useState(false);
 
   const onHeartClick = () => {
     if (hasActiveSubscription) {
@@ -44,11 +47,11 @@ export const UserProgress = ({
       return;
     }
 
-    setIsModalOpen(true);
+    setIsHeartModalOpen(true);
   };
 
   const onStartPractice = () => {
-    setIsModalOpen(false);
+    setIsHeartModalOpen(false);
     router.push("/lesson/practice");
   };
 
@@ -63,6 +66,15 @@ export const UserProgress = ({
             width={32}
             height={32}
           />
+        </Button>
+        <Button 
+          variant="ghost" 
+          onClick={() => setIsStreakModalOpen(true)}
+          className="text-amber-500 font-bold hover:bg-amber-50 transition cursor-pointer" 
+          title="Daily Streak"
+        >
+          <Image src="/streak.svg" height={24} width={24} alt="Streak" className="mr-1.5" />
+          {streak}
         </Button>
         <Button variant="ghost" className="text-orange-500 pointer-events-none cursor-default font-bold" title="Points (XP)">
           <Image src="/points.svg" height={28} width={28} alt="Points" className="mr-2" />
@@ -82,7 +94,8 @@ export const UserProgress = ({
         </Button>
       </div>
 
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+      {/* Heart Recharge Modal */}
+      <Dialog open={isHeartModalOpen} onOpenChange={setIsHeartModalOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
             <div className="flex items-center w-full justify-center mb-5">
@@ -114,9 +127,43 @@ export const UserProgress = ({
                 variant="primaryOutline" 
                 className="w-full text-base" 
                 size="lg" 
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => setIsHeartModalOpen(false)}
               >
                 Maybe Later
+              </Button>
+            </div>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Daily Streak Modal */}
+      <Dialog open={isStreakModalOpen} onOpenChange={setIsStreakModalOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <div className="flex items-center w-full justify-center mb-5">
+              <Image
+                src="/streak.svg"
+                alt="Flame"
+                height={80}
+                width={80}
+              />
+            </div>
+            <DialogTitle className="text-center font-bold text-2xl text-neutral-800">
+              {streak || 1} Day Streak! 🔥
+            </DialogTitle>
+            <DialogDescription className="text-center text-base text-neutral-600">
+              You&apos;re on fire! Practice a Croatian lesson every single day to keep your flame burning and build your vocabulary habit!
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="mb-4">
+            <div className="flex flex-col gap-y-4 w-full">
+              <Button 
+                variant="primary" 
+                className="w-full text-base font-bold bg-amber-500 hover:bg-amber-600 text-white" 
+                size="lg" 
+                onClick={() => setIsStreakModalOpen(false)}
+              >
+                Keep the Flame Burning! 🔥
               </Button>
             </div>
           </DialogFooter>

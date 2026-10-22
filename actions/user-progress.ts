@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { auth, currentUser } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
+import { calculateStreak } from "@/lib/streak";
 import { POINTS_TO_REFILL } from "@/constants";
 import { getCourseById, getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
@@ -151,9 +152,16 @@ export const awardPracticeSessionHeart = async () => {
     throw new Error("User progress not found");
   }
 
+  const { streak, lastActiveDate } = calculateStreak(
+    currentUserProgress.streak,
+    currentUserProgress.lastActiveDate,
+  );
+
   await db.update(userProgress).set({
     hearts: Math.min(currentUserProgress.hearts + 1, 5),
     points: currentUserProgress.points + 10,
+    streak,
+    lastActiveDate,
   }).where(eq(userProgress.userId, currentUserProgress.userId));
 
   revalidatePath("/learn");

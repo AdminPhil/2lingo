@@ -51,9 +51,28 @@ Should Concept A require expansion or alternative modes in the future, the follo
 
 ---
 
-## 🗺️ 4. Sliding-Scale Quests & Auto-Scroll
+## 🔥 5. Daily Streak Counter & Habit Flame Engine (CR-004)
+
+1. **Daily Habit Loop:**
+   - Children retain vocabulary through consistent daily contact. The daily streak counter tracks consecutive calendar days of practice.
+   - `streak` (integer, default 0) and `last_active_date` (text `YYYY-MM-DD`) are tracked in `user_progress`.
+2. **Consecutive Day Algorithm:**
+   - **Same calendar day:** Practice maintains streak and updates timestamp without double-counting.
+   - **Consecutive calendar day:** Practice increments streak by +1.
+   - **Missed 1+ days:** Streak resets gracefully to 1 day on next practice.
+3. **Interactive UI (`UserProgress`):**
+   - Clickable flame icon 🔥 with streak counter in `UserProgress` header bar (`[Flag] [🔥 Streak] [⚡ XP] [❤️ Hearts]`).
+   - Clicking opens the **Daily Streak Celebration Modal** detailing current streak, encouraging daily vocabulary habits, and celebrating consistency.
+4. **Leaderboard Display:**
+   - Under each learner's name on the leaderboard, streak is displayed alongside precision:
+     `🔥 [N] days • 💔 [N] hearts used`.
+
+---
+
+## 🗺️ 6. Sliding-Scale Quests & Auto-Scroll
 
 1. **Sliding-Scale Quests:**
    - Quests scale dynamically based on current user points, presenting the next 3 relevant milestones (up to 10,000 XP).
 2. **Path Auto-Scroll:**
    - Navigation to `/learn` automatically scrolls the viewport smoothly to `#current-lesson`.
+
