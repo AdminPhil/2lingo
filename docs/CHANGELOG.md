@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Parent & Admin Access Governance (CR-009)
+
+### Added
+- **[CR-009] Parent & Admin Access Governance & Portal Shell:**
+  - Modernized `lib/admin.ts` with role-based authorization supporting administrator accounts and `ADMIN_USER_IDS` environment variable, eliminating the obsolete legacy hardcoded gate.
+  - Built a dedicated, responsive **Parent & Educator Center** dashboard at `/admin`.
+  - Created key metric KPI cards for the Zgomba Family Pod, weekly team XP goal progress, and family streak status.
+  - Implemented real-time Learner Health Roster tracking live stats (XP, streaks, hearts, accuracy) for Adriana, Vanessa, and Silvia.
+  - Scaffolded modular launch points for upcoming Pod Management (CR-010), Magic Wand Overrides (CR-011), and Tricky Words Analytics (CR-012).
+  - Maintained strict child isolation with zero access leaks and seamless back-navigation to the Croatian course map.
+
+---
+
 ## [2026-10-22] - Family Pod Name Correction: Zgomba Family (BUG-004)
 
 ### Fixed
