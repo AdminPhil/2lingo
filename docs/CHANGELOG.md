@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Learning Pods & Family Circles Engine (CR-005)
+
+### Added
+- **[CR-005] Learning Pods & Family Circles Engine (Phase 1):**
+  - Added relational `pods` and `pod_members` tables to Postgres schema in `db/schema.ts`.
+  - Created initial `"Zubac Family"` pod (ID: 1, Invite Code: `ZUBAC6`) with Adriana as admin, and Vanessa and Silvia as members.
+  - Replaced hardcoded username matching in `getTopTenUsers` with dynamic relational pod scoping, permanently securing kid privacy while enabling dynamic multi-pod participation.
+  - Created server actions `joinPodByCode()` and `createPod()` in `actions/pod.ts`.
+  - Added `<PodHeader />` component to the Leaderboard showing pod name, member count badge, copyable invite code, and interactive "Join Pod" modal dialog.
+  - Zero disruption to existing learner data; preserved all XP, streaks, and hearts.
+
+---
+
 ## [2026-10-22] - Daily Streak Counter & Habit Flame Engine (CR-004)
 
 ### Added

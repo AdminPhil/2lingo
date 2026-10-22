@@ -4,24 +4,28 @@ import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
-import { getTopTenUsers, getUserProgress, getUserSubscription } from "@/db/queries";
+import { getTopTenUsers, getUserPod, getUserProgress, getUserSubscription } from "@/db/queries";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Quests } from "@/components/quests";
+import { PodHeader } from "@/components/pod-header";
 
 const LeaderboardPage = async () => {
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
   const leaderboardData = getTopTenUsers();
+  const userPodData = getUserPod();
 
   const [
     userProgress,
     userSubscription,
     leaderboard,
+    userPod,
   ] = await Promise.all([
     userProgressData,
     userSubscriptionData,
     leaderboardData,
+    userPodData,
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
@@ -57,6 +61,11 @@ const LeaderboardPage = async () => {
             See where you stand among other young learners!
           </p>
           <Separator className="mb-4 h-0.5 rounded-full" />
+          <PodHeader 
+            podName={userPod?.pod?.name} 
+            inviteCode={userPod?.pod?.inviteCode} 
+            memberCount={leaderboard.length} 
+          />
           {leaderboard.map((userProgress, index) => (
             <div 
               key={userProgress.userId}

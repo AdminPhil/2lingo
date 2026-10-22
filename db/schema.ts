@@ -119,3 +119,33 @@ export const userSubscription = pgTable("user_subscription", {
   stripePriceId: text("stripe_price_id").notNull(),
   stripeCurrentPeriodEnd: timestamp("stripe_current_period_end").notNull(),
 });
+
+
+export const pods = pgTable("pods", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  type: text("type").notNull().default("family"),
+  inviteCode: text("invite_code").notNull().unique(),
+  ownerId: text("owner_id").notNull(),
+  targetXp: integer("target_xp").default(1000),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const podsRelations = relations(pods, ({ many }) => ({
+  members: many(podMembers),
+}));
+
+export const podMembers = pgTable("pod_members", {
+  id: serial("id").primaryKey(),
+  podId: integer("pod_id").references(() => pods.id, { onDelete: "cascade" }).notNull(),
+  userId: text("user_id").notNull(),
+  role: text("role").notNull().default("member"),
+  joinedAt: timestamp("joined_at").defaultNow().notNull(),
+});
+
+export const podMembersRelations = relations(podMembers, ({ one }) => ({
+  pod: one(pods, {
+    fields: [podMembers.podId],
+    references: [pods.id],
+  }),
+}));

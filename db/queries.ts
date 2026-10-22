@@ -11,7 +11,9 @@ import {
   lessons, 
   units, 
   userProgress,
-  userSubscription
+  userSubscription,
+  podMembers,
+  pods
 } from "@/db/schema";
 
 export const getUserProgress = cache(async () => {
@@ -255,8 +257,35 @@ export const getTopTenUsers = cache(async () => {
     return [];
   }
 
+  // Relational scoping: Find user's active pod
+  const userMembership = await db.query.podMembers.findFirst({
+    where: eq(podMembers.userId, userId),
+  });
+
+  let memberUserIds: string[] = [];
+
+  if (userMembership) {
+    const members = await db.query.podMembers.findMany({
+      where: eq(podMembers.podId, userMembership.podId),
+    });
+    memberUserIds = members.map((m) => m.userId);
+  } else {
+    // Fallback: Default family pod (ID 1)
+    const defaultPodMembers = await db.query.podMembers.findMany({
+      where: eq(podMembers.podId, 1),
+    });
+    memberUserIds = defaultPodMembers.map((m) => m.userId);
+    if (!memberUserIds.includes(userId)) {
+      memberUserIds.push(userId);
+    }
+  }
+
+  if (memberUserIds.length === 0) {
+    return [];
+  }
+
   const data = await db.query.userProgress.findMany({
-    where: inArray(userProgress.userName, ["Adriana", "Vanessa", "Silvia", "silva456"]),
+    where: inArray(userProgress.userId, memberUserIds),
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
     limit: 10,
     columns: {
@@ -270,6 +299,34 @@ export const getTopTenUsers = cache(async () => {
   });
 
   return data;
+});
+
+export const getUserPod = cache(async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return null;
+  }
+
+  const membership = await db.query.podMembers.findFirst({
+    where: eq(podMembers.userId, userId),
+    with: {
+      pod: true,
+    },
+  });
+
+  if (membership?.pod) {
+    return {
+      pod: membership.pod,
+      role: membership.role,
+    };
+  }
+
+  const defaultPod = await db.query.pods.findFirst({
+    where: eq(pods.id, 1),
+  });
+
+  return defaultPod ? { pod: defaultPod, role: "guest" } : null;
 });
 
 export const getPracticeLesson = cache(async () => {

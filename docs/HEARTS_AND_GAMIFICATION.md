@@ -41,12 +41,15 @@ Should Concept A require expansion or alternative modes in the future, the follo
 
 ---
 
-## 🏆 4. Leaderboard Privacy & Child Protection
+## 🏆 4. Leaderboard Privacy & Learning Pods Architecture (CR-005)
 
-1. **Strict Kids-Only Filter:**
-   - The query `getTopTenUsers` in `db/queries.ts` must always filter by an authorized list of child learners (`Adriana`, `Vanessa`, `Silvia`).
-   - Admin, developer, and test accounts (`phil`, `J`) must never appear on the leaderboard.
-2. **Display Names:**
+1. **Relational Pod Scoping:**
+   - The query `getTopTenUsers` in `db/queries.ts` scopes learners to their active Learning Pod (`pods` and `pod_members` tables).
+   - Only authorized members of the child's family or classroom pod appear on their leaderboard.
+   - Admin, developer, and test accounts (`phil`, `J`) are excluded from family pods by design.
+2. **Kid-Friendly Join Codes:**
+   - Family pods generate unique 6-character invite codes (e.g. `ZUBAC6`). Kids can join their sisters or cousins without email or phone number sharing.
+3. **Display Names:**
    - Always use proper capitalization (e.g. `Silvia`, `Adriana`, `Vanessa`).
 
 ---
