@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Family Pod Name Correction: Zgomba Family (BUG-004)
+
+### Fixed
+- **[BUG-004] ✅ RESOLVED & VERIFIED - Family Pod Name and Invite Code Correction:**
+  - Renamed the default sister learning circle in Neon Postgres database from "Zubac Family" to **"Zgomba Family"** (`pods.id = 1`).
+  - Updated the official family invite code from `ZUBAC6` to **`ZGOMBA`**.
+  - Aligned default component props and placeholders across `components/pod-header.tsx` and `components/pod-celebration-meter.tsx`.
+
+---
+
 ## [2026-10-22] - Landing Page Course Alignment & Uncovered Flags Removal (CR-008)
 
 ### Changed

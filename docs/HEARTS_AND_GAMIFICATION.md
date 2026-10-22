@@ -48,7 +48,7 @@ Should Concept A require expansion or alternative modes in the future, the follo
    - Only authorized members of the child's family or classroom pod appear on their leaderboard.
    - Admin, developer, and test accounts (`phil`, `J`) are excluded from family pods by design.
 2. **Kid-Friendly Join Codes:**
-   - Family pods generate unique 6-character invite codes (e.g. `ZUBAC6`). Kids can join their sisters or cousins without email or phone number sharing.
+   - Family pods generate unique invite codes (e.g. `ZGOMBA`). Kids can join their sisters or cousins without email or phone number sharing.
 3. **Display Names:**
    - Always use proper capitalization (e.g. `Silvia`, `Adriana`, `Vanessa`).
 

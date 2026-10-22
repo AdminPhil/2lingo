@@ -24,7 +24,7 @@ type Props = {
 };
 
 export const PodCelebrationMeter = ({
-  podName = "Zubac Family",
+  podName = "Zgomba Family",
   currentXp = 740,
   targetXp = 1000,
   celebrationUnlocked = false,

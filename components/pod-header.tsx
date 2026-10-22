@@ -22,8 +22,8 @@ type Props = {
 };
 
 export const PodHeader = ({
-  podName = "Zubac Family",
-  inviteCode = "ZUBAC6",
+  podName = "Zgomba Family",
+  inviteCode = "ZGOMBA",
   memberCount = 3,
 }: Props) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -127,7 +127,7 @@ export const PodHeader = ({
               type="text"
               value={code}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCode(e.target.value.toUpperCase())}
-              placeholder="e.g. ZUBAC6"
+              placeholder="e.g. ZGOMBA"
               maxLength={8}
               className="w-full text-center font-mono text-xl tracking-widest font-bold uppercase py-2 px-3 border-2 border-slate-300 rounded-xl focus:outline-hidden focus:border-green-600 transition"
               disabled={pending}
