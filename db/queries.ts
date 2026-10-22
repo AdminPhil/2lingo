@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { eq } from "drizzle-orm";
+import { eq, inArray } from "drizzle-orm";
 import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
@@ -255,6 +255,7 @@ export const getTopTenUsers = cache(async () => {
   }
 
   const data = await db.query.userProgress.findMany({
+    where: inArray(userProgress.userName, ["Adriana", "Vanessa", "Silvia", "silva456"]),
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
     limit: 10,
     columns: {
