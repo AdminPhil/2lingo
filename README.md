@@ -1,85 +1,40 @@
-# Build a Duolingo Clone With Nextjs, React, Drizzle, Stripe (2024)
+# 🇭🇷 2lingo - Croatian Kid Learning Platform
 
-![Duolingo thumb (1)](https://github.com/AntonioErdeljac/next14-duolingo-clone/assets/23248726/d58e4b55-bb09-456f-978e-f5f31e81b870)
+A dedicated, kid-friendly Croatian language learning platform deployed on Render, built with Next.js 14, Drizzle ORM, Neon Postgres, and Clerk.
 
-This is a repository for a "Build a Duolingo Clone With Nextjs, React, Drizzle, Stripe (2024)" youtube video.
+---
 
-[VIDEO TUTORIAL](https://www.youtube.com/watch?v=dP75Khfy4s4)
+## 🛡️ Architecture & Change Governance Protocol
 
-Key Features:
-- 🌐 Next.js 14 & server actions
-- 🗣 AI Voices using Elevenlabs AI
-- 🎨 Beautiful component system using Shadcn UI
-- 🎭 Amazing characters thanks to KenneyNL
-- 🔐 Auth using Clerk
-- 🔊 Sound effects
-- ❤️ Hearts system
-- 🌟 Points / XP system
-- 💔 No hearts left popup
-- 🚪 Exit confirmation popup
-- 🔄 Practice old lessons to regain hearts
-- 🏆 Leaderboard
-- 🗺 Quests milestones
-- 🛍 Shop system to exchange points with hearts
-- 💳 Pro tier for unlimited hearts using Stripe
-- 🏠 Landing page
-- 📊 Admin dashboard React Admin
-- 🌧 ORM using DrizzleORM
-- 💾 PostgresDB using NeonDB
-- 🚀 Deployment on Vercel
-- 📱 Mobile responsiveness
+> **MANDATORY POLICY FOR ALL CONTRIBUTORS & AGENTS:**  
+> Before merging any change, creating new units, or seeding the database, you **MUST** run the pre-flight clash check and adhere to the guidelines in the [`docs/`](./docs) directory:
 
-### Prerequisites
+- 📋 **[Pre-Merge Protocol & Governance](docs/GOVERNANCE.md)** — The 5-point checklist required for every change.
+- 📚 **[Curriculum & Pedagogical Standards](docs/CURRICULUM_STANDARDS.md)** — The "3 + 1" Unit Arc, Deductive Elimination ("Aha!" discovery), Progressive Fading, Distractor Symmetry, and 2×2 grid rules.
+- ❤️ **[Hearts & Gamification Rules](docs/HEARTS_AND_GAMIFICATION.md)** — Practice-to-Earn engine, hearts used tracking, and kids-only leaderboard privacy.
+- ⚙️ **[Engineering & Hosting Architecture](docs/ARCHITECTURE.md)** — Database conventions, sequence syncing, user progress preservation, and Render deployment.
+- 📜 **[Living Changelog](docs/CHANGELOG.md)** — Chronological history of all platform milestones and curriculum expansions.
 
-**Node version 14.x**
-
-### Cloning the repository
-
+### Pre-Merge Automated Audit Command
 ```shell
-git clone https://github.com/AntonioErdeljac/next14-duolingo-clone.git
+npx tsx scripts/audit-curriculum-rules.ts
 ```
+
+---
+
+## 🚀 Quick Start
 
 ### Install packages
-
 ```shell
-npm i
+npm install
 ```
 
-### Setup .env file
-
-
-```js
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
-CLERK_SECRET_KEY=""
-DATABASE_URL="postgresql://..."
-STRIPE_API_KEY=""
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-STRIPE_WEBHOOK_SECRET=""
-```
-
-### Setup Drizzle ORM
-
-```shell
-npm run db:push
-
-```
-
-### Seed the app
-
-```shell
-npm run db:seed
-
-```
-
-or
-
-```shell
-npm run db:prod
-
-```
-
-### Start the app
-
+### Run local dev server
 ```shell
 npm run dev
+```
+
+### Build for production
+```shell
+npm run build
 ```
