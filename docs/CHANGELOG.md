@@ -39,6 +39,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
     - Ch 5: `""Little cat""` -> `Mala mačka` (T)
     - Ch 6: `""Good dog""` -> `Dobar pas` (T)
   - Verified with 0 violations in curriculum audit tool.
+- **[BUG-003] ✅ RESOLVED & VERIFIED - Bread Question Incorrectly Requiring "Čokolada" & Unit 3/4 Alignment:**
+  - **Symptom:** In Unit 5 Lesson 2 Challenge 4, the question `"Bread"` marked `"Čokolada"` (Chocolate) as correct instead of `"Kruh"` (Bread).
+  - **Root Cause:** Coordinate assignment in `scripts/refine-units-1-5.ts` assigned `correct: true` to option 1 (`Čokolada`) instead of option 3 (`Kruh`). Semantic dictionary audit also identified and corrected question-option offsets in Unit 3 Lesson 2 (Duck / Pig) and Unit 4 Lesson 4 (Blue / One / Ten).
+  - **Fix:** Realigned options across Unit 5 L2, Unit 3 L2, and Unit 4 L4 in Neon database (`scripts/fix-all-mismatched-challenges.ts`) and updated `scripts/refine-units-1-5.ts`:
+    - Unit 5 L2 Ch 4: `"Bread"` -> `Kruh` (T) vs `Čokolada`, `Sladoled`, `Jabuka`
+    - Unit 3 L2 Ch 3: `"the duck"` -> `Patka` (T)
+    - Unit 3 L2 Ch 4: `"Pig"` -> `Svinja` (T)
+    - Unit 4 L4 Ch 4: `"Blue"` -> `Plava` (T)
+    - Unit 4 L4 Ch 5: `"One"` -> `Jedan` (T)
+    - Unit 4 L4 Ch 6: `"Ten"` -> `Deset` (T)
+  - Full automated semantic scan across all 359 challenges confirms 0 remaining semantic mismatches.
 
 ---
 

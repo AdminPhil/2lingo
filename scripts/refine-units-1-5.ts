@@ -344,16 +344,16 @@ async function main() {
     { text: "Patka", correct: false, imageSrc: "/duck.svg", audioSrc: "/audio/hr/patka.mp3" },
   ]);
   await setCoordOptions(3, 2, 3, [
+    { text: "Patka", correct: true, audioSrc: "/audio/hr/patka.mp3" },
+    { text: "Ptica", correct: false, audioSrc: "/audio/hr/ptica.mp3" },
+    { text: "Krava", correct: false, audioSrc: "/audio/hr/krava.mp3" },
+    { text: "Konj", correct: false, audioSrc: "/audio/hr/konj.mp3" },
+  ]);
+  await setCoordOptions(3, 2, 4, [
     { text: "Svinja", correct: true, audioSrc: "/audio/hr/svinja.mp3" },
     { text: "Krava", correct: false, audioSrc: "/audio/hr/krava.mp3" },
     { text: "Konj", correct: false, audioSrc: "/audio/hr/konj.mp3" },
     { text: "Patka", correct: false, audioSrc: "/audio/hr/patka.mp3" },
-  ]);
-  await setCoordOptions(3, 2, 4, [
-    { text: "Patka", correct: true, audioSrc: "/audio/hr/patka.mp3" },
-    { text: "Ptica", correct: false, audioSrc: "/audio/hr/ptica.mp3" },
-    { text: "Konj", correct: false, audioSrc: "/audio/hr/konj.mp3" },
-    { text: "Krava", correct: false, audioSrc: "/audio/hr/krava.mp3" },
   ]);
 
   // L3: Opisujemo životinje
@@ -532,25 +532,25 @@ async function main() {
     { text: "Tri", correct: false, imageSrc: "/three.svg", audioSrc: "/audio/hr/tri.mp3" },
   ]);
   await setCoordOptions(4, 4, 4, [
-    { text: "Jedan", correct: true, audioSrc: "/audio/hr/jedan.mp3" },
-    { text: "Dva", correct: false, audioSrc: "/audio/hr/dva.mp3" },
-    { text: "Tri", correct: false, audioSrc: "/audio/hr/tri.mp3" },
-    { text: "Pet", correct: false, audioSrc: "/audio/hr/pet.mp3" },
+    { text: "Plava", correct: true, audioSrc: "/audio/hr/plava.mp3" },
+    { text: "Crvena", correct: false, audioSrc: "/audio/hr/crvena.mp3" },
+    { text: "Žuta", correct: false, audioSrc: "/audio/hr/zuta.mp3" },
+    { text: "Zelena", correct: false, audioSrc: "/audio/hr/zelena.mp3" },
   ]);
   if (coordMap.has("4_4_5")) {
     await setCoordOptions(4, 4, 5, [
-      { text: "Deset", correct: true, imageSrc: "/ten.svg", audioSrc: "/audio/hr/deset.mp3" },
-      { text: "Devet", correct: false, imageSrc: "/nine.svg", audioSrc: "/audio/hr/devet.mp3" },
-      { text: "Sedam", correct: false, imageSrc: "/seven.svg", audioSrc: "/audio/hr/sedam.mp3" },
-      { text: "Osam", correct: false, imageSrc: "/eight.svg", audioSrc: "/audio/hr/osam.mp3" },
+      { text: "Jedan", correct: true, audioSrc: "/audio/hr/jedan.mp3" },
+      { text: "Dva", correct: false, audioSrc: "/audio/hr/dva.mp3" },
+      { text: "Tri", correct: false, audioSrc: "/audio/hr/tri.mp3" },
+      { text: "Pet", correct: false, audioSrc: "/audio/hr/pet.mp3" },
     ]);
   }
   if (coordMap.has("4_4_6")) {
     await setCoordOptions(4, 4, 6, [
-      { text: "Plava", correct: true, audioSrc: "/audio/hr/plava.mp3" },
-      { text: "Crvena", correct: false, audioSrc: "/audio/hr/crvena.mp3" },
-      { text: "Žuta", correct: false, audioSrc: "/audio/hr/zuta.mp3" },
-      { text: "Zelena", correct: false, audioSrc: "/audio/hr/zelena.mp3" },
+      { text: "Deset", correct: true, audioSrc: "/audio/hr/deset.mp3" },
+      { text: "Devet", correct: false, audioSrc: "/audio/hr/devet.mp3" },
+      { text: "Sedam", correct: false, audioSrc: "/audio/hr/sedam.mp3" },
+      { text: "Osam", correct: false, audioSrc: "/audio/hr/osam.mp3" },
     ]);
   }
 
@@ -604,9 +604,9 @@ async function main() {
     { text: "Sir", correct: false, imageSrc: "/cheese.svg", audioSrc: "/audio/hr/sir.mp3" },
   ]);
   await setCoordOptions(5, 2, 4, [
-    { text: "Čokolada", correct: true, audioSrc: "/audio/hr/cokolada.mp3" },
+    { text: "Kruh", correct: true, audioSrc: "/audio/hr/kruh.mp3" },
+    { text: "Čokolada", correct: false, audioSrc: "/audio/hr/cokolada.mp3" },
     { text: "Sladoled", correct: false, audioSrc: "/audio/hr/sladoled.mp3" },
-    { text: "Kruh", correct: false, audioSrc: "/audio/hr/kruh.mp3" },
     { text: "Jabuka", correct: false, audioSrc: "/audio/hr/jabuka.mp3" },
   ]);
 
