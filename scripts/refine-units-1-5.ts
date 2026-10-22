@@ -396,30 +396,30 @@ async function main() {
     { text: "Ptica", correct: false, imageSrc: "/bird.svg", audioSrc: "/audio/hr/ptica.mp3" },
   ]);
   await setCoordOptions(3, 4, 3, [
-    { text: "Veliki pas", correct: true, imageSrc: "/dog.svg", audioSrc: "/audio/hr/veliki_pas.mp3" },
-    { text: "Mala mačka", correct: false, imageSrc: "/cat.svg", audioSrc: "/audio/hr/mala_macka.mp3" },
-    { text: "Dobar pas", correct: false, imageSrc: "/dog.svg", audioSrc: "/audio/hr/dobar_pas.mp3" },
-    { text: "Velika krava", correct: false, imageSrc: "/cow.svg", audioSrc: "/audio/hr/velika_krava.mp3" },
+    { text: "Konj", correct: true, audioSrc: "/audio/hr/konj.mp3" },
+    { text: "Krava", correct: false, audioSrc: "/audio/hr/krava.mp3" },
+    { text: "Patka", correct: false, audioSrc: "/audio/hr/patka.mp3" },
+    { text: "Svinja", correct: false, audioSrc: "/audio/hr/svinja.mp3" },
   ]);
   await setCoordOptions(3, 4, 4, [
-    { text: "Dobar pas", correct: true, audioSrc: "/audio/hr/dobar_pas.mp3" },
-    { text: "Veliki pas", correct: false, audioSrc: "/audio/hr/veliki_pas.mp3" },
+    { text: "Veliki pas", correct: true, audioSrc: "/audio/hr/veliki_pas.mp3" },
     { text: "Mala mačka", correct: false, audioSrc: "/audio/hr/mala_macka.mp3" },
+    { text: "Dobar pas", correct: false, audioSrc: "/audio/hr/dobar_pas.mp3" },
     { text: "Velika krava", correct: false, audioSrc: "/audio/hr/velika_krava.mp3" },
   ]);
   if (coordMap.has("3_4_5")) {
     await setCoordOptions(3, 4, 5, [
-      { text: "Konj", correct: true, imageSrc: "/horse.svg", audioSrc: "/audio/hr/konj.mp3" },
-      { text: "Krava", correct: false, imageSrc: "/cow.svg", audioSrc: "/audio/hr/krava.mp3" },
-      { text: "Patka", correct: false, imageSrc: "/duck.svg", audioSrc: "/audio/hr/patka.mp3" },
-      { text: "Svinja", correct: false, imageSrc: "/pig.svg", audioSrc: "/audio/hr/svinja.mp3" },
+      { text: "Mala mačka", correct: true, audioSrc: "/audio/hr/mala_macka.mp3" },
+      { text: "Veliki pas", correct: false, audioSrc: "/audio/hr/veliki_pas.mp3" },
+      { text: "Dobar pas", correct: false, audioSrc: "/audio/hr/dobar_pas.mp3" },
+      { text: "Velika krava", correct: false, audioSrc: "/audio/hr/velika_krava.mp3" },
     ]);
   }
   if (coordMap.has("3_4_6")) {
     await setCoordOptions(3, 4, 6, [
-      { text: "Mala mačka", correct: true, audioSrc: "/audio/hr/mala_macka.mp3" },
+      { text: "Dobar pas", correct: true, audioSrc: "/audio/hr/dobar_pas.mp3" },
       { text: "Veliki pas", correct: false, audioSrc: "/audio/hr/veliki_pas.mp3" },
-      { text: "Dobar pas", correct: false, audioSrc: "/audio/hr/dobar_pas.mp3" },
+      { text: "Mala mačka", correct: false, audioSrc: "/audio/hr/mala_macka.mp3" },
       { text: "Velika krava", correct: false, audioSrc: "/audio/hr/velika_krava.mp3" },
     ]);
   }

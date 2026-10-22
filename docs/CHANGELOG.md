@@ -30,6 +30,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
   - Resolved issue where clicking the Heart icon at top-right inside an active lesson (`app/lesson/header.tsx`) was a non-interactive static `div`. Converted to an interactive button that displays the Practice Recharge modal (`Need a Heart? Current: X/5 ❤️`) with one-click routing to `/lesson/practice`.
   - Triggered Render deployment synchronization (`dep-dbd315vavr4c73998im0`) so all voluntary practice triggers in `components/user-progress.tsx` and `app/lesson/header.tsx` are live in production.
   - Verified and passed end-to-end testing with active learner Silvia (4 hearts).
+- **[BUG-002] ✅ RESOLVED & VERIFIED - Incorrect Option Mapping in Unit 3 Lesson 4 ("Little cat" -> "Konj"):**
+  - **Symptom:** In the Practice Review mini-game (`/lesson/practice`), the question `"Little cat"` required the incorrect answer `"Konj"` (Horse) instead of `"Mala mačka"`.
+  - **Root Cause:** In Unit 3 Lesson 4 (Boss Quest), challenges 3 through 6 had their option sets circularly offset during initial coordinate assignment in `scripts/refine-units-1-5.ts`, misaligning questions for "Horse", "Big dog", "Little cat", and "Good dog".
+  - **Fix:** Realigned challenges 3, 4, 5, and 6 in the database (`scripts/fix-bug-u3l4.ts`) and seed script (`scripts/refine-units-1-5.ts`):
+    - Ch 3: `"Which one of these is 'Horse'?"` -> `Konj` (T)
+    - Ch 4: `""Big dog""` -> `Veliki pas` (T)
+    - Ch 5: `""Little cat""` -> `Mala mačka` (T)
+    - Ch 6: `""Good dog""` -> `Dobar pas` (T)
+  - Verified with 0 violations in curriculum audit tool.
 
 ---
 
