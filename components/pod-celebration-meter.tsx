@@ -57,7 +57,7 @@ export const PodCelebrationMeter = ({
         </div>
       )}
 
-      <div className="w-full bg-linear-to-r from-amber-500/10 via-orange-500/10 to-yellow-500/10 border-2 border-amber-300/80 rounded-2xl p-4 mb-6 shadow-xs relative overflow-hidden">
+      <div className="w-full bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-yellow-500/10 border-2 border-amber-300/80 rounded-2xl p-4 mb-6 shadow-xs relative overflow-hidden">
         {/* Decorative corner glow */}
         <div className="absolute -top-10 -right-10 w-28 h-28 bg-amber-400/20 rounded-full blur-xl pointer-events-none" />
 
@@ -98,8 +98,8 @@ export const PodCelebrationMeter = ({
           <div
             className={`h-full rounded-full transition-all duration-700 ${
               isGoalMet
-                ? "bg-linear-to-r from-amber-400 via-yellow-400 to-green-500 animate-pulse"
-                : "bg-linear-to-r from-amber-500 to-orange-500"
+                ? "bg-gradient-to-r from-amber-400 via-yellow-400 to-green-500 animate-pulse"
+                : "bg-gradient-to-r from-amber-500 to-orange-500"
             }`}
             style={{ width: `${percentage}%` }}
           />

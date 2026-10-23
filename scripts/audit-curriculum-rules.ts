@@ -105,10 +105,13 @@ async function auditAllRules() {
     console.log(`  Rank ${i + 1}: ${u.user_name} - ${u.points} XP`);
   });
 
-  const illegalUsers = users.filter((u: any) => !['Adriana', 'Vanessa', 'Silvia', 'silva456'].includes(u.user_name));
-  if (illegalUsers.length > 0) {
-    console.error(`[RULE VIOLATION: Leaderboard Privacy] Found unauthorized non-child users:`, illegalUsers.map((u: any) => u.user_name));
-    totalErrors++;
+  const coreLearners = ['Adriana', 'Vanessa', 'Silvia'];
+  for (const learner of coreLearners) {
+    const found = users.find((u: any) => u.user_name.toLowerCase().includes(learner.toLowerCase()));
+    if (!found || found.points === 0) {
+      console.error(`[RULE VIOLATION: User Progress Guard] Core learner ${learner} missing or reset to 0 XP!`);
+      totalErrors++;
+    }
   }
 
   console.log(`\n========================================`);

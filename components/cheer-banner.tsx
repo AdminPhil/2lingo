@@ -49,7 +49,7 @@ export const CheerBanner = ({ cheers: initialCheers }: Props) => {
   };
 
   return (
-    <div className="w-full bg-linear-to-r from-amber-500 via-orange-500 to-yellow-500 text-white rounded-2xl p-3.5 mb-6 shadow-md flex items-center justify-between gap-3 animate-pulse">
+    <div className="w-full bg-amber-500 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 text-white rounded-2xl p-3.5 mb-6 shadow-md flex items-center justify-between gap-3 animate-pulse">
       <div className="flex items-center gap-x-2.5">
         <div className="p-2 bg-white/20 rounded-xl">
           <Hand className="h-5 w-5 text-white" />

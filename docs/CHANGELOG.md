@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-23] - Parent Center Welcome Banner Gradient Syntax & Readability (BUG-007)
+
+### Fixed
+- **[BUG-007] ✅ RESOLVED & VERIFIED - White-on-White Unreadable Text in Parent Center Welcome Banner:**
+  - **Symptom:** In `/admin`, the Welcome Banner ("Dobrodošli, Philip! 🇭🇷", subtitle, and active family code) rendered with white text on an unstyled white background, making the text nearly invisible.
+  - **Root Cause:** The container used the invalid experimental class `bg-linear-to-r` instead of Tailwind v3's standard `bg-gradient-to-r`.
+  - **Fix:** Corrected `bg-linear-to-*` to `bg-gradient-to-*` across `app/admin/page.tsx`, `components/admin/tricky-words-card.tsx`, `components/cheer-banner.tsx`, and `components/pod-celebration-meter.tsx`. Added `bg-green-600` solid color fallback to ensure rich emerald gradient contrast and crisp white text.
+
+---
+
 ## [2026-10-23] - Email Super-Admin & Scoped Parent Center Access (CR-013)
 
 ### Added

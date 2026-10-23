@@ -134,7 +134,7 @@ const AdminPage = async () => {
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
         {/* Welcome Banner */}
-        <div className="bg-linear-to-r from-green-600 to-lime-600 rounded-3xl p-6 sm:p-8 text-white shadow-md mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="bg-green-600 bg-gradient-to-r from-green-600 via-emerald-600 to-lime-600 rounded-3xl p-6 sm:p-8 text-white shadow-md mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-x-2 mb-2 flex-wrap">
               <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 bg-white/20 rounded-full text-white inline-block">

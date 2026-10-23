@@ -36,7 +36,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
   return (
     <div className="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-xs mb-10">
       {/* Top Header */}
-      <div className="p-6 border-b border-slate-100 bg-linear-to-r from-purple-50 via-white to-pink-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-purple-50 via-white to-pink-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-x-3.5">
           <div className="p-3 bg-purple-600 text-white rounded-2xl shadow-sm">
             <Brain className="h-6 w-6" />
@@ -280,7 +280,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
             {conversationPrompts.map((prompt) => (
               <div
                 key={prompt.id}
-                className="bg-linear-to-b from-purple-50/50 to-white p-5 rounded-2xl border-2 border-purple-200/80 shadow-xs flex flex-col justify-between"
+                className="bg-gradient-to-b from-purple-50/50 to-white p-5 rounded-2xl border-2 border-purple-200/80 shadow-xs flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
