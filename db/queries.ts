@@ -271,16 +271,14 @@ export const getTopTenUsers = cache(async () => {
     const members = await db.query.podMembers.findMany({
       where: eq(podMembers.podId, userMembership.podId),
     });
-    memberUserIds = members.map((m) => m.userId);
+    // Exclude pod owners/parents from student leaderboard ranking
+    memberUserIds = members.filter((m) => m.role !== "owner").map((m) => m.userId);
   } else {
     // Fallback: Default family pod (ID 1)
     const defaultPodMembers = await db.query.podMembers.findMany({
       where: eq(podMembers.podId, 1),
     });
-    memberUserIds = defaultPodMembers.map((m) => m.userId);
-    if (!memberUserIds.includes(userId)) {
-      memberUserIds.push(userId);
-    }
+    memberUserIds = defaultPodMembers.filter((m) => m.role !== "owner").map((m) => m.userId);
   }
 
   if (memberUserIds.length === 0) {

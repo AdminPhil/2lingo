@@ -10,6 +10,7 @@ export const DEFAULT_ADMIN_EMAILS = [
 
 // Known administrator and parent account IDs (fast-path fallback)
 export const DEFAULT_ADMIN_IDS = [
+  "user_3L6xcATMCXxWhB6ule3mHl5iz0h", // Phil (philip.zgomba@gmail.com)
   "user_3L1NgMhZTgf028zJorcCrRWzdXQ", // Phil
   "user_3KzD8MADuGMqXumxmVhHHb6ludF", // Phil
   "user_3L1NcTuNW47BxjbICnQ2zGRIH22", // J C
@@ -20,15 +21,15 @@ export const isSuperAdmin = async (): Promise<boolean> => {
   const { userId } = auth();
   if (!userId) return false;
 
-  // 1. Check env variable SUPER_ADMIN_USER_IDS
+  // 1. Fast-path check for known Phil Clerk IDs
+  if (DEFAULT_ADMIN_IDS.slice(0, 3).includes(userId)) {
+    return true;
+  }
+
+  // 2. Check env variable SUPER_ADMIN_USER_IDS
   if (process.env.SUPER_ADMIN_USER_IDS) {
     const envIds = process.env.SUPER_ADMIN_USER_IDS.split(",").map((id) => id.trim());
     if (envIds.includes(userId)) return true;
-  }
-
-  // 2. Fast-path check for known Phil Clerk IDs
-  if (DEFAULT_ADMIN_IDS.slice(0, 2).includes(userId)) {
-    return true;
   }
 
   // 3. Check verified Clerk user email

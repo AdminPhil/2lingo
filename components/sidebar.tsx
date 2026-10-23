@@ -47,6 +47,13 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
           href="/quests"
           iconSrc="/quests.svg"
         />
+        {isAdmin && (
+          <SidebarItem 
+            label="Parent Center" 
+            href="/admin"
+            iconSrc="/shield.svg"
+          />
+        )}
       </div>
 
       {isAdmin && (
