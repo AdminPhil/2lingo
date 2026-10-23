@@ -215,18 +215,21 @@ export const PodManagementCard = ({ pods: initialPods }: Props) => {
                     <span className="text-slate-400 block text-[10px] font-bold uppercase">Invite Code</span>
                     <span className="font-mono font-black text-lime-700 text-sm">{pod.inviteCode}</span>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => onCopy(pod.inviteCode)}
-                    className="h-7 w-7 p-0"
-                  >
-                    {copiedCode === pod.inviteCode ? (
-                      <Check className="h-3.5 w-3.5 text-green-600" />
-                    ) : (
-                      <Copy className="h-3.5 w-3.5 text-slate-400" />
-                    )}
-                  </Button>
+                  <div className="flex items-center gap-1">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => onCopy(pod.inviteCode)}
+                      title="Copy code"
+                      className="h-7 w-7 p-0 cursor-pointer"
+                    >
+                      {copiedCode === pod.inviteCode ? (
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <Copy className="h-3.5 w-3.5 text-slate-400" />
+                      )}
+                    </Button>
+                  </div>
                 </div>
 
                 <div className="bg-white p-2.5 rounded-xl border border-slate-200">
@@ -250,8 +253,10 @@ export const PodManagementCard = ({ pods: initialPods }: Props) => {
                       className="text-xs font-semibold px-2.5 py-1 bg-white border border-slate-200 text-slate-700 rounded-lg flex items-center gap-x-1"
                     >
                       <span>{m.userName}</span>
-                      {m.role === "admin" && (
-                        <span className="text-[9px] bg-green-100 text-green-800 px-1 rounded font-bold uppercase">Admin</span>
+                      {(m.role === "owner" || m.role === "admin") && (
+                        <span className="text-[9px] bg-green-100 text-green-800 px-1 rounded font-bold uppercase">
+                          {m.role === "owner" ? "Parent" : "Admin"}
+                        </span>
                       )}
                     </span>
                   ))}

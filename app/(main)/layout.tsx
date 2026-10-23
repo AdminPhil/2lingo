@@ -1,6 +1,10 @@
+import { auth } from "@clerk/nextjs";
+
 import { Sidebar } from "@/components/sidebar";
 import { MobileHeader } from "@/components/mobile-header";
 import { isAdmin } from "@/lib/admin";
+import { getUserProgress } from "@/db/queries";
+import { RoleOnboardingModal } from "@/components/modals/role-onboarding-modal";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +13,11 @@ type Props = {
 const MainLayout = async ({
   children,
 }: Props) => {
+  const { userId } = auth();
   const admin = await isAdmin();
+  const userProgress = await getUserProgress();
+
+  const needsRoleOnboarding = !!userId && userProgress?.role === "unassigned";
 
   return (
     <>
@@ -20,6 +28,7 @@ const MainLayout = async ({
           {children}
         </div>
       </main>
+      <RoleOnboardingModal initialOpen={needsRoleOnboarding} />
     </>
   );
 };

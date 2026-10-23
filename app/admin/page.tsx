@@ -60,7 +60,9 @@ const AdminPage = async () => {
     ? allPodsData
     : allPodsData.filter((p) => p.ownerId === userId);
 
-  const activePod = accessiblePods.find((p) => p.id === 1) || accessiblePods[0] || allPodsData[0];
+  const activePod = superAdmin
+    ? (accessiblePods.find((p) => p.id === 1) || accessiblePods[0] || allPodsData[0])
+    : accessiblePods[0];
 
   // Fetch learners:
   // If superAdmin: all young learners

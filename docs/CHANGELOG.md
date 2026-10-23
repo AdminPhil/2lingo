@@ -4,6 +4,30 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-23] - Multi-Family Role Schema & Parent Onboarding Wizard (CR-014)
+
+### Added
+- **[CR-014] ✅ IMPLEMENTED & VERIFIED - Multi-Family Role Schema & Parent Onboarding Wizard:**
+  - **Schema Evolution:** Added `role: text("role").default("learner").notNull()` to `user_progress` table in `db/schema.ts` and Neon Postgres.
+  - **Account Role Migration:** Marked existing sister learners (Adriana, Vanessa, Silvia) as `learner` and Philip as `parent`.
+  - **Role Selection Dialog (`components/modals/role-onboarding-modal.tsx`):**
+    - First-time role onboarding wizard: *"Dobrodošli! Are you joining as a: [ 👨‍👩‍👧‍👦 Parent / Educator ] or [ 🎒 Young Learner ]?"*
+    - For Young Learners: Automatically initializes learner mode and preserves the learning map.
+    - For Parents: Multi-step setup wizard prompting for Family Circle Name (e.g. *"The Horvat Family"*), weekly celebration target (500 XP, 1,000 XP ⭐, or 2,000 XP), and optional custom invite code (e.g. `HORVAT`).
+  - **Server Actions (`actions/family-onboarding.ts`):**
+    - `createFamilyOnboarding`: Dynamically generates or validates unique invite codes, inserts the new pod with `owner_id = userId`, grants the parent `owner` status in `pod_members`, and sets their role to `parent`.
+    - `selectLearnerRole`: Configures learner status cleanly without disruption.
+  - **Multi-Tenant Isolation in Parent Center (`app/admin/page.tsx`):**
+    - Strictly isolates regular family admins to pods they own (`p.ownerId === userId`), with 0 cross-access to other families.
+    - Retains Super-Admin platform oversight for Phil (`philip.zgomba@gmail.com`).
+  - **Parent Center Pod Management Updates (`components/admin/pod-management-card.tsx`):**
+    - Enhanced role pills to display "Parent" for pod owners and "Admin" for co-admins.
+    - Added one-click copy button for family invite codes.
+  - **Zustand Store (`store/use-role-modal.ts`) & UI Components (`components/ui/input.tsx`):**
+    - Centralized role modal state management.
+
+---
+
 ## [2026-10-23] - Parent Center Welcome Banner Gradient Syntax & Readability (BUG-007)
 
 ### Fixed

@@ -1,4 +1,7 @@
 import { auth, currentUser } from "@clerk/nextjs";
+import { eq } from "drizzle-orm";
+import db from "@/db/drizzle";
+import { pods, userProgress } from "@/db/schema";
 
 export const SUPER_ADMIN_EMAILS = [
   "philip.zgomba@gmail.com",
@@ -84,6 +87,27 @@ export const isAdmin = async (): Promise<boolean> => {
     }
   } catch {
     // Graceful fallback if currentUser() is unavailable
+  }
+
+  // 4. Check if user is registered with role='parent' or owns any pod
+  try {
+    const progress = await db.query.userProgress.findFirst({
+      where: eq(userProgress.userId, userId),
+      columns: { role: true },
+    });
+    if (progress?.role === "parent") {
+      return true;
+    }
+
+    const ownedPod = await db.query.pods.findFirst({
+      where: eq(pods.ownerId, userId),
+      columns: { id: true },
+    });
+    if (ownedPod) {
+      return true;
+    }
+  } catch {
+    // Graceful fallback
   }
 
   return false;
