@@ -20,6 +20,8 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
 import { LearnerHealthCard } from "@/components/admin/learner-health-card";
+import { TrickyWordsCard } from "@/components/admin/tricky-words-card";
+import { getTrickyWordsAnalytics } from "@/db/queries";
 
 const AdminPage = async () => {
   if (!isAdmin()) {
@@ -42,6 +44,8 @@ const AdminPage = async () => {
     },
     orderBy: (pods, { asc }) => [asc(pods.id)],
   });
+
+  const analyticsData = await getTrickyWordsAnalytics();
 
   const learnersMap = new Map(learners.map((l) => [l.userId, l.userName]));
 
@@ -177,7 +181,7 @@ const AdminPage = async () => {
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-green-700 font-bold">
-              ✓ Ready for CR-010 Controls
+              ✓ Active Pod Management
             </div>
           </div>
 
@@ -207,13 +211,16 @@ const AdminPage = async () => {
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-purple-700 font-bold">
-              ✓ Ready for CR-012 Controls
+              ✓ Active Mistake Analytics & Heatmap
             </div>
           </div>
         </div>
 
         {/* Pod Management Hub (CR-010) */}
         <PodManagementCard pods={formattedPods} />
+
+        {/* Tricky Words & Mistake Heatmap Analytics (CR-012) */}
+        <TrickyWordsCard analytics={analyticsData} />
 
         {/* Learner Health & Magic Wand Overrides (CR-011) */}
         <LearnerHealthCard learners={learners} />

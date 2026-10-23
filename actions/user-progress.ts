@@ -10,7 +10,7 @@ import { calculateStreak } from "@/lib/streak";
 import { awardPodXp } from "@/actions/pod";
 import { POINTS_TO_REFILL } from "@/constants";
 import { getCourseById, getUserProgress, getUserSubscription } from "@/db/queries";
-import { challengeProgress, challenges, userProgress } from "@/db/schema";
+import { challengeMistakes, challengeProgress, challenges, userProgress } from "@/db/schema";
 
 export const upsertUserProgress = async (courseId: number) => {
   const { userId } = await auth();
@@ -56,7 +56,7 @@ export const upsertUserProgress = async (courseId: number) => {
   redirect("/learn");
 };
 
-export const reduceHearts = async (challengeId: number) => {
+export const reduceHearts = async (challengeId: number, selectedOptionId?: number) => {
   const { userId } = await auth();
 
   if (!userId) {
@@ -105,6 +105,17 @@ export const reduceHearts = async (challengeId: number) => {
     hearts: Math.max(currentUserProgress.hearts - 1, 0),
     heartsUsed: (currentUserProgress.heartsUsed ?? 0) + 1,
   }).where(eq(userProgress.userId, userId));
+
+  // Log mistake telemetry for Parent Portal tricky words analytics
+  try {
+    await db.insert(challengeMistakes).values({
+      userId,
+      challengeId,
+      selectedOptionId: selectedOptionId ?? null,
+    });
+  } catch (err) {
+    console.error("Failed to log challenge mistake:", err);
+  }
 
   revalidatePath("/shop");
   revalidatePath("/learn");

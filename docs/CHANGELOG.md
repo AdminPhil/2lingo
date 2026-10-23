@@ -4,6 +4,20 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Tricky Words & Mistake Heatmap Analytics (CR-012)
+
+### Added
+- **[CR-012] Tricky Words & Mistake Heatmap Analytics:**
+  - Created `challenge_mistakes` telemetry table in Neon Postgres and wired into `reduceHearts()` in `actions/user-progress.ts` and `app/lesson/quiz.tsx` to automatically capture error selections, distractors, and timestamps.
+  - Implemented `getTrickyWordsAnalytics()` in `db/queries.ts` computing top tricky vocabulary items, distractor confusion frequencies, and completion accuracy across Units 1–20.
+  - Built interactive `<TrickyWordsCard />` inside the Parent Portal at `/admin` featuring:
+    - **Top 10 Tricky Words:** Ranked breakdown of words requiring repetition (e.g. `Laku noć` vs `Dobar dan`, `Molim` vs `Hvala`), accuracy percentages, and specific distractor confusions.
+    - **Unit Heatmap:** 20-unit visual matrix showing mastery status chips (Mastered 90%+, Solid 75-89%, Needs Review, and Upcoming) with completion counters and precision progress bars.
+    - **Offline Family Conversation Starters:** 3 actionable Croatian prompts for breakfast, dinner, and car rides giving parents practical phrases to reinforce tricky concepts away from screens.
+  - Integrated into the Parent & Educator Center shell at `/admin`.
+
+---
+
 ## [2026-10-22] - Learner Health & Parent Magic Wand Overrides (CR-011)
 
 ### Added

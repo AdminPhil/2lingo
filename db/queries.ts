@@ -6,6 +6,8 @@ import db from "@/db/drizzle";
 import { shuffleArray } from "@/lib/utils";
 import { 
   challengeProgress,
+  challengeMistakes,
+  challengeOptions,
   challenges,
   courses, 
   lessons, 
@@ -417,4 +419,263 @@ export const getTodayCheeredUserIds = cache(async () => {
   });
 
   return cheers.map((c) => c.receiverId);
+});
+
+export type TrickyWordItem = {
+  challengeId: number;
+  question: string;
+  word: string;
+  unitOrder: number;
+  unitTitle: string;
+  missCount: number;
+  correctAnswer: string;
+  commonDistractor: string;
+  accuracyRate: number;
+};
+
+export type UnitMasteryItem = {
+  unitId: number;
+  unitOrder: number;
+  title: string;
+  description: string;
+  completedCount: number;
+  mistakeCount: number;
+  accuracyRate: number;
+  status: "Mastered" | "Solid" | "Needs Practice" | "Upcoming";
+};
+
+export type ConversationPromptItem = {
+  id: number;
+  theme: string;
+  timing: string;
+  croatian: string;
+  english: string;
+  targetWords: string;
+  parentTip: string;
+};
+
+export type TrickyWordsAnalytics = {
+  topTrickyWords: TrickyWordItem[];
+  unitMasteries: UnitMasteryItem[];
+  conversationPrompts: ConversationPromptItem[];
+  totalMistakes: number;
+  totalCompleted: number;
+  overallAccuracyRate: number;
+};
+
+export const getTrickyWordsAnalytics = cache(async (): Promise<TrickyWordsAnalytics> => {
+  // 1. Fetch all challenge mistakes with challenge, options, and lesson/unit relations
+  const mistakes = await db.query.challengeMistakes.findMany({
+    with: {
+      challenge: {
+        with: {
+          lesson: {
+            with: {
+              unit: true,
+            },
+          },
+          challengeOptions: true,
+        },
+      },
+      selectedOption: true,
+    },
+    orderBy: (challengeMistakes, { desc }) => [desc(challengeMistakes.createdAt)],
+  });
+
+  // 2. Fetch all completed challenge progress records
+  const completedProgress = await db.query.challengeProgress.findMany({
+    where: eq(challengeProgress.completed, true),
+  });
+
+  const completionsPerChallenge = new Map<number, number>();
+  for (const cp of completedProgress) {
+    completionsPerChallenge.set(cp.challengeId, (completionsPerChallenge.get(cp.challengeId) || 0) + 1);
+  }
+
+  // 3. Aggregate mistakes by challengeId
+  type ChallengeAggregation = {
+    challengeId: number;
+    challenge: (typeof mistakes)[0]["challenge"];
+    missCount: number;
+    distractorCounts: Map<string, number>;
+  };
+
+  const aggregationMap = new Map<number, ChallengeAggregation>();
+
+  for (const m of mistakes) {
+    if (!m.challenge) continue;
+    let entry = aggregationMap.get(m.challengeId);
+    if (!entry) {
+      entry = {
+        challengeId: m.challengeId,
+        challenge: m.challenge,
+        missCount: 0,
+        distractorCounts: new Map<string, number>(),
+      };
+      aggregationMap.set(m.challengeId, entry);
+    }
+    entry.missCount += 1;
+    if (m.selectedOption?.text) {
+      const dist = m.selectedOption.text;
+      entry.distractorCounts.set(dist, (entry.distractorCounts.get(dist) || 0) + 1);
+    }
+  }
+
+  const topTrickyWords: TrickyWordItem[] = Array.from(aggregationMap.values())
+    .map((agg) => {
+      const correctOpt = agg.challenge.challengeOptions.find((o) => o.correct);
+      const correctAnswer = correctOpt?.text || "Correct Answer";
+      
+      // Find most common distractor
+      let mostCommonDistractor = "";
+      let highestDistCount = 0;
+      agg.distractorCounts.forEach((count, dist) => {
+        if (count > highestDistCount) {
+          highestDistCount = count;
+          mostCommonDistractor = dist;
+        }
+      });
+      if (!mostCommonDistractor) {
+        const fallbackDist = agg.challenge.challengeOptions.find((o) => !o.correct);
+        mostCommonDistractor = fallbackDist?.text || "Distractor";
+      }
+
+      const completedCount = completionsPerChallenge.get(agg.challengeId) || 0;
+      const totalAttempts = completedCount + agg.missCount;
+      const accuracyRate = totalAttempts > 0 
+        ? Math.round((completedCount / totalAttempts) * 100) 
+        : 50;
+
+      const unitOrder = agg.challenge.lesson?.unit?.order ?? 1;
+      const unitTitle = agg.challenge.lesson?.unit?.title ?? "Unit 1";
+
+      return {
+        challengeId: agg.challengeId,
+        question: agg.challenge.question,
+        word: correctAnswer,
+        unitOrder,
+        unitTitle,
+        missCount: agg.missCount,
+        correctAnswer,
+        commonDistractor: mostCommonDistractor,
+        accuracyRate,
+      };
+    })
+    .sort((a, b) => b.missCount - a.missCount)
+    .slice(0, 10);
+
+  // 4. Calculate Unit Masteries across all units
+  const allUnits = await db.query.units.findMany({
+    orderBy: (units, { asc }) => [asc(units.order)],
+    with: {
+      lessons: {
+        with: {
+          challenges: true,
+        },
+      },
+    },
+  });
+
+  const mistakesPerUnit = new Map<number, number>();
+  for (const m of mistakes) {
+    const unitId = m.challenge?.lesson?.unit?.id;
+    if (unitId) {
+      mistakesPerUnit.set(unitId, (mistakesPerUnit.get(unitId) || 0) + 1);
+    }
+  }
+
+  // Pre-index completions by unit
+  const completionsPerUnit = new Map<number, number>();
+  const challengeToUnitMap = new Map<number, number>();
+  for (const u of allUnits) {
+    for (const l of u.lessons) {
+      for (const c of l.challenges) {
+        challengeToUnitMap.set(c.id, u.id);
+      }
+    }
+  }
+
+  for (const cp of completedProgress) {
+    const unitId = challengeToUnitMap.get(cp.challengeId);
+    if (unitId) {
+      completionsPerUnit.set(unitId, (completionsPerUnit.get(unitId) || 0) + 1);
+    }
+  }
+
+  const unitMasteries: UnitMasteryItem[] = allUnits.map((u) => {
+    const completedCount = completionsPerUnit.get(u.id) || 0;
+    const mistakeCount = mistakesPerUnit.get(u.id) || 0;
+    const total = completedCount + mistakeCount;
+
+    let accuracyRate = 100;
+    let status: UnitMasteryItem["status"] = "Upcoming";
+
+    if (total > 0) {
+      accuracyRate = Math.round((completedCount / total) * 100);
+      if (accuracyRate >= 90) {
+        status = "Mastered";
+      } else if (accuracyRate >= 75) {
+        status = "Solid";
+      } else {
+        status = "Needs Practice";
+      }
+    }
+
+    return {
+      unitId: u.id,
+      unitOrder: u.order,
+      title: u.title,
+      description: u.description,
+      completedCount,
+      mistakeCount,
+      accuracyRate,
+      status,
+    };
+  });
+
+  // 5. Actionable Family Conversation Prompts
+  const conversationPrompts: ConversationPromptItem[] = [
+    {
+      id: 1,
+      theme: "Morning Greetings & Courtesy",
+      timing: "Breakfast or School Drop-Off",
+      croatian: "Dobar dan! Kako si danas?",
+      english: "Good day! How are you today?",
+      targetWords: "Dobar dan vs Laku noć • Dobro sam",
+      parentTip: "Greet the girls in Croatian first thing in the morning. When they answer 'Dobro sam!' (I am good!), give them a high-five!",
+    },
+    {
+      id: 2,
+      theme: "Dinner Table Etiquette",
+      timing: "Family Dinner",
+      croatian: "Molim te, dodaj mi kruh. Hvala lijepa!",
+      english: "Please pass the bread. Thank you very much!",
+      targetWords: "Molim (Please) vs Hvala (Thank you) • Kruh (Bread)",
+      parentTip: "Challenge the sisters to use 'Molim te' whenever asking for food at dinner, and reply with 'Izvoli' (Here you go) and 'Hvala'!",
+    },
+    {
+      id: 3,
+      theme: "Playful Animal Riddle",
+      timing: "Car Rides or Walk in the Park",
+      croatian: "Tko kaže vau-vau, a tko spava na suncu i kaže mijau?",
+      english: "Who says woof-woof, and who sleeps in the sun and says meow?",
+      targetWords: "Pas (Dog) vs Mačka (Cat)",
+      parentTip: "Spot animals out the car window and ask in Croatian: 'Je li to pas ili mačka?' (Is that a dog or a cat?)",
+    },
+  ];
+
+  const totalMistakes = mistakes.length;
+  const totalCompleted = completedProgress.length;
+  const overallAccuracyRate = (totalCompleted + totalMistakes) > 0
+    ? Math.round((totalCompleted / (totalCompleted + totalMistakes)) * 100)
+    : 100;
+
+  return {
+    topTrickyWords,
+    unitMasteries,
+    conversationPrompts,
+    totalMistakes,
+    totalCompleted,
+    overallAccuracyRate,
+  };
 });

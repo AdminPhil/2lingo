@@ -143,7 +143,7 @@ export const Quiz = ({
       });
     } else {
       startTransition(() => {
-        reduceHearts(challenge.id)
+        reduceHearts(challenge.id, selectedOption)
           .then((response) => {
             if (response?.error === "hearts") {
               openHeartsModal();
