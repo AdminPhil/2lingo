@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-23] - Practice Session Quality: Number Alignment & Visual Collision Resolving (BUG-005, BUG-006)
+
+### Fixed
+- **[BUG-005] ✅ RESOLVED & VERIFIED - Challenge 43 ("Five (5)") Incorrectly Requiring "Četiri":**
+  - **Symptom:** In practice review (`/lesson/practice`) and Unit 4 Lesson 1, selecting **`Pet`** (Five) was marked incorrect (red highlight), while **`Četiri`** (Four) was accepted.
+  - **Root Cause:** In `challenge_options` for Challenge 43, Option 2680 (`Četiri`) had `correct: true` while Option 2681 (`Pet`) had `correct: false`.
+  - **Fix:** Flipped the boolean flags in Neon Postgres so `Pet` (ID: 2681) is `true` and `Četiri` (ID: 2680) is `false`. Verified 100% precision.
+- **[BUG-006] ✅ RESOLVED & VERIFIED - Duplicate Slide SVG Used for "Swing" (`Ljuljačka` vs `Tobogan`):**
+  - **Symptom:** In Unit 12 Lesson 1 (Challenge 199), both **`Ljuljačka`** (Swing) and **`Tobogan`** (Slide) displayed the exact same orange slide illustration.
+  - **Root Cause:** File inspection revealed `public/swing.svg` was a binary copy of `public/slide.svg`.
+  - **Fix:** Replaced `public/swing.svg` with a dedicated, authentic vector SVG of a playground A-frame swing set with chains, seat, and crossbars.
+- **Practice Session Deep Audit & Additional Visual Collisions Resolved:**
+  - Ran automated curriculum audit across all 359 challenges.
+  - Identified and resolved 4 additional image collisions:
+    - Challenge 1 & 3: `Molim` (Please) re-routed from `/mascot.svg` to `/heart.svg`, leaving `/mascot.svg` exclusive to `Bok` (Hello).
+    - Challenge 13: `Baka` (Grandma) assigned new dedicated `/grandma.svg`, distinguishing it from `Mama` (`/woman.svg`).
+    - Challenge 14: `Djed` (Grandpa) assigned new dedicated `/grandpa.svg`, distinguishing it from `Tata` (`/man.svg`).
+  - Full audit confirms **0 semantic number mismatches, 0 option cardinality errors, and 0 duplicate image collisions** across all 359 challenges.
+
+---
+
 ## [2026-10-22] - Tricky Words & Mistake Heatmap Analytics (CR-012)
 
 ### Added
