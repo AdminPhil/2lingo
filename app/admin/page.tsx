@@ -10,12 +10,15 @@ import {
   Trophy, 
   Wand2, 
   Brain,
-  ShieldCheck
+  ShieldCheck,
+  Crown
 } from "lucide-react";
+import { auth, currentUser } from "@clerk/nextjs";
+import { eq } from "drizzle-orm";
 
 import db from "@/db/drizzle";
 import { pods, userProgress } from "@/db/schema";
-import { isAdmin } from "@/lib/admin";
+import { isAdmin, isSuperAdmin } from "@/lib/admin";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
@@ -24,20 +27,26 @@ import { TrickyWordsCard } from "@/components/admin/tricky-words-card";
 import { getTrickyWordsAnalytics } from "@/db/queries";
 
 const AdminPage = async () => {
-  if (!isAdmin()) {
+  const adminAllowed = await isAdmin();
+  if (!adminAllowed) {
     redirect("/learn");
   }
 
-  // Fetch active pod (Zgomba Family)
-  const activePod = await db.query.pods.findFirst({
-    where: (pods, { eq }) => eq(pods.id, 1),
-  });
+  const superAdmin = await isSuperAdmin();
+  const { userId } = auth();
+  const user = await currentUser();
 
-  // Fetch all young learners
-  const learners = await db.query.userProgress.findMany({
-    orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
-  });
+  // If Super-Admin, ensure Pod 1 (Zgomba Family) ownerId is linked to this user
+  if (superAdmin && userId) {
+    const pod1 = await db.query.pods.findFirst({
+      where: (pods, { eq }) => eq(pods.id, 1),
+    });
+    if (pod1 && pod1.ownerId !== userId) {
+      await db.update(pods).set({ ownerId: userId }).where(eq(pods.id, 1));
+    }
+  }
 
+  // Fetch all pods with members
   const allPodsData = await db.query.pods.findMany({
     with: {
       members: true,
@@ -45,11 +54,32 @@ const AdminPage = async () => {
     orderBy: (pods, { asc }) => [asc(pods.id)],
   });
 
-  const analyticsData = await getTrickyWordsAnalytics();
+  // Scope pods based on role:
+  // Super-admin sees all pods (with Pod 1 as default active); regular parent sees only owned pods
+  const accessiblePods = superAdmin
+    ? allPodsData
+    : allPodsData.filter((p) => p.ownerId === userId);
 
-  const learnersMap = new Map(learners.map((l) => [l.userId, l.userName]));
+  const activePod = accessiblePods.find((p) => p.id === 1) || accessiblePods[0] || allPodsData[0];
 
-  const formattedPods = allPodsData.map((p) => ({
+  // Fetch learners:
+  // If superAdmin: all young learners
+  // If regular parent: strictly learners in their accessible pods
+  const allLearners = await db.query.userProgress.findMany({
+    orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
+  });
+
+  const accessibleMemberUserIds = new Set(
+    accessiblePods.flatMap((p) => p.members.map((m) => m.userId))
+  );
+
+  const learners = superAdmin
+    ? allLearners
+    : allLearners.filter((l) => accessibleMemberUserIds.has(l.userId));
+
+  const learnersMap = new Map(allLearners.map((l) => [l.userId, l.userName]));
+
+  const formattedPods = accessiblePods.map((p) => ({
     id: p.id,
     name: p.name,
     type: p.type,
@@ -65,11 +95,14 @@ const AdminPage = async () => {
     })),
   }));
 
+  const analyticsData = await getTrickyWordsAnalytics();
+
   const podName = activePod?.name || "Zgomba Family";
   const inviteCode = activePod?.inviteCode || "ZGOMBA";
   const currentXp = activePod?.currentXp ?? 740;
   const targetXp = activePod?.targetXp ?? 1000;
   const progressPercent = Math.min(Math.round((currentXp / targetXp) * 100), 100);
+  const parentName = user?.firstName || (superAdmin ? "Phil" : "Parent");
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 pb-16">
@@ -103,14 +136,24 @@ const AdminPage = async () => {
         {/* Welcome Banner */}
         <div className="bg-linear-to-r from-green-600 to-lime-600 rounded-3xl p-6 sm:p-8 text-white shadow-md mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 bg-white/20 rounded-full text-white inline-block mb-2">
-              Family Learning Hub
-            </span>
+            <div className="flex items-center gap-x-2 mb-2 flex-wrap">
+              <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 bg-white/20 rounded-full text-white inline-block">
+                Family Learning Hub
+              </span>
+              {superAdmin && (
+                <span className="text-xs font-black uppercase tracking-wider px-2.5 py-1 bg-amber-400 text-amber-950 rounded-full inline-flex items-center gap-x-1 shadow-xs">
+                  <Crown className="h-3.5 w-3.5 fill-amber-950" />
+                  Super-Admin (philip.zgomba@gmail.com)
+                </span>
+              )}
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black">
-              Dobrodošli, Phil! 🇭🇷
+              Dobrodošli, {parentName}! 🇭🇷
             </h2>
             <p className="text-sm text-green-50 mt-1 max-w-xl">
-              Monitor Adriana, Vanessa, and Silvia&apos;s daily learning streaks, adjust family pod goals, and keep the enthusiasm burning high!
+              {superAdmin 
+                ? "Full administrative platform oversight. Monitor family pods, oversee learner streaks, and adjust celebration goals!"
+                : "Monitor your children's daily learning streaks, adjust family celebration goals, and celebrate their Croatian progress!"}
             </p>
           </div>
 

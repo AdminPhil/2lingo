@@ -4,6 +4,21 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-23] - Email Super-Admin & Scoped Parent Center Access (CR-013)
+
+### Added
+- **[CR-013] Email Super-Admin & Scoped Parent Center Access:**
+  - Modernized `lib/admin.ts` with email-based authorization checking Clerk's `currentUser()` and `auth()`.
+  - Configured `philip.zgomba@gmail.com` as permanent platform **Super-Admin** and Owner of the Zgomba Family Pod (`pods.id = 1`).
+  - Added support for `ADMIN_EMAILS` and `SUPER_ADMIN_USER_IDS` environment variables.
+  - Implemented dynamic pod and learner scoping in `app/admin/page.tsx`:
+    - Regular family admins/parents are strictly scoped to pods they own (`ownerId === userId`) and members of their family circle.
+    - Super-Admin (`philip.zgomba@gmail.com`) is granted complete platform oversight and can view all active family pods.
+    - Displayed Super-Admin badge with Crown indicator.
+  - Added discrete **"🛡️ Parent Center"** button in `components/sidebar.tsx` (and `components/mobile-sidebar.tsx`) that appears dynamically only when an authorized administrator or parent account is logged in.
+
+---
+
 ## [2026-10-23] - Practice Session Quality: Number Alignment & Visual Collision Resolving (BUG-005, BUG-006)
 
 ### Fixed

@@ -11,7 +11,7 @@ import { awardPodXp } from "@/actions/pod";
 
 export const adminRefillHearts = async (targetUserId: string) => {
   const { userId } = await auth();
-  if (!userId || !isAdmin()) {
+  if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
   }
 
@@ -36,7 +36,7 @@ export const adminRefillHearts = async (targetUserId: string) => {
 
 export const adminProtectStreak = async (targetUserId: string) => {
   const { userId } = await auth();
-  if (!userId || !isAdmin()) {
+  if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
   }
 
@@ -70,7 +70,7 @@ export const adminAwardPraiseXp = async (
   reason: string
 ) => {
   const { userId } = await auth();
-  if (!userId || !isAdmin()) {
+  if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
   }
 
