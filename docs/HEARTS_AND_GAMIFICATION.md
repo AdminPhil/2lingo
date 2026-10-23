@@ -106,3 +106,18 @@ Should Concept A require expansion or alternative modes in the future, the follo
    - Unread cheers trigger the animated `<CheerBanner />` on `/learn` and `/leaderboard`:
      *"🎉 [Sender] sent you a High-Five! Tap to claim +5 XP! 👋"*
    - Claiming awards **+5 XP** to the recipient and contributes +5 XP to all active family pods.
+
+---
+
+## 🪄 9. Parent Magic Wand Overrides (CR-011)
+
+1. **Frustration Dissolution (Instant Refill):**
+   - Parents can replenish a child's hearts from 0 or 1 back to 5/5 with one tap via `adminRefillHearts()`.
+   - Protects younger children (Silvia, Vanessa) from frustration or lesson abandonment after tough concepts.
+2. **Streak Grace Protection:**
+   - Parents can grant an emergency streak protection grace day via `adminProtectStreak()`.
+   - Protects multi-day flames during busy travel days, sickness, or school events.
+3. **Real-Life Croatian Praise Engine:**
+   - Parents can reward offline spoken Croatian practice (e.g. at the dinner table or during calls with grandparents in Croatia) with +25 or +50 XP via `adminAwardPraiseXp()`.
+   - Praise points propagate to both individual learner profiles and active family pods.
+

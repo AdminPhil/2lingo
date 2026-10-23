@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Learner Health & Parent Magic Wand Overrides (CR-011)
+
+### Added
+- **[CR-011] Learner Health Card & Parent Magic Wand Overrides:**
+  - Implemented server actions `adminRefillHearts()`, `adminProtectStreak()`, and `adminAwardPraiseXp()` in `actions/admin-overrides.ts`.
+  - Built interactive `<LearnerHealthCard />` inside the Parent Portal at `/admin` displaying active status, heart meters, flame counts, and real-time override tools for each sister.
+  - **Instant Heart Refill:** One-click magic wand replenishment to 5/5 hearts, dissolving frustration after difficult lessons without waiting.
+  - **Streak Grace Protection:** One-click streak flame boost for busy school days, recitals, or weekend trips so hard-earned flames are never lost.
+  - **Real-Life Croatian Praise Award:** Dialog allowing parents to award +25, +50, or custom XP presets (e.g. "Spoke Croatian at dinner! 🇭🇷", "Helped sister practice vocabulary! 🌟") that instantly reflect in both individual learner XP and the family pod celebration meter.
+
+---
+
 ## [2026-10-22] - Pod & Family Circle Management Hub (CR-010)
 
 ### Added

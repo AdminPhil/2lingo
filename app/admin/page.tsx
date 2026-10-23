@@ -19,6 +19,7 @@ import { isAdmin } from "@/lib/admin";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
+import { LearnerHealthCard } from "@/components/admin/learner-health-card";
 
 const AdminPage = async () => {
   if (!isAdmin()) {
@@ -191,7 +192,7 @@ const AdminPage = async () => {
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-amber-700 font-bold">
-              ✓ Ready for CR-011 Controls
+              ✓ Active Magic Wand Overrides
             </div>
           </div>
 
@@ -214,66 +215,8 @@ const AdminPage = async () => {
         {/* Pod Management Hub (CR-010) */}
         <PodManagementCard pods={formattedPods} />
 
-        {/* Live Learner Roster */}
-        <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-xs">
-          <div className="p-5 border-b border-slate-200 flex items-center justify-between">
-            <div>
-              <h3 className="font-extrabold text-lg text-neutral-800">
-                Active Young Learners
-              </h3>
-              <p className="text-xs text-muted-foreground">
-                Real-time precision and progress metrics for the Zgomba sisters
-              </p>
-            </div>
-            <span className="text-xs font-bold px-2.5 py-1 bg-green-100 text-green-800 rounded-full">
-              3 Connected
-            </span>
-          </div>
-
-          <div className="divide-y divide-slate-100">
-            {learners.map((learner, idx) => (
-              <div key={learner.userId} className="p-4 sm:p-5 flex items-center justify-between gap-4 hover:bg-slate-50 transition">
-                <div className="flex items-center gap-x-3.5">
-                  <span className="text-sm font-black text-slate-400 w-5">
-                    #{idx + 1}
-                  </span>
-                  <Avatar className="h-11 w-11 border-2 border-green-500">
-                    <AvatarImage src={learner.userImageSrc} />
-                  </Avatar>
-                  <div>
-                    <h4 className="font-black text-neutral-800 text-base">
-                      {learner.userName}
-                    </h4>
-                    <p className="text-xs text-muted-foreground flex items-center gap-x-3 mt-0.5">
-                      <span className="flex items-center gap-x-1 text-amber-600 font-bold">
-                        <Flame className="h-3.5 w-3.5" />
-                        <span>{learner.streak} Day Flame</span>
-                      </span>
-                      <span>•</span>
-                      <span className="flex items-center gap-x-1 text-rose-500 font-semibold">
-                        <Heart className="h-3.5 w-3.5" />
-                        <span>{learner.hearts}/5 Hearts</span>
-                      </span>
-                      <span>•</span>
-                      <span className="text-slate-500">
-                        💔 {learner.heartsUsed} hearts used
-                      </span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="text-right shrink-0">
-                  <p className="font-black text-lg text-neutral-800">
-                    {learner.points} <span className="text-xs font-bold text-muted-foreground">XP</span>
-                  </p>
-                  <p className="text-xs text-slate-400">
-                    Active: {learner.lastActiveDate || "Today"}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Learner Health & Magic Wand Overrides (CR-011) */}
+        <LearnerHealthCard learners={learners} />
       </main>
     </div>
   );
