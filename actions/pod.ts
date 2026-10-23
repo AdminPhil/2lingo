@@ -108,3 +108,84 @@ export const awardPodXp = async (userId: string, xp: number = 10) => {
     console.error("Failed to award pod XP:", error);
   }
 };
+
+
+export const updatePodSettings = async (
+  podId: number,
+  data: { name?: string; inviteCode?: string; targetXp?: number }
+) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const updates: Record<string, any> = {};
+
+  if (data.name?.trim()) {
+    updates.name = data.name.trim();
+  }
+
+  if (data.inviteCode?.trim()) {
+    const cleanCode = data.inviteCode.trim().toUpperCase();
+    const existing = await db.query.pods.findFirst({
+      where: eq(pods.inviteCode, cleanCode),
+    });
+    if (existing && existing.id !== podId) {
+      return { error: `Invite code "${cleanCode}" is already taken by another pod.` };
+    }
+    updates.inviteCode = cleanCode;
+  }
+
+  if (data.targetXp && data.targetXp > 0) {
+    updates.targetXp = data.targetXp;
+  }
+
+  if (Object.keys(updates).length > 0) {
+    await db.update(pods).set(updates).where(eq(pods.id, podId));
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/leaderboard");
+  revalidatePath("/learn");
+
+  return { success: true };
+};
+
+export const deletePod = async (podId: number) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  if (podId === 1) {
+    return { error: "Cannot delete the default family pod." };
+  }
+
+  await db.delete(pods).where(eq(pods.id, podId));
+
+  revalidatePath("/admin");
+  revalidatePath("/leaderboard");
+  revalidatePath("/learn");
+
+  return { success: true };
+};
+
+export const removePodMember = async (podId: number, memberUserId: string) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  await db.delete(podMembers).where(
+    and(
+      eq(podMembers.podId, podId),
+      eq(podMembers.userId, memberUserId),
+    )
+  );
+
+  revalidatePath("/admin");
+  revalidatePath("/leaderboard");
+  revalidatePath("/learn");
+
+  return { success: true };
+};

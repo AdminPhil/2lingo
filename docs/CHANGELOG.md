@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-22] - Pod & Family Circle Management Hub (CR-010)
+
+### Added
+- **[CR-010] Pod & Family Circle Management Hub:**
+  - Built interactive `<PodManagementCard />` inside the Parent Portal at `/admin` showing all active pods, custom invite codes, member counts, and weekly goal progress.
+  - Implemented server actions `updatePodSettings()`, `createPod()`, and `deletePod()` in `actions/pod.ts` allowing parents to edit pod names, assign custom invite codes (e.g. `ZGOMBA`, `BAKA`), and adjust weekly celebration goals (500–2,000 XP).
+  - Enhanced student-facing `<PodHeader />` dialog on the Leaderboard with a two-tab interface allowing family members to either join an existing pod with a code or create a brand new pod with 1 click.
+  - Full relational integrity: deleting non-default pods safely cascades memberships while preserving individual learner XP.
+
+---
+
 ## [2026-10-22] - Parent & Admin Access Governance (CR-009)
 
 ### Added

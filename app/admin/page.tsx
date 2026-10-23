@@ -18,6 +18,7 @@ import { pods, userProgress } from "@/db/schema";
 import { isAdmin } from "@/lib/admin";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { PodManagementCard } from "@/components/admin/pod-management-card";
 
 const AdminPage = async () => {
   if (!isAdmin()) {
@@ -33,6 +34,31 @@ const AdminPage = async () => {
   const learners = await db.query.userProgress.findMany({
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
   });
+
+  const allPodsData = await db.query.pods.findMany({
+    with: {
+      members: true,
+    },
+    orderBy: (pods, { asc }) => [asc(pods.id)],
+  });
+
+  const learnersMap = new Map(learners.map((l) => [l.userId, l.userName]));
+
+  const formattedPods = allPodsData.map((p) => ({
+    id: p.id,
+    name: p.name,
+    type: p.type,
+    inviteCode: p.inviteCode,
+    targetXp: p.targetXp,
+    currentXp: p.currentXp,
+    celebrationUnlocked: p.celebrationUnlocked,
+    memberCount: p.members.length,
+    members: p.members.map((m) => ({
+      userId: m.userId,
+      userName: learnersMap.get(m.userId) || "Learner",
+      role: m.role,
+    })),
+  }));
 
   const podName = activePod?.name || "Zgomba Family";
   const inviteCode = activePod?.inviteCode || "ZGOMBA";
@@ -184,6 +210,9 @@ const AdminPage = async () => {
             </div>
           </div>
         </div>
+
+        {/* Pod Management Hub (CR-010) */}
+        <PodManagementCard pods={formattedPods} />
 
         {/* Live Learner Roster */}
         <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-xs">
