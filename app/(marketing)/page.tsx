@@ -17,13 +17,13 @@ export default async function Home() {
   const isParent = userProgress?.role === "parent";
 
   return (
-    <div className="max-w-[1080px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 lg:p-8 gap-6 lg:gap-12">
-      {/* Croatian Hero Illustration (Paško the Dalmatian, Luka & Mia, Trajekt, Licitarsko Srce) */}
-      <div className="relative w-full max-w-[340px] h-[280px] sm:max-w-[440px] sm:h-[360px] lg:max-w-[500px] lg:h-[420px] shrink-0">
+    <div className="max-w-[1120px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 lg:p-8 gap-8 lg:gap-14">
+      {/* High-Resolution Croatian Hero Artwork (Paško the Dalmatian, Trajekt, Licitarsko Srce, Adriatic Sun) */}
+      <div className="relative w-full max-w-[360px] h-[320px] sm:max-w-[460px] sm:h-[400px] lg:max-w-[500px] lg:h-[450px] shrink-0 drop-shadow-sm flex items-center justify-center">
         <Image
-          src="/hero-croatian.svg"
+          src="/pasko-hero.jpg"
           fill
-          alt="Paško the Dalmatian, Luka and Mia learning Croatian with 2lingo"
+          alt="Paško the Dalmatian Pup learning Croatian with 2lingo"
           className="object-contain"
           priority
         />
@@ -39,9 +39,9 @@ export default async function Home() {
           </span>
         </div>
 
-        {/* Playful Headline */}
-        <div className="space-y-2">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-800 tracking-tight leading-tight">
+        {/* Playful Bold Headline */}
+        <div className="space-y-2.5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-800 tracking-tight leading-tight">
             <span className="text-green-600">Bok!</span> Learn Croatian the playful way.
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed max-w-[420px]">
@@ -50,7 +50,7 @@ export default async function Home() {
         </div>
 
         {/* Two Kid-Friendly Action Gates */}
-        <div className="flex flex-col items-center lg:items-start gap-y-3 w-full max-w-[340px]">
+        <div className="flex flex-col items-center lg:items-start gap-y-3.5 w-full max-w-[340px]">
           <ClerkLoading>
             <div className="h-28 flex items-center justify-center w-full">
               <Loader className="h-6 w-6 text-green-600 animate-spin" />
@@ -84,14 +84,14 @@ export default async function Home() {
                 <Button
                   size="lg"
                   variant="primaryOutline"
-                  className="w-full text-sm font-extrabold border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 active:scale-98 transition flex items-center justify-center gap-x-2 h-11 rounded-2xl cursor-pointer"
+                  className="w-full text-sm font-extrabold border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 active:scale-98 transition flex items-center justify-center gap-x-2 h-12 rounded-2xl cursor-pointer"
                 >
                   <Sparkles className="h-4 w-4 text-amber-500" />
                   <span>I&apos;m New Here! Start Learning</span>
                 </Button>
               </SignUpButton>
 
-              <p className="text-[11px] text-muted-foreground/80 text-center w-full font-medium mt-1">
+              <p className="text-[11px] text-muted-foreground/80 text-center w-full font-medium mt-0.5">
                 Free for families & learners • No credit card required
               </p>
             </SignedOut>

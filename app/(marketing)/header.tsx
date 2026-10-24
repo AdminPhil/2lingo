@@ -13,15 +13,16 @@ import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   return (
-    <header className="w-full border-b border-slate-200 bg-white">
+    <header className="w-full bg-white shadow-2xs">
       <div className="h-20 lg:max-w-screen-lg mx-auto flex items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-x-3 group">
-          <div className="relative w-11 h-11 transition-transform group-hover:scale-105">
+          <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-xs transition-transform group-hover:scale-105 bg-white shrink-0">
             <Image
-              src="/mascot.svg"
+              src="/mascot.png"
               fill
               alt="Paško the Dalmatian"
-              className="object-contain"
+              className="object-cover"
+              priority
             />
           </div>
           <div className="flex items-center gap-x-2">
@@ -44,7 +45,7 @@ export const Header = () => {
               <Button
                 size="sm"
                 variant="ghost"
-                className="font-extrabold text-xs text-slate-700 hover:text-green-700 hover:bg-green-50 border border-slate-200 rounded-xl px-3.5 h-9 hidden sm:flex items-center gap-1.5 shadow-2xs"
+                className="font-extrabold text-xs text-slate-700 hover:text-green-700 hover:bg-green-50 border border-slate-200 rounded-xl px-3.5 h-9 hidden sm:flex items-center gap-1.5 shadow-2xs cursor-pointer"
                 asChild
               >
                 <Link href="/admin">
@@ -76,8 +77,11 @@ export const Header = () => {
         </ClerkLoaded>
       </div>
 
-      {/* Subtle Croatian Checkered Accent Stripe */}
-      <div className="h-[3px] w-full bg-[repeating-linear-gradient(90deg,#DC2626_0px,#DC2626_12px,#FFFFFF_12px,#FFFFFF_24px)] opacity-85" />
+      {/* True Croatian Checkerboard Ribbon (Šahovnica) */}
+      <div 
+        className="h-2 w-full border-t border-b border-red-300/80 bg-[repeating-conic-gradient(#DC2626_0%_25%,#FFFFFF_0%_50%)] bg-[length:16px_8px]" 
+        title="Hrvatska Šahovnica"
+      />
     </header>
   );
 };
