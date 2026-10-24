@@ -1,0 +1,251 @@
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Soft background glow -->
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FEF08A" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Sea gradient -->
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Background Soft Glow & Adriatic Sea Wave -->
+  <circle cx="300" cy="220" r="180" fill="url(#sunGlow)"/>
+  
+  <!-- Subtle Sea Horizon & Islands at Base -->
+  <path d="M 40 430 Q 180 405, 300 425 T 560 415 L 560 490 L 40 490 Z" fill="url(#seaGrad)"/>
+  <path d="M 60 445 C 160 430, 240 445, 340 435 C 440 425, 500 440, 550 435" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 12" opacity="0.6"/>
+
+  <!-- 2. Cultural Icons: Golden Sun (Top Right) -->
+  <g transform="translate(480, 55)">
+    <circle cx="25" cy="25" r="22" fill="#FBBF24" stroke="#F59E0B" stroke-width="2.5"/>
+    <!-- Sun Rays -->
+    <line x1="25" y1="-3" x2="25" y2="4" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="25" y1="46" x2="25" y2="53" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-3" y1="25" x2="4" y2="25" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="46" y1="25" x2="53" y2="25" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="5" y1="5" x2="10" y2="10" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="40" y1="40" x2="45" y2="45" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="5" y1="45" x2="10" y2="40" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="40" y1="10" x2="45" y2="5" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 3. Cultural Icons: Trajekt (Croatian Ferry - Top Left) -->
+  <g transform="translate(60, 60)">
+    <!-- Water ripple -->
+    <ellipse cx="40" cy="62" rx="42" ry="4" fill="#38BDF8" opacity="0.5"/>
+    <!-- Hull (White with blue and red stripe) -->
+    <path d="M 10 42 L 68 42 L 60 58 L 22 58 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+    <!-- Blue & Red Waterline Stripes -->
+    <path d="M 18 51 L 63 51 L 61 54 L 20 54 Z" fill="#2563EB"/>
+    <path d="M 20 54 L 61 54 L 60 58 L 22 58 Z" fill="#DC2626"/>
+    <!-- Cabin Deck -->
+    <rect x="25" y="24" width="34" height="18" rx="2" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+    <!-- Windows -->
+    <rect x="29" y="28" width="5" height="5" rx="1" fill="#38BDF8"/>
+    <rect x="37" y="28" width="5" height="5" rx="1" fill="#38BDF8"/>
+    <rect x="45" y="28" width="5" height="5" rx="1" fill="#38BDF8"/>
+    <rect x="53" y="28" width="3" height="5" rx="1" fill="#38BDF8"/>
+    <!-- Funnel / Chimney -->
+    <rect x="38" y="14" width="7" height="10" fill="#DC2626" stroke="#0F172A" stroke-width="1.5"/>
+    <rect x="38" y="14" width="7" height="3" fill="#0F172A"/>
+    <!-- Croatian flag on mast -->
+    <line x1="22" y1="18" x2="22" y2="42" stroke="#475569" stroke-width="1.5"/>
+    <rect x="14" y="20" width="8" height="2" fill="#DC2626"/>
+    <rect x="14" y="22" width="8" height="2" fill="#FFFFFF"/>
+    <rect x="14" y="24" width="8" height="2" fill="#2563EB"/>
+  </g>
+
+  <!-- 4. Cultural Icons: Licitarsko Srce (Traditional Red Croatian Heart - Top Center) -->
+  <g transform="translate(268, 30)">
+    <!-- Red Gingerbread Heart -->
+    <path d="M 32 16 C 32 6, 20 0, 12 0 C 4 0, 0 7, 0 15 C 0 28, 22 45, 32 54 C 42 45, 64 28, 64 15 C 64 7, 60 0, 52 0 C 44 0, 32 6, 32 16 Z" fill="#DC2626" stroke="#991B1B" stroke-width="2"/>
+    <!-- Traditional White Sugar Filigree Icing Border -->
+    <path d="M 32 19 C 32 10, 22 4, 15 4 C 8 4, 4 9, 4 16 C 4 26, 23 41, 32 49 C 41 41, 60 26, 60 16 C 60 9, 56 4, 49 4 C 42 4, 32 10, 32 19 Z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 3"/>
+    <!-- Traditional Yellow Mirror in Center -->
+    <rect x="26" y="20" width="12" height="12" rx="2" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5"/>
+    <rect x="28" y="22" width="8" height="8" rx="1" fill="#FEF9C3"/>
+  </g>
+
+  <!-- 5. Left Character: Luka (Croatian Boy, waving) -->
+  <g transform="translate(90, 170)">
+    <!-- Shadow -->
+    <ellipse cx="65" cy="250" rx="36" ry="6" fill="#000000" fill-opacity="0.1"/>
+    <!-- Legs & Blue Shorts -->
+    <rect x="46" y="195" width="14" height="42" rx="5" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <rect x="70" y="195" width="14" height="42" rx="5" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Red Sneakers -->
+    <path d="M 40 236 L 62 236 C 64 236, 65 244, 60 246 L 38 246 C 36 244, 36 236, 40 236 Z" fill="#EF4444" stroke="#334155" stroke-width="2"/>
+    <path d="M 66 236 L 88 236 C 90 236, 91 244, 86 246 L 64 246 C 62 244, 62 236, 66 236 Z" fill="#EF4444" stroke="#334155" stroke-width="2"/>
+    <path d="M 42 165 C 42 165, 40 198, 42 205 L 88 205 C 90 198, 88 165, 88 165 Z" fill="#2563EB" stroke="#334155" stroke-width="2.5"/>
+    <!-- Green Polo Shirt -->
+    <path d="M 38 120 C 38 108, 92 108, 92 120 L 90 170 L 40 170 Z" fill="#16A34A" stroke="#334155" stroke-width="2.5"/>
+    <path d="M 52 110 L 65 124 L 78 110 Z" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+    <!-- Left Arm waving -->
+    <path d="M 40 125 C 25 110, 16 95, 20 85 C 24 75, 34 85, 36 100 L 44 130 Z" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Right Arm relaxed -->
+    <path d="M 90 125 C 98 140, 104 160, 102 175 C 98 180, 92 178, 90 165 Z" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Neck -->
+    <rect x="58" y="98" width="14" height="15" fill="#FDDEC9" stroke="#334155" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="65" cy="72" r="30" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Hair (Warm Brown) -->
+    <path d="M 35 68 C 35 40, 52 35, 68 35 C 84 35, 96 48, 96 68 C 96 70, 92 60, 84 56 C 76 52, 60 55, 50 62 C 42 66, 36 74, 35 68 Z" fill="#92400E" stroke="#334155" stroke-width="2.5"/>
+    <!-- Cheerful Face -->
+    <circle cx="56" cy="70" r="3.5" fill="#0F172A"/>
+    <circle cx="76" cy="70" r="3.5" fill="#0F172A"/>
+    <path d="M 60 82 Q 66 90, 72 82" stroke="#334155" stroke-width="2" stroke-linecap="round" fill="#FB7185"/>
+    <ellipse cx="50" cy="76" rx="4" ry="2.5" fill="#FDA4AF" opacity="0.6"/>
+    <ellipse cx="80" cy="76" rx="4" ry="2.5" fill="#FDA4AF" opacity="0.6"/>
+  </g>
+
+  <!-- 6. Right Character: Mia (Croatian Girl, smiling) -->
+  <g transform="translate(380, 170)">
+    <!-- Shadow -->
+    <ellipse cx="65" cy="250" rx="36" ry="6" fill="#000000" fill-opacity="0.1"/>
+    <!-- Legs -->
+    <rect x="48" y="195" width="13" height="42" rx="5" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <rect x="69" y="195" width="13" height="42" rx="5" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Blue Mary-Jane Shoes -->
+    <path d="M 42 236 L 64 236 C 66 236, 67 244, 62 246 L 40 246 C 38 244, 38 236, 42 236 Z" fill="#0284C7" stroke="#334155" stroke-width="2"/>
+    <path d="M 65 236 L 87 236 C 89 236, 90 244, 85 246 L 63 246 C 61 244, 61 236, 65 236 Z" fill="#0284C7" stroke="#334155" stroke-width="2"/>
+    <!-- Red & White Skirt -->
+    <path d="M 42 165 L 88 165 L 96 205 L 34 205 Z" fill="#EF4444" stroke="#334155" stroke-width="2.5"/>
+    <line x1="34" y1="198" x2="96" y2="198" stroke="#FFFFFF" stroke-width="3"/>
+    <!-- Yellow Summer Top -->
+    <path d="M 44 120 C 44 110, 86 110, 86 120 L 88 168 L 42 168 Z" fill="#FACC15" stroke="#334155" stroke-width="2.5"/>
+    <!-- Right Arm waving -->
+    <path d="M 85 125 C 100 110, 109 95, 105 85 C 101 75, 91 85, 89 100 L 81 130 Z" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Left Arm on hip -->
+    <path d="M 44 125 C 34 135, 28 150, 32 160 C 36 165, 42 160, 44 150 Z" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Neck -->
+    <rect x="58" y="98" width="14" height="15" fill="#FDDEC9" stroke="#334155" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="65" cy="72" r="30" fill="#FDDEC9" stroke="#334155" stroke-width="2.5"/>
+    <!-- Hair (Warm Chestnut Ponytails & Blue Headband) -->
+    <path d="M 33 68 C 33 38, 52 35, 65 35 C 78 35, 97 38, 97 68 C 97 78, 95 86, 92 88 C 88 88, 86 64, 84 56 C 76 50, 54 50, 46 56 C 44 64, 42 88, 38 88 C 35 86, 33 78, 33 68 Z" fill="#B45309" stroke="#334155" stroke-width="2.5"/>
+    <!-- Blue Headband -->
+    <path d="M 37 54 C 45 42, 85 42, 93 54" stroke="#0284C7" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Cheerful Face -->
+    <circle cx="55" cy="70" r="3.5" fill="#0F172A"/>
+    <circle cx="75" cy="70" r="3.5" fill="#0F172A"/>
+    <path d="M 59 82 Q 65 89, 71 82" stroke="#334155" stroke-width="2" stroke-linecap="round" fill="#FB7185"/>
+    <ellipse cx="49" cy="76" rx="4" ry="2.5" fill="#FDA4AF" opacity="0.6"/>
+    <ellipse cx="81" cy="76" rx="4" ry="2.5" fill="#FDA4AF" opacity="0.6"/>
+  </g>
+
+  <!-- 7. Centerpiece: PAŠKO THE DALMATIAN PUP (Hero Mascot) -->
+  <g transform="translate(230, 210)">
+    <!-- Paško Shadow -->
+    <ellipse cx="70" cy="225" rx="55" ry="10" fill="#000000" fill-opacity="0.15"/>
+    
+    <!-- Puppy Body -->
+    <path d="M 45 140 C 35 155, 30 190, 40 215 C 48 225, 92 225, 100 215 C 110 190, 105 155, 95 140 Z" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+    <!-- Body Dalmatian spots -->
+    <ellipse cx="56" cy="180" rx="8" ry="12" fill="#1E293B"/>
+    <ellipse cx="85" cy="190" rx="7" ry="10" fill="#1E293B"/>
+    <circle cx="65" cy="155" r="5" fill="#1E293B"/>
+    <circle cx="78" cy="168" r="4" fill="#1E293B"/>
+
+    <!-- Paws at bottom -->
+    <ellipse cx="50" cy="220" rx="14" ry="8" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+    <ellipse cx="90" cy="220" rx="14" ry="8" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+
+    <!-- Right Paw Waving (Greeting learners!) -->
+    <g transform="translate(98, 120)">
+      <path d="M 0 30 C 10 20, 25 10, 32 0 C 38 -5, 45 5, 35 18 C 28 26, 15 36, 5 45 Z" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+      <!-- Spot on paw -->
+      <circle cx="22" cy="12" r="4" fill="#1E293B"/>
+    </g>
+
+    <!-- Left Paw resting forward -->
+    <ellipse cx="38" cy="165" rx="12" ry="8" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+
+    <!-- Paško's Head (Large & Expressive) -->
+    <!-- Left Floppy Ear -->
+    <path d="M 38 42 C 24 46, 12 62, 14 86 C 15 100, 26 108, 36 100 C 44 94, 46 78, 46 60 Z" fill="#FFFFFF" stroke="#334155" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="24" cy="72" rx="7" ry="11" fill="#1E293B"/>
+    <ellipse cx="31" cy="94" rx="5" ry="6" fill="#1E293B"/>
+    <circle cx="21" cy="86" r="3.5" fill="#1E293B"/>
+
+    <!-- Right Floppy Ear with Croatian Checkerboard Spot -->
+    <path d="M 102 42 C 116 46, 128 62, 126 86 C 125 100, 114 108, 104 100 C 96 94, 94 78, 94 60 Z" fill="#FFFFFF" stroke="#334155" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="116" cy="74" rx="6" ry="10" fill="#1E293B"/>
+    <!-- Checkerboard Spot -->
+    <g transform="translate(100, 80) rotate(12)">
+      <rect x="0" y="0" width="7" height="7" fill="#EF4444"/>
+      <rect x="7" y="0" width="7" height="7" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.5"/>
+      <rect x="0" y="7" width="7" height="7" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.5"/>
+      <rect x="7" y="7" width="7" height="7" fill="#EF4444"/>
+    </g>
+
+    <!-- Head Outline -->
+    <path d="M 70 26 C 45 26, 30 45, 30 72 C 30 98, 45 115, 70 115 C 95 115, 110 98, 110 72 C 110 45, 95 26, 70 26 Z" fill="#FFFFFF" stroke="#334155" stroke-width="3.5"/>
+
+    <!-- Head spots -->
+    <ellipse cx="44" cy="48" rx="6" ry="8" transform="rotate(-15 44 48)" fill="#1E293B"/>
+    <ellipse cx="91" cy="46" rx="7" ry="6" transform="rotate(20 91 46)" fill="#1E293B"/>
+    <circle cx="52" cy="34" r="3.5" fill="#1E293B"/>
+    <circle cx="39" cy="82" r="3" fill="#1E293B"/>
+    <circle cx="102" cy="80" r="3.5" fill="#1E293B"/>
+
+    <!-- Big Puppy Eyes -->
+    <ellipse cx="54" cy="65" rx="7.5" ry="9.5" fill="#0F172A"/>
+    <circle cx="51" cy="62" r="3" fill="#FFFFFF"/>
+    <circle cx="56" cy="69" r="1.5" fill="#FFFFFF"/>
+    <ellipse cx="86" cy="65" rx="7.5" ry="9.5" fill="#0F172A"/>
+    <circle cx="83" cy="62" r="3" fill="#FFFFFF"/>
+    <circle cx="88" cy="69" r="1.5" fill="#FFFFFF"/>
+
+    <!-- Eyebrows -->
+    <path d="M 46 54 C 50 51, 58 52, 61 54" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 79 54 C 82 52, 90 51, 94 54" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Snout & Nose -->
+    <ellipse cx="70" cy="86" rx="16" ry="12" fill="#F8FAFC"/>
+    <path d="M 63 79 C 63 76, 77 76, 77 79 C 77 85, 71 87, 70 87 C 69 87, 63 85, 63 79 Z" fill="#1E293B"/>
+    <ellipse cx="68" cy="78" rx="2.5" ry="1.2" fill="#94A3B8"/>
+
+    <!-- Mouth & Tongue -->
+    <path d="M 70 87 L 70 91" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 61 90 C 65 95, 75 95, 79 90" stroke="#334155" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 65 92 C 65 102, 75 102, 75 92 Z" fill="#FB7185" stroke="#334155" stroke-width="2"/>
+    <line x1="70" y1="93" x2="70" y2="98" stroke="#E11D48" stroke-width="1.5"/>
+
+    <!-- Rosy Cheeks -->
+    <ellipse cx="44" cy="77" rx="5.5" ry="3.5" fill="#FDA4AF" opacity="0.6"/>
+    <ellipse cx="96" cy="77" rx="5.5" ry="3.5" fill="#FDA4AF" opacity="0.6"/>
+
+    <!-- Red Croatian Bandana / Collar with Golden Bell -->
+    <path d="M 46 110 C 56 117, 84 117, 94 110 C 99 115, 94 125, 70 125 C 46 125, 41 115, 46 110 Z" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+    <circle cx="70" cy="122" r="5" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+    <circle cx="70" cy="122" r="2" fill="#F59E0B"/>
+  </g>
+
+  <!-- 8. Floating Speech Bubbles ("Bok!", "Hvala!", "Idemo!") -->
+  <!-- "Bok!" over Luka -->
+  <g transform="translate(65, 120)">
+    <rect x="0" y="0" width="58" height="30" rx="15" fill="#FFFFFF" stroke="#0284C7" stroke-width="2" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.06))"/>
+    <path d="M 28 30 L 34 38 L 38 30 Z" fill="#FFFFFF"/>
+    <path d="M 27 30 L 34 38 L 38 30" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+    <text x="14" y="20" font-family="system-ui, sans-serif" font-weight="900" font-size="14" fill="#0284C7">Bok! 👋</text>
+  </g>
+
+  <!-- "Hvala!" over Mia -->
+  <g transform="translate(460, 120)">
+    <rect x="0" y="0" width="70" height="30" rx="15" fill="#FFFFFF" stroke="#E11D48" stroke-width="2" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.06))"/>
+    <path d="M 28 30 L 22 38 L 18 30 Z" fill="#FFFFFF"/>
+    <path d="M 28 30 L 22 38 L 18 30" stroke="#E11D48" stroke-width="2" stroke-linecap="round"/>
+    <text x="12" y="20" font-family="system-ui, sans-serif" font-weight="900" font-size="13" fill="#E11D48">Hvala! ✨</text>
+  </g>
+
+  <!-- "Idemo!" above Paško -->
+  <g transform="translate(262, 160)">
+    <rect x="0" y="0" width="76" height="28" rx="14" fill="#16A34A" stroke="#15803D" stroke-width="1.5" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.1))"/>
+    <path d="M 38 28 L 38 34 L 44 28 Z" fill="#16A34A"/>
+    <text x="14" y="19" font-family="system-ui, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF">Idemo! 🇭🇷</text>
+  </g>
+</svg>

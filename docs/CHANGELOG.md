@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Croatian Landing Page Redesign & "Paško the Dalmatian" Mascot (CR-021)
+
+### Added & Refined
+- **[CR-021] ✅ IMPLEMENTED & VERIFIED - Croatian Cultural Landing Page & Paško Mascot:**
+  - **New Official Mascot ("Paško the Dalmatian Pup"):** Replaced Duolingo-derivative green cube with an authentic Croatian mascot: Paško, an adorable Dalmatian puppy with Dalmatian black spots, a red-and-white Croatian checkerboard (*šahovnica*) ear spot, and a red bandana collar (`public/pasko.svg` & updated `public/mascot.svg`).
+  - **Rich Croatian Hero Illustration (`public/hero-croatian.svg` & `public/hero.svg`):** Built a vector hero scene featuring Paško, Mediterranean kids Luka and Mia, the Adriatic coastal island ferry (*trajekt*), the golden sun, a traditional folk gingerbread *licitarsko srce*, and Croatian speech bubbles (*"Bok!"*, *"Hvala!"*, *"Idemo!"*).
+  - **Two Child-Friendly Action Gates (`app/(marketing)/page.tsx`):** Eliminated the ambiguous "Get Started" button in favor of two purpose-driven gates:
+    - 🔑 **"I Already Have an Account"** (Primary Green 3D Button) — direct sign-in for returning kids and parents.
+    - ✨ **"I'm New Here! Start Learning"** (High-Contrast Clean 3D Button) — sign-up for new families.
+  - **Parent Portal Navigation (`app/(marketing)/header.tsx`):** Added dedicated "Parent Portal →" header action directing parents straight to `/admin` upon authentication, paired with a subtle Croatian checkerboard ribbon accent along the header base.
+
+---
+
 ## [2026-10-24] - Parent Center Navigation Label Standardization (BUG-009)
 
 ### Fixed
