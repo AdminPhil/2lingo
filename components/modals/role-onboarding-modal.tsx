@@ -113,12 +113,12 @@ export const RoleOnboardingModal = ({ initialOpen = false }: Props) => {
           <div className="p-6">
             <DialogHeader className="text-center sm:text-center mb-6">
               <div className="flex items-center justify-center mb-3">
-                <div className="relative h-16 w-16">
+                <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-sm bg-white">
                   <Image
-                    src="/mascot.svg"
-                    alt="2Lingo Mascot"
+                    src="/mascot.png"
+                    alt="Paško the Dalmatian"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
               </div>

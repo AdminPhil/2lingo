@@ -24,7 +24,7 @@ type Props = {
 };
 
 const AVATAR_OPTIONS = [
-  { label: "Mascot", src: "/mascot.svg" },
+  { label: "Paško", src: "/mascot.png" },
   { label: "Heart", src: "/heart.svg" },
   { label: "Girl", src: "/girl.svg" },
   { label: "Boy", src: "/boy.svg" },
@@ -36,7 +36,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
   const [childName, setChildName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("lingo123");
-  const [selectedAvatar, setSelectedAvatar] = useState("/mascot.svg");
+  const [selectedAvatar, setSelectedAvatar] = useState("/mascot.png");
   const [showPassword, setShowPassword] = useState(false);
   const [copied, setCopied] = useState(false);
 

@@ -22,12 +22,25 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
       "flex h-full lg:w-[256px] lg:fixed left-0 top-0 px-4 border-r-2 flex-col",
       className,
     )}>
-      <Link href={isAdmin ? "/admin" : "/learn"}>
+      <Link href={isAdmin ? "/admin" : "/learn"} className="group">
         <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-          <Image src="/mascot.svg" height={40} width={40} alt="Mascot" />
-          <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
-            2lingo
-          </h1>
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-2xs transition-transform group-hover:scale-105 bg-white shrink-0">
+            <Image
+              src="/mascot.png"
+              fill
+              alt="Paško the Dalmatian"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="flex flex-col">
+            <h1 className="text-2xl font-black text-green-600 tracking-tight leading-none">
+              2lingo
+            </h1>
+            <span className="text-[10px] font-black uppercase tracking-wider text-rose-600 mt-1">
+              Hrvatski 🇭🇷
+            </span>
+          </div>
         </div>
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">

@@ -77,14 +77,14 @@ export const createFamilyOnboarding = async (data: FamilyOnboardingInput) => {
     await db.update(userProgress).set({
       role: "parent",
       userName: user.firstName || user.username || existingProgress.userName || "Parent",
-      userImageSrc: user.imageUrl || existingProgress.userImageSrc || "/mascot.svg",
+      userImageSrc: user.imageUrl || existingProgress.userImageSrc || "/mascot.png",
     }).where(eq(userProgress.userId, userId));
   } else {
     await db.insert(userProgress).values({
       userId,
       activeCourseId: 1,
       userName: user.firstName || user.username || "Parent",
-      userImageSrc: user.imageUrl || "/mascot.svg",
+      userImageSrc: user.imageUrl || "/mascot.png",
       role: "parent",
     });
   }
@@ -137,7 +137,7 @@ export const selectLearnerRole = async () => {
       userId,
       activeCourseId: 1,
       userName: user?.firstName || user?.username || "Learner",
-      userImageSrc: user?.imageUrl || "/mascot.svg",
+      userImageSrc: user?.imageUrl || "/mascot.png",
       role: "learner",
     });
   }

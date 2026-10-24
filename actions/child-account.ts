@@ -81,7 +81,7 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
     await db.insert(userProgress).values({
       userId: clerkUser.id,
       userName: childName,
-      userImageSrc: data.userImageSrc || "/mascot.svg",
+      userImageSrc: data.userImageSrc || "/mascot.png",
       activeCourseId: 1,
       hearts: 5,
       points: 0,

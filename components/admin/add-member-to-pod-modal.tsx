@@ -150,7 +150,7 @@ export const AddMemberToPodModal = ({
                       <div className="flex items-center gap-x-2.5 min-w-0">
                         <div className="relative w-8 h-8 rounded-full overflow-hidden bg-slate-200 shrink-0 border border-slate-300">
                           <Image
-                            src={user.userImageSrc || "/mascot.svg"}
+                            src={user.userImageSrc || "/mascot.png"}
                             alt={user.userName}
                             fill
                             className="object-cover"

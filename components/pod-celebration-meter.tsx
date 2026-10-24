@@ -150,13 +150,14 @@ export const PodCelebrationMeter = ({
         <DialogContent className="max-w-md">
           <DialogHeader>
             <div className="flex items-center w-full justify-center mb-4">
-              <Image
-                src="/mascot.svg"
-                alt="Celebration Mascot"
-                height={95}
-                width={95}
-                className="animate-bounce"
-              />
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-amber-300 shadow-md bg-white animate-bounce">
+                <Image
+                  src="/mascot.png"
+                  alt="Paško the Dalmatian"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             <DialogTitle className="text-center font-extrabold text-2xl text-neutral-800">
               Čestitamo! Family Goal Achieved! 🏆

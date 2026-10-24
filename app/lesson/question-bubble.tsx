@@ -18,23 +18,17 @@ export const QuestionBubble = ({ question }: Props) => {
       <button
         type="button"
         onClick={onSpeak}
-        title="Tap mascot to hear question"
-        className="focus:outline-none hover:scale-105 active:scale-95 transition cursor-pointer"
+        title="Tap Paško to hear question"
+        className="focus:outline-none hover:scale-105 active:scale-95 transition cursor-pointer shrink-0"
       >
-        <Image
-          src="/mascot.svg"
-          alt="Mascot"
-          height={60}
-          width={60}
-          className="hidden lg:block"
-        />
-        <Image
-          src="/mascot.svg"
-          alt="Mascot"
-          height={40}
-          width={40}
-          className="block lg:hidden"
-        />
+        <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-2xs bg-white">
+          <Image
+            src="/mascot.png"
+            alt="Paško the Dalmatian"
+            fill
+            className="object-cover"
+          />
+        </div>
       </button>
       <div className="relative py-2 px-4 border-2 rounded-xl text-sm lg:text-base flex items-center gap-x-3 bg-white">
         <span>{question}</span>

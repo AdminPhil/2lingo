@@ -142,12 +142,12 @@ export const ChildOnboardingModal = ({ initialOpen = false }: Props) => {
       <DialogContent className="max-w-md overflow-hidden border-2 border-slate-200 p-6 sm:rounded-2xl">
         <DialogHeader className="text-center sm:text-center mb-4">
           <div className="flex items-center justify-center mb-3">
-            <div className="relative h-20 w-20 animate-bounce">
+            <div className="relative h-20 w-20 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-sm bg-white animate-bounce">
               <Image
-                src="/mascot.svg"
-                alt="2Lingo Mascot"
+                src="/mascot.png"
+                alt="Paško the Dalmatian"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
             </div>
           </div>

@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Replace Primitive Mascot SVG with Approved Paško Artwork Across App (BUG-011)
+
+### Fixed
+- **[BUG-011] ✅ RESOLVED & VERIFIED - Paško Mascot Version Mismatch in Sidebar & Modals:**
+  - **Sidebar Logo Avatar (`components/sidebar.tsx`):** Replaced primitive hand-coded `mascot.svg` with the approved, high-resolution circular Paško avatar (`/mascot.png`) matching the marketing header styling (`border-2 border-slate-200/90 shadow-2xs group-hover:scale-105`), paired with crisp "2lingo" branding and "Hrvatski 🇭🇷" subtitle.
+  - **In-Lesson Prompts & Modals (`app/lesson/question-bubble.tsx`, `app/lesson/header.tsx`):** Upgraded question speech bubble tap mascot and in-lesson heart recharge dialog to the circular Paško portrait avatar.
+  - **User Progress & Celebration Modals (`components/user-progress.tsx`, `components/modals/hearts-modal.tsx`, `components/pod-celebration-meter.tsx`):** Standardized heart recharge prompts and family pod XP celebration dialogs on the official Paško artwork.
+  - **Onboarding & Admin Avatars (`components/modals/child-onboarding-modal.tsx`, `components/modals/role-onboarding-modal.tsx`, `components/admin/add-child-modal.tsx`, `components/admin/add-member-to-pod-modal.tsx`):** Replaced all remaining `/mascot.svg` fallbacks with `/mascot.png`.
+  - **SVG Asset Compatibility (`public/mascot.svg`, `public/pasko.svg`):** Embedded the approved high-resolution Paško artwork directly into the SVG files with circular clipping, guaranteeing any legacy or database references automatically render the official Dalmatian pup character.
+  - **Schema & Action Defaults (`db/schema.ts`, `actions/`):** Updated default `userImageSrc` across database schema and user progress creation actions to `/mascot.png`.
+
+---
+
 ## [2026-10-24] - Fix Learning Path Unit Banner Purged Gradient & Icon Size (BUG-010)
 
 ### Fixed
