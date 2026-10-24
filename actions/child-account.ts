@@ -31,7 +31,7 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
   // Format and validate username
   const cleanUsername = data.username.trim().toLowerCase().replace(/[^a-z0-9_-]/g, "");
   if (!cleanUsername || cleanUsername.length < 4 || cleanUsername.length > 25) {
-    return { error: "Username must be between 4 and 25 letters or numbers (e.g. valentina_z)." };
+    return { error: "Username must be between 4 and 25 letters or numbers (e.g. luka_z or mia12)." };
   }
 
   const password = data.password.trim();

@@ -26,8 +26,8 @@ type Props = {
 const AVATAR_OPTIONS = [
   { label: "Mascot", src: "/mascot.svg" },
   { label: "Heart", src: "/heart.svg" },
-  { label: "Girl", src: "/woman.svg" },
-  { label: "Boy", src: "/man.svg" },
+  { label: "Girl", src: "/girl.svg" },
+  { label: "Boy", src: "/boy.svg" },
   { label: "Grandma", src: "/grandma.svg" },
   { label: "Grandpa", src: "/grandpa.svg" },
 ];
@@ -178,7 +178,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
               </label>
               <Input
                 type="text"
-                placeholder="e.g. Valentina"
+                placeholder="e.g. Luka or Mia"
                 value={childName}
                 onChange={(e) => handleNameChange(e.target.value)}
                 disabled={pending}
@@ -194,7 +194,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
               </label>
               <Input
                 type="text"
-                placeholder="e.g. valentina"
+                placeholder="e.g. luka or mia"
                 value={username}
                 onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ""))}
                 disabled={pending}

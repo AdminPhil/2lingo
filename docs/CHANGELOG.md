@@ -4,6 +4,22 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Avatar Skin Tone Refinement & Croatian Example Names (CR-017)
+
+### Added & Refined
+- **[CR-017] ✅ IMPLEMENTED & VERIFIED - Avatar Skin Tone Harmonization & Croatian Example Names:**
+  - **Lighter Skin Tone Avatars:**
+    - Replaced pixelated low-res dark assets (`woman.svg`, `man.svg`, `girl.svg`, `boy.svg`) with modern, clean, scalable vector illustrations.
+    - Updated skin complexion across all human avatars to a natural, warm, Mediterranean/Croatian light tone (`#FBD38D` / `#FDDEC9`) that seamlessly matches the Grandma and Grandpa avatars.
+    - Switched `AddChildModal` avatar selector to point directly to dedicated kid avatars (`/girl.svg` and `/boy.svg`).
+  - **Authentic Croatian Example Names:**
+    - Updated "Add Child Learner" dialog placeholders from Valentina to Croatia's two most popular children's names: one girl and one boy:
+      - Child's First Name: `e.g. Luka or Mia`
+      - Username: `e.g. luka or mia`
+    - Harmonized helper text in `actions/child-account.ts` to `(e.g. luka_z or mia12)`.
+
+---
+
 ## [2026-10-24] - Parent Direct Child Provisioning, Onboarding Guide & Parent Default Landing (CR-016)
 
 ### Added
