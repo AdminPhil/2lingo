@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Fix Learning Path Unit Banner Purged Gradient & Icon Size (BUG-010)
+
+### Fixed
+- **[BUG-010] ✅ RESOLVED & VERIFIED - Unit Banner Background Purge & Iconography Polish:**
+  - **Tailwind Config Content Extension:** Added `'./lib/**/*.{ts,tsx}'` to `tailwind.config.ts`, ensuring Tailwind compiler scans `lib/theme-registry.ts` and preserves all regional gradient color stop utilities in production bundles.
+  - **Solid Background Fallback:** Added explicit solid background classes (`bg-red-600`, `bg-sky-600`, `bg-emerald-600`, `bg-blue-900`) to `lib/theme-registry.ts` and `app/(main)/learn/unit-banner.tsx` so banners never collapse to transparent white.
+  - **Enlarged Iconography & Pill Badge:** Scaled regional stage badge to `text-xs font-black px-3.5 py-1` with `text-base` emoji (`🏰`, `🌊`, `🌲`, `👑`) and high-contrast translucent background (`bg-black/25 text-white border-white/40`).
+
+---
+
 ## [2026-10-24] - 4-Stage Regional Croatian Curriculum Unit Banners (CR-023 to CR-026)
 
 ### Added & Refined
