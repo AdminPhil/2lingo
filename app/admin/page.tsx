@@ -158,6 +158,20 @@ const AdminPage = async () => {
                 ? "Full administrative platform oversight. Monitor family pods, oversee learner streaks, and adjust celebration goals!"
                 : "Monitor your children's daily learning streaks, adjust family celebration goals, and celebrate their Croatian progress!"}
             </p>
+
+            <div className="mt-4 flex items-center gap-3">
+              <Button
+                variant="secondary"
+                size="sm"
+                className="bg-white text-green-800 hover:bg-green-50 font-black text-xs h-9 px-3.5 rounded-xl shadow-xs"
+                asChild
+              >
+                <Link href="/learn">
+                  <Sparkles className="h-4 w-4 mr-1.5 text-green-700" />
+                  View Learning Path
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-center shrink-0">

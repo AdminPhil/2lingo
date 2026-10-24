@@ -33,8 +33,8 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">
         <SidebarItem 
-          label={isAdmin ? "Curriculum" : "Learn"} 
-          href={isAdmin ? "/learn?preview=true" : "/learn"}
+          label="Learn" 
+          href="/learn"
           iconSrc="/learn.svg"
         />
         <SidebarItem 

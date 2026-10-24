@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Parent Learning Path Access & Seamless Dual-Mode Navigation (CR-018)
+
+### Added & Fixed
+- **[CR-018] ✅ IMPLEMENTED & VERIFIED - Eliminated `/learn` Redirect Trap & Enabled Seamless Parent Learning:**
+  - **Unrestricted Learning Path Access:** Removed the forced redirect loop in `app/(main)/learn/page.tsx` so parents can freely take lessons, play Croatian challenges, and inspect units alongside their children without getting pushed to `/admin`.
+  - **Parent Mode Banner (`components/parent-mode-banner.tsx`):** Added a discreet, stylish top banner on `/learn` for parent accounts with a 1-click **"Parent Center →"** button for instant return.
+  - **Parent Center Shortcut:** Added **"View Learning Path"** button directly inside the Parent Center welcome header (`app/admin/page.tsx`).
+  - **Sidebar Streamlining:** Preserved standard `/learn` navigation across all user roles while keeping the discrete "Parent Center" button permanently accessible for authorized admins and parents.
+
+---
+
 ## [2026-10-24] - Avatar Skin Tone Refinement & Croatian Example Names (CR-017)
 
 ### Added & Refined

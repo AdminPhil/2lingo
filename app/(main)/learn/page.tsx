@@ -17,6 +17,7 @@ import { upsertUserProgress } from "@/actions/user-progress";
 import { Unit } from "./unit";
 import { Header } from "./header";
 import { CheerBanner } from "@/components/cheer-banner";
+import { ParentModeBanner } from "@/components/parent-mode-banner";
 import { getUnseenCheers } from "@/db/queries";
 
 type Props = {
@@ -52,12 +53,6 @@ const LearnPage = async ({ searchParams }: Props) => {
     redirect("/learn");
   }
 
-  // If user is a registered Parent, default them directly to the Parent Center
-  // unless they are explicitly in preview mode (?preview=true)
-  if (userProgress.role === "parent" && searchParams?.preview !== "true") {
-    redirect("/admin");
-  }
-
   if (!courseProgress) {
     redirect("/learn");
   }
@@ -77,6 +72,7 @@ const LearnPage = async ({ searchParams }: Props) => {
         <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
+        {userProgress.role === "parent" && <ParentModeBanner />}
         <Header title={userProgress.activeCourse.title} />
         <CheerBanner cheers={unseenCheers} />
         {units.map((unit) => (
