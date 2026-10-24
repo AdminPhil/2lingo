@@ -2,9 +2,9 @@
 
 > **Document Status:** 🏛️ **ACTIVE LIVING DESIGN SYSTEM**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Standard:** Professional UX/UI Design Standard for Ed-Tech & Cultural Heritage  
-> **Audience:** Product Owners, UX/UI Designers, and Full-Stack Engineers  
-> **Primary Goal:** Unify the visual brand, pedagogical tone, and design language across all touchpoints (marketing landing, learning path, quiz challenges, gamification, and parent center) under an authentic Croatian cultural identity.
+> **Standard:** Professional UX/UI & Pedagogical Design Standard for Ed-Tech & Cultural Heritage  
+> **Audience:** Product Owners, UX/UI Designers, Linguists, and Full-Stack Engineers  
+> **Primary Goal:** Unify the visual brand, pedagogical progression, and design language across all touchpoints (marketing landing, learning path, quiz challenges, gamification, and parent center) under an authentic Croatian cultural identity.
 
 ---
 
@@ -26,7 +26,7 @@ With the delivery of **Paško the Dalmatian**, the redesigned landing page, and 
 | :--- | :--- | :--- | :--- | :--- |
 | **Landing Page** (`/(marketing)`) | Redesigned with Paško hero art, 3D title-case dual gates, and *šahovnica* conic ribbon. | High fidelity, but standalone; disconnected from inner app styling. | Establish as the benchmark standard for typography, depth, and motifs. | ✅ Solved (CR-021/022) |
 | **Top Navigation & Sidebar** (`components/sidebar.tsx`, `components/mobile-header.tsx`) | Still uses legacy green mascot SVG in some places; generic sky-blue active sidebar pill (`bg-sky-500/15`). | Mascot inconsistency; sidebar active color does not align with the Croatian palette. | Update mascot logo to Paško (`/mascot.png`); switch active pill to Adriatic Azure / Pine. | 🔴 High (Flag 1) |
-| **Learning Path Unit Banners** (`app/(main)/learn/unit-banner.tsx`) | Monolithic flat lime green (`bg-green-500`) across all 20 units without variation. | Visually monotonous; misses huge pedagogical opportunity to represent Croatia's 4 distinct geographic regions. | Introduce 4 regional color themes (Zagreb/Continental, Dalmatia/Islands, Slavonia/Plitvice, Dubrovnik/Heritage). | 🔴 High (Flag 2) |
+| **Learning Path Unit Banners** (`app/(main)/learn/unit-banner.tsx`) | Monolithic flat lime green (`bg-green-500`) across all 20 units without variation. | Visually monotonous; misses huge pedagogical opportunity to represent Croatia's distinct geographic regions. | Introduce 4 regional color themes for Level 1 (Zagreb/Central, Dalmatia/Coast, Plitvice/Slavonia, Dubrovnik/Islands). | 🔴 High (Flag 2) |
 | **Lesson Path Nodes** (`app/(main)/learn/lesson-button.tsx`) | Generic Duolingo green buttons, yellow crown final boss, locked gray. | Serviceable, but lacks Croatian map flavor (e.g. stepping stones between Adriatic islands). | Add subtle wave textures or stone path styling; preserve high-contrast accessibility. | 🟡 Medium (Flag 3) |
 | **Lesson Quiz Feedback Bar** (`app/lesson/footer.tsx`) | English-only text: `"Nicely done!"` on flat green / `"Try again."` on flat rose. | Misses conversational Croatian immersion at the moment of highest learner dopamine. | Introduce warm Croatian praise: `"Bravo!"` / `"Izvrsno! 🇭🇷"` with bilingual subtitles. | 🔴 High (Flag 4) |
 | **Button Variant System** (`components/ui/button.tsx`) | Legacy Duolingo variants: `primary` (sky blue), `secondary` (green), `super` (indigo), `golden` (amber). | Confusing naming (`primary` vs `secondary`); colors are not mapped to brand semantic tokens. | Map variants to semantic Croatian design tokens (Adriatic, Emerald, Zlato, Rubin, Stone). | 🟡 Medium (Flag 5) |
@@ -66,7 +66,7 @@ flowchart LR
 | **`cro-red-primary`** | `#DC2626` | `red-600` | Croatian Coat of Arms (*Grb / Šahovnica*) | Header accent ribbon, key badges, high-impact alerts |
 | **`cro-red-licitar`** | `#E11D48` | `rose-600` | Northern Croatian *Licitarsko Srce* | Heart lives, practice mode, mistake review highlights |
 | **`cro-blue-adriatic`** | `#0284C7` | `sky-600` | Adriatic Sea (*Jadransko more*) | Primary links, interactive cards, selected quiz options |
-| **`cro-blue-deep`** | `#1E3A8A` | `blue-900` | Deep marine channel, island ferry (*trajekt*) | High-tier mastery banners, stage completion badges |
+| **`cro-blue-deep`** | `#1E3A8A` | `blue-900` | Deep marine channel, island ferry (*trajekt*) | Advanced mastery banners, stage completion badges |
 | **`cro-green-pine`** | `#16A34A` | `green-600` | Dalmatian pine trees, olive groves (*maslina*) | Correct answers, primary success buttons, learning path progress |
 | **`cro-gold-slavonia`** | `#F59E0B` | `amber-500` | Golden Slavonian wheat (*zlatna žitna polja*) | Streak flame, XP counters, celebration trophies, quest stars |
 | **`cro-stone-light`** | `#F8FAFC` | `slate-50` | White limestone from Island of Brač (*brački kamen*) | Clean background cards, elevated container surfaces |
@@ -74,25 +74,131 @@ flowchart LR
 
 ---
 
-## 4. Four-Stage Regional Curriculum Theming
+## 4. Realistic Curriculum Scaling & CEFR Fluency Architecture
 
-Rather than 20 identical green banners, 2lingo will visually transport young learners across the four natural cultural regions of Croatia as they progress:
+### 4.1 The Reality of Language Mastery in Croatian
+Croatian is classified as a Category III language by the Foreign Service Institute (FSI) due to its 7 grammatical cases (*padeži*), 3 grammatical genders, verbal aspects (imperfective/perfective), and clitic ordering. 
+
+**Units 1–20 do NOT equal language mastery.** In pedagogical terms, Units 1–20 represent **CEFR A1 (Novice / Beginner Foundations)**. 
+Claiming mastery at Unit 20 would be misleading. True conversational fluency requires thousands of words, past and future tenses, and case intuitions built over multiple levels.
+
+To scale honestly and effectively, 2lingo is architected into **4 Progressive Curriculum Levels spanning 120 Units**:
 
 ```mermaid
 flowchart TD
-    S1["Stage 1: Central Croatia & Zagreb (Units 1–5)<br/>🎨 Red & Gold • Foundations & Family"] --> S2["Stage 2: Kvarner & Dalmatian Coast (Units 6–10)<br/>🎨 Adriatic Azure & Sea Blue • Food & Travel"]
-    S2 --> S3["Stage 3: Plitvice Lakes & Slavonia (Units 11–15)<br/>🎨 Emerald Pine & Golden Sun • Nature & Daily Life"]
-    S3 --> S4["Stage 4: Dubrovnik & Island Heritage (Units 16–20)<br/>🎨 Royal Navy & Ancient Stone • Traditions & Fluency"]
+    L1["Level 1: Prvi Koraci (Units 1–20) [CURRENT LIVE CURRICULUM]<br/>🎯 CEFR A1 (Novice Foundation) • ~350 Words<br/>Greetings, Family, Numbers, Food, Animals, Basic Sentences"] 
+    --> L2["Level 2: Mali Istraživač (Units 21–50) [FUTURE EXPANSION]<br/>🎯 CEFR A2 (Elementary Conversationalist) • ~1,000 Words<br/>Past Tense (Perfekt), Bakery/Market Orders, Asking Directions, Hobbies"]
+    --> L3["Level 3: Pravi Prijatelj (Units 51–80) [FUTURE EXPANSION]<br/>🎯 CEFR B1 (Intermediate Speaker) • ~2,000 Words<br/>Future Tense, Prepositions & Cases, Talking with Cousins, Cartoons"]
+    --> L4["Level 4: Hrvatski Majstor (Units 81–120+) [FUTURE EXPANSION]<br/>🎯 CEFR B2+ (True Heritage Mastery) • ~3,500+ Words<br/>Full Case Intuition, Croatian Folklore, Literature, Natural Bilingualism"]
 ```
 
-### 4.1 Stage Color & Tone Specifications
+### 4.2 Level 1: "Prvi Koraci" (*First Steps* — Units 1–20)
+*Status: Live in production (80 lessons, 359 challenges).*
+- **Target CEFR:** A1 (Beginner)
+- **Vocabulary Size:** ~350 active core words.
+- **Grammar Scope:** Present tense (*ja sam, ja imam, ja volim*), Nominative case, basic Accusative, numbers 1–20.
+- **Honest Real-World Outcome:** The child understands family dinner table prompts, greets relatives (*"Bok, kako si?"*), identifies foods (*kruh, sir, juha*), and connects with their cultural roots.
 
-| Stage | Unit Range | Region & Cultural Theme | Dominant Colors | Accent Motifs | Header Tone |
+#### Level 1 Regional Geographic Journey (The 4 Stages)
+Within Level 1's 20 units, children travel across Croatia's 4 primary cultural regions:
+
+| Stage | Unit Range | Region & Cultural Theme | Dominant Colors | Accent Motifs | Real-World Pedagogical Focus |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Stage 1** | **Units 1–5** | **Zagreb & Central Croatia**<br/>(Greetings, Alphabet, Family, Home) | `bg-gradient-to-r from-red-600 to-rose-600` | Šahovnica tile border, Zagreb umbrella red, cozy hearth | Friendly, welcoming, foundational |
-| **Stage 2** | **Units 6–10** | **Dalmatia & The Coast**<br/>(Food, Burek, Beach, Travel, Numbers) | `bg-gradient-to-r from-sky-600 to-blue-600` | Wave textures, ferry boat (*trajekt*), sunny shores | Breezy, playful, holiday adventure |
-| **Stage 3** | **Units 11–15** | **Plitvice Lakes & Slavonia**<br/>(Nature, Animals, Routines, Colors) | `bg-gradient-to-r from-emerald-600 to-teal-700` | Waterfalls, pine forest, golden wheat, wildlife | Curious, expansive, natural exploration |
-| **Stage 4** | **Units 16–20** | **Dubrovnik & The Islands**<br/>(Storytelling, Past/Future, Heritage) | `bg-gradient-to-r from-blue-900 to-indigo-900` | Medieval stone walls, royal gold laurel, celebration fireworks | Proud, inspiring, advanced fluency |
+| **Stage 1** | **Units 1–5** | **Zagreb & Central Croatia** | `from-red-600 to-rose-600` | Šahovnica border, Zagreb umbrella red | Greetings, alphabet, family members, home basics |
+| **Stage 2** | **Units 6–10** | **Dalmatia & The Coast** | `from-sky-600 to-blue-600` | Ferry (*trajekt*), coastal waves, beach | Bakery foods (*burek*), ice cream, numbers 1–10, sea |
+| **Stage 3** | **Units 11–15** | **Plitvice Lakes & Slavonia** | `from-emerald-600 to-teal-700` | Pine trees, waterfalls, golden wheat | Domestic & wild animals, nature, weather, colors |
+| **Stage 4** | **Units 16–20** | **Dubrovnik & Island Heritage** | `from-blue-900 to-indigo-900` | Ancient stone fortress, royal gold laurel | Daily routines, sports, numbers to 20, Level 1 capstone |
+
+---
+
+### 4.3 Future Levels: Path to Real Mastery (Units 21–120+)
+
+#### Level 2: "Mali Istraživač" (*Young Explorer* — Units 21–50)
+- **Target CEFR:** A2 (Elementary).
+- **Core Milestone:** Introduction of the **Past Tense (*Perfekt*)**.
+- **Real-World Capability:** Ordering independently at a Croatian café or bakery (*"Molim vas jedan sladoled od čokolade"*), describing what they did yesterday (*"Jučer sam plivao u moru"*), asking for directions.
+
+#### Level 3: "Pravi Prijatelj" (*True Friend* — Units 51–80)
+- **Target CEFR:** B1 (Intermediate Conversationalist).
+- **Core Milestone:** Introduction of the **Future Tense (*Futur Prvi*)** and noun/adjective cases (*padeži* with prepositions).
+- **Real-World Capability:** Unassisted FaceTime calls with cousins in Croatia, understanding Croatian children's cartoons and animated films, expressing complex emotions.
+
+#### Level 4: "Hrvatski Majstor" (*Mastery* — Units 81–120+)
+- **Target CEFR:** B2 / C1 (Advanced Heritage Fluency).
+- **Core Milestone:** Automatic grammatical intuition, idioms, cultural proverbs, and reading Croatian youth chapter books (e.g. *Čudnovate zgode šegrta Hlapića*).
+- **Real-World Capability:** Effortless, lifelong bilingual confidence.
+
+---
+
+### 4.4 Declarative Code Architecture for Unit Theming
+
+To ensure the codebase scales seamlessly without hardcoded `if/else` ladders, all unit themes are governed by a declarative registry in `lib/theme-registry.ts`:
+
+```typescript
+export type RegionTheme = {
+  id: string;
+  level: number;
+  name: string;
+  croatianName: string;
+  unitRange: [number, number];
+  gradient: string;
+  badgeBg: string;
+  iconSrc: string;
+};
+
+export const CROATIAN_LEVEL_THEMES: RegionTheme[] = [
+  // Level 1: Prvi Koraci (Units 1–20)
+  {
+    id: "zagreb-central",
+    level: 1,
+    name: "Zagreb & Central Croatia",
+    croatianName: "Zagreb i Središnja Hrvatska",
+    unitRange: [1, 5],
+    gradient: "from-red-600 to-rose-600",
+    badgeBg: "bg-red-100 text-red-800",
+    iconSrc: "/heart.svg",
+  },
+  {
+    id: "dalmatia-coast",
+    level: 1,
+    name: "Dalmatia & The Coast",
+    croatianName: "Dalmacija i Obala",
+    unitRange: [6, 10],
+    gradient: "from-sky-600 to-blue-600",
+    badgeBg: "bg-sky-100 text-sky-800",
+    iconSrc: "/boat.svg",
+  },
+  {
+    id: "plitvice-slavonia",
+    level: 1,
+    name: "Plitvice & Slavonia",
+    croatianName: "Plitvice i Slavonija",
+    unitRange: [11, 15],
+    gradient: "from-emerald-600 to-teal-700",
+    badgeBg: "bg-emerald-100 text-emerald-800",
+    iconSrc: "/tree.svg",
+  },
+  {
+    id: "dubrovnik-heritage",
+    level: 1,
+    name: "Dubrovnik & Islands",
+    croatianName: "Dubrovnik i Otoci",
+    unitRange: [16, 20],
+    gradient: "from-blue-900 to-indigo-900",
+    badgeBg: "bg-indigo-100 text-indigo-800",
+    iconSrc: "/trophy.svg",
+  },
+  // Future Levels 2–4 will simply append new entries here!
+];
+
+export const getThemeForUnit = (unitId: number): RegionTheme => {
+  return (
+    CROATIAN_LEVEL_THEMES.find(
+      (r) => unitId >= r.unitRange[0] && unitId <= r.unitRange[1]
+    ) || CROATIAN_LEVEL_THEMES[0]
+  );
+};
+```
 
 ---
 
@@ -171,7 +277,7 @@ gantt
     Sidebar & Mobile Header Mascot & Šahovnica Ribbon (Flag 1 & 7) :active, p3, 2026-10-25, 2d
     Button Token Refactor in button.tsx (Flag 5) :p4, 2026-10-26, 2d
     section Phase 3: Regional Learning Path
-    4-Stage Regional Unit Banners (Flag 2) :p5, 2026-10-27, 3d
+    Level 1 4-Stage Regional Unit Banners (Flag 2) :p5, 2026-10-27, 3d
     Lesson Path Stepping Stones Polish (Flag 3) :p6, 2026-10-29, 2d
     section Phase 4: Gamification & Quiz Immersion
     Quiz Feedback Bar Bilingual Praise (Flag 4) :p7, 2026-10-31, 2d
