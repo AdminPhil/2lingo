@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - 4-Stage Regional Croatian Curriculum Unit Banners (CR-023 to CR-026)
+
+### Added & Refined
+- **[CR-023 to CR-026] ✅ IMPLEMENTED & VERIFIED - 4-Stage Regional Croatian Unit Theming:**
+  - **Declarative Theme Registry (`lib/theme-registry.ts`):** Established scalable theme engine mapping units to Croatia's 4 distinct cultural and geographic regions with zero hardcoded styling logic.
+  - **[CR-023] Stage 1 (Units 1–5 - Zagreb & Central Croatia):** Continental red and hearth amber gradient (`from-red-600 via-rose-600 to-amber-600`), `🏰 1. Faza • Zagreb i Središnja Hrvatska` badge, white 3D continue button with rose accents.
+  - **[CR-024] Stage 2 (Units 6–10 - Kvarner & Dalmatian Coast):** Adriatic azure and coastal cyan gradient (`from-sky-500 via-blue-600 to-cyan-600`), `🌊 2. Faza • Kvarner i Dalmatinska Obala` badge, white 3D continue button with sky-blue accents.
+  - **[CR-025] Stage 3 (Units 11–15 - Plitvice Lakes & Slavonia):** Emerald pine and golden sunflower wheat gradient (`from-emerald-600 via-teal-600 to-amber-600`), `🌲 3. Faza • Plitvička Jezera i Slavonija` badge, white 3D continue button with emerald accents.
+  - **[CR-026] Stage 4 (Units 16–20 - Dubrovnik & Island Heritage):** Royal Adriatic navy and fortress indigo gradient (`from-blue-900 via-indigo-900 to-amber-700`), `👑 4. Faza • Dubrovnik i Otoci (Level 1 Capstone)` badge, royal golden 3D continue button.
+  - **Banner Component Polish (`app/(main)/learn/unit-banner.tsx`):** Added dynamic regional badges, responsive layout, decorative radial lighting, and bilingual continue action (`"Nastavi"`).
+
+---
+
 ## [2026-10-24] - Landing Page High-Fidelity Artwork & Šahovnica Ribbon Polish (CR-022)
 
 ### Added & Refined
