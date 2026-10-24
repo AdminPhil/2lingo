@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Landing Page High-Fidelity Artwork & Šahovnica Ribbon Polish (CR-022)
+
+### Added & Refined
+- **[CR-022] ✅ IMPLEMENTED & VERIFIED - High-Fidelity Artwork & Šahovnica Ribbon Polish:**
+  - **High-Resolution Paško Hero Artwork (`public/pasko-hero.jpg`):** Overhauled landing page hero illustration with dedicated digital cartoon artwork featuring Paško the Dalmatian Pup, the red *licitarsko srce*, coastal island ferry (*trajekt*), golden sun, and authentic speech bubbles.
+  - **Paško Mascot Navigation Avatar (`public/mascot.png`):** Integrated Paško's high-res circular avatar into the header navigation brand logo.
+  - **Authentic Croatian Checkerboard (*Šahovnica*) Ribbon (`app/(marketing)/header.tsx`):** Fixed dashed gradient line with an authentic framed dual-row alternating red-and-white conic checkerboard pattern (`bg-[repeating-conic-gradient(#DC2626_0%_25%,#FFFFFF_0%_50%)]`).
+  - **Action Gate Typography & Depth (`app/(marketing)/page.tsx`):** Upgraded "I Already Have an Account" and "I'm New Here! Start Learning" to clean title casing with 3D drop depth and active button scale transitions.
+
+---
+
 ## [2026-10-24] - Croatian Landing Page Redesign & "Paško the Dalmatian" Mascot (CR-021)
 
 ### Added & Refined
