@@ -283,8 +283,16 @@ const AdminPage = async () => {
           </div>
         </div>
 
-        {/* Pod Management Hub (CR-010) */}
-        <PodManagementCard pods={formattedPods} />
+        {/* Pod Management Hub (CR-010, CR-020) */}
+        <PodManagementCard
+          pods={formattedPods}
+          availableUsers={allLearners.map((l) => ({
+            userId: l.userId,
+            userName: l.userName,
+            userImageSrc: l.userImageSrc,
+          }))}
+          isSuperAdmin={superAdmin}
+        />
 
         {/* Tricky Words & Mistake Heatmap Analytics (CR-012) */}
         <TrickyWordsCard analytics={analyticsData} />

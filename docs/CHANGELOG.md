@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Super-Admin User-to-Pod Assignment & Roster Management (CR-020)
+
+### Added & Refined
+- **[CR-020] ✅ IMPLEMENTED & VERIFIED - Super-Admin User-to-Pod Assignment & Roster Management:**
+  - **Server Action (`actions/pod.ts` - `adminAddUserToPod`):** Implemented secure server action enabling Super-Administrators (or pod owners) to assign any existing learner or parent to any pod. Handles idempotent duplicate membership checks, dynamically updating role (`member` vs `admin`) if already present. Revalidates `/admin`, `/leaderboard`, and `/learn`.
+  - **Add Member Modal (`components/admin/add-member-to-pod-modal.tsx`):** Built interactive modal with real-time user search, user avatar/name/ID preview, member collision prevention (greying out users already in the pod), and dual-role picker (`Learner` vs `Pod Admin`).
+  - **Pod Management Card Integration (`components/admin/pod-management-card.tsx`):** Rendered clean "+ Add User" action button next to the member count header on each pod card and wired it to the modal.
+  - **Admin Page Data Wiring (`app/admin/page.tsx`):** Passed system-wide learner roster (`allLearners`) and `isSuperAdmin` authorization flag into `PodManagementCard`.
+
+---
+
 ## [2026-10-24] - Sidebar Navigation Deduplication & Parent-First Ordering (CR-019)
 
 ### Added & Refined

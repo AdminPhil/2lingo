@@ -14,6 +14,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { updatePodSettings, createPod, deletePod } from "@/actions/pod";
+import { AddMemberToPodModal } from "@/components/admin/add-member-to-pod-modal";
 
 type PodData = {
   id: number;
@@ -33,12 +34,19 @@ type PodData = {
 
 type Props = {
   pods: PodData[];
+  availableUsers?: {
+    userId: string;
+    userName: string;
+    userImageSrc?: string;
+  }[];
+  isSuperAdmin?: boolean;
 };
 
-export const PodManagementCard = ({ pods: initialPods }: Props) => {
-  const [podsList] = useState<PodData[]>(initialPods);
+export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSuperAdmin = false }: Props) => {
+  const podsList = initialPods;
   const [editingPod, setEditingPod] = useState<PodData | null>(null);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [targetPodForAdd, setTargetPodForAdd] = useState<PodData | null>(null);
 
   // Edit form state
   const [editName, setEditName] = useState("");
@@ -243,10 +251,21 @@ export const PodManagementCard = ({ pods: initialPods }: Props) => {
 
               {/* Member list preview */}
               <div className="mt-3">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">
-                  Members ({pod.members.length}):
-                </span>
-                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">
+                    Members ({pod.members.length}):
+                  </span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setTargetPodForAdd(pod)}
+                    className="h-6 px-2 text-[11px] font-extrabold text-blue-600 hover:text-blue-700 hover:bg-blue-50 flex items-center gap-1 cursor-pointer"
+                  >
+                    <Plus className="h-3 w-3" />
+                    <span>Add User</span>
+                  </Button>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
                   {pod.members.map((m) => (
                     <span
                       key={m.userId}
@@ -353,6 +372,18 @@ export const PodManagementCard = ({ pods: initialPods }: Props) => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Add User to Pod Dialog Modal */}
+      {targetPodForAdd && (
+        <AddMemberToPodModal
+          isOpen={!!targetPodForAdd}
+          onOpenChange={(open) => !open && setTargetPodForAdd(null)}
+          podId={targetPodForAdd.id}
+          podName={targetPodForAdd.name}
+          existingMemberIds={targetPodForAdd.members.map((m) => m.userId)}
+          availableUsers={availableUsers}
+        />
+      )}
 
       {/* Create Pod Dialog Modal */}
       <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>

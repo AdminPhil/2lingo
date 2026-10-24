@@ -6,6 +6,7 @@ import { and, eq } from "drizzle-orm";
 
 import db from "@/db/drizzle";
 import { podMembers, pods } from "@/db/schema";
+import { isSuperAdmin } from "@/lib/admin";
 
 export const joinPodByCode = async (inviteCode: string) => {
   const { userId } = await auth();
@@ -182,6 +183,55 @@ export const removePodMember = async (podId: number, memberUserId: string) => {
       eq(podMembers.userId, memberUserId),
     )
   );
+
+  revalidatePath("/admin");
+  revalidatePath("/leaderboard");
+  revalidatePath("/learn");
+
+  return { success: true };
+};
+
+export const adminAddUserToPod = async (
+  podId: number,
+  targetUserId: string,
+  role: "member" | "admin" = "member"
+) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const targetPod = await db.query.pods.findFirst({
+    where: eq(pods.id, podId),
+  });
+
+  if (!targetPod) {
+    return { error: "Pod not found." };
+  }
+
+  const superAdmin = await isSuperAdmin();
+  if (targetPod.ownerId !== userId && !superAdmin) {
+    return { error: "Only the pod owner or super administrator can add members to this pod." };
+  }
+
+  const existingMember = await db.query.podMembers.findFirst({
+    where: and(
+      eq(podMembers.podId, podId),
+      eq(podMembers.userId, targetUserId),
+    ),
+  });
+
+  if (existingMember) {
+    if (existingMember.role !== role) {
+      await db.update(podMembers).set({ role }).where(eq(podMembers.id, existingMember.id));
+    }
+  } else {
+    await db.insert(podMembers).values({
+      podId,
+      userId: targetUserId,
+      role,
+    });
+  }
 
   revalidatePath("/admin");
   revalidatePath("/leaderboard");
