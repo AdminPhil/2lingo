@@ -253,32 +253,31 @@ export const getUserSubscription = cache(async () => {
   };
 });
 
-export const getTopTenUsers = cache(async () => {
+export const getTopTenUsers = cache(async (activePodId?: number) => {
   const { userId } = await auth();
 
   if (!userId) {
     return [];
   }
 
-  // Relational scoping: Find user's active pod
-  const userMembership = await db.query.podMembers.findFirst({
-    where: eq(podMembers.userId, userId),
+  let targetPodId = activePodId;
+
+  if (!targetPodId) {
+    // Relational scoping: Find user's active pod
+    const userMembership = await db.query.podMembers.findFirst({
+      where: eq(podMembers.userId, userId),
+    });
+    targetPodId = userMembership ? userMembership.podId : 1;
+  }
+
+  const members = await db.query.podMembers.findMany({
+    where: eq(podMembers.podId, targetPodId),
   });
 
-  let memberUserIds: string[] = [];
-
-  if (userMembership) {
-    const members = await db.query.podMembers.findMany({
-      where: eq(podMembers.podId, userMembership.podId),
-    });
-    // Exclude pod owners/parents from student leaderboard ranking
-    memberUserIds = members.filter((m) => m.role !== "owner").map((m) => m.userId);
-  } else {
-    // Fallback: Default family pod (ID 1)
-    const defaultPodMembers = await db.query.podMembers.findMany({
-      where: eq(podMembers.podId, 1),
-    });
-    memberUserIds = defaultPodMembers.filter((m) => m.role !== "owner").map((m) => m.userId);
+  // Exclude pod owners/parents from student leaderboard ranking (unless only owners exist)
+  let memberUserIds = members.filter((m) => m.role !== "owner").map((m) => m.userId);
+  if (memberUserIds.length === 0) {
+    memberUserIds = members.map((m) => m.userId);
   }
 
   if (memberUserIds.length === 0) {
@@ -302,11 +301,56 @@ export const getTopTenUsers = cache(async () => {
   return data;
 });
 
-export const getUserPod = cache(async () => {
+export const getUserPods = cache(async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return [];
+  }
+
+  const memberships = await db.query.podMembers.findMany({
+    where: eq(podMembers.userId, userId),
+    with: {
+      pod: {
+        with: {
+          members: true,
+        },
+      },
+    },
+    orderBy: (podMembers, { asc }) => [asc(podMembers.id)],
+  });
+
+  return memberships
+    .filter((m) => !!m.pod)
+    .map((m) => ({
+      pod: m.pod,
+      role: m.role,
+      memberCount: m.pod.members.length,
+    }));
+});
+
+export const getUserPod = cache(async (activePodId?: number) => {
   const { userId } = await auth();
 
   if (!userId) {
     return null;
+  }
+
+  if (activePodId) {
+    const specificPod = await db.query.pods.findFirst({
+      where: eq(pods.id, activePodId),
+      with: {
+        members: true,
+      },
+    });
+
+    if (specificPod) {
+      const membership = specificPod.members.find((m) => m.userId === userId);
+      return {
+        pod: specificPod,
+        role: membership?.role || "guest",
+      };
+    }
   }
 
   const membership = await db.query.podMembers.findFirst({

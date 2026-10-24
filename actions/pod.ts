@@ -42,7 +42,7 @@ export const joinPodByCode = async (inviteCode: string) => {
   revalidatePath("/leaderboard");
   revalidatePath("/learn");
 
-  return { success: true, podName: pod.name };
+  return { success: true, podName: pod.name, podId: pod.id };
 };
 
 export const createPod = async (name: string) => {

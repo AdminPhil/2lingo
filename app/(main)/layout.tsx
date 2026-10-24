@@ -3,8 +3,9 @@ import { auth } from "@clerk/nextjs";
 import { Sidebar } from "@/components/sidebar";
 import { MobileHeader } from "@/components/mobile-header";
 import { isAdmin } from "@/lib/admin";
-import { getUserProgress } from "@/db/queries";
+import { getUserPods, getUserProgress } from "@/db/queries";
 import { RoleOnboardingModal } from "@/components/modals/role-onboarding-modal";
+import { ChildOnboardingModal } from "@/components/modals/child-onboarding-modal";
 
 type Props = {
   children: React.ReactNode;
@@ -16,8 +17,10 @@ const MainLayout = async ({
   const { userId } = auth();
   const admin = await isAdmin();
   const userProgress = await getUserProgress();
+  const userPods = await getUserPods();
 
   const needsRoleOnboarding = !!userId && userProgress?.role === "unassigned";
+  const needsChildOnboarding = !!userId && userProgress?.role === "learner" && userPods.length === 0;
 
   return (
     <>
@@ -29,6 +32,7 @@ const MainLayout = async ({
         </div>
       </main>
       <RoleOnboardingModal initialOpen={needsRoleOnboarding} />
+      <ChildOnboardingModal initialOpen={needsChildOnboarding} />
     </>
   );
 };

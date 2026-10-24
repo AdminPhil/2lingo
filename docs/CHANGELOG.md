@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Child Onboarding Experience & Multi-Pod Leaderboard Switcher (CR-015)
+
+### Added
+- **[CR-015] ✅ IMPLEMENTED & VERIFIED - Child Onboarding Screen & Multi-Pod Leaderboard Switcher:**
+  - **Kid-Friendly Join Screen (`components/modals/child-onboarding-modal.tsx`):**
+    - First-time child onboarding prompt: *"🇭🇷 Join Your Pod! Do you have a Family or School Pod code from your parent or teacher?"*
+    - Interactive 6-slot letter tile input with automatic focus progression, backspace navigation, and paste support (e.g. typing or pasting `ZGOMBA`).
+    - Enrolls learners with `role: 'member'` (strictly kid-safe learner permissions).
+    - Includes *"I'll join later"* skip option with local dismissal persistence so unlinked students can immediately enjoy the curriculum map without friction.
+  - **Multi-Pod Leaderboard Switcher (`components/pod-switcher.tsx`):**
+    - Built interactive pill switcher on `/leaderboard` allowing students and parents in multiple pods (e.g. Family Pod vs School Classroom) to toggle seamlessly between pod leaderboards and celebration meters.
+    - Added dedicated **"➕ Join a Pod"** button on the leaderboard answering user query *"HOW DO I JOIN A POD?"* with one-click access to the letter tile prompt.
+  - **Relational Multi-Pod Queries (`db/queries.ts`):**
+    - Updated `getTopTenUsers(activePodId?: number)` to scope rankings dynamically to any active pod while continuing to exclude adult owners from child leaderboards.
+    - Added `getUserPods()` to return all pods a user belongs to.
+    - Enhanced `getUserPod(activePodId?: number)` with fallback to the user's primary pod.
+  - **Zustand Store (`store/use-child-onboarding-modal.ts`):**
+    - Modal state management enabling join pod prompts from header, switcher, or first-time layout detection.
+
+---
+
 ## [2026-10-23] - Multi-Family Role Schema & Parent Onboarding Wizard (CR-014)
 
 ### Added

@@ -4,7 +4,15 @@ import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
-import { getTodayCheeredUserIds, getTopTenUsers, getUnseenCheers, getUserPod, getUserProgress, getUserSubscription } from "@/db/queries";
+import { 
+  getTodayCheeredUserIds, 
+  getTopTenUsers, 
+  getUnseenCheers, 
+  getUserPod, 
+  getUserPods, 
+  getUserProgress, 
+  getUserSubscription 
+} from "@/db/queries";
 import { CheerButton } from "@/components/cheer-button";
 import { CheerBanner } from "@/components/cheer-banner";
 import { Separator } from "@/components/ui/separator";
@@ -12,27 +20,32 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Quests } from "@/components/quests";
 import { PodHeader } from "@/components/pod-header";
 import { PodCelebrationMeter } from "@/components/pod-celebration-meter";
+import { PodSwitcher } from "@/components/pod-switcher";
 
-const LeaderboardPage = async () => {
+type Props = {
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+const LeaderboardPage = async ({ searchParams }: Props) => {
+  const rawPodId = searchParams?.podId;
+  const requestedPodId = rawPodId ? Number(rawPodId) : undefined;
+
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
-  const leaderboardData = getTopTenUsers();
-  const userPodData = getUserPod();
+  const userPodsData = getUserPods();
   const todayCheeredData = getTodayCheeredUserIds();
   const unseenCheersData = getUnseenCheers();
 
   const [
     userProgress,
     userSubscription,
-    leaderboard,
-    userPod,
+    userPods,
     todayCheeredUserIds,
     unseenCheers,
   ] = await Promise.all([
     userProgressData,
     userSubscriptionData,
-    leaderboardData,
-    userPodData,
+    userPodsData,
     todayCheeredData,
     unseenCheersData,
   ]);
@@ -41,7 +54,30 @@ const LeaderboardPage = async () => {
     redirect("/learn");
   }
 
+  // Determine active pod context:
+  // Use requested pod if provided; otherwise user's first pod; otherwise default Pod 1
+  let activePodId = requestedPodId;
+  if (!activePodId) {
+    activePodId = userPods[0]?.pod.id || 1;
+  }
+
+  const [leaderboard, userPod] = await Promise.all([
+    getTopTenUsers(activePodId),
+    getUserPod(activePodId),
+  ]);
+
   const isPro = !!userSubscription?.isActive;
+
+  const formattedPods = userPods.map((m) => ({
+    id: m.pod.id,
+    name: m.pod.name,
+    type: m.pod.type,
+    inviteCode: m.pod.inviteCode,
+    memberCount: m.memberCount,
+    currentXp: m.pod.currentXp ?? 0,
+    targetXp: m.pod.targetXp,
+    role: m.role,
+  }));
 
   return ( 
     <div className="flex flex-row-reverse gap-[48px] px-6">
@@ -71,6 +107,13 @@ const LeaderboardPage = async () => {
           </p>
           <Separator className="mb-4 h-0.5 rounded-full" />
           <CheerBanner cheers={unseenCheers} />
+
+          {/* Multi-Pod Switcher & Join Pod Entrypoint */}
+          <PodSwitcher 
+            pods={formattedPods} 
+            activePodId={activePodId} 
+          />
+
           <PodHeader 
             podName={userPod?.pod?.name} 
             inviteCode={userPod?.pod?.inviteCode} 
@@ -78,7 +121,7 @@ const LeaderboardPage = async () => {
           />
           <PodCelebrationMeter
             podName={userPod?.pod?.name}
-            currentXp={userPod?.pod?.currentXp ?? 740}
+            currentXp={userPod?.pod?.currentXp ?? 0}
             targetXp={userPod?.pod?.targetXp ?? 1000}
             celebrationUnlocked={userPod?.pod?.celebrationUnlocked ?? false}
           />
