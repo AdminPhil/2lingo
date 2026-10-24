@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Sidebar Navigation Deduplication & Parent-First Ordering (CR-019)
+
+### Added & Refined
+- **[CR-019] ✅ IMPLEMENTED & VERIFIED - Sidebar Navigation Deduplication & Parent-First Hierarchy:**
+  - **Removed Redundancy:** Removed the duplicate bottom "Parent Center" button from `components/sidebar.tsx`.
+  - **Parent-First Ordering:** When an administrator or parent logs in, **"Parent Center"** is automatically prioritized as the top navigation item right below the 2Lingo logo, followed by Learn, Leaderboard, and Quests.
+  - **Student View Unaltered:** Learner accounts continue to see clean, distraction-free student navigation (Learn, Leaderboard, Quests) with zero administrative elements.
+
+---
+
 ## [2026-10-24] - Parent Mode Banner Layout & Clipping Fix (BUG-008)
 
 ### Fixed
