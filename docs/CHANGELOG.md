@@ -4,6 +4,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Parent Center Navigation Label Standardization (BUG-009)
+
+### Fixed
+- **[BUG-009] ✅ RESOLVED & VERIFIED - Standardized Header Return Button Label ("Back to Learning Path"):**
+  - **Symptom:** The return button in the Parent Center (`/admin`) header was inconsistently labeled `Back to Croatian Map`, clashing with platform-standard terminology.
+  - **Fix:** Updated button label in `app/admin/page.tsx` to `Back to Learning Path`, matching the Parent Center welcome banner (`View Learning Path`) and the Parent Mode banner (`browsing the Learning Path as a parent`).
+
+---
+
 ## [2026-10-24] - Super-Admin User-to-Pod Assignment & Roster Management (CR-020)
 
 ### Added & Refined

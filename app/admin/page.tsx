@@ -129,7 +129,7 @@ const AdminPage = async () => {
           <Button variant="ghost" size="sm" asChild className="font-bold text-neutral-600 hover:text-neutral-900 border border-slate-200">
             <Link href="/learn">
               <ArrowLeft className="h-4 w-4 mr-1.5" />
-              Back to Croatian Map
+              Back to Learning Path
             </Link>
           </Button>
         </div>
