@@ -4,6 +4,24 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Parent Direct Child Provisioning, Onboarding Guide & Parent Default Landing
+
+### Added
+- **Direct Child Account Creation (`actions/child-account.ts`, `components/admin/add-child-modal.tsx`):**
+  - Parents can now provision learner accounts for their children (e.g. Valentina) directly from the Parent Center without requiring an email address.
+  - Automatically provisions a kid-friendly Clerk username and password with avatar selection, assigns `role: 'learner'`, and enrolls them into the family pod with `role: 'member'`.
+  - Confirmation dialog provides one-click copyable credentials so children can immediately log in on any device.
+- **Parent Center Helper Card (`components/admin/how-to-add-children-card.tsx`):**
+  - Prominent onboarding card displayed directly under the welcome banner detailing both setup options:
+    - Option 1: Direct Account Creation (no email required).
+    - Option 2: Self-Join on Child's Device using the 6-character Family Code or 1-click invite link.
+- **Parent Center Default Landing:**
+  - When parents log in, they automatically land on `/admin` (Parent Center) instead of the learner map.
+  - Sidebar dynamically displays "Curriculum" linking to `/learn?preview=true` so parents can inspect learning progress and challenges without being redirected.
+  - Home landing page button automatically updates to "Open Parent Center" when a parent account is signed in.
+
+---
+
 ## [2026-10-24] - Child Onboarding Experience & Multi-Pod Leaderboard Switcher (CR-015)
 
 ### Added

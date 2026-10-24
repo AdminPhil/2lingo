@@ -19,7 +19,11 @@ import { Header } from "./header";
 import { CheerBanner } from "@/components/cheer-banner";
 import { getUnseenCheers } from "@/db/queries";
 
-const LearnPage = async () => {
+type Props = {
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+const LearnPage = async ({ searchParams }: Props) => {
   const userProgressData = getUserProgress();
   const courseProgressData = getCourseProgress();
   const lessonPercentageData = getLessonPercentage();
@@ -46,6 +50,12 @@ const LearnPage = async () => {
   if (!userProgress || !userProgress.activeCourse) {
     await upsertUserProgress(1);
     redirect("/learn");
+  }
+
+  // If user is a registered Parent, default them directly to the Parent Center
+  // unless they are explicitly in preview mode (?preview=true)
+  if (userProgress.role === "parent" && searchParams?.preview !== "true") {
+    redirect("/admin");
   }
 
   if (!courseProgress) {

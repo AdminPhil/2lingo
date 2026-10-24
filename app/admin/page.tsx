@@ -24,6 +24,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
 import { LearnerHealthCard } from "@/components/admin/learner-health-card";
 import { TrickyWordsCard } from "@/components/admin/tricky-words-card";
+import { HowToAddChildrenCard } from "@/components/admin/how-to-add-children-card";
 import { getTrickyWordsAnalytics } from "@/db/queries";
 
 const AdminPage = async () => {
@@ -166,6 +167,13 @@ const AdminPage = async () => {
             </p>
           </div>
         </div>
+
+        {/* 👨‍👩‍👧 How to Add Your Children Helper & Direct Account Creation */}
+        <HowToAddChildrenCard
+          podId={activePod?.id || 1}
+          podName={podName}
+          inviteCode={inviteCode}
+        />
 
         {/* 3 Metric Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
