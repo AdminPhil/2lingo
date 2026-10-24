@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Parent Mode Banner Layout & Clipping Fix (BUG-008)
+
+### Fixed
+- **[BUG-008] ✅ RESOLVED & VERIFIED - Parent Mode Banner Bottom Edge Trimmed by Sticky Header:**
+  - **Symptom:** On `/learn`, the green "Parent Account" banner had its bottom 28px trimmed and sliced off, obscuring its bottom rounded corners and button shadow.
+  - **Root Cause:** In `app/(main)/learn/page.tsx`, `ParentModeBanner` was placed before `<Header />`. Because `<Header />` has `sticky top-0 bg-white lg:mt-[-28px]`, its solid white background overlaid and clipped the bottom of the banner.
+  - **Fix:** Reordered feed elements to anchor `<Header />` at the top of the feed with `ParentModeBanner` positioned cleanly below it. Refined button styling and padding to ensure complete border-radius geometry.
+
+---
+
 ## [2026-10-24] - Parent Learning Path Access & Seamless Dual-Mode Navigation (CR-018)
 
 ### Added & Fixed

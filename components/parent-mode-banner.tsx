@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export const ParentModeBanner = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-lime-600 text-white rounded-2xl p-3 sm:px-4 mb-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-2.5">
+    <div className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-lime-600 text-white rounded-2xl p-3.5 sm:px-5 mb-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
       <div className="flex items-center gap-2.5 text-center sm:text-left">
-        <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
+        <div className="h-9 w-9 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
           <ShieldCheck className="h-5 w-5 text-white" />
         </div>
         <div>
@@ -23,8 +23,7 @@ export const ParentModeBanner = () => {
 
       <Button
         size="sm"
-        variant="secondary"
-        className="h-8 px-3 rounded-xl bg-white text-green-800 hover:bg-green-50 font-black text-xs shrink-0 shadow-xs flex items-center gap-1 cursor-pointer"
+        className="h-9 px-4 rounded-xl border-0 bg-white text-green-800 hover:bg-green-50 font-black text-xs shrink-0 shadow-sm flex items-center gap-1.5 cursor-pointer"
         asChild
       >
         <Link href="/admin">

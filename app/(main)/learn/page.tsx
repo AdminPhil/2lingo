@@ -72,8 +72,8 @@ const LearnPage = async ({ searchParams }: Props) => {
         <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
-        {userProgress.role === "parent" && <ParentModeBanner />}
         <Header title={userProgress.activeCourse.title} />
+        {userProgress.role === "parent" && <ParentModeBanner />}
         <CheerBanner cheers={unseenCheers} />
         {units.map((unit) => (
           <div key={unit.id} className="mb-10">
