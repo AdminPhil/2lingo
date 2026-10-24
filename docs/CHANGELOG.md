@@ -4,6 +4,24 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Display English Translations for All Quest Stages (BUG-012)
+
+### Fixed
+- **[BUG-012] ✅ RESOLVED & VERIFIED - Bilingual Quest Milestone Stages:**
+  - **Data Model & Translations (`constants.ts`):** Augmented `quests` definition with explicit `stageCroatian` and `stageEnglish` fields, translating all 8 milestone stages:
+    - 50 XP: *Mali Početnik* • "Little Beginner"
+    - 100 XP: *Mali Istraživač* • "Little Explorer"
+    - 250 XP: *Prijatelj Riječi* • "Friend of Words"
+    - 500 XP: *Jadranski Mornar* • "Adriatic Sailor"
+    - 1,000 XP: *Vitez Znanja* • "Knight of Knowledge"
+    - 2,500 XP: *Sokol Velebita* • "Falcon of Velebit"
+    - 5,000 XP: *Majstor Jezika* • "Language Master"
+    - 10,000 XP: *Hrvatska Legenda* • "Croatian Legend"
+  - **Quests Right-Rail Widget (`components/quests.tsx`):** Rendered clean bilingual row layout with `Earn {X} XP` header, fraction points counter (`points/value`), and clear Croatian title with English translation (`Mali Početnik • "Little Beginner"`).
+  - **Quests Page (`app/(main)/quests/page.tsx`):** Updated milestone cards with full bilingual stage subtitle, total XP progress, and completion badge.
+
+---
+
 ## [2026-10-24] - Replace Primitive Mascot SVG with Approved Paško Artwork Across App (BUG-011)
 
 ### Fixed

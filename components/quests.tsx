@@ -30,26 +30,37 @@ export const Quests = ({ points }: Props) => {
           </Button>
         </Link>
       </div>
-      <ul className="w-full space-y-4">
+      <ul className="w-full space-y-3">
         {displayedQuests.map((quest) => {
           const progress = Math.min((points / quest.value) * 100, 100);
 
           return (
             <div
-              className="flex items-center w-full pb-4 gap-x-3"
+              className="flex items-start w-full pb-3.5 gap-x-3 border-b border-slate-100 last:border-b-0 last:pb-0"
               key={quest.title}
             >
               <Image
                 src="/points.svg"
                 alt="Points"
-                width={40}
-                height={40}
+                width={36}
+                height={36}
+                className="shrink-0 mt-0.5"
               />
-              <div className="flex flex-col gap-y-2 w-full">
-                <p className="text-neutral-700 text-sm font-bold">
-                  {quest.title}
+              <div className="flex flex-col gap-y-1 w-full min-w-0">
+                <div className="flex items-baseline justify-between gap-x-2">
+                  <p className="text-neutral-800 text-sm font-bold">
+                    Earn {quest.value.toLocaleString()} XP
+                  </p>
+                  <span className="text-[11px] font-semibold text-muted-foreground shrink-0">
+                    {points}/{quest.value}
+                  </span>
+                </div>
+                <p className="text-xs text-neutral-600 font-medium leading-tight">
+                  <span className="font-semibold text-neutral-800">{quest.stageCroatian}</span>
+                  <span className="text-neutral-400 mx-1.5">•</span>
+                  <span className="text-neutral-500 italic">&ldquo;{quest.stageEnglish}&rdquo;</span>
                 </p>
-                <Progress value={progress} className="h-2" />
+                <Progress value={progress} className="h-2 mt-1" />
               </div>
             </div>
           )

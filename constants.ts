@@ -1,36 +1,59 @@
 export const POINTS_TO_REFILL = 10;
 
-export const quests = [
+export type Quest = {
+  title: string;
+  stageCroatian: string;
+  stageEnglish: string;
+  value: number;
+};
+
+export const quests: Quest[] = [
   {
-    title: "Earn 50 XP (Mali Početnik)",
+    title: "Earn 50 XP (Mali Početnik • Little Beginner)",
+    stageCroatian: "Mali Početnik",
+    stageEnglish: "Little Beginner",
     value: 50,
   },
   {
-    title: "Earn 100 XP (Mali Istraživač)",
+    title: "Earn 100 XP (Mali Istraživač • Little Explorer)",
+    stageCroatian: "Mali Istraživač",
+    stageEnglish: "Little Explorer",
     value: 100,
   },
   {
-    title: "Earn 250 XP (Prijatelj Riječi)",
+    title: "Earn 250 XP (Prijatelj Riječi • Friend of Words)",
+    stageCroatian: "Prijatelj Riječi",
+    stageEnglish: "Friend of Words",
     value: 250,
   },
   {
-    title: "Earn 500 XP (Jadranski Mornar)",
+    title: "Earn 500 XP (Jadranski Mornar • Adriatic Sailor)",
+    stageCroatian: "Jadranski Mornar",
+    stageEnglish: "Adriatic Sailor",
     value: 500,
   },
   {
-    title: "Earn 1,000 XP (Vitez Znanja)",
+    title: "Earn 1,000 XP (Vitez Znanja • Knight of Knowledge)",
+    stageCroatian: "Vitez Znanja",
+    stageEnglish: "Knight of Knowledge",
     value: 1000,
   },
   {
-    title: "Earn 2,500 XP (Sokol Velebita)",
+    title: "Earn 2,500 XP (Sokol Velebita • Falcon of Velebit)",
+    stageCroatian: "Sokol Velebita",
+    stageEnglish: "Falcon of Velebit",
     value: 2500,
   },
   {
-    title: "Earn 5,000 XP (Majstor Jezika)",
+    title: "Earn 5,000 XP (Majstor Jezika • Language Master)",
+    stageCroatian: "Majstor Jezika",
+    stageEnglish: "Language Master",
     value: 5000,
   },
   {
-    title: "Earn 10,000 XP (Hrvatska Legenda)",
+    title: "Earn 10,000 XP (Hrvatska Legenda • Croatian Legend)",
+    stageCroatian: "Hrvatska Legenda",
+    stageEnglish: "Croatian Legend",
     value: 10000,
   },
 ];

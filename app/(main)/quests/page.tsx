@@ -69,14 +69,26 @@ const QuestsPage = async () => {
                   />
                   <div className="flex flex-col gap-y-2 w-full">
                     <div className="flex items-center justify-between">
-                      <p className="text-neutral-700 text-lg font-bold">
-                        {quest.title}
-                      </p>
-                      {isCompleted && (
-                        <span className="text-xs font-extrabold uppercase px-2.5 py-1 bg-green-100 text-green-700 rounded-lg">
-                          Completed ✓
+                      <div className="flex flex-col sm:flex-row sm:items-baseline gap-x-2">
+                        <p className="text-neutral-800 text-lg font-bold">
+                          Earn {quest.value.toLocaleString()} XP
+                        </p>
+                        <p className="text-sm text-neutral-600 font-medium">
+                          <span className="font-semibold text-neutral-800">{quest.stageCroatian}</span>
+                          <span className="text-neutral-400 mx-1.5">•</span>
+                          <span className="text-neutral-500 italic">&ldquo;{quest.stageEnglish}&rdquo;</span>
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-x-3 shrink-0">
+                        <span className="text-xs font-semibold text-muted-foreground hidden sm:inline">
+                          {userProgress.points}/{quest.value} XP
                         </span>
-                      )}
+                        {isCompleted && (
+                          <span className="text-xs font-extrabold uppercase px-2.5 py-1 bg-green-100 text-green-700 rounded-lg">
+                            Completed ✓
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <Progress value={progress} className="h-3" />
                   </div>
