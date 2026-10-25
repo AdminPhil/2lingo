@@ -80,13 +80,13 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-emerald-600 border-emerald-400",
     nodeArrowBorder: "border-t-emerald-400",
   },
-  // World 4 (CR-026/CR-030/CR-031): Crown Citadel (Units 16–20)
+  // World 4 (CR-026/CR-030/CR-031/CR-032): King's Landing (Units 16–20)
   {
     id: "dubrovnik-heritage",
     stage: 4,
-    stageName: "Crown Citadel",
-    stageBadgeLabel: "World 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
-    stageCroatianName: "World 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
+    stageName: "King's Landing",
+    stageBadgeLabel: "World 4: King's Landing • Ancient Dubrovnik",
+    stageCroatianName: "World 4: King's Landing • Ancient Dubrovnik",
     unitRange: [16, 20],
     solidBg: "bg-blue-900",
     gradient: "from-blue-900 via-indigo-900 to-amber-700",

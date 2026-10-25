@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Rename World 4 to King's Landing & Span Top Badge Across Banner (CR-032)
+
+### Added & Refined
+- **[CR-032] ✅ IMPLEMENTED & VERIFIED - King's Landing Renaming & UnitBanner Layout Refactoring:**
+  - **Renamed World 4 to King's Landing (`lib/theme-registry.ts`):** Celebrated Dubrovnik's iconic cultural standing as the real-world filming location for King's Landing:
+    - Updated badge label: `👑 World 4: King's Landing • Ancient Dubrovnik`
+    - Updated stage name: `King's Landing`
+  - **Full-Width Top Badge Clearance (`app/(main)/learn/unit-banner.tsx`):** Restructured the unit banner layout to dedicate a full-width top row for the world pill badge (`w-full flex items-center`). This completely eliminates awkward text wrapping inside the badge when names are long.
+  - **Pushed Nastavi Button Lower:** Aligned the `Nastavi` button with the bottom content row alongside the unit description (`flex sm:items-end justify-between`), giving both the header badge and the call-to-action button generous spacing and visual harmony.
+
+---
+
 ## [2026-10-24] - Fix Speaker Icon & Number Collision on Compact Challenge Tiles (BUG-016)
 
 ### Fixed
