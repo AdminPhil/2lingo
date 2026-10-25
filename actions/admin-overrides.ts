@@ -2,17 +2,42 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs";
-import { eq } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 
 import db from "@/db/drizzle";
-import { userProgress } from "@/db/schema";
-import { isAdmin } from "@/lib/admin";
+import { pods, podMembers, userProgress } from "@/db/schema";
+import { isAdmin, isSuperAdmin } from "@/lib/admin";
 import { awardPodXp } from "@/actions/pod";
+
+const verifyParentCanManageLearner = async (
+  callerUserId: string,
+  targetUserId: string
+): Promise<boolean> => {
+  if (await isSuperAdmin()) return true;
+
+  // Query if target learner is a member of any pod owned by the caller
+  const membership = await db.query.podMembers.findFirst({
+    where: and(
+      eq(podMembers.userId, targetUserId),
+      inArray(
+        podMembers.podId,
+        db.select({ id: pods.id }).from(pods).where(eq(pods.ownerId, callerUserId))
+      )
+    ),
+  });
+
+  return Boolean(membership);
+};
 
 export const adminRefillHearts = async (targetUserId: string) => {
   const { userId } = await auth();
   if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
+  }
+
+  const canManage = await verifyParentCanManageLearner(userId, targetUserId);
+  if (!canManage) {
+    return { error: "You can only manage learners inside your own family circle." };
   }
 
   const learner = await db.query.userProgress.findFirst({
@@ -38,6 +63,11 @@ export const adminProtectStreak = async (targetUserId: string) => {
   const { userId } = await auth();
   if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
+  }
+
+  const canManage = await verifyParentCanManageLearner(userId, targetUserId);
+  if (!canManage) {
+    return { error: "You can only manage learners inside your own family circle." };
   }
 
   const learner = await db.query.userProgress.findFirst({
@@ -72,6 +102,11 @@ export const adminAwardPraiseXp = async (
   const { userId } = await auth();
   if (!userId || !(await isAdmin())) {
     throw new Error("Unauthorized");
+  }
+
+  const canManage = await verifyParentCanManageLearner(userId, targetUserId);
+  if (!canManage) {
+    return { error: "You can only manage learners inside your own family circle." };
   }
 
   if (amount <= 0 || amount > 500) {

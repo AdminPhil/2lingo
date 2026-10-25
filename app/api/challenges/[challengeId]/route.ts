@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 import db from "@/db/drizzle";
 import { challenges } from "@/db/schema";
-import { isAdmin } from "@/lib/admin";
+import { isSuperAdmin } from "@/lib/admin";
 
 export const GET = async (
   req: Request,
   { params }: { params: { challengeId: number } },
 ) => {
-  if (!(await isAdmin())) {
+  if (!(await isSuperAdmin())) {
     return new NextResponse("Unauthorized", { status: 403 });
   }
 
@@ -24,7 +24,7 @@ export const PUT = async (
   req: Request,
   { params }: { params: { challengeId: number } },
 ) => {
-  if (!(await isAdmin())) {
+  if (!(await isSuperAdmin())) {
     return new NextResponse("Unauthorized", { status: 403 });
   }
 
@@ -40,7 +40,7 @@ export const DELETE = async (
   req: Request,
   { params }: { params: { challengeId: number } },
 ) => {
-  if (!(await isAdmin())) {
+  if (!(await isSuperAdmin())) {
     return new NextResponse("Unauthorized", { status: 403 });
   }
 

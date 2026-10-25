@@ -3,39 +3,42 @@ import { eq } from "drizzle-orm";
 import db from "@/db/drizzle";
 import { pods, userProgress } from "@/db/schema";
 
-export const SUPER_ADMIN_EMAILS = [
-  "philip.zgomba@gmail.com",
-];
+export const SUPER_ADMIN_EMAILS: string[] = (process.env.SUPER_ADMIN_EMAILS || "")
+  .split(",")
+  .map((e) => e.trim().toLowerCase())
+  .filter(Boolean);
 
-export const DEFAULT_ADMIN_EMAILS = [
-  "philip.zgomba@gmail.com",
-];
+export const DEFAULT_ADMIN_EMAILS: string[] = (process.env.ADMIN_EMAILS || process.env.SUPER_ADMIN_EMAILS || "")
+  .split(",")
+  .map((e) => e.trim().toLowerCase())
+  .filter(Boolean);
 
-// Known administrator and parent account IDs (fast-path fallback)
-export const DEFAULT_ADMIN_IDS = [
-  "user_3L6xcATMCXxWhB6ule3mHl5iz0h", // Phil (philip.zgomba@gmail.com)
-  "user_3L1NgMhZTgf028zJorcCrRWzdXQ", // Phil
-  "user_3KzD8MADuGMqXumxmVhHHb6ludF", // Phil
-  "user_3L1NcTuNW47BxjbICnQ2zGRIH22", // J C
-  "user_2dGb6YEarBAQHrNYoB5dMtISRWK", // Legacy admin
-];
+// Administrator account IDs sourced from private environment variables
+export const DEFAULT_ADMIN_IDS: string[] = (process.env.ADMIN_USER_IDS || process.env.SUPER_ADMIN_USER_IDS || "")
+  .split(",")
+  .map((id) => id.trim())
+  .filter(Boolean);
 
 export const isSuperAdmin = async (): Promise<boolean> => {
   const { userId } = auth();
   if (!userId) return false;
 
-  // 1. Fast-path check for known Phil Clerk IDs
-  if (DEFAULT_ADMIN_IDS.slice(0, 3).includes(userId)) {
+  // 1. Check env variable SUPER_ADMIN_USER_IDS or configured admin IDs
+  const superAdminIds = (process.env.SUPER_ADMIN_USER_IDS || "")
+    .split(",")
+    .map((id) => id.trim())
+    .filter(Boolean);
+
+  if (superAdminIds.includes(userId)) {
     return true;
   }
 
-  // 2. Check env variable SUPER_ADMIN_USER_IDS
-  if (process.env.SUPER_ADMIN_USER_IDS) {
-    const envIds = process.env.SUPER_ADMIN_USER_IDS.split(",").map((id) => id.trim());
-    if (envIds.includes(userId)) return true;
+  // 2. Fallback check for DEFAULT_ADMIN_IDS
+  if (DEFAULT_ADMIN_IDS.includes(userId)) {
+    return true;
   }
 
-  // 3. Check verified Clerk user email
+  // 3. Check verified Clerk user email against SUPER_ADMIN_EMAILS
   try {
     const user = await currentUser();
     if (user?.emailAddresses) {

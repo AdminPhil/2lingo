@@ -1,12 +1,16 @@
 "use server";
 
 import { auth, clerkClient } from "@clerk/nextjs";
-import { eq } from "drizzle-orm";
+import { and, eq, gte, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 import db from "@/db/drizzle";
 import { podMembers, pods, userProgress } from "@/db/schema";
 import { isSuperAdmin } from "@/lib/admin";
+
+const MAX_FAMILY_POD_MEMBERS = 15;
+const MAX_CLASSROOM_POD_MEMBERS = 50;
+const MAX_CREATIONS_PER_HOUR = 60;
 
 interface CreateChildAccountInput {
   childName: string;
@@ -51,6 +55,42 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
   const superAdmin = await isSuperAdmin();
   if (targetPod.ownerId !== userId && !superAdmin) {
     return { error: "You can only create learner accounts for your own family circle." };
+  }
+
+  // Enforce pod capacity based on pod type (Family vs Classroom)
+  const currentMembers = await db
+    .select({ count: sql<number>`count(*)` })
+    .from(podMembers)
+    .where(eq(podMembers.podId, targetPod.id));
+
+  const memberCount = Number(currentMembers[0]?.count || 0);
+  const maxAllowed = targetPod.type === "classroom"
+    ? MAX_CLASSROOM_POD_MEMBERS
+    : MAX_FAMILY_POD_MEMBERS;
+
+  if (!superAdmin && memberCount >= maxAllowed) {
+    return {
+      error: `This ${targetPod.type} circle has reached its capacity of ${maxAllowed} learners. Please contact support or create another circle.`
+    };
+  }
+
+  // Velocity check: prevent rapid-fire script abuse
+  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+  const recentCreations = await db
+    .select({ count: sql<number>`count(*)` })
+    .from(podMembers)
+    .where(
+      and(
+        eq(podMembers.podId, targetPod.id),
+        gte(podMembers.joinedAt, oneHourAgo)
+      )
+    );
+
+  const hourlyCount = Number(recentCreations[0]?.count || 0);
+  if (!superAdmin && hourlyCount >= MAX_CREATIONS_PER_HOUR) {
+    return {
+      error: "Account creation speed limit reached. Please wait a few minutes before adding more learners."
+    };
   }
 
   // 1. Create Clerk User with username & password (no email required)

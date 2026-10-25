@@ -4,6 +4,24 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Epic 2: Production Security Hardening & Vulnerability Remediation (CR-045, CR-046, CR-047, CR-048)
+
+### Security & Hardening
+- **[CR-045] ✅ IMPLEMENTED & VERIFIED - Restrict Curriculum APIs (`/api/*`) to Super-Admin Only:**
+  - Audited all 10 REST API route files (`/api/courses`, `/api/units`, `/api/lessons`, `/api/challenges`, `/api/challengeOptions`).
+  - Replaced `isAdmin()` with `isSuperAdmin()` on all endpoints, ensuring parent accounts cannot delete courses, alter challenges, or tamper with curriculum data. Non-super-admins receive `403 Forbidden`.
+- **[CR-046] ✅ IMPLEMENTED & VERIFIED - Enforce Pod Ownership in Parent Magic Wand Overrides:**
+  - Implemented `verifyParentCanManageLearner()` relational guard in [`actions/admin-overrides.ts`](file:///c:/Users/phili/Documents/phils_repo/actions/admin-overrides.ts).
+  - Parents can now only execute heart refills (`adminRefillHearts`), streak protections (`adminProtectStreak`), and praise XP awards (`adminAwardPraiseXp`) for learners enrolled in a pod that the parent explicitly owns. Super-Admins retain platform-wide administrative authority.
+- **[CR-047] ✅ IMPLEMENTED & VERIFIED - Remove Wildcard CORS & Enforce Security Headers + Zero Secrets in Git:**
+  - Hardened [`next.config.mjs`](file:///c:/Users/phili/Documents/phils_repo/next.config.mjs): removed open `Access-Control-Allow-Origin: *` wildcard from internal APIs; added standard defensive HTTP headers (`X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`).
+  - Purged hardcoded administrator emails and Clerk user IDs from [`lib/admin.ts`](file:///c:/Users/phili/Documents/phils_repo/lib/admin.ts), sourcing identities dynamically from private environment variables (`SUPER_ADMIN_EMAILS`, `SUPER_ADMIN_USER_IDS`).
+- **[CR-048] ✅ IMPLEMENTED & VERIFIED - Classroom-Aware Capacity & Velocity Protection:**
+  - Added tiered pod member capacity checks in [`actions/child-account.ts`](file:///c:/Users/phili/Documents/phils_repo/actions/child-account.ts): Family pods capped at 15 learners; Classroom pods accommodate up to 50 students.
+  - Implemented hourly creation velocity limits (maximum 60 accounts/hour) to protect Clerk API quotas from automated script loops while supporting real-world classroom onboarding.
+
+---
+
 ## [2026-10-24] - Remove Shop from Sidebar Navigation & Codify Anti-Regression Rule (CR-050)
 
 ### Fixed & Refined

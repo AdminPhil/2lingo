@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
 import db from "@/db/drizzle";
-import { isAdmin } from "@/lib/admin";
+import { isSuperAdmin } from "@/lib/admin";
 import { courses } from "@/db/schema";
 
 export const GET = async () => {
-  if (!(await isAdmin())) {
+  if (!(await isSuperAdmin())) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
@@ -15,7 +15,7 @@ export const GET = async () => {
 };
 
 export const POST = async (req: Request) => {
-  if (!(await isAdmin())) {
+  if (!(await isSuperAdmin())) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
