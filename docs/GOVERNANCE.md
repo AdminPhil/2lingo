@@ -12,7 +12,7 @@ Before executing any code changes or database seeds, the author (developer or AI
 ```mermaid
 flowchart LR
     A["1. Pre-Flight Clash Check (docs/3. CURRICULUM_STANDARDS.md)"] --> B["2. Automated Audit (scripts/audit-curriculum-rules.ts)"]
-    B --> C["3. Post-Flight Doc Sync (docs/CHANGELOG.md)"]
+    B --> C["3. Post-Flight Sync (docs/CHANGELOG.md & docs/REGISTRY.md)"]
     C --> D["Merge into main & Deploy"]
 ```
 
@@ -42,4 +42,5 @@ Every change must satisfy all items on this checklist:
 
 ### 5. Post-Flight Sync
 - [ ] **Changelog Updated:** Every feature, unit addition, or schema change is documented in [`docs/CHANGELOG.md`](./CHANGELOG.md).
+- [ ] **Master Registry Updated:** Every completed Change Request or Bug Ticket is added to [`docs/REGISTRY.md`](./REGISTRY.md) with Ticket ID, title, date, and status, and the header summary counts incremented.
 - [ ] **Standards Updated:** If a pedagogical rule evolved during the work, the corresponding document in `docs/` is updated immediately.

@@ -21,5 +21,7 @@ Before writing any curriculum code, proposing changes, or seeding challenges in 
 5. **Navigation & UI Invariants:**
    - NEVER add or re-introduce the "Shop" navigation item (`/shop`) to the sidebar or mobile menu unless explicitly requested by the user. CroLingo's pedagogical model relies on the "Practice to Earn a Heart" engine; free purchases or point-based heart shops in primary navigation undermine active retrieval practice.
 
-6. **Sync Documentation ([`docs/CHANGELOG.md`](../../docs/CHANGELOG.md)):**
-   - Record every feature, batch addition, or rule change in `docs/CHANGELOG.md` upon completion.
+6. **Sync Documentation & Master Registry ([`docs/CHANGELOG.md`](../../docs/CHANGELOG.md) & [`docs/REGISTRY.md`](../../docs/REGISTRY.md)):**
+   - **Changelog:** Record every feature, batch addition, or rule change in `docs/CHANGELOG.md` upon completion with code diff details and ticket references.
+   - **Master Registry:** Every completed Change Request (CR) and Bug Ticket (BUG) MUST be appended to [`docs/REGISTRY.md`](../../docs/REGISTRY.md) (Part 1 for CRs, Part 2 for BUGs) with its Ticket ID, Category/Severity, Summary, Date, and Status (`✅ Verified` / `✅ Resolved`), and the header summary counts incremented.
+   - **Artifact Status:** Update the corresponding artifact in `.gemini/antigravity/brain/` from `PROPOSED` to `IMPLEMENTED & VERIFIED` or `RESOLVED & VERIFIED`.
