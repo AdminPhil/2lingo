@@ -152,14 +152,16 @@ const AdminPage = async () => {
     })),
   }));
 
-  const analyticsData = await getTrickyWordsAnalytics();
+  const analyticsUserIds = superAdmin ? undefined : learners.map((l) => l.userId);
+  const analyticsData = await getTrickyWordsAnalytics(analyticsUserIds);
 
-  const podName = activePod?.name || "Zgomba Family";
+  const podName = activePod?.name || "Family Circle";
   const inviteCode = activePod?.inviteCode || "ZGOMBA";
-  const currentXp = activePod?.currentXp ?? 740;
+  const currentXp = activePod?.currentXp ?? 0;
   const targetXp = activePod?.targetXp ?? 1000;
   const progressPercent = Math.min(Math.round((currentXp / targetXp) * 100), 100);
   const parentName = user?.firstName || (superAdmin ? "Phil" : "Parent");
+  const activeStreakCount = learners.filter((l) => l.streak > 0 || l.points > 0).length;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 pb-16">
@@ -283,8 +285,16 @@ const AdminPage = async () => {
             </div>
             <div>
               <p className="text-xs font-bold text-muted-foreground uppercase">Family Habit Status</p>
-              <h3 className="text-lg font-black text-neutral-800">Streak Active 🔥</h3>
-              <p className="text-xs text-rose-600 font-semibold">All 3 Sisters Practicing</p>
+              <h3 className="text-lg font-black text-neutral-800">
+                {activeStreakCount > 0 ? "Streak Active 🔥" : "Ready to Start 🌱"}
+              </h3>
+              <p className="text-xs text-rose-600 font-semibold">
+                {learners.length === 0
+                  ? "Add learners to start tracking"
+                  : activeStreakCount === learners.length
+                  ? `All ${learners.length} ${learners.length === 1 ? "Learner" : "Learners"} Practicing`
+                  : `${activeStreakCount} of ${learners.length} ${learners.length === 1 ? "Learner" : "Learners"} Practicing`}
+              </p>
             </div>
           </div>
         </div>
@@ -298,7 +308,7 @@ const AdminPage = async () => {
                 <span>Family Pods Hub</span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Manage learning pods, set custom codes like <code className="bg-slate-100 px-1 py-0.5 rounded font-mono font-bold">ZGOMBA</code>, and adjust weekly celebration goals.
+                Manage learning pods, set custom codes like <code className="bg-slate-100 px-1 py-0.5 rounded font-mono font-bold">{inviteCode}</code>, and adjust weekly celebration goals.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-green-700 font-bold">
@@ -328,7 +338,7 @@ const AdminPage = async () => {
                 <span>Tricky Words Analytics</span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                See which words the girls miss most across Units 1–20 and get conversation prompts for family dinners.
+                See which words your learners miss most across Units 1–20 and get conversation prompts for family dinners.
               </p>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-purple-700 font-bold">

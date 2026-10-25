@@ -60,11 +60,7 @@ export const createPod = async (name: string) => {
   }
 
   // Generate a random 6-character code
-
   const inviteCode = generateRandomPodCode();
-
-
-
 
   const [newPod] = await db.insert(pods).values({
     name: trimmedName,
@@ -85,7 +81,6 @@ export const createPod = async (name: string) => {
 
   return { success: true, pod: newPod };
 };
-
 
 export const awardPodXp = async (userId: string, xp: number = 10) => {
   try {
@@ -111,10 +106,9 @@ export const awardPodXp = async (userId: string, xp: number = 10) => {
   }
 };
 
-
 export const updatePodSettings = async (
   podId: number,
-  data: { name?: string; inviteCode?: string; targetXp?: number }
+  data: { name?: string; inviteCode?: string; targetXp?: number; type?: "family" | "classroom" }
 ) => {
   const { userId } = await auth();
   if (!userId) {
@@ -125,6 +119,10 @@ export const updatePodSettings = async (
 
   if (data.name?.trim()) {
     updates.name = data.name.trim();
+  }
+
+  if (data.type === "family" || data.type === "classroom") {
+    updates.type = data.type;
   }
 
   if (data.inviteCode?.trim()) {

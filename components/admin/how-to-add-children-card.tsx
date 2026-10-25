@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { UserPlus, Tablet, Copy, Check, Sparkles, ExternalLink, ShieldCheck } from "lucide-react";
+import { UserPlus, Tablet, Copy, Check, Sparkles, ExternalLink, ShieldCheck, GraduationCap } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { AddChildModal } from "./add-child-modal";
 import { ParentSetupWizardModal } from "./parent-setup-wizard-modal";
+import { TeacherSetupWizardModal } from "./teacher-setup-wizard-modal";
 
 type Props = {
   podId: number;
@@ -17,6 +18,7 @@ type Props = {
 export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isWizardOpen, setIsWizardOpen] = useState(false);
+  const [isTeacherWizardOpen, setIsTeacherWizardOpen] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
   const [origin, setOrigin] = useState("https://twolingo.onrender.com");
@@ -72,7 +74,15 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
               className="text-xs font-extrabold bg-blue-900 hover:bg-blue-950 text-white shadow-xs cursor-pointer h-8 px-3"
             >
               <Sparkles className="h-3.5 w-3.5 mr-1 text-amber-400" />
-              Launch Setup Wizard →
+              Family Setup Wizard →
+            </Button>
+            <Button
+              size="sm"
+              onClick={() => setIsTeacherWizardOpen(true)}
+              className="text-xs font-extrabold bg-indigo-700 hover:bg-indigo-800 text-white shadow-xs cursor-pointer h-8 px-3"
+            >
+              <GraduationCap className="h-3.5 w-3.5 mr-1 text-amber-300" />
+              Classroom Wizard →
             </Button>
           </div>
         </div>
@@ -176,6 +186,14 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
       <ParentSetupWizardModal
         isOpen={isWizardOpen}
         onOpenChange={setIsWizardOpen}
+        podId={podId}
+        podName={podName}
+        inviteCode={inviteCode}
+      />
+
+      <TeacherSetupWizardModal
+        isOpen={isTeacherWizardOpen}
+        onOpenChange={setIsTeacherWizardOpen}
         podId={podId}
         podName={podName}
         inviteCode={inviteCode}

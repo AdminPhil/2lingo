@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 65 Completed (CR-001 to CR-065) | 1 Queued (CR-066)  
-> **Total Bug Tickets:** 24 Resolved (BUG-001 to BUG-024) | 0 Open  
+> **Total Change Requests:** 72 Completed (CR-001 to CR-072) | 0 Queued  
+> **Total Bug Tickets:** 27 Resolved (BUG-001 to BUG-027) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-066)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-072)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -77,11 +77,17 @@
 | **CR-063** | Design / Landing | **Landing Page Šahovnica Banner Polish & Blue Primary CTA:** Wider, more aesthetic 2-row Croatian checkerboard ribbon (`16px`), Croatian Blue `"I Already Have an Account"` button, and desktop flex-row hero image width fix. | 2026-10-25 | ✅ Verified |
 | **CR-064** | Onboarding / Bug Fix | **Fix New Parent Sign-Up Client Exception & Modal Portal Collision:** Resolves `removeChild` DOM portal crash and `Blocked aria-hidden` conflict between Clerk sign-up modal, Radix `ParentalGateModal`, and `/admin` layout transition. | 2026-10-25 | ✅ Verified |
 | **CR-065** | Design / Landing | **Symmetrical Croatian Šahovnica Header Ribbon:** Fixes `border-box` clipping (`16px - 3px = 13px`) that caused the top row of checks to render at `8px` and the bottom row at `5px` with border bleed. | 2026-10-25 | ✅ Verified |
-| **CR-066** | Administration / Analytics | **Scope Tricky Words Analytics & Parent Dashboard Metrics by Family Pod:** Filters `getTrickyWordsAnalytics` strictly to learners in the parent's pod(s) and replaces hardcoded Zgomba copy (`"All 3 Sisters"`, `"the girls"`) with dynamic pod metrics. | 2026-10-25 | ⏳ Queued |
+| **CR-066** | Administration / Analytics | **Scope Tricky Words Analytics & Parent Dashboard Metrics by Family Pod:** Filters `getTrickyWordsAnalytics` strictly to learners in the parent's pod(s) and replaces hardcoded Zgomba copy (`"All 3 Sisters"`, `"the girls"`) with dynamic pod metrics. | 2026-10-25 | ✅ Verified |
+| **CR-067** | Pedagogy / Audio | **Lesson 1 Audio-to-Image Discovery Prompt:** Prompts learners in Lesson 1 of every unit to tap and listen to each word's Croatian pronunciation so they attach the sound to the image before visual fading in Lessons 2–4. | 2026-10-25 | ✅ Verified |
+| **CR-068** | Gamification / Hearts | **Encouraging Lesson Heart Rewards (+1 per Lesson, +3 per Super Izazov):** Awards `+1 Heart` upon completing each standard lesson (L1–L3) and `+3 Hearts` upon completing the Unit Boss Quest (`Super Izazov`, L4), up to 5 max. | 2026-10-25 | ✅ Verified |
+| **CR-069** | Onboarding / Classroom | **Classroom Pod Mode, Weekly XP Tiers & Diacritic-Safe Bulk Roster Parser:** Supports `pods.type = 'classroom'` (50-learner cap), classroom XP targets (`3k`/`5k`/`10k`), and bulk student name list parsing (`lib/classroom-roster.ts`) with Croatian diacritic normalization and mascot rotation. | 2026-10-25 | ✅ Verified |
+| **CR-070** | Onboarding / Classroom | **`TeacherSetupWizardModal` (Steps 1 & 2) & Chunked Classroom Batch Provisioning:** 4-step educator wizard with Quick Paste Roster textarea, editable Roster Preview table, and chunked progress bar provisioning up to 35 students per class. | 2026-10-25 | ✅ Verified |
+| **CR-071** | Fast Pass / Classroom | **Teacher Print Kit (8-Up Paginated Lanyard QR Badges, 1-Page Master Roster & CSV):** Dual `@media print` layouts (2×4 paginated lanyard cards vs. 1-page teacher clipboard password/QR key) plus 1-click CSV roster download. | 2026-10-25 | ✅ Verified |
+| **CR-072** | Onboarding / Classroom | **Classroom Smartboard / Projector Join Slide & iPad Cart Handoff:** Full-screen projector join overlay (giant class code, QR code, and Chromebook/iPad instructions) in Step 4 and `/admin`. | 2026-10-25 | ✅ Verified |
 
 ---
 
-## 🐛 Part 2: Bug Tickets Master Ledger (BUG-001 to BUG-017)
+## 🐛 Part 2: Bug Tickets Master Ledger (BUG-001 to BUG-027)
 
 | Ticket ID | Severity | Title & Issue Description | Root Cause | Fix Summary | Date | Status |
 | :---: | :---: | :--- | :--- | :--- | :---: | :---: |
@@ -109,3 +115,6 @@
 | **BUG-022** | Low | **Character Name Text Inside Roko & Delfi Avatars:** The printed names "ROKO" and "DELFI" from the concept art sheet were still present inside the avatar image right under their feet and splash. | On the concept art sheet, the name banners were situated at $Y = [625, 650]$ directly below the figures; previous crop bounded at $Y = 652$, capturing the names. | Raised crop floor to $Y = 590$ (directly below feet and water droplets, $35\text{px}$ above name banners), leaving clean solid white background with 0 black text pixels below character figures. | 2026-10-24 | ✅ Resolved |
 | **BUG-023** | Medium | **Single-Select Limitation in Add Member to Pod Modal:** Adding multiple learners to a family or classroom pod required reopening the modal repeatedly for each individual user. | Modal state only supported single `selectedUserId: string | null` and radio circles; server action only processed one user per invocation. | Upgraded modal to multi-select with `selectedUserIds: string[]`, squircle checkboxes, "Select All" toggle, live count badge, dynamic submit button, and `adminAddUsersToPod` batch server action. | 2026-10-24 | ✅ Resolved |
 | **BUG-024** | High | **Student QR Badge Generation & Retrieval Gap in Shared Device Switcher:** Clicking "SCAN STUDENT BADGE / QR CODE" prompted users to scan a badge, but there was nowhere in the application to view, generate, or print the QR badge. | `AddChildModal` only displayed text credentials without a QR graphic; Parent Center lacked a persistent student badge viewer; `ProfileSwitcherModal` lacked guidance on where parents acquire badges. | Implemented QR code generator in `AddChildModal`; created `StudentBadgeModal` in Parent Center with `adminGetOrResetStudentQrPass`; added session reuse in `/qr-login` and parent guidance links. | 2026-10-24 | ✅ Resolved |
+| **BUG-025** | High | **Delayed Practice Prompt When Losing Final Heart (`1 -> 0`):** Answering wrong with 1 heart left drops hearts to 0 without opening `HeartsModal`, requiring an extra guess before prompting to practice. | `reduceHearts` checks `if (hearts === 0)` *before* decrementing (`1 -> 0`) and returns `undefined`, so `quiz.tsx` only opens `HeartsModal` on a subsequent attempt when `hearts` is already `0`. | Return `{ hearts: newHearts, depleted: newHearts === 0 }` from `reduceHearts` and trigger `openHeartsModal()` immediately when the final heart is lost. | 2026-10-25 | ✅ Resolved |
+| **BUG-026** | Medium | **Premature Heart Gain Before Stage/Completion Screen in Super Izazov:** Reward heart increments and fires toast before the completion screen starts (or on Question 1 in practice replay). | `quiz.tsx` mutates `setHearts` and fires the Super Izazov toast on `"Check"` before clicking `"Continue"` to enter the finish screen, and `isPractice` in `challenge-progress.ts` adds `+1` heart on the first question instead of lesson completion. | Defer heart increment & celebration until transitioning to the completion screen (`!challenge`) and only award lesson/practice hearts on `isLessonCompletingNow`. | 2026-10-25 | ✅ Resolved |
+| **BUG-027** | High | **Multi-Word Croatian Phrases Playing Single-Word Audio (`117` phrases):** Multi-word options like `"Plavo more"`, `"Gledam more"`, `"Toplo sunce"`, and `"Crvena jabuka"` only speak a single word (`"more"`, `"sunce"`, `"jabuka"`). | 117 multi-word rows in `challenge_options` were seeded with their root noun's single-word `audio_src` (e.g. `/audio/hr/more.mp3`) instead of dedicated full-phrase `.mp3` files, and `toplo_more.mp3` needed full-phrase regeneration. | Generated 114 full-phrase neural `.mp3` files (`hr-HR-GabrijelaNeural`), updated all 117 `challenge_options.audio_src` rows in Neon DB, and added a multi-word phrase-slug check to `audit-curriculum-rules.ts`. | 2026-10-25 | ✅ Resolved |

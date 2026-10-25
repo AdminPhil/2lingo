@@ -114,7 +114,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
         <div className="p-6">
           <div className="mb-4 flex items-center justify-between">
             <p className="text-xs font-semibold text-muted-foreground">
-              Challenges where the sisters used hearts or made repeated retries:
+              Challenges where your learners used hearts or made repeated retries:
             </p>
             <span className="text-xs font-bold text-purple-600">
               {totalMistakes} logged retry events

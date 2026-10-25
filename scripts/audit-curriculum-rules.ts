@@ -65,7 +65,7 @@ async function auditAllRules() {
       totalErrors++;
     }
 
-    // Rule: Audio File on Disk
+    // Rule: Audio File on Disk & Multi-Word Phrase Audio Match (BUG-027)
     for (const opt of opts) {
       if (!opt.audio_src) {
         console.error(`[RULE VIOLATION: Missing Audio Source] Option "${opt.text}" has no audioSrc`);
@@ -75,6 +75,14 @@ async function auditAllRules() {
         if (!fs.existsSync(audioPath)) {
           console.error(`[RULE VIOLATION: Audio File Missing on Disk] ${opt.audio_src} (Option: "${opt.text}")`);
           totalErrors++;
+        }
+        const trimmedText = (opt.text || "").trim();
+        if (trimmedText.includes(" ")) {
+          const baseSlug = path.basename(opt.audio_src, ".mp3");
+          if (!baseSlug.includes("_")) {
+            console.error(`[RULE VIOLATION: Multi-Word Phrase Mapped to Single-Word Audio] Option "${opt.text}" -> ${opt.audio_src}`);
+            totalErrors++;
+          }
         }
       }
 

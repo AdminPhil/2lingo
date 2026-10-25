@@ -83,6 +83,10 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     return { error: "hearts" };
   }
 
+  // CR-068 & BUG-026: Award +1 heart on standard lesson completion (L1-L3)
+  // and +3 hearts on Super Izazov completion (L4), strictly when the lesson finishes.
+  const heartRewardAmount = isLessonCompletingNow ? (isSuperIzazov ? 3 : 1) : 0;
+
   // Handle Practice Mode (Review or Replay)
   if (isPractice) {
     await db.update(challengeProgress).set({
@@ -92,8 +96,9 @@ export const upsertChallengeProgress = async (challengeId: number) => {
       eq(challengeProgress.id, existingChallengeProgress.id)
     );
 
-    // If completing the Super Izazov or practice, award heart up to 5
-    const practiceNewHearts = Math.min(currentUserProgress.hearts + 1, 5);
+    const practiceNewHearts = isLessonCompletingNow
+      ? Math.min(currentUserProgress.hearts + heartRewardAmount, 5)
+      : currentUserProgress.hearts;
     const heartsAwarded = practiceNewHearts > currentUserProgress.hearts;
 
     await db.update(userProgress).set({
@@ -111,23 +116,19 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     revalidatePath("/leaderboard");
     revalidatePath(`/lesson/${lessonId}`);
     return {
+      isLessonCompleted: isLessonCompletingNow,
       isSuperIzazovCompleted: isLessonCompletingNow && isSuperIzazov,
       heartsAwarded,
+      heartRewardAmount,
       newHearts: practiceNewHearts,
     };
   }
 
   // Normal (First-Time) Completion Mode
-  let heartsAwarded = false;
-  let newHearts = currentUserProgress.hearts;
-
-  // CR-029: Each Super Izazov earns the user a new heart (+1 ❤️ up to 5)
-  if (isLessonCompletingNow && isSuperIzazov) {
-    if (currentUserProgress.hearts < 5) {
-      newHearts = currentUserProgress.hearts + 1;
-      heartsAwarded = true;
-    }
-  }
+  const newHearts = isLessonCompletingNow
+    ? Math.min(currentUserProgress.hearts + heartRewardAmount, 5)
+    : currentUserProgress.hearts;
+  const heartsAwarded = newHearts > currentUserProgress.hearts;
 
   await db.insert(challengeProgress).values({
     challengeId,
@@ -151,8 +152,10 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   revalidatePath(`/lesson/${lessonId}`);
 
   return {
+    isLessonCompleted: isLessonCompletingNow,
     isSuperIzazovCompleted: isLessonCompletingNow && isSuperIzazov,
     heartsAwarded,
+    heartRewardAmount,
     newHearts,
   };
 };

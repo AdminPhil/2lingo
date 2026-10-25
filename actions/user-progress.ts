@@ -139,8 +139,10 @@ export const reduceHearts = async (challengeId: number, selectedOptionId?: numbe
     return { error: "hearts" };
   }
 
+  const newHearts = Math.max(currentUserProgress.hearts - 1, 0);
+
   await db.update(userProgress).set({
-    hearts: Math.max(currentUserProgress.hearts - 1, 0),
+    hearts: newHearts,
     heartsUsed: (currentUserProgress.heartsUsed ?? 0) + 1,
   }).where(eq(userProgress.userId, userId));
 
@@ -160,6 +162,11 @@ export const reduceHearts = async (challengeId: number, selectedOptionId?: numbe
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
   revalidatePath(`/lesson/${lessonId}`);
+
+  return {
+    hearts: newHearts,
+    depleted: newHearts === 0,
+  };
 };
 
 export const refillHearts = async () => {

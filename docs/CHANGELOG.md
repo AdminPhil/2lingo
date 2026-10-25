@@ -4,6 +4,34 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Backlog Clearance Release: Quiz Heart Mechanics, Multi-Word Audio Integrity, Pod-Scoped Analytics & Teacher Classroom Setup Wizard (BUG-025 to BUG-027, CR-066 to CR-072)
+
+### Fixed & Refined
+- **[BUG-025] ✅ RESOLVED & VERIFIED - Immediate Practice Prompt When Losing Final Heart (`1 -> 0`):**
+  - Updated `reduceHearts` (`actions/user-progress.ts`) to return `{ hearts: newHearts, depleted: newHearts === 0 }` when a wrong answer depletes a learner's final heart.
+  - Updated `app/lesson/quiz.tsx` to immediately invoke `openHeartsModal()` when `response?.depleted || nextHearts === 0`, eliminating the extra wasted guess at `0` hearts.
+- **[BUG-026] & [CR-068] ✅ IMPLEMENTED & VERIFIED - Deferred Completion Screen Heart Rewards (`+1` Standard Lesson, `+3` Super Izazov):**
+  - Updated `upsertChallengeProgress` (`actions/challenge-progress.ts`) to award `+1 Heart` on standard lesson completion (`L1–L3`) and `+3 Hearts` on Unit Boss Quest (`Super Izazov`, `L4`) completion (capped at `5`), strictly when `isLessonCompletingNow` is true.
+  - Updated `app/lesson/quiz.tsx` to queue `pendingCompletionReward` on the final challenge and apply `setHearts` + celebratory toast only upon transitioning into the completion screen (`!challenge`).
+- **[BUG-027] ✅ RESOLVED & VERIFIED - Multi-Word Croatian Phrase Audio Integrity (`114` New Neural MP3s & `117` DB Mappings):**
+  - Created `scripts/fix-multiword-audio.ts` and generated `114` full-phrase Croatian neural `.mp3` files (`hr-HR-GabrijelaNeural` via `edge-tts`), including regenerating `toplo_more.mp3` and adding dedicated audio for phrases like `"Plavo more"`, `"Gledam more"`, `"Toplo sunce"`, `"Crvena jabuka"`, `"Topli kruh"`, etc.
+  - Updated `117` distinct multi-word phrase `audio_src` pointers in Neon `challenge_options` and added a permanent multi-word phrase audio slug parity check to `scripts/audit-curriculum-rules.ts`.
+
+### Added
+- **[CR-067] ✅ IMPLEMENTED & VERIFIED - Lesson 1 Audio-to-Image Discovery Prompt (`app/lesson/quiz.tsx`):**
+  - Passed `lessonOrder={lesson.order}` from `app/lesson/page.tsx` and `app/lesson/[lessonId]/page.tsx` into `<Quiz />`.
+  - Added the `"🔊 Poslušaj i poveži (Listen & Connect)"` prompt banner above the challenge cards in Lesson 1 of every unit (`lessonOrder === 1`) to encourage learners to tap and bind Croatian pronunciation to each illustration before visual scaffolding fades in Lessons 2–4.
+- **[CR-066] ✅ IMPLEMENTED & VERIFIED - Scope Tricky Words Analytics & Parent Dashboard Metrics by Family Pod:**
+  - Updated `getTrickyWordsAnalytics(userIds?: string[])` (`db/queries.ts`) to filter `challengeMistakes` and `challengeProgress` strictly to the learners in the parent's pod(s), returning clean zeroed metrics (`0` mistakes, `0` completed, `Upcoming` units) when a new parent has no learner activity yet.
+  - Replaced hardcoded Zgomba family copy (`"All 3 Sisters Practicing"`, `"where the sisters used hearts"`, `"the girls"`, default `740` XP) in `app/admin/page.tsx` and `components/admin/tricky-words-card.tsx` with dynamic pod learner counts and inclusive family copy.
+- **[CR-069] to [CR-072] ✅ IMPLEMENTED & VERIFIED - Teacher & Classroom Setup Wizard Epic (`Učionica` Onboarding):**
+  - **CR-069:** Updated `updatePodSettings` (`actions/pod.ts`) to support `type: "classroom"` (`50`-learner capacity), added classroom weekly XP goal tiers (`3,000`, `5,000`, `10,000 XP`), and created `lib/classroom-roster.ts` + `tests/unit/classroom-roster.test.ts` with Croatian diacritic-safe bulk roster parsing (`parseBulkClassroomRoster`), collision-free username generation, PIN generation, and round-robin Croatian mascot assignment.
+  - **CR-070:** Built `TeacherSetupWizardModal` (`components/admin/teacher-setup-wizard-modal.tsx`, Steps 1 & 2) with Quick Paste Roster textarea, editable 35-student Roster Preview table, chunked batch provisioning (`createMultipleChildAccounts` in batches of 5 with live progress bar), and `"🏫 Classroom Wizard →"` launch button in `components/admin/how-to-add-children-card.tsx`.
+  - **CR-071:** Implemented the Teacher Print Kit in Step 3 featuring **8-Up Paginated Lanyard QR Badges** (`2×4` grid per page with `print:break-after-page`), a **1-Page Teacher Master Roster Key** with desk backup QR codes, and 1-click **CSV Gradebook Export** (`formatClassroomRosterCsv`).
+  - **CR-072:** Implemented the **Full-Screen Smartboard / Projector Join Slide** and **Shared Classroom iPad Cart Guide** in Step 4.
+
+---
+
 ## [2026-10-25] - Symmetrical Croatian Šahovnica Header Ribbon (CR-065)
 
 ### Fixed & Refined

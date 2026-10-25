@@ -37,6 +37,7 @@ const LessonPage = async () => {
       initialPercentage={initialPercentage}
       userSubscription={userSubscription}
       isSuperIzazov={isSuperIzazov}
+      lessonOrder={lesson.order}
     />
   );
 };

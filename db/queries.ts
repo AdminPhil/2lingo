@@ -524,29 +524,45 @@ export type TrickyWordsAnalytics = {
   overallAccuracyRate: number;
 };
 
-export const getTrickyWordsAnalytics = cache(async (): Promise<TrickyWordsAnalytics> => {
-  // 1. Fetch all challenge mistakes with challenge, options, and lesson/unit relations
-  const mistakes = await db.query.challengeMistakes.findMany({
-    with: {
-      challenge: {
-        with: {
-          lesson: {
-            with: {
-              unit: true,
+export const getTrickyWordsAnalytics = cache(async (userIds?: string[]): Promise<TrickyWordsAnalytics> => {
+  // 1. Fetch challenge mistakes scoped to userIds (when provided)
+  const mistakes =
+    userIds !== undefined && userIds.length === 0
+      ? []
+      : await db.query.challengeMistakes.findMany({
+          where:
+            userIds && userIds.length > 0
+              ? inArray(challengeMistakes.userId, userIds)
+              : undefined,
+          with: {
+            challenge: {
+              with: {
+                lesson: {
+                  with: {
+                    unit: true,
+                  },
+                },
+                challengeOptions: true,
+              },
             },
+            selectedOption: true,
           },
-          challengeOptions: true,
-        },
-      },
-      selectedOption: true,
-    },
-    orderBy: (challengeMistakes, { desc }) => [desc(challengeMistakes.createdAt)],
-  });
+          orderBy: (challengeMistakes, { desc }) => [desc(challengeMistakes.createdAt)],
+        });
 
-  // 2. Fetch all completed challenge progress records
-  const completedProgress = await db.query.challengeProgress.findMany({
-    where: eq(challengeProgress.completed, true),
-  });
+  // 2. Fetch completed challenge progress records scoped to userIds (when provided)
+  const completedProgress =
+    userIds !== undefined && userIds.length === 0
+      ? []
+      : await db.query.challengeProgress.findMany({
+          where:
+            userIds && userIds.length > 0
+              ? and(
+                  eq(challengeProgress.completed, true),
+                  inArray(challengeProgress.userId, userIds)
+                )
+              : eq(challengeProgress.completed, true),
+        });
 
   const completionsPerChallenge = new Map<number, number>();
   for (const cp of completedProgress) {
@@ -703,7 +719,7 @@ export const getTrickyWordsAnalytics = cache(async (): Promise<TrickyWordsAnalyt
       croatian: "Dobar dan! Kako si danas?",
       english: "Good day! How are you today?",
       targetWords: "Dobar dan vs Laku noć • Dobro sam",
-      parentTip: "Greet the girls in Croatian first thing in the morning. When they answer 'Dobro sam!' (I am good!), give them a high-five!",
+      parentTip: "Greet your learners in Croatian first thing in the morning. When they answer 'Dobro sam!' (I am good!), give them a high-five!",
     },
     {
       id: 2,
@@ -712,7 +728,7 @@ export const getTrickyWordsAnalytics = cache(async (): Promise<TrickyWordsAnalyt
       croatian: "Molim te, dodaj mi kruh. Hvala lijepa!",
       english: "Please pass the bread. Thank you very much!",
       targetWords: "Molim (Please) vs Hvala (Thank you) • Kruh (Bread)",
-      parentTip: "Challenge the sisters to use 'Molim te' whenever asking for food at dinner, and reply with 'Izvoli' (Here you go) and 'Hvala'!",
+      parentTip: "Challenge your children to use 'Molim te' whenever asking for food at dinner, and reply with 'Izvoli' (Here you go) and 'Hvala'!",
     },
     {
       id: 3,
