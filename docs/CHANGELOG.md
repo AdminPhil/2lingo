@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Centralize Architecture Specification & Streamline Gamification (CR-035)
+
+### Added & Refined
+- **[CR-035] ✅ IMPLEMENTED & VERIFIED - Data Modeling & System Architecture Centralization:**
+  - **Comprehensive `docs/ARCHITECTURE.md`:** Expanded from a 33-line outline into the definitive engineering architecture document. Features a complete 12-table Mermaid ERD, detailed database schema dictionary, Clerk user and role hierarchy models (Super-Admin, Parent, Learner, and email-less child provisioning), pod authorization and scoping mechanics, and typed server action mutation pipelines.
+  - **Streamlined `docs/HEARTS_AND_GAMIFICATION.md`:** Stripped out database schema definitions and query implementations; focused strictly on game mechanics, precision tracking (`hearts_used`), Practice-to-Earn sandboxes, Super Izazov milestone bonuses, streak habits, team celebration meters, peer high-fives, and parent magic wand praise.
+  - **Brand Synchronization:** Updated naming from legacy "2lingo" to "CroLingo".
+
+---
+
 ## [2026-10-24] - Repurpose README.md as Developer Guide & Streamline GOVERNANCE.md (CR-034)
 
 ### Added & Refined
