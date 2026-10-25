@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Author docs/DEPLOYMENT_AND_DEVOPS.md Operational Manual (CR-040)
+
+### Added & Refined
+- **[CR-040] ✅ IMPLEMENTED & VERIFIED - Hosting, CI/CD & Operational Manual:**
+  - **Comprehensive `docs/DEPLOYMENT_AND_DEVOPS.md`:** Published the complete infrastructure, deployment, and operational runbook for developers, DevOps engineers, and AI agents.
+  - **Render Infrastructure Specification:** Codified the `render.yaml` Blueprint, service architecture, Node.js runtime, build/start lifecycle, and port binding.
+  - **Neon Serverless PostgreSQL Protocol:** Detailed the PgBouncer pooled connection pipeline (`drizzle-orm/neon-http`) versus direct connections for DDL schema migrations, auto-suspending compute, and branching.
+  - **Automated Deployment Trigger Protocol:** Formalized the REST API execution pipeline (`scripts/trigger-render-deploy.js`), Docker layer cache optimization, and HTTP 201/202 response handling.
+  - **Zero-Polling Operational Policy:** Formally codified the strict ban on polling loops and busy-waiting; established asynchronous verification via Render dashboards and webhooks.
+  - **Disaster Recovery Playbook:** Documented one-click Render dashboard rollbacks, Git revert runbooks, Neon point-in-time restores (PITR), and Postgres sequence resynchronization scripts.
+
+---
+
 ## [2026-10-24] - Author docs/TESTING_AND_QA.md Specification & Release Runbook (CR-039)
 
 ### Added & Refined

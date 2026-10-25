@@ -133,4 +133,5 @@ For in-depth guides, pedagogical rules, and architecture specs, explore the [`do
 | 🗄️ **[`docs/DATABASE_AND_DATA_MODEL.md`](./docs/DATABASE_AND_DATA_MODEL.md)** | **Database & Data Models:** Dual-domain ERD, 12-table schema dictionary, state machines, and zero-data-loss invariants. |
 | 🛡️ **[`docs/SECURITY_AND_COPPA_COMPLIANCE.md`](./docs/SECURITY_AND_COPPA_COMPLIANCE.md)** | **Child Safety & Privacy:** COPPA / GDPR-K standards, zero child PII, closed social loops, and scoped leaderboards. |
 | 🧪 **[`docs/TESTING_AND_QA.md`](./docs/TESTING_AND_QA.md)** | **Testing & QA Strategy:** 4-tier verification pipeline, 10-point manual release runbook, and Vitest/Playwright roadmap. |
+| 🚀 **[`docs/DEPLOYMENT_AND_DEVOPS.md`](./docs/DEPLOYMENT_AND_DEVOPS.md)** | **Deployment & DevOps Manual:** Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks. |
 | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |
