@@ -52,13 +52,17 @@ export const Card = ({
 
   useKey(shortcut, handleClick, {}, [handleClick]);
 
+  const hasVisibleImage = Boolean(imageSrc && !hasImageError);
+
   return (
     <div
       onClick={handleClick}
       className={cn(
         "relative h-full border-2 rounded-2xl border-b-4 hover:bg-black/5 cursor-pointer active:border-b-2 overflow-hidden transition-all",
-        // Padding: compact on mobile, generous on desktop
-        type === "SELECT" ? "p-3 sm:p-4 lg:p-5 flex flex-col justify-between" : "p-3.5 lg:p-4 w-full",
+        // Different padding and height based on layout mode:
+        type === "SELECT" && hasVisibleImage && "p-3 sm:p-4 lg:p-5 flex flex-col justify-between min-h-[140px]",
+        type === "SELECT" && !hasVisibleImage && "p-3 sm:p-4 flex items-center justify-between min-h-[56px] w-full",
+        type === "ASSIST" && "p-3.5 lg:p-4 w-full",
         selected && "border-sky-400 bg-sky-50/70 hover:bg-sky-50/70",
         selected && status === "correct" && "border-green-400 bg-green-50/80 hover:bg-green-50/80",
         selected && status === "wrong" && "border-rose-400 bg-rose-50/80 hover:bg-rose-50/80",
@@ -67,13 +71,13 @@ export const Card = ({
     >
       {audio}
 
-      {/* Case 1: SELECT (Image Card) Layout */}
-      {type === "SELECT" && (
+      {/* Case 1: SELECT with Image (Tall Card with Top-Left Corner Badge) */}
+      {type === "SELECT" && hasVisibleImage && (
         <>
-          {/* Top-Right Keyboard Shortcut Hotkey Badge */}
+          {/* Top-Left Keyboard Shortcut Hotkey Badge (Diagonally opposite to bottom-right speaker) */}
           <div
             className={cn(
-              "absolute top-2 right-2 lg:top-2.5 lg:right-2.5 h-5 w-5 lg:h-6 lg:w-6 border-2 flex items-center justify-center rounded-md text-neutral-400 lg:text-xs text-[10px] font-bold bg-white/90 shadow-2xs z-10 select-none",
+              "absolute top-2 left-2 lg:top-2.5 lg:left-2.5 h-5 w-5 lg:h-6 lg:w-6 border-2 flex items-center justify-center rounded-md text-neutral-400 lg:text-xs text-[10px] font-bold bg-white/90 shadow-2xs z-10 select-none",
               selected && "border-sky-300 text-sky-600 bg-sky-50",
               selected && status === "correct" && "border-green-500 text-green-600 bg-green-50",
               selected && status === "wrong" && "border-rose-500 text-rose-600 bg-rose-50"
@@ -84,19 +88,15 @@ export const Card = ({
           </div>
 
           {/* Centered Image */}
-          {imageSrc && !hasImageError ? (
-            <div className="relative aspect-square my-2 max-h-[75px] sm:max-h-[95px] lg:max-h-[130px] w-full flex items-center justify-center">
-              <Image
-                src={imageSrc}
-                fill
-                alt={text}
-                className="object-contain"
-                onError={() => setHasImageError(true)}
-              />
-            </div>
-          ) : (
-            <div className="flex-1" />
-          )}
+          <div className="relative aspect-square my-2 max-h-[75px] sm:max-h-[95px] lg:max-h-[130px] w-full flex items-center justify-center">
+            <Image
+              src={imageSrc!}
+              fill
+              alt={text}
+              className="object-contain"
+              onError={() => setHasImageError(true)}
+            />
+          </div>
 
           {/* Bottom Label & Audio Button Row */}
           <div className="flex items-center justify-between gap-x-2 pt-1 w-full min-w-0 mt-auto">
@@ -126,7 +126,53 @@ export const Card = ({
         </>
       )}
 
-      {/* Case 2: ASSIST (Text List Card) Layout */}
+      {/* Case 2: SELECT without Image (Compact Text Tile - In-Flow Row, Collision Impossible) */}
+      {type === "SELECT" && !hasVisibleImage && (
+        <div className="flex items-center justify-between gap-x-2.5 w-full min-w-0">
+          <div className="flex items-center gap-x-2.5 min-w-0 flex-1">
+            {/* Left Keyboard Shortcut Hotkey Badge */}
+            <div
+              className={cn(
+                "h-6 w-6 lg:h-7 lg:w-7 border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-xs text-[11px] font-bold shrink-0 bg-white/90 shadow-2xs select-none",
+                selected && "border-sky-300 text-sky-600 bg-sky-50",
+                selected && status === "correct" && "border-green-500 text-green-600 bg-green-50",
+                selected && status === "wrong" && "border-rose-500 text-rose-600 bg-rose-50"
+              )}
+              title={`Keyboard shortcut: ${shortcut}`}
+            >
+              {shortcut}
+            </div>
+
+            {/* Option Text */}
+            <p
+              className={cn(
+                "text-neutral-700 text-sm lg:text-base font-bold truncate leading-tight",
+                selected && "text-sky-600",
+                selected && status === "correct" && "text-green-600",
+                selected && status === "wrong" && "text-rose-600"
+              )}
+            >
+              {text}
+            </p>
+          </div>
+
+          {/* Right Audio Button */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              playSound();
+            }}
+            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer"
+            title="Read aloud"
+            aria-label="Read aloud"
+          >
+            <Volume2 className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+
+      {/* Case 3: ASSIST (Text List Card Layout) */}
       {type === "ASSIST" && (
         <div className="flex items-center justify-between gap-x-3 w-full">
           <div className="flex items-center gap-x-3 min-w-0">

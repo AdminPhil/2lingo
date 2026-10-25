@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Fix Speaker Icon & Number Collision on Compact Challenge Tiles (BUG-016)
+
+### Fixed
+- **[BUG-016] ✅ RESOLVED & VERIFIED - Dual-Mode Layout for SELECT Challenge Cards:**
+  - **In-Flow Layout for Text-Only / Compact Tiles (`app/lesson/card.tsx`):** When `SELECT` challenges feature options without images (e.g. *"Sorry / Excuse me"*), cards now render as an in-flow horizontal flex row: `[Number Key (1)]  [Option Text]  --------  [Speaker Icon (🔊)]`.
+  - **Eliminated Overlap Glitch:** Replaced absolute positioning on compact tiles with sequential in-flow flex children, mathematically preventing the hotkey badge from ever colliding with or obscuring the speaker icon.
+  - **Diagonal Separation for Image Cards:** For tall cards with images, the hotkey badge is positioned in the **top-left corner** (`absolute top-2.5 left-2.5`), ensuring full diagonal separation from the bottom-right speaker icon.
+
+---
+
 ## [2026-10-24] - Fix Keyboard Shortcut Number Overflow & Corner Placement (BUG-015)
 
 ### Fixed
