@@ -77,11 +77,16 @@ export const Header = () => {
         </ClerkLoaded>
       </div>
 
-      {/* Wide Aesthetic Croatian Checkerboard Ribbon (Šahovnica) */}
-      <div 
-        className="h-4 w-full border-t border-red-200/90 border-b-2 border-blue-900/20 bg-[repeating-conic-gradient(#DC2626_0%_25%,#FFFFFF_0%_50%)] bg-[length:16px_16px] shadow-2xs" 
-        title="Hrvatska Šahovnica"
-      />
+      {/* Symmetrical 2-Row Croatian Checkerboard Ribbon (Šahovnica: exact 8x8px squares in 16px height) */}
+      <div className="w-full border-y border-slate-200 bg-white">
+        <div
+          className="h-4 w-full bg-[length:16px_16px] bg-repeat-x"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%23FFFFFF'/%3E%3Crect x='0' y='0' width='8' height='8' fill='%23DC2626'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23DC2626'/%3E%3C/svg%3E")`,
+          }}
+          title="Hrvatska Šahovnica"
+        />
+      </div>
     </header>
   );
 };

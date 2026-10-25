@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 64 Completed (CR-001 to CR-064) | 0 Queued  
+> **Total Change Requests:** 65 Completed (CR-001 to CR-065) | 1 Queued (CR-066)  
 > **Total Bug Tickets:** 24 Resolved (BUG-001 to BUG-024) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-064)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-066)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -76,6 +76,8 @@
 | **CR-062** | Gamification | **Automatic Daily Overnight 5-Heart Top-Up:** Once-per-day overnight refill restoring learners with `< 5` hearts back to `5/5` on a new calendar day (`last_heart_refill_date` guard + batch refill job). | 2026-10-25 | ✅ Verified |
 | **CR-063** | Design / Landing | **Landing Page Šahovnica Banner Polish & Blue Primary CTA:** Wider, more aesthetic 2-row Croatian checkerboard ribbon (`16px`), Croatian Blue `"I Already Have an Account"` button, and desktop flex-row hero image width fix. | 2026-10-25 | ✅ Verified |
 | **CR-064** | Onboarding / Bug Fix | **Fix New Parent Sign-Up Client Exception & Modal Portal Collision:** Resolves `removeChild` DOM portal crash and `Blocked aria-hidden` conflict between Clerk sign-up modal, Radix `ParentalGateModal`, and `/admin` layout transition. | 2026-10-25 | ✅ Verified |
+| **CR-065** | Design / Landing | **Symmetrical Croatian Šahovnica Header Ribbon:** Fixes `border-box` clipping (`16px - 3px = 13px`) that caused the top row of checks to render at `8px` and the bottom row at `5px` with border bleed. | 2026-10-25 | ✅ Verified |
+| **CR-066** | Administration / Analytics | **Scope Tricky Words Analytics & Parent Dashboard Metrics by Family Pod:** Filters `getTrickyWordsAnalytics` strictly to learners in the parent's pod(s) and replaces hardcoded Zgomba copy (`"All 3 Sisters"`, `"the girls"`) with dynamic pod metrics. | 2026-10-25 | ⏳ Queued |
 
 ---
 

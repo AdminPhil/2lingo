@@ -4,6 +4,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Symmetrical Croatian Šahovnica Header Ribbon (CR-065)
+
+### Fixed & Refined
+- **[CR-065] ✅ IMPLEMENTED & VERIFIED - Symmetrical Croatian Šahovnica Header Ribbon (`app/(marketing)/header.tsx`):**
+  - Resolved the vertical asymmetry (`8px` top row vs. `5px` clipped bottom row + bottom border bleed) caused by Tailwind's `box-sizing: border-box` subtracting `3px` of border thickness from the `16px` (`h-4`) checkerboard element.
+  - Moved the top/bottom framing borders (`border-y border-slate-200`) to an outer wrapper container and rendered `div[title="Hrvatska Šahovnica"]` as a pure, borderless `16px` (`h-4`) strip backed by a `crispEdges` SVG tile (`8px × 8px` red `#DC2626` and white `#FFFFFF` squares across both rows).
+
+---
+
 ## [2026-10-25] - Fix New Parent Sign-Up Client Exception & Modal Portal Collision (CR-064)
 
 ### Fixed & Refined
