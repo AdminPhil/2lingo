@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { Heart, Flame, Sparkles, Wand2, ShieldCheck, Plus, Check } from "lucide-react";
+import { Heart, Flame, Sparkles, Wand2, ShieldCheck, Plus, Check, QrCode } from "lucide-react";
 import { toast } from "sonner";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { StudentBadgeModal } from "./student-badge-modal";
 import {
   Dialog,
   DialogContent,
@@ -38,6 +39,7 @@ type Props = {
 export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
   const [learners, setLearners] = useState(initialLearners);
   const [praiseTarget, setPraiseTarget] = useState<LearnerData | null>(null);
+  const [badgeTarget, setBadgeTarget] = useState<LearnerData | null>(null);
   const [praiseAmount, setPraiseAmount] = useState(50);
   const [praiseReason, setPraiseReason] = useState("Spoke Croatian at dinner! 🇭🇷");
   const [pending, startTransition] = useTransition();
@@ -221,6 +223,17 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
                   <Sparkles className="h-3.5 w-3.5 mr-1" />
                   Praise XP 🌟
                 </Button>
+
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setBadgeTarget(learner)}
+                  className="text-xs font-bold text-blue-700 hover:text-blue-800 hover:bg-blue-50 border border-blue-200/80 bg-white h-8 cursor-pointer"
+                  title="View and print student QR login badge"
+                >
+                  <QrCode className="h-3.5 w-3.5 mr-1 text-blue-700" />
+                  QR Badge 🪪
+                </Button>
               </div>
             </div>
           ))}
@@ -303,6 +316,12 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <StudentBadgeModal
+        isOpen={!!badgeTarget}
+        onOpenChange={(open) => !open && setBadgeTarget(null)}
+        learner={badgeTarget}
+      />
     </>
   );
 };

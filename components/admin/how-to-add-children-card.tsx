@@ -80,7 +80,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
                 </h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Set up a username and password right now for your child. No email address required! You can write it on an index card for their iPad.
+                Set up a username and password right now for your child. No email required! Generates a printable <strong>Student QR Badge</strong> for instant 1-tap iPad camera login.
               </p>
             </div>
 

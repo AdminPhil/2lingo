@@ -195,3 +195,71 @@ export const createMultipleChildAccounts = async (
     errors: errors.length > 0 ? errors : undefined,
   };
 };
+
+export const adminGetOrResetStudentQrPass = async (targetUserId: string) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const superAdmin = await isSuperAdmin();
+
+  // Find user progress record
+  const progress = await db.query.userProgress.findFirst({
+    where: eq(userProgress.userId, targetUserId),
+  });
+
+  if (!progress) {
+    return { error: "Learner record not found." };
+  }
+
+  // Permission check: caller must be super-admin or owner of a pod containing this learner
+  if (!superAdmin) {
+    const callerPods = await db.query.pods.findMany({
+      where: eq(pods.ownerId, userId),
+      with: { members: true },
+    });
+    const isLearnerInCallerPod = callerPods.some((p) =>
+      p.members.some((m) => m.userId === targetUserId)
+    );
+    if (!isLearnerInCallerPod) {
+      return { error: "You only have permission to view badges for learners in your own family circle." };
+    }
+  }
+
+  // Fetch Clerk user
+  let clerkUser;
+  try {
+    clerkUser = await clerkClient.users.getUser(targetUserId);
+  } catch {
+    return { error: "Failed to locate authentication profile for this learner." };
+  }
+
+  const cleanUsername = clerkUser.username || progress.userName.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  // Generate a clean memorable kid-friendly password for the QR badge
+  // Format: Cro<Firstname><2-digit number>! e.g. CroLuka88!
+  const randomNum = Math.floor(10 + Math.random() * 90);
+  const cleanName = progress.userName.replace(/[^a-zA-Z]/g, "") || "Lingo";
+  const newPassword = `Cro${cleanName}${randomNum}!`;
+
+  try {
+    await clerkClient.users.updateUser(targetUserId, {
+      password: newPassword,
+      skipPasswordChecks: true,
+    });
+  } catch (err: any) {
+    return { error: err?.errors?.[0]?.message || "Failed to update authentication credentials." };
+  }
+
+  return {
+    success: true,
+    child: {
+      userId: targetUserId,
+      name: progress.userName,
+      username: cleanUsername,
+      password: newPassword,
+      userImageSrc: progress.userImageSrc || "/avatars/pasko.png",
+    },
+  };
+};

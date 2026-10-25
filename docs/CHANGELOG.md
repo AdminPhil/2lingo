@@ -4,6 +4,25 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Student QR Badge Generation & Persistent Fast Pass (BUG-024)
+
+### Fixed & Refined
+- **[BUG-024] ✅ RESOLVED & VERIFIED - Student QR Badge Generation, Parent Center Badge Viewer & 1-Tap Login:**
+  - **Issue Identified:** Users viewing the "Tko danas uči?" (Who is learning today?) shared tablet switcher modal were prompted with a `"SCAN STUDENT BADGE / QR CODE"` button, but had no way of knowing where to get the badge. Furthermore, `AddChildModal` only displayed text credentials without rendering the actual QR Code, and the Parent Center had no persistent way to view or print student badges for existing learners.
+  - **Printable Student Fast Pass in `AddChildModal`:**
+    - Integrated `qrcode` engine to dynamically generate crisp base64 QR codes encoding `https://<domain>/qr-login?u=<username>&p=<password>`.
+    - Styled the credentials screen into an authentic "CroLingo Fast Pass" student badge featuring the Croatian checkerboard top stripe, student avatar, student name, scannable QR code, and dedicated print action.
+    - Added `@media print` CSS rules in `app/globals.css` ensuring clean 380px centered badge card output when printed.
+  - **Persistent Student Badges in Parent Center (`StudentBadgeModal` & `LearnerHealthCard`):**
+    - Added `"QR Badge 🪪"` action button next to each child in the Parent Center learner roster.
+    - Created `components/admin/student-badge-modal.tsx` backed by `adminGetOrResetStudentQrPass(targetUserId)` in `actions/child-account.ts`, allowing parents to view, copy, print, or regenerate student QR badges anytime.
+  - **Profile Switcher Guidance & Fast Pass Optimizations:**
+    - Added friendly parent callout beneath the scan button in `components/modals/profile-switcher-modal.tsx`: *"Need a badge? Parents can view and print student QR passes anytime in the Parent Center."*
+    - Optimized `app/qr-login/page.tsx` with **Smart Session Reuse**: if the learner's session already exists on the shared tablet, it switches instantly (<200ms) without sending redundant network auth requests.
+    - Added direct navigation to Parent Center for parents who navigate to `/qr-login` directly without query parameters.
+
+---
+
 ## [2026-10-24] - Multi-Select User Assignment in AddMemberToPodModal (BUG-023)
 
 ### Fixed & Refined

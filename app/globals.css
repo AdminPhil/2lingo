@@ -80,3 +80,25 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-student-badge,
+  #printable-student-badge * {
+    visibility: visible;
+  }
+  #printable-student-badge {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px !important;
+    margin: 0 auto;
+    box-shadow: none !important;
+    border: 2px solid #1E3A8A !important;
+    background: white !important;
+  }
+}

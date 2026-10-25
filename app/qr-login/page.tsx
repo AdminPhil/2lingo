@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function QRLoginPage() {
   const { isLoaded, signIn, setActive } = useSignIn();
+  const { client } = useClerk();
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -20,8 +21,46 @@ export default function QRLoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    if (isLoaded && u && p && status === "idle") {
+    if (isLoaded && u && status === "idle") {
       setStatus("authenticating");
+
+      // 1. Smart Session Reuse: check if session already exists on device for this user
+      const matchingSession = client?.sessions?.find(
+        (s) =>
+          s.user?.username?.toLowerCase() === u.toLowerCase() ||
+          s.user?.firstName?.toLowerCase() === u.toLowerCase()
+      );
+
+      if (matchingSession && setActive) {
+        setActive({ session: matchingSession.id })
+          .then(() => {
+            setStatus("success");
+            setTimeout(() => {
+              router.push("/learn");
+            }, 500);
+          })
+          .catch(() => {
+            if (p) {
+              performPasswordSignIn();
+            } else {
+              setStatus("error");
+              setErrorMessage("Session expired. Please scan fresh student badge.");
+            }
+          });
+        return;
+      }
+
+      if (!p) {
+        setStatus("error");
+        setErrorMessage("No password provided in QR pass. Please scan complete badge.");
+        return;
+      }
+
+      performPasswordSignIn();
+    }
+
+    function performPasswordSignIn() {
+      if (!signIn || !setActive || !u || !p) return;
       signIn
         .create({
           identifier: u,
@@ -44,7 +83,7 @@ export default function QRLoginPage() {
           setErrorMessage(err?.errors?.[0]?.message || "Invalid QR credentials.");
         });
     }
-  }, [isLoaded, u, p, status, signIn, setActive, router]);
+  }, [isLoaded, u, p, status, signIn, setActive, client, router]);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
@@ -112,16 +151,30 @@ export default function QRLoginPage() {
             <div className="p-6 bg-amber-50/70 border-2 border-dashed border-amber-300 rounded-2xl flex flex-col items-center justify-center gap-y-3">
               <QrCode className="h-12 w-12 text-blue-900" />
               <div className="text-xs font-bold text-slate-700 leading-relaxed">
-                Scan your <span className="text-blue-900 font-black">CroLingo Family Passport</span> QR code using your tablet or iPad camera to log in instantly!
+                Scan your <span className="text-blue-900 font-black">CroLingo Student Badge</span> QR code using your iPad or tablet camera to log in instantly!
               </div>
+              <p className="text-[11px] text-slate-500 font-medium">
+                Badges can be generated and printed anytime in the Parent Center.
+              </p>
             </div>
 
             <Button
               asChild
-              className="w-full h-12 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-black"
+              className="w-full h-11 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-bold text-xs"
+            >
+              <Link href="/admin">
+                <Sparkles className="h-4 w-4 mr-2 text-amber-400" />
+                Go to Parent Center to Print Badges
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="ghost"
+              className="w-full h-10 text-xs font-bold text-slate-600 hover:text-slate-900"
             >
               <Link href="/">
-                <ArrowLeft className="h-4 w-4 mr-2" />
+                <ArrowLeft className="h-3.5 w-3.5 mr-1.5" />
                 Back to Sign In
               </Link>
             </Button>

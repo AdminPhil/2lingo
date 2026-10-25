@@ -2,7 +2,8 @@
 
 import { useState, useTransition, useEffect } from "react";
 import Image from "next/image";
-import { UserPlus, Sparkles, Copy, Check, Eye, EyeOff, ShieldCheck, Printer } from "lucide-react";
+import { UserPlus, Sparkles, Copy, Check, Eye, EyeOff, ShieldCheck, Printer, QrCode } from "lucide-react";
+import QRCode from "qrcode";
 import { toast } from "sonner";
 
 import {
@@ -57,6 +58,25 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
     username: string;
     password: string;
   } | null>(null);
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (createdChild) {
+      const loginUrl = `${origin}/qr-login?u=${encodeURIComponent(
+        createdChild.username
+      )}&p=${encodeURIComponent(createdChild.password)}`;
+
+      QRCode.toDataURL(loginUrl, {
+        width: 240,
+        margin: 1,
+        color: { dark: "#1E3A8A", light: "#FFFFFF" },
+      })
+        .then(setQrCodeDataUrl)
+        .catch(console.error);
+    } else {
+      setQrCodeDataUrl(null);
+    }
+  }, [createdChild, origin]);
 
   const [pending, startTransition] = useTransition();
 
@@ -298,68 +318,137 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
               </DialogDescription>
             </div>
 
-            {/* Credentials Card */}
-            <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 text-left space-y-2">
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-500 font-semibold uppercase">Username:</span>
-                <span className="font-mono font-black text-slate-800 bg-white px-2 py-0.5 rounded border border-slate-200">
-                  {createdChild.username}
+            {/* Student Fast Pass Badge Card */}
+            <div
+              id="printable-student-badge"
+              className="bg-white border-2 border-slate-300 rounded-2xl p-4 text-center shadow-xs space-y-3 relative overflow-hidden"
+            >
+              {/* Croatian Checkerboard Accent Top Stripe */}
+              <div
+                className="absolute top-0 left-0 right-0 h-1.5"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(90deg, #DC2626 0, #DC2626 10px, #FFFFFF 10px, #FFFFFF 20px, #1E3A8A 20px, #1E3A8A 30px)",
+                }}
+              />
+
+              {/* Header */}
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100 pt-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-base">🇭🇷</span>
+                  <span className="text-xs font-black tracking-wide text-blue-900 uppercase">
+                    CroLingo Fast Pass
+                  </span>
+                </div>
+                <span className="text-[10px] font-bold text-blue-800 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
+                  Student Badge
                 </span>
               </div>
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-500 font-semibold uppercase">Password:</span>
-                <span className="font-mono font-black text-slate-800 bg-white px-2 py-0.5 rounded border border-slate-200">
-                  {createdChild.password}
-                </span>
+
+              {/* Avatar & Name */}
+              <div className="flex items-center justify-center gap-3">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-amber-300 bg-slate-100 shrink-0">
+                  <Image
+                    src={selectedAvatar || "/avatars/pasko.png"}
+                    alt={createdChild.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-base font-black text-slate-800 leading-tight">
+                    {createdChild.name}
+                  </h3>
+                  <p className="text-xs font-mono text-slate-500 font-bold">
+                    @{createdChild.username}
+                  </p>
+                </div>
+              </div>
+
+              {/* QR Code Container */}
+              <div className="flex flex-col items-center justify-center py-1">
+                {qrCodeDataUrl ? (
+                  <div className="p-2 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                    <img
+                      src={qrCodeDataUrl}
+                      alt={`Fast Pass QR Code for ${createdChild.name}`}
+                      className="w-36 h-36 mx-auto"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-36 h-36 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 text-xs">
+                    Generating QR...
+                  </div>
+                )}
+                <p className="text-[11px] font-bold text-blue-900 mt-2 flex items-center gap-1">
+                  <QrCode className="h-3.5 w-3.5 text-blue-900" />
+                  Scan with iPad camera for instant login
+                </p>
+              </div>
+
+              {/* Credentials Reference */}
+              <div className="bg-slate-50 rounded-xl p-2.5 text-xs text-left grid grid-cols-2 gap-2 border border-slate-200/80">
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">
+                    Username
+                  </span>
+                  <span className="font-mono font-black text-slate-800 text-[11px] truncate block">
+                    {createdChild.username}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">
+                    Password
+                  </span>
+                  <span className="font-mono font-black text-slate-800 text-[11px] truncate block">
+                    {createdChild.password}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <p className="text-xs text-slate-600 leading-relaxed px-2">
-              {createdChild.name} can now log into <strong>CroLingo</strong> at <strong>{domain}</strong> on any iPad, tablet, or computer with this username and password!
-            </p>
-
-            <div className="flex flex-col gap-2 pt-2">
+            <div className="grid grid-cols-2 gap-2 pt-1">
               <Button
                 type="button"
-                variant="primaryOutline"
-                onClick={handleCopyCredentials}
-                className="w-full h-11 rounded-xl text-xs font-bold"
-              >
-                {copied ? (
-                  <>
-                    <Check className="h-4 w-4 mr-1.5 text-green-600" />
-                    Credentials Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="h-4 w-4 mr-1.5" />
-                    Copy Login Credentials
-                  </>
-                )}
-              </Button>
-
-              <Button
-                type="button"
-                variant="primaryOutline"
+                variant="primary"
                 onClick={() => {
                   if (typeof window !== "undefined") {
                     window.print();
                   }
                 }}
-                className="w-full h-11 rounded-xl text-xs font-bold border-2 border-slate-300 text-slate-700 hover:bg-slate-100"
+                className="h-11 rounded-xl text-xs font-bold bg-blue-900 hover:bg-blue-950 text-white cursor-pointer"
               >
-                <Printer className="h-4 w-4 mr-1.5 text-slate-600" />
-                Print / Save Access Card
+                <Printer className="h-4 w-4 mr-1.5" />
+                Print Badge
               </Button>
 
               <Button
                 type="button"
-                onClick={handleClose}
-                className="w-full h-11 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs"
+                variant="primaryOutline"
+                onClick={handleCopyCredentials}
+                className="h-11 rounded-xl text-xs font-bold border-2 border-slate-300 text-slate-700 hover:bg-slate-100 cursor-pointer"
               >
-                Done
+                {copied ? (
+                  <>
+                    <Check className="h-4 w-4 mr-1.5 text-green-600" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-4 w-4 mr-1.5" />
+                    Copy Credentials
+                  </>
+                )}
               </Button>
             </div>
+
+            <Button
+              type="button"
+              onClick={handleClose}
+              className="w-full h-11 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs cursor-pointer"
+            >
+              Done
+            </Button>
           </div>
         )}
       </DialogContent>

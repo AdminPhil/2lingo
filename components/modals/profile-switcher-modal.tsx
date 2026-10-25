@@ -123,11 +123,26 @@ export const ProfileSwitcherModal = () => {
                 close();
                 router.push("/qr-login");
               }}
-              className="w-full h-11 rounded-xl text-xs font-bold border-2 border-dashed border-slate-300 hover:border-blue-900 text-slate-700"
+              className="w-full h-11 rounded-xl text-xs font-bold border-2 border-dashed border-slate-300 hover:border-blue-900 text-slate-700 cursor-pointer"
             >
               <QrCode className="h-4 w-4 mr-2 text-blue-900" />
               Scan Student Badge / QR Code
             </Button>
+
+            <p className="text-[11px] text-center text-slate-500 font-medium px-2">
+              Need a badge? Parents can view and print student QR passes anytime in the{" "}
+              <button
+                type="button"
+                onClick={() => {
+                  close();
+                  router.push("/admin");
+                }}
+                className="text-blue-700 font-bold underline hover:text-blue-900 cursor-pointer"
+              >
+                Parent Center
+              </button>
+              .
+            </p>
           </div>
         </div>
       </DialogContent>
