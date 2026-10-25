@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Standardize Action Gate Button Heights & 3D Depth (BUG-013)
+
+### Fixed
+- **[BUG-013] ✅ RESOLVED & VERIFIED - Landing Action Gate Sizing & Visual Harmony:**
+  - **Height Standardization (`app/(marketing)/page.tsx`):** Eliminated the invalid Tailwind `h-13` class and standardized both action buttons to an identical, generous, touch-friendly height (`h-14` / 56px).
+  - **Tactile 3D Depth Symmetry:** Harmonized 3D tactile buttons:
+    - Primary Gate (`"I Already Have an Account"`): `h-14 text-base font-black bg-green-600 border-b-4 border-green-700 active:border-b-0 active:translate-y-0.5`.
+    - Secondary Gate (`"I'm New Here! Start Learning"`): `h-14 text-base font-black bg-white border-2 border-b-4 border-slate-300 hover:border-slate-400 active:border-b-2 active:translate-y-0.5`.
+  - **Typography & Icon Polish:** Equalized icon dimensions (`h-5 w-5`), standardized `text-base font-black tracking-normal`, widened container to `max-w-[360px]`, and centered the top Croatian badge (`px-3.5 py-1.5 leading-none`).
+
+---
+
 ## [2026-10-24] - Rebrand to CroLingo & National Heritage Navy Logo Typography (CR-027)
 
 ### Added & Refined

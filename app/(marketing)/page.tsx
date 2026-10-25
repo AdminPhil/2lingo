@@ -32,9 +32,9 @@ export default async function Home() {
       {/* Hero Content & Dual Child-Friendly Action Gates */}
       <div className="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left max-w-[480px]">
         {/* Cultural Heritage Pill Badge */}
-        <div className="inline-flex items-center gap-x-2 px-3.5 py-1 bg-amber-50 border border-amber-200 rounded-full shadow-2xs">
-          <span className="text-sm">🇭🇷</span>
-          <span className="text-xs font-black uppercase tracking-wider text-amber-900">
+        <div className="inline-flex items-center gap-x-2 px-3.5 py-1.5 bg-amber-50 border border-amber-200/90 rounded-full shadow-2xs">
+          <span className="text-sm leading-none">🇭🇷</span>
+          <span className="text-xs font-black uppercase tracking-wider text-amber-900 leading-none">
             100% Focused on Croatian
           </span>
         </div>
@@ -50,7 +50,7 @@ export default async function Home() {
         </div>
 
         {/* Two Kid-Friendly Action Gates */}
-        <div className="flex flex-col items-center lg:items-start gap-y-3.5 w-full max-w-[340px]">
+        <div className="flex flex-col items-center lg:items-start gap-y-3.5 w-full max-w-[360px]">
           <ClerkLoading>
             <div className="h-28 flex items-center justify-center w-full">
               <Loader className="h-6 w-6 text-green-600 animate-spin" />
@@ -67,10 +67,9 @@ export default async function Home() {
               >
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="w-full text-base font-black shadow-md bg-green-600 hover:bg-green-700 active:scale-98 transition flex items-center justify-center gap-x-2.5 h-13 rounded-2xl cursor-pointer"
+                  className="w-full text-base font-black bg-green-600 hover:bg-green-700 text-white border-b-4 border-green-700 active:border-b-0 active:translate-y-0.5 transition-all flex items-center justify-center gap-x-2.5 h-14 rounded-2xl shadow-sm tracking-normal cursor-pointer"
                 >
-                  <KeyRound className="h-5 w-5" />
+                  <KeyRound className="h-5 w-5 shrink-0" />
                   <span>I Already Have an Account</span>
                 </Button>
               </SignInButton>
@@ -83,10 +82,10 @@ export default async function Home() {
               >
                 <Button
                   size="lg"
-                  variant="primaryOutline"
-                  className="w-full text-sm font-extrabold border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 active:scale-98 transition flex items-center justify-center gap-x-2 h-12 rounded-2xl cursor-pointer"
+                  variant="default"
+                  className="w-full text-base font-black bg-white hover:bg-slate-50 text-slate-700 border-2 border-b-4 border-slate-300 hover:border-slate-400 active:border-b-2 active:translate-y-0.5 transition-all flex items-center justify-center gap-x-2.5 h-14 rounded-2xl shadow-sm tracking-normal cursor-pointer"
                 >
-                  <Sparkles className="h-4 w-4 text-amber-500" />
+                  <Sparkles className="h-5 w-5 text-amber-500 shrink-0" />
                   <span>I&apos;m New Here! Start Learning</span>
                 </Button>
               </SignUpButton>
@@ -99,13 +98,12 @@ export default async function Home() {
             <SignedIn>
               <Button
                 size="lg"
-                variant="secondary"
-                className="w-full text-base font-black h-13 rounded-2xl bg-green-600 hover:bg-green-700 shadow-md flex items-center justify-center gap-x-2"
+                className="w-full text-base font-black h-14 rounded-2xl bg-green-600 hover:bg-green-700 text-white border-b-4 border-green-700 active:border-b-0 active:translate-y-0.5 shadow-sm flex items-center justify-center gap-x-2.5 tracking-normal cursor-pointer"
                 asChild
               >
                 <Link href={isParent ? "/admin" : "/learn"}>
                   <span>{isParent ? "Open Parent Center" : "Continue Learning"}</span>
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-5 w-5 shrink-0" />
                 </Link>
               </Button>
             </SignedIn>
