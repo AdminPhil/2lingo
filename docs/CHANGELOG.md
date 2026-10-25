@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Fix Keyboard Shortcut Number Overflow & Corner Placement (BUG-015)
+
+### Fixed
+- **[BUG-015] ✅ RESOLVED & VERIFIED - Challenge Choice Card Number Positioning & Overflow Prevention:**
+  - **Relocated Shortcut Numbers to Top-Right Corner (`app/lesson/card.tsx`):** On `SELECT` (image-based) challenge cards, moved keyboard shortcut indicators (`1`, `2`, `3`, `4`) from the bottom text row to a dedicated, absolute hotkey badge in the top-right corner (`absolute top-2.5 right-2.5 bg-white/90 shadow-2xs`).
+  - **Eliminated Horizontal Card Overflow:** Previously, long words like *"Doviđenja"* pushed the audio icon and number box beyond the card's right border, making the number float between cards. By separating the hotkey into the corner, the bottom row has ample room for full text and audio button with `min-w-0 truncate` protection.
+  - **Standardized `ASSIST` Card Alignment:** Formatted text-only assist cards with clean Duolingo-style ordering: `[Key Badge] [Option Text] -------- [Audio Button]`.
+  - **Fortified Card Container:** Added `relative overflow-hidden rounded-2xl` to ensure no internal child elements can ever escape the card frame.
+
+---
+
 ## [2026-10-24] - Upgrade Learning Path Progression from "Phase" to "World" (CR-031)
 
 ### Added & Refined

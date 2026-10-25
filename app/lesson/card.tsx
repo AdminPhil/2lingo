@@ -16,7 +16,7 @@ type Props = {
   selected?: boolean;
   onClick: () => void;
   disabled?: boolean;
-  status?: "correct" | "wrong" | "none",
+  status?: "correct" | "wrong" | "none";
   type: typeof challenges.$inferSelect["type"];
 };
 
@@ -56,69 +56,121 @@ export const Card = ({
     <div
       onClick={handleClick}
       className={cn(
-        "h-full border-2 rounded-xl border-b-4 hover:bg-black/5 p-4 lg:p-6 cursor-pointer active:border-b-2",
-        selected && "border-sky-300 bg-sky-100 hover:bg-sky-100",
-        selected && status === "correct" 
-          && "border-green-300 bg-green-100 hover:bg-green-100",
-        selected && status === "wrong" 
-          && "border-rose-300 bg-rose-100 hover:bg-rose-100",
-        disabled && "pointer-events-none hover:bg-white",
-        type === "ASSIST" && "lg:p-3 w-full"
+        "relative h-full border-2 rounded-2xl border-b-4 hover:bg-black/5 cursor-pointer active:border-b-2 overflow-hidden transition-all",
+        // Padding: compact on mobile, generous on desktop
+        type === "SELECT" ? "p-3 sm:p-4 lg:p-5 flex flex-col justify-between" : "p-3.5 lg:p-4 w-full",
+        selected && "border-sky-400 bg-sky-50/70 hover:bg-sky-50/70",
+        selected && status === "correct" && "border-green-400 bg-green-50/80 hover:bg-green-50/80",
+        selected && status === "wrong" && "border-rose-400 bg-rose-50/80 hover:bg-rose-50/80",
+        disabled && "pointer-events-none hover:bg-white opacity-60"
       )}
     >
       {audio}
-      {imageSrc && !hasImageError && (
-        <div
-          className="relative aspect-square mb-4 max-h-[80px] lg:max-h-[150px] w-full"
-        >
-          <Image 
-            src={imageSrc} 
-            fill 
-            alt={text} 
-            onError={() => setHasImageError(true)} 
-          />
-        </div>
+
+      {/* Case 1: SELECT (Image Card) Layout */}
+      {type === "SELECT" && (
+        <>
+          {/* Top-Right Keyboard Shortcut Hotkey Badge */}
+          <div
+            className={cn(
+              "absolute top-2 right-2 lg:top-2.5 lg:right-2.5 h-5 w-5 lg:h-6 lg:w-6 border-2 flex items-center justify-center rounded-md text-neutral-400 lg:text-xs text-[10px] font-bold bg-white/90 shadow-2xs z-10 select-none",
+              selected && "border-sky-300 text-sky-600 bg-sky-50",
+              selected && status === "correct" && "border-green-500 text-green-600 bg-green-50",
+              selected && status === "wrong" && "border-rose-500 text-rose-600 bg-rose-50"
+            )}
+            title={`Keyboard shortcut: ${shortcut}`}
+          >
+            {shortcut}
+          </div>
+
+          {/* Centered Image */}
+          {imageSrc && !hasImageError ? (
+            <div className="relative aspect-square my-2 max-h-[75px] sm:max-h-[95px] lg:max-h-[130px] w-full flex items-center justify-center">
+              <Image
+                src={imageSrc}
+                fill
+                alt={text}
+                className="object-contain"
+                onError={() => setHasImageError(true)}
+              />
+            </div>
+          ) : (
+            <div className="flex-1" />
+          )}
+
+          {/* Bottom Label & Audio Button Row */}
+          <div className="flex items-center justify-between gap-x-2 pt-1 w-full min-w-0 mt-auto">
+            <p
+              className={cn(
+                "text-neutral-700 text-sm lg:text-base font-bold truncate leading-tight",
+                selected && "text-sky-600",
+                selected && status === "correct" && "text-green-600",
+                selected && status === "wrong" && "text-rose-600"
+              )}
+            >
+              {text}
+            </p>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                playSound();
+              }}
+              className="p-1 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer"
+              title="Read aloud"
+              aria-label="Read aloud"
+            >
+              <Volume2 className="h-4 w-4" />
+            </button>
+          </div>
+        </>
       )}
-      <div className={cn(
-        "flex items-center justify-between gap-x-2",
-        type === "ASSIST" && "flex-row-reverse",
-      )}>
-        {type === "ASSIST" && <div />}
-        <p className={cn(
-          "text-neutral-600 text-sm lg:text-base font-medium",
-          selected && "text-sky-500",
-          selected && status === "correct" 
-            && "text-green-500",
-          selected && status === "wrong" 
-            && "text-rose-500",
-        )}>
-          {text}
-        </p>
-        <div className="flex items-center gap-x-1.5">
+
+      {/* Case 2: ASSIST (Text List Card) Layout */}
+      {type === "ASSIST" && (
+        <div className="flex items-center justify-between gap-x-3 w-full">
+          <div className="flex items-center gap-x-3 min-w-0">
+            {/* Left Keyboard Shortcut Hotkey Badge */}
+            <div
+              className={cn(
+                "h-6 w-6 lg:h-7 lg:w-7 border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-xs text-[11px] font-bold shrink-0 bg-white/90 shadow-2xs select-none",
+                selected && "border-sky-300 text-sky-600 bg-sky-50",
+                selected && status === "correct" && "border-green-500 text-green-600 bg-green-50",
+                selected && status === "wrong" && "border-rose-500 text-rose-600 bg-rose-50"
+              )}
+              title={`Keyboard shortcut: ${shortcut}`}
+            >
+              {shortcut}
+            </div>
+
+            {/* Option Text */}
+            <p
+              className={cn(
+                "text-neutral-700 text-sm lg:text-base font-bold truncate",
+                selected && "text-sky-600",
+                selected && status === "correct" && "text-green-600",
+                selected && status === "wrong" && "text-rose-600"
+              )}
+            >
+              {text}
+            </p>
+          </div>
+
+          {/* Right Audio Button */}
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               playSound();
             }}
-            className="p-1 hover:bg-black/10 rounded-md transition text-neutral-400 hover:text-sky-600"
+            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer"
             title="Read aloud"
             aria-label="Read aloud"
           >
             <Volume2 className="h-4 w-4" />
           </button>
-          <div className={cn(
-            "lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-[15px] text-xs font-semibold",
-            selected && "border-sky-300 text-sky-500",
-            selected && status === "correct" 
-              && "border-green-500 text-green-500",
-            selected && status === "wrong" 
-              && "border-rose-500 text-rose-500",
-          )}>
-            {shortcut}
-          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
