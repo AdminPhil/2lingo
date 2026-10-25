@@ -3,7 +3,7 @@
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
 > **Total Change Requests:** 52 Completed (CR-001 to CR-052) | 0 Open  
-> **Total Bug Tickets:** 17 Resolved (BUG-001 to BUG-017) | 0 Open  
+> **Total Bug Tickets:** 18 Resolved (BUG-001 to BUG-018) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
@@ -88,3 +88,4 @@
 | **BUG-015** | High | **Unexpected Number Locations & Card Overflow:** Keyboard shortcuts `1`, `2`, `3`, `4` collided with text or overflowed. | Absolute badge positioning without flex container constraints. | Refactored card headers to flex layout; isolated hotkey badge in dedicated container. | 2026-10-24 | ✅ Resolved |
 | **BUG-016** | High | **Compact Tile Speaker Icon & Number Collision:** Speaker audio button overlapped hotkey number on compact SELECT cards. | Single layout shared across image cards and text-only cards. | Introduced dual-mode challenge layout (`ASSIST` vs `SELECT`); separated audio and number containers. | 2026-10-24 | ✅ Resolved |
 | **BUG-017** | Critical | **Option Text Ellipsis Truncation in SELECT Tiles:** Croatian phrases ("Kako si?", "Laku noć") cut off with "..." on desktop. | 4-across desktop packing (`grid-cols-4`) and CSS `truncate` class. | Replaced 4-across with balanced **2×2 grid** (`sm:grid-cols-2`) and replaced `truncate` with `break-words`. | 2026-10-24 | ✅ Resolved |
+| **BUG-018** | Medium | **Mascot Avatar Off-Center Facial Alignment in Circular Frames:** Luka, Mia, Matija, Roko, and Delfi appeared off-center compared to Paško's balanced circular portrait. | Crops were centered on full-figure centroids or skewed by accessories (plumes/hair), resulting in 18–37px facial offsets. | Re-aligned optical crop windows to lock facial centroids (eyes, nose, smile) within 1–4px of `(256, 256)`. | 2026-10-24 | ✅ Resolved |

@@ -4,6 +4,22 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Mascot Avatar Optical Centering in Circular Frames (BUG-018)
+
+### Fixed & Refined
+- **[BUG-018] ✅ RESOLVED & VERIFIED - Optical Centering of Luka, Mia, Matija, Roko, and Delfi:**
+  - **Issue:** Unlike Paško (which was rendered as a dedicated face portrait centered at $(512, 512)$), Luka, Mia, Matija, Roko, and Delfi were noticeably lopsided or riding against the edges in circular frames.
+  - **Root Cause Analysis:** Crops were previously centered on full-body centroids or displaced by tall headwear (Matija's feather plume shifted his face down/left by 88px; Luka's golden hair shifted his face up by 27px; Delfi's curved tail shifted his smiling face 24px left).
+  - **Correction Pipeline:** Re-calibrated crop coordinate windows directly onto the facial centroid (eyes, nose, smile). Circular centroid offset analysis now confirms:
+    - **Luka:** $(-2\text{ px}, -1\text{ px})$ offset (virtually dead center).
+    - **Mia:** $(-3\text{ px}, +3\text{ px})$ offset.
+    - **Matija:** $(-2\text{ px}, -3\text{ px})$ offset.
+    - **Roko:** $(-4\text{ px}, +2\text{ px})$ offset.
+    - **Delfi:** $(-6\text{ px}, -2\text{ px})$ offset.
+  - **Asset Updates:** Re-exported `public/avatars/luka.png`, `mia.png`, `matija.png`, `roko.png`, `delfi.png` and refreshed the modal preview mockup.
+
+---
+
 ## [2026-10-24] - Wider Modal Dimensions & Responsive Avatar Grid for AddChildModal (CR-052)
 
 ### Enhanced & Modernized
