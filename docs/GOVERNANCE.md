@@ -1,6 +1,7 @@
-# 🛡️ 2lingo Change Governance & Pre-Merge Protocol
+# 🛡️ CroLingo Change Governance & Pre-Merge Protocol
 
-> **Mandatory Policy:** Every pull request, direct commit, curriculum batch, or database script **MUST** be verified against the standards in `docs/` before merging into `main`.
+> **Mandatory Policy:** Every pull request, direct commit, curriculum batch, or database script **MUST** be verified against the standards in `docs/` before merging into `main`.  
+> **Developer Setup:** For local setup, environment variables, and directory orientation, refer to [`README.md`](file:///c:/Users/phili/Documents/phils_repo/README.md).
 
 ---
 

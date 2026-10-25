@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Repurpose README.md as Developer Guide & Streamline GOVERNANCE.md (CR-034)
+
+### Added & Refined
+- **[CR-034] ✅ IMPLEMENTED & VERIFIED - Developer Onboarding & Governance Separation:**
+  - **Repurposed `README.md` as Developer Guide:** Replaced the brief duplicate governance checklist with a comprehensive developer onboarding manual featuring tech stack highlights, quick start instructions, environment variable definitions (`.env.local`), directory structure map, common development and database commands, and a complete documentation library sitemap.
+  - **Focused `docs/GOVERNANCE.md`:** Maintained as the dedicated pre-merge engineering and PR review protocol enforcing the 4-point quality checklist and automated CI/CD curriculum validations.
+  - **Brand Synchronization:** Updated naming from legacy "2lingo" to "CroLingo".
+
+---
+
 ## [2026-10-24] - Consolidate Curriculum Standards & Lesson Planning Guide (CR-033)
 
 ### Added & Refined
