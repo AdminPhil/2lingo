@@ -131,4 +131,5 @@ For in-depth guides, pedagogical rules, and architecture specs, explore the [`do
 | ❤️ **[`docs/HEARTS_AND_GAMIFICATION.md`](./docs/HEARTS_AND_GAMIFICATION.md)** | **Gamification Engine:** Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards. |
 | ⚙️ **[`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)** | **Engineering Architecture:** High-level system topology, Clerk sync, Render hosting, and deployment pipelines. |
 | 🗄️ **[`docs/DATABASE_AND_DATA_MODEL.md`](./docs/DATABASE_AND_DATA_MODEL.md)** | **Database & Data Models:** Dual-domain ERD, 12-table schema dictionary, state machines, and zero-data-loss invariants. |
+| 🛡️ **[`docs/SECURITY_AND_COPPA_COMPLIANCE.md`](./docs/SECURITY_AND_COPPA_COMPLIANCE.md)** | **Child Safety & Privacy:** COPPA / GDPR-K standards, zero child PII, closed social loops, and scoped leaderboards. |
 | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |

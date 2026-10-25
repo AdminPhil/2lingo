@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Author docs/SECURITY_AND_COPPA_COMPLIANCE.md Standards (CR-038)
+
+### Added & Refined
+- **[CR-038] ✅ IMPLEMENTED & VERIFIED - Child Safety, Privacy & COPPA/GDPR-K Compliance Guide:**
+  - **Comprehensive `docs/SECURITY_AND_COPPA_COMPLIANCE.md`:** Published the authoritative child safety and legal privacy specification covering US COPPA, EU GDPR-K, and Croatian personal data protection standards.
+  - **Zero Child PII Architecture:** Formalized the email-less and phone-less child account model; accounts are created by parents via the Clerk Backend API (`actions/child-account.ts`) without collecting online contact information from minors.
+  - **Closed Social Loop:** Documented the restriction of peer interactions to pre-set, positive canned reactions only (`high_five`, `star`, `flame`), completely prohibiting free-text chat, DMs, media uploads, or public profile pages.
+  - **Scoped Leaderboards:** Codified relational scoping (`getTopTenUsers`) that protects young learners from exposure to public internet strangers.
+  - **Role-Based Access Control (RBAC):** Codified permission matrices across `super_admin`, `parent`, `learner`, and `unassigned`.
+
+---
+
 ## [2026-10-24] - Author docs/DATABASE_AND_DATA_MODEL.md Data Architecture (CR-037)
 
 ### Added & Refined
