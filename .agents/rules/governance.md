@@ -25,3 +25,11 @@ Before writing any curriculum code, proposing changes, or seeding challenges in 
    - **Changelog:** Record every feature, batch addition, or rule change in `docs/CHANGELOG.md` upon completion with code diff details and ticket references.
    - **Master Registry:** Every completed Change Request (CR) and Bug Ticket (BUG) MUST be appended to [`docs/REGISTRY.md`](../../docs/REGISTRY.md) (Part 1 for CRs, Part 2 for BUGs) with its Ticket ID, Category/Severity, Summary, Date, and Status (`✅ Verified` / `✅ Resolved`), and the header summary counts incremented.
    - **Artifact Status:** Update the corresponding artifact in `.gemini/antigravity/brain/` from `PROPOSED` to `IMPLEMENTED & VERIFIED` or `RESOLVED & VERIFIED`.
+
+7. **Lifecycle Slash Commands (`.agents/skills/`):**
+   - `/cr-run`: Execute a Change Request immediately (Code, Verify, Registry, Deploy).
+   - `/cr-queue`: Enter a Change Request into the backlog as `⏳ Queued` without touching code or deploying.
+   - `/bug-fix`: Diagnose, patch, verify, and deploy an active bug immediately.
+   - `/bug-queue`: Log a bug defect into the backlog as `⏳ Queued` without touching code or deploying.
+   - `/cr-mockup`: Produce visual or Generative UI mockups prior to writing code.
+   - `/registry-status`: Query current backlog, completed counts, and learner health.

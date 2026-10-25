@@ -44,3 +44,19 @@ Every change must satisfy all items on this checklist:
 - [ ] **Changelog Updated:** Every feature, unit addition, or schema change is documented in [`docs/CHANGELOG.md`](./CHANGELOG.md).
 - [ ] **Master Registry Updated:** Every completed Change Request or Bug Ticket is added to [`docs/REGISTRY.md`](./REGISTRY.md) with Ticket ID, title, date, and status, and the header summary counts incremented.
 - [ ] **Standards Updated:** If a pedagogical rule evolved during the work, the corresponding document in `docs/` is updated immediately.
+
+---
+
+## ⚡ Lifecycle Slash Commands (UI Autocomplete)
+
+Typing `/` in the pair-programming interface exposes the standardized lifecycle actions:
+
+| Slash Command | Type | Purpose | Behavior |
+| :--- | :---: | :--- | :--- |
+| **`/cr-run`** | Instant | Implement & Ship Feature | Assigns next CR ID, writes code, typechecks, updates docs, commits, pushes, and deploys to Render. |
+| **`/cr-queue`** | Backlog | Queue Feature Request | Assigns next CR ID, writes spec artifact, adds to [`docs/REGISTRY.md`](./REGISTRY.md) as `⏳ Queued`. Zero code changes. |
+| **`/bug-fix`** | Instant | Resolve & Ship Bug | Triages root cause, assigns next BUG ID, patches bug, verifies, commits, pushes, and deploys to Render. |
+| **`/bug-queue`** | Backlog | Queue Bug Ticket | Assigns next BUG ID, writes defect reproduction artifact, adds to [`docs/REGISTRY.md`](./REGISTRY.md) as `⏳ Queued`. Zero code changes. |
+| **`/cr-mockup`** | Prototyping | Visual / Generative UI Spike | Generates interactive Tailwind HTML widget or high-res graphic preview before writing code. |
+| **`/registry-status`** | Query | Status & Health Audit | Runs `scripts/registry-tool.ts status`, checks open tickets, and verifies learner health. |
+
