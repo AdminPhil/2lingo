@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import Image from "next/image";
 import { UserPlus, Sparkles, Copy, Check, Eye, EyeOff, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
@@ -39,6 +39,15 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
   const [selectedAvatar, setSelectedAvatar] = useState("/mascot.png");
   const [showPassword, setShowPassword] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [origin, setOrigin] = useState("https://twolingo.onrender.com");
+  const [domain, setDomain] = useState("twolingo.onrender.com");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin);
+      setDomain(window.location.host);
+    }
+  }, []);
 
   const [createdChild, setCreatedChild] = useState<{
     name: string;
@@ -100,7 +109,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
 
   const handleCopyCredentials = () => {
     if (!createdChild) return;
-    const text = `CroLingo Login for ${createdChild.name}:\nUsername: ${createdChild.username}\nPassword: ${createdChild.password}\nLogin at: https://2lingo.net`;
+    const text = `CroLingo Login for ${createdChild.name}:\nUsername: ${createdChild.username}\nPassword: ${createdChild.password}\nLogin at: ${origin}`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     toast.success("Login details copied to clipboard!");
@@ -285,7 +294,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
             </div>
 
             <p className="text-xs text-slate-600 leading-relaxed px-2">
-              {createdChild.name} can now log into <strong>2lingo.net</strong> on any iPad, tablet, or computer with this username and password!
+              {createdChild.name} can now log into <strong>CroLingo</strong> at <strong>{domain}</strong> on any iPad, tablet, or computer with this username and password!
             </p>
 
             <div className="flex flex-col gap-2 pt-2">

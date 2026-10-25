@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Replace Hardcoded 2lingo.net URL with Dynamic Origin in Parent Center (BUG-014)
+
+### Fixed
+- **[BUG-014] ✅ RESOLVED & VERIFIED - Dynamic Origin & Domain Resolution in Family Pod Invites:**
+  - **Dynamic Host & Origin Resolution (`components/admin/how-to-add-children-card.tsx`):** Replaced hardcoded `2lingo.net` with dynamic `window.location.host` and `window.location.origin` (defaulting cleanly to `twolingo.onrender.com`).
+  - **Accurate Copy Link Action:** Clicking "Copy Invite Link" now generates `${origin}/?join=${inviteCode}`, properly routing invited family members directly to the actual running instance (e.g. `https://twolingo.onrender.com/?join=B9SHUF` or custom domain) rather than a dead or third-party web address.
+  - **Dynamic Child Provisioning Modal (`components/admin/add-child-modal.tsx`):** Replaced hardcoded `https://2lingo.net` in credentials clipboard text with `${origin}`, and updated login instructions from `"2lingo.net"` to `"CroLingo at {domain}"`.
+  - **Branding Consistency:** Replaced leftover legacy "2lingo" text in modal copy with official **CroLingo** brand identity.
+
+---
+
 ## [2026-10-24] - Learning Path Phase Color Sync & Engaging Adventure Phase Titles (CR-030)
 
 ### Added & Refined

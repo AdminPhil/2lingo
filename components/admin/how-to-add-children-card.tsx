@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UserPlus, Tablet, Copy, Check, Sparkles, ExternalLink, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 
@@ -17,6 +17,15 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [origin, setOrigin] = useState("https://twolingo.onrender.com");
+  const [domain, setDomain] = useState("twolingo.onrender.com");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin);
+      setDomain(window.location.host);
+    }
+  }, []);
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(inviteCode);
@@ -26,7 +35,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
   };
 
   const handleCopyLink = () => {
-    const link = `https://2lingo.net/?join=${inviteCode}`;
+    const link = `${origin}/?join=${inviteCode}`;
     navigator.clipboard.writeText(`Join our CroLingo family pod with code: ${inviteCode}\n${link}`);
     setCopiedLink(true);
     toast.success("Family invite link copied to clipboard!");
@@ -51,17 +60,15 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
             </div>
           </div>
 
-          <Button
-            onClick={() => setIsAddModalOpen(true)}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs h-10 px-4 rounded-xl shadow-xs shrink-0 cursor-pointer flex items-center gap-1.5"
-          >
-            <UserPlus className="h-4 w-4" />
-            <span>Create Child Account</span>
-          </Button>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-emerald-900 bg-emerald-100/90 border border-emerald-300 px-3 py-1 rounded-full">
+              Pod Code: <strong className="font-mono font-black">{inviteCode}</strong>
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Method 1: Instant Direct Creation */}
+          {/* Method 1: Instant Parent Provisioning */}
           <div className="bg-white/90 backdrop-blur-xs rounded-xl p-4 border border-emerald-200 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-2">
@@ -69,24 +76,26 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
                   1
                 </span>
                 <h4 className="font-bold text-sm text-slate-800">
-                  Create Directly (Recommended for Kids)
+                  Create Child Account Directly (Recommended)
                 </h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Set up a simple username & password for your child right now without needing an email address. They can use it to log in on any device!
+                Set up a username and password right now for your child. No email address required! You can write it on an index card for their iPad.
               </p>
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[11px] font-semibold text-emerald-700">
-                No email or second device needed
+              <span className="text-[11px] text-slate-500 font-medium flex items-center gap-1">
+                <Sparkles className="h-3 w-3 text-amber-500" />
+                Takes 30 seconds
               </span>
               <Button
-                variant="ghost"
                 size="sm"
+                variant="primary"
                 onClick={() => setIsAddModalOpen(true)}
-                className="text-xs font-bold text-emerald-700 hover:bg-emerald-50 h-8 px-2"
+                className="text-xs font-extrabold bg-emerald-600 hover:bg-emerald-700 shadow-xs cursor-pointer"
               >
+                <UserPlus className="h-3.5 w-3.5 mr-1.5" />
                 Add child now →
               </Button>
             </div>
@@ -104,7 +113,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
                 </h4>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Have your child open <strong>2lingo.net</strong> on their tablet or phone, sign up as a <strong>Young Learner</strong>, and enter your 6-letter family code:
+                Have your child open <strong>{domain}</strong> on their tablet or phone, sign up as a <strong>Young Learner</strong>, and enter your 6-letter family code:
               </p>
             </div>
 
