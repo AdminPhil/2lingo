@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Purge Residual Bottom Caption Text Under Roko & Delfi (BUG-021)
+
+### Fixed & Refined
+- **[BUG-021] ✅ RESOLVED & VERIFIED - Complete Removal of Bottom Caption Text Under Roko and Delfi:**
+  - **Issue:** Fine subtitle text from the concept art sheet was faintly captured beneath Roko's yellow feet and Delfi's splash at the base of their circular badges.
+  - **Root Cause Analysis:** On the concept art sheet, character illustrations end at $Y = 652$, while subtitle captions are printed between $Y = 665$ and $Y = 690$. The previous bounding box ($Y \le 695$) captured this bottom text strip.
+  - **Correction Pipeline:** Hard-clamped the vertical crop window to $Y = 652$ (strictly below feet/splash and above subtitle text). Re-scaled and centered characters with $76\text{px}$ of solid `#FFFFFF` margins top and bottom. Pixel scan confirms 0 non-white pixels below $Y = 437$.
+  - **Updated Previews:** Re-rendered `avatar_centering_comparison.png`, `add_child_modal_mockup_wider.png`, and `add_child_modal_wider_preview.html`.
+
+---
+
 ## [2026-10-24] - Matija Chin & Lower Jaw Clipping Remediation (BUG-020)
 
 ### Fixed & Refined
