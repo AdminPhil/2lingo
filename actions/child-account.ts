@@ -120,3 +120,38 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
     },
   };
 };
+
+export const createMultipleChildAccounts = async (
+  children: CreateChildAccountInput[]
+) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  if (!children || children.length === 0) {
+    return { error: "Please provide at least one child account to create." };
+  }
+
+  if (children.length > 5) {
+    return { error: "You can create up to 5 children at one time." };
+  }
+
+  const results = [];
+  const errors = [];
+
+  for (const child of children) {
+    const res = await createChildAccount(child);
+    if (res?.error) {
+      errors.push(`${child.childName}: ${res.error}`);
+    } else if (res?.success && res.child) {
+      results.push(res.child);
+    }
+  }
+
+  return {
+    success: results.length > 0,
+    created: results,
+    errors: errors.length > 0 ? errors : undefined,
+  };
+};

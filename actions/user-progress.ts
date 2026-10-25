@@ -49,7 +49,7 @@ export const upsertUserProgress = async (courseId: number) => {
     activeCourseId: courseId,
     userName: user.firstName || user.username || "User",
     userImageSrc: user.imageUrl || "/mascot.png",
-    role: "unassigned",
+    role: "learner",
   });
 
   revalidatePath("/courses");

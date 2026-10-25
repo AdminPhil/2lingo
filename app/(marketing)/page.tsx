@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Loader, Sparkles, KeyRound, ArrowRight } from "lucide-react";
+import { Loader, Sparkles, KeyRound, ArrowRight, Users } from "lucide-react";
 import { 
   ClerkLoaded, 
   ClerkLoading, 
@@ -88,6 +88,21 @@ export default async function Home() {
                   <Sparkles className="h-5 w-5 text-amber-500 shrink-0" />
                   <span>I&apos;m New Here! Start Learning</span>
                 </Button>
+              </SignUpButton>
+
+              {/* Secondary Parent Intent Gate */}
+              <SignUpButton
+                mode="modal"
+                afterSignInUrl="/learn?intent=parent"
+                afterSignUpUrl="/learn?intent=parent"
+              >
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-x-1.5 text-xs font-bold text-blue-900 hover:text-blue-700 hover:underline pt-1 cursor-pointer transition w-full"
+                >
+                  <Users className="h-3.5 w-3.5 text-amber-600" />
+                  <span>Parents & Educators: Set Up Family Circle</span>
+                </button>
               </SignUpButton>
 
               <p className="text-[11px] text-muted-foreground/80 text-center w-full font-medium mt-0.5">

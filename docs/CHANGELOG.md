@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Epic 1: Seamless Onboarding, Parent Intent Routing & Shared Tablet Switcher (CR-042, CR-043, CR-044)
+
+### Added & Refined
+- **[CR-042] ✅ IMPLEMENTED & VERIFIED - Frictionless "Learner by Default" Onboarding & Parental Gate:**
+  - **Direct-to-Lesson Entry:** Updated `actions/user-progress.ts` to assign new signups `role: "learner"` by default (replacing `"unassigned"`), dropping learners directly onto Unit 1, Lesson 1 with 0 blocking modal popups (`initialOpen={false}` in `app/(main)/layout.tsx`).
+  - **Child-Proof Parental Gate (`ParentalGateModal`):** Implemented randomized 2-digit multiplication challenges in `components/modals/parental-gate-modal.tsx` backed by `store/use-parental-gate-modal.ts`. Non-admin accounts attempting to access "Parent Center" from the sidebar must pass the gate.
+  - **Dynamic Parent Role & Pod Promotion:** Implemented `unlockParentAccess()` server action in `actions/family-onboarding.ts` that promotes authenticated learners to `role: "parent"` and provisions a default Family Pod when they solve the gate.
+  - **Auto-Join Pod Link Handler (`AutoJoinPod`):** Implemented client component in `components/auto-join-pod.tsx` detecting `?join=CODE` and `?intent=parent` query parameters to smoothly connect kids to family pods without friction.
+
+- **[CR-043] ✅ IMPLEMENTED & VERIFIED - Parent Intent Routing, Multi-Child Provisioning & Family Cards:**
+  - **Parent Intent Marketing Gate:** Added dedicated secondary CTA on landing page (`app/(marketing)/page.tsx`) linking to `/learn?intent=parent`, ensuring parents are directed directly into Family Pod setup.
+  - **Batch Child Provisioning Action (`createMultipleChildAccounts`):** Implemented batch account creation in `actions/child-account.ts` allowing parents to provision up to 5 child profiles simultaneously in a single transaction.
+  - **Printable Family Passport Card:** Added multi-child creation tab and styled printable credentials card with `window.print()` support in `components/admin/add-child-modal.tsx` so parents can easily print usernames and passwords for refrigerator/desk reference.
+
+- **[CR-044] ✅ IMPLEMENTED & VERIFIED - Shared iPad Profile Switcher ("Netflix for Croatian") & Student QR Logins:**
+  - **Multi-Session Tablet Profile Switcher (`ProfileSwitcherModal`):** Created `components/modals/profile-switcher-modal.tsx` utilizing Clerk's client multi-session SDK (`client.sessions`, `setActive`) for instant 1-tap switching between siblings on shared iPads/tablets without entering credentials.
+  - **Sidebar Quick Switch Trigger:** Added `SwitchProfileButton` and integrated with `components/sidebar.tsx` footer for immediate access.
+  - **Fast Pass QR Badge Login Route (`/qr-login`):** Built instant camera QR badge login page in `app/qr-login/page.tsx` and whitelisted in `middleware.ts` public routes for single-scan automated login on shared classroom and home tablets.
+
+---
+
 ## [2026-10-24] - Fix Option Text Truncation in Compact SELECT Tiles (BUG-017)
 
 ### Fixed & Refined

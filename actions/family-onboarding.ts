@@ -147,3 +147,60 @@ export const selectLearnerRole = async () => {
 
   return { success: true };
 };
+
+export const unlockParentAccess = async () => {
+  const { userId } = await auth();
+  const user = await currentUser();
+
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const existingProgress = await getUserProgress();
+  if (existingProgress) {
+    await db.update(userProgress).set({
+      role: "parent",
+      userName: user?.firstName || user?.username || existingProgress.userName || "Parent",
+      userImageSrc: user?.imageUrl || existingProgress.userImageSrc || "/mascot.png",
+    }).where(eq(userProgress.userId, userId));
+  } else {
+    await db.insert(userProgress).values({
+      userId,
+      activeCourseId: 1,
+      userName: user?.firstName || user?.username || "Parent",
+      userImageSrc: user?.imageUrl || "/mascot.png",
+      role: "parent",
+    });
+  }
+
+  // Ensure user has at least one owned pod
+  const ownedPod = await db.query.pods.findFirst({
+    where: eq(pods.ownerId, userId),
+  });
+
+  if (!ownedPod) {
+    const parentName = user?.firstName || "Family";
+    const [newPod] = await db.insert(pods).values({
+      name: `${parentName}'s Family Circle`,
+      type: "family",
+      inviteCode: generateRandomPodCode(),
+      ownerId: userId,
+      targetXp: 1000,
+      currentXp: 0,
+      celebrationUnlocked: false,
+      weekNumber: 1,
+    }).returning();
+
+    await db.insert(podMembers).values({
+      podId: newPod.id,
+      userId,
+      role: "owner",
+    });
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/learn");
+  revalidatePath("/leaderboard");
+
+  return { success: true };
+};

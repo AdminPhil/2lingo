@@ -2,7 +2,7 @@
 
 import { useState, useTransition, useEffect } from "react";
 import Image from "next/image";
-import { UserPlus, Sparkles, Copy, Check, Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { UserPlus, Sparkles, Copy, Check, Eye, EyeOff, ShieldCheck, Printer } from "lucide-react";
 import { toast } from "sonner";
 
 import {
@@ -315,6 +315,20 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
                     Copy Login Credentials
                   </>
                 )}
+              </Button>
+
+              <Button
+                type="button"
+                variant="primaryOutline"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.print();
+                  }
+                }}
+                className="w-full h-11 rounded-xl text-xs font-bold border-2 border-slate-300 text-slate-700 hover:bg-slate-100"
+              >
+                <Printer className="h-4 w-4 mr-1.5 text-slate-600" />
+                Print / Save Access Card
               </Button>
 
               <Button
