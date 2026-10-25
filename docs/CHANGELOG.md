@@ -4,6 +4,26 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Standardize Numbered Documentation Structure (1–9 Hierarchy) (CR-041)
+
+### Added & Refined
+- **[CR-041] ✅ IMPLEMENTED & VERIFIED - Numbered Documentation Hierarchy (1–9 Structure):**
+  - **Standardized 1–9 Documentation Taxonomy:** Reorganized all engineering, pedagogical, design, and operational documents into an unambiguous numbered sequence:
+    - `docs/1. DEVELOPMENT_AND_SETUP.md`: Local development, `.env.local` dictionary, seeding lifecycle, and neural audio generation.
+    - `docs/2. ARCHITECTURE_AND_DATA.md`: Consolidated system tech stack, dual-domain Mermaid ERD, 12-table Drizzle schema dictionary, operational state machines, sequence synchronization, and Clerk RBAC.
+    - `docs/3. CURRICULUM_STANDARDS.md`: Formal pedagogical specification contract ("3 + 1" Unit Arc, Deductive Elimination, Progressive Fading, 2×2 Grid).
+    - `docs/4. LESSON_PLANNING_GUIDE.md`: Step-by-step authoring playbook, unit creation templates, and vocabulary rubrics.
+    - `docs/5. DESIGN_SYSTEM.md`: Croatian color tokens, regional World progression, Paško mascot guidelines, and 3D tactile UI styles.
+    - `docs/6. HEARTS_AND_GAMIFICATION.md`: Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards.
+    - `docs/7. SECURITY_AND_COPPA.md`: Child data privacy, COPPA / GDPR-K compliance, closed social loops, and scoped leaderboards.
+    - `docs/8. TESTING_AND_QA.md`: 4-tier verification pipeline, 10-point manual release runbook, and Vitest/Playwright roadmap.
+    - `docs/9. DEPLOYMENT_AND_DEVOPS.md`: Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks.
+  - **Consolidation of Architecture & Data:** Merged `docs/ARCHITECTURE.md` and `docs/DATABASE_AND_DATA_MODEL.md` into the all-in-one `docs/2. ARCHITECTURE_AND_DATA.md`, retiring the redundant duplicate source files.
+  - **Central Directory Map in `README.md`:** Updated root `README.md` directory tree and documentation library table with direct links and descriptions matching the 1–9 structure.
+  - **Cross-Reference Synchronization:** Updated internal markdown links across `docs/`, `GOVERNANCE.md`, `CHANGE_REQUEST_TEMPLATE.md`, `PULL_REQUEST_TEMPLATE.md`, and `.agents/rules/governance.md`.
+
+---
+
 ## [2026-10-24] - Author docs/DEPLOYMENT_AND_DEVOPS.md Operational Manual (CR-040)
 
 ### Added & Refined

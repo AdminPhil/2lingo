@@ -80,7 +80,18 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 │   ├── modals/          # Role onboarding, practice hearts, exit confirmations
 │   └── ui/              # Accessible primitives (buttons, dialogs, inputs)
 ├── db/                  # Drizzle ORM schema, relations, connection, and queries
-├── docs/                # Comprehensive engineering and pedagogical documentation
+├── docs/                # Standardized 1–9 Engineering & Pedagogical Documentation Suite
+│   ├── 1. DEVELOPMENT_AND_SETUP.md     # [NEW] Env vars, local setup, seeding, and tooling
+│   ├── 2. ARCHITECTURE_AND_DATA.md     # [EXPANDED] System tech stack, Mermaid ERD, Drizzle schema & RBAC
+│   ├── 3. CURRICULUM_STANDARDS.md      # [CONSOLIDATED] Invariant pedagogical rules (audit spec)
+│   ├── 4. LESSON_PLANNING_GUIDE.md     # [CONSOLIDATED] Authoring playbook, vocabulary rubrics & theme guide
+│   ├── 5. DESIGN_SYSTEM.md             # [ACTIVE] Croatian color tokens, regional stages & UI component standards
+│   ├── 6. HEARTS_AND_GAMIFICATION.md   # [ACTIVE] Gamification loops, practice engine, pods & streaks
+│   ├── 7. SECURITY_AND_COPPA.md        # [NEW] Child data privacy, COPPA compliance, and safety guards
+│   ├── 8. TESTING_AND_QA.md            # [NEW] Multi-tier verification pipeline & QA checklists
+│   ├── 9. DEPLOYMENT_AND_DEVOPS.md     # [NEW] Render CI/CD, Neon pooling, zero-polling policy & backups
+│   ├── CHANGELOG.md                    # [ACTIVE] Chronological release and feature audit trail
+│   └── GOVERNANCE.md                   # [ACTIVE] Mandatory PR pre-merge protocol and checklist
 ├── lib/                 # Theme registry, admin checks, TTS helpers, and utility functions
 ├── public/              # Static assets (mascot artwork, icons, audio files)
 │   └── audio/hr/        # Synthesized Croatian neural pronunciation files (.mp3)
@@ -119,19 +130,33 @@ npx tsx --env-file=.env.local scripts/audit-curriculum-rules.ts
 
 ## 📚 Documentation Library
 
-For in-depth guides, pedagogical rules, and architecture specs, explore the [`docs/`](./docs) directory:
+The CroLingo documentation suite is organized in a standardized 1–9 sequence:
 
-| Document | Purpose |
-| :--- | :--- |
-| 🛠️ **[`docs/DEVELOPMENT_AND_SETUP.md`](./docs/DEVELOPMENT_AND_SETUP.md)** | **Local Setup & Environment Playbook:** Complete `.env.local` dictionary, seeding lifecycle, Super-Admin role assignment, and neural audio generation. |
-| 📋 **[`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)** | **Mandatory Pre-Merge Protocol:** The 4-point review checklist required for PRs and agent tasks. |
-| 📚 **[`docs/CURRICULUM_STANDARDS.md`](./docs/CURRICULUM_STANDARDS.md)** | **Pedagogical Specification Contract:** The formal rules asserted by CI/CD audits ("3 + 1" Unit Arc, Deductive Elimination, Progressive Fading, 2×2 Grid). |
-| 📖 **[`docs/LESSON_PLANNING_GUIDE.md`](./docs/LESSON_PLANNING_GUIDE.md)** | **Authoring Playbook:** Step-by-step tutorial, unit creation templates, and vocabulary rubrics for curriculum authors. |
-| 🎨 **[`docs/DESIGN_SYSTEM.md`](./docs/DESIGN_SYSTEM.md)** | **Living Design System:** Croatian color palette, regional World progression, Paško mascot guidelines, and 3D tactile UI styles. |
-| ❤️ **[`docs/HEARTS_AND_GAMIFICATION.md`](./docs/HEARTS_AND_GAMIFICATION.md)** | **Gamification Engine:** Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards. |
-| ⚙️ **[`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)** | **Engineering Architecture:** High-level system topology, Clerk sync, Render hosting, and deployment pipelines. |
-| 🗄️ **[`docs/DATABASE_AND_DATA_MODEL.md`](./docs/DATABASE_AND_DATA_MODEL.md)** | **Database & Data Models:** Dual-domain ERD, 12-table schema dictionary, state machines, and zero-data-loss invariants. |
-| 🛡️ **[`docs/SECURITY_AND_COPPA_COMPLIANCE.md`](./docs/SECURITY_AND_COPPA_COMPLIANCE.md)** | **Child Safety & Privacy:** COPPA / GDPR-K standards, zero child PII, closed social loops, and scoped leaderboards. |
-| 🧪 **[`docs/TESTING_AND_QA.md`](./docs/TESTING_AND_QA.md)** | **Testing & QA Strategy:** 4-tier verification pipeline, 10-point manual release runbook, and Vitest/Playwright roadmap. |
-| 🚀 **[`docs/DEPLOYMENT_AND_DEVOPS.md`](./docs/DEPLOYMENT_AND_DEVOPS.md)** | **Deployment & DevOps Manual:** Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks. |
-| 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |
+```text
+├── README.md                           # Quickstart, project overview & architecture directory
+└── docs/
+    ├── 1. DEVELOPMENT_AND_SETUP.md     # [NEW] Env vars, local setup, seeding, and tooling
+    ├── 2. ARCHITECTURE_AND_DATA.md     # [EXPANDED] System tech stack, Mermaid ERD, Drizzle schema & RBAC
+    ├── 3. CURRICULUM_STANDARDS.md      # [CONSOLIDATED] Invariant pedagogical rules (audit spec)
+    ├── 4. LESSON_PLANNING_GUIDE.md     # [CONSOLIDATED] Authoring playbook, vocabulary rubrics & theme guide
+    ├── 5. DESIGN_SYSTEM.md             # [ACTIVE] Croatian color tokens, regional stages & UI component standards
+    ├── 6. HEARTS_AND_GAMIFICATION.md   # [ACTIVE] Gamification loops, practice engine, pods & streaks
+    ├── 7. SECURITY_AND_COPPA.md        # [NEW] Child data privacy, COPPA compliance, and safety guards
+    ├── 8. TESTING_AND_QA.md            # [NEW] Multi-tier verification pipeline & QA checklists
+    ├── 9. DEPLOYMENT_AND_DEVOPS.md     # [NEW] Render CI/CD, Neon pooling, zero-polling policy & backups
+    └── CHANGELOG.md                    # [ACTIVE] Chronological release and feature audit trail
+```
+
+| # | Document | Purpose & Scope |
+| :-: | :--- | :--- |
+| 1 | 🛠️ **[`docs/1. DEVELOPMENT_AND_SETUP.md`](./docs/1.%20DEVELOPMENT_AND_SETUP.md)** | **Local Setup & Environment:** Complete `.env.local` dictionary, seeding lifecycle, Super-Admin role assignment, and neural audio generation. |
+| 2 | ⚙️ **[`docs/2. ARCHITECTURE_AND_DATA.md`](./docs/2.%20ARCHITECTURE_AND_DATA.md)** | **Architecture & Data Models:** System tech stack, dual-domain Mermaid ERD, 12-table Drizzle schema, state machines, sequence synchronization, and RBAC. |
+| 3 | 📚 **[`docs/3. CURRICULUM_STANDARDS.md`](./docs/3.%20CURRICULUM_STANDARDS.md)** | **Pedagogical Specification Contract:** Invariant rules enforced by CI/CD audits ("3 + 1" Unit Arc, Deductive Elimination, Progressive Fading, 2×2 Grid). |
+| 4 | 📖 **[`docs/4. LESSON_PLANNING_GUIDE.md`](./docs/4.%20LESSON_PLANNING_GUIDE.md)** | **Authoring Playbook:** Step-by-step tutorial, unit creation templates, and vocabulary rubrics for curriculum authors. |
+| 5 | 🎨 **[`docs/5. DESIGN_SYSTEM.md`](./docs/5.%20DESIGN_SYSTEM.md)** | **Living Design System:** Croatian color palette, regional World progression, Paško mascot guidelines, and 3D tactile UI styles. |
+| 6 | ❤️ **[`docs/6. HEARTS_AND_GAMIFICATION.md`](./docs/6.%20HEARTS_AND_GAMIFICATION.md)** | **Gamification Engine:** Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards. |
+| 7 | 🛡️ **[`docs/7. SECURITY_AND_COPPA.md`](./docs/7.%20SECURITY_AND_COPPA.md)** | **Child Safety & Privacy:** COPPA / GDPR-K standards, zero child PII, closed social loops, and scoped leaderboards. |
+| 8 | 🧪 **[`docs/8. TESTING_AND_QA.md`](./docs/8.%20TESTING_AND_QA.md)** | **Testing & QA Strategy:** 4-tier verification pipeline, 10-point manual release runbook, and Vitest/Playwright roadmap. |
+| 9 | 🚀 **[`docs/9. DEPLOYMENT_AND_DEVOPS.md`](./docs/9.%20DEPLOYMENT_AND_DEVOPS.md)** | **Deployment & DevOps Manual:** Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks. |
+| — | 📋 **[`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)** | **Pre-Merge Protocol:** Mandatory 4-point review checklist required for PRs and agent tasks. |
+| — | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |
