@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Purge "ROKO" & "DELFI" Printed Names Inside Avatar Assets (BUG-022)
+
+### Fixed & Refined
+- **[BUG-022] ✅ RESOLVED & VERIFIED - Complete Elimination of Name Banners Inside Roko & Delfi Avatars:**
+  - **Issue Identified:** While subtitle text was addressed, the bold printed character name banners (*"ROKO"* and *"DELFI"*) on the concept sheet sat directly between $Y = [625, 650]$. Because the previous crop boundary terminated at $Y = 652$, the names were still being drawn right below Roko's feet and Delfi's splash inside their images.
+  - **Root Cause & Fix:** Raised the source crop floor strictly to $Y = 590$, which is $35\text{px}$ above the name text and captures 100% of Roko's yellow feet ($Y \le 585$) and Delfi's splash ($Y \le 586$).
+  - **Verification:** Pixel-density scan across $Y \in [390, 511]$ confirms **0 black text pixels** in `roko.png` and `delfi.png`.
+  - **Updated Previews:** Re-rendered `avatar_centering_comparison.png`, `add_child_modal_mockup_wider.png`, and `add_child_modal_wider_preview.html`.
+
+---
+
 ## [2026-10-24] - Purge Residual Bottom Caption Text Under Roko & Delfi (BUG-021)
 
 ### Fixed & Refined
