@@ -4,6 +4,30 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Epic: Automated Testing Suite & CI Quality Gate (CR-057 to CR-061)
+
+### Added & Refined
+- **[CR-057] ✅ IMPLEMENTED & VERIFIED - Vitest Test Runner Setup & Core Utility Unit Tests (`tests/unit/`):**
+  - Configured `vitest.config.ts` and `vitest.setup.ts` with `@/*` path alias resolution and JSDOM environment.
+  - Extracted shared `generateRandomPodCode` into `lib/pod-code.ts` and validated 100% exclusion of ambiguous characters (`0`, `O`, `1`, `I`) across a 100,000-iteration Monte Carlo stress test (`tests/unit/pod-code.test.ts` & `tests/adversarial/m1-stress.test.ts`).
+  - Added boundary unit tests for `lib/streak.ts` (consecutive day increments, same-day idempotency, streak reset, DST transitions), `lib/theme-registry.ts` (Worlds 1–4 stage mappings for Units 1–20), `lib/tts.ts`, and `lib/utils.ts`.
+- **[CR-058] ✅ IMPLEMENTED & VERIFIED - React Testing Library & Modal/Component State Tests (`tests/component/`):**
+  - Implemented JSDOM component tests verifying `Card` 2×2 grid layout and long Croatian string wrapping (`break-words`, zero CSS `truncate` ellipsis).
+  - Tested `AddMemberToPodModal` multi-select checkbox state, "Select All" / "Deselect All" filtering, and dynamic button labels (`"Add X Users to Pod"`).
+  - Tested `ParentSetupWizardModal` 4-step stepper navigation and `ProfileSwitcherModal` session switching.
+- **[CR-059] ✅ IMPLEMENTED & VERIFIED - Server Action RBAC & Transaction Integration Tests (`tests/integration/`):**
+  - Implemented mocked Clerk authentication and Drizzle ORM AST query verification across `tests/integration/server-actions-rbac.test.ts` and `tests/integration/batch-account-rollback.test.ts`.
+  - Upgraded `createMultipleChildAccounts` in `actions/child-account.ts` with duplicate username detection and atomic rollback (deleting partially created Clerk users and DB rows if any sibling in a batch fails).
+  - Verified unauthorized callers receive explicit rejection across admin and pod-owner server actions.
+- **[CR-060] ✅ IMPLEMENTED & VERIFIED - Playwright Multi-Viewport E2E Testing (`e2e/` & `playwright.config.ts`):**
+  - Configured `playwright.config.ts` targeting 3 device viewports: `Desktop Chrome` ($1280 \times 720$), `iPad Safari (10.2")` ($810 \times 1080$), and `Mobile` ($390 \times 844$).
+  - Authored 99 end-to-end tests across `e2e/smoke.spec.ts`, `e2e/qr-login.spec.ts`, `e2e/lesson-quiz.spec.ts`, `e2e/practice-recharge.spec.ts`, and `e2e/real-world-scenarios.spec.ts`.
+- **[CR-061] ✅ IMPLEMENTED & VERIFIED - GitHub Actions CI Quality Gate Automation (`.github/workflows/ci.yml`):**
+  - Created 4-job GitHub Actions workflow (`audit-and-typecheck`, `unit-and-integration-tests`, `e2e-smoke-tests` with Next.js production build pre-step, and `production-build`) triggered on push and pull requests to `main`.
+  - Total test coverage: **312 automated tests** (213 Vitest unit/component/integration + 99 Playwright multi-viewport E2E tests) passing at 100%.
+
+---
+
 ## [2026-10-25] - Epic: Seamless Parent Onboarding & Family Fast Pass Walkthrough (CR-053 to CR-056)
 
 ### Added & Refined

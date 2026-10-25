@@ -7,18 +7,7 @@ import { revalidatePath } from "next/cache";
 import db from "@/db/drizzle";
 import { podMembers, pods, userProgress } from "@/db/schema";
 import { getUserProgress } from "@/db/queries";
-
-/**
- * Generate a clean, 6-character uppercase alphanumeric code (excluding ambiguous chars 0, O, 1, I).
- */
-const generateRandomPodCode = (): string => {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let code = "";
-  for (let i = 0; i < 6; i++) {
-    code += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return code;
-};
+import { generateRandomPodCode } from "@/lib/pod-code";
 
 interface FamilyOnboardingInput {
   familyName: string;

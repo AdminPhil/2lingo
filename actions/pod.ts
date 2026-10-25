@@ -7,6 +7,7 @@ import { and, eq } from "drizzle-orm";
 import db from "@/db/drizzle";
 import { podMembers, pods } from "@/db/schema";
 import { isSuperAdmin } from "@/lib/admin";
+import { generateRandomPodCode } from "@/lib/pod-code";
 
 export const joinPodByCode = async (inviteCode: string) => {
   const { userId } = await auth();
@@ -59,11 +60,11 @@ export const createPod = async (name: string) => {
   }
 
   // Generate a random 6-character code
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let inviteCode = "";
-  for (let i = 0; i < 6; i++) {
-    inviteCode += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
+
+  const inviteCode = generateRandomPodCode();
+
+
+
 
   const [newPod] = await db.insert(pods).values({
     name: trimmedName,

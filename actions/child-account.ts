@@ -171,29 +171,90 @@ export const createMultipleChildAccounts = async (
   }
 
   if (!children || children.length === 0) {
-    return { error: "Please provide at least one child account to create." };
+    return {
+      error: "Please provide at least one child account to create.",
+      errors: ["Please provide at least one child account to create."],
+    };
   }
 
   if (children.length > 5) {
-    return { error: "You can create up to 5 children at one time." };
+    return {
+      error: "You can create up to 5 children at one time.",
+      errors: ["You can create up to 5 children at one time."],
+    };
   }
 
-  const results = [];
-  const errors = [];
+  const cleanUsernames = children.map((c) =>
+    (c.username || "").trim().toLowerCase().replace(/[^a-z0-9_-]/g, "")
+  );
+  const seenUsernames = new Set<string>();
+  for (const u of cleanUsernames) {
+    if (u && seenUsernames.has(u)) {
+      return {
+        error: "Each child in the batch must have a unique username.",
+        errors: ["Each child in the batch must have a unique username."],
+      };
+    }
+    seenUsernames.add(u);
+  }
+
+  const results: any[] = [];
 
   for (const child of children) {
-    const res = await createChildAccount(child);
-    if (res?.error) {
-      errors.push(`${child.childName}: ${res.error}`);
-    } else if (res?.success && res.child) {
+    try {
+      const res = await createChildAccount(child);
+      if (res?.error || !res?.success || !res?.child) {
+        const failureReason = res?.error || "Failed to create child account.";
+        const rolledBackCount = results.length;
+        for (const created of results) {
+          try {
+            await clerkClient.users.deleteUser(created.id);
+          } catch (clerkErr) {
+            console.error(`Failed to rollback Clerk user ${created.id}:`, clerkErr);
+          }
+          try {
+            await db.delete(userProgress).where(eq(userProgress.userId, created.id));
+            await db.delete(podMembers).where(eq(podMembers.userId, created.id));
+          } catch (dbErr) {
+            console.error(`Failed to rollback DB records for ${created.id}:`, dbErr);
+          }
+        }
+        return {
+          success: false,
+          error: `Batch child creation failed and was rolled back atomically: ${failureReason}`,
+          errors: [`Batch child creation failed and was rolled back atomically: ${failureReason}`],
+          rolledBackCount,
+        };
+      }
       results.push(res.child);
+    } catch (err: any) {
+      const failureReason = err?.message || String(err);
+      const rolledBackCount = results.length;
+      for (const created of results) {
+        try {
+          await clerkClient.users.deleteUser(created.id);
+        } catch (clerkErr) {
+          console.error(`Failed to rollback Clerk user ${created.id}:`, clerkErr);
+        }
+        try {
+          await db.delete(userProgress).where(eq(userProgress.userId, created.id));
+          await db.delete(podMembers).where(eq(podMembers.userId, created.id));
+        } catch (dbErr) {
+          console.error(`Failed to rollback DB records for ${created.id}:`, dbErr);
+        }
+      }
+      return {
+        success: false,
+        error: `Batch child creation failed and was rolled back atomically: ${failureReason}`,
+        errors: [`Batch child creation failed and was rolled back atomically: ${failureReason}`],
+        rolledBackCount,
+      };
     }
   }
 
   return {
-    success: results.length > 0,
+    success: true,
     created: results,
-    errors: errors.length > 0 ? errors : undefined,
   };
 };
 
