@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Wider Modal Dimensions & Responsive Avatar Grid for AddChildModal (CR-052)
+
+### Enhanced & Modernized
+- **[CR-052] ✅ RESOLVED & VERIFIED - Spacious Modal Design & Responsive Avatar Grid:**
+  - **Expanded Modal Width:** Upgraded [`components/admin/add-child-modal.tsx`](file:///c:/Users/phili/Documents/phils_repo/components/admin/add-child-modal.tsx) from narrow `max-w-md` (448px) to roomy `sm:max-w-2xl` (672px / `max-w-[95vw]` on mobile), giving child onboarding a premium, tablet- and desktop-friendly canvas.
+  - **9-Column Mascot Selector Grid:** Transformed crowded flex-wrap chips into a structured `grid grid-cols-5 sm:grid-cols-9 gap-2.5` layout with larger 52px avatar circles, character name labels beneath each mascot, and a dynamic "Selected: Mascot Name" pill badge.
+  - **Two-Column Form Flow:** Arranged "Child's First Name" and "Username" side-by-side in a balanced 2-column grid (`sm:grid-cols-2`), eliminating vertical scrolling on desktop viewports.
+  - **Interactive Mockup & Comparison:** Generated an interactive Generative UI comparison widget and high-resolution composite preview showing both modes.
+
+---
+
 ## [2026-10-24] - Mascot Avatar Framing Polish, Text Banner Removal & Modal Mockup (CR-051)
 
 ### Fixed & Refined

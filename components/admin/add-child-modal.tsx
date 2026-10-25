@@ -133,16 +133,16 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
         handleClose();
       }
     }}>
-      <DialogContent className="max-w-md overflow-hidden border-2 border-slate-200 p-6 sm:rounded-2xl">
+      <DialogContent className="sm:max-w-2xl max-w-[95vw] overflow-hidden border-2 border-slate-200 p-6 sm:p-8 sm:rounded-3xl">
         {!createdChild ? (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <DialogHeader className="text-left mb-2">
-              <div className="flex items-center gap-2">
-                <div className="h-9 w-9 rounded-xl bg-green-500 text-white flex items-center justify-center shadow-xs">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <DialogHeader className="text-left mb-1">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-2xl bg-green-500 text-white flex items-center justify-center shadow-xs">
                   <UserPlus className="h-5 w-5" />
                 </div>
                 <div>
-                  <DialogTitle className="text-xl font-black text-slate-800">
+                  <DialogTitle className="text-xl sm:text-2xl font-black text-slate-800">
                     Add Child Learner
                   </DialogTitle>
                   <p className="text-xs text-slate-500 font-medium">
@@ -157,65 +157,83 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
 
             {/* Avatar Selector */}
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                Choose Mascot Avatar
-              </label>
-              <div className="flex flex-wrap items-center gap-2.5 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                {AVATAR_OPTIONS.map((avatar) => (
-                  <button
-                    key={avatar.src}
-                    type="button"
-                    onClick={() => setSelectedAvatar(avatar.src)}
-                    className={`relative h-11 w-11 rounded-xl p-1 transition-all cursor-pointer ${
-                      selectedAvatar === avatar.src
-                        ? "border-2 border-green-500 bg-green-100 scale-105 shadow-xs"
-                        : "border border-transparent hover:bg-slate-200/60 opacity-80 hover:opacity-100"
-                    }`}
-                  >
-                    <Image
-                      src={avatar.src}
-                      alt={avatar.label}
-                      fill
-                      className="object-contain p-1"
-                    />
-                  </button>
-                ))}
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+                  Choose Mascot Avatar
+                </label>
+                <span className="text-xs font-semibold text-green-700 bg-green-50 border border-green-200 px-2.5 py-0.5 rounded-full">
+                  Selected: {AVATAR_OPTIONS.find((a) => a.src === selectedAvatar)?.label || "Mascot"}
+                </span>
+              </div>
+              <div className="grid grid-cols-5 sm:grid-cols-9 gap-2.5 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                {AVATAR_OPTIONS.map((avatar) => {
+                  const isSelected = selectedAvatar === avatar.src;
+                  return (
+                    <button
+                      key={avatar.src}
+                      type="button"
+                      onClick={() => setSelectedAvatar(avatar.src)}
+                      className={`group flex flex-col items-center gap-1.5 p-1 rounded-xl transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-white shadow-xs ring-2 ring-green-500 scale-105"
+                          : "hover:bg-white/80 opacity-75 hover:opacity-100"
+                      }`}
+                    >
+                      <div className="relative h-12 w-12 sm:h-13 sm:w-13 rounded-full overflow-hidden bg-white border border-slate-200 p-0.5">
+                        <Image
+                          src={avatar.src}
+                          alt={avatar.label}
+                          fill
+                          className="object-contain p-0.5"
+                        />
+                      </div>
+                      <span className={`text-[11px] font-bold truncate max-w-full leading-none ${
+                        isSelected ? "text-green-700" : "text-slate-600"
+                      }`}>
+                        {avatar.label}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Child's Name */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                Child&apos;s First Name <span className="text-rose-500">*</span>
-              </label>
-              <Input
-                type="text"
-                placeholder="e.g. Luka or Mia"
-                value={childName}
-                onChange={(e) => handleNameChange(e.target.value)}
-                disabled={pending}
-                className="h-11 rounded-xl border-2 font-medium"
-                required
-              />
-            </div>
+            {/* Child's Name & Username (2 columns on tablet/desktop) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Child's Name */}
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Child&apos;s First Name <span className="text-rose-500">*</span>
+                </label>
+                <Input
+                  type="text"
+                  placeholder="e.g. Luka or Mia"
+                  value={childName}
+                  onChange={(e) => handleNameChange(e.target.value)}
+                  disabled={pending}
+                  className="h-11 rounded-xl border-2 font-medium"
+                  required
+                />
+              </div>
 
-            {/* Username */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                Username <span className="text-rose-500">*</span>
-              </label>
-              <Input
-                type="text"
-                placeholder="e.g. luka or mia"
-                value={username}
-                onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ""))}
-                disabled={pending}
-                className="h-11 rounded-xl border-2 font-mono font-bold"
-                required
-              />
-              <p className="text-[11px] text-slate-400 mt-1">
-                Letters and numbers only. Your child will use this to log in.
-              </p>
+              {/* Username */}
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Username <span className="text-rose-500">*</span>
+                </label>
+                <Input
+                  type="text"
+                  placeholder="e.g. luka or mia"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ""))}
+                  disabled={pending}
+                  className="h-11 rounded-xl border-2 font-mono font-bold"
+                  required
+                />
+                <p className="text-[11px] text-slate-400 mt-1">
+                  Letters & numbers. Used to log in.
+                </p>
+              </div>
             </div>
 
             {/* Password */}
@@ -236,7 +254,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
