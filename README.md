@@ -156,7 +156,7 @@ The CroLingo documentation suite is organized in a standardized 1–9 sequence:
 | 5 | 🎨 **[`docs/5. DESIGN_SYSTEM.md`](./docs/5.%20DESIGN_SYSTEM.md)** | **Living Design System:** Croatian color palette, regional World progression, Paško mascot guidelines, and 3D tactile UI styles. |
 | 6 | ❤️ **[`docs/6. HEARTS_AND_GAMIFICATION.md`](./docs/6.%20HEARTS_AND_GAMIFICATION.md)** | **Gamification Engine:** Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards. |
 | 7 | 🛡️ **[`docs/7. SECURITY_AND_COPPA.md`](./docs/7.%20SECURITY_AND_COPPA.md)** | **Child Safety & Privacy:** COPPA / GDPR-K standards, zero child PII, closed social loops, and scoped leaderboards. |
-| 8 | 🧪 **[`docs/8. TESTING_AND_QA.md`](./docs/8.%20TESTING_AND_QA.md)** | **Testing & QA Strategy:** 4-tier verification pipeline, 10-point manual release runbook, and Vitest/Playwright roadmap. |
+| 8 | 🧪 **[`docs/8. TESTING_AND_QA.md`](./docs/8.%20TESTING_AND_QA.md)** | **Testing & QA Strategy:** 4-tier verification pipeline, 12-point manual release runbook, and Vitest/Playwright roadmap. |
 | 9 | 🚀 **[`docs/9. DEPLOYMENT_AND_DEVOPS.md`](./docs/9.%20DEPLOYMENT_AND_DEVOPS.md)** | **Deployment & DevOps Manual:** Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks. |
 | — | 📋 **[`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)** | **Pre-Merge Protocol:** Mandatory 4-point review checklist required for PRs and agent tasks. |
 | — | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |
