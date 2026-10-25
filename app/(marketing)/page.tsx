@@ -19,12 +19,13 @@ export default async function Home() {
   return (
     <div className="max-w-[1120px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 lg:p-8 gap-8 lg:gap-14">
       {/* High-Resolution Croatian Hero Artwork (Paško the Dalmatian, Trajekt, Licitarsko Srce, Adriatic Sun) */}
-      <div className="relative w-full max-w-[360px] h-[320px] sm:max-w-[460px] sm:h-[400px] lg:max-w-[500px] lg:h-[450px] shrink-0 drop-shadow-sm flex items-center justify-center">
+      <div className="relative w-[320px] h-[290px] sm:w-[440px] sm:h-[390px] lg:w-[480px] lg:h-[440px] shrink-0 drop-shadow-sm flex items-center justify-center">
         <Image
           src="/pasko-hero.jpg"
-          fill
+          width={500}
+          height={450}
           alt="Paško the Dalmatian Pup learning Croatian with CroLingo"
-          className="object-contain"
+          className="w-full h-full object-contain"
           priority
         />
       </div>
@@ -53,7 +54,7 @@ export default async function Home() {
         <div className="flex flex-col items-center lg:items-start gap-y-3.5 w-full max-w-[360px]">
           <ClerkLoading>
             <div className="h-28 flex items-center justify-center w-full">
-              <Loader className="h-6 w-6 text-green-600 animate-spin" />
+              <Loader className="h-6 w-6 text-blue-600 animate-spin" />
             </div>
           </ClerkLoading>
 
@@ -67,7 +68,7 @@ export default async function Home() {
               >
                 <Button
                   size="lg"
-                  className="w-full text-base font-black bg-green-600 hover:bg-green-700 text-white border-b-4 border-green-700 active:border-b-0 active:translate-y-0.5 transition-all flex items-center justify-center gap-x-2.5 h-14 rounded-2xl shadow-sm tracking-normal cursor-pointer"
+                  className="w-full text-base font-black bg-blue-600 hover:bg-blue-700 text-white border-b-4 border-blue-800 active:border-b-0 active:translate-y-0.5 transition-all flex items-center justify-center gap-x-2.5 h-14 rounded-2xl shadow-sm tracking-normal cursor-pointer"
                 >
                   <KeyRound className="h-5 w-5 shrink-0" />
                   <span>I Already Have an Account</span>
@@ -113,7 +114,7 @@ export default async function Home() {
             <SignedIn>
               <Button
                 size="lg"
-                className="w-full text-base font-black h-14 rounded-2xl bg-green-600 hover:bg-green-700 text-white border-b-4 border-green-700 active:border-b-0 active:translate-y-0.5 shadow-sm flex items-center justify-center gap-x-2.5 tracking-normal cursor-pointer"
+                className="w-full text-base font-black h-14 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white border-b-4 border-blue-800 active:border-b-0 active:translate-y-0.5 shadow-sm flex items-center justify-center gap-x-2.5 tracking-normal cursor-pointer"
                 asChild
               >
                 <Link href={isParent ? "/admin" : "/learn"}>

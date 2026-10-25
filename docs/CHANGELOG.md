@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Landing Page Šahovnica Banner Polish & Blue Primary CTA (CR-063)
+
+### Added & Refined
+- **[CR-063] ✅ IMPLEMENTED & VERIFIED - Landing Page Šahovnica Banner Polish & Blue Primary CTA:**
+  - Upgraded the Croatian checkerboard (`Šahovnica`) ribbon in `app/(marketing)/header.tsx` from `h-2` (`8px` height with compressed `4px` checks) to a wider, crisp `h-4` (`16px` height with balanced `8px × 8px` red `#DC2626` and white `#FFFFFF` checks across 2 rows), framed with Croatian Heritage Navy bottom border (`border-b-2 border-blue-900/20`).
+  - Restyled the primary `"I Already Have an Account"` button (and signed-in `"Continue Learning / Open Parent Center"` CTA) in `app/(marketing)/page.tsx` from green (`bg-green-600`) to Croatian Blue (`bg-blue-600 hover:bg-blue-700 border-b-4 border-blue-800 text-white`) to harmonize with the `CroLingo` wordmark and `Bok!` headline.
+  - Updated the header `"Parent Portal →"` hover accent to blue (`hover:text-blue-800 hover:bg-blue-50 hover:border-blue-200`).
+  - Fixed the desktop (`lg:flex-row`) hero illustration container in `app/(marketing)/page.tsx` by setting explicit responsive widths (`w-[320px] sm:w-[440px] lg:w-[480px]`) and `width={500} height={450}` on `<Image src="/pasko-hero.jpg" />` so the left hero illustration never collapses to `0px` width.
+
+---
+
 ## [2026-10-25] - Automatic Daily Overnight 5-Heart Top-Up (CR-062)
 
 ### Added & Refined

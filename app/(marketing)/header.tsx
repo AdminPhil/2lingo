@@ -45,7 +45,7 @@ export const Header = () => {
               <Button
                 size="sm"
                 variant="ghost"
-                className="font-extrabold text-xs text-slate-700 hover:text-green-700 hover:bg-green-50 border border-slate-200 rounded-xl px-3.5 h-9 hidden sm:flex items-center gap-1.5 shadow-2xs cursor-pointer"
+                className="font-extrabold text-xs text-slate-700 hover:text-blue-800 hover:bg-blue-50 hover:border-blue-200 border border-slate-200 rounded-xl px-3.5 h-9 hidden sm:flex items-center gap-1.5 shadow-2xs cursor-pointer"
                 asChild
               >
                 <Link href="/admin">
@@ -67,7 +67,7 @@ export const Header = () => {
               <Button
                 size="sm"
                 variant="ghost"
-                className="font-extrabold text-xs text-slate-700 hover:text-green-700 hover:bg-green-50 border border-slate-200 rounded-xl px-3.5 h-9 flex items-center gap-1.5 shadow-2xs cursor-pointer"
+                className="font-extrabold text-xs text-slate-700 hover:text-blue-800 hover:bg-blue-50 hover:border-blue-200 border border-slate-200 rounded-xl px-3.5 h-9 flex items-center gap-1.5 shadow-2xs cursor-pointer"
               >
                 <span>Parent Portal</span>
                 <span className="text-muted-foreground">→</span>
@@ -77,9 +77,9 @@ export const Header = () => {
         </ClerkLoaded>
       </div>
 
-      {/* True Croatian Checkerboard Ribbon (Šahovnica) */}
+      {/* Wide Aesthetic Croatian Checkerboard Ribbon (Šahovnica) */}
       <div 
-        className="h-2 w-full border-t border-b border-red-300/80 bg-[repeating-conic-gradient(#DC2626_0%_25%,#FFFFFF_0%_50%)] bg-[length:16px_8px]" 
+        className="h-4 w-full border-t border-red-200/90 border-b-2 border-blue-900/20 bg-[repeating-conic-gradient(#DC2626_0%_25%,#FFFFFF_0%_50%)] bg-[length:16px_16px] shadow-2xs" 
         title="Hrvatska Šahovnica"
       />
     </header>
