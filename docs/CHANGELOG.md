@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Complete Headwear Visibility & Full-Body Roko Scaling (BUG-019)
+
+### Fixed & Refined
+- **[BUG-019] ✅ RESOLVED & VERIFIED - Full Headwear Visibility for Mia & Matija, Shrunk Roko Avatar:**
+  - **Mia Floral Headband (*Vijenac*):** Expanded crop box from $255\text{px}$ to $370\text{px}$, providing $31\text{px}$ of clean headroom so her entire floral garland, ribbons, and sweet smile are completely visible and centered inside the circle.
+  - **Matija Alkar Hat (*Kalpak* & Feather Plume):** Expanded crop box to $390\text{px}$, ensuring his iconic tall black Alkar tournament cap and white feather plume are fully framed without any clipping at the top.
+  - **Luka Modrić Caricature:** Expanded crop box to $350\text{px}$ with $38\text{px}$ of headroom, framing his blonde hair, black headband, eyes, and Croatian #10 collar.
+  - **Full-Body Roko Seagull:** Instead of an aggressive close-up, scaled down the complete full-body illustration of Roko (blue sailor cap, white body, yellow beak, striped scarf, wings, and yellow feet) centered with $74\text{px}$ margins, fitting his entire character neatly inside the circle on a pure `#FFFFFF` background.
+  - **Updated Previews:** Re-rendered `add_child_modal_mockup_wider.png`, `avatar_centering_comparison.png`, and `add_child_modal_wider_preview.html`.
+
+---
+
 ## [2026-10-24] - Mascot Avatar Optical Centering in Circular Frames (BUG-018)
 
 ### Fixed & Refined
