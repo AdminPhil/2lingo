@@ -70,11 +70,6 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
           href="/quests"
           iconSrc="/quests.svg"
         />
-        <SidebarItem 
-          label="Shop" 
-          href="/shop"
-          iconSrc="/shop.svg"
-        />
       </div>
       <div className="p-4 flex items-center justify-between border-t border-slate-100">
         <ClerkLoading>

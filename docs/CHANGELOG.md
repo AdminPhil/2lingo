@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Remove Shop from Sidebar Navigation & Codify Anti-Regression Rule (CR-050)
+
+### Fixed & Refined
+- **[CR-050] ✅ RESOLVED & VERIFIED - Prune "Shop" Sidebar Link & Establish Safeguards:**
+  - **Eliminated Errant Navigation Link (`components/sidebar.tsx`):** Removed the inadvertently committed `<SidebarItem label="Shop" href="/shop" iconSrc="/shop.svg" />`.
+  - **Regression Root Cause Audit:** Identified that "Shop" was accidentally reintroduced during commit `7ffa92f` (Epic 1 onboarding refactor) when wiring `ParentCenterSidebarItem` and `SwitchProfileButton`.
+  - **Permanent Governance Safeguard (`.agents/rules/governance.md` & `docs/GOVERNANCE.md`):** Formally codified Rule 5 prohibiting developers and AI agents from adding `/shop` to the navigation unless explicitly requested by the user, preserving the integrity of the "Practice to Earn a Heart" active retrieval model.
+
+---
+
 ## [2026-10-24] - Croatian Heritage Avatar Collection: Luka Modrić, Mia, Matija, Roko & Delfi (CR-049)
 
 ### Added & Refined

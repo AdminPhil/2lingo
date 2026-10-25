@@ -37,6 +37,9 @@ Every change must satisfy all items on this checklist:
 - [ ] **Leaderboard Filter:** Test and admin accounts (e.g. `phil`, `J`) are strictly filtered out of the leaderboard; only legitimate child learners are displayed.
 - [ ] **Heart Accountability:** All errors increment `hearts_used` to track learner accuracy.
 
-### 4. Post-Flight Sync
+### 4. Navigation & Interface Integrity
+- [ ] **No "Shop" Item in Navigation:** Ensure `/shop` is strictly omitted from the primary sidebar and mobile navigation unless explicitly ordered by product owners (preserves the "Practice to Earn a Heart" gamification engine).
+
+### 5. Post-Flight Sync
 - [ ] **Changelog Updated:** Every feature, unit addition, or schema change is documented in [`docs/CHANGELOG.md`](./CHANGELOG.md).
 - [ ] **Standards Updated:** If a pedagogical rule evolved during the work, the corresponding document in `docs/` is updated immediately.

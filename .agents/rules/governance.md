@@ -18,5 +18,8 @@ Before writing any curriculum code, proposing changes, or seeding challenges in 
 4. **Automated Audit Check:**
    - Always run `npx tsx scripts/audit-curriculum-rules.ts` before committing.
 
-5. **Sync Documentation ([`docs/CHANGELOG.md`](../../docs/CHANGELOG.md)):**
+5. **Navigation & UI Invariants:**
+   - NEVER add or re-introduce the "Shop" navigation item (`/shop`) to the sidebar or mobile menu unless explicitly requested by the user. CroLingo's pedagogical model relies on the "Practice to Earn a Heart" engine; free purchases or point-based heart shops in primary navigation undermine active retrieval practice.
+
+6. **Sync Documentation ([`docs/CHANGELOG.md`](../../docs/CHANGELOG.md)):**
    - Record every feature, batch addition, or rule change in `docs/CHANGELOG.md` upon completion.
