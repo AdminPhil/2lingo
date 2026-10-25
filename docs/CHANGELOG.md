@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Upgrade Learning Path Progression from "Phase" to "World" (CR-031)
+
+### Added & Refined
+- **[CR-031] ✅ IMPLEMENTED & VERIFIED - Gaming-Style "World" Progression:**
+  - **Replaced "Phase" with "World" (`lib/theme-registry.ts`):** Transitioned away from academic/clinical "Phase" terminology in favor of vibrant, video-game style "World" progression (reminiscent of Mario, Pokémon, and classic platformers):
+    - **World 1:** `🏰 World 1: Capital Adventure • Zagreb & Castles` (Units 1–5)
+    - **World 2:** `🌊 World 2: Coastal Explorer • Adriatic Sea & Islands` (Units 6–10)
+    - **World 3:** `🌲 World 3: Nature Quest • Plitvice Lakes & Golden Fields` (Units 11–15)
+    - **World 4:** `👑 World 4: Crown Citadel • Ancient Dubrovnik (Capstone)` (Units 16–20)
+  - **Kid-Friendly Engagement:** Creates immediate excitement and clear gamified milestone targets for young learners and families advancing down the path.
+
+---
+
 ## [2026-10-24] - Replace Hardcoded 2lingo.net URL with Dynamic Origin in Parent Center (BUG-014)
 
 ### Fixed

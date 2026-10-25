@@ -20,13 +20,13 @@ export type RegionTheme = {
 };
 
 export const LEVEL_1_STAGES: RegionTheme[] = [
-  // Phase 1 (CR-023/CR-030): Capital Adventure (Units 1–5)
+  // World 1 (CR-023/CR-030/CR-031): Capital Adventure (Units 1–5)
   {
     id: "zagreb-central",
     stage: 1,
     stageName: "Capital Adventure",
-    stageBadgeLabel: "Phase 1: Capital Adventure • Zagreb & Castles",
-    stageCroatianName: "Phase 1: Capital Adventure • Zagreb & Castles",
+    stageBadgeLabel: "World 1: Capital Adventure • Zagreb & Castles",
+    stageCroatianName: "World 1: Capital Adventure • Zagreb & Castles",
     unitRange: [1, 5],
     solidBg: "bg-red-600",
     gradient: "from-red-600 via-rose-600 to-amber-600",
@@ -40,13 +40,13 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-red-600 border-red-400",
     nodeArrowBorder: "border-t-red-400",
   },
-  // Phase 2 (CR-024/CR-030): Coastal Explorer (Units 6–10)
+  // World 2 (CR-024/CR-030/CR-031): Coastal Explorer (Units 6–10)
   {
     id: "dalmatia-coast",
     stage: 2,
     stageName: "Coastal Explorer",
-    stageBadgeLabel: "Phase 2: Coastal Explorer • Adriatic Sea & Islands",
-    stageCroatianName: "Phase 2: Coastal Explorer • Adriatic Sea & Islands",
+    stageBadgeLabel: "World 2: Coastal Explorer • Adriatic Sea & Islands",
+    stageCroatianName: "World 2: Coastal Explorer • Adriatic Sea & Islands",
     unitRange: [6, 10],
     solidBg: "bg-sky-600",
     gradient: "from-sky-500 via-blue-600 to-cyan-600",
@@ -60,13 +60,13 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-sky-600 border-sky-400",
     nodeArrowBorder: "border-t-sky-400",
   },
-  // Phase 3 (CR-025/CR-030): Nature Quest (Units 11–15)
+  // World 3 (CR-025/CR-030/CR-031): Nature Quest (Units 11–15)
   {
     id: "plitvice-slavonia",
     stage: 3,
     stageName: "Nature Quest",
-    stageBadgeLabel: "Phase 3: Nature Quest • Plitvice Lakes & Golden Fields",
-    stageCroatianName: "Phase 3: Nature Quest • Plitvice Lakes & Golden Fields",
+    stageBadgeLabel: "World 3: Nature Quest • Plitvice Lakes & Golden Fields",
+    stageCroatianName: "World 3: Nature Quest • Plitvice Lakes & Golden Fields",
     unitRange: [11, 15],
     solidBg: "bg-emerald-600",
     gradient: "from-emerald-600 via-teal-600 to-amber-600",
@@ -80,13 +80,13 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-emerald-600 border-emerald-400",
     nodeArrowBorder: "border-t-emerald-400",
   },
-  // Phase 4 (CR-026/CR-030): Crown Citadel (Units 16–20)
+  // World 4 (CR-026/CR-030/CR-031): Crown Citadel (Units 16–20)
   {
     id: "dubrovnik-heritage",
     stage: 4,
     stageName: "Crown Citadel",
-    stageBadgeLabel: "Phase 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
-    stageCroatianName: "Phase 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
+    stageBadgeLabel: "World 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
+    stageCroatianName: "World 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
     unitRange: [16, 20],
     solidBg: "bg-blue-900",
     gradient: "from-blue-900 via-indigo-900 to-amber-700",
