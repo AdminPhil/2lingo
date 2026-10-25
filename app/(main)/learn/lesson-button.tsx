@@ -7,6 +7,7 @@ import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { getStageThemeForUnit } from "@/lib/theme-registry";
 
 import "react-circular-progressbar/dist/styles.css";
 
@@ -17,6 +18,7 @@ type Props = {
   locked?: boolean;
   current?: boolean;
   percentage: number;
+  unitOrder?: number;
 };
 
 export const LessonButton = ({
@@ -25,8 +27,11 @@ export const LessonButton = ({
   totalCount,
   locked,
   current,
-  percentage
+  percentage,
+  unitOrder = 1,
 }: Props) => {
+  const theme = getStageThemeForUnit(unitOrder);
+
   const cycleLength = 8;
   const cycleIndex = index % cycleLength;
 
@@ -52,7 +57,7 @@ export const LessonButton = ({
 
   const href = isCompleted ? `/lesson/${id}` : "/lesson";
 
-  const buttonVariant = locked ? "locked" : isLast ? "golden" : "secondary";
+  const buttonVariant = locked ? "locked" : isLast ? "golden" : "default";
 
   const currentButtonRef = useRef<HTMLDivElement>(null);
 
@@ -89,13 +94,13 @@ export const LessonButton = ({
               "absolute -top-7 px-3 py-1.5 border-2 font-extrabold uppercase rounded-xl animate-bounce tracking-wide z-10 text-xs whitespace-nowrap shadow-md",
               isLast 
                 ? "bg-amber-50 text-amber-700 border-amber-400 left-[-8px]"
-                : "bg-white text-green-500 border-green-400 left-2.5"
+                : cn(theme.nodeBadgeClasses, "left-2.5")
             )}>
               {isLast ? "👑 Super Izazov" : "Start"}
               <div
                 className={cn(
                   "absolute left-1/2 -bottom-2 w-0 h-0 border-x-8 border-x-transparent border-t-8 transform -translate-x-1/2",
-                  isLast ? "border-t-amber-400" : "border-t-green-400"
+                  isLast ? "border-t-amber-400" : theme.nodeArrowBorder
                 )}
               />
             </div>
@@ -103,7 +108,7 @@ export const LessonButton = ({
               value={Number.isNaN(percentage) ? 0 : percentage}
               styles={{
                 path: {
-                  stroke: isLast ? "#f59e0b" : "#4ade80",
+                  stroke: isLast ? "#f59e0b" : theme.nodeStrokeColor,
                 },
                 trail: {
                   stroke: "#e5e7eb",
@@ -115,6 +120,7 @@ export const LessonButton = ({
                 variant={buttonVariant}
                 className={cn(
                   "h-[70px] w-[70px] border-b-8",
+                  !locked && !isLast && theme.nodeActiveBg,
                   isLast && !locked && "ring-4 ring-amber-300/60 ring-offset-2 animate-pulse"
                 )}
               >
@@ -125,7 +131,7 @@ export const LessonButton = ({
                       ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
                       : isLast
                       ? "fill-amber-950 text-amber-950"
-                      : "fill-primary-foreground text-primary-foreground",
+                      : "fill-white text-white",
                     isCompleted && "fill-none stroke-[4]"
                   )}
                 />
@@ -138,6 +144,7 @@ export const LessonButton = ({
             variant={buttonVariant}
             className={cn(
               "h-[70px] w-[70px] border-b-8",
+              !locked && !isLast && theme.nodeActiveBg,
               isLast && !locked && "ring-2 ring-amber-300"
             )}
           >
@@ -148,7 +155,7 @@ export const LessonButton = ({
                   ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
                   : isLast
                   ? "fill-amber-950 text-amber-950"
-                  : "fill-primary-foreground text-primary-foreground",
+                  : "fill-white text-white",
                 isCompleted && "fill-none stroke-[4]"
               )}
             />

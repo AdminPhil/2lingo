@@ -37,7 +37,7 @@ export const UnitBanner = ({
             )}
           >
             <span className="text-base leading-none">{theme.accentEmoji}</span>
-            <span>{theme.stageCroatianName}</span>
+            <span>{theme.stageBadgeLabel}</span>
           </span>
         </div>
 

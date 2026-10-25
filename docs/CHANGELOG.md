@@ -4,6 +4,25 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Learning Path Phase Color Sync & Engaging Adventure Phase Titles (CR-030)
+
+### Added & Refined
+- **[CR-030] ✅ IMPLEMENTED & VERIFIED - Phase Node Theming & Storybook Adventure Titles:**
+  - **Learning Path Node Color Synchronization (`lib/theme-registry.ts`, `app/(main)/learn/lesson-button.tsx`, `app/(main)/learn/unit.tsx`):** Circular stepping stone buttons on `/learn` now dynamically inherit the visual identity of their regional phase rather than hardcoded lime green:
+    - Phase 1 (Units 1–5): Continental Red buttons (`bg-red-500 border-red-600`), crimson progress rings (`#ef4444`), and red Start badges.
+    - Phase 2 (Units 6–10): Adriatic Azure buttons (`bg-sky-500 border-sky-600`), azure progress rings (`#0284c7`), and sky-blue Start badges.
+    - Phase 3 (Units 11–15): Emerald Pine buttons (`bg-emerald-500 border-emerald-600`), green progress rings (`#10b981`), and emerald Start badges.
+    - Phase 4 (Units 16–20): Royal Navy buttons (`bg-blue-800 border-blue-950`), navy progress rings (`#1e3a8a`), and deep blue Start badges.
+  - **English "Phase" Labeling:** Replaced Croatian `"1. Faza"`, `"2. Faza"`, etc. with clear English `"Phase 1"`, `"Phase 2"`, etc. across all unit banners.
+  - **High-Engagement Storybook Adventure Titles:** Upgraded textbook titles into exciting, quest-driven adventure milestones:
+    - Phase 1: `🏰 Phase 1: Capital Adventure • Zagreb & Castles`
+    - Phase 2: `🌊 Phase 2: Coastal Explorer • Adriatic Sea & Islands`
+    - Phase 3: `🌲 Phase 3: Nature Quest • Plitvice Lakes & Golden Fields`
+    - Phase 4: `👑 Phase 4: Crown Citadel • Ancient Dubrovnik (Capstone)`
+  - **Unit Banner Component Integration (`app/(main)/learn/unit-banner.tsx`):** Updated regional pill badge to display the new engaging adventure titles.
+
+---
+
 ## [2026-10-24] - Super Izazov Milestone Heart Reward Engine (CR-029)
 
 ### Added & Refined

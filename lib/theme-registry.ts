@@ -2,7 +2,8 @@ export type RegionTheme = {
   id: string;
   stage: number;
   stageName: string;
-  stageCroatianName: string;
+  stageBadgeLabel: string;
+  stageCroatianName: string; // Backward compatibility alias
   unitRange: [number, number];
   solidBg: string;
   gradient: string;
@@ -10,15 +11,22 @@ export type RegionTheme = {
   accentEmoji: string;
   buttonClass: string;
   accentBorder: string;
+  // Node button styling for learning path:
+  nodeActiveBg: string;
+  nodeBorderColor: string;
+  nodeStrokeColor: string;
+  nodeBadgeClasses: string;
+  nodeArrowBorder: string;
 };
 
 export const LEVEL_1_STAGES: RegionTheme[] = [
-  // Stage 1 (CR-023): Zagreb & Central Croatia (Units 1–5)
+  // Phase 1 (CR-023/CR-030): Capital Adventure (Units 1–5)
   {
     id: "zagreb-central",
     stage: 1,
-    stageName: "Zagreb & Central Croatia",
-    stageCroatianName: "1. Faza • Zagreb i Središnja Hrvatska",
+    stageName: "Capital Adventure",
+    stageBadgeLabel: "Phase 1: Capital Adventure • Zagreb & Castles",
+    stageCroatianName: "Phase 1: Capital Adventure • Zagreb & Castles",
     unitRange: [1, 5],
     solidBg: "bg-red-600",
     gradient: "from-red-600 via-rose-600 to-amber-600",
@@ -26,13 +34,19 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     accentEmoji: "🏰",
     buttonClass: "bg-white text-rose-950 hover:bg-rose-50 border-rose-300",
     accentBorder: "border-red-400/50",
+    nodeActiveBg: "bg-red-500 hover:bg-red-500/90 border-red-600 active:border-b-0 text-white",
+    nodeBorderColor: "border-red-600",
+    nodeStrokeColor: "#ef4444",
+    nodeBadgeClasses: "bg-white text-red-600 border-red-400",
+    nodeArrowBorder: "border-t-red-400",
   },
-  // Stage 2 (CR-024): Kvarner & Dalmatian Coast (Units 6–10)
+  // Phase 2 (CR-024/CR-030): Coastal Explorer (Units 6–10)
   {
     id: "dalmatia-coast",
     stage: 2,
-    stageName: "Kvarner & Dalmatian Coast",
-    stageCroatianName: "2. Faza • Kvarner i Dalmatinska Obala",
+    stageName: "Coastal Explorer",
+    stageBadgeLabel: "Phase 2: Coastal Explorer • Adriatic Sea & Islands",
+    stageCroatianName: "Phase 2: Coastal Explorer • Adriatic Sea & Islands",
     unitRange: [6, 10],
     solidBg: "bg-sky-600",
     gradient: "from-sky-500 via-blue-600 to-cyan-600",
@@ -40,13 +54,19 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     accentEmoji: "🌊",
     buttonClass: "bg-white text-blue-950 hover:bg-sky-50 border-sky-300",
     accentBorder: "border-sky-300/50",
+    nodeActiveBg: "bg-sky-500 hover:bg-sky-500/90 border-sky-600 active:border-b-0 text-white",
+    nodeBorderColor: "border-sky-600",
+    nodeStrokeColor: "#0284c7",
+    nodeBadgeClasses: "bg-white text-sky-600 border-sky-400",
+    nodeArrowBorder: "border-t-sky-400",
   },
-  // Stage 3 (CR-025): Plitvice Lakes & Slavonia (Units 11–15)
+  // Phase 3 (CR-025/CR-030): Nature Quest (Units 11–15)
   {
     id: "plitvice-slavonia",
     stage: 3,
-    stageName: "Plitvice Lakes & Slavonia",
-    stageCroatianName: "3. Faza • Plitvička Jezera i Slavonija",
+    stageName: "Nature Quest",
+    stageBadgeLabel: "Phase 3: Nature Quest • Plitvice Lakes & Golden Fields",
+    stageCroatianName: "Phase 3: Nature Quest • Plitvice Lakes & Golden Fields",
     unitRange: [11, 15],
     solidBg: "bg-emerald-600",
     gradient: "from-emerald-600 via-teal-600 to-amber-600",
@@ -54,13 +74,19 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     accentEmoji: "🌲",
     buttonClass: "bg-white text-emerald-950 hover:bg-emerald-50 border-emerald-300",
     accentBorder: "border-emerald-300/50",
+    nodeActiveBg: "bg-emerald-500 hover:bg-emerald-500/90 border-emerald-600 active:border-b-0 text-white",
+    nodeBorderColor: "border-emerald-600",
+    nodeStrokeColor: "#10b981",
+    nodeBadgeClasses: "bg-white text-emerald-600 border-emerald-400",
+    nodeArrowBorder: "border-t-emerald-400",
   },
-  // Stage 4 (CR-026): Dubrovnik & Island Heritage (Units 16–20)
+  // Phase 4 (CR-026/CR-030): Crown Citadel (Units 16–20)
   {
     id: "dubrovnik-heritage",
     stage: 4,
-    stageName: "Dubrovnik & Island Heritage",
-    stageCroatianName: "4. Faza • Dubrovnik i Otoci (Level 1 Capstone)",
+    stageName: "Crown Citadel",
+    stageBadgeLabel: "Phase 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
+    stageCroatianName: "Phase 4: Crown Citadel • Ancient Dubrovnik (Capstone)",
     unitRange: [16, 20],
     solidBg: "bg-blue-900",
     gradient: "from-blue-900 via-indigo-900 to-amber-700",
@@ -68,6 +94,11 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
     accentEmoji: "👑",
     buttonClass: "bg-amber-400 text-amber-950 hover:bg-amber-300 border-amber-500",
     accentBorder: "border-amber-400/50",
+    nodeActiveBg: "bg-blue-800 hover:bg-blue-800/90 border-blue-950 active:border-b-0 text-white",
+    nodeBorderColor: "border-blue-950",
+    nodeStrokeColor: "#1e3a8a",
+    nodeBadgeClasses: "bg-white text-blue-900 border-blue-700",
+    nodeArrowBorder: "border-t-blue-700",
   },
 ];
 
