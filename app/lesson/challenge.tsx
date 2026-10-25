@@ -20,11 +20,14 @@ export const Challenge = ({
   disabled,
   type,
 }: Props) => {
+  const hasImages = options.some((option) => Boolean(option.imageSrc));
+
   return (
     <div className={cn(
-      "grid gap-2",
+      "grid gap-2.5 sm:gap-3",
       type === "ASSIST" && "grid-cols-1",
-      type === "SELECT" && "grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(0,1fr))]"
+      type === "SELECT" && hasImages && "grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(0,1fr))]",
+      type === "SELECT" && !hasImages && "grid-cols-1 sm:grid-cols-2"
     )}>
       {options.map((option, i) => (
         <Card

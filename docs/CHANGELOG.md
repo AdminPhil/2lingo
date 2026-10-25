@@ -4,6 +4,21 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Fix Option Text Truncation in Compact SELECT Tiles (BUG-017)
+
+### Fixed & Refined
+- **[BUG-017] ✅ RESOLVED & VERIFIED - Option Text Ellipsis Truncation in SELECT Challenges:**
+  - **Dual-Mode Challenge Grid (`app/lesson/challenge.tsx`):** Added `hasImages` detection (`options.some(o => Boolean(o.imageSrc))`).
+    - For text-only `SELECT` questions (`hasImages === false`), replaced desktop 4-across packing (`lg:grid-cols-[repeat(auto-fit,minmax(0,1fr))]`) with `grid-cols-1 sm:grid-cols-2`.
+    - Restored the balanced **2×2 grid layout** on desktop and tablet, expanding option card width from ~140px to ~294px and providing 186px+ of dedicated text width.
+    - Preserved full-width 1-column layout on mobile (`< sm`), preventing cramped text on small phone viewports.
+  - **Eliminated CSS `truncate` in Card Labels (`app/lesson/card.tsx`):**
+    - Replaced `truncate` with `break-words leading-snug` (and `leading-tight` for image cards).
+    - Enabled natural line wrapping so that multi-word Croatian phrases ("Kako si?", "Laku noć", "Dobar dan", "Doviđenja") are 100% visible and never replaced by ellipsis (`...`).
+    - Added `flex-1` to text containers in `ASSIST` and compact text `SELECT` cards to allow labels to claim all available space between the keyboard hotkey badge and speaker button.
+
+---
+
 ## [2026-10-24] - Standardize Numbered Documentation Structure (1–9 Hierarchy) (CR-041)
 
 ### Added & Refined

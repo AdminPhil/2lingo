@@ -62,7 +62,7 @@ export const Card = ({
         // Different padding and height based on layout mode:
         type === "SELECT" && hasVisibleImage && "p-3 sm:p-4 lg:p-5 flex flex-col justify-between min-h-[140px]",
         type === "SELECT" && !hasVisibleImage && "p-3 sm:p-4 flex items-center justify-between min-h-[56px] w-full",
-        type === "ASSIST" && "p-3.5 lg:p-4 w-full",
+        type === "ASSIST" && "p-3.5 lg:p-4 w-full flex items-center min-h-[56px]",
         selected && "border-sky-400 bg-sky-50/70 hover:bg-sky-50/70",
         selected && status === "correct" && "border-green-400 bg-green-50/80 hover:bg-green-50/80",
         selected && status === "wrong" && "border-rose-400 bg-rose-50/80 hover:bg-rose-50/80",
@@ -102,7 +102,7 @@ export const Card = ({
           <div className="flex items-center justify-between gap-x-2 pt-1 w-full min-w-0 mt-auto">
             <p
               className={cn(
-                "text-neutral-700 text-sm lg:text-base font-bold truncate leading-tight",
+                "text-neutral-700 text-sm lg:text-base font-bold leading-tight break-words",
                 selected && "text-sky-600",
                 selected && status === "correct" && "text-green-600",
                 selected && status === "wrong" && "text-rose-600"
@@ -146,7 +146,7 @@ export const Card = ({
             {/* Option Text */}
             <p
               className={cn(
-                "text-neutral-700 text-sm lg:text-base font-bold truncate leading-tight",
+                "text-neutral-700 text-sm lg:text-base font-bold leading-snug break-words",
                 selected && "text-sky-600",
                 selected && status === "correct" && "text-green-600",
                 selected && status === "wrong" && "text-rose-600"
@@ -163,7 +163,7 @@ export const Card = ({
               e.stopPropagation();
               playSound();
             }}
-            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer"
+            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer ml-1"
             title="Read aloud"
             aria-label="Read aloud"
           >
@@ -175,7 +175,7 @@ export const Card = ({
       {/* Case 3: ASSIST (Text List Card Layout) */}
       {type === "ASSIST" && (
         <div className="flex items-center justify-between gap-x-3 w-full">
-          <div className="flex items-center gap-x-3 min-w-0">
+          <div className="flex items-center gap-x-3 min-w-0 flex-1">
             {/* Left Keyboard Shortcut Hotkey Badge */}
             <div
               className={cn(
@@ -192,7 +192,7 @@ export const Card = ({
             {/* Option Text */}
             <p
               className={cn(
-                "text-neutral-700 text-sm lg:text-base font-bold truncate",
+                "text-neutral-700 text-sm lg:text-base font-bold leading-snug break-words",
                 selected && "text-sky-600",
                 selected && status === "correct" && "text-green-600",
                 selected && status === "wrong" && "text-rose-600"
@@ -209,7 +209,7 @@ export const Card = ({
               e.stopPropagation();
               playSound();
             }}
-            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer"
+            className="p-1.5 hover:bg-black/10 rounded-lg transition text-neutral-400 hover:text-sky-600 shrink-0 cursor-pointer ml-1"
             title="Read aloud"
             aria-label="Read aloud"
           >
