@@ -24,19 +24,22 @@ type Props = {
 };
 
 const AVATAR_OPTIONS = [
-  { label: "Paško", src: "/mascot.png" },
-  { label: "Heart", src: "/heart.svg" },
-  { label: "Girl", src: "/girl.svg" },
-  { label: "Boy", src: "/boy.svg" },
-  { label: "Grandma", src: "/grandma.svg" },
-  { label: "Grandpa", src: "/grandpa.svg" },
+  { label: "Paško", src: "/avatars/pasko.png" },
+  { label: "Luka", src: "/avatars/luka.png" },
+  { label: "Mia", src: "/avatars/mia.png" },
+  { label: "Matija", src: "/avatars/matija.png" },
+  { label: "Roko", src: "/avatars/roko.png" },
+  { label: "Delfi", src: "/avatars/delfi.png" },
+  { label: "Baka", src: "/grandma.svg" },
+  { label: "Dida", src: "/grandpa.svg" },
+  { label: "Srce", src: "/heart.svg" },
 ];
 
 export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) => {
   const [childName, setChildName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("lingo123");
-  const [selectedAvatar, setSelectedAvatar] = useState("/mascot.png");
+  const [selectedAvatar, setSelectedAvatar] = useState("/avatars/pasko.png");
   const [showPassword, setShowPassword] = useState(false);
   const [copied, setCopied] = useState(false);
   const [origin, setOrigin] = useState("https://twolingo.onrender.com");
@@ -157,7 +160,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                 Choose Mascot Avatar
               </label>
-              <div className="flex items-center justify-between gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+              <div className="flex flex-wrap items-center gap-2.5 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
                 {AVATAR_OPTIONS.map((avatar) => (
                   <button
                     key={avatar.src}

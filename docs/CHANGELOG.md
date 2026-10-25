@@ -4,6 +4,24 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Croatian Heritage Avatar Collection: Luka Modrić, Mia, Matija, Roko & Delfi (CR-049)
+
+### Added & Refined
+- **[CR-049] ✅ IMPLEMENTED & VERIFIED - CroLingo Heritage Avatar Collection:**
+  - **Asset Generation & Cropping:** Processed and exported 6 high-resolution 512×512 circular-ready PNG avatars under [`public/avatars/`](file:///c:/Users/phili/Documents/phils_repo/public/avatars):
+    - `luka.png`: Young Luka Modrić caricature in #10 *šahovnica* jersey with golden curtain locks and black athletic headband.
+    - `mia.png`: Traditional Northern Croatian folk dancer in embroidered puffed blouse, red vest, and floral *vijenac*.
+    - `matija.png`: Little *Sinjska Alka* knight in navy velvet vest, golden embroidery, and tall feather plume *kalpak*.
+    - `pasko.png`: Lead Dalmatian puppy mascot with checkerboard ear and golden medallion collar.
+    - `roko.png`: Adriatic seagull in striped sailor scarf (*mornarska majica*) and captain cap.
+    - `delfi.png`: Island dolphin with blushing cheeks and checkerboard neckerchief.
+  - **UI Integration in `AddChildModal` (`components/admin/add-child-modal.tsx`):**
+    - Expanded `AVATAR_OPTIONS` from 6 to 9 options, enabling parents to choose any of the authentic heritage characters when provisioning child accounts.
+    - Upgraded selector container to `flex flex-wrap items-center gap-2.5` with active green ring highlights and hover animations.
+  - **Design System Documentation (`docs/5. DESIGN_SYSTEM.md`):** Formalized the Croatian Heritage Avatar Roster in Section 5.2.
+
+---
+
 ## [2026-10-24] - Epic 1: Seamless Onboarding, Parent Intent Routing & Shared Tablet Switcher (CR-042, CR-043, CR-044)
 
 ### Added & Refined
