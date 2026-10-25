@@ -26,8 +26,8 @@ export const Header = () => {
             />
           </div>
           <div className="flex items-center gap-x-2">
-            <h1 className="text-2xl font-black text-green-600 tracking-tight">
-              2lingo
+            <h1 className="text-2xl font-black text-blue-900 tracking-tight">
+              CroLingo
             </h1>
             <span className="hidden sm:inline-block text-[10px] font-black uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full">
               Hrvatski 🇭🇷

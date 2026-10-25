@@ -100,7 +100,7 @@ export const AddChildModal = ({ isOpen, onOpenChange, podId, podName }: Props) =
 
   const handleCopyCredentials = () => {
     if (!createdChild) return;
-    const text = `2Lingo Login for ${createdChild.name}:\nUsername: ${createdChild.username}\nPassword: ${createdChild.password}\nLogin at: https://2lingo.net`;
+    const text = `CroLingo Login for ${createdChild.name}:\nUsername: ${createdChild.username}\nPassword: ${createdChild.password}\nLogin at: https://2lingo.net`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     toast.success("Login details copied to clipboard!");

@@ -121,7 +121,7 @@ const AdminPage = async () => {
                 Parent & Educator Center
               </h1>
               <p className="text-xs text-muted-foreground hidden sm:block">
-                2lingo Croatian Family Oversight
+                CroLingo Croatian Family Oversight
               </p>
             </div>
           </div>

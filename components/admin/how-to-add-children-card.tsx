@@ -27,7 +27,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
 
   const handleCopyLink = () => {
     const link = `https://2lingo.net/?join=${inviteCode}`;
-    navigator.clipboard.writeText(`Join our 2Lingo family pod with code: ${inviteCode}\n${link}`);
+    navigator.clipboard.writeText(`Join our CroLingo family pod with code: ${inviteCode}\n${link}`);
     setCopiedLink(true);
     toast.success("Family invite link copied to clipboard!");
     setTimeout(() => setCopiedLink(false), 2000);

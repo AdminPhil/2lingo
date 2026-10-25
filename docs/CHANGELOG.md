@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Rebrand to CroLingo & National Heritage Navy Logo Typography (CR-027)
+
+### Added & Refined
+- **[CR-027] ✅ IMPLEMENTED & VERIFIED - Official Brand Name "CroLingo" & Heritage Navy Palette:**
+  - **Brand Name Elevation:** Replaced generic Duolingo-derivative "2lingo" with **CroLingo**, emphasizing dedicated focus on Croatian language and heritage education.
+  - **National Heritage Navy Typography (`#1E3A8A` / `text-blue-900`):** Replaced legacy Duolingo green (`text-green-600`) with authentic Croatian tricolor blue (*Trobojnica*) across the marketing header (`app/(marketing)/header.tsx`), main navigation sidebar (`components/sidebar.tsx`), and hero headline (`app/(marketing)/page.tsx`).
+  - **SEO & App Metadata (`app/layout.tsx`):** Upgraded root layout metadata from starter boilerplate to `"CroLingo — Learn Croatian the Playful Way"`.
+  - **Admin & Onboarding Copy:** Updated parent portal header (`app/admin/page.tsx`), onboarding greetings (`components/modals/role-onboarding-modal.tsx`), and family code cards (`components/admin/how-to-add-children-card.tsx`).
+  - **Living Design System Alignment (`docs/DESIGN_SYSTEM.md`):** Updated token catalog assigning `cro-blue-deep` (`#1E3A8A` / `blue-900`) as the primary brand typography token.
+
+---
+
 ## [2026-10-24] - Display English Translations for All Quest Stages (BUG-012)
 
 ### Fixed

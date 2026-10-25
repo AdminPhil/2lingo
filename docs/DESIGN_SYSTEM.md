@@ -66,7 +66,7 @@ flowchart LR
 | **`cro-red-primary`** | `#DC2626` | `red-600` | Croatian Coat of Arms (*Grb / Šahovnica*) | Header accent ribbon, key badges, high-impact alerts |
 | **`cro-red-licitar`** | `#E11D48` | `rose-600` | Northern Croatian *Licitarsko Srce* | Heart lives, practice mode, mistake review highlights |
 | **`cro-blue-adriatic`** | `#0284C7` | `sky-600` | Adriatic Sea (*Jadransko more*) | Primary links, interactive cards, selected quiz options |
-| **`cro-blue-deep`** | `#1E3A8A` | `blue-900` | Deep marine channel, island ferry (*trajekt*) | Advanced mastery banners, stage completion badges |
+| **`cro-blue-deep`** | `#1E3A8A` | `blue-900` | National Heritage Navy, tricolor flag (*Trobojnica*), deep Adriatic channel | **Primary CroLingo Logo Typography**, advanced mastery banners, stage completion badges |
 | **`cro-green-pine`** | `#16A34A` | `green-600` | Dalmatian pine trees, olive groves (*maslina*) | Correct answers, primary success buttons, learning path progress |
 | **`cro-gold-slavonia`** | `#F59E0B` | `amber-500` | Golden Slavonian wheat (*zlatna žitna polja*) | Streak flame, XP counters, celebration trophies, quest stars |
 | **`cro-stone-light`** | `#F8FAFC` | `slate-50` | White limestone from Island of Brač (*brački kamen*) | Clean background cards, elevated container surfaces |

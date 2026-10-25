@@ -34,8 +34,8 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
             />
           </div>
           <div className="flex flex-col">
-            <h1 className="text-2xl font-black text-green-600 tracking-tight leading-none">
-              2lingo
+            <h1 className="text-2xl font-black text-blue-900 tracking-tight leading-none">
+              CroLingo
             </h1>
             <span className="text-[10px] font-black uppercase tracking-wider text-rose-600 mt-1">
               Hrvatski 🇭🇷

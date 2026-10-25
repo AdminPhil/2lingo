@@ -123,7 +123,7 @@ export const RoleOnboardingModal = ({ initialOpen = false }: Props) => {
                 </div>
               </div>
               <DialogTitle className="text-2xl font-black tracking-tight text-slate-800">
-                🇭🇷 Dobrodošli u 2Lingo!
+                🇭🇷 Dobrodošli u CroLingo!
               </DialogTitle>
               <DialogDescription className="text-slate-500 font-medium text-sm mt-1">
                 Are you joining today as a parent or a young learner?

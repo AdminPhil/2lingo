@@ -23,7 +23,7 @@ export default async function Home() {
         <Image
           src="/pasko-hero.jpg"
           fill
-          alt="Paško the Dalmatian Pup learning Croatian with 2lingo"
+          alt="Paško the Dalmatian Pup learning Croatian with CroLingo"
           className="object-contain"
           priority
         />
@@ -42,7 +42,7 @@ export default async function Home() {
         {/* Playful Bold Headline */}
         <div className="space-y-2.5">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-800 tracking-tight leading-tight">
-            <span className="text-green-600">Bok!</span> Learn Croatian the playful way.
+            <span className="text-blue-900">Bok!</span> Learn Croatian the playful way.
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed max-w-[420px]">
             Bite-sized, engaging lessons for kids, diaspora families, and heritage learners.
