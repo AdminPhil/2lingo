@@ -3,7 +3,7 @@
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
 > **Total Change Requests:** 52 Completed (CR-001 to CR-052) | 0 Open  
-> **Total Bug Tickets:** 19 Resolved (BUG-001 to BUG-019) | 0 Open  
+> **Total Bug Tickets:** 20 Resolved (BUG-001 to BUG-020) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
@@ -90,3 +90,4 @@
 | **BUG-017** | Critical | **Option Text Ellipsis Truncation in SELECT Tiles:** Croatian phrases ("Kako si?", "Laku noć") cut off with "..." on desktop. | 4-across desktop packing (`grid-cols-4`) and CSS `truncate` class. | Replaced 4-across with balanced **2×2 grid** (`sm:grid-cols-2`) and replaced `truncate` with `break-words`. | 2026-10-24 | ✅ Resolved |
 | **BUG-018** | Medium | **Mascot Avatar Off-Center Facial Alignment in Circular Frames:** Luka, Mia, Matija, Roko, and Delfi appeared off-center compared to Paško's balanced circular portrait. | Crops were centered on full-figure centroids or skewed by accessories (plumes/hair), resulting in 18–37px facial offsets. | Re-aligned optical crop windows to lock facial centroids (eyes, nose, smile) within 1–4px of `(256, 256)`. | 2026-10-24 | ✅ Resolved |
 | **BUG-019** | Medium | **Avatar Headwear Clipping & Roko Framing:** Extreme zoom cropped Mia's floral headband and Matija's Alkar hat; Roko was zoomed into partial head. | Over-tight square crop coordinates ($240\text{px}$) removed headroom and cut off Roko's body. | Expanded crop window for Luka/Mia/Matija to include full headwear with headroom; scaled down full-body Roko with 70px margin to fit completely inside circle. | 2026-10-24 | ✅ Resolved |
+| **BUG-020** | Medium | **Matija Chin & Lower Jaw Clipping in Circular Avatars:** Bottom of Matija's chin was cut off by the circular avatar mask. | Matija's chin sat at $Y = 511$ (canvas bottom edge); circular clipping mask curves upward, cutting off features below $Y = 460$. | Re-scaled Matija to $385\text{px}$ height, elevating chin to $Y = 400$ ($102\text{px}$ clearance from bottom rim) and plume to $Y = 55$; also adjusted Luka and Mia for $88\text{px}+$ chin clearance. | 2026-10-24 | ✅ Resolved |

@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Matija Chin & Lower Jaw Clipping Remediation (BUG-020)
+
+### Fixed & Refined
+- **[BUG-020] ✅ RESOLVED & VERIFIED - Chin Clearance & Vertical Balance for Matija, Luka & Mia:**
+  - **Matija Chin Preservation:** Diagnosed that Matija's chin sat at $Y = 511$ on the $512\times512$ canvas. Because circular masks curve upward towards the bottom pole, any feature below $Y = 460$ was being clipped. Re-scaled Matija to $385\text{px}$ height, placing his chin at $Y = 400$ ($102\text{px}$ clearance from bottom circular rim) and his feather plume at $Y = 55$ ($50\text{px}+$ clearance from top).
+  - **Preventative Adjustments for Luka & Mia:** Proactively adjusted Luka and Mia to ensure their chins end at $Y \approx 424$ with $88\text{px}+$ clearance from the canvas bottom edge, preventing circular clip artifacts.
+  - **Updated Previews:** Re-rendered `add_child_modal_mockup_wider.png`, `avatar_centering_comparison.png`, and `add_child_modal_wider_preview.html`.
+
+---
+
 ## [2026-10-24] - Complete Headwear Visibility & Full-Body Roko Scaling (BUG-019)
 
 ### Fixed & Refined
