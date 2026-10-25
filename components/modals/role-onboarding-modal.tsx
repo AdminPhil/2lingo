@@ -92,8 +92,9 @@ export const RoleOnboardingModal = ({ initialOpen = false }: Props) => {
         } else if (res?.success) {
           toast.success(`🎉 Family pod "${res.pod.name}" created! Join code: ${res.pod.inviteCode}`);
           close();
-          router.push("/admin");
-          router.refresh();
+          setTimeout(() => {
+            router.push("/admin");
+          }, 150);
         }
       } catch (err) {
         toast.error("Failed to create family circle. Please try again.");

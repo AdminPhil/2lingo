@@ -33,11 +33,14 @@ export const upsertUserProgress = async (courseId: number) => {
   const existingUserProgress = await getUserProgress();
 
   if (existingUserProgress) {
-    await db.update(userProgress).set({
-      activeCourseId: courseId,
-      userName: user.firstName || user.username || "User",
-      userImageSrc: user.imageUrl || "/mascot.png",
-    });
+    await db
+      .update(userProgress)
+      .set({
+        activeCourseId: courseId,
+        userName: user.firstName || user.username || "User",
+        userImageSrc: user.imageUrl || "/mascot.png",
+      })
+      .where(eq(userProgress.userId, userId));
 
     revalidatePath("/courses");
     revalidatePath("/learn");
@@ -55,6 +58,40 @@ export const upsertUserProgress = async (courseId: number) => {
   revalidatePath("/courses");
   revalidatePath("/learn");
   redirect("/learn");
+};
+
+export const provisionDefaultLearnerProgress = async (courseId: number = 1) => {
+  const { userId } = await auth();
+  const user = await currentUser();
+
+  if (!userId) {
+    return null;
+  }
+
+  const existing = await getUserProgress();
+  if (existing) {
+    if (!existing.activeCourseId) {
+      await db
+        .update(userProgress)
+        .set({
+          activeCourseId: courseId,
+          userName: user?.firstName || user?.username || existing.userName || "Learner",
+          userImageSrc: user?.imageUrl || existing.userImageSrc || "/mascot.png",
+        })
+        .where(eq(userProgress.userId, userId));
+    }
+    return existing;
+  }
+
+  await db.insert(userProgress).values({
+    userId,
+    activeCourseId: courseId,
+    userName: user?.firstName || user?.username || "Learner",
+    userImageSrc: user?.imageUrl || "/mascot.png",
+    role: "learner",
+  });
+
+  return await getUserProgress();
 };
 
 export const reduceHearts = async (challengeId: number, selectedOptionId?: number) => {

@@ -66,8 +66,11 @@ export const ParentalGateModal = () => {
         if (res?.success) {
           toast.success("🎉 Parent & Educator access unlocked! Welcome!");
           close();
-          router.push("/admin");
-          router.refresh();
+          // Allow Radix Dialog portal to cleanly unmount from document.body
+          // before crossing from (main)/layout.tsx to /admin
+          setTimeout(() => {
+            router.push("/admin");
+          }, 150);
         }
       } catch (err) {
         toast.error("Something went wrong. Please try again.");

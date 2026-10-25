@@ -2,7 +2,7 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 63 Completed (CR-001 to CR-063) | 1 Queued (CR-064)  
+> **Total Change Requests:** 64 Completed (CR-001 to CR-064) | 0 Queued  
 > **Total Bug Tickets:** 24 Resolved (BUG-001 to BUG-024) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
@@ -75,7 +75,7 @@
 | **CR-061** | Testing / CI/CD | **GitHub Actions CI Quality Gate Automation:** Automated `.github/workflows/ci.yml` running curriculum audit, typechecks, Vitest, and Playwright before deployment. | 2026-10-25 | ✅ Verified |
 | **CR-062** | Gamification | **Automatic Daily Overnight 5-Heart Top-Up:** Once-per-day overnight refill restoring learners with `< 5` hearts back to `5/5` on a new calendar day (`last_heart_refill_date` guard + batch refill job). | 2026-10-25 | ✅ Verified |
 | **CR-063** | Design / Landing | **Landing Page Šahovnica Banner Polish & Blue Primary CTA:** Wider, more aesthetic 2-row Croatian checkerboard ribbon (`16px`), Croatian Blue `"I Already Have an Account"` button, and desktop flex-row hero image width fix. | 2026-10-25 | ✅ Verified |
-| **CR-064** | Onboarding / Bug Fix | **Fix New Parent Sign-Up Client Exception & Modal Portal Collision:** Resolves `removeChild` DOM portal crash and `Blocked aria-hidden` conflict between Clerk sign-up modal, Radix `ParentalGateModal`, and `/admin` layout transition. | 2026-10-25 | ⏳ Queued |
+| **CR-064** | Onboarding / Bug Fix | **Fix New Parent Sign-Up Client Exception & Modal Portal Collision:** Resolves `removeChild` DOM portal crash and `Blocked aria-hidden` conflict between Clerk sign-up modal, Radix `ParentalGateModal`, and `/admin` layout transition. | 2026-10-25 | ✅ Verified |
 
 ---
 

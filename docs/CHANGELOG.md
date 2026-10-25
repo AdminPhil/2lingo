@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Fix New Parent Sign-Up Client Exception & Modal Portal Collision (CR-064)
+
+### Fixed & Refined
+- **[CR-064] ✅ IMPLEMENTED & VERIFIED - Fix New Parent Sign-Up Client Exception & Modal Portal Collision:**
+  - **Resolved Clerk vs. Radix Portal Collision (`Blocked aria-hidden` & `removeChild`):** Updated `components/auto-join-pod.tsx` to blur any residual focused element inside `.cl-modalBackdrop` and wait for Clerk's modal portal to unmount before mounting Radix's `ParentalGateModal`, and replaced `router.replace("/learn")` with `window.history.replaceState` to prevent concurrent React tree transitions during modal mount.
+  - **Safe Radix Dialog Unmount Before `/admin` Transition:** Updated `components/modals/parental-gate-modal.tsx` and `components/modals/role-onboarding-modal.tsx` to close the Radix dialog first and allow `150ms` for portal cleanup before navigating across layouts (`(main)/layout.tsx` $\rightarrow$ `/admin`).
+  - **Safe Initial `user_progress` Provisioning & Query Preservation:** Added `provisionDefaultLearnerProgress` in `actions/user-progress.ts` (avoiding illegal `revalidatePath` calls during Server Component render in `app/(main)/learn/page.tsx`, adding the missing `.where(eq(userProgress.userId, userId))` clause, and preserving `?intent=parent` / `?join=CODE` query parameters).
+  - **Automatic Family Pod Provisioning & Parent Routing on `/admin`:** Updated `app/(marketing)/header.tsx` (`afterSignUpUrl="/learn?intent=parent"`) and `app/admin/page.tsx` to redirect signed-in non-admins to `/learn?intent=parent` and auto-provision a Family Circle pod if a verified parent arrives on `/admin` without an owned pod yet.
+
+---
+
 ## [2026-10-25] - Landing Page Šahovnica Banner Polish & Blue Primary CTA (CR-063)
 
 ### Added & Refined

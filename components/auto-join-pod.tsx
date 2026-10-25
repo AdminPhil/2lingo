@@ -35,10 +35,39 @@ export const AutoJoinPod = () => {
   useEffect(() => {
     if (intent === "parent" && !processedIntentRef.current) {
       processedIntentRef.current = true;
-      openParentalGate();
-      router.replace("/learn");
+
+      // Clean URL query param without triggering a concurrent Next.js route transition
+      if (typeof window !== "undefined") {
+        window.history.replaceState(null, "", "/learn");
+      }
+
+      // Wait for Clerk's modal portal (.cl-modalBackdrop) to finish unmounting
+      // before mounting Radix's ParentalGateModal to prevent aria-hidden & removeChild collisions
+      let attempts = 0;
+      const openWhenClerkModalClosed = () => {
+        const clerkBackdrop =
+          typeof document !== "undefined"
+            ? document.querySelector(".cl-modalBackdrop")
+            : null;
+
+        if (clerkBackdrop && attempts < 15) {
+          attempts += 1;
+          if (
+            document.activeElement instanceof HTMLElement &&
+            clerkBackdrop.contains(document.activeElement)
+          ) {
+            document.activeElement.blur();
+          }
+          setTimeout(openWhenClerkModalClosed, 100);
+          return;
+        }
+
+        openParentalGate();
+      };
+
+      setTimeout(openWhenClerkModalClosed, 250);
     }
-  }, [intent, openParentalGate, router]);
+  }, [intent, openParentalGate]);
 
   return null;
 };

@@ -62,7 +62,7 @@ export const Header = () => {
             <SignInButton
               mode="modal"
               afterSignInUrl="/admin"
-              afterSignUpUrl="/admin"
+              afterSignUpUrl="/learn?intent=parent"
             >
               <Button
                 size="sm"

@@ -17,9 +17,10 @@ import { auth, currentUser } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
 
 import db from "@/db/drizzle";
-import { pods, userProgress } from "@/db/schema";
+import { podMembers, pods, userProgress } from "@/db/schema";
 import { isAdmin, isSuperAdmin } from "@/lib/admin";
 import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
+import { generateRandomPodCode } from "@/lib/pod-code";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
@@ -29,13 +30,17 @@ import { HowToAddChildrenCard } from "@/components/admin/how-to-add-children-car
 import { getTrickyWordsAnalytics } from "@/db/queries";
 
 const AdminPage = async () => {
+  const { userId } = auth();
+  if (!userId) {
+    redirect("/");
+  }
+
   const adminAllowed = await isAdmin();
   if (!adminAllowed) {
-    redirect("/learn");
+    redirect("/learn?intent=parent");
   }
 
   const superAdmin = await isSuperAdmin();
-  const { userId } = auth();
   const user = await currentUser();
 
   // If Super-Admin, ensure Pod 1 (Zgomba Family) ownerId is linked to this user
@@ -45,6 +50,37 @@ const AdminPage = async () => {
     });
     if (pod1 && pod1.ownerId !== userId) {
       await db.update(pods).set({ ownerId: userId }).where(eq(pods.id, 1));
+    }
+  }
+
+  // If regular parent has no pod yet, auto-provision their Family Circle pod
+  if (!superAdmin && userId) {
+    const existingOwnedPod = await db.query.pods.findFirst({
+      where: (pods, { eq }) => eq(pods.ownerId, userId),
+    });
+    if (!existingOwnedPod) {
+      const parentFirstName = user?.firstName || user?.username || "Family";
+      const [createdPod] = await db
+        .insert(pods)
+        .values({
+          name: `${parentFirstName}'s Family Circle`,
+          type: "family",
+          inviteCode: generateRandomPodCode(),
+          ownerId: userId,
+          targetXp: 1000,
+          currentXp: 0,
+          celebrationUnlocked: false,
+          weekNumber: 1,
+        })
+        .returning();
+
+      if (createdPod) {
+        await db.insert(podMembers).values({
+          podId: createdPod.id,
+          userId,
+          role: "owner",
+        });
+      }
     }
   }
 

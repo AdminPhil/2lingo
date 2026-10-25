@@ -12,7 +12,7 @@ import {
   getUserProgress,
   getUserSubscription
 } from "@/db/queries";
-import { upsertUserProgress } from "@/actions/user-progress";
+import { provisionDefaultLearnerProgress } from "@/actions/user-progress";
 
 import { Unit } from "./unit";
 import { Header } from "./header";
@@ -48,13 +48,25 @@ const LearnPage = async ({ searchParams }: Props) => {
     unseenCheersData,
   ]);
 
+  const buildLearnRedirectUrl = () => {
+    const params = new URLSearchParams();
+    if (typeof searchParams?.intent === "string") {
+      params.set("intent", searchParams.intent);
+    }
+    if (typeof searchParams?.join === "string") {
+      params.set("join", searchParams.join);
+    }
+    const qs = params.toString();
+    return qs ? `/learn?${qs}` : "/learn";
+  };
+
   if (!userProgress || !userProgress.activeCourse) {
-    await upsertUserProgress(1);
-    redirect("/learn");
+    await provisionDefaultLearnerProgress(1);
+    redirect(buildLearnRedirectUrl());
   }
 
   if (!courseProgress) {
-    redirect("/learn");
+    redirect(buildLearnRedirectUrl());
   }
 
   const isPro = !!userSubscription?.isActive;
