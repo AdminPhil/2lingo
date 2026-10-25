@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Mobile Heritage Blue Header & Responsive Leaderboard Viewport (CR-028)
+
+### Added & Refined
+- **[CR-028] ✅ IMPLEMENTED & VERIFIED - Mobile Brand Header & Responsive Viewport Alignment:**
+  - **National Heritage Navy Mobile Header (`components/mobile-header.tsx`):** Transformed the bare green mobile bar into an authentic Croatian blue navbar (`bg-blue-900 border-b border-blue-950 shadow-xs`) featuring the white hamburger menu, circular Paško mascot avatar, crisp `"CroLingo"` typography, and `"Hrvatski 🇭🇷"` badge.
+  - **Zero Horizontal Overflow on Mobile (`components/feed-wrapper.tsx`, `app/(main)/leaderboard/page.tsx`):** Added `min-w-0 w-full max-w-full` to `FeedWrapper` and adjusted outer padding to `px-3 sm:px-6`, eliminating the horizontal clipping that caused the Leaderboard to appear left-justified and cut off on mobile devices.
+  - **Responsive Leaderboard Rows:** Removed rigid hardcoded margins (`ml-3 mr-6`), introduced responsive avatar sizing (`h-10 w-10 sm:h-12 sm:w-12`), and applied `flex-1 min-w-0 truncate` to guarantee all 5 elements (rank, avatar, name/metrics, cheer button, XP) fit cleanly on narrow mobile screens (320px–390px).
+  - **Responsive Pod Cards (`components/pod-celebration-meter.tsx`, `components/pod-switcher.tsx`, `components/pod-header.tsx`):** Added responsive column wrapping (`flex-col sm:flex-row`) and overflow boundaries, preventing cards from bursting viewport bounds.
+
+---
+
 ## [2026-10-24] - Standardize Action Gate Button Heights & 3D Depth (BUG-013)
 
 ### Fixed

@@ -80,7 +80,7 @@ const LeaderboardPage = async ({ searchParams }: Props) => {
   }));
 
   return ( 
-    <div className="flex flex-row-reverse gap-[48px] px-6">
+    <div className="flex flex-row-reverse gap-[48px] px-3 sm:px-6 w-full max-w-full">
       <StickyWrapper>
         <UserProgress
           activeCourse={userProgress.activeCourse}
@@ -128,41 +128,41 @@ const LeaderboardPage = async ({ searchParams }: Props) => {
           {leaderboard.map((user, index) => (
             <div 
               key={user.userId}
-              className="flex items-center w-full p-2 px-4 rounded-xl hover:bg-gray-200/50"
+              className="flex items-center w-full p-2 px-2.5 sm:px-4 rounded-xl hover:bg-gray-200/50 gap-x-2 sm:gap-x-3 transition-colors"
             >
-              <p className="font-bold text-lime-700 mr-4">{index + 1}</p>
+              <p className="font-bold text-lime-700 w-5 text-center shrink-0">{index + 1}</p>
               <Avatar
-                className="border bg-green-500 h-12 w-12 ml-3 mr-6"
+                className="border bg-green-500 h-10 w-10 sm:h-12 sm:w-12 shrink-0"
               >
                 <AvatarImage
                   className="object-cover"
                   src={user.userImageSrc}
                 />
               </Avatar>
-              <div className="flex-1 flex flex-col justify-center">
-                <p className="font-bold text-neutral-800">
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <p className="font-bold text-neutral-800 text-sm sm:text-base truncate">
                   {user.userName}
                 </p>
-                <p className="text-xs text-muted-foreground flex items-center gap-x-1.5 mt-0.5">
-                  <span className="flex items-center gap-x-1 text-amber-600 font-medium">
+                <p className="text-[11px] sm:text-xs text-muted-foreground flex items-center gap-x-1.5 mt-0.5 truncate">
+                  <span className="flex items-center gap-x-1 text-amber-600 font-medium shrink-0">
                     <span>🔥</span>
                     <span>{user.streak ?? 1} {(userProgress.streak ?? 1) === 1 ? "day" : "days"}</span>
                   </span>
                   <span>•</span>
-                  <span className="flex items-center gap-x-1">
+                  <span className="flex items-center gap-x-1 truncate">
                     <span>💔</span>
                     <span>{user.heartsUsed ?? 0} hearts used</span>
                   </span>
                 </p>
               </div>
-              <div className="flex items-center gap-x-3">
+              <div className="flex items-center gap-x-2 sm:gap-x-3 shrink-0">
                 <CheerButton
                   receiverId={user.userId}
                   receiverName={user.userName}
                   isCurrentUser={user.userId === userProgress.userId}
                   hasCheeredToday={todayCheeredUserIds.includes(user.userId)}
                 />
-                <p className="text-muted-foreground font-semibold min-w-[65px] text-right">
+                <p className="text-neutral-800 font-extrabold text-xs sm:text-sm text-right shrink-0 min-w-[55px]">
                   {user.points} XP
                 </p>
               </div>

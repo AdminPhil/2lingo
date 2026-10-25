@@ -87,7 +87,7 @@ export const PodHeader = ({
 
   return (
     <>
-      <div className="w-full bg-slate-50 border-2 border-slate-200/80 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+      <div className="w-full max-w-full overflow-hidden bg-slate-50 border-2 border-slate-200/80 rounded-2xl p-3.5 sm:p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
         <div className="flex items-center gap-x-3">
           <div className="p-2.5 bg-green-100 rounded-xl text-green-700">
             <Users className="h-6 w-6" />

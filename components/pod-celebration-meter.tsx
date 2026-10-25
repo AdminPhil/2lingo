@@ -61,31 +61,31 @@ export const PodCelebrationMeter = ({
         {/* Decorative corner glow */}
         <div className="absolute -top-10 -right-10 w-28 h-28 bg-amber-400/20 rounded-full blur-xl pointer-events-none" />
 
-        <div className="flex items-center justify-between mb-2.5">
-          <div className="flex items-center gap-x-2.5">
-            <div className="p-2 bg-amber-500 text-white rounded-xl shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
+          <div className="flex items-center gap-x-2.5 min-w-0">
+            <div className="p-2 bg-amber-500 text-white rounded-xl shadow-xs shrink-0">
               {isGoalMet ? (
                 <Trophy className="h-5 w-5 animate-bounce" />
               ) : (
                 <PartyPopper className="h-5 w-5" />
               )}
             </div>
-            <div>
-              <div className="flex items-center gap-x-2">
-                <span className="font-extrabold text-neutral-800 text-base sm:text-lg">
+            <div className="min-w-0">
+              <div className="flex items-center gap-x-2 flex-wrap">
+                <span className="font-extrabold text-neutral-800 text-base sm:text-lg truncate">
                   {podName} Weekly Goal
                 </span>
-                <span className="text-xs font-bold px-2 py-0.5 bg-amber-500 text-white rounded-full">
+                <span className="text-xs font-bold px-2 py-0.5 bg-amber-500 text-white rounded-full shrink-0">
                   {percentage}%
                 </span>
               </div>
-              <p className="text-xs text-amber-900/70 font-medium">
+              <p className="text-xs text-amber-900/70 font-medium truncate">
                 Collaborative Team Celebration Meter
               </p>
             </div>
           </div>
 
-          <div className="text-right">
+          <div className="text-left sm:text-right shrink-0">
             <span className="text-sm sm:text-base font-black text-amber-950 font-mono">
               {currentXp}
             </span>

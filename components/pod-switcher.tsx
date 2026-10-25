@@ -37,7 +37,7 @@ export const PodSwitcher = ({ pods, activePodId }: Props) => {
 
   return (
     <div className="w-full mb-6">
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white border-2 border-slate-200/80 rounded-2xl p-3 sm:px-4 shadow-xs">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white border-2 border-slate-200/80 rounded-2xl p-3 sm:px-4 shadow-xs w-full max-w-full overflow-hidden">
         {/* Pod Selector / Indicator */}
         <div className="flex items-center gap-x-3 overflow-x-auto py-1">
           <div className="p-2 bg-green-100 rounded-xl text-green-700 shrink-0">
