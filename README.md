@@ -123,6 +123,7 @@ For in-depth guides, pedagogical rules, and architecture specs, explore the [`do
 
 | Document | Purpose |
 | :--- | :--- |
+| 🛠️ **[`docs/DEVELOPMENT_AND_SETUP.md`](./docs/DEVELOPMENT_AND_SETUP.md)** | **Local Setup & Environment Playbook:** Complete `.env.local` dictionary, seeding lifecycle, Super-Admin role assignment, and neural audio generation. |
 | 📋 **[`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)** | **Mandatory Pre-Merge Protocol:** The 4-point review checklist required for PRs and agent tasks. |
 | 📚 **[`docs/CURRICULUM_STANDARDS.md`](./docs/CURRICULUM_STANDARDS.md)** | **Pedagogical Specification Contract:** The formal rules asserted by CI/CD audits ("3 + 1" Unit Arc, Deductive Elimination, Progressive Fading, 2×2 Grid). |
 | 📖 **[`docs/LESSON_PLANNING_GUIDE.md`](./docs/LESSON_PLANNING_GUIDE.md)** | **Authoring Playbook:** Step-by-step tutorial, unit creation templates, and vocabulary rubrics for curriculum authors. |

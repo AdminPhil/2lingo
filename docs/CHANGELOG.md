@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Author docs/DEVELOPMENT_AND_SETUP.md Developer Guide (CR-036)
+
+### Added & Refined
+- **[CR-036] ✅ IMPLEMENTED & VERIFIED - Dedicated Developer Setup & Environment Playbook:**
+  - **Comprehensive `docs/DEVELOPMENT_AND_SETUP.md`:** Published the complete local onboarding manual for developers, contractors, and AI agents.
+  - **Complete `.env.local` Dictionary:** Field-by-field reference explaining the purpose, source dashboard, and default local values for every key (`DATABASE_URL`, Clerk publishable & secret keys, redirection URLs, `NEXT_PUBLIC_APP_URL`, `ADMIN_EMAILS`, `SUPER_ADMIN_USER_IDS`, `STRIPE_API_KEY`, `RENDER_API_KEY`, `RENDER_SERVICE_ID`).
+  - **Database Lifecycle:** Step-by-step guidance on running `npm run db:push`, `npm run db:seed`, and `npm run db:studio`, with explicit protocols safeguarding live production learner progress.
+  - **Super-Admin & Test Pod Provisioning:** Detailed instructions for configuring administrative credentials, accessing `/admin`, creating family circles, and provisioning test young learners via `AddChildModal`.
+  - **Croatian Neural Audio Pipeline:** Guide on setting up `edge-tts` and executing `scripts/generate_croatian_audio.py` using `hr-HR-GabrijelaNeural` at `-5%` rate.
+
+---
+
 ## [2026-10-24] - Centralize Architecture Specification & Streamline Gamification (CR-035)
 
 ### Added & Refined
