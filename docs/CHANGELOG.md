@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Multi-Select User Assignment in AddMemberToPodModal (BUG-023)
+
+### Fixed & Refined
+- **[BUG-023] ✅ RESOLVED & VERIFIED - Multi-Select User Assignment & Batch Enrollment in Pods:**
+  - **Issue Identified:** When assigning learners or family members to a pod in the Admin / Pod Management portal, `AddMemberToPodModal` only permitted selecting a single user via circular radio buttons. Administrators onboarding multiple children or students into a classroom or family pod had to reopen the modal repeatedly for each individual user.
+  - **Multi-Select State & UI Controls:**
+    - Upgraded modal selection state from `selectedUserId: string | null` to `selectedUserIds: string[]`.
+    - Replaced radio selection circles with high-contrast squircle checkboxes (`rounded-md`, green with bold checkmark icon when selected, subtle border when unselected).
+    - Added "Select All" / "Deselect All" one-click action that automatically filters out existing pod members.
+    - Added live counter pill badge (`X selected`) next to available count.
+    - Updated modal footer button dynamically: `"Add to Pod"` when 0 or 1 user selected, `"Add X Users to Pod"` when multiple users selected.
+    - Replaced generic placeholder avatar fallback with Paško (`/avatars/pasko.png`).
+  - **Batch Server Action Engine:**
+    - Implemented `adminAddUsersToPod(podId, targetUserIds, role)` in `actions/pod.ts`.
+    - Validates caller permissions (pod owner or super-admin), validates target pod existence, loops idempotently over all target users (updating role if already present, inserting into `pod_members` if new), and revalidates `/admin`, `/leaderboard`, and `/learn`.
+  - **Interactive Mockup & Previews:**
+    - Authored high-fidelity Generative UI widget `add_user_to_pod_multiselect_preview.html`.
+    - Rendered pixel-perfect $565\times822\text{ px}$ screenshot mockup `add_user_to_pod_multiselect_mockup.png`.
+
+---
+
 ## [2026-10-24] - Purge "ROKO" & "DELFI" Printed Names Inside Avatar Assets (BUG-022)
 
 ### Fixed & Refined

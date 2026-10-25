@@ -239,3 +239,58 @@ export const adminAddUserToPod = async (
 
   return { success: true };
 };
+
+export const adminAddUsersToPod = async (
+  podId: number,
+  targetUserIds: string[],
+  role: "member" | "admin" = "member"
+) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  if (!targetUserIds || targetUserIds.length === 0) {
+    return { error: "No users selected." };
+  }
+
+  const targetPod = await db.query.pods.findFirst({
+    where: eq(pods.id, podId),
+  });
+
+  if (!targetPod) {
+    return { error: "Pod not found." };
+  }
+
+  const superAdmin = await isSuperAdmin();
+  if (targetPod.ownerId !== userId && !superAdmin) {
+    return { error: "Only the pod owner or super administrator can add members to this pod." };
+  }
+
+  for (const targetUserId of targetUserIds) {
+    const existingMember = await db.query.podMembers.findFirst({
+      where: and(
+        eq(podMembers.podId, podId),
+        eq(podMembers.userId, targetUserId),
+      ),
+    });
+
+    if (existingMember) {
+      if (existingMember.role !== role) {
+        await db.update(podMembers).set({ role }).where(eq(podMembers.id, existingMember.id));
+      }
+    } else {
+      await db.insert(podMembers).values({
+        podId,
+        userId: targetUserId,
+        role,
+      });
+    }
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/leaderboard");
+  revalidatePath("/learn");
+
+  return { success: true, count: targetUserIds.length };
+};

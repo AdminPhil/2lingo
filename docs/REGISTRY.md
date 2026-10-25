@@ -3,7 +3,7 @@
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
 > **Total Change Requests:** 52 Completed (CR-001 to CR-052) | 0 Open  
-> **Total Bug Tickets:** 22 Resolved (BUG-001 to BUG-022) | 0 Open  
+> **Total Bug Tickets:** 23 Resolved (BUG-001 to BUG-023) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
@@ -93,3 +93,4 @@
 | **BUG-020** | Medium | **Matija Chin & Lower Jaw Clipping in Circular Avatars:** Bottom of Matija's chin was cut off by the circular avatar mask. | Matija's chin sat at $Y = 511$ (canvas bottom edge); circular clipping mask curves upward, cutting off features below $Y = 460$. | Re-scaled Matija to $385\text{px}$ height, elevating chin to $Y = 400$ ($102\text{px}$ clearance from bottom rim) and plume to $Y = 55$; also adjusted Luka and Mia for $88\text{px}+$ chin clearance. | 2026-10-24 | ✅ Resolved |
 | **BUG-021** | Low | **Bottom Caption Text Artifacts Under Roko & Delfi:** Residual concept sheet subtitle caption text appeared beneath Roko's feet and Delfi's splash. | The vertical crop boundary extended down to $Y = 695$ on the concept sheet, capturing subtitle text situated between $Y = 665$ and $Y = 690$. | Terminated crop window at $Y = 652$ (strictly above subtitle text and below feet/splash), leaving $75\text{px}+$ of pure white space below both characters. | 2026-10-24 | ✅ Resolved |
 | **BUG-022** | Low | **Character Name Text Inside Roko & Delfi Avatars:** The printed names "ROKO" and "DELFI" from the concept art sheet were still present inside the avatar image right under their feet and splash. | On the concept art sheet, the name banners were situated at $Y = [625, 650]$ directly below the figures; previous crop bounded at $Y = 652$, capturing the names. | Raised crop floor to $Y = 590$ (directly below feet and water droplets, $35\text{px}$ above name banners), leaving clean solid white background with 0 black text pixels below character figures. | 2026-10-24 | ✅ Resolved |
+| **BUG-023** | Medium | **Single-Select Limitation in Add Member to Pod Modal:** Adding multiple learners to a family or classroom pod required reopening the modal repeatedly for each individual user. | Modal state only supported single `selectedUserId: string | null` and radio circles; server action only processed one user per invocation. | Upgraded modal to multi-select with `selectedUserIds: string[]`, squircle checkboxes, "Select All" toggle, live count badge, dynamic submit button, and `adminAddUsersToPod` batch server action. | 2026-10-24 | ✅ Resolved |

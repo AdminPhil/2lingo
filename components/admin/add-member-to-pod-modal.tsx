@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { adminAddUserToPod } from "@/actions/pod";
+import { adminAddUsersToPod } from "@/actions/pod";
 
 type UserOption = {
   userId: string;
@@ -41,13 +41,13 @@ export const AddMemberToPodModal = ({
   availableUsers,
 }: Props) => {
   const [search, setSearch] = useState("");
-  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+  const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
   const [role, setRole] = useState<"member" | "admin">("member");
   const [pending, startTransition] = useTransition();
 
   const handleClose = () => {
     setSearch("");
-    setSelectedUserId(null);
+    setSelectedUserIds([]);
     setRole("member");
     onOpenChange(false);
   };
@@ -57,26 +57,52 @@ export const AddMemberToPodModal = ({
     user.userId.toLowerCase().includes(search.toLowerCase())
   );
 
+  const availableEligibleUsers = filteredUsers.filter(
+    (u) => !existingMemberIds.includes(u.userId)
+  );
+
+  const allEligibleSelected =
+    availableEligibleUsers.length > 0 &&
+    availableEligibleUsers.every((u) => selectedUserIds.includes(u.userId));
+
+  const toggleSelectUser = (id: string) => {
+    setSelectedUserIds((prev) =>
+      prev.includes(id) ? prev.filter((u) => u !== id) : [...prev, id]
+    );
+  };
+
+  const handleToggleSelectAll = () => {
+    if (allEligibleSelected) {
+      setSelectedUserIds((prev) =>
+        prev.filter((id) => !availableEligibleUsers.some((u) => u.userId === id))
+      );
+    } else {
+      const eligibleIds = availableEligibleUsers.map((u) => u.userId);
+      setSelectedUserIds((prev) => Array.from(new Set([...prev, ...eligibleIds])));
+    }
+  };
+
   const handleAdd = () => {
-    if (!selectedUserId) {
-      toast.error("Please select a user to add.");
+    if (selectedUserIds.length === 0) {
+      toast.error("Please select at least one user to add.");
       return;
     }
 
     startTransition(async () => {
       try {
-        const res = await adminAddUserToPod(podId, selectedUserId, role);
+        const res = await adminAddUsersToPod(podId, selectedUserIds, role);
         if (res?.error) {
           toast.error(res.error);
         } else {
-          const addedUser = availableUsers.find((u) => u.userId === selectedUserId);
+          const count = selectedUserIds.length;
+          const roleLabel = role === "admin" ? "Pod Admin" : "Learner";
           toast.success(
-            `Added ${addedUser?.userName || "user"} to ${podName} as ${role === "admin" ? "Pod Admin" : "Learner"}!`
+            `Added ${count} ${count === 1 ? "user" : "users"} to ${podName} as ${roleLabel}!`
           );
           handleClose();
         }
       } catch {
-        toast.error("Failed to add user to pod.");
+        toast.error("Failed to add users to pod.");
       }
     });
   };
@@ -120,10 +146,30 @@ export const AddMemberToPodModal = ({
 
           {/* User Selection List */}
           <div>
-            <label className="text-xs font-bold text-slate-700 block mb-1.5">
-              Select User ({filteredUsers.length} available)
-            </label>
-            <div className="max-h-52 overflow-y-auto space-y-1.5 border border-slate-200 rounded-xl p-2 bg-slate-50/50">
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-xs font-bold text-slate-700">
+                Select Users ({filteredUsers.length} available)
+              </label>
+              <div className="flex items-center gap-2">
+                {selectedUserIds.length > 0 && (
+                  <span className="text-[11px] font-bold text-green-700 bg-green-100 border border-green-200 px-2 py-0.5 rounded-full">
+                    {selectedUserIds.length} selected
+                  </span>
+                )}
+                {availableEligibleUsers.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={handleToggleSelectAll}
+                    disabled={pending}
+                    className="text-[11px] font-bold text-blue-600 hover:text-blue-800 transition cursor-pointer"
+                  >
+                    {allEligibleSelected ? "Deselect All" : "Select All"}
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="max-h-56 overflow-y-auto space-y-1.5 border border-slate-200 rounded-xl p-2 bg-slate-50/50">
               {filteredUsers.length === 0 ? (
                 <div className="py-6 text-center text-xs text-muted-foreground">
                   No users found matching &ldquo;{search}&rdquo;.
@@ -131,15 +177,15 @@ export const AddMemberToPodModal = ({
               ) : (
                 filteredUsers.map((user) => {
                   const isAlreadyMember = existingMemberIds.includes(user.userId);
-                  const isSelected = selectedUserId === user.userId;
+                  const isSelected = selectedUserIds.includes(user.userId);
 
                   return (
                     <button
                       key={user.userId}
                       type="button"
                       disabled={isAlreadyMember || pending}
-                      onClick={() => setSelectedUserId(user.userId)}
-                      className={`w-full flex items-center justify-between p-2 rounded-lg text-left transition border ${
+                      onClick={() => toggleSelectUser(user.userId)}
+                      className={`w-full flex items-center justify-between p-2 rounded-xl text-left transition border cursor-pointer ${
                         isSelected
                           ? "bg-green-50 border-green-500 shadow-xs"
                           : isAlreadyMember
@@ -150,7 +196,7 @@ export const AddMemberToPodModal = ({
                       <div className="flex items-center gap-x-2.5 min-w-0">
                         <div className="relative w-8 h-8 rounded-full overflow-hidden bg-slate-200 shrink-0 border border-slate-300">
                           <Image
-                            src={user.userImageSrc || "/mascot.png"}
+                            src={user.userImageSrc || "/avatars/pasko.png"}
                             alt={user.userName}
                             fill
                             className="object-cover"
@@ -172,11 +218,11 @@ export const AddMemberToPodModal = ({
                             In Pod
                           </span>
                         ) : isSelected ? (
-                          <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center">
-                            <Check className="h-3.5 w-3.5" />
+                          <div className="w-5 h-5 bg-green-500 text-white rounded-md flex items-center justify-center shadow-xs">
+                            <Check className="h-3.5 w-3.5 stroke-[3]" />
                           </div>
                         ) : (
-                          <div className="w-4 h-4 rounded-full border-2 border-slate-300" />
+                          <div className="w-5 h-5 rounded-md border-2 border-slate-300 bg-white hover:border-slate-400 transition-colors" />
                         )}
                       </div>
                     </button>
@@ -261,10 +307,16 @@ export const AddMemberToPodModal = ({
             variant="primary"
             size="sm"
             onClick={handleAdd}
-            disabled={!selectedUserId || pending}
+            disabled={selectedUserIds.length === 0 || pending}
             className="bg-green-600 hover:bg-green-700 text-white font-extrabold text-xs px-4"
           >
-            {pending ? "Adding..." : "Add to Pod"}
+            {pending ? (
+              "Adding..."
+            ) : selectedUserIds.length <= 1 ? (
+              "Add to Pod"
+            ) : (
+              `Add ${selectedUserIds.length} Users to Pod`
+            )}
           </Button>
         </DialogFooter>
       </DialogContent>
