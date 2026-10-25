@@ -129,5 +129,6 @@ For in-depth guides, pedagogical rules, and architecture specs, explore the [`do
 | 📖 **[`docs/LESSON_PLANNING_GUIDE.md`](./docs/LESSON_PLANNING_GUIDE.md)** | **Authoring Playbook:** Step-by-step tutorial, unit creation templates, and vocabulary rubrics for curriculum authors. |
 | 🎨 **[`docs/DESIGN_SYSTEM.md`](./docs/DESIGN_SYSTEM.md)** | **Living Design System:** Croatian color palette, regional World progression, Paško mascot guidelines, and 3D tactile UI styles. |
 | ❤️ **[`docs/HEARTS_AND_GAMIFICATION.md`](./docs/HEARTS_AND_GAMIFICATION.md)** | **Gamification Engine:** Practice-to-Earn hearts, Super Izazov rewards, streaks, and family pod leaderboards. |
-| ⚙️ **[`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)** | **Engineering Architecture:** Database sequences, Clerk sync, Render hosting, and deployment pipelines. |
+| ⚙️ **[`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)** | **Engineering Architecture:** High-level system topology, Clerk sync, Render hosting, and deployment pipelines. |
+| 🗄️ **[`docs/DATABASE_AND_DATA_MODEL.md`](./docs/DATABASE_AND_DATA_MODEL.md)** | **Database & Data Models:** Dual-domain ERD, 12-table schema dictionary, state machines, and zero-data-loss invariants. |
 | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |

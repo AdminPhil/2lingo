@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Author docs/DATABASE_AND_DATA_MODEL.md Data Architecture (CR-037)
+
+### Added & Refined
+- **[CR-037] ✅ IMPLEMENTED & VERIFIED - Dedicated Database Architecture & State Machine Specification:**
+  - **Dual-Domain Mermaid ERD (`docs/DATABASE_AND_DATA_MODEL.md`):** Modeled the complete entity relationships across the **Curriculum Domain** (`courses` → `units` → `lessons` → `challenges` → `challenge_options`) and the **User & Social Domain** (`user_progress` ↔ `pods` ↔ `pod_members` ↔ `challenge_progress` ↔ `challenge_mistakes` ↔ `pod_reactions` ↔ `user_subscription`).
+  - **Schema Dictionary:** Documented field-level specifications across all 12 tables, detailing primary keys, foreign key cascades, nullability, and default values.
+  - **Operational State Machines:** Visualized state transitions for challenge submission and scoring, heart energy and practice refills, daily streak habits, and weekly pod celebration meters.
+  - **Drizzle Migration & Sequence Protocols:** Formalized `npm run db:push` workflows and sequence synchronization (`SELECT setval(...)`).
+  - **Strict Zero Data Loss Invariant:** Codified policies protecting live production learner records and XP during curriculum re-seeding.
+
+---
+
 ## [2026-10-24] - Author docs/DEVELOPMENT_AND_SETUP.md Developer Guide (CR-036)
 
 ### Added & Refined
