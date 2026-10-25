@@ -2,7 +2,7 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 50 Completed (CR-001 to CR-050) | 0 Open  
+> **Total Change Requests:** 51 Completed (CR-001 to CR-051) | 0 Open  
 > **Total Bug Tickets:** 17 Resolved (BUG-001 to BUG-017) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
@@ -62,6 +62,7 @@
 | **CR-048** | Security / Quota | **Classroom-Aware Rate Limiting & Abuse Protection:** Pod capacity tiered to 15 (family) / 50 (classroom); capped creations at 60/hr. | 2026-10-24 | ✅ Verified |
 | **CR-049** | Design / Mascots | **Croatian Heritage Avatar Suite:** Cropped and integrated Luka Modrić caricature, Mia, Matija, Paško, Roko, and Delfi into avatar selector. | 2026-10-24 | ✅ Verified |
 | **CR-050** | Navigation | **Remove Shop from Sidebar & Add Governance Safeguard:** Pruned errant Shop link from sidebar; added permanent rule to prevent regressions. | 2026-10-24 | ✅ Verified |
+| **CR-051** | Design / UI | **Avatar Framing Polish & Text Removal:** Re-centered avatars to 80% frame fill, removed text from Roko and Delfi, and normalized white backgrounds. | 2026-10-24 | ✅ Verified |
 
 ---
 

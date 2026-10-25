@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Mascot Avatar Framing Polish, Text Banner Removal & Modal Mockup (CR-051)
+
+### Fixed & Refined
+- **[CR-051] ✅ RESOLVED & VERIFIED - Avatar Tight Portrait Reframing & Asset Polish:**
+  - **Text Banner Removal:** Re-cropped `roko.png` and `delfi.png` below the concept sheet heading lines, completely eliminating the stray *"Roko The Adriatic Seagull"* and *"Delfi The Island Dolphin"* text headers.
+  - **Uniform 80% Frame Fill:** Re-centered and scaled Luka (golden locks & #10 collar), Mia (floral *vijenac* & braids), and Matija (Alkar *kalpak* & face) so that all character faces fill 78–85% of the circular frame, matching Paško's visual weight.
+  - **Pure White Background Normalization:** Remapped the cream background of Roko and Delfi to pure solid white (`#FFFFFF`) to seamlessly blend with the avatar picker container.
+  - **High-Fidelity $572\times788$ Mockup:** Generated a pixel-perfect mockup of `AddChildModal` matching the user's exact screen dimensions.
+
+---
+
 ## [2026-10-24] - Epic 2: Production Security Hardening & Vulnerability Remediation (CR-045, CR-046, CR-047, CR-048)
 
 ### Security & Hardening
