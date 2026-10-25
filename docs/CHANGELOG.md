@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Consolidate Curriculum Standards & Lesson Planning Guide (CR-033)
+
+### Added & Refined
+- **[CR-033] ✅ IMPLEMENTED & VERIFIED - Separation of Concerns in Core Pedagogical Documentation:**
+  - **`docs/CURRICULUM_STANDARDS.md` (The Invariant Specification Contract):** Refactored into a concise, declarative, and formal specification defining what constitutes a valid unit. Directly maps each specification rule to the automated CI/CD validator (`scripts/audit-curriculum-rules.ts`).
+  - **`docs/LESSON_PLANNING_GUIDE.md` (The Authoring Playbook & How-To Tutorial):** Stripped out duplicate specification tables and verbatim copy; converted into a dedicated instructional playbook for authors and educators with step-by-step authoring workflows, templates, cognitive scaffolding rubrics, and the complete Unit 14 walkthrough.
+  - **Cross-Referenced Architecture:** Linked the Authoring Playbook directly to the Invariant Specification Contract, eliminating risk of documentation drift.
+  - **Brand Synchronization:** Updated legacy branding from "2lingo" to "CroLingo".
+
+---
+
 ## [2026-10-24] - Rename World 4 to King's Landing & Span Top Badge Across Banner (CR-032)
 
 ### Added & Refined

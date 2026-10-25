@@ -1,43 +1,40 @@
-# 📖 2lingo Lesson Planning & Curriculum Authoring Guide
+# 📖 CroLingo Lesson Planning & Curriculum Authoring Playbook
 
-> **Document Status:** 🏛️ **ACTIVE CURRICULUM AUTHORING STANDARD**  
+> **Document Status:** 🏛️ **ACTIVE CURRICULUM AUTHORING GUIDE**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Audience:** Curriculum Authors, Native Croatian Educators, Linguists, and Software Engineers  
-> **Companion Documents:** [`docs/CURRICULUM_STANDARDS.md`](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md) (The Invariant Constitution), [`docs/DESIGN_SYSTEM.md`](file:///c:/Users/phili/Documents/phils_repo/docs/DESIGN_SYSTEM.md) (Visuals & Regional Stages)
+> **Audience:** Curriculum Authors, Native Croatian Educators, Linguists, and Engineers  
+> **Specification Contract:** For the formal invariant rules enforced by automated CI/CD audits, see [`docs/CURRICULUM_STANDARDS.md`](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md).  
+> **Design & Theming:** For regional visual themes and World progression, see [`docs/DESIGN_SYSTEM.md`](file:///c:/Users/phili/Documents/phils_repo/docs/DESIGN_SYSTEM.md).
 
 ---
 
 ## 1. Pedagogical Philosophy & Audience
 
 ### 1.1 The Learner Profile
-2lingo is engineered specifically for **diaspora children, heritage learners, and young families** (ages 5–14+). 
-- **The Emotional Hurdle:** Heritage learners often experience *linguistic anxiety*—feeling shy or embarrassed when speaking around fluent relatives (Baka, Deda, cousins).
-- **The Core Pedagogical Mandate:** Every lesson must be **low-friction, anxiety-free, and high in positive dopamine**. We never test an unlearned word without visual or deductive scaffolding. Guessing should feel like an exciting detective mystery ("Aha!"), never a frustrating blind 25% coin toss.
+CroLingo is engineered specifically for **diaspora children, heritage learners, and young families** (ages 5–14+). 
+- **The Emotional Hurdle:** Heritage learners often experience *linguistic anxiety*—feeling shy or embarrassed when speaking around fluent relatives (*Baka, Dida, rođaci*).
+- **The Core Pedagogical Mandate:** Every lesson must be **low-friction, anxiety-free, and high in positive dopamine**. We never test an unlearned word without visual or deductive scaffolding. Guessing should feel like an exciting detective mystery ("Aha!"), never a frustrating blind coin toss.
 
 ---
 
-## 2. The Anatomy of a 2lingo Unit: The "3 + 1" Arc
+## 2. The Pedagogical Flow of a Unit: The "3 + 1" Arc
 
-Every unit in the 2lingo curriculum consists of **exactly 4 lessons** (typically ~18 to 22 challenge prompts total). Each lesson has a distinct pedagogical function:
+Every unit in CroLingo guides the learner through a structured 4-lesson progression designed to move them from zero-knowledge visual discovery to long-term auditory retention:
 
 ```mermaid
 flowchart LR
     L1["Lesson 1: Visual Discovery<br/>🖼️ Images ON<br/>🎯 4 Core Nouns"] 
     --> L2["Lesson 2: Sensory Recall & Verbs<br/>🚫 Images OFF<br/>🎯 Actions & Verb Pairs"] 
     --> L3["Lesson 3: Modular Sentences<br/>🚫 Images OFF<br/>🎯 Compound Phrases & Deduction"] 
-    --> L4["Lesson 4: Super Izazov (Boss Quest)<br/>👑 Images OFF<br/>🏆 Retention & Golden Crown"]
+    --> L4["Lesson 4: Super Izazov (Boss Quest)<br/>👑 Images OFF<br/>🏆 Retention & Golden Crown (+1 Heart)"]
 ```
 
-| Lesson | Focus | Pedagogical Mechanism | Visuals (`imageSrc`) | Audio (`audioSrc`) | Challenge Count |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| **Lesson 1** | **Visual Vocabulary Discovery** | Introduces 4 core target nouns for the first time with zero anxiety. | **ON** (`kid vector SVG`) | Gabrijela Neural | 4 – 5 challenges |
-| **Lesson 2** | **Active Practice & Verbs** | Fades visuals. Introduces action verbs or sensory adjective pairs. | **NULL** (Active Recall) | Gabrijela Neural | 4 – 5 challenges |
-| **Lesson 3** | **Modular Compound Sentences** | Connects prior-unit nouns with new verbs (*Subject + Verb + Object*). | **NULL** (Comprehension) | Gabrijela Neural | 4 – 5 challenges |
-| **Lesson 4** | **👑 Super Izazov (Boss Quest)** | Cumulative review of the unit. Tests true retrieval; awards Golden Crown. | **NULL** (True Retention) | Gabrijela Neural | 5 – 6 challenges |
+> [!NOTE]
+> For the strict database schema constraints, challenge counts, and progressive fading specifications of this arc, refer to the formal contract in [CURRICULUM_STANDARDS.md § 1](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#1-the-3--1-unit-arc-specification).
 
 ---
 
-## 3. Step-by-Step Lesson Plan Creation Workflow
+## 3. Step-by-Step Unit Authoring Workflow
 
 Follow these 8 steps when authoring any new unit (e.g., Units 21 through 120):
 
@@ -54,22 +51,22 @@ flowchart TD
 
 ### Step 1: Select Unit Theme & Cultural Setting
 - Pick a concrete, child-friendly topic (e.g., *At the Bakery*, *Summer at the Coast*, *Animals on the Farm*, *Sports Day*).
-- Align with the **Regional Journey Stage** defined in [`docs/DESIGN_SYSTEM.md`](file:///c:/Users/phili/Documents/phils_repo/docs/DESIGN_SYSTEM.md) (e.g. Continental, Dalmatian Coast, Slavonia, or Istria).
+- Align with the **Regional World Journey** defined in [`docs/DESIGN_SYSTEM.md`](file:///c:/Users/phili/Documents/phils_repo/docs/DESIGN_SYSTEM.md) (e.g., World 1: Zagreb, World 2: Adriatic Coast, World 3: Plitvice & Slavonia, World 4: King's Landing & Dubrovnik).
 
 ### Step 2: Choose 4 Target Nouns & 2 Action Verbs
 Every unit introduces:
-- **4 Core Nouns** (Concrete, tangible items easy to illustrate: e.g. *Burek*, *Kruh*, *Jabuka*, *Sir*).
-- **2 Paired Verbs or Descriptive Adjectives** (e.g. *Kupiti* / To buy, *Jesti* / To eat, or *Toplo* / Warm, *Svježe* / Fresh).
+- **4 Core Nouns:** Concrete, tangible items easy to illustrate (e.g., *Burek*, *Kruh*, *Jabuka*, *Sir*).
+- **2 Paired Verbs or Descriptive Adjectives:** (e.g., *Kupiti* / To buy, *Jesti* / To eat, or *Toplo* / Warm, *Svježe* / Fresh).
 
 ### Step 3: Author Lesson 1 (Visual Discovery)
 - Introduce each of the 4 nouns individually with `imageSrc` attached.
 - Prompt: `"Which of these is 'Bread'?"` → Choices: *Kruh* (with `/bread.svg`), *Jabuka* (with `/apple.svg`), etc.
-- **Rule:** Lesson 1 is the **only** lesson where `imageSrc` is permitted.
+- **Rule:** Lesson 1 is the **only** lesson where `imageSrc` is permitted ([CURRICULUM_STANDARDS.md § 3](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#3-progressive-scaffolding-fading-invariant)).
 
 ### Step 4: Author Lesson 2 (Sensory Recall & Actions)
-- **Remove all images (`imageSrc = null`).**
+- Remove all images (`imageSrc = null`).
 - Test the 4 nouns purely by reading and listening.
-- Introduce the unit's 2 core action verbs using **Deductive Elimination** (see Section 4 below).
+- Introduce the unit's 2 core action verbs using **Deductive Elimination** (see Section 4).
 
 ### Step 5: Author Lesson 3 (Modular Compound Sentences)
 - Construct simple, reusable 3-word sentences:
@@ -80,7 +77,7 @@ Every unit introduces:
 ### Step 6: Author Lesson 4 (Super Izazov — Boss Quest)
 - Mix all 4 nouns, the 2 verbs, and the compound sentences in a cumulative review.
 - Challenge difficulty escalates from word recognition to auditory phrase translation.
-- Finishing Lesson 4 unlocks the **Golden Trophy Crown** on the unit map and awards celebratory pod XP.
+- Finishing Lesson 4 unlocks the **Golden Trophy Crown** on the unit map and awards **+1 Heart** ([CR-029](file:///c:/Users/phili/Documents/phils_repo/docs/CHANGELOG.md)).
 
 ### Step 7: Generate & Verify Neural Audio Assets
 - 100% of challenge options and prompt phrases must have high-quality audio synthesized using Azure Cognitive Services:
@@ -98,36 +95,26 @@ The script validates zero missing audio, zero broken SVGs, zero illegal images o
 
 ---
 
-## 4. The Deductive Elimination ("Aha!") Distractor Standard
+## 4. Authoring Deductive Elimination Distractors
 
-This is 2lingo's most vital pedagogical mechanism. 
+Deductive Elimination is CroLingo's primary cognitive scaffolding technique. Rather than guessing randomly, the child eliminates known words to discover the new word.
 
-When introducing a net-new word or phrase in Lessons 2, 3, or 4 where images are turned off:
-1. **Never use unfamiliar words as distractors.** That creates an unfair 25% blind guess.
-2. **The 3 distractors MUST be words the child already mastered in earlier units.**
+> [!IMPORTANT]
+> The formal mathematical constraints for deductive distractors (target isolation, mastered pool selection, and semantic divergence) are codified in [CURRICULUM_STANDARDS.md § 2](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#2-deductive-elimination-aha-discovery-rule-specification).
 
-```
-Example: Introducing "Skoči!" (Jump!) in Unit 7:
-─────────────────────────────────────────────────────────────
-Target:     "Jump!"
-Choices:    1. Jabuka   (Mastered Unit 1 — Apple)   -> "No, that's Apple"
-            2. Kuća     (Mastered Unit 6 — House)   -> "No, that's House"
-            3. Pas      (Mastered Unit 3 — Dog)     -> "No, that's Dog"
-            4. Skoči    (New Target — Jump!)        -> "Aha! It MUST be Skoči!"
-─────────────────────────────────────────────────────────────
-```
-By process of elimination, the child's brain actively deducts the answer. This releases dopamine, anchors the word in memory, and builds confidence.
+### Authoring Tips:
+1. **Pull From Diverse Categories:** When authoring distractors for a new verb (e.g., *Plivati* / To swim), select one animal (*Pas*), one food (*Jabuka*), and one building (*Kuća*). Spanning distinct categories ensures the child has zero hesitation ruling them out.
+2. **Chain New Words Sequentially:** Once a word has been deduced in Challenge 2 of Lesson 2, it can safely serve as a known distractor in Challenge 3!
 
 ---
 
 ## 5. Standard Lesson Plan Authoring Template
 
-Copy this template when creating any new Unit before writing code:
+Copy this template when creating any new Unit before writing seed code:
 
 ```markdown
 # Unit [Number]: [Croatian Title] ([English Title])
-- **Regional Stage:** [e.g. Stage 2: Kvarner & Dalmatian Coast]
-- **CEFR Target:** [e.g. A1.2]
+- **Regional World:** [e.g. World 2: Coastal Explorer • Adriatic Sea & Islands]
 - **Target Vocabulary:**
   - Noun 1: [Croatian] ([English]) -> Asset: `/slug.svg`
   - Noun 2: [Croatian] ([English]) -> Asset: `/slug.svg`
@@ -162,7 +149,7 @@ Copy this template when creating any new Unit before writing code:
 - **Challenge 2:** Action Verb Recall
 - **Challenge 3:** Sentence Construction / Assist
 - **Challenge 4:** Auditory Discrimination
-- **Challenge 5:** Final Unit Boss Challenge (Unlocks Golden Trophy Crown)
+- **Challenge 5:** Final Unit Boss Challenge (Unlocks Golden Trophy Crown & +1 Heart)
 ```
 
 ---
@@ -172,7 +159,7 @@ Copy this template when creating any new Unit before writing code:
 Here is how Unit 14 was authored using this exact methodology:
 
 ### Unit 14: U pekari i na tržnici (*At the Bakery & Farmer's Market*)
-- **Stage:** Stage 3 (Plitvice & Slavonia / Food & Daily Life)
+- **World:** World 3 (Nature Quest • Plitvice Lakes & Golden Fields)
 - **Target Nouns:**
   1. *Kruh* (Bread) — `/bread.svg`
   2. *Kroasan* (Croissant) — `/croissant.svg`
@@ -230,17 +217,17 @@ Here is how Unit 14 was authored using this exact methodology:
 3. **Challenge 3:** Assist sentence: *Mi kupujemo kruh na tržnici.*
 4. **Challenge 4:** Question: *"Što je ovo?"* → *"Ovo je svježi sir."*
 5. **Challenge 5 (Final Boss):** *"U pekari miriše topli kruh."* (At the bakery, warm bread smells wonderful).
-   - Unlocks the **Golden Trophy Crown** for Unit 14!
+   - Unlocks the **Golden Trophy Crown** for Unit 14 and restores **+1 Heart**!
 
 ---
 
-## 7. Quality Checklist for Every Lesson Plan
+## 7. Pre-Seed Quality Checklist
 
-Before approving any lesson plan for database seeding, verify:
-- [ ] Exactly 4 lessons in the unit (Visual, Verbs, Sentences, Super Izazov).
-- [ ] Images exist on disk and appear **ONLY** in Lesson 1.
+Before running any database seed script, verify against the specification:
+- [ ] Exactly 4 lessons per unit ([CURRICULUM_STANDARDS.md § 1](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#1-the-3--1-unit-arc-specification)).
+- [ ] Images exist on disk and appear **ONLY** in Lesson 1 ([CURRICULUM_STANDARDS.md § 3](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#3-progressive-scaffolding-fading-invariant)).
 - [ ] Lessons 2, 3, and 4 have `imageSrc = null`.
-- [ ] Every net-new word in text-only challenges has 3 distractors from **prior mastered units**.
-- [ ] Every challenge has **exactly 4 choices** with uniform punctuation and casing.
-- [ ] Every choice has an audio file (`/audio/hr/<slug>.mp3`) synthesized with `hr-HR-GabrijelaNeural`.
-- [ ] Script `npx tsx scripts/audit-curriculum-rules.ts` passes with 0 rule violations.
+- [ ] Every net-new word in text-only challenges uses mastered distractors ([CURRICULUM_STANDARDS.md § 2](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#2-deductive-elimination-aha-discovery-rule-specification)).
+- [ ] Every challenge has **exactly 4 choices** with uniform casing and zero punctuation giveaways ([CURRICULUM_STANDARDS.md § 4](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#4-distractor-symmetry--22-grid-invariant)).
+- [ ] Every choice has an audio file (`/audio/hr/<slug>.mp3`) on disk ([CURRICULUM_STANDARDS.md § 5](file:///c:/Users/phili/Documents/phils_repo/docs/CURRICULUM_STANDARDS.md#5-audio-integrity-specification)).
+- [ ] Pre-flight audit passes: `npx tsx scripts/audit-curriculum-rules.ts`.
