@@ -1,0 +1,88 @@
+# 📜 CroLingo Master Registry: Change Requests & Bug Tickets
+
+> **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
+> **Repository:** `AdminPhil/2lingo`  
+> **Total Change Requests:** 50 Completed (CR-001 to CR-050) | 0 Open  
+> **Total Bug Tickets:** 17 Resolved (BUG-001 to BUG-017) | 0 Open  
+> **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
+
+---
+
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-050)
+
+| Ticket ID | Category / Epic | Title & Summary | Date | Status |
+| :---: | :--- | :--- | :---: | :---: |
+| **CR-001** | Pedagogy | **Deductive Elimination ("Aha!" Discovery Standard):** Prohibited unfamiliar distractors in net-new vocabulary introduction. | 2026-10-21 | ✅ Verified |
+| **CR-002** | Gamification | **Practice-to-Earn a Heart Engine:** Eliminated free refills; introduced 3-question review quiz sandbox with voluntary recharge. | 2026-10-21 | ✅ Verified |
+| **CR-003** | Gamification | **Hearts-Used Metric on Leaderboard:** Cumulative precision error tracking (`user_progress.hearts_used`) celebrating deliberate reading. | 2026-10-21 | ✅ Verified |
+| **CR-004** | Gamification | **Daily Streak Counter & Habit Flame:** Consecutive calendar day tracking with interactive celebration modal. | 2026-10-22 | ✅ Verified |
+| **CR-005** | Social / Pods | **Learning Pods Engine (Phase 1):** Closed social circles with 6-character unguessable invite codes (`pods`, `pod_members`). | 2026-10-22 | ✅ Verified |
+| **CR-006** | Social / Pods | **Knowledgehook Team Celebration Meter:** Weekly collective 1,000 XP target, multi-pod XP propagation, and celebration dialog. | 2026-10-22 | ✅ Verified |
+| **CR-007** | Social / Pods | **Peer High-Fives & Social Cheer Engine:** Canned reactions (`high_five`, `star`, `flame`), daily rate limit, and +5 XP micro-bonus. | 2026-10-22 | ✅ Verified |
+| **CR-008** | Landing / UI | **Landing Page Alignment:** Pruned unsupported language flags; focused public hero exclusively on Croatian. | 2026-10-23 | ✅ Verified |
+| **CR-009** | Administration | **Parent & Admin Access Governance:** Initial portal shell and navigation guard for `/admin`. | 2026-10-23 | ✅ Verified |
+| **CR-010** | Administration | **Pod Management Hub:** Interface for parents to inspect family circles, view members, and manage invite codes. | 2026-10-23 | ✅ Verified |
+| **CR-011** | Administration | **Learner Health Card & Parent Magic Wands:** Instant heart refills, streak grace days, and real-life Croatian praise (+25/+50 XP). | 2026-10-23 | ✅ Verified |
+| **CR-012** | Administration | **Tricky Words & Error Heatmap Analytics:** Tracked and aggregated `challenge_mistakes` with pedagogical guidance for parents. | 2026-10-23 | ✅ Verified |
+| **CR-013** | Administration | **Email Super-Admin & Scoped Access:** Added email-based fallback verification for platform administration. | 2026-10-23 | ✅ Verified |
+| **CR-014** | Onboarding | **Multi-Family Role Schema & Wizard:** Added `role` field to `user_progress` and parent setup flow. | 2026-10-23 | ✅ Verified |
+| **CR-015** | Onboarding | **Child Onboarding & Multi-Pod Switcher:** Interface allowing learners belonging to multiple pods to switch active circles. | 2026-10-23 | ✅ Verified |
+| **CR-016** | Onboarding | **Direct Child Account Provisioning:** Integrated Clerk Backend REST API to create email-less child accounts directly. | 2026-10-24 | ✅ Verified |
+| **CR-017** | Design / UI | **Avatar Skin Tone Harmonization:** Warm Mediterranean tones (`#FBD38D`/`#FDDEC9`) and authentic Croatian child example names. | 2026-10-24 | ✅ Verified |
+| **CR-018** | Navigation | **Parent Learning Path Access:** Eliminated redirect trap from `/admin`, allowing parents to play curriculum in preview mode. | 2026-10-24 | ✅ Verified |
+| **CR-019** | Navigation | **Sidebar Navigation Deduplication:** Promoted Parent Center to top item and removed duplicate bottom buttons. | 2026-10-24 | ✅ Verified |
+| **CR-020** | Administration | **Super-Admin User-to-Pod Assignment:** Real-time member search modal with collision prevention and dual-role selector. | 2026-10-24 | ✅ Verified |
+| **CR-021** | Mascot / Brand | **Croatian Cultural Landing & Paško Mascot:** Introduced Paško the Dalmatian pup, replacing generic green cube. | 2026-10-24 | ✅ Verified |
+| **CR-022** | Design / UI | **High-Fidelity Artwork & Šahovnica Ribbon:** Polished 3D dual action gates and red-and-white Croatian ribbon on marketing page. | 2026-10-24 | ✅ Verified |
+| **CR-023** | Theming / World | **Stage 1 Regional Theming:** Continental red and hearth amber for Units 1–5 (*Zagreb i Središnja Hrvatska*). | 2026-10-24 | ✅ Verified |
+| **CR-024** | Theming / World | **Stage 2 Regional Theming:** Adriatic azure and coastal cyan for Units 6–10 (*Kvarner i Dalmatinska Obala*). | 2026-10-24 | ✅ Verified |
+| **CR-025** | Theming / World | **Stage 3 Regional Theming:** Emerald pine and golden wheat for Units 11–15 (*Plitvička Jezera i Slavonija*). | 2026-10-24 | ✅ Verified |
+| **CR-026** | Theming / World | **Stage 4 Regional Theming:** Royal Adriatic navy and fortress gold for Units 16–20 (*Dubrovnik i Otoci Capstone*). | 2026-10-24 | ✅ Verified |
+| **CR-027** | Brand Identity | **Official Brand Name "CroLingo":** Rebranded typography across sidebar, mobile header, and footer in National Heritage Navy (`#1E3A8A`). | 2026-10-24 | ✅ Verified |
+| **CR-028** | Design / Mobile | **Mobile Brand Header & Alignment:** Blue navbar with Paško avatar, hamburger drawer, and narrow-screen leaderboard spacing. | 2026-10-24 | ✅ Verified |
+| **CR-029** | Gamification | **Super Izazov Milestone Heart Reward:** Completing Boss Quest (Lesson 4) awards +1 Heart and Golden Trophy Crown. | 2026-10-24 | ✅ Verified |
+| **CR-030** | Curriculum | **Phase Node Theming & Storybook Adventure Titles:** Styled map nodes with regional colors and storybook unit headlines. | 2026-10-24 | ✅ Verified |
+| **CR-031** | Theming / UX | **Gaming-Style "World" Progression:** Transitioned 4 phases into discrete "Worlds" (World 1 to World 4) across learning path. | 2026-10-24 | ✅ Verified |
+| **CR-032** | Theming / UI | **King's Landing Renaming & UnitBanner Refactor:** Renamed World 4 to King's Landing; eliminated text wrapping collisions. | 2026-10-24 | ✅ Verified |
+| **CR-033** | Documentation | **Curriculum Standards & Lesson Guide Consolidation:** Separated authoring playbook from CI/CD audit contract. | 2026-10-24 | ✅ Verified |
+| **CR-034** | Governance | **Repurpose README & Governance Specification:** Codified mandatory 4-point PR review protocol and clean root overview. | 2026-10-24 | ✅ Verified |
+| **CR-035** | Documentation | **Centralize Architecture & Streamline Gamification:** Consolidated data models into single reference; formalized mechanics. | 2026-10-24 | ✅ Verified |
+| **CR-036** | Documentation | **Developer Setup & Local Environment Guide:** Authored `docs/1. DEVELOPMENT_AND_SETUP.md` with complete `.env.local` dictionary. | 2026-10-24 | ✅ Verified |
+| **CR-037** | Documentation | **Database & Data Model Specification:** Authored `docs/DATABASE_AND_DATA_MODEL.md` (subsequently consolidated into Doc 2). | 2026-10-24 | ✅ Verified |
+| **CR-038** | Compliance | **Security, Child Safety & COPPA Guide:** Authored `docs/7. SECURITY_AND_COPPA.md` detailing zero child PII and closed social loops. | 2026-10-24 | ✅ Verified |
+| **CR-039** | Testing / QA | **Testing Strategy & Release Verification Runbook:** Authored `docs/8. TESTING_AND_QA.md` detailing 4-tier verification pipeline. | 2026-10-24 | ✅ Verified |
+| **CR-040** | DevOps / CI/CD | **Hosting, CI/CD & Operations Manual:** Authored `docs/9. DEPLOYMENT_AND_DEVOPS.md` specifying Render/Neon architecture & zero polling. | 2026-10-24 | ✅ Verified |
+| **CR-041** | Documentation | **Standardize Numbered Documentation Structure:** Reorganized documentation suite into clean 1–9 taxonomy with consolidated Doc 2. | 2026-10-24 | ✅ Verified |
+| **CR-042** | Onboarding | **Frictionless "Learner by Default" Onboarding & Parental Gate:** Zero modal popups on signup; math challenge gate on Parent Center. | 2026-10-24 | ✅ Verified |
+| **CR-043** | Onboarding | **Parent Intent Routing & Multi-Child Wizard:** Landing CTA `/learn?intent=parent`, batch account creation (up to 5), printable Family Cards. | 2026-10-24 | ✅ Verified |
+| **CR-044** | Shared Devices | **Shared iPad Profile Switcher & QR Badge Logins:** 1-tap Clerk multi-session switcher; `/qr-login` fast pass camera badge authentication. | 2026-10-24 | ✅ Verified |
+| **CR-045** | Security / RBAC | **Restrict Curriculum APIs (`/api/*`) to Super-Admin:** Replaced `isAdmin` with `isSuperAdmin` across all 10 curriculum API routes. | 2026-10-24 | ✅ Verified |
+| **CR-046** | Security / RBAC | **Enforce Pod Ownership in Parent Overrides:** Restricted heart refills, streak freezes, and praise XP to children in caller's pod. | 2026-10-24 | ✅ Verified |
+| **CR-047** | Security / Infra | **Remove Wildcard CORS & Enforce Security Headers:** Stripped `*` origin header; enforced CSP/HSTS/Frame protection; purged git secrets. | 2026-10-24 | ✅ Verified |
+| **CR-048** | Security / Quota | **Classroom-Aware Rate Limiting & Abuse Protection:** Pod capacity tiered to 15 (family) / 50 (classroom); capped creations at 60/hr. | 2026-10-24 | ✅ Verified |
+| **CR-049** | Design / Mascots | **Croatian Heritage Avatar Suite:** Cropped and integrated Luka Modrić caricature, Mia, Matija, Paško, Roko, and Delfi into avatar selector. | 2026-10-24 | ✅ Verified |
+| **CR-050** | Navigation | **Remove Shop from Sidebar & Add Governance Safeguard:** Pruned errant Shop link from sidebar; added permanent rule to prevent regressions. | 2026-10-24 | ✅ Verified |
+
+---
+
+## 🐛 Part 2: Bug Tickets Master Ledger (BUG-001 to BUG-017)
+
+| Ticket ID | Severity | Title & Issue Description | Root Cause | Fix Summary | Date | Status |
+| :---: | :---: | :--- | :--- | :--- | :---: | :---: |
+| **BUG-001** | Medium | **Heart Click Inactivity in Lesson Header:** Tapping heart icon did not trigger voluntary recharge dialog. | Click handler missing on heart counter in lesson view. | Wired `onClick={openHeartsModal}` directly on heart energy counter in header. | 2026-10-21 | ✅ Resolved |
+| **BUG-002** | High | **Incorrect Option Mapping in Unit 3 Lesson 4:** Challenge prompt for "Little cat" marked "Konj" (Horse) as correct. | Seeding coordinate mismatch in Unit 3 animal lesson. | Re-seeded challenge options so "Maca" is mapped as correct with audio. | 2026-10-21 | ✅ Resolved |
+| **BUG-003** | High | **Bread Question Requiring "Čokolada":** Question for "Kruh" (Bread) marked "Čokolada" as correct. | Coordinate shift during initial database populate. | Re-aligned Unit 3/4 food vocabulary coordinates and correct option flags. | 2026-10-21 | ✅ Resolved |
+| **BUG-004** | Low | **Family Pod Name and Invite Code Correction:** Default invite code generation produced ambiguous characters (`O`, `0`, `I`, `1`). | Generic random alphanumeric string generator. | Filtered code alphabet to high-contrast characters (`ABCDEFGHJKLMNPQRSTUVWXYZ23456789`). | 2026-10-22 | ✅ Resolved |
+| **BUG-005** | High | **Challenge 43 ("Five (5)") Requiring "Četiri":** Audio said "Pet" but correct option required "Četiri" (Four). | Human data entry typo during Lesson 1 number sequencing. | Updated challenge option flag to set `correct = true` on "Pet" and updated audio. | 2026-10-23 | ✅ Resolved |
+| **BUG-006** | Medium | **Duplicate Slide SVG Used for "Swing":** "Ljuljačka" displayed image of slide (`tobogan.svg`). | Missing dedicated `swing.svg` vector asset. | Created authentic playground swing SVG (`public/swing.svg`) and linked to challenge. | 2026-10-23 | ✅ Resolved |
+| **BUG-007** | High | **White-on-White Unreadable Text in Parent Welcome:** Welcome banner text was invisible against light background. | Tailwind class collision in gradient container. | Switched header text to `text-slate-900` with high-contrast slate badge styling. | 2026-10-23 | ✅ Resolved |
+| **BUG-008** | Medium | **Parent Mode Banner Bottom Edge Trimmed:** Fixed mobile header overlapped top of learning path banner. | Sticky header z-index and top offset collision. | Added `pt-6` top padding clearance and adjusted sticky container offsets. | 2026-10-24 | ✅ Resolved |
+| **BUG-009** | Low | **Parent Center Back Button Label Inconsistency:** Return button labeled with generic "Back". | Inconsistent header button prop strings. | Standardized return button label to "Back to Learning Path" with Paško arrow icon. | 2026-10-24 | ✅ Resolved |
+| **BUG-010** | Low | **Unit Banner Background Purge & Iconography:** Background shapes collided with lesson title text. | Heavy SVG background illustration in banner header. | Purged cluttered background geometry; clean flat contrast with stage badges. | 2026-10-24 | ✅ Resolved |
+| **BUG-011** | Medium | **Paško Mascot Version Mismatch in Sidebar & Modals:** Sidebar used old green SVG cube while marketing used Paško. | Multi-component asset drift during mascot redesign. | Replaced `mascot.svg` with circular high-res `mascot.png` across all modals and sidebar. | 2026-10-24 | ✅ Resolved |
+| **BUG-012** | Low | **Quest Milestone Stages English Translation:** Quest completion badges contained untranslated strings. | Hardcoded English strings in quest progression array. | Localized all quest milestones into bilingual Croatian with Croatian flags. | 2026-10-24 | ✅ Resolved |
+| **BUG-013** | Medium | **Landing Action Gate Sizing & Visual Harmony:** Top "I Have an Account" button was smaller than "Get Started". | Unmatched button size props in split action gate. | Standardized dual action gates to identical 56px height with matching 3D tactile depth. | 2026-10-24 | ✅ Resolved |
+| **BUG-014** | High | **Hardcoded Fake URL in Family Pod Invites:** Share links generated with `http://localhost:3000` or fake domains on production. | Missing dynamic origin resolution in client share dialog. | Implemented dynamic `window.location.origin` resolution with fallback to production host. | 2026-10-24 | ✅ Resolved |
+| **BUG-015** | High | **Unexpected Number Locations & Card Overflow:** Keyboard shortcuts `1`, `2`, `3`, `4` collided with text or overflowed. | Absolute badge positioning without flex container constraints. | Refactored card headers to flex layout; isolated hotkey badge in dedicated container. | 2026-10-24 | ✅ Resolved |
+| **BUG-016** | High | **Compact Tile Speaker Icon & Number Collision:** Speaker audio button overlapped hotkey number on compact SELECT cards. | Single layout shared across image cards and text-only cards. | Introduced dual-mode challenge layout (`ASSIST` vs `SELECT`); separated audio and number containers. | 2026-10-24 | ✅ Resolved |
+| **BUG-017** | Critical | **Option Text Ellipsis Truncation in SELECT Tiles:** Croatian phrases ("Kako si?", "Laku noć") cut off with "..." on desktop. | 4-across desktop packing (`grid-cols-4`) and CSS `truncate` class. | Replaced 4-across with balanced **2×2 grid** (`sm:grid-cols-2`) and replaced `truncate` with `break-words`. | 2026-10-24 | ✅ Resolved |

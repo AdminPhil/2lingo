@@ -144,7 +144,8 @@ The CroLingo documentation suite is organized in a standardized 1–9 sequence:
     ├── 7. SECURITY_AND_COPPA.md        # [NEW] Child data privacy, COPPA compliance, and safety guards
     ├── 8. TESTING_AND_QA.md            # [NEW] Multi-tier verification pipeline & QA checklists
     ├── 9. DEPLOYMENT_AND_DEVOPS.md     # [NEW] Render CI/CD, Neon pooling, zero-polling policy & backups
-    └── CHANGELOG.md                    # [ACTIVE] Chronological release and feature audit trail
+    ├── CHANGELOG.md                    # [ACTIVE] Chronological release and feature audit trail
+    └── REGISTRY.md                     # [ACTIVE] Master index of all 50 Change Requests & 17 Bug Tickets
 ```
 
 | # | Document | Purpose & Scope |
@@ -160,3 +161,4 @@ The CroLingo documentation suite is organized in a standardized 1–9 sequence:
 | 9 | 🚀 **[`docs/9. DEPLOYMENT_AND_DEVOPS.md`](./docs/9.%20DEPLOYMENT_AND_DEVOPS.md)** | **Deployment & DevOps Manual:** Render Blueprint spec, Neon connection pooling, asynchronous deploy triggers, zero-polling policy, and rollback runbooks. |
 | — | 📋 **[`docs/GOVERNANCE.md`](./docs/GOVERNANCE.md)** | **Pre-Merge Protocol:** Mandatory 4-point review checklist required for PRs and agent tasks. |
 | — | 📜 **[`docs/CHANGELOG.md`](./docs/CHANGELOG.md)** | **Living Changelog:** Chronological record of all platform updates, bug fixes, and curriculum milestones. |
+| — | 🏛️ **[`docs/REGISTRY.md`](./docs/REGISTRY.md)** | **Master Registry:** Comprehensive index and status table of all 50 Change Requests and 17 Bug Tickets. |
