@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Author docs/TESTING_AND_QA.md Specification & Release Runbook (CR-039)
+
+### Added & Refined
+- **[CR-039] ✅ IMPLEMENTED & VERIFIED - Multi-Tier Quality Assurance & Verification Pipeline:**
+  - **Comprehensive `docs/TESTING_AND_QA.md`:** Published the complete testing strategy and release runbook for contributors and QA testers.
+  - **4-Tier Pipeline Specification:** Codified Tier 1 (Static Curriculum Analysis via `scripts/audit-curriculum-rules.ts`), Tier 2 (Strict TypeScript Compilation via `tsc --noEmit`), Tier 3 (Production Bundle & SSR Build via `npm run build`), and Tier 4 (Structured Manual QA).
+  - **10-Point Interactive Manual QA Runbook:** Structured field checklist with clear pass/fail criteria covering landing page action gates, learner auth, 4-World banners, in-lesson quiz loop, heart depletion & precision metrics, practice refill quizzes, Super Izazov milestone bonuses, streak flames, family pod collaboration, and parent magic wand overrides.
+  - **Automated Testing Roadmap:** Formulated the technical expansion plan for Vitest unit/algorithm tests and Playwright component visual regression and E2E browser tests.
+
+---
+
 ## [2026-10-24] - Author docs/SECURITY_AND_COPPA_COMPLIANCE.md Standards (CR-038)
 
 ### Added & Refined
