@@ -25,14 +25,42 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   }
 
   const challenge = await db.query.challenges.findFirst({
-    where: eq(challenges.id, challengeId)
+    where: eq(challenges.id, challengeId),
+    with: {
+      lesson: {
+        with: {
+          challenges: {
+            with: {
+              challengeProgress: {
+                where: eq(challengeProgress.userId, userId),
+              },
+            },
+          },
+        },
+      },
+    },
   });
 
   if (!challenge) {
     throw new Error("Challenge not found");
   }
 
+  const lesson = challenge.lesson;
   const lessonId = challenge.lessonId;
+
+  // Determine if this lesson is a Super Izazov (Lesson 4 of unit or titled Super Izazov)
+  const isSuperIzazov = lesson 
+    ? (lesson.order === 4 || lesson.title.toLowerCase().includes("super izazov")) 
+    : false;
+
+  // Check if all other challenges in this lesson have already been completed
+  const allOtherChallengesCompleted = lesson
+    ? lesson.challenges
+        .filter((c) => c.id !== challengeId)
+        .every((c) => c.challengeProgress && c.challengeProgress.some((cp) => cp.completed))
+    : false;
+
+  const isLessonCompletingNow = allOtherChallengesCompleted;
 
   const existingChallengeProgress = await db.query.challengeProgress.findFirst({
     where: and(
@@ -55,6 +83,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     return { error: "hearts" };
   }
 
+  // Handle Practice Mode (Review or Replay)
   if (isPractice) {
     await db.update(challengeProgress).set({
       completed: true,
@@ -63,8 +92,12 @@ export const upsertChallengeProgress = async (challengeId: number) => {
       eq(challengeProgress.id, existingChallengeProgress.id)
     );
 
+    // If completing the Super Izazov or practice, award heart up to 5
+    const practiceNewHearts = Math.min(currentUserProgress.hearts + 1, 5);
+    const heartsAwarded = practiceNewHearts > currentUserProgress.hearts;
+
     await db.update(userProgress).set({
-      hearts: Math.min(currentUserProgress.hearts + 1, 5),
+      hearts: practiceNewHearts,
       points: currentUserProgress.points + 10,
       streak,
       lastActiveDate,
@@ -77,7 +110,23 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     revalidatePath("/quests");
     revalidatePath("/leaderboard");
     revalidatePath(`/lesson/${lessonId}`);
-    return;
+    return {
+      isSuperIzazovCompleted: isLessonCompletingNow && isSuperIzazov,
+      heartsAwarded,
+      newHearts: practiceNewHearts,
+    };
+  }
+
+  // Normal (First-Time) Completion Mode
+  let heartsAwarded = false;
+  let newHearts = currentUserProgress.hearts;
+
+  // CR-029: Each Super Izazov earns the user a new heart (+1 ❤️ up to 5)
+  if (isLessonCompletingNow && isSuperIzazov) {
+    if (currentUserProgress.hearts < 5) {
+      newHearts = currentUserProgress.hearts + 1;
+      heartsAwarded = true;
+    }
   }
 
   await db.insert(challengeProgress).values({
@@ -88,6 +137,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
 
   await db.update(userProgress).set({
     points: currentUserProgress.points + 10,
+    hearts: newHearts,
     streak,
     lastActiveDate,
   }).where(eq(userProgress.userId, userId));
@@ -99,4 +149,10 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
   revalidatePath(`/lesson/${lessonId}`);
+
+  return {
+    isSuperIzazovCompleted: isLessonCompletingNow && isSuperIzazov,
+    heartsAwarded,
+    newHearts,
+  };
 };

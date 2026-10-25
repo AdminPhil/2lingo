@@ -4,6 +4,17 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-24] - Super Izazov Milestone Heart Reward Engine (CR-029)
+
+### Added & Refined
+- **[CR-029] ✅ IMPLEMENTED & VERIFIED - Super Izazov Heart Reward:**
+  - **Milestone Heart Replenishment (`actions/challenge-progress.ts`):** Completing Lesson 4 of any unit (**Super Izazov / Boss Quest**) now automatically awards the learner **+1 Heart** (`Math.min(hearts + 1, 5)`), celebrating cumulative retention and mitigating fatigue from previous lesson mistakes.
+  - **Client UI & Toast Celebration (`app/lesson/quiz.tsx`):** Added instant celebratory toast notifications (`"👑 Super Izazov riješio! Zaradio si +1 novo srce! ❤️"`) and updated the in-lesson heart counter dynamically.
+  - **Finish Screen Victory Banner:** Overhauled the quiz completion screen for Super Izazovs with golden crown + heart messaging: *"Svaka čast! 🌟 Osvojio si zlatnu krunu i zaradio novo srce! 🏆❤️"* alongside an animated reward badge (*"❤️ Super Izazov Nagrada: +1 Novo Srce zarađeno!"*).
+  - **Gamification Specification (`docs/HEARTS_AND_GAMIFICATION.md`):** Formally codified Section 3 defining the Super Izazov heart reward rules in both first-time and replay modes.
+
+---
+
 ## [2026-10-24] - Mobile Heritage Blue Header & Responsive Leaderboard Viewport (CR-028)
 
 ### Added & Refined

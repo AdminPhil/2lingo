@@ -33,11 +33,18 @@ Children often "speed-guess" through lessons by clicking options rapidly and abu
 
 ---
 
-## 📋 3. Pedagogical Backlog / Future Roadmap
+## 👑 3. Super Izazov Milestone Heart Reward Engine (CR-029)
 
-Should Concept A require expansion or alternative modes in the future, the following concepts are preserved in the backlog:
-- **Concept B (Replay Mastered Lesson):** Pulsing map beacon inviting children to replay any completed unit lesson on the map in practice mode.
-- **Concept C ("Mistake Vault" Targeted Remediation):** An adaptive session that selectively re-tests the child on the exact challenges where `hearts_used` was incremented during recent lessons.
+1. **Capstone Milestone Reward:**
+   - Every unit in CroLingo concludes with **Lesson 4: Super Izazov (Boss Quest)**.
+   - Successfully completing a Super Izazov awards the learner **+1 Heart** (`Math.min(hearts + 1, 5)`), directly celebrating mastery and unit retention.
+2. **Mitigating Learner Fatigue:**
+   - If a child struggled during the vocabulary fading or modular sentence phases (Lessons 2 & 3) and lost hearts, mastering the unit's final challenge replenishes a heart, allowing them to progress into the next unit without feeling stuck.
+3. **Finish Screen Feedback:**
+   - The lesson finish screen features a special celebration banner:
+     *"Svaka čast! 🌟 Osvojio si zlatnu krunu i zaradio novo srce! 🏆❤️"* along with a pulsing reward badge (*"❤️ Super Izazov Nagrada: +1 Novo Srce zarađeno!"*).
+4. **Replay Mode Support:**
+   - Replaying a previously mastered Super Izazov from the learning map also rewards a heart upon completion, giving learners an engaging alternative to the 3-question quick practice quiz.
 
 ---
 

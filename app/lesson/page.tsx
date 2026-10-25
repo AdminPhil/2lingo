@@ -27,6 +27,8 @@ const LessonPage = async () => {
     .filter((challenge) => challenge.completed)
     .length / lesson.challenges.length * 100;
 
+  const isSuperIzazov = lesson.order === 4 || lesson.title.toLowerCase().includes("super izazov");
+
   return ( 
     <Quiz
       initialLessonId={lesson.id}
@@ -34,6 +36,7 @@ const LessonPage = async () => {
       initialHearts={userProgress.hearts}
       initialPercentage={initialPercentage}
       userSubscription={userSubscription}
+      isSuperIzazov={isSuperIzazov}
     />
   );
 };

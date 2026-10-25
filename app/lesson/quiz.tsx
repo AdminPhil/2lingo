@@ -19,7 +19,7 @@ import { Challenge } from "./challenge";
 import { ResultCard } from "./result-card";
 import { QuestionBubble } from "./question-bubble";
 
-type Props ={
+type Props = {
   initialPercentage: number;
   initialHearts: number;
   initialLessonId: number;
@@ -30,6 +30,7 @@ type Props ={
   userSubscription: typeof userSubscription.$inferSelect & {
     isActive: boolean;
   } | null;
+  isSuperIzazov?: boolean;
 };
 
 export const Quiz = ({
@@ -38,6 +39,7 @@ export const Quiz = ({
   initialLessonId,
   initialLessonChallenges,
   userSubscription,
+  isSuperIzazov = false,
 }: Props) => {
   const { open: openHeartsModal, setOnRefillCallback } = useHeartsModal();
   const { open: openPracticeModal } = usePracticeModal();
@@ -134,8 +136,13 @@ export const Quiz = ({
             setStatus("correct");
             setPercentage((prev) => prev + 100 / challenges.length);
 
-            // This is a practice
-            if (initialPercentage === 100) {
+            // CR-029: Super Izazov heart reward feedback
+            if (response?.heartsAwarded && typeof response.newHearts === "number") {
+              setHearts(response.newHearts);
+              if (response.isSuperIzazovCompleted) {
+                toast.success("👑 Super Izazov riješio! Zaradio si +1 novo srce! ❤️");
+              }
+            } else if (initialPercentage === 100) {
               setHearts((prev) => Math.min(prev + 1, 5));
             }
           })
@@ -173,7 +180,7 @@ export const Quiz = ({
           numberOfPieces={500}
           tweenDuration={10000}
         />
-        <div className="flex flex-col gap-y-4 lg:gap-y-8 max-w-lg mx-auto text-center items-center justify-center h-full">
+        <div className="flex flex-col gap-y-4 lg:gap-y-6 max-w-lg mx-auto text-center items-center justify-center h-full px-4">
           <Image
             src="/finish.svg"
             alt="Finish"
@@ -188,13 +195,23 @@ export const Quiz = ({
             height={50}
             width={50}
           />
-          <h1 className="text-xl lg:text-3xl font-bold text-neutral-700">
-            {challenges.length >= 6 ? (
+          <h1 className="text-xl lg:text-3xl font-black text-neutral-800">
+            {isSuperIzazov ? (
+              <>Svaka čast! 🌟<br /> Osvojio si zlatnu krunu i zaradio novo srce! 🏆❤️</>
+            ) : challenges.length >= 6 ? (
               <>Svaka čast! 🌟<br /> Osvojio si zlatnu krunu! 🏆</>
             ) : (
               <>Great job! <br /> You&apos;ve completed the lesson.</>
             )}
           </h1>
+
+          {isSuperIzazov && (
+            <div className="inline-flex items-center gap-x-2 px-4 py-2 bg-rose-50 border-2 border-rose-300 rounded-2xl shadow-xs text-rose-700 font-black text-sm sm:text-base animate-pulse">
+              <span>❤️</span>
+              <span>Super Izazov Nagrada: +1 Novo Srce zarađeno!</span>
+            </div>
+          )}
+
           <div className="flex items-center gap-x-4 w-full">
             <ResultCard
               variant="points"
