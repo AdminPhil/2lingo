@@ -2,7 +2,7 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 52 Completed (CR-001 to CR-052) | 0 Open  
+> **Total Change Requests:** 56 Completed (CR-001 to CR-056) | 0 Open  
 > **Total Bug Tickets:** 24 Resolved (BUG-001 to BUG-024) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
@@ -64,6 +64,10 @@
 | **CR-050** | Navigation | **Remove Shop from Sidebar & Add Governance Safeguard:** Pruned errant Shop link from sidebar; added permanent rule to prevent regressions. | 2026-10-24 | ✅ Verified |
 | **CR-051** | Design / UI | **Avatar Framing Polish & Text Removal:** Re-centered avatars to 80% frame fill, removed text from Roko and Delfi, and normalized white backgrounds. | 2026-10-24 | ✅ Verified |
 | **CR-052** | Design / UI | **Wider Modal Dimensions & Responsive Grid for AddChildModal:** Expanded modal from `max-w-md` (448px) to `sm:max-w-2xl` (672px), upgraded avatar selector to 9-column grid with live labels and selection badge, and arranged form inputs in 2 columns. | 2026-10-24 | ✅ Verified |
+| **CR-053** | Onboarding / Stepper | **Guided Parent Onboarding Stepper Modal (`ParentSetupWizardModal`):** 4-step wizard container with progress bar, pre-filled Family Circle setup, and auto-launch for new parents. | 2026-10-25 | ✅ Verified |
+| **CR-054** | Onboarding / Batch | **Rapid Sibling Provisioning with Heritage Mascot Avatars:** Inline multi-child creator (1 to 5 siblings) with 1-click Croatian avatar picker and 0 email required. | 2026-10-25 | ✅ Verified |
+| **CR-055** | Fast Pass / Badges | **Unified Multi-Badge "Family Fridge Sheet" with Vector QR Codes:** Formatted 8.5x11 printable sheet with side-by-side QR student passes, cutting guidelines, and link copying. | 2026-10-25 | ✅ Verified |
+| **CR-056** | Onboarding / Handoff | **Living Room Tablet Handoff Guide & First-Login Checklist:** Illustrated step-by-step tutorial for camera scan vs. "Tko danas uči?" profile switcher, with active learner checklist. | 2026-10-25 | ✅ Verified |
 
 ---
 

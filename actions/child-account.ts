@@ -157,6 +157,7 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
       password,
       podName: targetPod.name,
       inviteCode: targetPod.inviteCode,
+      userImageSrc: data.userImageSrc || "/avatars/pasko.png",
     },
   };
 };

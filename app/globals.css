@@ -87,7 +87,9 @@ body,
     visibility: hidden;
   }
   #printable-student-badge,
-  #printable-student-badge * {
+  #printable-student-badge *,
+  #printable-family-sheet,
+  #printable-family-sheet * {
     visibility: visible;
   }
   #printable-student-badge {
@@ -100,5 +102,14 @@ body,
     box-shadow: none !important;
     border: 2px solid #1E3A8A !important;
     background: white !important;
+  }
+  #printable-family-sheet {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    background: white !important;
+    padding: 20px !important;
+    border: none !important;
   }
 }

@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Epic: Seamless Parent Onboarding & Family Fast Pass Walkthrough (CR-053 to CR-056)
+
+### Added & Refined
+- **[CR-053] ✅ IMPLEMENTED & VERIFIED - Guided Parent Onboarding Stepper Modal (`ParentSetupWizardModal`):**
+  - Created full-screen 4-step wizard container in `components/admin/parent-setup-wizard-modal.tsx` with responsive progress bar, step indicators, and smooth state transitions.
+  - Step 1 guides parents in configuring their Family Circle name with weekly 1,000 XP celebration meter target.
+  - Added hero launch trigger `"🚀 Launch Setup Wizard →"` in `HowToAddChildrenCard` header.
+- **[CR-054] ✅ IMPLEMENTED & VERIFIED - Rapid Sibling Provisioning with Heritage Mascot Avatars:**
+  - Implemented Step 2 inline multi-child form allowing parents to add 1 to 5 siblings simultaneously with First Names and auto-generated usernames (`luka10`, `mia_hr`).
+  - Added visual 1-click Mascot Avatar picker featuring Paško the Dalmatian, Luka Modrić caricature, Mia the Folk Dancer, Matija the Little Knight, Roko, and Delfi.
+  - Integrates with `createMultipleChildAccounts` server action in a single round-trip with zero emails required (COPPA compliant).
+- **[CR-055] ✅ IMPLEMENTED & VERIFIED - Unified Multi-Badge "Family Fridge Sheet" with Vector QR Codes:**
+  - Implemented Step 3 multi-badge grid formatting all sibling badges side-by-side with Croatian red-white-blue checkerboard top ribbons, mascot avatars, and vector scannable QR codes.
+  - Added `@media print` CSS rules in `app/globals.css` ensuring clean multi-badge printing for refrigerator or desk reference.
+  - Added one-click `"Copy All Login Links"` to clipboard for air-dropping or messaging credentials.
+- **[CR-056] ✅ IMPLEMENTED & VERIFIED - Living Room Tablet Handoff Guide & First-Login Launchpad:**
+  - Implemented Step 4 visual tutorial for parents detailing **Method A (Instant Camera QR Scan)** and **Method B (1-Tap Profile Switcher)** for shared home iPads and tablets.
+  - Added direct action links into Parent Dashboard and learning path preview.
+
+---
+
 ## [2026-10-24] - Student QR Badge Generation & Persistent Fast Pass (BUG-024)
 
 ### Fixed & Refined

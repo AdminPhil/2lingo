@@ -6,6 +6,7 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { AddChildModal } from "./add-child-modal";
+import { ParentSetupWizardModal } from "./parent-setup-wizard-modal";
 
 type Props = {
   podId: number;
@@ -15,6 +16,7 @@ type Props = {
 
 export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isWizardOpen, setIsWizardOpen] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
   const [origin, setOrigin] = useState("https://twolingo.onrender.com");
@@ -60,10 +62,18 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-bold text-emerald-900 bg-emerald-100/90 border border-emerald-300 px-3 py-1 rounded-full">
               Pod Code: <strong className="font-mono font-black">{inviteCode}</strong>
             </span>
+            <Button
+              size="sm"
+              onClick={() => setIsWizardOpen(true)}
+              className="text-xs font-extrabold bg-blue-900 hover:bg-blue-950 text-white shadow-xs cursor-pointer h-8 px-3"
+            >
+              <Sparkles className="h-3.5 w-3.5 mr-1 text-amber-400" />
+              Launch Setup Wizard →
+            </Button>
           </div>
         </div>
 
@@ -161,6 +171,14 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
         onOpenChange={setIsAddModalOpen}
         podId={podId}
         podName={podName}
+      />
+
+      <ParentSetupWizardModal
+        isOpen={isWizardOpen}
+        onOpenChange={setIsWizardOpen}
+        podId={podId}
+        podName={podName}
+        inviteCode={inviteCode}
       />
     </>
   );
