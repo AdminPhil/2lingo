@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
 import { shuffleArray } from "@/lib/utils";
+import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
 import { 
   challengeProgress,
   challengeMistakes,
@@ -32,6 +33,24 @@ export const getUserProgress = cache(async () => {
       activeCourse: true,
     },
   });
+
+  if (!data) {
+    return null;
+  }
+
+  const refillEval = evaluateDailyHeartRefill(data.hearts, data.lastHeartRefillDate);
+  if (refillEval.shouldUpdate) {
+    await db
+      .update(userProgress)
+      .set({
+        hearts: refillEval.hearts,
+        lastHeartRefillDate: refillEval.lastHeartRefillDate,
+      })
+      .where(eq(userProgress.userId, userId));
+
+    data.hearts = refillEval.hearts;
+    data.lastHeartRefillDate = refillEval.lastHeartRefillDate;
+  }
 
   return data;
 });

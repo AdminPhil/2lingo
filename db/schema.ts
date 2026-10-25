@@ -122,6 +122,7 @@ export const userProgress = pgTable("user_progress", {
   heartsUsed: integer("hearts_used").notNull().default(0),
   streak: integer("streak").notNull().default(0),
   lastActiveDate: text("last_active_date"),
+  lastHeartRefillDate: text("last_heart_refill_date"),
   role: text("role").default("learner").notNull(),
 });
 

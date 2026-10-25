@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Automatic Daily Overnight 5-Heart Top-Up (CR-062)
+
+### Added & Refined
+- **[CR-062] ✅ IMPLEMENTED & VERIFIED - Automatic Daily Overnight 5-Heart Top-Up:**
+  - Added `lastHeartRefillDate` (`last_heart_refill_date`) column to `user_progress` in `db/schema.ts` and migrated Neon production database.
+  - Created `evaluateDailyHeartRefill` in `lib/heart-refill.ts` enforcing a strict **once-per-calendar-day** (`YYYY-MM-DD`) 5-heart top-up invariant while preserving Super Izazov bonus hearts (`> 5`) and keeping same-day manual parent refills (`adminRefillHearts`) and Practice-to-Earn (`CR-002`) intact.
+  - Wired deterministic lazy morning evaluation into `getUserProgress` (`db/queries.ts`) and the Parent Center roster (`app/admin/page.tsx`).
+  - Added overnight batch script `scripts/daily-heart-refill.ts` (`npm run hearts:refill`) and scheduled GitHub Actions cron workflow `.github/workflows/daily-heart-refill.yml` (`06:00 UTC` / `2:00 AM EDT`).
+  - Added 6 unit tests in `tests/unit/heart-refill.test.ts` (all passing in `2ms`).
+
+---
+
 ## [2026-10-25] - Epic: Automated Testing Suite & CI Quality Gate (CR-057 to CR-061)
 
 ### Added & Refined

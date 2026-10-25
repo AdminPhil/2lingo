@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 61 Completed (CR-001 to CR-061) | 0 Queued  
+> **Total Change Requests:** 62 Completed (CR-001 to CR-062) | 0 Queued  
 > **Total Bug Tickets:** 24 Resolved (BUG-001 to BUG-024) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-061)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-062)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -73,6 +73,7 @@
 | **CR-059** | Testing / Actions | **Server Action RBAC & Transaction Integration Tests:** Mocked Clerk auth sessions asserting admin authorization guards and multi-child batch atomicity. | 2026-10-25 | ✅ Verified |
 | **CR-060** | Testing / E2E | **Playwright Multi-Viewport E2E Testing (iPad & Desktop):** Headless browser suite testing lesson loops, practice heart refills, and shared tablet profile switching on iPad Safari. | 2026-10-25 | ✅ Verified |
 | **CR-061** | Testing / CI/CD | **GitHub Actions CI Quality Gate Automation:** Automated `.github/workflows/ci.yml` running curriculum audit, typechecks, Vitest, and Playwright before deployment. | 2026-10-25 | ✅ Verified |
+| **CR-062** | Gamification | **Automatic Daily Overnight 5-Heart Top-Up:** Once-per-day overnight refill restoring learners with `< 5` hearts back to `5/5` on a new calendar day (`last_heart_refill_date` guard + batch refill job). | 2026-10-25 | ✅ Verified |
 
 ---
 

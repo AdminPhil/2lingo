@@ -19,6 +19,7 @@ import { eq } from "drizzle-orm";
 import db from "@/db/drizzle";
 import { pods, userProgress } from "@/db/schema";
 import { isAdmin, isSuperAdmin } from "@/lib/admin";
+import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { PodManagementCard } from "@/components/admin/pod-management-card";
@@ -71,6 +72,23 @@ const AdminPage = async () => {
   const allLearners = await db.query.userProgress.findMany({
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
   });
+
+  // Ensure daily overnight heart top-up is reflected across all learners in the Parent Center roster
+  const todayStr = new Date().toISOString().split("T")[0];
+  for (const learner of allLearners) {
+    const refillEval = evaluateDailyHeartRefill(learner.hearts, learner.lastHeartRefillDate, todayStr);
+    if (refillEval.shouldUpdate) {
+      await db
+        .update(userProgress)
+        .set({
+          hearts: refillEval.hearts,
+          lastHeartRefillDate: refillEval.lastHeartRefillDate,
+        })
+        .where(eq(userProgress.userId, learner.userId));
+      learner.hearts = refillEval.hearts;
+      learner.lastHeartRefillDate = refillEval.lastHeartRefillDate;
+    }
+  }
 
   const accessibleMemberUserIds = new Set(
     accessiblePods.flatMap((p) => p.members.map((m) => m.userId))
