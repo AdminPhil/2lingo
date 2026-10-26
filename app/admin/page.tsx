@@ -1,18 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import { 
-  Users, 
-  Sparkles, 
-  Flame, 
-  ArrowLeft, 
-  Heart, 
-  Trophy, 
-  Wand2, 
-  Brain,
-  ShieldCheck,
-  Crown
-} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { auth, currentUser } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
 
@@ -22,14 +10,16 @@ import { isAdmin, isSuperAdmin } from "@/lib/admin";
 import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
 import { generateRandomPodCode } from "@/lib/pod-code";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { PodManagementCard } from "@/components/admin/pod-management-card";
-import { LearnerHealthCard } from "@/components/admin/learner-health-card";
-import { TrickyWordsCard } from "@/components/admin/tricky-words-card";
-import { HowToAddChildrenCard } from "@/components/admin/how-to-add-children-card";
+import { AdminCommandCenter } from "@/components/admin/admin-command-center";
 import { getTrickyWordsAnalytics } from "@/db/queries";
 
-const AdminPage = async () => {
+type Props = {
+  searchParams?: {
+    podId?: string;
+  };
+};
+
+const AdminPage = async ({ searchParams }: Props) => {
   const { userId } = auth();
   if (!userId) {
     redirect("/");
@@ -53,7 +43,7 @@ const AdminPage = async () => {
     }
   }
 
-  // If regular parent has no pod yet, auto-provision their Family Circle pod
+  // If regular parent has no team yet, auto-provision their Family Team
   if (!superAdmin && userId) {
     const existingOwnedPod = await db.query.pods.findFirst({
       where: (pods, { eq }) => eq(pods.ownerId, userId),
@@ -63,7 +53,7 @@ const AdminPage = async () => {
       const [createdPod] = await db
         .insert(pods)
         .values({
-          name: `${parentFirstName}'s Family Circle`,
+          name: `${parentFirstName}'s Family Team`,
           type: "family",
           inviteCode: generateRandomPodCode(),
           ownerId: userId,
@@ -84,7 +74,7 @@ const AdminPage = async () => {
     }
   }
 
-  // Fetch all pods with members
+  // Fetch all teams/pods with members
   const allPodsData = await db.query.pods.findMany({
     with: {
       members: true,
@@ -92,19 +82,21 @@ const AdminPage = async () => {
     orderBy: (pods, { asc }) => [asc(pods.id)],
   });
 
-  // Scope pods based on role:
-  // Super-admin sees all pods (with Pod 1 as default active); regular parent sees only owned pods
+  // Scope teams based on role:
+  // Super-admin sees all teams (with Team 1 as default active); regular parent/teacher sees owned teams
   const accessiblePods = superAdmin
     ? allPodsData
     : allPodsData.filter((p) => p.ownerId === userId);
 
-  const activePod = superAdmin
-    ? (accessiblePods.find((p) => p.id === 1) || accessiblePods[0] || allPodsData[0])
-    : accessiblePods[0];
+  const requestedPodId = searchParams?.podId ? Number(searchParams.podId) : null;
+  const activePod =
+    (requestedPodId
+      ? accessiblePods.find((p) => p.id === requestedPodId)
+      : null) ||
+    (superAdmin
+      ? accessiblePods.find((p) => p.id === 1) || accessiblePods[0] || allPodsData[0]
+      : accessiblePods[0]);
 
-  // Fetch learners:
-  // If superAdmin: all young learners
-  // If regular parent: strictly learners in their accessible pods
   const allLearners = await db.query.userProgress.findMany({
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
   });
@@ -112,7 +104,11 @@ const AdminPage = async () => {
   // Ensure daily overnight heart top-up is reflected across all learners in the Parent Center roster
   const todayStr = new Date().toISOString().split("T")[0];
   for (const learner of allLearners) {
-    const refillEval = evaluateDailyHeartRefill(learner.hearts, learner.lastHeartRefillDate, todayStr);
+    const refillEval = evaluateDailyHeartRefill(
+      learner.hearts,
+      learner.lastHeartRefillDate,
+      todayStr
+    );
     if (refillEval.shouldUpdate) {
       await db
         .update(userProgress)
@@ -126,12 +122,20 @@ const AdminPage = async () => {
     }
   }
 
+  // Scope learners to the currently selected active team (or all accessible teams if Super-Admin on default view without explicit filter)
+  const activePodMemberIds = new Set(
+    activePod ? activePod.members.map((m) => m.userId) : []
+  );
   const accessibleMemberUserIds = new Set(
     accessiblePods.flatMap((p) => p.members.map((m) => m.userId))
   );
 
-  const learners = superAdmin
+  const learners = requestedPodId && activePod
+    ? allLearners.filter((l) => activePodMemberIds.has(l.userId))
+    : superAdmin && !requestedPodId
     ? allLearners
+    : activePod
+    ? allLearners.filter((l) => activePodMemberIds.has(l.userId))
     : allLearners.filter((l) => accessibleMemberUserIds.has(l.userId));
 
   const learnersMap = new Map(allLearners.map((l) => [l.userId, l.userName]));
@@ -152,10 +156,12 @@ const AdminPage = async () => {
     })),
   }));
 
-  const analyticsUserIds = superAdmin ? undefined : learners.map((l) => l.userId);
+  const analyticsUserIds =
+    superAdmin && !requestedPodId ? undefined : learners.map((l) => l.userId);
   const analyticsData = await getTrickyWordsAnalytics(analyticsUserIds);
 
-  const podName = activePod?.name || "Family Circle";
+  const podName = activePod?.name || "Family Team";
+  const podType = activePod?.type || "family";
   const inviteCode = activePod?.inviteCode || "ZGOMBA";
   const currentXp = activePod?.currentXp ?? 0;
   const targetXp = activePod?.targetXp ?? 1000;
@@ -165,204 +171,92 @@ const AdminPage = async () => {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 pb-16">
-      {/* Top Navigation Bar */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      {/* Sticky Top Navigation Bar with SVG Croatian Šahovnica Crest & Ribbon */}
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-2xs">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-x-3">
-            <div className="p-2 bg-green-100 rounded-xl text-green-700">
-              <ShieldCheck className="h-6 w-6" />
+            {/* Crisp SVG Croatian Šahovnica Shield Crest (Zero Windows "HR" emoji fallback) */}
+            <div className="h-10 w-10 rounded-xl bg-blue-900 flex items-center justify-center shadow-xs shrink-0 border border-blue-950">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                className="rounded-xs overflow-hidden"
+                aria-label="Hrvatska Šahovnica"
+              >
+                <rect width="20" height="20" fill="#FFFFFF" />
+                <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+              </svg>
             </div>
             <div>
-              <h1 className="font-extrabold text-lg sm:text-xl text-neutral-800 leading-tight">
-                Parent & Educator Center
-              </h1>
+              <div className="flex items-center gap-2">
+                <span className="font-black text-lg text-blue-900 tracking-tight hidden sm:inline">
+                  CroLingo
+                </span>
+                <span className="text-slate-300 hidden sm:inline">•</span>
+                <h1 className="font-extrabold text-base sm:text-lg text-neutral-800 leading-tight">
+                  Parent & Educator Center
+                </h1>
+              </div>
               <p className="text-xs text-muted-foreground hidden sm:block">
-                CroLingo Croatian Family Oversight
+                Croatian Family & Classroom Team Oversight
               </p>
             </div>
           </div>
 
-          <Button variant="ghost" size="sm" asChild className="font-bold text-neutral-600 hover:text-neutral-900 border border-slate-200">
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className="font-extrabold text-neutral-700 hover:text-blue-900 hover:bg-blue-50 hover:border-blue-200 border border-slate-200 rounded-xl"
+          >
             <Link href="/learn">
               <ArrowLeft className="h-4 w-4 mr-1.5" />
               Back to Learning Path
             </Link>
           </Button>
         </div>
+
+        {/* Symmetrical 2-Row Croatian Checkerboard Ribbon (Šahovnica) */}
+        <div className="w-full border-t border-slate-200 bg-white">
+          <div
+            className="h-2 w-full bg-[length:16px_8px] bg-repeat-x"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8' shape-rendering='crispEdges'%3E%3Crect width='16' height='8' fill='%23FFFFFF'/%3E%3Crect x='0' y='0' width='4' height='4' fill='%23DC2626'/%3E%3Crect x='8' y='0' width='4' height='4' fill='%23DC2626'/%3E%3Crect x='4' y='4' width='4' height='4' fill='%23DC2626'/%3E%3Crect x='12' y='4' width='4' height='4' fill='%23DC2626'/%3E%3C/svg%3E")`,
+            }}
+            title="Hrvatska Šahovnica"
+          />
+        </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
-        {/* Welcome Banner */}
-        <div className="bg-green-600 bg-gradient-to-r from-green-600 via-emerald-600 to-lime-600 rounded-3xl p-6 sm:p-8 text-white shadow-md mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-x-2 mb-2 flex-wrap">
-              <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 bg-white/20 rounded-full text-white inline-block">
-                Family Learning Hub
-              </span>
-              {superAdmin && (
-                <span className="text-xs font-black uppercase tracking-wider px-2.5 py-1 bg-amber-400 text-amber-950 rounded-full inline-flex items-center gap-x-1 shadow-xs">
-                  <Crown className="h-3.5 w-3.5 fill-amber-950" />
-                  Super-Admin (philip.zgomba@gmail.com)
-                </span>
-              )}
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black">
-              Dobrodošli, {parentName}! 🇭🇷
-            </h2>
-            <p className="text-sm text-green-50 mt-1 max-w-xl">
-              {superAdmin 
-                ? "Full administrative platform oversight. Monitor family pods, oversee learner streaks, and adjust celebration goals!"
-                : "Monitor your children's daily learning streaks, adjust family celebration goals, and celebrate their Croatian progress!"}
-            </p>
-
-            <div className="mt-4 flex items-center gap-3">
-              <Button
-                variant="secondary"
-                size="sm"
-                className="bg-white text-green-800 hover:bg-green-50 font-black text-xs h-9 px-3.5 rounded-xl shadow-xs"
-                asChild
-              >
-                <Link href="/learn">
-                  <Sparkles className="h-4 w-4 mr-1.5 text-green-700" />
-                  View Learning Path
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-center shrink-0">
-            <p className="text-xs font-semibold text-green-100">Active Family Code</p>
-            <p className="font-mono text-2xl font-black tracking-widest text-white mt-0.5">
-              {inviteCode}
-            </p>
-          </div>
-        </div>
-
-        {/* 👨‍👩‍👧 How to Add Your Children Helper & Direct Account Creation */}
-        <HowToAddChildrenCard
-          podId={activePod?.id || 1}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+        <AdminCommandCenter
+          parentName={parentName}
+          superAdmin={superAdmin}
+          activePodId={activePod?.id || 1}
           podName={podName}
+          podType={podType}
           inviteCode={inviteCode}
-        />
-
-        {/* 3 Metric Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-          {/* Card 1: Pod */}
-          <div className="bg-white p-5 rounded-2xl border-2 border-slate-200/80 shadow-xs flex items-center gap-x-4">
-            <div className="p-3.5 bg-blue-100 rounded-2xl text-blue-700">
-              <Users className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-muted-foreground uppercase">Active Pod</p>
-              <h3 className="text-lg font-black text-neutral-800">{podName}</h3>
-              <p className="text-xs text-blue-600 font-semibold">{learners.length} Active Learners</p>
-            </div>
-          </div>
-
-          {/* Card 2: Team Goal */}
-          <div className="bg-white p-5 rounded-2xl border-2 border-slate-200/80 shadow-xs flex items-center gap-x-4">
-            <div className="p-3.5 bg-amber-100 rounded-2xl text-amber-700">
-              <Trophy className="h-6 w-6" />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-bold text-muted-foreground uppercase">Weekly Team Goal</p>
-                <span className="text-xs font-black text-amber-600">{progressPercent}%</span>
-              </div>
-              <h3 className="text-lg font-black text-neutral-800">
-                {currentXp} <span className="text-xs text-muted-foreground font-normal">/ {targetXp} XP</span>
-              </h3>
-              <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden mt-1">
-                <div className="bg-amber-500 h-full rounded-full" style={{ width: `${progressPercent}%` }} />
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: Motivation */}
-          <div className="bg-white p-5 rounded-2xl border-2 border-slate-200/80 shadow-xs flex items-center gap-x-4">
-            <div className="p-3.5 bg-rose-100 rounded-2xl text-rose-700">
-              <Sparkles className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-muted-foreground uppercase">Family Habit Status</p>
-              <h3 className="text-lg font-black text-neutral-800">
-                {activeStreakCount > 0 ? "Streak Active 🔥" : "Ready to Start 🌱"}
-              </h3>
-              <p className="text-xs text-rose-600 font-semibold">
-                {learners.length === 0
-                  ? "Add learners to start tracking"
-                  : activeStreakCount === learners.length
-                  ? `All ${learners.length} ${learners.length === 1 ? "Learner" : "Learners"} Practicing`
-                  : `${activeStreakCount} of ${learners.length} ${learners.length === 1 ? "Learner" : "Learners"} Practicing`}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Hub Preview Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          <div className="bg-white rounded-2xl p-5 border-2 border-slate-200 hover:border-green-400 transition shadow-xs flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-x-2 text-green-700 font-extrabold text-base mb-1.5">
-                <Users className="h-5 w-5" />
-                <span>Family Pods Hub</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Manage learning pods, set custom codes like <code className="bg-slate-100 px-1 py-0.5 rounded font-mono font-bold">{inviteCode}</code>, and adjust weekly celebration goals.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-green-700 font-bold">
-              ✓ Active Pod Management
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 border-2 border-slate-200 hover:border-amber-400 transition shadow-xs flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-x-2 text-amber-700 font-extrabold text-base mb-1.5">
-                <Wand2 className="h-5 w-5" />
-                <span>Parent Magic Wand</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                One-click heart refills, streak protection grace days, and real-life dinner accomplishment XP praise.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-amber-700 font-bold">
-              ✓ Active Magic Wand Overrides
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 border-2 border-slate-200 hover:border-purple-400 transition shadow-xs flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-x-2 text-purple-700 font-extrabold text-base mb-1.5">
-                <Brain className="h-5 w-5" />
-                <span>Tricky Words Analytics</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                See which words your learners miss most across Units 1–20 and get conversation prompts for family dinners.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-purple-700 font-bold">
-              ✓ Active Mistake Analytics & Heatmap
-            </div>
-          </div>
-        </div>
-
-        {/* Pod Management Hub (CR-010, CR-020) */}
-        <PodManagementCard
-          pods={formattedPods}
+          currentXp={currentXp}
+          targetXp={targetXp}
+          progressPercent={progressPercent}
+          activeStreakCount={activeStreakCount}
+          formattedPods={formattedPods}
+          learners={learners}
           availableUsers={allLearners.map((l) => ({
             userId: l.userId,
             userName: l.userName,
             userImageSrc: l.userImageSrc,
           }))}
-          isSuperAdmin={superAdmin}
+          analyticsData={analyticsData}
         />
-
-        {/* Tricky Words & Mistake Heatmap Analytics (CR-012) */}
-        <TrickyWordsCard analytics={analyticsData} />
-
-        {/* Learner Health & Magic Wand Overrides (CR-011) */}
-        <LearnerHealthCard learners={learners} />
       </main>
     </div>
   );

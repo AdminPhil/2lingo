@@ -35,15 +35,15 @@ export const Footer = () => {
           />
           Practice for Hearts
         </Button>
-        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent text-lime-700 font-bold">
+        <Button size="lg" variant="ghost" className="w-full cursor-default hover:bg-transparent text-blue-800 font-bold">
           <Image 
             src="/leaderboard.svg" 
-            alt="Family Pods" 
+            alt="Family & Classroom Teams" 
             height={26} 
             width={26}
             className="mr-2"
           />
-          Family Pods & Teams
+          Family & Classroom Teams
         </Button>
       </div>
     </footer>

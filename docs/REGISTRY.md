@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 72 Completed (CR-001 to CR-072) | 0 Queued  
+> **Total Change Requests:** 73 Completed (CR-001 to CR-073) | 0 Queued  
 > **Total Bug Tickets:** 27 Resolved (BUG-001 to BUG-027) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-072)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-073)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -84,6 +84,7 @@
 | **CR-070** | Onboarding / Classroom | **`TeacherSetupWizardModal` (Steps 1 & 2) & Chunked Classroom Batch Provisioning:** 4-step educator wizard with Quick Paste Roster textarea, editable Roster Preview table, and chunked progress bar provisioning up to 35 students per class. | 2026-10-25 | ✅ Verified |
 | **CR-071** | Fast Pass / Classroom | **Teacher Print Kit (8-Up Paginated Lanyard QR Badges, 1-Page Master Roster & CSV):** Dual `@media print` layouts (2×4 paginated lanyard cards vs. 1-page teacher clipboard password/QR key) plus 1-click CSV roster download. | 2026-10-25 | ✅ Verified |
 | **CR-072** | Onboarding / Classroom | **Classroom Smartboard / Projector Join Slide & iPad Cart Handoff:** Full-screen projector join overlay (giant class code, QR code, and Chromebook/iPad instructions) in Step 4 and `/admin`. | 2026-10-25 | ✅ Verified |
+| **CR-073** | Administration / UX | **Streamline `/admin` into a 3-Tab Parent & Educator Command Center ("Teams" Standard, Heritage Navy Palette & SVG Šahovnica Badges):** Replaces the 8-block vertical scroll stack and dead preview cards with a Dual-Role Team Switcher (`?podId=`), Heritage Navy hero + integrated KPI strip, 3 interactive workspace tabs (`Team Roster & Magic Wand`, `Tricky Words & Prompts`, `Team Settings & Setup Guide`), standardized `"Teams"` terminology, and crisp SVG Croatian Šahovnica badges eliminating Windows `"HR"` flag emoji fallbacks. | 2026-10-25 | ✅ Verified |
 
 ---
 

@@ -4,6 +4,19 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-25] - Streamline `/admin` into 3-Tab Parent & Educator Command Center & "Teams" Standard (CR-073)
+
+### Added & Refined
+- **[CR-073] ✅ IMPLEMENTED & VERIFIED - 3-Tab Parent & Educator Command Center, "Teams" Standardization, Heritage Navy Palette & SVG Šahovnica Badges:**
+  - **3-Tab Interactive Command Center (`components/admin/admin-command-center.tsx` & `app/admin/page.tsx`):** Replaced the 8-section vertical scroll stack (~3,400px) and the 3 non-clickable "Action Hub Preview" cards with an interactive 3-tab workspace (`🪄 Team Roster & Magic Wand`, `🧠 Tricky Words & Prompts`, `⚙️ Team Settings & Setup Guide`) so `LearnerHealthCard` sits immediately above the fold on load.
+  - **Dual-Role Parent + Teacher Team Switcher (`?podId=`):** Added the `Your Teams` switcher bar above the hero when a parent/educator manages multiple teams (e.g., `🏠 Family Team` + `🏫 Classroom Team`), dynamically scoping the KPI strip, learner roster, and tricky words analytics to the active team.
+  - **Standardized "Teams" Terminology:** Unified mixed `"Pod"` / `"Circle"` copy across `/admin` and the marketing footer into **"Teams"** (`Family Team`, `Classroom Team`, `Team Code`, `Weekly Team Goal`).
+  - **CroLingo Croatian Heritage Navy Palette:** Replaced legacy Duolingo green across `/admin` (`app/admin/page.tsx`, `components/admin/admin-command-center.tsx`, `components/admin/pod-management-card.tsx`, `components/admin/how-to-add-children-card.tsx`, `components/admin/learner-health-card.tsx`, `components/admin/tricky-words-card.tsx`) with National Heritage Navy (`#1E3A8A` / `blue-900`), Croatian Blue (`#2563EB` / `blue-600`), and the 2-row Croatian Šahovnica header ribbon.
+  - **Eliminated Windows `"HR"` Flag Emoji Fallbacks:** Replaced raw Unicode `🇭🇷` regional indicator flag emojis across `app/admin/page.tsx`, `app/(marketing)/header.tsx`, `app/(marketing)/page.tsx`, `components/sidebar.tsx`, `components/mobile-header.tsx`, `components/admin/tricky-words-card.tsx`, and `components/admin/learner-health-card.tsx` with crisp inline SVG Croatian Šahovnica checkerboard crests.
+  - **Repeatable `/ux-spike` Skill (`.agents/skills/ux-spike/SKILL.md`):** Added reusable workspace skill for performing critical UX/UI webpage audits paired with interactive Generative UI redesign prototypes.
+
+---
+
 ## [2026-10-25] - Backlog Clearance Release: Quiz Heart Mechanics, Multi-Word Audio Integrity, Pod-Scoped Analytics & Teacher Classroom Setup Wizard (BUG-025 to BUG-027, CR-066 to CR-072)
 
 ### Fixed & Refined

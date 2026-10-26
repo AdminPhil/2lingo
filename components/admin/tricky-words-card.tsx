@@ -36,9 +36,9 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
   return (
     <div className="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-xs mb-10">
       {/* Top Header */}
-      <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-purple-50 via-white to-pink-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-blue-50/70 via-white to-indigo-50/70 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-x-3.5">
-          <div className="p-3 bg-purple-600 text-white rounded-2xl shadow-sm">
+          <div className="p-3 bg-blue-900 text-white rounded-2xl shadow-sm">
             <Brain className="h-6 w-6" />
           </div>
           <div>
@@ -46,8 +46,8 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
               <h3 className="font-black text-xl text-neutral-800">
                 Tricky Words & Mistake Heatmap
               </h3>
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-700 border border-purple-200">
-                CR-012 Live
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-200">
+                Scoped to Active Team
               </span>
             </div>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -57,15 +57,15 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
         </div>
 
         {/* Accuracy KPI Pill */}
-        <div className="flex items-center gap-x-3 bg-white p-2.5 px-4 rounded-2xl border border-purple-200/80 shadow-xs">
+        <div className="flex items-center gap-x-3 bg-white p-2.5 px-4 rounded-2xl border border-blue-200/80 shadow-xs">
           <div className="text-right">
-            <p className="text-[11px] font-bold text-muted-foreground uppercase">Family Precision</p>
-            <p className="text-xl font-black text-purple-600">{overallAccuracyRate}%</p>
+            <p className="text-[11px] font-bold text-muted-foreground uppercase">Team Precision</p>
+            <p className="text-xl font-black text-blue-700">{overallAccuracyRate}%</p>
           </div>
           <div className="h-8 w-px bg-slate-200" />
           <div className="text-left">
-            <p className="text-[11px] font-bold text-muted-foreground uppercase">Mastered</p>
-            <p className="text-sm font-black text-neutral-800">{totalCompleted} <span className="text-xs text-slate-400 font-normal">pts</span></p>
+            <p className="text-[11px] font-bold text-muted-foreground uppercase">Completed</p>
+            <p className="text-sm font-black text-neutral-800">{totalCompleted} <span className="text-xs text-slate-400 font-normal">challenges</span></p>
           </div>
         </div>
       </div>
@@ -74,9 +74,9 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
       <div className="flex border-b border-slate-200 px-6 bg-slate-50/70 gap-x-2 pt-2">
         <button
           onClick={() => setActiveTab("words")}
-          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition ${
+          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition cursor-pointer ${
             activeTab === "words"
-              ? "border-purple-600 text-purple-700"
+              ? "border-blue-600 text-blue-700"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -86,9 +86,9 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
 
         <button
           onClick={() => setActiveTab("units")}
-          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition ${
+          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition cursor-pointer ${
             activeTab === "units"
-              ? "border-purple-600 text-purple-700"
+              ? "border-blue-600 text-blue-700"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -98,14 +98,14 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
 
         <button
           onClick={() => setActiveTab("prompts")}
-          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition ${
+          className={`pb-3 px-3 text-xs sm:text-sm font-extrabold flex items-center gap-x-2 border-b-2 transition cursor-pointer ${
             activeTab === "prompts"
-              ? "border-purple-600 text-purple-700"
+              ? "border-blue-600 text-blue-700"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           <MessageSquare className="h-4 w-4" />
-          <span>Family Dinner Prompts</span>
+          <span>Team Conversation Prompts</span>
         </button>
       </div>
 
@@ -116,17 +116,27 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
             <p className="text-xs font-semibold text-muted-foreground">
               Challenges where your learners used hearts or made repeated retries:
             </p>
-            <span className="text-xs font-bold text-purple-600">
+            <span className="text-xs font-bold text-blue-700">
               {totalMistakes} logged retry events
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {topTrickyWords.map((item, idx) => (
-              <div
-                key={item.challengeId}
-                className="p-4 rounded-2xl border-2 border-slate-100 hover:border-purple-300 hover:shadow-xs transition bg-white flex flex-col justify-between"
-              >
+          {topTrickyWords.length === 0 ? (
+            <div className="p-8 rounded-2xl border-2 border-dashed border-blue-200 bg-blue-50/30 text-center">
+              <p className="text-base font-black text-blue-950">
+                🎉 Zero tricky words logged for this team yet!
+              </p>
+              <p className="text-xs text-slate-600 mt-1 max-w-lg mx-auto">
+                As your learners complete Croatian lessons, any vocabulary words where they lose a heart will automatically appear here—paired with conversation tips!
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {topTrickyWords.map((item, idx) => (
+                <div
+                  key={item.challengeId}
+                  className="p-4 rounded-2xl border-2 border-slate-100 hover:border-blue-300 hover:shadow-xs transition bg-white flex flex-col justify-between"
+                >
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-black text-slate-400">
@@ -165,6 +175,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
               </div>
             ))}
           </div>
+          )}
         </div>
       )}
 
@@ -264,15 +275,15 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
         </div>
       )}
 
-      {/* Tab 3: Family Conversation Prompts */}
+      {/* Tab 3: Team Conversation Prompts */}
       {activeTab === "prompts" && (
         <div className="p-6">
           <div className="mb-4">
             <h4 className="font-extrabold text-base text-neutral-800">
-              Offline Croatian Reinforcement Prompts 🇭🇷
+              Offline Croatian Reinforcement Prompts
             </h4>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Turn everyday family moments into natural language practice based on the tricky words identified above.
+              Turn everyday moments into natural Croatian practice based on the tricky words identified above.
             </p>
           </div>
 

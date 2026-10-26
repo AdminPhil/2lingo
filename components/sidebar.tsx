@@ -39,8 +39,19 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
             <h1 className="text-2xl font-black text-blue-900 tracking-tight leading-none">
               CroLingo
             </h1>
-            <span className="text-[10px] font-black uppercase tracking-wider text-rose-600 mt-1">
-              Hrvatski 🇭🇷
+            <span className="inline-flex items-center gap-x-1 text-[10px] font-black uppercase tracking-wider text-rose-600 mt-1">
+              <svg width="10" height="10" viewBox="0 0 20 20" className="rounded-[2px] overflow-hidden border border-rose-200 shrink-0" aria-hidden="true">
+                <rect width="20" height="20" fill="#FFFFFF" />
+                <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+              </svg>
+              <span>Hrvatski</span>
             </span>
           </div>
         </div>

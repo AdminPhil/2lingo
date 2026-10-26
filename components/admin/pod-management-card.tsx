@@ -144,19 +144,19 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
   };
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-xs mb-8">
-      <div className="p-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div className="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-xs mb-8">
+      <div className="p-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/60">
         <div>
           <div className="flex items-center gap-x-2">
             <h3 className="font-extrabold text-lg text-neutral-800">
-              Family Learning Pods & Circles
+              Family & Classroom Learning Teams
             </h3>
-            <span className="text-xs font-bold px-2.5 py-0.5 bg-green-100 text-green-800 rounded-full">
+            <span className="text-xs font-bold px-2.5 py-0.5 bg-blue-100 text-blue-900 rounded-full">
               {podsList.length} Active
             </span>
           </div>
           <p className="text-xs text-muted-foreground mt-0.5">
-            Configure invite codes, custom group names, and weekly collaborative celebration targets.
+            Configure team join codes, custom team names, and weekly collaborative celebration targets.
           </p>
         </div>
 
@@ -164,10 +164,10 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
           variant="primary"
           size="sm"
           onClick={() => setIsCreateOpen(true)}
-          className="bg-green-600 hover:bg-green-700 text-white font-extrabold text-xs shrink-0 cursor-pointer"
+          className="bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white font-extrabold text-xs shrink-0 cursor-pointer"
         >
           <Plus className="h-4 w-4 mr-1" />
-          Create New Pod
+          Create New Team
         </Button>
       </div>
 
@@ -180,7 +180,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
             <div>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-x-2.5">
-                  <div className="p-2 bg-green-100 rounded-xl text-green-700">
+                  <div className="p-2 bg-blue-100 rounded-xl text-blue-800">
                     <Users className="h-5 w-5" />
                   </div>
                   <div>
@@ -188,7 +188,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                       {pod.name}
                     </h4>
                     <span className="text-xs text-muted-foreground capitalize">
-                      {pod.type} Pod • ID: {pod.id}
+                      {pod.type} Team • ID: {pod.id}
                     </span>
                   </div>
                 </div>
@@ -220,8 +220,8 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
               <div className="grid grid-cols-2 gap-2 my-3 text-xs">
                 <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex items-center justify-between">
                   <div>
-                    <span className="text-slate-400 block text-[10px] font-bold uppercase">Invite Code</span>
-                    <span className="font-mono font-black text-lime-700 text-sm">{pod.inviteCode}</span>
+                    <span className="text-slate-400 block text-[10px] font-bold uppercase">Team Code</span>
+                    <span className="font-mono font-black text-blue-800 text-sm">{pod.inviteCode}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Button
@@ -232,7 +232,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                       className="h-7 w-7 p-0 cursor-pointer"
                     >
                       {copiedCode === pod.inviteCode ? (
-                        <Check className="h-3.5 w-3.5 text-green-600" />
+                        <Check className="h-3.5 w-3.5 text-blue-600" />
                       ) : (
                         <Copy className="h-3.5 w-3.5 text-slate-400" />
                       )}
@@ -241,7 +241,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                 </div>
 
                 <div className="bg-white p-2.5 rounded-xl border border-slate-200">
-                  <span className="text-slate-400 block text-[10px] font-bold uppercase">Weekly Goal</span>
+                  <span className="text-slate-400 block text-[10px] font-bold uppercase">Weekly Team Goal</span>
                   <span className="font-extrabold text-neutral-800 text-sm flex items-center gap-x-1">
                     <Trophy className="h-3.5 w-3.5 text-amber-500" />
                     {pod.targetXp || 1000} XP
@@ -333,19 +333,19 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
 
             <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
-                Weekly Team Celebration Goal (XP)
+                Weekly Team Celebration Goal (Family & Classroom Tiers)
               </label>
-              <div className="flex gap-2">
-                {[500, 1000, 1500, 2000].map((val) => (
+              <div className="grid grid-cols-3 gap-2">
+                {[500, 1000, 2000, 3000, 5000, 10000].map((val) => (
                   <Button
                     key={val}
                     type="button"
                     variant={editTargetXp === val ? "primary" : "ghost"}
                     size="sm"
                     onClick={() => setEditTargetXp(val)}
-                    className="flex-1 text-xs font-bold border border-slate-200"
+                    className="text-xs font-bold border border-slate-200"
                   >
-                    {val} XP
+                    {val.toLocaleString()} XP
                   </Button>
                 ))}
               </div>
@@ -357,9 +357,9 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
               variant="primary"
               onClick={handleUpdate}
               disabled={pending}
-              className="w-full text-base font-bold bg-green-600 hover:bg-green-700"
+              className="w-full text-base font-bold bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white"
             >
-              {pending ? "Saving..." : "Save Settings"}
+              {pending ? "Saving..." : "Save Team Settings"}
             </Button>
             <Button
               variant="ghost"

@@ -25,8 +25,19 @@ export const MobileHeader = ({ isAdmin }: Props) => {
           </span>
         </Link>
       </div>
-      <span className="text-[10px] font-black uppercase tracking-wider text-rose-200 bg-rose-950/50 border border-rose-400/30 px-2 py-0.5 rounded-full">
-        Hrvatski 🇭🇷
+      <span className="inline-flex items-center gap-x-1.5 text-[10px] font-black uppercase tracking-wider text-rose-200 bg-rose-950/50 border border-rose-400/30 px-2 py-0.5 rounded-full">
+        <svg width="10" height="10" viewBox="0 0 20 20" className="rounded-[2px] overflow-hidden shrink-0" aria-hidden="true">
+          <rect width="20" height="20" fill="#FFFFFF" />
+          <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+          <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+          <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+          <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+          <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+          <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+          <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+          <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+        </svg>
+        <span>Hrvatski</span>
       </span>
     </nav>
   );

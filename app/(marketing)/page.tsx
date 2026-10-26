@@ -34,7 +34,17 @@ export default async function Home() {
       <div className="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left max-w-[480px]">
         {/* Cultural Heritage Pill Badge */}
         <div className="inline-flex items-center gap-x-2 px-3.5 py-1.5 bg-amber-50 border border-amber-200/90 rounded-full shadow-2xs">
-          <span className="text-sm leading-none">🇭🇷</span>
+          <svg width="14" height="14" viewBox="0 0 20 20" className="rounded-[3px] overflow-hidden border border-red-300 shrink-0" aria-hidden="true">
+            <rect width="20" height="20" fill="#FFFFFF" />
+            <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+            <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+            <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+            <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+            <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+            <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+            <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+            <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+          </svg>
           <span className="text-xs font-black uppercase tracking-wider text-amber-900 leading-none">
             100% Focused on Croatian
           </span>

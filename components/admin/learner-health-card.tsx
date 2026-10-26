@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { Heart, Flame, Sparkles, Wand2, ShieldCheck, Plus, Check, QrCode } from "lucide-react";
 import { toast } from "sonner";
 
@@ -34,15 +34,21 @@ type LearnerData = {
 
 type Props = {
   learners: LearnerData[];
+  teamName?: string;
+  headerActions?: React.ReactNode;
 };
 
-export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
+export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerActions }: Props) => {
   const [learners, setLearners] = useState(initialLearners);
   const [praiseTarget, setPraiseTarget] = useState<LearnerData | null>(null);
   const [badgeTarget, setBadgeTarget] = useState<LearnerData | null>(null);
   const [praiseAmount, setPraiseAmount] = useState(50);
-  const [praiseReason, setPraiseReason] = useState("Spoke Croatian at dinner! 🇭🇷");
+  const [praiseReason, setPraiseReason] = useState("Spoke Croatian at dinner!");
   const [pending, startTransition] = useTransition();
+
+  useEffect(() => {
+    setLearners(initialLearners);
+  }, [initialLearners]);
 
   const handleRefill = (learner: LearnerData) => {
     startTransition(async () => {
@@ -116,31 +122,47 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
   };
 
   const praisePresets = [
-    { amount: 50, label: "Spoke Croatian at dinner! 🇭🇷" },
-    { amount: 25, label: "Helped sister practice! 🤝" },
+    { amount: 50, label: "Spoke Croatian at dinner!" },
+    { amount: 25, label: "Helped a teammate practice! 🤝" },
     { amount: 30, label: "Great perseverance & focus! ⭐" },
     { amount: 100, label: "Mastered a full unit milestone! 🏆" },
   ];
 
   return (
     <>
-      <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-xs mb-8">
-        <div className="p-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-xs mb-8">
+        <div className="p-5 border-b border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-slate-50/60">
           <div>
             <div className="flex items-center gap-x-2">
               <h3 className="font-extrabold text-lg text-neutral-800">
-                Learner Health & Parent Magic Wand
+                {teamName ? `${teamName} — Team Roster & Magic Wand` : "Team Roster & Parent Magic Wand"}
               </h3>
               <span className="text-xs font-bold px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-full flex items-center gap-x-1">
                 <Wand2 className="h-3 w-3" /> Overrides
               </span>
             </div>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Refill hearts on-demand, grant streak grace days, and reward real-life conversational wins.
+              Refill hearts on-demand, grant streak grace days, reward real-life Croatian wins, or print QR badges.
             </p>
           </div>
+
+          {headerActions && (
+            <div className="flex flex-wrap items-center gap-2">
+              {headerActions}
+            </div>
+          )}
         </div>
 
+        {learners.length === 0 ? (
+          <div className="p-10 text-center">
+            <p className="text-base font-black text-slate-800">
+              🌱 No learners in {teamName || "this team"} yet
+            </p>
+            <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+              Use the <strong>Add Child</strong> button or launch the <strong>Family / Classroom Wizard</strong> above to create accounts and print QR login badges!
+            </p>
+          </div>
+        ) : (
         <div className="divide-y divide-slate-100">
           {learners.map((learner, idx) => (
             <div
@@ -152,7 +174,7 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
                 <span className="text-sm font-black text-slate-400 w-5">
                   #{idx + 1}
                 </span>
-                <Avatar className="h-12 w-12 border-2 border-green-500 shrink-0">
+                <Avatar className="h-12 w-12 border-2 border-blue-700 shrink-0">
                   <AvatarImage src={learner.userImageSrc} />
                 </Avatar>
                 <div>
@@ -215,7 +237,7 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
                   onClick={() => {
                     setPraiseTarget(learner);
                     setPraiseAmount(50);
-                    setPraiseReason("Spoke Croatian at dinner! 🇭🇷");
+                    setPraiseReason("Spoke Croatian at dinner!");
                   }}
                   className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white h-8 cursor-pointer"
                   title="Award praise XP for offline achievements"
@@ -238,6 +260,7 @@ export const LearnerHealthCard = ({ learners: initialLearners }: Props) => {
             </div>
           ))}
         </div>
+        )}
       </div>
 
       {/* Praise XP Dialog Modal */}

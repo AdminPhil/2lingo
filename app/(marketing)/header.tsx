@@ -29,8 +29,19 @@ export const Header = () => {
             <h1 className="text-2xl font-black text-blue-900 tracking-tight">
               CroLingo
             </h1>
-            <span className="hidden sm:inline-block text-[10px] font-black uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full">
-              Hrvatski 🇭🇷
+            <span className="hidden sm:inline-flex items-center gap-x-1.5 text-[10px] font-black uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full">
+              <svg width="10" height="10" viewBox="0 0 20 20" className="rounded-[2px] overflow-hidden shrink-0" aria-hidden="true">
+                <rect width="20" height="20" fill="#FFFFFF" />
+                <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+                <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+                <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+                <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+              </svg>
+              <span>Hrvatski</span>
             </span>
           </div>
         </Link>
