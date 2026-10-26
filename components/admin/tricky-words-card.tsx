@@ -59,12 +59,12 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
         {/* Accuracy KPI Pill */}
         <div className="flex items-center gap-x-3 bg-white p-2.5 px-4 rounded-2xl border border-blue-200/80 shadow-xs">
           <div className="text-right">
-            <p className="text-[11px] font-bold text-muted-foreground uppercase">Team Precision</p>
+            <p className="text-xs font-bold text-muted-foreground uppercase">Team Precision</p>
             <p className="text-xl font-black text-blue-700">{overallAccuracyRate}%</p>
           </div>
           <div className="h-8 w-px bg-slate-200" />
           <div className="text-left">
-            <p className="text-[11px] font-bold text-muted-foreground uppercase">Completed</p>
+            <p className="text-xs font-bold text-muted-foreground uppercase">Completed</p>
             <p className="text-sm font-black text-neutral-800">{totalCompleted} <span className="text-xs text-slate-400 font-normal">challenges</span></p>
           </div>
         </div>
@@ -143,7 +143,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
                       #{idx + 1} • {item.unitTitle}
                     </span>
                     <span
-                      className={`font-black text-[11px] px-2 py-0.5 rounded-full border ${
+                      className={`font-black text-xs px-2 py-0.5 rounded-full border ${
                         item.accuracyRate < 60
                           ? "bg-rose-100 text-rose-700 border-rose-200"
                           : item.accuracyRate < 80
@@ -220,7 +220,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
                       Unit {unit.unitOrder}
                     </span>
                     <span
-                      className={`text-[10px] font-black px-1.5 py-0.5 rounded-full border ${
+                      className={`text-xs font-black px-1.5 py-0.5 rounded-full border ${
                         isUpcoming
                           ? "bg-slate-100 text-slate-500 border-slate-200"
                           : unit.status === "Mastered"
@@ -238,7 +238,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
                     {unit.description}
                   </p>
 
-                  <div className="mt-2.5 flex items-center justify-between text-[11px] font-bold">
+                  <div className="mt-2.5 flex items-center justify-between text-xs font-bold">
                     <span className="text-slate-500">
                       {isUpcoming ? "Locked" : `${unit.completedCount} solved`}
                     </span>
@@ -295,7 +295,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="bg-purple-100 text-purple-800 border border-purple-300 font-bold text-[10px] px-2 py-0.5 rounded-full">
+                    <span className="bg-purple-100 text-purple-800 border border-purple-300 font-bold text-xs px-2 py-0.5 rounded-full">
                       {prompt.timing}
                     </span>
                     <Sparkles className="h-4 w-4 text-purple-500" />
@@ -319,7 +319,7 @@ export const TrickyWordsCard = ({ analytics }: Props) => {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-purple-100 text-[11px] text-purple-700 font-bold">
+                <div className="mt-4 pt-3 border-t border-purple-100 text-xs text-purple-700 font-bold">
                   🎯 Targets: {prompt.targetWords}
                 </div>
               </div>

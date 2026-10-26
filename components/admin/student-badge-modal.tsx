@@ -153,12 +153,22 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
               {/* Header */}
               <div className="flex items-center justify-between pb-2 border-b border-slate-100 pt-1">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-base">🇭🇷</span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" className="rounded-xs overflow-hidden shrink-0" aria-label="Hrvatska Šahovnica">
+                    <rect width="20" height="20" fill="#FFFFFF" />
+                    <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
+                    <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
+                    <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
+                    <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
+                    <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
+                    <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
+                    <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
+                    <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
+                  </svg>
                   <span className="text-xs font-black tracking-wide text-blue-900 uppercase">
                     CroLingo Fast Pass
                   </span>
                 </div>
-                <span className="text-[10px] font-bold text-blue-800 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-bold text-blue-800 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
                   Student Badge
                 </span>
               </div>
@@ -192,7 +202,7 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
                     className="w-36 h-36 mx-auto"
                   />
                 </div>
-                <p className="text-[11px] font-bold text-blue-900 mt-2 flex items-center gap-1">
+                <p className="text-xs font-bold text-blue-900 mt-2 flex items-center gap-1">
                   <QrCode className="h-3.5 w-3.5 text-blue-900" />
                   Scan with iPad camera for instant login
                 </p>
@@ -201,18 +211,18 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
               {/* Credentials Reference */}
               <div className="bg-slate-50 rounded-xl p-2.5 text-xs text-left grid grid-cols-2 gap-2 border border-slate-200/80">
                 <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">
+                  <span className="text-xs text-slate-400 font-bold uppercase block">
                     Username
                   </span>
-                  <span className="font-mono font-black text-slate-800 text-[11px] truncate block">
+                  <span className="font-mono font-black text-slate-800 text-xs truncate block">
                     {credentials.username}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">
+                  <span className="text-xs text-slate-400 font-bold uppercase block">
                     Password
                   </span>
-                  <span className="font-mono font-black text-slate-800 text-[11px] truncate block">
+                  <span className="font-mono font-black text-slate-800 text-xs truncate block">
                     {credentials.password}
                   </span>
                 </div>
@@ -256,7 +266,7 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
                 type="button"
                 onClick={() => learner && loadBadge(learner)}
                 disabled={pending}
-                className="text-[11px] font-bold text-slate-500 hover:text-slate-800 flex items-center gap-1 cursor-pointer"
+                className="text-xs font-bold text-slate-500 hover:text-slate-800 flex items-center gap-1 cursor-pointer"
               >
                 <RefreshCw className="h-3 w-3" />
                 Reset &amp; Regenerate Pass

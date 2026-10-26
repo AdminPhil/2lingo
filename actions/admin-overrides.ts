@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs";
-import { and, eq, inArray } from "drizzle-orm";
+import { and, eq, inArray, lt } from "drizzle-orm";
 
 import db from "@/db/drizzle";
 import { pods, podMembers, userProgress } from "@/db/schema";
@@ -142,4 +142,84 @@ export const adminAwardPraiseXp = async (
     newPoints, 
     reason 
   };
+};
+
+const getManageableTeamMemberIds = async (callerUserId: string, podId: number) => {
+  const pod = await db.query.pods.findFirst({
+    where: eq(pods.id, podId),
+    with: { members: true },
+  });
+  if (!pod) return { error: "Team not found." as const };
+  if (pod.ownerId !== callerUserId && !(await isSuperAdmin())) {
+    return { error: "You can only manage your own teams." as const };
+  }
+  return { memberIds: pod.members.map((m) => m.userId) };
+};
+
+export const adminBulkRefillTeamHearts = async (podId: number) => {
+  const { userId } = await auth();
+  if (!userId || !(await isAdmin())) {
+    throw new Error("Unauthorized");
+  }
+
+  const scope = await getManageableTeamMemberIds(userId, podId);
+  if ("error" in scope) return { error: scope.error };
+  if (scope.memberIds.length === 0) return { success: true, refilled: 0 };
+
+  const depleted = await db.query.userProgress.findMany({
+    where: and(
+      inArray(userProgress.userId, scope.memberIds),
+      lt(userProgress.hearts, 5)
+    ),
+  });
+
+  if (depleted.length > 0) {
+    await db
+      .update(userProgress)
+      .set({ hearts: 5 })
+      .where(inArray(userProgress.userId, depleted.map((l) => l.userId)));
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/learn");
+  revalidatePath("/leaderboard");
+
+  return { success: true, refilled: depleted.length };
+};
+
+export const adminBulkAwardTeamPraiseXp = async (
+  podId: number,
+  amount: number,
+  reason: string
+) => {
+  const { userId } = await auth();
+  if (!userId || !(await isAdmin())) {
+    throw new Error("Unauthorized");
+  }
+
+  if (amount <= 0 || amount > 100) {
+    return { error: "Bulk praise must be between 1 and 100 XP per learner." };
+  }
+
+  const scope = await getManageableTeamMemberIds(userId, podId);
+  if ("error" in scope) return { error: scope.error };
+
+  const learners = await db.query.userProgress.findMany({
+    where: inArray(userProgress.userId, scope.memberIds.length ? scope.memberIds : [""]),
+  });
+
+  for (const learner of learners) {
+    await db
+      .update(userProgress)
+      .set({ points: (learner.points || 0) + amount })
+      .where(eq(userProgress.userId, learner.userId));
+    await awardPodXp(learner.userId, amount);
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/learn");
+  revalidatePath("/leaderboard");
+  revalidatePath("/quests");
+
+  return { success: true, count: learners.length, amount, reason };
 };

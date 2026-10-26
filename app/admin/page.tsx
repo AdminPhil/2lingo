@@ -88,7 +88,9 @@ const AdminPage = async ({ searchParams }: Props) => {
     ? allPodsData
     : allPodsData.filter((p) => p.ownerId === userId);
 
-  const requestedPodId = searchParams?.podId ? Number(searchParams.podId) : null;
+  const isGlobalView = superAdmin && searchParams?.podId === "all";
+  const requestedPodId =
+    searchParams?.podId && !isGlobalView ? Number(searchParams.podId) : null;
   const activePod =
     (requestedPodId
       ? accessiblePods.find((p) => p.id === requestedPodId)
@@ -130,14 +132,13 @@ const AdminPage = async ({ searchParams }: Props) => {
     accessiblePods.flatMap((p) => p.members.map((m) => m.userId))
   );
 
-  const learners = requestedPodId && activePod
-    ? allLearners.filter((l) => activePodMemberIds.has(l.userId))
-    : superAdmin && !requestedPodId
+  // CR-074: Roster is always strictly scoped to the highlighted team,
+  // unless a Super-Admin explicitly selects the "All Platform" view (?podId=all).
+  const learners = isGlobalView
     ? allLearners
     : activePod
     ? allLearners.filter((l) => activePodMemberIds.has(l.userId))
     : allLearners.filter((l) => accessibleMemberUserIds.has(l.userId));
-
   const learnersMap = new Map(allLearners.map((l) => [l.userId, l.userName]));
 
   const formattedPods = accessiblePods.map((p) => ({
@@ -157,7 +158,7 @@ const AdminPage = async ({ searchParams }: Props) => {
   }));
 
   const analyticsUserIds =
-    superAdmin && !requestedPodId ? undefined : learners.map((l) => l.userId);
+    isGlobalView ? undefined : learners.map((l) => l.userId);
   const analyticsData = await getTrickyWordsAnalytics(analyticsUserIds);
 
   const podName = activePod?.name || "Family Team";
@@ -241,6 +242,7 @@ const AdminPage = async ({ searchParams }: Props) => {
           parentName={parentName}
           superAdmin={superAdmin}
           activePodId={activePod?.id || 1}
+          isGlobalView={isGlobalView}
           podName={podName}
           podType={podType}
           inviteCode={inviteCode}

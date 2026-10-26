@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 73 Completed (CR-001 to CR-073) | 0 Queued  
+> **Total Change Requests:** 74 Completed (CR-001 to CR-074) | 0 Queued  
 > **Total Bug Tickets:** 27 Resolved (BUG-001 to BUG-027) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-073)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-074)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -85,6 +85,7 @@
 | **CR-071** | Fast Pass / Classroom | **Teacher Print Kit (8-Up Paginated Lanyard QR Badges, 1-Page Master Roster & CSV):** Dual `@media print` layouts (2×4 paginated lanyard cards vs. 1-page teacher clipboard password/QR key) plus 1-click CSV roster download. | 2026-10-25 | ✅ Verified |
 | **CR-072** | Onboarding / Classroom | **Classroom Smartboard / Projector Join Slide & iPad Cart Handoff:** Full-screen projector join overlay (giant class code, QR code, and Chromebook/iPad instructions) in Step 4 and `/admin`. | 2026-10-25 | ✅ Verified |
 | **CR-073** | Administration / UX | **Streamline `/admin` into a 3-Tab Parent & Educator Command Center ("Teams" Standard, Heritage Navy Palette & SVG Šahovnica Badges):** Replaces the 8-block vertical scroll stack and dead preview cards with a Dual-Role Team Switcher (`?podId=`), Heritage Navy hero + integrated KPI strip, 3 interactive workspace tabs (`Team Roster & Magic Wand`, `Tricky Words & Prompts`, `Team Settings & Setup Guide`), standardized `"Teams"` terminology, and crisp SVG Croatian Šahovnica badges eliminating Windows `"HR"` flag emoji fallbacks. | 2026-10-25 | ✅ Verified |
+| **CR-074** | Administration / UX | **Elevate `/admin`: Scoped Super-Admin View, Team QR Print Sheet, Join Slide, Bulk Magic Wands & Classroom Team Creation:** Roster/analytics always match the highlighted team (explicit `?podId=all` `🌐 All Platform` view for Super-Admin); 1-click `📺 Join Slide` and `🖨️ Print Team QR Sheet` (+CSV); bulk Refill Hearts / Team Praise XP with search & filter; Family vs Classroom mode in Create/Edit Team; member removal with owner/RBAC guard; 12px typography floor & SVG Šahovnica in badge modal. | 2026-10-25 | ✅ Verified |
 
 ---
 

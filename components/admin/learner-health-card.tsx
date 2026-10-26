@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useTransition, useEffect } from "react";
-import { Heart, Flame, Sparkles, Wand2, ShieldCheck, Plus, Check, QrCode } from "lucide-react";
+import { Heart, Flame, Sparkles, Wand2, ShieldCheck, Plus, Check, QrCode, Printer } from "lucide-react";
 import { toast } from "sonner";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { StudentBadgeModal } from "./student-badge-modal";
+import { TeamQrSheetModal } from "./team-qr-sheet-modal";
 import {
   Dialog,
   DialogContent,
@@ -18,7 +19,9 @@ import {
 import { 
   adminRefillHearts, 
   adminProtectStreak, 
-  adminAwardPraiseXp 
+  adminAwardPraiseXp,
+  adminBulkRefillTeamHearts,
+  adminBulkAwardTeamPraiseXp,
 } from "@/actions/admin-overrides";
 
 type LearnerData = {
@@ -36,12 +39,17 @@ type Props = {
   learners: LearnerData[];
   teamName?: string;
   headerActions?: React.ReactNode;
+  /** Active team id. Enables bulk actions & team QR sheet (omitted in the global Super-Admin view). */
+  podId?: number;
 };
 
-export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerActions }: Props) => {
+export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerActions, podId }: Props) => {
   const [learners, setLearners] = useState(initialLearners);
   const [praiseTarget, setPraiseTarget] = useState<LearnerData | null>(null);
   const [badgeTarget, setBadgeTarget] = useState<LearnerData | null>(null);
+  const [isQrSheetOpen, setIsQrSheetOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState<"all" | "hearts">("all");
   const [praiseAmount, setPraiseAmount] = useState(50);
   const [praiseReason, setPraiseReason] = useState("Spoke Croatian at dinner!");
   const [pending, startTransition] = useTransition();
@@ -90,6 +98,66 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
       }
     });
   };
+
+  const BULK_PRAISE_XP = 25;
+
+  const handleBulkRefill = () => {
+    if (!podId) return;
+    startTransition(async () => {
+      try {
+        const res = await adminBulkRefillTeamHearts(podId);
+        if (res?.error) {
+          toast.error(res.error);
+          return;
+        }
+        const refilled = res?.refilled ?? 0;
+        toast.success(
+          refilled > 0
+            ? `❤️ Refilled hearts to 5/5 for ${refilled} learner${refilled === 1 ? "" : "s"}!`
+            : "Everyone already has 5/5 hearts."
+        );
+        setLearners((prev) => prev.map((l) => ({ ...l, hearts: 5 })));
+      } catch {
+        toast.error("Failed to refill team hearts.");
+      }
+    });
+  };
+
+  const handleBulkPraise = () => {
+    if (!podId) return;
+    if (
+      !confirm(
+        `Award +${BULK_PRAISE_XP} XP to all ${learners.length} learner${learners.length === 1 ? "" : "s"} in ${teamName || "this team"}?`
+      )
+    ) {
+      return;
+    }
+    startTransition(async () => {
+      try {
+        const res = await adminBulkAwardTeamPraiseXp(
+          podId,
+          BULK_PRAISE_XP,
+          "Team effort!"
+        );
+        if (res?.error) {
+          toast.error(res.error);
+          return;
+        }
+        toast.success(`🌟 Awarded +${BULK_PRAISE_XP} XP to ${res?.count ?? 0} learners!`);
+        setLearners((prev) => prev.map((l) => ({ ...l, points: l.points + BULK_PRAISE_XP })));
+      } catch {
+        toast.error("Failed to award team praise.");
+      }
+    });
+  };
+
+  const needsHeartsCount = learners.filter((l) => l.hearts < 5).length;
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleLearners = learners.filter(
+    (l) =>
+      (!normalizedQuery || l.userName.toLowerCase().includes(normalizedQuery)) &&
+      (filter === "all" || l.hearts < 5)
+  );
 
   const handleAwardPraise = () => {
     if (!praiseTarget) return;
@@ -146,12 +214,82 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
             </p>
           </div>
 
-          {headerActions && (
+          {(headerActions || podId) && (
             <div className="flex flex-wrap items-center gap-2">
               {headerActions}
+              {podId && learners.length > 0 && (
+                <Button
+                  size="sm"
+                  variant="primaryOutline"
+                  onClick={() => setIsQrSheetOpen(true)}
+                  className="text-xs font-extrabold h-8 px-3 cursor-pointer"
+                >
+                  <Printer className="h-3.5 w-3.5 mr-1.5" />
+                  Print Team QR Sheet
+                </Button>
+              )}
             </div>
           )}
         </div>
+
+        {podId && learners.length > 0 && (
+          <div className="px-5 py-3 bg-amber-50/70 border-b border-amber-200/70 flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs font-black uppercase tracking-wider text-amber-900">
+                Bulk Team Actions:
+              </span>
+              <Button
+                size="sm"
+                variant="ghost"
+                disabled={pending || needsHeartsCount === 0}
+                onClick={handleBulkRefill}
+                className="text-xs font-extrabold text-rose-700 bg-white border border-rose-200 hover:bg-rose-50 h-8"
+              >
+                <Heart className="h-3.5 w-3.5 mr-1.5" />
+                {needsHeartsCount === 0 ? "All Hearts Full" : `Refill ${needsHeartsCount} to 5/5`}
+              </Button>
+              <Button
+                size="sm"
+                variant="primary"
+                disabled={pending}
+                onClick={handleBulkPraise}
+                className="text-xs font-extrabold bg-amber-500 hover:bg-amber-600 text-white h-8"
+              >
+                <Sparkles className="h-3.5 w-3.5 mr-1.5" />
+                Team Praise (+{BULK_PRAISE_XP} XP each)
+              </Button>
+            </div>
+
+            {learners.length > 4 && (
+              <div className="flex items-center gap-2 flex-wrap">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search learner..."
+                  aria-label="Search learners"
+                  className="text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-300 bg-white focus:border-blue-600 outline-hidden w-40"
+                />
+                <div className="flex items-center bg-white rounded-xl p-0.5 border border-slate-200 text-xs font-bold">
+                  <button
+                    type="button"
+                    onClick={() => setFilter("all")}
+                    className={`px-2.5 py-1 rounded-lg cursor-pointer ${filter === "all" ? "bg-blue-900 text-white" : "text-slate-600 hover:text-slate-900"}`}
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFilter("hearts")}
+                    className={`px-2.5 py-1 rounded-lg cursor-pointer ${filter === "hearts" ? "bg-rose-600 text-white" : "text-slate-600 hover:text-slate-900"}`}
+                  >
+                    Needs ❤️
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         {learners.length === 0 ? (
           <div className="p-10 text-center">
@@ -159,12 +297,17 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               🌱 No learners in {teamName || "this team"} yet
             </p>
             <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
-              Use the <strong>Add Child</strong> button or launch the <strong>Family / Classroom Wizard</strong> above to create accounts and print QR login badges!
+              Use the <strong>Add Learner</strong> button or launch the <strong>Family / Classroom Wizard</strong> above to create accounts and print QR login badges!
             </p>
           </div>
         ) : (
         <div className="divide-y divide-slate-100">
-          {learners.map((learner, idx) => (
+          {visibleLearners.length === 0 && (
+            <div className="p-6 text-center text-xs font-bold text-slate-500">
+              No learners match your search or filter.
+            </div>
+          )}
+          {visibleLearners.map((learner, idx) => (
             <div
               key={learner.userId}
               className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/50 transition"
@@ -205,7 +348,7 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               </div>
 
               {/* Parent Magic Wand Actions */}
-              <div className="flex items-center gap-2 self-start md:self-auto shrink-0">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full md:w-auto shrink-0">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -339,6 +482,15 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {podId && (
+        <TeamQrSheetModal
+          isOpen={isQrSheetOpen}
+          onOpenChange={setIsQrSheetOpen}
+          podId={podId}
+          podName={teamName || "this team"}
+        />
+      )}
 
       <StudentBadgeModal
         isOpen={!!badgeTarget}

@@ -47,7 +47,10 @@ export const joinPodByCode = async (inviteCode: string) => {
   return { success: true, podName: pod.name, podId: pod.id };
 };
 
-export const createPod = async (name: string) => {
+export const createPod = async (
+  name: string,
+  type: "family" | "classroom" = "family"
+) => {
   const { userId } = await auth();
 
   if (!userId) {
@@ -64,10 +67,10 @@ export const createPod = async (name: string) => {
 
   const [newPod] = await db.insert(pods).values({
     name: trimmedName,
-    type: "family",
+    type,
     inviteCode,
     ownerId: userId,
-    targetXp: 1000,
+    targetXp: type === "classroom" ? 5000 : 1000,
   }).returning();
 
   await db.insert(podMembers).values({
@@ -76,6 +79,7 @@ export const createPod = async (name: string) => {
     role: "admin",
   });
 
+  revalidatePath("/admin");
   revalidatePath("/leaderboard");
   revalidatePath("/learn");
 
@@ -174,6 +178,17 @@ export const removePodMember = async (podId: number, memberUserId: string) => {
   const { userId } = await auth();
   if (!userId) {
     throw new Error("Unauthorized");
+  }
+
+  const targetPod = await db.query.pods.findFirst({ where: eq(pods.id, podId) });
+  if (!targetPod) {
+    return { error: "Team not found." };
+  }
+  if (targetPod.ownerId !== userId && !(await isSuperAdmin())) {
+    return { error: "Only the team owner or super administrator can remove members." };
+  }
+  if (memberUserId === targetPod.ownerId) {
+    return { error: "The team owner cannot be removed from their own team." };
   }
 
   await db.delete(podMembers).where(

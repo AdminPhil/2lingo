@@ -26,6 +26,7 @@ import { HowToAddChildrenCard } from "@/components/admin/how-to-add-children-car
 import { AddChildModal } from "@/components/admin/add-child-modal";
 import { ParentSetupWizardModal } from "@/components/admin/parent-setup-wizard-modal";
 import { TeacherSetupWizardModal } from "@/components/admin/teacher-setup-wizard-modal";
+import { JoinSlideModal } from "@/components/admin/join-slide-modal";
 import type { TrickyWordsAnalytics } from "@/db/queries";
 
 type FormattedPod = {
@@ -59,6 +60,7 @@ type Props = {
   parentName: string;
   superAdmin: boolean;
   activePodId: number;
+  isGlobalView?: boolean;
   podName: string;
   podType: string;
   inviteCode: string;
@@ -80,6 +82,7 @@ export const AdminCommandCenter = ({
   parentName,
   superAdmin,
   activePodId,
+  isGlobalView = false,
   podName,
   podType,
   inviteCode,
@@ -101,6 +104,7 @@ export const AdminCommandCenter = ({
   const [isAddChildOpen, setIsAddChildOpen] = useState(false);
   const [isFamilyWizardOpen, setIsFamilyWizardOpen] = useState(false);
   const [isClassroomWizardOpen, setIsClassroomWizardOpen] = useState(false);
+  const [isJoinSlideOpen, setIsJoinSlideOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -130,7 +134,7 @@ export const AdminCommandCenter = ({
       {/* =================================================================== */}
       {/* DUAL-ROLE TEAM SWITCHER BAR (Shown when user manages > 1 Team!)     */}
       {/* =================================================================== */}
-      {formattedPods.length > 1 && (
+      {(formattedPods.length > 1 || superAdmin) && (
         <div className="mb-5 bg-white p-2.5 rounded-2xl border-2 border-slate-200 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-xs font-black uppercase tracking-wider text-slate-400 px-2">
@@ -138,7 +142,7 @@ export const AdminCommandCenter = ({
             </span>
 
             {formattedPods.map((pod) => {
-              const isSelected = pod.id === activePodId;
+              const isSelected = !isGlobalView && pod.id === activePodId;
               const isPodClassroom = pod.type === "classroom";
               return (
                 <Link
@@ -166,6 +170,21 @@ export const AdminCommandCenter = ({
                 </Link>
               );
             })}
+
+            {superAdmin && (
+              <Link
+                href="/admin?podId=all"
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 border border-amber-300/80 ${
+                  isGlobalView
+                    ? "bg-blue-900 text-white shadow-xs"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                }`}
+                title="Super-Admin: every learner on the platform"
+              >
+                <span>??</span>
+                <span>All Platform</span>
+              </Link>
+            )}
           </div>
 
           <Button
@@ -203,12 +222,12 @@ export const AdminCommandCenter = ({
               Dobrodošli, {parentName}!
             </h2>
             <p className="text-xs sm:text-sm text-blue-100 mt-0.5 max-w-xl">
-              Viewing <strong className="text-white underline decoration-amber-400 underline-offset-4">{podName}</strong> — monitor daily streaks, manage weekly team celebration goals, and support your learners.
+              Viewing <strong className="text-white underline decoration-amber-400 underline-offset-4">{isGlobalView ? "All Platform Learners" : podName}</strong> — monitor daily streaks, manage weekly team celebration goals, and support your learners.
             </p>
           </div>
 
           {/* Consolidated 1-Click Copy Team Join Code Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 px-4 border border-white/20 flex items-center justify-between gap-4 shrink-0">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 px-4 border border-white/20 flex flex-wrap items-center justify-between gap-4 shrink-0">
             <div>
               <span className="text-xs font-bold text-blue-200 block">
                 {isClassroom ? "Classroom Team Code" : "Family Team Code"}
@@ -252,6 +271,16 @@ export const AdminCommandCenter = ({
                 )}
               </button>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setIsJoinSlideOpen(true)}
+              className="px-3.5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 border-b-2 border-amber-600 font-black text-xs cursor-pointer shadow-xs flex flex-col items-center justify-center gap-0.5"
+              title="Show a big QR code and join instructions for a projector or tablet"
+            >
+              <span className="text-sm">📺 Join Slide</span>
+              <span className="text-xs font-bold opacity-80">Big QR + Code</span>
+            </button>
           </div>
         </div>
 
@@ -394,7 +423,8 @@ export const AdminCommandCenter = ({
 
           <LearnerHealthCard
             learners={learners}
-            teamName={podName}
+            teamName={isGlobalView ? "All Platform" : podName}
+            podId={isGlobalView ? undefined : activePodId}
             headerActions={
               <>
                 <Button
@@ -405,6 +435,7 @@ export const AdminCommandCenter = ({
                   <UserPlus className="h-3.5 w-3.5 mr-1.5" />
                   Add Learner
                 </Button>
+                {!isClassroom && (
                 <Button
                   size="sm"
                   onClick={() => setIsFamilyWizardOpen(true)}
@@ -413,6 +444,8 @@ export const AdminCommandCenter = ({
                   <Sparkles className="h-3.5 w-3.5 mr-1 text-amber-400" />
                   Family Wizard
                 </Button>
+                )}
+                {isClassroom && (
                 <Button
                   size="sm"
                   onClick={() => setIsClassroomWizardOpen(true)}
@@ -421,6 +454,7 @@ export const AdminCommandCenter = ({
                   <GraduationCap className="h-3.5 w-3.5 mr-1 text-amber-300" />
                   Classroom Wizard
                 </Button>
+                )}
               </>
             }
           />
@@ -454,6 +488,13 @@ export const AdminCommandCenter = ({
       )}
 
       {/* Quick-Action Modals */}
+      <JoinSlideModal
+        isOpen={isJoinSlideOpen}
+        onOpenChange={setIsJoinSlideOpen}
+        podName={podName}
+        inviteCode={inviteCode}
+      />
+
       <AddChildModal
         isOpen={isAddChildOpen}
         onOpenChange={setIsAddChildOpen}

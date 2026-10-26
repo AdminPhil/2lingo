@@ -105,7 +105,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[11px] text-slate-500 font-medium flex items-center gap-1">
+              <span className="text-xs text-slate-500 font-medium flex items-center gap-1">
                 <Sparkles className="h-3 w-3 text-amber-500" />
                 Takes 30 seconds
               </span>
@@ -139,7 +139,7 @@ export const HowToAddChildrenCard = ({ podId, podName, inviteCode }: Props) => {
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
               <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-lg">
-                <span className="text-[10px] font-bold text-slate-400 uppercase">Code:</span>
+                <span className="text-xs font-bold text-slate-400 uppercase">Code:</span>
                 <span className="font-mono font-black text-blue-800 text-sm tracking-wider">
                   {inviteCode}
                 </span>

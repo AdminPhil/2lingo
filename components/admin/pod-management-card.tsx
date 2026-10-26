@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { Users, Edit3, Plus, Trophy, Copy, Check, Trash2 } from "lucide-react";
+import { Users, Edit3, Plus, Trophy, Copy, Check, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { updatePodSettings, createPod, deletePod } from "@/actions/pod";
+import { updatePodSettings, createPod, deletePod, removePodMember } from "@/actions/pod";
 import { AddMemberToPodModal } from "@/components/admin/add-member-to-pod-modal";
 
 type PodData = {
@@ -52,9 +52,11 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
   const [editName, setEditName] = useState("");
   const [editCode, setEditCode] = useState("");
   const [editTargetXp, setEditTargetXp] = useState(1000);
+  const [editType, setEditType] = useState<"family" | "classroom">("family");
 
   // Create form state
   const [newName, setNewName] = useState("");
+  const [newType, setNewType] = useState<"family" | "classroom">("family");
 
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
@@ -71,16 +73,33 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
     setEditName(pod.name);
     setEditCode(pod.inviteCode);
     setEditTargetXp(pod.targetXp || 1000);
+    setEditType(pod.type === "classroom" ? "classroom" : "family");
+  };
+
+  const handleRemoveMember = (podId: number, memberUserId: string, memberName: string) => {
+    if (!confirm(`Remove ${memberName} from this team? Their account and progress are kept.`)) return;
+    startTransition(async () => {
+      try {
+        const res = await removePodMember(podId, memberUserId);
+        if (res?.error) {
+          toast.error(res.error);
+        } else {
+          toast.success(`Removed ${memberName} from the team.`);
+        }
+      } catch {
+        toast.error("Failed to remove member.");
+      }
+    });
   };
 
   const handleUpdate = () => {
     if (!editingPod) return;
     if (!editName.trim()) {
-      toast.error("Pod name cannot be empty.");
+      toast.error("Team name cannot be empty.");
       return;
     }
     if (!editCode.trim()) {
-      toast.error("Invite code cannot be empty.");
+      toast.error("Team code cannot be empty.");
       return;
     }
 
@@ -90,54 +109,56 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
           name: editName,
           inviteCode: editCode,
           targetXp: editTargetXp,
+          type: editType,
         });
 
         if (res?.error) {
           toast.error(res.error);
         } else {
-          toast.success("Pod settings updated successfully!");
+          toast.success("Team settings updated successfully!");
           setEditingPod(null);
         }
       } catch {
-        toast.error("Failed to update pod settings.");
+        toast.error("Failed to update team settings.");
       }
     });
   };
 
   const handleCreate = () => {
     if (!newName.trim()) {
-      toast.error("Please enter a pod name.");
+      toast.error("Please enter a team name.");
       return;
     }
 
     startTransition(async () => {
       try {
-        const res = await createPod(newName);
+        const res = await createPod(newName, newType);
         if (res?.error) {
           toast.error(res.error);
         } else {
-          toast.success(`Created pod "${newName}" with code ${res?.pod?.inviteCode}!`);
+          toast.success(`Created team "${newName}" with code ${res?.pod?.inviteCode}!`);
           setIsCreateOpen(false);
           setNewName("");
+          setNewType("family");
         }
       } catch {
-        toast.error("Failed to create pod.");
+        toast.error("Failed to create team.");
       }
     });
   };
 
   const handleDelete = (podId: number) => {
-    if (confirm("Are you sure you want to delete this pod?")) {
+    if (confirm("Are you sure you want to delete this team?")) {
       startTransition(async () => {
         try {
           const res = await deletePod(podId);
           if (res?.error) {
             toast.error(res.error);
           } else {
-            toast.success("Pod deleted.");
+            toast.success("Team deleted.");
           }
         } catch {
-          toast.error("Failed to delete pod.");
+          toast.error("Failed to delete team.");
         }
       });
     }
@@ -188,7 +209,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                       {pod.name}
                     </h4>
                     <span className="text-xs text-muted-foreground capitalize">
-                      {pod.type} Team • ID: {pod.id}
+                      {pod.type === "classroom" ? "Classroom" : "Family"} Team • ID: {pod.id}
                     </span>
                   </div>
                 </div>
@@ -220,7 +241,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
               <div className="grid grid-cols-2 gap-2 my-3 text-xs">
                 <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex items-center justify-between">
                   <div>
-                    <span className="text-slate-400 block text-[10px] font-bold uppercase">Team Code</span>
+                    <span className="text-slate-400 block text-xs font-bold uppercase">Team Code</span>
                     <span className="font-mono font-black text-blue-800 text-sm">{pod.inviteCode}</span>
                   </div>
                   <div className="flex items-center gap-1">
@@ -241,7 +262,7 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                 </div>
 
                 <div className="bg-white p-2.5 rounded-xl border border-slate-200">
-                  <span className="text-slate-400 block text-[10px] font-bold uppercase">Weekly Team Goal</span>
+                  <span className="text-slate-400 block text-xs font-bold uppercase">Weekly Team Goal</span>
                   <span className="font-extrabold text-neutral-800 text-sm flex items-center gap-x-1">
                     <Trophy className="h-3.5 w-3.5 text-amber-500" />
                     {pod.targetXp || 1000} XP
@@ -252,14 +273,14 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
               {/* Member list preview */}
               <div className="mt-3">
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wide">
                     Members ({pod.members.length}):
                   </span>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => setTargetPodForAdd(pod)}
-                    className="h-6 px-2 text-[11px] font-extrabold text-blue-600 hover:text-blue-700 hover:bg-blue-50 flex items-center gap-1 cursor-pointer"
+                    className="h-6 px-2 text-xs font-extrabold text-blue-600 hover:text-blue-700 hover:bg-blue-50 flex items-center gap-1 cursor-pointer"
                   >
                     <Plus className="h-3 w-3" />
                     <span>Add User</span>
@@ -273,9 +294,21 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                     >
                       <span>{m.userName}</span>
                       {(m.role === "owner" || m.role === "admin") && (
-                        <span className="text-[9px] bg-green-100 text-green-800 px-1 rounded font-bold uppercase">
+                        <span className="text-xs bg-blue-100 text-blue-900 px-1.5 rounded font-bold uppercase">
                           {m.role === "owner" ? "Parent" : "Admin"}
                         </span>
+                      )}
+                      {m.role !== "owner" && (
+                        <button
+                          type="button"
+                          disabled={pending}
+                          onClick={() => handleRemoveMember(pod.id, m.userId, m.userName)}
+                          className="text-slate-400 hover:text-rose-600 cursor-pointer"
+                          title={`Remove ${m.userName} from team`}
+                          aria-label={`Remove ${m.userName} from team`}
+                        >
+                          <X className="h-3.5 w-3.5" />
+                        </button>
                       )}
                     </span>
                   ))}
@@ -291,31 +324,55 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle className="text-center font-bold text-xl text-neutral-800">
-              Edit Pod Settings
+              Edit Team Settings
             </DialogTitle>
             <DialogDescription className="text-center text-xs text-neutral-600">
-              Customize pod name, unique invite code, and weekly collaborative XP celebration target.
+              Customize team mode, name, unique team code, and weekly collaborative XP celebration target.
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 my-2">
             <div>
+              <label className="text-xs font-bold text-slate-700 block mb-1.5">Team Mode</label>
+              <div className="grid grid-cols-2 gap-2">
+                {([
+                  { key: "family", label: "🏠 Family Team", sub: "Up to 15 members" },
+                  { key: "classroom", label: "🏫 Classroom Team", sub: "Up to 50 students" },
+                ] as const).map((opt) => (
+                  <button
+                    key={opt.key}
+                    type="button"
+                    onClick={() => setEditType(opt.key)}
+                    className={`p-3 rounded-2xl border-2 text-left cursor-pointer transition ${
+                      editType === opt.key
+                        ? "border-blue-600 bg-blue-50/70 text-blue-950"
+                        : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                    }`}
+                  >
+                    <span className="text-sm font-black block">{opt.label}</span>
+                    <span className="text-xs text-slate-600">{opt.sub}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
-                Pod Name
+                Team Name
               </label>
               <input
                 type="text"
                 value={editName}
                 onChange={(e) => setEditName(e.target.value)}
                 placeholder="e.g. Zgomba Family"
-                className="w-full text-sm font-semibold py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-green-600 outline-hidden transition"
+                className="w-full text-sm font-semibold py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-hidden transition"
                 disabled={pending}
               />
             </div>
 
             <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
-                Custom Invite Code
+                Custom Team Code
               </label>
               <input
                 type="text"
@@ -323,10 +380,10 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
                 onChange={(e) => setEditCode(e.target.value.toUpperCase())}
                 placeholder="e.g. ZGOMBA"
                 maxLength={10}
-                className="w-full font-mono text-base font-black tracking-widest uppercase py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-green-600 outline-hidden transition"
+                className="w-full font-mono text-base font-black tracking-widest uppercase py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-hidden transition"
                 disabled={pending}
               />
-              <span className="text-[11px] text-muted-foreground mt-0.5 block">
+              <span className="text-xs text-muted-foreground mt-0.5 block">
                 Must be unique. Kids enter this code to join.
               </span>
             </div>
@@ -390,23 +447,47 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle className="text-center font-bold text-xl text-neutral-800">
-              Create a New Learning Pod
+              Create a New Learning Team
             </DialogTitle>
             <DialogDescription className="text-center text-xs text-neutral-600">
-              Set up a new circle for cousins, classmates, or study buddies!
+              Set up a new Family Team or Classroom Team!
             </DialogDescription>
           </DialogHeader>
 
+          <div className="mt-3">
+            <label className="text-xs font-bold text-slate-700 block mb-1.5">Team Mode</label>
+            <div className="grid grid-cols-2 gap-2">
+              {([
+                { key: "family", label: "🏠 Family Team", sub: "Up to 15 members" },
+                { key: "classroom", label: "🏫 Classroom Team", sub: "Up to 50 students" },
+              ] as const).map((opt) => (
+                <button
+                  key={opt.key}
+                  type="button"
+                  onClick={() => setNewType(opt.key)}
+                  className={`p-3 rounded-2xl border-2 text-left cursor-pointer transition ${
+                    newType === opt.key
+                      ? "border-blue-600 bg-blue-50/70 text-blue-950"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                  }`}
+                >
+                  <span className="text-sm font-black block">{opt.label}</span>
+                  <span className="text-xs text-slate-600">{opt.sub}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="my-3">
             <label className="text-xs font-bold text-slate-700 block mb-1">
-              Pod Name
+              Team Name
             </label>
             <input
               type="text"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
               placeholder="e.g. Cousins Club"
-              className="w-full text-sm font-semibold py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-green-600 outline-hidden transition"
+              className="w-full text-sm font-semibold py-2 px-3 border-2 border-slate-200 rounded-xl focus:border-blue-600 outline-hidden transition"
               disabled={pending}
             />
           </div>
@@ -416,9 +497,9 @@ export const PodManagementCard = ({ pods: initialPods, availableUsers = [], isSu
               variant="primary"
               onClick={handleCreate}
               disabled={pending || !newName.trim()}
-              className="w-full text-base font-bold bg-green-600 hover:bg-green-700"
+              className="w-full text-base font-bold bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white"
             >
-              {pending ? "Creating..." : "Create Pod"}
+              {pending ? "Creating..." : "Create Team"}
             </Button>
             <Button
               variant="ghost"

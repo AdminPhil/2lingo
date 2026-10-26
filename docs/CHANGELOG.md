@@ -1,9 +1,20 @@
-# 📜 2lingo Living Changelog
+﻿# 📜 2lingo Living Changelog
 
 All notable changes, pedagogical updates, curriculum expansions, and infrastructure upgrades are documented here.
 
 ---
 
+## [2026-10-25] - `/admin` Scoped Switcher, Team QR Sheet, Join Slide, Bulk Magic Wands & Classroom Team Creation (CR-074)
+
+### Added & Refined
+- **[CR-074] ✅ IMPLEMENTED & VERIFIED:**
+  - **Scoped roster fix (`app/admin/page.tsx`):** Learners & tricky-words analytics are always scoped to the highlighted team; Super-Admins get an explicit `🌐 All Platform` pill (`?podId=all`).
+  - **`📺 Join Slide` (`components/admin/join-slide-modal.tsx`)** in the Hero and **`🖨️ Print Team QR Sheet` + CSV (`components/admin/team-qr-sheet-modal.tsx`, `adminGetTeamQrPasses`)** for existing learners. Generating a sheet resets team passwords (warned in UI).
+  - **Bulk Magic Wands** (`adminBulkRefillTeamHearts`, `adminBulkAwardTeamPraiseXp`, pod-owner RBAC) plus roster search & "Needs ❤️" filter; contextual Family/Classroom wizard button; 2×2 mobile action grid.
+  - **Team Settings:** Family vs Classroom mode in Create/Edit Team (`createPod(name, type)`), member remove (`×`), "Team" copy & navy buttons. `removePodMember` now enforces owner/Super-Admin and protects the owner.
+  - **Polish:** 12px minimum font floor across admin cards; SVG Šahovnica replaces `🇭🇷` in `StudentBadgeModal`.
+
+---
 ## [2026-10-25] - Streamline `/admin` into 3-Tab Parent & Educator Command Center & "Teams" Standard (CR-073)
 
 ### Added & Refined

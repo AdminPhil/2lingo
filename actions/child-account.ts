@@ -325,3 +325,46 @@ export const adminGetOrResetStudentQrPass = async (targetUserId: string) => {
     },
   };
 };
+
+export const adminGetTeamQrPasses = async (podId: number) => {
+  const { userId } = await auth();
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const pod = await db.query.pods.findFirst({
+    where: eq(pods.id, podId),
+    with: { members: true },
+  });
+  if (!pod) {
+    return { error: "Team not found." };
+  }
+  if (pod.ownerId !== userId && !(await isSuperAdmin())) {
+    return { error: "You can only print badges for your own teams." };
+  }
+
+  // Skip the team owner / adult admins: only learner passes are printed.
+  const learnerIds = pod.members
+    .filter((m) => m.role === "member" && m.userId !== userId)
+    .map((m) => m.userId);
+
+  const passes: {
+    userId: string;
+    name: string;
+    username: string;
+    password: string;
+    userImageSrc: string;
+  }[] = [];
+  const failures: string[] = [];
+
+  for (const learnerId of learnerIds) {
+    const res = await adminGetOrResetStudentQrPass(learnerId);
+    if (res.success && res.child) {
+      passes.push(res.child);
+    } else {
+      failures.push(learnerId);
+    }
+  }
+
+  return { success: true, inviteCode: pod.inviteCode, podName: pod.name, passes, failures };
+};
