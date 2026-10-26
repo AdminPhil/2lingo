@@ -27,6 +27,7 @@ import { AddChildModal } from "@/components/admin/add-child-modal";
 import { ParentSetupWizardModal } from "@/components/admin/parent-setup-wizard-modal";
 import { TeacherSetupWizardModal } from "@/components/admin/teacher-setup-wizard-modal";
 import { JoinSlideModal } from "@/components/admin/join-slide-modal";
+import { ADMIN_BTN_PRIMARY, ADMIN_BTN_SECONDARY } from "@/components/admin/admin-button-styles";
 import type { TrickyWordsAnalytics } from "@/db/queries";
 
 type FormattedPod = {
@@ -150,8 +151,8 @@ export const AdminCommandCenter = ({
                   href={`/admin?podId=${pod.id}`}
                   className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 ${
                     isSelected
-                      ? "bg-blue-900 text-white shadow-xs"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      ? "bg-blue-900 text-white border-2 border-blue-900 shadow-xs"
+                      : "bg-white text-slate-700 border-2 border-slate-400 hover:border-blue-900 hover:bg-blue-50"
                   }`}
                 >
                   <span>{isPodClassroom ? "🏫" : "🏠"}</span>
@@ -161,8 +162,8 @@ export const AdminCommandCenter = ({
                       isSelected
                         ? "bg-white/20 text-white"
                         : isPodClassroom
-                        ? "bg-indigo-100 text-indigo-800"
-                        : "bg-blue-100 text-blue-800"
+                        ? "bg-indigo-100 text-indigo-800 border border-indigo-300"
+                        : "bg-blue-100 text-blue-800 border border-blue-300"
                     }`}
                   >
                     {isPodClassroom ? "Classroom Team" : "Family Team"} • {pod.memberCount}
@@ -174,10 +175,10 @@ export const AdminCommandCenter = ({
             {superAdmin && (
               <Link
                 href="/admin?podId=all"
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 border border-amber-300/80 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-2 border-2 ${
                   isGlobalView
-                    ? "bg-blue-900 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    ? "bg-blue-900 text-white border-blue-900 shadow-xs"
+                    : "bg-white text-slate-700 border-slate-400 hover:border-blue-900 hover:bg-blue-50"
                 }`}
                 title="Super-Admin: every learner on the platform"
               >
@@ -191,7 +192,7 @@ export const AdminCommandCenter = ({
             variant="ghost"
             size="sm"
             onClick={() => setActiveTab("teams")}
-            className="text-xs font-extrabold text-blue-900 hover:bg-blue-50 border border-slate-200 rounded-xl h-8 px-3 self-end sm:self-auto cursor-pointer"
+            className="text-xs font-extrabold text-blue-900 hover:bg-blue-50 border-2 border-slate-400 rounded-xl h-9 px-3 self-end sm:self-auto cursor-pointer"
           >
             + Manage Teams
           </Button>
@@ -429,8 +430,9 @@ export const AdminCommandCenter = ({
               <>
                 <Button
                   size="sm"
+                  variant="default"
                   onClick={() => setIsAddChildOpen(true)}
-                  className="text-xs font-extrabold bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white shadow-xs cursor-pointer h-8 px-3"
+                  className={ADMIN_BTN_PRIMARY}
                 >
                   <UserPlus className="h-3.5 w-3.5 mr-1.5" />
                   Add Learner
@@ -438,20 +440,22 @@ export const AdminCommandCenter = ({
                 {!isClassroom && (
                 <Button
                   size="sm"
+                  variant="default"
                   onClick={() => setIsFamilyWizardOpen(true)}
-                  className="text-xs font-extrabold bg-blue-900 hover:bg-blue-950 text-white shadow-xs cursor-pointer h-8 px-3"
+                  className={ADMIN_BTN_SECONDARY}
                 >
-                  <Sparkles className="h-3.5 w-3.5 mr-1 text-amber-400" />
+                  <Sparkles className="h-3.5 w-3.5 mr-1.5 text-amber-500" />
                   Family Wizard
                 </Button>
                 )}
                 {isClassroom && (
                 <Button
                   size="sm"
+                  variant="default"
                   onClick={() => setIsClassroomWizardOpen(true)}
-                  className="text-xs font-extrabold bg-indigo-700 hover:bg-indigo-800 text-white shadow-xs cursor-pointer h-8 px-3"
+                  className={ADMIN_BTN_SECONDARY}
                 >
-                  <GraduationCap className="h-3.5 w-3.5 mr-1 text-amber-300" />
+                  <GraduationCap className="h-3.5 w-3.5 mr-1.5 text-blue-700" />
                   Classroom Wizard
                 </Button>
                 )}

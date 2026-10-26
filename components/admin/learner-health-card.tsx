@@ -8,6 +8,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { StudentBadgeModal } from "./student-badge-modal";
 import { TeamQrSheetModal } from "./team-qr-sheet-modal";
+import { ADMIN_BTN_SECONDARY } from "./admin-button-styles";
 import {
   Dialog,
   DialogContent,
@@ -205,9 +206,6 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               <h3 className="font-extrabold text-lg text-neutral-800">
                 {teamName ? `${teamName} — Team Roster & Magic Wand` : "Team Roster & Parent Magic Wand"}
               </h3>
-              <span className="text-xs font-bold px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-full flex items-center gap-x-1">
-                <Wand2 className="h-3 w-3" /> Overrides
-              </span>
             </div>
             <p className="text-xs text-muted-foreground mt-0.5">
               Refill hearts on-demand, grant streak grace days, reward real-life Croatian wins, or print QR badges.
@@ -220,11 +218,11 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               {podId && learners.length > 0 && (
                 <Button
                   size="sm"
-                  variant="primaryOutline"
+                  variant="default"
                   onClick={() => setIsQrSheetOpen(true)}
-                  className="text-xs font-extrabold h-8 px-3 cursor-pointer"
+                  className={ADMIN_BTN_SECONDARY}
                 >
-                  <Printer className="h-3.5 w-3.5 mr-1.5" />
+                  <Printer className="h-3.5 w-3.5 mr-1.5 text-blue-700" />
                   Print Team QR Sheet
                 </Button>
               )}
@@ -233,29 +231,29 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
         </div>
 
         {podId && learners.length > 0 && (
-          <div className="px-5 py-3 bg-amber-50/70 border-b border-amber-200/70 flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="px-5 py-3 bg-slate-50 border-b border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-black uppercase tracking-wider text-amber-900">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-600">
                 Bulk Team Actions:
               </span>
               <Button
                 size="sm"
-                variant="ghost"
+                variant="default"
                 disabled={pending || needsHeartsCount === 0}
                 onClick={handleBulkRefill}
-                className="text-xs font-extrabold text-rose-700 bg-white border border-rose-200 hover:bg-rose-50 h-8"
+                className={ADMIN_BTN_SECONDARY}
               >
-                <Heart className="h-3.5 w-3.5 mr-1.5" />
+                <Heart className="h-3.5 w-3.5 mr-1.5 text-rose-500" />
                 {needsHeartsCount === 0 ? "All Hearts Full" : `Refill ${needsHeartsCount} to 5/5`}
               </Button>
               <Button
                 size="sm"
-                variant="primary"
+                variant="default"
                 disabled={pending}
                 onClick={handleBulkPraise}
-                className="text-xs font-extrabold bg-amber-500 hover:bg-amber-600 text-white h-8"
+                className={ADMIN_BTN_SECONDARY}
               >
-                <Sparkles className="h-3.5 w-3.5 mr-1.5" />
+                <Sparkles className="h-3.5 w-3.5 mr-1.5 text-amber-500" />
                 Team Praise (+{BULK_PRAISE_XP} XP each)
               </Button>
             </div>
@@ -268,9 +266,9 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search learner..."
                   aria-label="Search learners"
-                  className="text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-300 bg-white focus:border-blue-600 outline-hidden w-40"
+                  className="text-xs font-bold px-3 py-1.5 rounded-xl border-2 border-slate-400 bg-white focus:border-blue-600 outline-hidden w-40"
                 />
-                <div className="flex items-center bg-white rounded-xl p-0.5 border border-slate-200 text-xs font-bold">
+                <div className="flex items-center bg-white rounded-xl p-0.5 border-2 border-slate-400 text-xs font-bold">
                   <button
                     type="button"
                     onClick={() => setFilter("all")}
@@ -325,18 +323,18 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
                     <h4 className="font-black text-neutral-800 text-base">
                       {learner.userName}
                     </h4>
-                    <span className="text-xs font-mono font-bold px-2 py-0.5 bg-slate-100 text-slate-700 rounded-md">
+                    <span className="text-xs font-mono font-bold px-2 py-0.5 bg-slate-100 text-slate-700 rounded-md border border-slate-300">
                       {learner.points} XP
                     </span>
                   </div>
 
                   {/* Health Pills */}
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs">
-                    <span className="flex items-center gap-x-1 font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
+                    <span className="flex items-center gap-x-1 font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-400">
                       <Flame className="h-3.5 w-3.5" />
                       <span>{learner.streak} Day Flame</span>
                     </span>
-                    <span className="flex items-center gap-x-1 font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md border border-rose-200/60">
+                    <span className="flex items-center gap-x-1 font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-md border border-rose-400">
                       <Heart className="h-3.5 w-3.5" />
                       <span>{learner.hearts}/5 Hearts</span>
                     </span>
@@ -350,31 +348,31 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               {/* Parent Magic Wand Actions */}
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full md:w-auto shrink-0">
                 <Button
-                  variant="ghost"
+                  variant="default"
                   size="sm"
                   disabled={pending || learner.hearts >= 5}
                   onClick={() => handleRefill(learner)}
-                  className="text-xs font-bold text-rose-600 hover:text-rose-700 hover:bg-rose-50 border border-rose-200/80 bg-white h-8"
+                  className={ADMIN_BTN_SECONDARY}
                   title="Refill to 5/5 hearts immediately"
                 >
-                  <Heart className="h-3.5 w-3.5 mr-1 text-rose-500" />
-                  {learner.hearts >= 5 ? "Hearts Full" : "Refill ❤️"}
+                  <Heart className="h-3.5 w-3.5 mr-1.5 text-rose-500" />
+                  {learner.hearts >= 5 ? "Hearts Full" : "Refill"}
                 </Button>
 
                 <Button
-                  variant="ghost"
+                  variant="default"
                   size="sm"
                   disabled={pending}
                   onClick={() => handleProtectStreak(learner)}
-                  className="text-xs font-bold text-amber-600 hover:text-amber-700 hover:bg-amber-50 border border-amber-200/80 bg-white h-8"
+                  className={ADMIN_BTN_SECONDARY}
                   title="Grant a grace day to preserve flame streak"
                 >
-                  <Flame className="h-3.5 w-3.5 mr-1 text-amber-500" />
-                  Grace Day 🔥
+                  <Flame className="h-3.5 w-3.5 mr-1.5 text-amber-500" />
+                  Grace Day
                 </Button>
 
                 <Button
-                  variant="primary"
+                  variant="default"
                   size="sm"
                   disabled={pending}
                   onClick={() => {
@@ -382,22 +380,22 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
                     setPraiseAmount(50);
                     setPraiseReason("Spoke Croatian at dinner!");
                   }}
-                  className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white h-8 cursor-pointer"
+                  className={ADMIN_BTN_SECONDARY}
                   title="Award praise XP for offline achievements"
                 >
-                  <Sparkles className="h-3.5 w-3.5 mr-1" />
-                  Praise XP 🌟
+                  <Sparkles className="h-3.5 w-3.5 mr-1.5 text-amber-500" />
+                  Praise XP
                 </Button>
 
                 <Button
-                  variant="ghost"
+                  variant="default"
                   size="sm"
                   onClick={() => setBadgeTarget(learner)}
-                  className="text-xs font-bold text-blue-700 hover:text-blue-800 hover:bg-blue-50 border border-blue-200/80 bg-white h-8 cursor-pointer"
+                  className={ADMIN_BTN_SECONDARY}
                   title="View and print student QR login badge"
                 >
-                  <QrCode className="h-3.5 w-3.5 mr-1 text-blue-700" />
-                  QR Badge 🪪
+                  <QrCode className="h-3.5 w-3.5 mr-1.5 text-blue-700" />
+                  QR Badge
                 </Button>
               </div>
             </div>
@@ -467,7 +465,7 @@ export const LearnerHealthCard = ({ learners: initialLearners, teamName, headerA
               variant="primary"
               onClick={handleAwardPraise}
               disabled={pending}
-              className="w-full text-base font-bold bg-amber-500 hover:bg-amber-600 text-white"
+              className="w-full text-base font-bold bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white"
             >
               {pending ? "Awarding..." : `Award +${praiseAmount} XP to ${praiseTarget?.userName}`}
             </Button>
