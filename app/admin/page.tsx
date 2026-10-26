@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { auth, currentUser } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
@@ -176,25 +177,16 @@ const AdminPage = async ({ searchParams }: Props) => {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-2xs">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-x-3">
-            {/* Crisp SVG Croatian Šahovnica Shield Crest (Zero Windows "HR" emoji fallback) */}
-            <div className="h-10 w-10 rounded-xl bg-blue-900 flex items-center justify-center shadow-xs shrink-0 border border-blue-950">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                className="rounded-xs overflow-hidden"
-                aria-label="Hrvatska Šahovnica"
-              >
-                <rect width="20" height="20" fill="#FFFFFF" />
-                <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
-                <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
-                <rect x="5" y="5" width="5" height="5" fill="#DC2626" />
-                <rect x="15" y="5" width="5" height="5" fill="#DC2626" />
-                <rect x="0" y="10" width="5" height="5" fill="#DC2626" />
-                <rect x="10" y="10" width="5" height="5" fill="#DC2626" />
-                <rect x="5" y="15" width="5" height="5" fill="#DC2626" />
-                <rect x="15" y="15" width="5" height="5" fill="#DC2626" />
-              </svg>
+            {/* Paško the Dalmatian mascot (same portrait as the mobile header) */}
+            <div className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-blue-900 bg-white shadow-xs shrink-0">
+              <Image
+                src="/mascot.png"
+                fill
+                sizes="40px"
+                alt="Paško the Dalmatian"
+                className="object-cover"
+                priority
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
