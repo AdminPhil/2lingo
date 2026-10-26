@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Users,
   Sparkles,
@@ -205,39 +204,27 @@ export const AdminCommandCenter = ({
       {/* =================================================================== */}
       <div className="bg-blue-900 bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900 rounded-3xl p-5 sm:p-6 text-white shadow-md mb-6 border border-blue-800">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-white/15">
-          <div className="flex items-center gap-4">
-            <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden border-4 border-white/80 bg-white shadow-md shrink-0">
-              <Image
-                src="/mascot.png"
-                fill
-                sizes="80px"
-                alt="Paško the Dalmatian"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 bg-blue-700/80 border border-blue-400/30 rounded-full text-blue-100">
-                  {isClassroom
-                    ? "🏫 Classroom Team Mode (Max 50)"
-                    : "🏠 Family Team Mode (Max 15)"}
+          <div>
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
+              <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 bg-blue-700/80 border border-blue-400/30 rounded-full text-blue-100">
+                {isClassroom
+                  ? "🏫 Classroom Team Mode (Max 50)"
+                  : "🏠 Family Team Mode (Max 15)"}
+              </span>
+              {superAdmin && (
+                <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 bg-amber-400 text-amber-950 rounded-full inline-flex items-center gap-x-1 shadow-xs">
+                  <Crown className="h-3.5 w-3.5 fill-amber-950" />
+                  Super-Admin (philip.zgomba@gmail.com)
                 </span>
-                {superAdmin && (
-                  <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 bg-amber-400 text-amber-950 rounded-full inline-flex items-center gap-x-1 shadow-xs">
-                    <Crown className="h-3.5 w-3.5 fill-amber-950" />
-                    Super-Admin (philip.zgomba@gmail.com)
-                  </span>
-                )}
-              </div>
-
-              <h2 className="text-xl sm:text-2xl font-black tracking-tight">
-                Dobrodošli, {parentName}!
-              </h2>
-              <p className="text-xs sm:text-sm text-blue-100 mt-0.5 max-w-xl">
-                Viewing <strong className="text-white underline decoration-amber-400 underline-offset-4">{isGlobalView ? "All Platform Learners" : podName}</strong> — monitor daily streaks, manage weekly team celebration goals, and support your learners.
-              </p>
+              )}
             </div>
+
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight">
+              Dobrodošli, {parentName}!
+            </h2>
+            <p className="text-xs sm:text-sm text-blue-100 mt-0.5 max-w-xl">
+              Viewing <strong className="text-white underline decoration-amber-400 underline-offset-4">{isGlobalView ? "All Platform Learners" : podName}</strong> — monitor daily streaks, manage weekly team celebration goals, and support your learners.
+            </p>
           </div>
 
           {/* Consolidated 1-Click Copy Team Join Code Card */}
