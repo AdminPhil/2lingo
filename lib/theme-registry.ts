@@ -109,3 +109,170 @@ export const getStageThemeForUnit = (unitOrder: number): RegionTheme => {
     ) || LEVEL_1_STAGES[0]
   );
 };
+
+export type UnitSceneryItem = {
+  imageSrc: string;
+  subImageSrc?: string;
+  alt: string;
+  title: string;
+  badgeEmoji?: string;
+  topOffsetClass: string;
+};
+
+export type UnitSceneryConfig = {
+  left?: UnitSceneryItem;
+  right?: UnitSceneryItem;
+};
+
+export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
+  switch (unitOrder) {
+    case 1:
+      return {
+        left: {
+          imageSrc: "/mascot.png",
+          alt: "Paško navija",
+          title: "Zagreb Početak",
+          badgeEmoji: "👋",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/heart.svg",
+          alt: "Licitarsko srce",
+          title: "Dobrodošli",
+          badgeEmoji: "❤️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 6:
+      return {
+        left: {
+          imageSrc: "/dolphin.svg",
+          subImageSrc: "/sea.svg",
+          alt: "Dupin u Jadranu",
+          title: "Plavi Jadran",
+          badgeEmoji: "🐬",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/boat.svg",
+          subImageSrc: "/island.svg",
+          alt: "Jedrilica",
+          title: "Obalna Pustolovina",
+          badgeEmoji: "⛵",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 11:
+      return {
+        left: {
+          imageSrc: "/tree.svg",
+          subImageSrc: "/park.svg",
+          alt: "Gorske šume",
+          title: "Plitvička Jezera",
+          badgeEmoji: "🌲",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/sun.svg",
+          subImageSrc: "/grass.svg",
+          alt: "Zlatna polja",
+          title: "Slavonija",
+          badgeEmoji: "🌾",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 16:
+      return {
+        left: {
+          imageSrc: "/book.svg",
+          alt: "Knjiga i učenje",
+          title: "Učionica",
+          badgeEmoji: "📚",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/pencil.svg",
+          alt: "Olovka za pisanje",
+          title: "Znanje",
+          badgeEmoji: "✏️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 17:
+      return {
+        left: {
+          imageSrc: "/medvjed.svg",
+          subImageSrc: "/planina.svg",
+          alt: "Medvjed u planini",
+          title: "Divlje životinje",
+          badgeEmoji: "🐻",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/jelen.svg",
+          subImageSrc: "/suma.svg",
+          alt: "Jelen u šumi",
+          title: "Gorska priroda",
+          badgeEmoji: "🦌",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 18:
+      return {
+        left: {
+          imageSrc: "/vlak.svg",
+          alt: "Brzi vlak",
+          title: "Putovanje",
+          badgeEmoji: "🚆",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/avion.svg",
+          subImageSrc: "/trajekt.svg",
+          alt: "Avion i trajekt",
+          title: "Prijevoz",
+          badgeEmoji: "✈️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 19:
+      return {
+        left: {
+          imageSrc: "/kuhinja.svg",
+          alt: "Topla kuhinja",
+          title: "Kuhanje",
+          badgeEmoji: "🍲",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/tanjur.svg",
+          subImageSrc: "/juha.svg",
+          alt: "Ukusna juha",
+          title: "Obiteljski stol",
+          badgeEmoji: "🍽️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 20:
+      return {
+        left: {
+          imageSrc: "/torta.svg",
+          subImageSrc: "/svjecice.svg",
+          alt: "Slavljenička torta",
+          title: "Rođendan",
+          badgeEmoji: "🎂",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/poklon.svg",
+          subImageSrc: "/balon.svg",
+          alt: "Rođendanski poklon",
+          title: "Čestitamo!",
+          badgeEmoji: "🎁",
+          topOffsetClass: "top-44",
+        },
+      };
+    default:
+      return null;
+  }
+};

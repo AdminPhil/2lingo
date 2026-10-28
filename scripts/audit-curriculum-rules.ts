@@ -8,6 +8,25 @@ import * as path from "path";
 
 const sql = neon(process.env.DATABASE_URL || "");
 
+function normalizeWord(s: string): string {
+  return s.toLowerCase()
+    .replace(/č/g, "c")
+    .replace(/ć/g, "c")
+    .replace(/š/g, "s")
+    .replace(/ž/g, "z")
+    .replace(/đ/g, "d")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function normalizeDiacritics(s: string): string {
+  return s.toLowerCase()
+    .replace(/č/g, "c")
+    .replace(/ć/g, "c")
+    .replace(/š/g, "s")
+    .replace(/ž/g, "z")
+    .replace(/đ/g, "d");
+}
+
 async function auditAllRules() {
   console.log("=== 🛡️ 2LINGO PRE-FLIGHT CURRICULUM & ARCHITECTURE AUDIT ===\n");
 
@@ -102,6 +121,74 @@ async function auditAllRules() {
       if (optsWithImages.length > 0) {
         console.error(`[RULE VIOLATION: Progressive Fading] Unit ${c.u_order} Lesson ${c.l_order} has images attached! (Only Lesson 1 allowed)`);
         totalErrors++;
+      }
+    }
+
+    // Rule: Intra-Challenge Image & Visual Asset Uniqueness (Bugs #2, #4)
+    const imagesInChallenge = opts.filter((o: any) => !!o.image_src);
+    if (imagesInChallenge.length > 0) {
+      const imageSrcs = imagesInChallenge.map((o: any) => o.image_src);
+      const uniqueImageSrcs = new Set(imageSrcs);
+      if (uniqueImageSrcs.size < imageSrcs.length) {
+        console.error(`[RULE VIOLATION: Duplicate Image Source] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: Challenge has multiple options with identical imageSrc!`);
+        totalErrors++;
+      }
+
+      const fileContents = new Map<string, string>();
+      for (const opt of imagesInChallenge) {
+        const imgPath = path.join(__dirname, "..", "public", opt.image_src.replace(/^\//, ""));
+        if (fs.existsSync(imgPath) && !fileContents.has(opt.image_src)) {
+          fileContents.set(opt.image_src, fs.readFileSync(imgPath, "utf8").trim());
+        }
+      }
+      const seenContents = new Map<string, string>();
+      for (const opt of imagesInChallenge) {
+        const content = fileContents.get(opt.image_src);
+        if (content) {
+          if (seenContents.has(content) && seenContents.get(content) !== opt.image_src) {
+            console.error(`[RULE VIOLATION: Duplicate SVG Artwork] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: Option "${opt.text}" (${opt.image_src}) has identical artwork to (${seenContents.get(content)})!`);
+            totalErrors++;
+          } else {
+            seenContents.set(content, opt.image_src);
+          }
+        }
+      }
+    }
+
+    // Rule: Answer-Prompt Lexical Leakage Guard (Bugs #3, #5)
+    const correctOpt = opts.find((o: any) => o.correct);
+    if (correctOpt) {
+      const cleanQ = c.question.replace(/['"]/g, "").trim();
+      const cleanOpt = correctOpt.text.trim();
+      if (cleanQ.includes("(") || cleanQ.includes("/")) {
+        const regex = new RegExp(`\\b${normalizeDiacritics(cleanOpt)}\\b`, "i");
+        if (regex.test(normalizeDiacritics(cleanQ))) {
+          console.error(`[RULE VIOLATION: Prompt Answer Leakage] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: "${c.question}" leaks correct answer "${correctOpt.text}"!`);
+          totalErrors++;
+        }
+      }
+    }
+
+    // Rule: Single-Word Audio Semantic Conflict Guard (Bugs #7, #8, #9)
+    for (const opt of opts) {
+      if (opt.audio_src) {
+        const trimmed = (opt.text || "").trim();
+        if (!trimmed.includes(" ")) {
+          const textSlug = normalizeWord(trimmed);
+          const baseSlug = path.basename(opt.audio_src, ".mp3");
+          const KNOWN_MISMATCH_PAIRS = [
+            { text: "konj", badSlug: "pas" },
+            { text: "trcimo", badSlug: "trci" },
+            { text: "plovimo", badSlug: "more" },
+          ];
+          const isConflict = KNOWN_MISMATCH_PAIRS.some(
+            (p) => textSlug === p.text && baseSlug === p.badSlug
+          );
+          if (isConflict) {
+            console.error(`[RULE VIOLATION: Audio Semantic Conflict] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: Option "${opt.text}" plays audio for "${baseSlug}.mp3"!`);
+            totalErrors++;
+          }
+        }
       }
     }
   }

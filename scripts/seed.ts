@@ -974,7 +974,7 @@ const main = async () => {
       { id: 234, lessonId: 53, type: "SELECT", order: 1, question: 'Which one of these is "Bakery"?' },
       { id: 235, lessonId: 53, type: "SELECT", order: 2, question: 'Which one of these is "Roll / Croissant"?' },
       { id: 236, lessonId: 53, type: "SELECT", order: 3, question: 'Which one of these is "Bread"?' },
-      { id: 237, lessonId: 53, type: "ASSIST", order: 4, question: '"Burek (Pastry)"' },
+      { id: 237, lessonId: 53, type: "ASSIST", order: 4, question: '"Pastry"' },
 
       { id: 238, lessonId: 54, type: "SELECT", order: 1, question: 'Which one of these is "Cheese"?' },
       { id: 239, lessonId: 54, type: "SELECT", order: 2, question: 'Which one of these is "Tomato"?' },
@@ -1009,7 +1009,7 @@ const main = async () => {
       { id: 260, lessonId: 59, type: "ASSIST", order: 1, question: '"Score a goal!"' },
       { id: 261, lessonId: 59, type: "ASSIST", order: 2, question: '"Pass the ball!"' },
       { id: 262, lessonId: 59, type: "ASSIST", order: 3, question: '"Beautiful song"' },
-      { id: 263, lessonId: 59, type: "ASSIST", order: 4, question: '"Well done / Bravo!"' },
+      { id: 263, lessonId: 59, type: "ASSIST", order: 4, question: '"Well done!"' },
 
       { id: 264, lessonId: 60, type: "SELECT", order: 1, question: 'Which one of these is "Ball"?' },
       { id: 265, lessonId: 60, type: "SELECT", order: 2, question: 'Which one of these is "Soccer"?' },

@@ -16,9 +16,6 @@ const db = drizzle(sql, { schema });
 async function main() {
   console.log("=== 🌙 CROLINGO OVERNIGHT DAILY HEART TOP-UP (CR-062) ===");
 
-  // 1. Ensure non-destructive schema column exists on Neon DB
-  await sql`ALTER TABLE user_progress ADD COLUMN IF NOT EXISTS last_heart_refill_date text;`;
-
   const today = new Date().toISOString().split("T")[0];
   console.log(`Target Date: ${today}`);
 

@@ -361,7 +361,7 @@ const unitsData: UnitDef[] = [
               { text: "Jelen", correct: true, audioSrc: "/audio/hr/jelen.mp3" },
               { text: "Medvjed", correct: false, audioSrc: "/audio/hr/medvjed.mp3" },
               { text: "Vuk", correct: false, audioSrc: "/audio/hr/vuk.mp3" },
-              { text: "Konj", correct: false, audioSrc: "/audio/hr/pas.mp3" },
+              { text: "Konj", correct: false, audioSrc: "/audio/hr/konj.mp3" },
             ],
           },
           {
@@ -603,9 +603,9 @@ const unitsData: UnitDef[] = [
             question: '"We travel"',
             options: [
               { text: "Putujemo", correct: true, audioSrc: "/audio/hr/putujemo.mp3" },
-              { text: "Idemo", correct: false, audioSrc: "/audio/hr/idemo_u_park.mp3" },
-              { text: "Trčimo", correct: false, audioSrc: "/audio/hr/trci.mp3" },
-              { text: "Plovimo", correct: false, audioSrc: "/audio/hr/more.mp3" },
+              { text: "Idemo", correct: false, audioSrc: "/audio/hr/idemo.mp3" },
+              { text: "Trčimo", correct: false, audioSrc: "/audio/hr/trcimo.mp3" },
+              { text: "Plovimo", correct: false, audioSrc: "/audio/hr/plovimo.mp3" },
             ],
           },
         ],

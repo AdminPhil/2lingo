@@ -1,6 +1,39 @@
-﻿# 📜 2lingo Living Changelog
+# 📜 2lingo Living Changelog
 
 All notable changes, pedagogical updates, curriculum expansions, and infrastructure upgrades are documented here.
+
+---
+
+## [2026-10-28] - Batch Curriculum Integrity, Automated Pre-Flight Guards, Visual Scenery & CI/CD Stability (BUG-028 to BUG-036)
+
+### Fixed & Refined
+- **[BUG-028] ✅ RESOLVED & VERIFIED - Overnight Heart Refill CI/CD Stability (`daily-heart-refill.yml` & `scripts/daily-heart-refill.ts`):**
+  - Removed redundant `ALTER TABLE user_progress ADD COLUMN IF NOT EXISTS last_heart_refill_date text;` query that attempted an exclusive table lock on every cron run.
+  - Upgraded GitHub Actions workflow to Node.js 22 runtime on Ubuntu latest, eliminating deprecation warnings and runner exit code 1 failures.
+- **[BUG-029] ✅ RESOLVED & VERIFIED - Dedicated Bakery Storefront Graphic (`public/bakery.svg`):**
+  - Authored an authentic vector storefront illustration (`public/bakery.svg`) featuring a red-and-white awning, display window with warm bread loaves, and `PEKARA` sign, resolving duplicate croissant artwork across Card 1 (`Pekara`) and Card 3 (`Kiflica`).
+- **[BUG-030] ✅ RESOLVED & VERIFIED - Elimination of Prompt Answer Leak in Challenge 237 (`"Burek (Pastry)"` -> `"Pastry"`):**
+  - Updated Challenge 237 question prompt from `"Burek (Pastry)"` to `"Pastry"` across Neon DB and seed files (`scripts/seed.ts`).
+- **[BUG-031] ✅ RESOLVED & VERIFIED - Dedicated Soccer Match & Pitch Graphic (`public/soccer.svg`):**
+  - Replaced duplicate soccer ball vector with a dedicated match pitch illustration (`public/soccer.svg`) featuring green grass stripes, penalty boxes, center circle, and action ball motion, distinguishing `Nogomet` (sport) from `Lopta` (ball). Also authored dedicated sandcastle artwork for `public/sand.svg` distinct from `beach.svg`.
+- **[BUG-032] ✅ RESOLVED & VERIFIED - Elimination of Prompt Answer Leak in Challenge 263 (`"Well done / Bravo!"` -> `"Well done!"`):**
+  - Updated Challenge 263 question prompt to `"Well done!"` across Neon DB and seed files (`scripts/seed.ts`), eliminating loanword lexical giveaways.
+- **[BUG-033] ✅ RESOLVED & VERIFIED - Thematic Learning Path Scenery & Wildlife Landmark Decor (`app/(main)/learn/unit.tsx` & `lib/theme-registry.ts`):**
+  - Implemented `getUnitScenery(unitOrder)` in `lib/theme-registry.ts` and integrated rich, responsive landmark anchors in `app/(main)/learn/unit.tsx`.
+  - For Unit 17 (*Priroda i divlje životinje* / World 4), rendered dual wildlife scenery clusters along the progression track: mountain peaks & bear (`/medvjed.svg` + `/planina.svg`) with `🐻 Divlje životinje` badge on the left, and noble deer & forest (`/jelen.svg` + `/suma.svg`) with `🦌 Gorska priroda` badge on the right.
+- **[BUG-034] ✅ RESOLVED & VERIFIED - Option "Konj" Audio Mismatch Correction (`/audio/hr/konj.mp3`):**
+  - Corrected Option 4495 in Neon DB and `scripts/seed-units-16-20.ts` from `/audio/hr/pas.mp3` to `/audio/hr/konj.mp3`.
+- **[BUG-035] ✅ RESOLVED & VERIFIED - Option "Trčimo" Neural Plural Audio (`/audio/hr/trcimo.mp3`):**
+  - Synthesized authentic 1st person plural audio token `public/audio/hr/trcimo.mp3` using `hr-HR-GabrijelaNeural` and updated Option 4570 in Neon DB and `scripts/seed-units-16-20.ts`.
+- **[BUG-036] ✅ RESOLVED & VERIFIED - Option "Plovimo" Neural Verb Audio (`/audio/hr/plovimo.mp3`):**
+  - Synthesized authentic verb audio token `public/audio/hr/plovimo.mp3` using `hr-HR-GabrijelaNeural` and updated Option 4571 in Neon DB and `scripts/seed-units-16-20.ts`.
+
+### Automated Architecture & Pre-Flight Quality Gates
+- **Upgraded Curriculum Pre-Flight Audit (`scripts/audit-curriculum-rules.ts`):**
+  - **Intra-Challenge Image & Visual Asset Uniqueness:** Validates that no options within a challenge share identical `image_src` or identical SVG file content hashes.
+  - **Answer-Prompt Lexical Leakage Guard:** Scans bilingual prompts for parentheses and slashes, flagging any prompt containing the target option text.
+  - **Single-Word Audio Semantic Conflict Guard:** Validates semantic alignment between option text and audio file slugs, permanently barring cross-root audio assignments.
+  - Verified 0 rule violations across all 20 units, 80 lessons, 359 challenges, and 1,436 options.
 
 ---
 
