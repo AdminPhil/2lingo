@@ -10,7 +10,6 @@ import { Loader } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { SidebarItem } from "./sidebar-item";
-import { ParentCenterSidebarItem } from "./parent-center-sidebar-item";
 import { SwitchProfileButton } from "./switch-profile-button";
 
 type Props = {
@@ -57,14 +56,12 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
         </div>
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">
-        {isAdmin ? (
+        {isAdmin && (
           <SidebarItem 
             label="Parent Center" 
             href="/admin"
             iconSrc="/shield.svg"
           />
-        ) : (
-          <ParentCenterSidebarItem />
         )}
         <SidebarItem 
           label="Learn" 

@@ -107,3 +107,10 @@ export const SignUpButton = ({ children, afterSignInUrl, afterSignUpUrl }: any) 
     },
     children
   );
+
+export const UserButton = ({ afterSignOutUrl }: any) =>
+  React.createElement("div", {
+    "data-testid": "clerk-user-btn",
+    "data-after-sign-out": afterSignOutUrl,
+  });
+

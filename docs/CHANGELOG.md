@@ -4,6 +4,29 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-28] - Pure Brand Marketing Header & Student Parent Portal Isolation (CR-077)
+
+### Added & Refined
+- **[CR-077] ✅ IMPLEMENTED & VERIFIED - Isolate Parent Portal Access & Pure Brand Marketing Header:**
+  - **Pure Brand Marketing Header (`app/(marketing)/header.tsx`):**
+    - Stripped all extraneous buttons, login controls, and authentication wrappers (`ClerkLoading`, `ClerkLoaded`, `SignInButton`, `UserButton`) from the public header.
+    - Preserved a pure, high-contrast brand presentation: Paško the Dalmatian mascot avatar, CroLingo title wordmark, Croatian (*Hrvatski*) coat-of-arms badge, and the symmetrical 2-row Croatian checkerboard ribbon (*Šahovnica*).
+    - Unifies 100% of landing page conversion and onboarding paths within the interactive `RoleOnboardingHero` (`🎒 Learner`, `👨‍👩‍👧 Parent`, `🏫 Teacher`), eliminating competing calls to action and cognitive clutter.
+  - **Student & Learner Navigation Isolation (`components/sidebar.tsx` & `components/mobile-sidebar.tsx`):**
+    - Completely removed `<ParentCenterSidebarItem />` and any adult portal links from the student navigation experience.
+    - Conditioned the "Parent Center" link strictly on `isAdmin === true` (`{isAdmin && <SidebarItem label="Parent Center" href="/admin" iconSrc="/shield.svg" />}`).
+    - When a student or child learner is signed in (`role === 'learner'`), they never see, encounter, or get prompted with parent portal navigation across desktop sidebar or mobile drawer navigation.
+  - **Automated QA Test Suite (`tests/component/sidebar-isolation.test.tsx`):**
+    - Authored unit and component tests verifying header pure brand rendering (0 buttons, 0 login controls) and sidebar role isolation (Parent Center omitted when `isAdmin` is false or undefined; Parent Center present and linking to `/admin` when `isAdmin` is true).
+    - Expanded Clerk mock (`tests/mocks/clerk.ts`) with `UserButton` mock support.
+  - **Quality & Safety Assurance:**
+    - Full Vitest suite: 23 passed suites, 262/262 tests passing.
+    - TypeScript typecheck (`tsc --noEmit`): 0 errors.
+    - Pre-flight curriculum audit (`scripts/audit-curriculum-rules.ts`): 0 violations across 25 units and 100 lessons.
+    - Live learner accounts (`Adriana`, `Vanessa`, `Silvia`) 100% preserved.
+
+---
+
 ## [2026-10-28] - Level 2 (*Mali Istraživač*) & World 5 (*Istra i Kvarner* — Units 21–25) (CR-076)
 
 ### Added & Refined
