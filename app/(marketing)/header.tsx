@@ -60,7 +60,7 @@ export const Header = () => {
                 asChild
               >
                 <Link href="/admin">
-                  <span>Parent Portal</span>
+                  <span>Parent & Educator Portal</span>
                   <span className="text-muted-foreground">→</span>
                 </Link>
               </Button>
@@ -73,14 +73,14 @@ export const Header = () => {
             <SignInButton
               mode="modal"
               afterSignInUrl="/admin"
-              afterSignUpUrl="/learn?intent=parent"
+              afterSignUpUrl="/welcome?role=parent"
             >
               <Button
                 size="sm"
                 variant="ghost"
                 className="font-extrabold text-xs text-slate-700 hover:text-blue-800 hover:bg-blue-50 hover:border-blue-200 border border-slate-200 rounded-xl px-3.5 h-9 flex items-center gap-1.5 shadow-2xs cursor-pointer"
               >
-                <span>Parent Portal</span>
+                <span>Parent & Educator Portal</span>
                 <span className="text-muted-foreground">→</span>
               </Button>
             </SignInButton>

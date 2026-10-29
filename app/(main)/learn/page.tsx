@@ -48,6 +48,14 @@ const LearnPage = async ({ searchParams }: Props) => {
     unseenCheersData,
   ]);
 
+  // Backward compatibility & direct routing for Parent / Teacher Onboarding
+  if (searchParams?.intent === "parent" || searchParams?.role === "parent") {
+    redirect("/welcome?role=parent");
+  }
+  if (searchParams?.role === "teacher") {
+    redirect("/welcome?role=teacher");
+  }
+
   const buildLearnRedirectUrl = () => {
     const params = new URLSearchParams();
     if (typeof searchParams?.intent === "string") {

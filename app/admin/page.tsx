@@ -17,6 +17,7 @@ import { getTrickyWordsAnalytics } from "@/db/queries";
 type Props = {
   searchParams?: {
     podId?: string;
+    wizard?: string;
   };
 };
 
@@ -250,6 +251,7 @@ const AdminPage = async ({ searchParams }: Props) => {
             userImageSrc: l.userImageSrc,
           }))}
           analyticsData={analyticsData}
+          initialWizard={searchParams?.wizard as "family" | "classroom" | undefined}
         />
       </main>
     </div>

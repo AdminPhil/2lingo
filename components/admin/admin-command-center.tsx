@@ -77,6 +77,7 @@ type Props = {
     userImageSrc: string;
   }[];
   analyticsData: TrickyWordsAnalytics;
+  initialWizard?: "family" | "classroom";
 };
 
 export const AdminCommandCenter = ({
@@ -95,6 +96,7 @@ export const AdminCommandCenter = ({
   learners,
   availableUsers,
   analyticsData,
+  initialWizard,
 }: Props) => {
   const [activeTab, setActiveTab] = useState<"learners" | "analytics" | "teams">("learners");
   const [copiedCode, setCopiedCode] = useState(false);
@@ -112,6 +114,33 @@ export const AdminCommandCenter = ({
       setOrigin(window.location.origin);
     }
   }, []);
+
+  useEffect(() => {
+    const params = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+    const wizardParam = params?.get("wizard") || initialWizard;
+
+    if (wizardParam === "family") {
+      setIsFamilyWizardOpen(true);
+      if (typeof window !== "undefined") {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("wizard");
+        window.history.replaceState(null, "", url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : ""));
+      }
+    } else if (wizardParam === "classroom") {
+      setIsClassroomWizardOpen(true);
+      if (typeof window !== "undefined") {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("wizard");
+        window.history.replaceState(null, "", url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : ""));
+      }
+    } else if (!isGlobalView && learners.length === 0) {
+      if (podType === "classroom") {
+        setIsClassroomWizardOpen(true);
+      } else {
+        setIsFamilyWizardOpen(true);
+      }
+    }
+  }, [initialWizard, isGlobalView, learners.length, podType]);
 
   const isClassroom = podType === "classroom";
 

@@ -4,6 +4,26 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-28] - Role-Aware Onboarding, `/welcome` Route & Student Join-Code Preservation (CR-075)
+
+### Added & Refined
+- **[CR-075] ✅ IMPLEMENTED & VERIFIED - Role-Aware Landing Page, `/welcome` Route & Student Join-Code Preservation:**
+  - **3-Way Audience Selector (`components/onboarding/role-onboarding-hero.tsx` & `app/(marketing)/page.tsx`):** Replaced child-only dual action gates on the public landing page with an interactive role chooser catering to `🎒 Learner`, `👨‍👩‍👧 Parent`, and `🏫 Teacher`.
+  - **Preserved Student Team Join Codes (`/?join=CODE` & Code Input):** Automatically detects `?join=CODE` query parameters from classroom Smartboard slides or family invites; looks up team names in Neon DB; renders celebratory banner; preserves join codes across Clerk sign-up modals via `afterSignUpUrl`/`afterSignInUrl`; and provides an inline *"Have a code?"* input box on `/`.
+  - **Dedicated `/welcome` Onboarding Bridge Route (`app/(main)/welcome/page.tsx`):**
+    - `?role=teacher`: Automatically provisions a `classroom` team (`targetXp: 5000`), sets `role = 'parent'`, and routes directly to `/admin?wizard=classroom`.
+    - `?role=parent`: Automatically provisions a `family` team (`targetXp: 1000`), sets `role = 'parent'`, and routes directly to `/admin?wizard=family`.
+    - Completely eliminates the child lesson-map detour and math challenge for newly registered parents and educators.
+  - **Auto-Launch Setup Wizards on First `/admin` Visit (`components/admin/admin-command-center.tsx` & `app/admin/page.tsx`):**
+    - Inspects `?wizard=` (or empty team state `learners.length === 0`) to immediately launch `TeacherSetupWizardModal` or `ParentSetupWizardModal`, guiding new adults to add children or paste class lists in under 2 minutes.
+    - Cleans `?wizard=` parameter via `window.history.replaceState` to prevent repeated popup on manual page refreshes.
+  - **Header & Typography Polish (`app/(marketing)/header.tsx` & `app/(marketing)/page.tsx`):**
+    - Standardized navigation CTA to `"Parent & Educator Portal"` linking to `/admin` or `/welcome?role=parent`.
+    - Added a 3-step value illustration beneath the hero (*1. Free adult account → 2. Zero child emails → 3. 1-tap student passes*).
+    - Enforced strict 12px (`text-xs`) minimum font floor across marketing copy.
+
+---
+
 ## [2026-10-28] - Batch Curriculum Integrity, Automated Pre-Flight Guards, Visual Scenery & CI/CD Stability (BUG-028 to BUG-036)
 
 ### Fixed & Refined
