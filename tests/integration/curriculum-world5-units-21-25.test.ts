@@ -180,5 +180,34 @@ describe("QA Test Suite: Level 2 & World 5 (Units 21–25 Curriculum Integrity)"
 
       expect(nonLesson1ChallengesChecked).toBe(15); // 3 non-discovery lessons * 5 units = 15 lessons
     });
+
+    it("verifies zero prompt answer leakage (no questions reveal the correct answer)", () => {
+      // Parse challenges with questions and options
+      const challengeRegex = /question:\s*'([^']+)'[\s\S]*?options:\s*\[([\s\S]*?)\]/g;
+      let challengeMatch;
+      let challengesAudited = 0;
+
+      while ((challengeMatch = challengeRegex.exec(seedContent)) !== null) {
+        const question = challengeMatch[1];
+        const optionsBlock = challengeMatch[2];
+
+        // Find the correct option text
+        const correctMatch = optionsBlock.match(/text:\s*"([^"]+)",\s*correct:\s*true/);
+        if (correctMatch) {
+          challengesAudited++;
+          const correctText = correctMatch[1].trim().toLowerCase()
+            .replace(/č/g, "c").replace(/ć/g, "c").replace(/š/g, "s").replace(/ž/g, "z").replace(/đ/g, "d");
+          const cleanQ = question.toLowerCase()
+            .replace(/č/g, "c").replace(/ć/g, "c").replace(/š/g, "s").replace(/ž/g, "z").replace(/đ/g, "d");
+
+          if (cleanQ.includes("(") || cleanQ.includes("/")) {
+            const regex = new RegExp(`\\b${correctText}\\b`, "i");
+            expect(regex.test(cleanQ), `Prompt "${question}" must not reveal answer "${correctMatch[1]}"`).toBe(false);
+          }
+        }
+      }
+
+      expect(challengesAudited).toBeGreaterThanOrEqual(80);
+    });
   });
 });
