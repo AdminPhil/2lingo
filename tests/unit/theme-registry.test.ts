@@ -145,6 +145,18 @@ describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () =>
       expect(unit16.solidBg).toBe("bg-blue-900");
     });
 
+    it("verifies crisp transition across boundary between World 4 and World 5 (20 vs 21)", () => {
+      const unit20 = getStageThemeForUnit(20);
+      const unit21 = getStageThemeForUnit(21);
+
+      expect(unit20.stage).toBe(4);
+      expect(unit20.solidBg).toBe("bg-blue-900");
+
+      expect(unit21.stage).toBe(5);
+      expect(unit21.id).toBe("istria-kvarner");
+      expect(unit21.solidBg).toBe("bg-amber-600");
+    });
+
     it("falls back to Stage 1 (Zagreb) for out-of-bounds lower numbers (Unit 0, negative numbers)", () => {
       const unit0 = getStageThemeForUnit(0);
       expect(unit0.stage).toBe(1);
@@ -156,11 +168,11 @@ describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () =>
       expect(negativeUnit.id).toBe("zagreb-central");
     });
 
-    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (Unit 21, Unit 100)", () => {
-      const unit21 = getStageThemeForUnit(21);
-      expect(unit21.stage).toBe(1);
-      expect(unit21.id).toBe("zagreb-central");
-      expect(unit21.solidBg).toBe("bg-red-600");
+    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (Unit 26, Unit 100)", () => {
+      const unit26 = getStageThemeForUnit(26);
+      expect(unit26.stage).toBe(1);
+      expect(unit26.id).toBe("zagreb-central");
+      expect(unit26.solidBg).toBe("bg-red-600");
 
       const unit100 = getStageThemeForUnit(100);
       expect(unit100.stage).toBe(1);

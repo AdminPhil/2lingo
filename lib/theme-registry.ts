@@ -102,9 +102,34 @@ export const LEVEL_1_STAGES: RegionTheme[] = [
   },
 ];
 
+export const LEVEL_2_STAGES: RegionTheme[] = [
+  // World 5 (CR-076): Istrian Explorer (Units 21–25)
+  {
+    id: "istria-kvarner",
+    stage: 5,
+    stageName: "Istrian Explorer",
+    stageBadgeLabel: "World 5: Istrian Explorer • Ancient Arena & Hilltop Towns",
+    stageCroatianName: "World 5: Istrian Explorer • Ancient Arena & Hilltop Towns",
+    unitRange: [21, 25],
+    solidBg: "bg-amber-600",
+    gradient: "from-amber-600 via-orange-600 to-teal-700",
+    badgeBg: "bg-black/25 text-white border-white/40",
+    accentEmoji: "🏛️",
+    buttonClass: "bg-white text-amber-950 hover:bg-amber-50 border-amber-300",
+    accentBorder: "border-amber-400/50",
+    nodeActiveBg: "bg-amber-500 hover:bg-amber-500/90 border-amber-600 active:border-b-0 text-white",
+    nodeBorderColor: "border-amber-600",
+    nodeStrokeColor: "#d97706",
+    nodeBadgeClasses: "bg-white text-amber-600 border-amber-400",
+    nodeArrowBorder: "border-t-amber-400",
+  },
+];
+
+export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES];
+
 export const getStageThemeForUnit = (unitOrder: number): RegionTheme => {
   return (
-    LEVEL_1_STAGES.find(
+    ALL_STAGES.find(
       (s) => unitOrder >= s.unitRange[0] && unitOrder <= s.unitRange[1]
     ) || LEVEL_1_STAGES[0]
   );
@@ -269,6 +294,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Rođendanski poklon",
           title: "Čestitamo!",
           badgeEmoji: "🎁",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 21:
+      return {
+        left: {
+          imageSrc: "/week.svg",
+          alt: "Tjedan i kalendar",
+          title: "Dani u tjednu",
+          badgeEmoji: "📅",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/weekend.svg",
+          alt: "Vikend odmor",
+          title: "Vikend",
+          badgeEmoji: "☀️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 22:
+      return {
+        left: {
+          imageSrc: "/icecream.svg",
+          alt: "Fini sladoled",
+          title: "Slastičarnica",
+          badgeEmoji: "🍨",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/strawberry.svg",
+          alt: "Svježa jagoda",
+          title: "Kuglica sladoleda",
+          badgeEmoji: "🍓",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 23:
+      return {
+        left: {
+          imageSrc: "/arena.svg",
+          alt: "Pulska arena",
+          title: "Rimska arena",
+          badgeEmoji: "🏛️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/shield.svg",
+          alt: "Štit viteza",
+          title: "Povijest i legende",
+          badgeEmoji: "🛡️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 24:
+      return {
+        left: {
+          imageSrc: "/clock.svg",
+          alt: "Zidni sat",
+          title: "Moj dan",
+          badgeEmoji: "⏰",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/bed.svg",
+          alt: "Topli krevet",
+          title: "Vrijeme za spavanje",
+          badgeEmoji: "🛏️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 25:
+      return {
+        left: {
+          imageSrc: "/goggles.svg",
+          alt: "Maska za ronjenje",
+          title: "Morske radosti",
+          badgeEmoji: "🤿",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/wave.svg",
+          alt: "Jadranski valovi",
+          title: "Skok u more",
+          badgeEmoji: "🌊",
           topOffsetClass: "top-44",
         },
       };

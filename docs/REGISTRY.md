@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 75 Completed (CR-001 to CR-075) | 0 Queued  
+> **Total Change Requests:** 76 Completed (CR-001 to CR-076) | 0 Queued  
 > **Total Bug Tickets:** 36 Resolved (BUG-001 to BUG-036) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-075)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-076)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -87,6 +87,7 @@
 | **CR-073** | Administration / UX | **Streamline `/admin` into a 3-Tab Parent & Educator Command Center ("Teams" Standard, Heritage Navy Palette & SVG Šahovnica Badges):** Replaces the 8-block vertical scroll stack and dead preview cards with a Dual-Role Team Switcher (`?podId=`), Heritage Navy hero + integrated KPI strip, 3 interactive workspace tabs (`Team Roster & Magic Wand`, `Tricky Words & Prompts`, `Team Settings & Setup Guide`), standardized `"Teams"` terminology, and crisp SVG Croatian Šahovnica badges eliminating Windows `"HR"` flag emoji fallbacks. | 2026-10-25 | ✅ Verified |
 | **CR-074** | Administration / UX | **Elevate `/admin`: Scoped Super-Admin View, Team QR Print Sheet, Join Slide, Bulk Magic Wands & Classroom Team Creation:** Roster/analytics always match the highlighted team (explicit `?podId=all` `🌐 All Platform` view for Super-Admin); 1-click `📺 Join Slide` and `🖨️ Print Team QR Sheet` (+CSV); bulk Refill Hearts / Team Praise XP with search & filter; Family vs Classroom mode in Create/Edit Team; member removal with owner/RBAC guard; 12px typography floor & SVG Šahovnica in badge modal. | 2026-10-25 | ✅ Verified |
 | **CR-075** | Onboarding / Landing | **Role-Aware Landing Page, `/welcome` Route & Student Join-Code Preservation:** Replaces child-only dual CTAs on `/` with 3-way role chooser (`Learner`, `Parent`, `Teacher`) + `"Have a team code?"` input; preserves `?join=CODE` through Clerk sign-up; introduces dedicated `/welcome` transition route directly provisioning appropriate team type (`family` vs `classroom`) without lesson-path detour or math quiz for adults; and automatically launches matching setup wizard upon first `/admin` visit. | 2026-10-28 | ✅ Verified |
+| **CR-076** | Curriculum / Level 2 | **Level 2 & World 5 (Istra i Kvarner — Units 21–25):** Launches Level 2 (*Mali Istraživač*) with 5 new units covering days of the week, ice cream ordering, Roman Pula Arena, daily routines, and sea adventures, in strict compliance with the 3+1 unit arc, deductive elimination, neural audio synthesis, and progressive fading. | 2026-10-28 | ✅ Verified |
 
 ---
 

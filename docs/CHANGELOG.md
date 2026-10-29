@@ -4,6 +4,34 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-28] - Level 2 (*Mali Istraživač*) & World 5 (*Istra i Kvarner* — Units 21–25) (CR-076)
+
+### Added & Refined
+- **[CR-076] ✅ IMPLEMENTED & VERIFIED - Curriculum Expansion: Level 2 & World 5 (Units 21–25):**
+  - **Level 2 Launch & World 5 Theming (`lib/theme-registry.ts`):** Registered `World 5: Istrian Explorer • Ancient Arena & Hilltop Towns` (Stage 5, Units 21–25) with Tuscan terracotta, Roman bronze, and Adriatic turquoise theme tokens (`from-amber-600 via-orange-600 to-teal-700`), ancient arena motif (`🏛️`), and contextual path scenery for Units 21 to 25.
+  - **5 New Units & 20 Lessons Seeded to Production (`scripts/seed-units-21-25.ts`):**
+    - **Unit 21: Dani u tjednu i kalendar (*Days of the Week & Calendar*):** Days of the week, temporal orientation, *Danas*, *Sutra*, *Vikend*, and 👑 *Super Izazov: Gospodar Vremena*.
+    - **Unit 22: U slastičarnici (*At the Ice Cream & Pastry Shop*):** Ordering scoops, ice cream flavors, asking politely, and 👑 *Super Izazov: Majstor Sladoleda*.
+    - **Unit 23: Rimska arena i legende (*The Roman Arena & Ancient Legends*):** Roman Pula Amphitheater, ancient stone architecture, shields, knights, and 👑 *Super Izazov: Mladi Arheolog*.
+    - **Unit 24: Moj dan i sat (*My Daily Routine & Telling Time*):** Daily routine reflexive verbs, brushing teeth, bedtime, telling time on the clock, and 👑 *Super Izazov: Gospodar Dana*.
+    - **Unit 25: Ljetne morske radosti (*Summer Sea Adventures & Diving — Stage 5 Capstone*):** Snorkeling, diving into waves, finding seashells, beach towels, and 👑 *Super Izazov: Morski Ronilac*.
+  - **Pedagogical Standard & Deductive Scaffolding:**
+    - Strict "3 + 1" Unit Arc across all 5 units (Lesson 1 Discovery, Lesson 2 Recall & Actions, Lesson 3 Modular Sentences, Lesson 4 Super Izazov).
+    - Progressive Fading enforced (Lesson 1 images ON; Lessons 2–4 strictly text/audio only).
+    - Deductive Elimination guaranteed with 100% of distractors drawn from mastered Units 1–20 vocabulary.
+    - Punctuation & option symmetry maintained across all 4 choices per challenge.
+  - **14 New Kid-Friendly Vector Visual Assets (`public/*.svg`):**
+    - Created distinct SVG artwork for `week.svg`, `weekend.svg`, `morning.svg`, `evening.svg`, `icecream.svg`, `scoop.svg`, `strawberry.svg`, `arena.svg`, `knight.svg`, `clock.svg`, `toothbrush.svg`, `goggles.svg`, `towel.svg`, `wave.svg`.
+  - **132 Synthesized Neural Audio Assets (`public/audio/hr/*.mp3`):**
+    - Pre-generated via Azure `hr-HR-GabrijelaNeural` (-5% rate) for all single-word vocabulary and multi-word phrases.
+  - **Comprehensive Quality & Regression Verification:**
+    - Pre-flight curriculum audit (`scripts/audit-curriculum-rules.ts`): 0 rule violations across 25 Units, 100 Lessons, 444 Challenges, and 1,776 Options.
+    - Full Vitest suite: 21 test suites passed, 246/246 tests passing (100%).
+    - TypeScript typecheck (`tsc --noEmit`): 0 errors.
+    - Live learner account preservation: Adriana (3,570 XP), Vanessa (1,750 XP), Silvia (1,325 XP) 100% intact.
+
+---
+
 ## [2026-10-28] - Role-Aware Onboarding, `/welcome` Route & Student Join-Code Preservation (CR-075)
 
 ### Added & Refined
