@@ -1,3 +1,4 @@
+import React from "react";
 import { vi } from "vitest";
 
 let currentMockUserId: string | null = null;
@@ -73,3 +74,36 @@ export const useSignIn = () => ({
 });
 
 export const ClerkProvider = ({ children }: any) => children;
+
+export const ClerkLoaded = ({ children }: any) => children;
+export const ClerkLoading = ({ children }: any) => null;
+
+export const SignedIn = ({ children }: any) => {
+  return currentMockUserId ? children : null;
+};
+
+export const SignedOut = ({ children }: any) => {
+  return !currentMockUserId ? children : null;
+};
+
+export const SignInButton = ({ children, afterSignInUrl, afterSignUpUrl }: any) =>
+  React.createElement(
+    "div",
+    {
+      "data-testid": "clerk-sign-in-btn",
+      "data-after-sign-in": afterSignInUrl,
+      "data-after-sign-up": afterSignUpUrl,
+    },
+    children
+  );
+
+export const SignUpButton = ({ children, afterSignInUrl, afterSignUpUrl }: any) =>
+  React.createElement(
+    "div",
+    {
+      "data-testid": "clerk-sign-up-btn",
+      "data-after-sign-in": afterSignInUrl,
+      "data-after-sign-up": afterSignUpUrl,
+    },
+    children
+  );
