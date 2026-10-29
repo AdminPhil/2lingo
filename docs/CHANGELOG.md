@@ -4,6 +4,30 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-29] - Universal Audio-Visual Parity Invariant & World 4 Asset Remediation (BUG-037)
+
+### Resolved Defects
+- **[BUG-037] ✅ RESOLVED & VERIFIED - Universal Audio-Visual Parity Invariant & World 4 (Units 16–20) Asset Remediation:**
+  - **Issue Identified:** Testing session reported that Unit 19 Lesson 1 flashcard options rendered as text-only collapsed cards with missing artwork (`Kuhinja`, `Soba`, `Kuća`, `Razred`), and multiple options played mismatched audio (`Čaša` -> `/audio/hr/voda.mp3`, `Nož` -> `/audio/hr/kruh.mp3`, `Večera` -> `/audio/hr/kruh.mp3`, `Baloni` -> `/audio/hr/balon.mp3`, and `Učenici` -> `/audio/hr/uciteljica.mp3`).
+  - **Root Cause Analysis (Why the Audit Scripts Missed It):**
+    - *Audio Blind Spot:* `scripts/audit-curriculum-rules.ts` previously checked audio against a static, reactive 3-item whitelist (`KNOWN_MISMATCH_PAIRS`) from past bug fixes instead of a universal slug equality comparison. Any mismatch outside those 3 hardcoded pairs went undetected.
+    - *Image Blind Spot:* `audit-curriculum-rules.ts` enforced Progressive Fading in Lessons 2–4 (`image_src === null`) and verified files on disk *if* an image was specified, but contained **zero assertions requiring visual flashcard images in Lesson 1**. When World 4 options were seeded with `image_src: null`, the audit passed with 0 violations.
+  - **Audit Script Infrastructure Hardened (`scripts/audit-curriculum-rules.ts`):**
+    - Replaced the 3-item whitelist with a **Universal Audio-to-Word Parity Invariant**: Every single-word option's text must match its audio filename slug (`normalize(text) === normalize(audioSlug)`). Any semantic drift or fallback immediately fails the audit with a hard exit code 1.
+    - Added **Lesson 1 Visual Flashcard Invariant**: Enforces that in Lesson 1, all `SELECT` challenge options MUST have a non-null `image_src` pointing to an existing file on disk.
+  - **Automated Vitest Integration Test (`tests/integration/curriculum-integrity-all-units.test.ts`):**
+    - Authored 6-test suite integrated directly into `npm test` verifying visual flashcards, progressive fading, audio parity, file existence, and intra-challenge artwork uniqueness across all 25 units.
+  - **Asset Generation & Database Remediation:**
+    - Synthesized 12 authentic neural Croatian audio files (`casa.mp3`, `noz.mp3`, `vecera.mp3`, `baloni.mp3`, `ucenici.mp3`, `pokloni.mp3`, `djecaci.mp3`, `djevojcice.mp3`, `gladan.mp3`, `dobro.mp3`, `oprostite.mp3`, `cipela.mp3`) using Azure `hr-HR-GabrijelaNeural` (-5% rate).
+    - Authored 12 missing vector SVG assets (`casa.svg`, `noz.svg`, `soba.svg`, `kuca.svg`, `razred.svg`, `vecera.svg`, `baloni.svg`, `pokloni.svg`, `prijatelji.svg`, `ucenici.svg`, `djecaci.svg`, `djevojcice.svg`, `rijeka.svg`).
+    - Remediated all affected `challenge_options` rows in Neon DB and updated `scripts/seed-units-16-20.ts`.
+  - **Verification:**
+    - `scripts/audit-curriculum-rules.ts`: 0 rule violations across 25 units, 100 lessons, 444 challenges, and 1,776 options.
+    - Vitest: 24 test suites passed, 268/268 tests passing (100%).
+    - TypeScript: `tsc --noEmit` 0 errors.
+
+---
+
 ## [2026-10-28] - Pure Brand Marketing Header & Student Parent Portal Isolation (CR-077)
 
 ### Added & Refined

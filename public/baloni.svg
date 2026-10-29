@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Strings -->
+  <path fill="none" stroke="#66757F" stroke-width="1.5" d="M12 20c2 4 4 8 6 14M24 20c-2 4-4 8-6 14M18 18v16"/>
+  <!-- Balloon 1 (Blue) -->
+  <path fill="#55ACEE" d="M12 4c-4.4 0-8 3.6-8 8 0 4.8 6.5 9.8 7.5 10.5l.5.5.5-.5c1-.7 7.5-5.7 7.5-10.5 0-4.4-3.6-8-8-8z"/>
+  <polygon fill="#226699" points="11,23 13,23 12,21"/>
+  <!-- Balloon 2 (Red) -->
+  <path fill="#DD2E44" d="M24 4c-4.4 0-8 3.6-8 8 0 4.8 6.5 9.8 7.5 10.5l.5.5.5-.5c1-.7 7.5-5.7 7.5-10.5 0-4.4-3.6-8-8-8z"/>
+  <polygon fill="#A0041E" points="23,23 25,23 24,21"/>
+  <!-- Balloon 3 (Yellow in center) -->
+  <path fill="#FFCC4D" d="M18 2c-4 0-7.2 3.2-7.2 7.2 0 4.3 5.8 8.8 6.7 9.5l.5.4.5-.4c.9-.7 6.7-5.2 6.7-9.5 0-4-3.2-7.2-7.2-7.2z"/>
+  <polygon fill="#F4900C" points="17,19 19,19 18,17"/>
+  <!-- Highlights -->
+  <ellipse fill="#FFFFFF" opacity="0.6" cx="9" cy="9" rx="1.5" ry="3" transform="rotate(-30 9 9)"/>
+  <ellipse fill="#FFFFFF" opacity="0.6" cx="21" cy="9" rx="1.5" ry="3" transform="rotate(-30 21 9)"/>
+  <ellipse fill="#FFFFFF" opacity="0.6" cx="15" cy="6.5" rx="1.2" ry="2.5" transform="rotate(-30 15 6.5)"/>
+</svg>

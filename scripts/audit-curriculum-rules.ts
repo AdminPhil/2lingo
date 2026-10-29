@@ -124,6 +124,15 @@ async function auditAllRules() {
       }
     }
 
+    // Rule: Lesson 1 Visual Flashcards Required (BUG-037 Invariant)
+    if (c.l_order === 1 && c.type === "SELECT") {
+      const missingImgs = opts.filter((o: any) => !o.image_src);
+      if (missingImgs.length > 0) {
+        console.error(`[RULE VIOLATION: Missing Visual Flashcard Image] Unit ${c.u_order} L1 Ch${c.c_order}: ${missingImgs.length} option(s) missing image_src in SELECT challenge!`);
+        totalErrors++;
+      }
+    }
+
     // Rule: Intra-Challenge Image & Visual Asset Uniqueness (Bugs #2, #4)
     const imagesInChallenge = opts.filter((o: any) => !!o.image_src);
     if (imagesInChallenge.length > 0) {
@@ -169,24 +178,26 @@ async function auditAllRules() {
       }
     }
 
-    // Rule: Single-Word Audio Semantic Conflict Guard (Bugs #7, #8, #9)
+    // Rule: Single-Word Audio Semantic Parity Guard (BUG-037 Universal Standard)
     for (const opt of opts) {
       if (opt.audio_src) {
         const trimmed = (opt.text || "").trim();
         if (!trimmed.includes(" ")) {
           const textSlug = normalizeWord(trimmed);
           const baseSlug = path.basename(opt.audio_src, ".mp3");
-          const KNOWN_MISMATCH_PAIRS = [
-            { text: "konj", badSlug: "pas" },
-            { text: "trcimo", badSlug: "trci" },
-            { text: "plovimo", badSlug: "more" },
-          ];
-          const isConflict = KNOWN_MISMATCH_PAIRS.some(
-            (p) => textSlug === p.text && baseSlug === p.badSlug
-          );
-          if (isConflict) {
-            console.error(`[RULE VIOLATION: Audio Semantic Conflict] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: Option "${opt.text}" plays audio for "${baseSlug}.mp3"!`);
-            totalErrors++;
+          const normAudioSlug = normalizeWord(baseSlug);
+
+          // Allowed stem variations (e.g., exact grammatical aliases)
+          const ACCEPTED_INFLECTION_ALIASES: Record<string, string[]> = {
+            // Croatian words with known legitimate orthographic/stem variations
+          };
+
+          if (textSlug !== normAudioSlug) {
+            const allowed = ACCEPTED_INFLECTION_ALIASES[textSlug] || [];
+            if (!allowed.includes(normAudioSlug)) {
+              console.error(`[RULE VIOLATION: Audio Semantic Conflict] Unit ${c.u_order} L${c.l_order} Ch${c.c_order}: Option "${opt.text}" plays audio for "${baseSlug}.mp3"! (Expected ~${textSlug})`);
+              totalErrors++;
+            }
           }
         }
       }
