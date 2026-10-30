@@ -2,7 +2,7 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 77 Completed (CR-001 to CR-077) | 0 Queued  
+> **Total Change Requests:** 78 Completed (CR-001 to CR-078) | 0 Queued  
 > **Total Bug Tickets:** 37 Resolved (BUG-001 to BUG-037) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
@@ -89,6 +89,7 @@
 | **CR-075** | Onboarding / Landing | **Role-Aware Landing Page, `/welcome` Route & Student Join-Code Preservation:** Replaces child-only dual CTAs on `/` with 3-way role chooser (`Learner`, `Parent`, `Teacher`) + `"Have a team code?"` input; preserves `?join=CODE` through Clerk sign-up; introduces dedicated `/welcome` transition route directly provisioning appropriate team type (`family` vs `classroom`) without lesson-path detour or math quiz for adults; and automatically launches matching setup wizard upon first `/admin` visit. | 2026-10-28 | ✅ Verified |
 | **CR-076** | Curriculum / Level 2 | **Level 2 & World 5 (Istra i Kvarner — Units 21–25):** Launches Level 2 (*Mali Istraživač*) with 5 new units covering days of the week, ice cream ordering, Roman Pula Arena, daily routines, and sea adventures, in strict compliance with the 3+1 unit arc, deductive elimination, neural audio synthesis, and progressive fading. | 2026-10-28 | ✅ Verified |
 | **CR-077** | Navigation / COPPA | **Isolate Parent Portal Access & Pure Brand Marketing Header:** Strips all extraneous buttons and auth controls from the marketing header to make the role-aware hero the single uncluttered entry point for sign-up/login, and restricts `Parent Center` in the app sidebar strictly to authenticated parents and admins, ensuring student learners never see or get prompted with adult portal links. | 2026-10-28 | ✅ Verified |
+| **CR-078** | Landing / UI | **Landing Page Declutter & Material 3 Refinement:** Eliminates visual noise on the marketing homepage by removing redundant card headers and subtitles, consolidating dual heavy CTAs into a single primary action (`Start Learning (Free)`) with an understated login link, introducing progressive disclosure for team join codes, clearing misplaced gamification badges (`Level 2 Mali Istraživač`) and overlapping corner pills from the Paško hero artwork, and introducing a modern tonal bento grid. | 2026-10-30 | ✅ Verified |
 
 ---
 

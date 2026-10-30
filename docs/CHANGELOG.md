@@ -4,6 +4,28 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-30] - Landing Page Declutter & Material 3 Refinement (CR-078)
+
+### Added & Refined
+- **[CR-078] ✅ IMPLEMENTED & VERIFIED - Landing Page Declutter & Material 3 Refinement:**
+  - **Hero Onboarding Declutter (`components/onboarding/m3-role-hero.tsx` & `app/(marketing)/page.tsx`):**
+    - Eliminated redundant container headers and duplicate subheadings (*"🎒 Student & Independent Learner"*), relying on the Google Material 3 segmented role pill (`🎒 Learner`, `👨‍👩‍👧 Parent`, `🏫 Teacher`) to provide context and saving 65px of vertical layout.
+    - Consolidated dual heavy primary buttons into a single high-contrast primary call-to-action (`[ ✨ Start Learning (Free) ]` / `[ 👨‍👩‍👧 Set Up Family Team ]` / `[ 🏫 Set Up Classroom Team ]`) paired with an understated login text link (`Already have an account? Log in`).
+    - Implemented progressive disclosure for classroom/team join codes: replaced the always-visible input box with a discreet toggle (*"Have a class or family team code? ⌄"*), eliminating cognitive noise for first-time visitors.
+    - Moved compliance and trust badges (*"100% Free • COPPA Compliant • Zero Third-Party Ads"*) out of the card container into clean footer micro-copy.
+  - **Paško Hero Artwork Cleanup:**
+    - Purged out-of-place gamification badge (`✨ Level 2 Mali Istraživač`) that had no context for unauthenticated first-time visitors.
+    - Eliminated the floating corner COPPA badge that physically collided with and overlapped the `Paško kaže: "Idemo učiti hrvatski!"` caption.
+    - Paško illustration now sits with clean visual breathing room in a soft tonal ambient glow container.
+  - **Expressive Responsive Bento Grid:**
+    - Replaced the plain 3-step numbered card stack with an expressive 4-card Material 3 tonal bento grid showcasing core trust pillars: Zero Child Emails (Blue), 1-Tap Student Passes (Rose), Smartboard Join Slides (Amber), and Encouraging Hearts (Emerald).
+  - **Quality & Verification:**
+    - `npm run typecheck`: Passed with 0 TypeScript errors.
+    - `npx vitest run`: 24 test suites passed, 268/268 tests passing (100%).
+    - `audit-curriculum-rules.ts`: Passed with 0 rule violations across 25 units.
+
+---
+
 ## [2026-10-29] - Universal Audio-Visual Parity Invariant & World 4 Asset Remediation (BUG-037)
 
 ### Resolved Defects
