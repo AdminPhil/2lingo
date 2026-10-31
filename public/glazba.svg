@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Musical Staff Lines -->
+  <path stroke="#CBD5E1" stroke-width="1" d="M2 10h32M2 14h32M2 18h32M2 22h32M2 26h32"/>
+  <!-- Croatian Folk Red & Blue Musical Notes -->
+  <ellipse cx="10" cy="22" rx="3.5" ry="2.5" transform="rotate(-20 10 22)" fill="#DC2626"/>
+  <rect x="12" y="7" width="2" height="15" fill="#DC2626"/>
+  <ellipse cx="22" cy="18" rx="3.5" ry="2.5" transform="rotate(-20 22 18)" fill="#2563EB"/>
+  <rect x="24" y="5" width="2" height="13" fill="#2563EB"/>
+  <!-- Connecting Beam -->
+  <polygon points="12,7 26,4 26,7 12,10" fill="#1E293B"/>
+  <!-- Sparkles -->
+  <circle cx="30" cy="11" r="1.5" fill="#FACC15"/>
+  <circle cx="5" cy="8" r="1" fill="#FACC15"/>
+</svg>

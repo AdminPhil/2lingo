@@ -943,7 +943,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Glazba", correct: true, imageSrc: "/glazba.svg", audioSrc: "/audio/hr/glazba.mp3" },
               { text: "Knjiga", correct: false, imageSrc: "/book.svg", audioSrc: "/audio/hr/knjiga.mp3" },
-              { text: "Igra", correct: false, imageSrc: "/game.svg", audioSrc: "/audio/hr/igra.mp3" },
+              { text: "Igra", correct: false, imageSrc: "/igra.svg", audioSrc: "/audio/hr/igra.mp3" },
               { text: "Škola", correct: false, imageSrc: "/school.svg", audioSrc: "/audio/hr/skola.mp3" },
             ],
           },

@@ -4,6 +4,26 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-31] - Missing Illustration Assets on "Igra" and "Glazba" in Visual Drill (BUG-040)
+
+### Resolved Defects
+- **[BUG-040] ✅ RESOLVED & VERIFIED - Missing Illustration Assets for "Igra" and "Glazba" in "Poslušaj i poveži":**
+  - **Issue Identified:** In Unit 30 Lesson 1 Challenge 1 (`"Which one of these is 'Music'?"`), Option Card 2 (`Igra`) and Option Card 4 (`Glazba`) were missing illustration assets, causing empty placeholder frames and uneven card heights alongside image-bearing cards (`Knjiga`, `Škola`).
+  - **Root Cause Analysis:**
+    - *`Glazba` Asset Omission:* While `public/glazba.svg` was generated locally during World 6 authoring, it was untracked and had not been committed or deployed to Render, returning an HTTP 404 in production.
+    - *`Igra` Asset Mismatch:* Option `Igra` (row 6502 in Neon DB) referenced `/game.svg`, but neither `public/game.svg` nor `public/igra.svg` existed on disk, returning an HTTP 404.
+  - **Remediation & Hardening:**
+    - **Vector SVG Artwork (`public/igra.svg` & `public/game.svg`):** Authored an authentic 36×36 vector illustration featuring a vibrant gamepad controller with D-pad, colored diamond action buttons (red, yellow, green, blue), shoulder bumpers, and grip accents.
+    - **Musical Notes Artwork (`public/glazba.svg`):** Confirmed and verified clean 36×36 vector illustration with musical staff lines, Croatian red and blue beamed notes, and gold sparkles.
+    - **Neon Database & Seed File Synchronization:** Updated Neon database option 6502 from `/game.svg` to `/igra.svg`, verified row 6500 (`Glazba`) maps to `/glazba.svg`, and updated `scripts/seed-units-26-30.ts`.
+  - **Verification:**
+    - `npm run typecheck`: Passed with 0 TypeScript errors.
+    - Verified `public/glazba.svg`, `public/igra.svg`, and `public/game.svg` exist on disk with valid dimensions.
+    - Verified `public/audio/hr/glazba.mp3` and `public/audio/hr/igra.mp3` audio files exist on disk.
+    - Preserved 100% of learner XP and progress.
+
+---
+
 ## [2026-10-31] - Missing Illustration Assets on "Most" and "Zid" in Visual Drill (BUG-039)
 
 ### Resolved Defects

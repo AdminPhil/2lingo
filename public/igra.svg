@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Subtle Drop Shadow -->
+  <path fill="#94A3B8" opacity="0.3" d="M7 29c3 1 7 1 11 1s8 0 11-1c3-1 4-4 4-8v-2c-1 3-3 6-6 7l-5 2h-8l-5-2c-3-1-5-4-6-7v2c0 4 1 7 4 8z"/>
+  
+  <!-- Controller Body (Vibrant Indigo-Blue Gamepad) -->
+  <path fill="#3B82F6" d="M6 12c-2.5 0-4.5 2-4.5 4.5v3c0 5 3 9 7.5 9 3 0 5-2 6-4l3-2h0l3 2c1 2 3 4 6 4 4.5 0 7.5-4 7.5-9v-3c0-2.5-2-4.5-4.5-4.5H6z"/>
+  <!-- Top Bumpers -->
+  <rect x="7" y="9" width="6" height="3" rx="1.5" fill="#1D4ED8"/>
+  <rect x="23" y="9" width="6" height="3" rx="1.5" fill="#1D4ED8"/>
+
+  <!-- D-Pad (Directional Cross) on Left -->
+  <rect x="7.5" y="15.5" width="6" height="2" rx="0.8" fill="#F8FAFC"/>
+  <rect x="9.5" y="13.5" width="2" height="6" rx="0.8" fill="#F8FAFC"/>
+  <circle cx="10.5" cy="16.5" r="0.6" fill="#64748B"/>
+
+  <!-- Action Buttons on Right (Diamond Cluster) -->
+  <circle cx="25.5" cy="14" r="1.3" fill="#EF4444"/> <!-- Red Top -->
+  <circle cx="23" cy="16.5" r="1.3" fill="#F59E0B"/> <!-- Yellow Left -->
+  <circle cx="28" cy="16.5" r="1.3" fill="#10B981"/> <!-- Green Right -->
+  <circle cx="25.5" cy="19" r="1.3" fill="#6366F1"/> <!-- Blue Bottom -->
+
+  <!-- Center Menu / Pause Buttons -->
+  <rect x="15" y="16" width="2.5" height="1" rx="0.5" fill="#DBEAFE"/>
+  <rect x="18.5" y="16" width="2.5" height="1" rx="0.5" fill="#DBEAFE"/>
+
+  <!-- Grips Texture Accents -->
+  <path fill="#1D4ED8" opacity="0.4" d="M4 21c0 3 1.5 5 3.5 5.5-1.5-1-2.5-3-2.5-5.5v-2H4v2zm28 0c0 2.5-1 4.5-2.5 5.5 2-.5 3.5-2.5 3.5-5.5v-2h-1v2z"/>
+</svg>
