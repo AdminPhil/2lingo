@@ -82,7 +82,7 @@ const unitsData: UnitDef[] = [
             ],
           },
           {
-            type: "ASSIST",
+            type: "SELECT",
             order: 4,
             question: '"Evening"',
             options: [
@@ -304,7 +304,7 @@ const unitsData: UnitDef[] = [
             ],
           },
           {
-            type: "ASSIST",
+            type: "SELECT",
             order: 4,
             question: '"Strawberry"',
             options: [
@@ -526,7 +526,7 @@ const unitsData: UnitDef[] = [
             ],
           },
           {
-            type: "ASSIST",
+            type: "SELECT",
             order: 4,
             question: '"Shield"',
             options: [
@@ -748,7 +748,7 @@ const unitsData: UnitDef[] = [
             ],
           },
           {
-            type: "ASSIST",
+            type: "SELECT",
             order: 4,
             question: '"Bed"',
             options: [
@@ -970,7 +970,7 @@ const unitsData: UnitDef[] = [
             ],
           },
           {
-            type: "ASSIST",
+            type: "SELECT",
             order: 4,
             question: '"Seashell"',
             options: [

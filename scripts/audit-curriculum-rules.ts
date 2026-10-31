@@ -124,12 +124,22 @@ async function auditAllRules() {
       }
     }
 
-    // Rule: Lesson 1 Visual Flashcards Required (BUG-037 Invariant)
-    if (c.l_order === 1 && c.type === "SELECT") {
-      const missingImgs = opts.filter((o: any) => !o.image_src);
-      if (missingImgs.length > 0) {
-        console.error(`[RULE VIOLATION: Missing Visual Flashcard Image] Unit ${c.u_order} L1 Ch${c.c_order}: ${missingImgs.length} option(s) missing image_src in SELECT challenge!`);
+    // Rule: Lesson 1 Visual Discovery Invariant (BUG-037 & BUG-038)
+    // If a challenge in Lesson 1 has images attached to any option, it MUST be of type SELECT
+    // so that the UI renders the visual 2x2 flashcard grid rather than suppressing images in ASSIST mode.
+    // Furthermore, every option in that challenge must have a valid image_src.
+    if (c.l_order === 1) {
+      const hasAnyImage = opts.some((o: any) => Boolean(o.image_src));
+      if (hasAnyImage && c.type !== "SELECT") {
+        console.error(`[RULE VIOLATION: Lesson 1 Visual Mode Invariant] Unit ${c.u_order} L1 Ch${c.c_order}: Challenge has visual image assets but is configured as type "${c.type}"! Must be "SELECT" to render visual flashcards.`);
         totalErrors++;
+      }
+      if (c.type === "SELECT") {
+        const missingImgs = opts.filter((o: any) => !o.image_src);
+        if (missingImgs.length > 0) {
+          console.error(`[RULE VIOLATION: Missing Visual Flashcard Image] Unit ${c.u_order} L1 Ch${c.c_order}: ${missingImgs.length} option(s) missing image_src in SELECT challenge!`);
+          totalErrors++;
+        }
       }
     }
 

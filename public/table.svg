@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#A4523A" d="M12 20c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2s2-.9 2-2V22c0-1.1-.9-2-2-2zm18 0c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2s2-.9 2-2V22c0-1.1-.9-2-2-2z"/><path fill="#C1694F" d="M13 2h16v8H13z"/><path fill="#C1694F" d="M16 9h2v13h-2zm4 0h2v13h-2zm4 0h2v13h-2zM7 23c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2s2-.9 2-2v-9c0-1.1-.9-2-2-2z"/><path fill="#C1694F" d="M25 21c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2s2-.9 2-2V23c0-1.1-.9-2-2-2zM12 0c-1.1 0-2 .9-2 2v20h4V2c0-1.1-.9-2-2-2zm18 0c-1.1 0-2 .9-2 2v20h4V2c0-1.1-.9-2-2-2z"/><path fill="#A4523A" d="M14 2h1v8h-1zm14 8h-1V2h1z"/><path fill="#D99E82" d="M30.769 20H10.341c-.223 0-.442.061-.633.175l-5.954 3.041s22.726 2.418 24.726 2.418l3.029-2.265c.309-.232.491-.597.491-.985v-1.153c0-.68-.551-1.231-1.231-1.231z"/><path fill="#A4523A" d="M16 10h2v1h-2zM5 26h4v1H5zm18 0h4v1h-4zm-3-16h2v1h-2zm4 0h2v1h-2z"/><path fill="#C1694F" d="M27.44 26H4.56C3.698 26 3 25.328 3 24.5S3.698 23 4.56 23h22.88c.862 0 1.56.672 1.56 1.5s-.698 1.5-1.56 1.5z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Wooden Table Surface (Top Bevel & Rim) -->
+  <path fill="#B45309" d="M2 13h32v3H2z"/>
+  <rect x="1" y="9" width="34" height="4" rx="2" fill="#D97706"/>
+  
+  <!-- Subtle Wood Grain Highlight on Top -->
+  <path fill="#FBBF24" opacity="0.6" d="M4 10h28v1.5H4z"/>
+
+  <!-- Left Front Leg -->
+  <rect x="4" y="16" width="3.5" height="17" rx="1" fill="#B45309"/>
+  <!-- Left Back Leg (Shadowed) -->
+  <rect x="8" y="16" width="3" height="14" rx="0.8" fill="#78350F" opacity="0.85"/>
+
+  <!-- Right Back Leg (Shadowed) -->
+  <rect x="25" y="16" width="3" height="14" rx="0.8" fill="#78350F" opacity="0.85"/>
+  <!-- Right Front Leg -->
+  <rect x="28.5" y="16" width="3.5" height="17" rx="1" fill="#B45309"/>
+
+  <!-- Under-Table Apron Rail (Crossbar Support) -->
+  <rect x="5.5" y="16" width="25" height="2" fill="#92400E"/>
+  
+  <!-- Floor Contact Shadows -->
+  <ellipse cx="5.75" cy="33.5" rx="2.5" ry="0.8" fill="#78350F" opacity="0.4"/>
+  <ellipse cx="30.25" cy="33.5" rx="2.5" ry="0.8" fill="#78350F" opacity="0.4"/>
+</svg>

@@ -4,6 +4,28 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-31] - Lesson 1 Visual Mode Invariant, Table Vector Artwork & Croatian Phonetic Tuning (BUG-038)
+
+### Resolved Defects
+- **[BUG-038] ✅ RESOLVED & VERIFIED - Lesson 1 Visual Card Mode Enforcement, Table SVG & Pure Croatian Phonetics:**
+  - **Issue Identified:** Testing reported that in Unit 24 L1 Ch4 (`"Bed"`), options rendered as collapsed text-only buttons with speaker icons, missing flashcard artwork entirely. In Unit 24 L1 Ch1 (`"Clock"`), option `Stol` displayed an illustration of a chair rather than a table, and option `Sat` played an English-sounding pronunciation (`"set"`) rather than the native Croatian vowel `/saːt/`.
+  - **Root Cause Analysis (Why the Audit Scripts Missed It):**
+    - *The ASSIST Mode Blind Spot:* In [`app/lesson/card.tsx`](file:///c:/Users/phili/Documents/phils_repo/app/lesson/card.tsx#L176-L219), `ASSIST` challenges render as compact single-column text bars that intentionally suppress images even if `image_src` is populated. In `scripts/seed-units-21-25.ts`, Challenge 4 in Lesson 1 was seeded as `type: "ASSIST"` with images attached. The audit script only asserted visual flashcards if `c.type === "SELECT"`, thereby skipping all `ASSIST` challenges in Lesson 1.
+    - *The Table Asset:* `public/table.svg` from the initial open-source icon set depicted a desk chair with tall back slats and chair legs rather than a clean, flat four-legged table.
+    - *The TTS English Homograph:* Synthesizing single-word `"Sat"` through automated TTS can leak English phonetic models (`/sæt/` / "set") without explicit Croatian language inflection.
+  - **Remediation & Hardening:**
+    - **Lesson 1 Visual Mode Invariant (`scripts/audit-curriculum-rules.ts`):** Enforced that any challenge in Lesson 1 bearing visual image assets MUST be configured as `type: "SELECT"` so the UI renders the full 2×2 visual flashcard grid.
+    - **Database & Seed Remediation:** Converted all Lesson 1 image-bearing challenges across Units 16–25 to `SELECT` mode in Neon DB and seed files.
+    - **Vector SVG Artwork (`public/table.svg`):** Authored an authentic, crisp 4-legged wooden table SVG with warm honey-amber grain and floor shadows that cannot be confused with a chair (`stolica`).
+    - **Audio Synthesis (`public/audio/hr/sat.mp3`):** Re-synthesized `sat.mp3` using `hr-HR-SreckoNeural` to guarantee native Croatian pronunciation with zero English vowel leak.
+  - **Verification:**
+    - `audit-curriculum-rules.ts`: Passed with 0 rule violations across all 25 units.
+    - `tsc --noEmit`: 0 TypeScript errors.
+    - `vitest run`: 24 test suites passed, 268/268 tests passing (100%).
+    - Live student progress (`Adriana` 4,780 XP, `Vanessa` 1,750 XP, `Silvia` 1,325 XP) completely preserved.
+
+---
+
 ## [2026-10-30] - Landing Page Declutter & Material 3 Refinement (CR-078)
 
 ### Added & Refined
