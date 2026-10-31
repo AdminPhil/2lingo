@@ -4,6 +4,26 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-10-31] - Missing Illustration Assets on "Most" and "Zid" in Visual Drill (BUG-039)
+
+### Resolved Defects
+- **[BUG-039] ✅ RESOLVED & VERIFIED - Missing Illustration Assets for "Most" and "Zid" in "Poslušaj i poveži":**
+  - **Issue Identified:** In the 4-card selection layout for Unit 29 Lesson 1 Challenge 1 (`"Which one of these is 'Bridge'?"`), Option Card 1 (`Most`) and Option Card 4 (`Zid`) were missing illustration assets, rendering as empty placeholder frames with labels and audio buttons centered, resulting in an asymmetrical, misaligned layout next to populated cards (`Kuća`, `Vrata`).
+  - **Root Cause Analysis:**
+    - *`Most` Asset Omission:* While `public/most.svg` was drafted locally during World 6 development, it had not been committed or deployed to Render, returning an HTTP 404 on production.
+    - *`Zid` Asset Mismatch:* Option `Zid` (row 6435 in Neon DB) referenced `/wall.svg`, but neither `public/wall.svg` nor `public/zid.svg` existed in the repository, returning an HTTP 404.
+  - **Remediation & Hardening:**
+    - **Vector SVG Artwork (`public/zid.svg` & `public/wall.svg`):** Authored an authentic 36×36 vector illustration featuring four staggered rows of terracotta/crimson Croatian brickwork, smooth stone coping, mortar foundation, and green grass ground base.
+    - **Stone Arch Bridge (`public/most.svg`):** Confirmed and verified crisp 36×36 stone arch bridge illustration with river water (Drava/Danube theme), pier pillars, and protective railings.
+    - **Neon Database & Seed File Synchronization:** Updated Neon database option 6435 from `/wall.svg` to `/zid.svg`, verified row 6432 (`Most`) maps to `/most.svg`, and updated `scripts/seed-units-26-30.ts`.
+  - **Verification:**
+    - `npm run typecheck`: Passed with 0 TypeScript errors.
+    - Verified `public/most.svg`, `public/zid.svg`, and `public/wall.svg` exist on disk with valid dimensions.
+    - Verified `public/audio/hr/most.mp3` and `public/audio/hr/zid.mp3` audio files exist on disk.
+    - Preserved 100% of learner XP and progress.
+
+---
+
 ## [2026-10-31] - Lesson 1 Visual Mode Invariant, Table Vector Artwork & Croatian Phonetic Tuning (BUG-038)
 
 ### Resolved Defects

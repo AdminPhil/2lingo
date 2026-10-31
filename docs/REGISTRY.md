@@ -3,7 +3,7 @@
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
 > **Total Change Requests:** 78 Completed (CR-001 to CR-078) | 1 Queued (CR-079)  
-> **Total Bug Tickets:** 38 Resolved (BUG-001 to BUG-038) | 0 Open  
+> **Total Bug Tickets:** 39 Resolved (BUG-001 to BUG-039) | 1 Queued (BUG-040)  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
@@ -94,7 +94,7 @@
 
 ---
 
-## 🐛 Part 2: Bug Tickets Master Ledger (BUG-001 to BUG-036)
+## 🐛 Part 2: Bug Tickets Master Ledger (BUG-001 to BUG-040)
 
 | Ticket ID | Severity | Title & Issue Description | Root Cause | Fix Summary | Date | Status |
 | :---: | :---: | :--- | :--- | :--- | :---: | :---: |
@@ -136,3 +136,5 @@
 | **BUG-036** | High | **Audio Mismatch for Option "Plovimo" Playing "More":** Challenge 313 option `Plovimo` (We sail) played audio for `/audio/hr/more.mp3` (Sea). | Distractor verb `Plovimo` was mapped to noun asset `/audio/hr/more.mp3`. | Generated authentic `public/audio/hr/plovimo.mp3` using `hr-HR-GabrijelaNeural`, updated Neon DB option 4571 and seed files. | 2026-10-28 | ✅ Resolved |
 | **BUG-037** | Critical | **Universal Audio-Visual Parity Invariant & World 4 (Units 16–20) Asset Remediation:** Fixed missing visual card images in Unit 19 Lesson 1 and audio mismatches (Čaša -> voda, Nož -> kruh, Večera -> kruh, Baloni -> balon, Učenici -> uciteljica). Hardened audit infrastructure by eliminating hardcoded audio whitelists and enforcing Lesson 1 visual flashcard completeness across all 25 units. | Seeding coordinate omissions in `scripts/seed-units-16-20.ts` and reactive 3-item hardcoded array in `audit-curriculum-rules.ts` that only checked past bug pairs. | Synthesized 12 authentic neural audio files (`hr-HR-GabrijelaNeural`); created 12 missing vector SVGs (`casa.svg`, `noz.svg`, `soba.svg`, `kuca.svg`, `razred.svg`, `vecera.svg`, `baloni.svg`, `pokloni.svg`, `prijatelji.svg`, `ucenici.svg`, `djecaci.svg`, `djevojcice.svg`, `rijeka.svg`); updated Neon DB; replaced hardcoded whitelist in `audit-curriculum-rules.ts` with Universal Audio Parity and Lesson 1 Flashcard invariant; added 6-test Vitest suite `tests/integration/curriculum-integrity-all-units.test.ts`. | 2026-10-29 | ✅ Resolved |
 | **BUG-038** | High | **Lesson 1 Visual Card Mode Enforcement ("Bed"), Table SVG Artwork & Pure Croatian Phonetics ("Sat"):** Fixed collapsed text-only flashcard buttons in Unit 24 L1 Ch4 ("Bed") and related units by converting image-bearing challenges from `ASSIST` to `SELECT` mode; replaced chair-like artwork in `public/table.svg` with authentic 4-legged wooden table; and re-synthesized `sat.mp3` using `hr-HR-SreckoNeural` to prevent English homograph phonetics. | Challenges in Lesson 1 seeded as `ASSIST` which deliberately suppressed images in `card.tsx`; `audit-curriculum-rules.ts` only asserted visual flashcards on `type === "SELECT"`; `table.svg` previously depicted a tall-backed chair; single-word TTS without accent inflection leaked English vowel sounds. | Updated challenges in Neon DB and seed files to `SELECT`; hardened `scripts/audit-curriculum-rules.ts` to require all image-bearing challenges in Lesson 1 to be `SELECT`; created authentic table SVG; re-synthesized `sat.mp3`. | 2026-10-31 | ✅ Resolved |
+| **BUG-039** | Medium | **Missing Image Assets for "Most" and "Zid" in "Poslušaj i poveži":** In the 4-card selection layout ("Which one of these is 'Bridge'?"), cards 1 (Most) and 4 (Zid) are missing illustration assets, resulting in blank empty frames above labels and mismatched card heights. | Missing `imageSrc` asset mappings or missing vector graphics for `most.svg` / `zid.svg` in challenge options. | Created authentic 36×36 vector SVGs `public/most.svg` and `public/zid.svg` (and `wall.svg` fallback); updated Neon DB option 6435 to `/zid.svg`; synced `seed-units-26-30.ts`. | 2026-10-31 | ✅ Resolved |
+| **BUG-040** | Medium | **Missing Image Assets for "Igra" and "Glazba" in "Poslušaj i poveži":** In the 4-card selection layout ("Which one of these is 'Music'?"), cards 2 (Igra) and 4 (Glazba) are missing illustration assets, causing empty placeholder frames and uneven card heights alongside image cards (Knjiga, Škola). | Missing `imageSrc` asset mappings or missing vector graphics for `glazba.svg` / `igra.svg` in challenge options. | Pending triage | 2026-10-31 | ⏳ Queued |
