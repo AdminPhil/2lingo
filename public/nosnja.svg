@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Traditional Croatian Folk Vest & Embroidered Blouse (Slavonski Prsluk) -->
+  <!-- White Linen Shirt Sleeves -->
+  <path fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" d="M4 14l4 12h5L10 11zM32 14l-4 12h-5l3-15z"/>
+  <!-- Black Velvet Vest Body -->
+  <path fill="#0F172A" d="M9 11l9 4 9-4v19H9V11z"/>
+  <!-- Golden Braided Embroidery (Zlatovez) -->
+  <path stroke="#FACC15" stroke-width="1.2" fill="none" d="M9 12l9 4 9-4M9 30h18"/>
+  <circle cx="18" cy="20" r="1.5" fill="#FACC15"/>
+  <circle cx="18" cy="25" r="1.5" fill="#FACC15"/>
+  <circle cx="14" cy="22" r="1" fill="#DC2626"/>
+  <circle cx="22" cy="22" r="1" fill="#DC2626"/>
+  <!-- White Pleated Collar -->
+  <path fill="#FFFFFF" d="M14 11a4 4 0 0 0 8 0z"/>
+</svg>

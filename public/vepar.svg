@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Sturdy Wild Boar Body -->
+  <ellipse cx="18" cy="20" rx="13" ry="9" fill="#451A03"/>
+  <!-- Bristles on Ridge -->
+  <path fill="#290E02" d="M8 12c3-4 8-6 13-5 3 1 6 3 8 6l-2 1c-2-2-5-4-8-4-4 0-8 2-10 4l-1-2z"/>
+  <!-- Snout & Head -->
+  <path fill="#5B2207" d="M6 18c0-3 3-6 7-6l4 7-7 4c-3 0-4-2-4-5z"/>
+  <ellipse cx="5" cy="18" rx="2" ry="3" fill="#78350F"/>
+  <!-- Tusk (White) -->
+  <path fill="#F8FAFC" d="M7 19c-1 0-2-3 0-4 0 2 1 3 1 4h-1z"/>
+  <!-- Legs -->
+  <rect x="9" y="26" width="3" height="8" rx="1" fill="#3B1302"/>
+  <rect x="14" y="26" width="3" height="7" rx="1" fill="#290E02"/>
+  <rect x="21" y="26" width="3" height="7" rx="1" fill="#290E02"/>
+  <rect x="25" y="26" width="3" height="8" rx="1" fill="#3B1302"/>
+  <!-- Little Curly Tail -->
+  <path fill="none" stroke="#451A03" stroke-width="1.5" stroke-linecap="round" d="M31 18c2-2 3 1 1 2"/>
+  <circle cx="10" cy="15" r="0.8" fill="#FBBF24"/>
+</svg>

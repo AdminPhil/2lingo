@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Baking Tin -->
+  <ellipse cx="18" cy="27" rx="15" ry="5" fill="#94A3B8"/>
+  <path fill="#64748B" d="M3 24l2 4c1 2 6 4 13 4s12-2 13-4l2-4H3z"/>
+  <!-- Golden Crust -->
+  <ellipse cx="18" cy="23" rx="14" ry="4.5" fill="#D97706"/>
+  <!-- Fluted Edge Ring -->
+  <path fill="#B45309" d="M4 23c2-1 4 0 6-1 2 1 4 0 6 1 2-1 4 0 6-1 2 1 4 0 6 1v1c-2 1-4 0-6 1-2-1-4 0-6-1-2 1-4 0-6 1-2-1-4 0-6-1v-2z"/>
+  <!-- Traditional Lattice Strips -->
+  <path stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" fill="none" d="M8 22l14 4M14 20l14 4M28 22L14 26M22 20L8 24"/>
+  <!-- Steam Slits -->
+  <ellipse cx="18" cy="23" rx="1.5" ry="0.6" fill="#78350F"/>
+</svg>

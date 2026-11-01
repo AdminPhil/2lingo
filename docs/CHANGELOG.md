@@ -4,6 +4,27 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-01] - World 6: Slavonian Hearth & River Castles (CR-079)
+
+### Added & Verified
+- **[CR-079] ✅ IMPLEMENTED & VERIFIED - Level 2 & World 6 (Slavonian Hearth & River Castles — Units 26–30):**
+  - **Curriculum Expansion (Units 26–30):** Added 5 comprehensive units (20 lessons, 88 challenges, 352 options) continuing Level 2 (*Mali Istraživač*):
+    - **Unit 26:** *Na tržnici i seoskom imanju* (Farmers' Market & Farm — Corn, Pumpkin, Honey, Wheat, Sowing & Harvesting)
+    - **Unit 27:** *Divlje životinje Kopačkog rita* (Wetland Wildlife Sanctuary — Eagle, Heron, Wild Boar, Deer, Flying & Hunting)
+    - **Unit 28:** *U tradicionalnoj kuhinji kod bake* (Grandma's Kitchen — Cake, Tea, Pie, Cooking Pot, Mixing & Baking)
+    - **Unit 29:** *Riječna plovidba Dunavom i Dravom* (Danube & Drava Navigation — Bridge, Boat, Fisherman, Fishing Net, Rowing & Sailing)
+    - **Unit 30:** *Velika tamburica i seoska proslava* (Folk Music & Festival — Music, Song, National Costume, Folk Dance, Singing & Playing Tamburica)
+  - **Authentic Neural Audio Synthesis:** Synthesized 78 Croatian audio files via Microsoft Azure Speech Services (`hr-HR-GabrijelaNeural` and `hr-HR-SreckoNeural`) at a pedagogical -5% playback rate.
+  - **Bespoke Vector Artwork:** Created 19 custom 36×36 vector SVGs for new target vocabulary (`kukuruz.svg`, `bundeva.svg`, `med.svg`, `psenica.svg`, `orao.svg`, `caplja.svg`, `vepar.svg`, `kolac.svg`, `caj.svg`, `pita.svg`, `lonac.svg`, `most.svg`, `camac.svg`, `ribar.svg`, `mreza.svg`, `glazba.svg`, `pjesma.svg`, `nosnja.svg`, `ples.svg`, `zid.svg`, `igra.svg`).
+  - **Theming & Scenery Registry:** Registered World 6 in `lib/theme-registry.ts` with Slavonian golden wheat & emerald plain tokens (`solidBg: "bg-emerald-700"`, `gradient: "from-amber-600 via-emerald-700 to-blue-900"`, `accentEmoji: "🌾"`) and regional scenery items.
+  - **Pre-Flight Invariants:**
+    - `audit-curriculum-rules.ts`: Passed with 0 rule violations across all 30 units (529 challenges, 2,116 options).
+    - `npm run typecheck`: Passed with 0 TypeScript errors.
+    - `vitest run`: Passed with 24 test suites, 269/269 tests passing (100%).
+    - Live student progress (Adriana 5,470 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-10-31] - Missing Illustration Assets on "Igra" and "Glazba" in Visual Drill (BUG-040)
 
 ### Resolved Defects

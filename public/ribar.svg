@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Fisherman Body & Yellow Raincoat / Vest -->
+  <path fill="#EAB308" d="M10 24c0-6 4-9 8-9s8 3 8 9v11H10V24z"/>
+  <path fill="#CA8A04" d="M16 15h4v19h-4z"/>
+  <!-- Fisherman Cap (Slavonian / Coastal Woolen Beanie) -->
+  <path fill="#0284C7" d="M12 9c0-3 3-5 6-5s6 2 6 5z"/>
+  <rect x="11" y="8" width="14" height="2.5" rx="1" fill="#0369A1"/>
+  <!-- Friendly Face & White Beard -->
+  <circle cx="18" cy="11.5" r="3.5" fill="#FDDEC9"/>
+  <circle cx="16.5" cy="11" r="0.6" fill="#0F172A"/>
+  <circle cx="19.5" cy="11" r="0.6" fill="#0F172A"/>
+  <path fill="#FFFFFF" d="M15 12.5c0 2.5 1.5 4 3 4s3-1.5 3-4z"/>
+  <!-- Fishing Rod in Hand -->
+  <path stroke="#78350F" stroke-width="1.2" stroke-linecap="round" d="M26 30L34 5"/>
+  <path stroke="#94A3B8" stroke-width="0.6" stroke-linecap="round" fill="none" d="M34 5c-2 6-4 12-3 18"/>
+</svg>

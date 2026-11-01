@@ -123,6 +123,26 @@ export const LEVEL_2_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-amber-600 border-amber-400",
     nodeArrowBorder: "border-t-amber-400",
   },
+  // World 6 (CR-079): Slavonian Hearth & River Castles (Units 26–30)
+  {
+    id: "slavonia-danube",
+    stage: 6,
+    stageName: "Slavonian Hearth",
+    stageBadgeLabel: "World 6: Slavonian Hearth • Golden Plains & River Castles",
+    stageCroatianName: "World 6: Slavonian Hearth • Golden Plains & River Castles",
+    unitRange: [26, 30],
+    solidBg: "bg-emerald-700",
+    gradient: "from-amber-600 via-emerald-700 to-blue-900",
+    badgeBg: "bg-black/25 text-white border-white/40",
+    accentEmoji: "🌾",
+    buttonClass: "bg-white text-emerald-950 hover:bg-emerald-50 border-emerald-300",
+    accentBorder: "border-amber-400/50",
+    nodeActiveBg: "bg-emerald-600 hover:bg-emerald-600/90 border-emerald-800 active:border-b-0 text-white",
+    nodeBorderColor: "border-emerald-800",
+    nodeStrokeColor: "#059669",
+    nodeBadgeClasses: "bg-white text-emerald-700 border-emerald-500",
+    nodeArrowBorder: "border-t-emerald-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES];
@@ -379,6 +399,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Jadranski valovi",
           title: "Skok u more",
           badgeEmoji: "🌊",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 26:
+      return {
+        left: {
+          imageSrc: "/kukuruz.svg",
+          alt: "Zlatni kukuruz",
+          title: "Slavonska polja",
+          badgeEmoji: "🌽",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/med.svg",
+          alt: "Domaći med",
+          title: "Slatki med",
+          badgeEmoji: "🍯",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 27:
+      return {
+        left: {
+          imageSrc: "/orao.svg",
+          alt: "Orao štekavac",
+          title: "Kopački rit",
+          badgeEmoji: "🦅",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/jelen.svg",
+          alt: "Slavonski jelen",
+          title: "Šumski kralj",
+          badgeEmoji: "🦌",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 28:
+      return {
+        left: {
+          imageSrc: "/kolac.svg",
+          alt: "Bakin kolač",
+          title: "Bakina kuhinja",
+          badgeEmoji: "🍰",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/lonac.svg",
+          alt: "Tradicionalni lonac",
+          title: "Topla juha",
+          badgeEmoji: "🍲",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 29:
+      return {
+        left: {
+          imageSrc: "/most.svg",
+          alt: "Most na Dravi",
+          title: "Riječni most",
+          badgeEmoji: "🌉",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/camac.svg",
+          alt: "Riječni čamac",
+          title: "Dunavska plovidba",
+          badgeEmoji: "🛶",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 30:
+      return {
+        left: {
+          imageSrc: "/glazba.svg",
+          alt: "Tamburaška glazba",
+          title: "Seoska proslava",
+          badgeEmoji: "🎶",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/ples.svg",
+          alt: "Slavonsko kolo",
+          title: "Zlatna nošnja",
+          badgeEmoji: "💃",
           topOffsetClass: "top-44",
         },
       };

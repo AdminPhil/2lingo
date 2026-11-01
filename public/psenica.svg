@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Central Stem -->
+  <path fill="#CA8A04" d="M17.5 35h1V12h-1z"/>
+  <!-- Wheat Grains / Spikelets -->
+  <ellipse cx="18" cy="6" rx="2" ry="4" fill="#EAB308"/>
+  <ellipse cx="14" cy="9" rx="2.5" ry="3.5" transform="rotate(-30 14 9)" fill="#FACC15"/>
+  <ellipse cx="22" cy="9" rx="2.5" ry="3.5" transform="rotate(30 22 9)" fill="#EAB308"/>
+  <ellipse cx="14" cy="14" rx="2.5" ry="3.5" transform="rotate(-30 14 14)" fill="#FACC15"/>
+  <ellipse cx="22" cy="14" rx="2.5" ry="3.5" transform="rotate(30 22 14)" fill="#EAB308"/>
+  <ellipse cx="14" cy="19" rx="2.5" ry="3.5" transform="rotate(-30 14 19)" fill="#FACC15"/>
+  <ellipse cx="22" cy="19" rx="2.5" ry="3.5" transform="rotate(30 22 19)" fill="#EAB308"/>
+  <ellipse cx="14" cy="24" rx="2.2" ry="3.2" transform="rotate(-30 14 24)" fill="#FACC15"/>
+  <ellipse cx="22" cy="24" rx="2.2" ry="3.2" transform="rotate(30 22 24)" fill="#EAB308"/>
+  <!-- Awns (Beards) -->
+  <path stroke="#CA8A04" stroke-width="0.8" fill="none" d="M18 2V6M13 6l-3-4M23 6l3-4M13 11l-4-3M23 11l4-3"/>
+</svg>

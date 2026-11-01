@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Saucer -->
+  <ellipse cx="18" cy="32" rx="14" ry="3" fill="#CBD5E1"/>
+  <!-- Teacup Body -->
+  <path fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" d="M8 16c0 8 4 14 10 14s10-6 10-14H8z"/>
+  <ellipse cx="18" cy="16" rx="10" ry="2.5" fill="#E2E8F0"/>
+  <!-- Amber Herbal Tea Surface -->
+  <ellipse cx="18" cy="16.5" rx="8.5" ry="2" fill="#D97706"/>
+  <!-- Cup Handle -->
+  <path fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" d="M27 19c4 0 5 6 0 8"/>
+  <!-- Steaming Swirls -->
+  <path fill="none" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="0.6" d="M14 12c-1-3 1-5 0-7M18 11c-1-3 1-5 0-8M22 12c-1-3 1-5 0-7"/>
+  <!-- Lemon Slice Accent -->
+  <path fill="#FACC15" d="M9 13a4 4 0 0 1 5 4H9z"/>
+</svg>

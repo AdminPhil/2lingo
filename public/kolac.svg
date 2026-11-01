@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Cake Base Plate -->
+  <ellipse cx="18" cy="30" rx="15" ry="3" fill="#E2E8F0"/>
+  <!-- Sponge Layers -->
+  <path fill="#F59E0B" d="M6 21h24v7c0 2-5 3-12 3S6 30 6 28v-7z"/>
+  <!-- Cream Filling Stripe -->
+  <rect x="6" y="23" width="24" height="2" fill="#FEF3C7"/>
+  <!-- Top Frosting -->
+  <ellipse cx="18" cy="20" rx="12" ry="4" fill="#DC2626"/>
+  <!-- White Whipped Cream Rosettes -->
+  <circle cx="10" cy="18" r="2" fill="#FFFFFF"/>
+  <circle cx="18" cy="17" r="2.5" fill="#FFFFFF"/>
+  <circle cx="26" cy="18" r="2" fill="#FFFFFF"/>
+  <!-- Red Cherries -->
+  <circle cx="10" cy="17" r="1.2" fill="#991B1B"/>
+  <circle cx="18" cy="15.5" r="1.4" fill="#991B1B"/>
+  <circle cx="26" cy="17" r="1.2" fill="#991B1B"/>
+</svg>

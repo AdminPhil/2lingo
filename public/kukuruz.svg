@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Husk Leaves -->
+  <path fill="#15803D" d="M18 34c-4-4-9-12-7-20 2 3 5 7 7 9 2-2 5-6 7-9 2 8-3 16-7 20z"/>
+  <path fill="#22C55E" d="M12 22c-2-6 0-14 3-18 0 4 1 8 3 11-3 2-5 4-6 7zm12 0c2-6 0-14-3-18 0 4-1 8-3 11 3 2 5 4 6 7z"/>
+  <!-- Golden Corn Ear -->
+  <path fill="#F59E0B" d="M18 2c-3 0-5 5-5 13 0 7 2 11 5 11s5-4 5-11c0-8-2-13-5-13z"/>
+  <!-- Kernel Grid Highlights -->
+  <path fill="#FDE047" opacity="0.9" d="M16 6h4v2h-4zm-2 4h8v2h-8zm-1 4h10v2h-10zm0 4h10v2h-10zm1 4h8v2h-8z"/>
+  <circle cx="18" cy="4" r="1" fill="#FDE047"/>
+</svg>

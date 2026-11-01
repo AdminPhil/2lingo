@@ -65,8 +65,8 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Pumpkin"?',
             options: [
               { text: "Bundeva", correct: true, imageSrc: "/bundeva.svg", audioSrc: "/audio/hr/bundeva.mp3" },
-              { text: "Kupus", correct: false, imageSrc: "/cabbage.svg", audioSrc: "/audio/hr/kupus.mp3" },
-              { text: "Cvijet", correct: false, imageSrc: "/grass.svg", audioSrc: "/audio/hr/cvijet.mp3" },
+              { text: "Rajčica", correct: false, imageSrc: "/tomato.svg", audioSrc: "/audio/hr/rajcica.mp3" },
+              { text: "Burek", correct: false, imageSrc: "/burek.svg", audioSrc: "/audio/hr/burek.mp3" },
               { text: "Kuća", correct: false, imageSrc: "/house.svg", audioSrc: "/audio/hr/kuca.mp3" },
             ],
           },
@@ -77,7 +77,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Med", correct: true, imageSrc: "/med.svg", audioSrc: "/audio/hr/med.mp3" },
               { text: "Sir", correct: false, imageSrc: "/cheese.svg", audioSrc: "/audio/hr/sir.mp3" },
-              { text: "Sol", correct: false, imageSrc: "/salt.svg", audioSrc: "/audio/hr/sol.mp3" },
+              { text: "Mlijeko", correct: false, imageSrc: "/milk.svg", audioSrc: "/audio/hr/mlijeko.mp3" },
               { text: "Sok", correct: false, imageSrc: "/juice.svg", audioSrc: "/audio/hr/sok.mp3" },
             ],
           },
@@ -128,7 +128,7 @@ const unitsData: UnitDef[] = [
               { text: "Na polju", correct: true, audioSrc: "/audio/hr/na_polju.mp3" },
               { text: "U sobi", correct: false, audioSrc: "/audio/hr/u_sobi.mp3" },
               { text: "Na stolu", correct: false, audioSrc: "/audio/hr/na_stolu.mp3" },
-              { text: "U školi", correct: false, audioSrc: "/audio/hr/u_skoli.mp3" },
+              { text: "Na stolu je slatki med", correct: false, audioSrc: "/audio/hr/na_stolu_je_slatki_med.mp3" },
             ],
           },
           {
@@ -288,7 +288,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Čaplja", correct: true, imageSrc: "/caplja.svg", audioSrc: "/audio/hr/caplja.mp3" },
               { text: "Patka", correct: false, imageSrc: "/duck.svg", audioSrc: "/audio/hr/patka.mp3" },
-              { text: "Žaba", correct: false, imageSrc: "/frog.svg", audioSrc: "/audio/hr/zaba.mp3" },
+              { text: "Galeb", correct: false, imageSrc: "/seagull.svg", audioSrc: "/audio/hr/galeb.mp3" },
               { text: "Pas", correct: false, imageSrc: "/dog.svg", audioSrc: "/audio/hr/pas.mp3" },
             ],
           },
@@ -300,7 +300,7 @@ const unitsData: UnitDef[] = [
               { text: "Vepar", correct: true, imageSrc: "/vepar.svg", audioSrc: "/audio/hr/vepar.mp3" },
               { text: "Konj", correct: false, imageSrc: "/horse.svg", audioSrc: "/audio/hr/konj.mp3" },
               { text: "Krava", correct: false, imageSrc: "/cow.svg", audioSrc: "/audio/hr/krava.mp3" },
-              { text: "Ovca", correct: false, imageSrc: "/sheep.svg", audioSrc: "/audio/hr/ovca.mp3" },
+              { text: "Svinja", correct: false, imageSrc: "/pig.svg", audioSrc: "/audio/hr/svinja.mp3" },
             ],
           },
           {
@@ -310,8 +310,8 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Jelen", correct: true, imageSrc: "/jelen.svg", audioSrc: "/audio/hr/jelen.mp3" },
               { text: "Medvjed", correct: false, imageSrc: "/medvjed.svg", audioSrc: "/audio/hr/medvjed.mp3" },
-              { text: "Vuk", correct: false, imageSrc: "/wolf.svg", audioSrc: "/audio/hr/vuk.mp3" },
-              { text: "Zec", correct: false, imageSrc: "/rabbit.svg", audioSrc: "/audio/hr/zec.mp3" },
+              { text: "Pas", correct: false, imageSrc: "/dog.svg", audioSrc: "/audio/hr/pas.mp3" },
+              { text: "Mačka", correct: false, imageSrc: "/cat.svg", audioSrc: "/audio/hr/macka.mp3" },
             ],
           },
         ],
@@ -359,8 +359,8 @@ const unitsData: UnitDef[] = [
             question: 'Which one means "Large eagle"?',
             options: [
               { text: "Veliki orao", correct: true, audioSrc: "/audio/hr/veliki_orao.mp3" },
-              { text: "Mali pas", correct: false, audioSrc: "/audio/hr/mali_pas.mp3" },
-              { text: "Stara kuca", correct: false, audioSrc: "/audio/hr/stara_kuca.mp3" },
+              { text: "Bijela čaplja", correct: false, audioSrc: "/audio/hr/bijela_caplja.mp3" },
+              { text: "Divlji vepar", correct: false, audioSrc: "/audio/hr/divlji_vepar.mp3" },
               { text: "Dobar dan", correct: false, audioSrc: "/audio/hr/dobar_dan.mp3" },
             ],
           },
@@ -531,7 +531,7 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Cooking Pot"?',
             options: [
               { text: "Lonac", correct: true, imageSrc: "/lonac.svg", audioSrc: "/audio/hr/lonac.mp3" },
-              { text: "Tanjur", correct: false, imageSrc: "/plate.svg", audioSrc: "/audio/hr/tanjur.mp3" },
+              { text: "Tanjur", correct: false, imageSrc: "/tanjur.svg", audioSrc: "/audio/hr/tanjur.mp3" },
               { text: "Čaša", correct: false, imageSrc: "/casa.svg", audioSrc: "/audio/hr/casa.mp3" },
               { text: "Nož", correct: false, imageSrc: "/noz.svg", audioSrc: "/audio/hr/noz.mp3" },
             ],
@@ -561,7 +561,7 @@ const unitsData: UnitDef[] = [
               { text: "Peći", correct: true, audioSrc: "/audio/hr/peci.mp3" },
               { text: "Kuća", correct: false, audioSrc: "/audio/hr/kuca.mp3" },
               { text: "Rijeka", correct: false, audioSrc: "/audio/hr/rijeka.mp3" },
-              { text: "Cipela", correct: false, audioSrc: "/audio/hr/cipele.mp3" },
+              { text: "Kuća", correct: false, audioSrc: "/audio/hr/kuca.mp3" },
             ],
           },
           {
@@ -581,9 +581,9 @@ const unitsData: UnitDef[] = [
             question: 'Which one means "Sweet cake"?',
             options: [
               { text: "Slatki kolač", correct: true, audioSrc: "/audio/hr/slatki_kolac.mp3" },
-              { text: "Slano more", correct: false, audioSrc: "/audio/hr/slano_more.mp3" },
+              { text: "Topla pita", correct: false, audioSrc: "/audio/hr/topla_pita.mp3" },
               { text: "Stari most", correct: false, audioSrc: "/audio/hr/stari_most.mp3" },
-              { text: "Veliki park", correct: false, audioSrc: "/audio/hr/veliki_park.mp3" },
+              { text: "Topli čaj", correct: false, audioSrc: "/audio/hr/topli_caj.mp3" },
             ],
           },
         ],
@@ -733,7 +733,7 @@ const unitsData: UnitDef[] = [
               { text: "Čamac", correct: true, imageSrc: "/camac.svg", audioSrc: "/audio/hr/camac.mp3" },
               { text: "Brod", correct: false, imageSrc: "/boat.svg", audioSrc: "/audio/hr/brod.mp3" },
               { text: "Auto", correct: false, imageSrc: "/car.svg", audioSrc: "/audio/hr/auto.mp3" },
-              { text: "Vlak", correct: false, imageSrc: "/train.svg", audioSrc: "/audio/hr/vlak.mp3" },
+              { text: "Vlak", correct: false, imageSrc: "/vlak.svg", audioSrc: "/audio/hr/vlak.mp3" },
             ],
           },
           {
@@ -742,9 +742,9 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Fisherman"?',
             options: [
               { text: "Ribar", correct: true, imageSrc: "/ribar.svg", audioSrc: "/audio/hr/ribar.mp3" },
-              { text: "Mornar", correct: false, imageSrc: "/sailor.svg", audioSrc: "/audio/hr/mornar.mp3" },
-              { text: "Učitelj", correct: false, imageSrc: "/teacher.svg", audioSrc: "/audio/hr/ucitelj.mp3" },
-              { text: "Prijatelj", correct: false, imageSrc: "/prijatelji.svg", audioSrc: "/audio/hr/prijatelji.mp3" },
+              { text: "Učenici", correct: false, imageSrc: "/ucenici.svg", audioSrc: "/audio/hr/ucenici.mp3" },
+              { text: "Dječaci", correct: false, imageSrc: "/djecaci.svg", audioSrc: "/audio/hr/djecaci.mp3" },
+              { text: "Prijatelji", correct: false, imageSrc: "/prijatelji.svg", audioSrc: "/audio/hr/prijatelji.mp3" },
             ],
           },
           {
@@ -753,8 +753,8 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Fishing Net"?',
             options: [
               { text: "Mreža", correct: true, imageSrc: "/mreza.svg", audioSrc: "/audio/hr/mreza.mp3" },
-              { text: "Uže", correct: false, imageSrc: "/rope.svg", audioSrc: "/audio/hr/uze.mp3" },
-              { text: "Sidro", correct: false, imageSrc: "/anchor.svg", audioSrc: "/audio/hr/sidro.mp3" },
+              { text: "Kapa", correct: false, imageSrc: "/hat.svg", audioSrc: "/audio/hr/kapa.mp3" },
+              { text: "Torba", correct: false, imageSrc: "/backpack.svg", audioSrc: "/audio/hr/torba.mp3" },
               { text: "Lopta", correct: false, imageSrc: "/ball.svg", audioSrc: "/audio/hr/lopta.mp3" },
             ],
           },
@@ -804,7 +804,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Drveni čamac", correct: true, audioSrc: "/audio/hr/drveni_camac.mp3" },
               { text: "Velika kuca", correct: false, audioSrc: "/audio/hr/velika_kuca.mp3" },
-              { text: "Zuti sesir", correct: false, audioSrc: "/audio/hr/zuti_sesir.mp3" },
+              { text: "Stari most", correct: false, audioSrc: "/audio/hr/stari_most.mp3" },
               { text: "Dobar dan", correct: false, audioSrc: "/audio/hr/dobar_dan.mp3" },
             ],
           },
@@ -953,9 +953,9 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Song"?',
             options: [
               { text: "Pjesma", correct: true, imageSrc: "/pjesma.svg", audioSrc: "/audio/hr/pjesma.mp3" },
-              { text: "Priča", correct: false, imageSrc: "/story.svg", audioSrc: "/audio/hr/prica.mp3" },
-              { text: "Riječ", correct: false, imageSrc: "/word.svg", audioSrc: "/audio/hr/rijec.mp3" },
-              { text: "Pismo", correct: false, imageSrc: "/letter.svg", audioSrc: "/audio/hr/pismo.mp3" },
+              { text: "Sunce", correct: false, imageSrc: "/sun.svg", audioSrc: "/audio/hr/sunce.mp3" },
+              { text: "More", correct: false, imageSrc: "/sea.svg", audioSrc: "/audio/hr/more.mp3" },
+              { text: "Rijeka", correct: false, imageSrc: "/rijeka.svg", audioSrc: "/audio/hr/rijeka.mp3" },
             ],
           },
           {
@@ -975,9 +975,9 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Dance"?',
             options: [
               { text: "Ples", correct: true, imageSrc: "/ples.svg", audioSrc: "/audio/hr/ples.mp3" },
-              { text: "Skok", correct: false, imageSrc: "/jump.svg", audioSrc: "/audio/hr/skok.mp3" },
-              { text: "Trk", correct: false, imageSrc: "/run.svg", audioSrc: "/audio/hr/trk.mp3" },
-              { text: "Smijeh", correct: false, imageSrc: "/smile.svg", audioSrc: "/audio/hr/smijeh.mp3" },
+              { text: "Lopta", correct: false, imageSrc: "/ball.svg", audioSrc: "/audio/hr/lopta.mp3" },
+              { text: "Bicikl", correct: false, imageSrc: "/bike.svg", audioSrc: "/audio/hr/bicikl.mp3" },
+              { text: "Igra", correct: false, imageSrc: "/igra.svg", audioSrc: "/audio/hr/igra.mp3" },
             ],
           },
         ],
@@ -1136,9 +1136,9 @@ const unitsData: UnitDef[] = [
             question: '"Congratulations, you have finished the sixth world!"',
             options: [
               { text: "Čestitamo, završili ste šesti svijet!", correct: true, audioSrc: "/audio/hr/cestitamo_zavrsili_ste_sesti_svijet.mp3" },
-              { text: "Deda čita knjigu.", correct: false, audioSrc: "/audio/hr/deda_cita_knjigu.mp3" },
-              { text: "Djeca se igraju u parku.", correct: false, audioSrc: "/audio/hr/djeca_se_igraju_u_parku.mp3" },
-              { text: "Mala mačka spava na travi.", correct: false, audioSrc: "/audio/hr/mala_macka_spava_na_travi.mp3" },
+              { text: "Svi zajedno pjevamo i plešemo!", correct: false, audioSrc: "/audio/hr/svi_zajedno_pjevamo_i_plesemo.mp3" },
+              { text: "Tamburaši sviraju veselu pjesmu!", correct: false, audioSrc: "/audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3" },
+              { text: "Ovo je najljepša slavonska proslava!", correct: false, audioSrc: "/audio/hr/ovo_je_najljepsa_slavonska_proslava.mp3" },
             ],
           },
         ],

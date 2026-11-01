@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 78 Completed (CR-001 to CR-078) | 1 Queued (CR-079)  
+> **Total Change Requests:** 79 Completed (CR-001 to CR-079) | 0 Queued  
 > **Total Bug Tickets:** 40 Resolved (BUG-001 to BUG-040) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-077)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-079)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -90,7 +90,7 @@
 | **CR-076** | Curriculum / Level 2 | **Level 2 & World 5 (Istra i Kvarner — Units 21–25):** Launches Level 2 (*Mali Istraživač*) with 5 new units covering days of the week, ice cream ordering, Roman Pula Arena, daily routines, and sea adventures, in strict compliance with the 3+1 unit arc, deductive elimination, neural audio synthesis, and progressive fading. | 2026-10-28 | ✅ Verified |
 | **CR-077** | Navigation / COPPA | **Isolate Parent Portal Access & Pure Brand Marketing Header:** Strips all extraneous buttons and auth controls from the marketing header to make the role-aware hero the single uncluttered entry point for sign-up/login, and restricts `Parent Center` in the app sidebar strictly to authenticated parents and admins, ensuring student learners never see or get prompted with adult portal links. | 2026-10-28 | ✅ Verified |
 | **CR-078** | Landing / UI | **Landing Page Declutter & Material 3 Refinement:** Eliminates visual noise on the marketing homepage by removing redundant card headers and subtitles, consolidating dual heavy CTAs into a single primary action (`Start Learning (Free)`) with an understated login link, introducing progressive disclosure for team join codes, clearing misplaced gamification badges (`Level 2 Mali Istraživač`) and overlapping corner pills from the Paško hero artwork, and introducing a modern tonal bento grid. | 2026-10-30 | ✅ Verified |
-| **CR-079** | Curriculum / Level 2 | **Level 2 & World 6 (Slavonian Hearth & River Castles — Units 26–30):** Expands Level 2 (*Mali Istraživač*) with 5 new units covering the farmers' market, Kopački Rit wetland wildlife, grandma's kitchen, Danube & Drava river navigation, and the festive Tamburica capstone folk celebration. Implements strict 3+1 unit arc, deductive elimination, neural audio synthesis, progressive fading, and regional theming in `theme-registry.ts`. | 2026-10-31 | ⏳ Queued |
+| **CR-079** | Curriculum / Level 2 | **Level 2 & World 6 (Slavonian Hearth & River Castles — Units 26–30):** Expands Level 2 (*Mali Istraživač*) with 5 new units covering the farmers' market, Kopački Rit wetland wildlife, grandma's kitchen, Danube & Drava river navigation, and the festive Tamburica capstone folk celebration. Implements strict 3+1 unit arc, deductive elimination, neural audio synthesis, progressive fading, and regional theming in `theme-registry.ts`. | 2026-10-31 | ✅ Verified |
 
 ---
 
