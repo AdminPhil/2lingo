@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Crown Base Band -->
+  <path fill="#D97706" d="M5 24h26v5H5z"/>
+  <path fill="#F59E0B" d="M6 25h24v3H6z"/>
+  <!-- Crown Spikes / Peaks -->
+  <path fill="#F59E0B" d="M5 24l3-14 5 7 5-11 5 11 5-7 3 14H5z"/>
+  <path fill="#FDE68A" d="M18 6l4 8-4-2-4 2 4-8z"/>
+  <!-- Jewels on Points -->
+  <circle fill="#FFFFFF" cx="8" cy="10" r="1.8"/>
+  <circle fill="#DC2626" cx="8" cy="10" r="1.2"/>
+  <circle fill="#FFFFFF" cx="18" cy="6" r="2.2"/>
+  <circle fill="#2563EB" cx="18" cy="6" r="1.5"/>
+  <circle fill="#FFFFFF" cx="28" cy="10" r="1.8"/>
+  <circle fill="#DC2626" cx="28" cy="10" r="1.2"/>
+  <!-- Jewels on Headband -->
+  <circle fill="#16A34A" cx="11" cy="26.5" r="1.2"/>
+  <circle fill="#DC2626" cx="18" cy="26.5" r="1.5"/>
+  <circle fill="#16A34A" cx="25" cy="26.5" r="1.2"/>
+</svg>

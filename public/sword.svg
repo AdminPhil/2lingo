@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Blade Pointing up-right -->
+  <path fill="#E2E8F0" d="M29 3l-1.5 4.5L14 21l-3-3L24.5 4.5 29 3z"/>
+  <path fill="#CBD5E1" d="M29 3l-4.5 1.5L11 18l1.5 1.5L26 6 29 3z"/>
+  <!-- Central fuller line -->
+  <line x1="28" y1="4" x2="13" y2="19" stroke="#94A3B8" stroke-width="0.75"/>
+  <!-- Crossguard -->
+  <path fill="#F59E0B" d="M8 17l6-6 3 3-6 6z"/>
+  <circle fill="#D97706" cx="8.5" cy="19.5" r="1.5"/>
+  <circle fill="#D97706" cx="16.5" cy="11.5" r="1.5"/>
+  <!-- Grip / Hilt -->
+  <path fill="#78350F" d="M10 21l-4 4 2 2 4-4z"/>
+  <!-- Pommel -->
+  <circle fill="#F59E0B" cx="6" cy="27" r="2.5"/>
+  <circle fill="#DC2626" cx="6" cy="27" r="1"/>
+</svg>

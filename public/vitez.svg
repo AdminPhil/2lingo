@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Plume feather on helm -->
+  <path fill="#DC2626" d="M16 2c4 0 8 3 8 8 0 3-2 5-4 6l-2-4-2 4c-2-1-4-3-4-6 0-5 4-8 4-8z"/>
+  <!-- Helmet -->
+  <path fill="#94A3B8" d="M10 13c0-4 3-7 8-7s8 3 8 7v10c0 5-4 8-8 8s-8-3-8-8V13z"/>
+  <!-- Visor -->
+  <path fill="#CBD5E1" d="M12 15h12v5H12z"/>
+  <!-- Visor Slit -->
+  <path fill="#0F172A" d="M14 17h8v1.5h-8z"/>
+  <!-- Breathing holes -->
+  <circle fill="#475569" cx="15" cy="22" r="0.75"/>
+  <circle fill="#475569" cx="18" cy="22" r="0.75"/>
+  <circle fill="#475569" cx="21" cy="22" r="0.75"/>
+  <!-- Gorget / neck guard -->
+  <path fill="#E2E8F0" d="M8 27c0 4 4 7 10 7s10-3 10-7H8z"/>
+</svg>

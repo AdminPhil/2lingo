@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Wooden Table Surface (Top Bevel & Rim) -->
+  <path fill="#B45309" d="M2 13h32v3H2z"/>
+  <rect x="1" y="9" width="34" height="4" rx="2" fill="#D97706"/>
+  
+  <!-- Subtle Wood Grain Highlight on Top -->
+  <path fill="#FBBF24" opacity="0.6" d="M4 10h28v1.5H4z"/>
+
+  <!-- Left Front Leg -->
+  <rect x="4" y="16" width="3.5" height="17" rx="1" fill="#B45309"/>
+  <!-- Left Back Leg (Shadowed) -->
+  <rect x="8" y="16" width="3" height="14" rx="0.8" fill="#78350F" opacity="0.85"/>
+
+  <!-- Right Back Leg (Shadowed) -->
+  <rect x="25" y="16" width="3" height="14" rx="0.8" fill="#78350F" opacity="0.85"/>
+  <!-- Right Front Leg -->
+  <rect x="28.5" y="16" width="3.5" height="17" rx="1" fill="#B45309"/>
+
+  <!-- Under-Table Apron Rail (Crossbar Support) -->
+  <rect x="5.5" y="16" width="25" height="2" fill="#92400E"/>
+  
+  <!-- Floor Contact Shadows -->
+  <ellipse cx="5.75" cy="33.5" rx="2.5" ry="0.8" fill="#78350F" opacity="0.4"/>
+  <ellipse cx="30.25" cy="33.5" rx="2.5" ry="0.8" fill="#78350F" opacity="0.4"/>
+</svg>

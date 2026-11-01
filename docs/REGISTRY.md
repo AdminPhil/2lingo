@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 79 Completed (CR-001 to CR-079) | 1 Queued (CR-080)  
+> **Total Change Requests:** 80 Completed (CR-001 to CR-080) | 0 Queued  
 > **Total Bug Tickets:** 40 Resolved (BUG-001 to BUG-040) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-079)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-080)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -91,7 +91,7 @@
 | **CR-077** | Navigation / COPPA | **Isolate Parent Portal Access & Pure Brand Marketing Header:** Strips all extraneous buttons and auth controls from the marketing header to make the role-aware hero the single uncluttered entry point for sign-up/login, and restricts `Parent Center` in the app sidebar strictly to authenticated parents and admins, ensuring student learners never see or get prompted with adult portal links. | 2026-10-28 | ✅ Verified |
 | **CR-078** | Landing / UI | **Landing Page Declutter & Material 3 Refinement:** Eliminates visual noise on the marketing homepage by removing redundant card headers and subtitles, consolidating dual heavy CTAs into a single primary action (`Start Learning (Free)`) with an understated login link, introducing progressive disclosure for team join codes, clearing misplaced gamification badges (`Level 2 Mali Istraživač`) and overlapping corner pills from the Paško hero artwork, and introducing a modern tonal bento grid. | 2026-10-30 | ✅ Verified |
 | **CR-079** | Curriculum / Level 2 | **Level 2 & World 6 (Slavonian Hearth & River Castles — Units 26–30):** Expands Level 2 (*Mali Istraživač*) with 5 new units covering the farmers' market, Kopački Rit wetland wildlife, grandma's kitchen, Danube & Drava river navigation, and the festive Tamburica capstone folk celebration. Implements strict 3+1 unit arc, deductive elimination, neural audio synthesis, progressive fading, and regional theming in `theme-registry.ts`. | 2026-10-31 | ✅ Verified |
-| **CR-080** | Curriculum / Level 2 | **Level 2 & World 7 (Zagorje Castles & Fairy Tale Hills — Units 31–35) & Fast-Travel Navigator:** Expands Level 2 (*Mali Istraživač*) with 5 new units set in Hrvatsko Zagorje (Trakošćan Castle, knights, spatial directions *lijevo/desno/ravno*, UNESCO wooden toys, and past tense *Perfekt* capstone). Solves 35-unit infinite scroll fatigue with a 1-tap World Jump Navigator on `/learn` and introduces a Level 1 → Level 2 celebratory milestone gateway. | 2026-11-01 | ⏳ Queued |
+| **CR-080** | Curriculum / Level 2 | **Level 2 & World 7 (Zagorje Castles & Fairy Tale Hills — Units 31–35) & Fast-Travel Navigator:** Expands Level 2 (*Mali Istraživač*) with 5 new units set in Hrvatsko Zagorje (Trakošćan Castle, knights, spatial directions *lijevo/desno/ravno*, UNESCO wooden toys, and past tense *Perfekt* capstone). Solves 35-unit infinite scroll fatigue with a 1-tap World Jump Navigator on `/learn` and introduces a Level 1 → Level 2 celebratory milestone gateway. | 2026-11-01 | ✅ Verified |
 
 ---
 

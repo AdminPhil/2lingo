@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Rocker curved bottom rails -->
+  <path fill="#78350F" d="M4 28c8 4 20 4 28 0v2c-8 4-20 4-28 0v-2z"/>
+  <!-- Horse Body (Traditional Red Wood) -->
+  <path fill="#DC2626" d="M10 18h12l3 5h-4l-2-3h-4l-2 3H9l1-5z"/>
+  <!-- Neck and Head -->
+  <path fill="#DC2626" d="M19 18l3-10 5 3-2 3 3 1-2 3-7 0z"/>
+  <!-- Ears and Mane (Traditional Zagorje black / floral decor) -->
+  <polygon fill="#1E293B" points="23,7 24,4 26,8"/>
+  <path fill="#1E293B" d="M21 9c-1 2-2 5-2 8h2c0-3 1-6 2-8h-2z"/>
+  <!-- Eye -->
+  <circle fill="#FFFFFF" cx="25" cy="10" r="1"/>
+  <circle fill="#000000" cx="25.3" cy="10" r="0.5"/>
+  <!-- Traditional Folk Painted Flowers / Yellow Saddle -->
+  <rect fill="#FACC15" x="14" y="17" width="5" height="3" rx="1"/>
+  <circle fill="#16A34A" cx="16.5" cy="18.5" r="0.8"/>
+  <circle fill="#FFFFFF" cx="12" cy="19" r="0.8"/>
+  <!-- Legs / Posts into Rocker -->
+  <rect fill="#B91C1C" x="10" y="22" width="2.5" height="6"/>
+  <rect fill="#B91C1C" x="21" y="22" width="2.5" height="6"/>
+</svg>

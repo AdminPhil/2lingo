@@ -143,6 +143,26 @@ export const LEVEL_2_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-emerald-700 border-emerald-500",
     nodeArrowBorder: "border-t-emerald-500",
   },
+  // World 7 (CR-080): Zagorje Castles & Fairy Tale Hills (Units 31–35)
+  {
+    id: "zagorje-castles",
+    stage: 7,
+    stageName: "Zagorje Castles",
+    stageBadgeLabel: "World 7: Zagorje Castles • Fairy Tale Hills & Legends",
+    stageCroatianName: "World 7: Zagorje Castles • Fairy Tale Hills & Legends",
+    unitRange: [31, 35],
+    solidBg: "bg-purple-800",
+    gradient: "from-purple-900 via-fuchsia-800 to-emerald-800",
+    badgeBg: "bg-black/25 text-white border-white/40",
+    accentEmoji: "🏰",
+    buttonClass: "bg-white text-purple-950 hover:bg-purple-50 border-purple-300",
+    accentBorder: "border-purple-400/50",
+    nodeActiveBg: "bg-purple-600 hover:bg-purple-600/90 border-purple-800 active:border-b-0 text-white",
+    nodeBorderColor: "border-purple-800",
+    nodeStrokeColor: "#9333ea",
+    nodeBadgeClasses: "bg-white text-purple-700 border-purple-500",
+    nodeArrowBorder: "border-t-purple-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES];
@@ -484,6 +504,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Slavonsko kolo",
           title: "Zlatna nošnja",
           badgeEmoji: "💃",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 31:
+      return {
+        left: {
+          imageSrc: "/dvorac.svg",
+          alt: "Dvorac Trakošćan",
+          title: "Dvorac Trakošćan",
+          badgeEmoji: "🏰",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/kula.svg",
+          alt: "Stara kamena kula",
+          title: "Kamena kula",
+          badgeEmoji: "🗼",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 32:
+      return {
+        left: {
+          imageSrc: "/vitez.svg",
+          alt: "Hrabri vitez",
+          title: "Hrabri vitez",
+          badgeEmoji: "⚔️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/stit.svg",
+          alt: "Hrvatski štit",
+          title: "Viteški štit",
+          badgeEmoji: "🛡️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 33:
+      return {
+        left: {
+          imageSrc: "/kljuc.svg",
+          alt: "Zlatni ključ",
+          title: "Tajni ključ",
+          badgeEmoji: "🔑",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/mac.svg",
+          alt: "Sjajni mač",
+          title: "Viteški mač",
+          badgeEmoji: "🗡️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 34:
+      return {
+        left: {
+          imageSrc: "/konjic.svg",
+          alt: "Drveni konjić",
+          title: "Zagorski konjić",
+          badgeEmoji: "🎠",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/igracka.svg",
+          alt: "Tradicionalna igračka",
+          title: "Zlatna igračka",
+          badgeEmoji: "🪆",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 35:
+      return {
+        left: {
+          imageSrc: "/kruna.svg",
+          alt: "Kraljevska kruna",
+          title: "Zlatna kruna",
+          badgeEmoji: "👑",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/gozba.svg",
+          alt: "Svečana gozba",
+          title: "Kraljevska gozba",
+          badgeEmoji: "🍗",
           topOffsetClass: "top-44",
         },
       };

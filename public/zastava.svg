@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Flagpole -->
+  <path fill="#64748B" d="M4 2h2v32H4z"/>
+  <circle fill="#F59E0B" cx="5" cy="2" r="2"/>
+  <!-- Flag Stripes (Red, White, Blue waving) -->
+  <!-- Top Red Stripe -->
+  <path fill="#DC2626" d="M6 4c6-2 12 2 18 0s8-2 8-2v6c0 0-3 1-8 2s-12-2-18 0V4z"/>
+  <!-- Middle White Stripe -->
+  <path fill="#FFFFFF" d="M6 10c6-2 12 2 18 0s8-2 8-2v6c0 0-3 1-8 2s-12-2-18 0v-6z"/>
+  <!-- Bottom Blue Stripe -->
+  <path fill="#2563EB" d="M6 16c6-2 12 2 18 0s8-2 8-2v6c0 0-3 1-8 2s-12-2-18 0v-6z"/>
+  <!-- Mini Shield in Center -->
+  <path fill="#FFFFFF" d="M16 8h4v6a2 2 0 0 1-4 0V8z"/>
+  <rect fill="#DC2626" x="16" y="8" width="2" height="2"/>
+  <rect fill="#DC2626" x="18" y="10" width="2" height="2"/>
+  <rect fill="#DC2626" x="16" y="12" width="2" height="1.5"/>
+</svg>

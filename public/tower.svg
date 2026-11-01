@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Tower Body -->
+  <path fill="#99AAB5" d="M10 10l2 24h12l2-24H10z"/>
+  <path fill="#66757F" d="M10 10h16v3H10z"/>
+  <!-- Battlements / Crenellations -->
+  <path fill="#99AAB5" d="M8 5h4v6H8zm6 0h4v6h-4zm6 0h4v6h-4zm6 0h4v6h-4z"/>
+  <path fill="#CCD6DD" d="M7 10h22v2H7z"/>
+  <!-- Arrow slit windows -->
+  <rect fill="#292F33" x="17" y="14" width="2" height="5" rx="1"/>
+  <rect fill="#292F33" x="17" y="22" width="2" height="5" rx="1"/>
+  <!-- Heavy wooden arched entrance -->
+  <path fill="#78350F" d="M15 28a3 3 0 0 1 6 0v6h-6v-6z"/>
+  <circle fill="#FFCC4D" cx="19.5" cy="31" r="0.5"/>
+  <!-- Stone texture lines -->
+  <path stroke="#8899A6" stroke-width="0.5" d="M12 18h12M11 25h14M13 31h2M21 31h3"/>
+</svg>

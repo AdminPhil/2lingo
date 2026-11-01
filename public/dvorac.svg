@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Green hill base -->
+  <path fill="#5C913B" d="M0 32c4-3 12-4 18-4s14 1 18 4v4H0v-4z"/>
+  <!-- Central main keep -->
+  <path fill="#E1E8ED" d="M12 14h12v15H12z"/>
+  <path fill="#CCD6DD" d="M12 14h2v15h-2zm10 0h2v15h-2z"/>
+  <!-- Central roof cone -->
+  <path fill="#DD2E44" d="M18 4l-7 10h14L18 4z"/>
+  <!-- Left turret -->
+  <path fill="#CCD6DD" d="M5 18h6v12H5z"/>
+  <path fill="#DD2E44" d="M8 10l-4 8h8l-4-8z"/>
+  <!-- Right turret -->
+  <path fill="#CCD6DD" d="M25 18h6v12h-6z"/>
+  <path fill="#DD2E44" d="M28 10l-4 8h8l-4-8z"/>
+  <!-- Arched Gate -->
+  <path fill="#66757F" d="M15 23a3 3 0 0 1 6 0v6h-6v-6z"/>
+  <path fill="#292F33" d="M16 24a2 2 0 0 1 4 0v5h-4v-5z"/>
+  <!-- Windows -->
+  <rect fill="#292F33" x="16.5" y="16" width="3" height="4" rx="1.5"/>
+  <rect fill="#292F33" x="7" y="21" width="2" height="3" rx="1"/>
+  <rect fill="#292F33" x="27" y="21" width="2" height="3" rx="1"/>
+  <!-- Gold pennant flags -->
+  <path fill="#FFCC4D" d="M18 4V1l4 1.5L18 4zM8 10V7l3 1.5L8 10zM28 10V7l3 1.5L28 10z"/>
+</svg>

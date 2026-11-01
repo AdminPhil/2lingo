@@ -180,11 +180,23 @@ describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () =>
       expect(unit26.solidBg).toBe("bg-emerald-700");
     });
 
-    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (Unit 31, Unit 100)", () => {
+    it("verifies crisp transition across boundary between World 6 and World 7 (30 vs 31)", () => {
+      const unit30 = getStageThemeForUnit(30);
       const unit31 = getStageThemeForUnit(31);
-      expect(unit31.stage).toBe(1);
-      expect(unit31.id).toBe("zagreb-central");
-      expect(unit31.solidBg).toBe("bg-red-600");
+
+      expect(unit30.stage).toBe(6);
+      expect(unit30.solidBg).toBe("bg-emerald-700");
+
+      expect(unit31.stage).toBe(7);
+      expect(unit31.id).toBe("zagorje-castles");
+      expect(unit31.solidBg).toBe("bg-purple-800");
+    });
+
+    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (Unit 36, Unit 100)", () => {
+      const unit36 = getStageThemeForUnit(36);
+      expect(unit36.stage).toBe(1);
+      expect(unit36.id).toBe("zagreb-central");
+      expect(unit36.solidBg).toBe("bg-red-600");
 
       const unit100 = getStageThemeForUnit(100);
       expect(unit100.stage).toBe(1);

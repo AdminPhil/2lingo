@@ -4,6 +4,37 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-01] - World 7: Zagorje Castles & Fast-Travel Navigator (CR-080)
+
+### Added & Verified
+- **[CR-080] ✅ IMPLEMENTED & VERIFIED - Level 2 & World 7 (Zagorje Castles & Fairy Tale Hills — Units 31–35) & Fast-Travel Navigator:**
+  - **Curriculum Expansion (Units 31–35):** Added 5 comprehensive units (20 lessons, 80 challenges, 320 options) expanding Level 2 (*Mali Istraživač*):
+    - **Unit 31:** *Vrata dvorca* (The Castle Gates — Trakošćan approach, Keep, Key, Tower, Bridge, Opening & Entering)
+    - **Unit 32:** *Vitezovi i legende* (Knights & Legends — Knight, Shield with Croatian checkerboard, Sword, Banner, Guarding & Defending)
+    - **Unit 33:** *Kroz dvorac: Lijevo i desno* (Directions & Castle Halls — Left, Right, Straight, Up, Secret Passages, Turning & Searching)
+    - **Unit 34:** *Drvene igračke i licitari* (UNESCO Folk Crafts — Marija Bistrica painted wooden toy, Wooden horse, Wood, Licitar heart, Painting & Gifting)
+    - **Unit 35:** *Kraljevska gozba* (Past Tense Capstone & Banquet — Feast, Royal table, Golden crown, Song, Introduction of Past Tense *Perfekt*: *bili smo, vidjeli smo, išli smo, pjevali smo, posjetili smo, naučili smo*)
+  - **Fast-Travel World Navigator ("Skoči u Svijet"):**
+    - Added horizontal fast-travel pill strip on `/learn` (`app/(main)/learn/world-navigator.tsx`) allowing 1-tap jumping directly to any of the 7 Worlds.
+    - Integrated target world anchors (`id="unit-{order}"`) for smooth scrolling.
+    - Displays active world status and "Novo" badge on World 7.
+  - **Level 1 → Level 2 Milestone Gateway:**
+    - Rendered celebratory milestone gateway (`app/(main)/learn/level-milestone-gateway.tsx`) between Unit 20 and Unit 21 ("Čestitamo! Level 1 Završen → Dobrodošli u Level 2: Mali Istraživač").
+  - **Authentic Neural Audio Synthesis:**
+    - Synthesized 54 neural audio files (`public/audio/hr/`) using Azure Speech Services (`hr-HR-GabrijelaNeural` and `hr-HR-SreckoNeural`) at a pedagogical -5% playback rate.
+  - **Bespoke Vector SVGs:**
+    - Authored 11 authentic 36×36 vector SVGs (`dvorac.svg`, `kula.svg`, `kljuc.svg`, `vitez.svg`, `stit.svg`, `mac.svg`, `zastava.svg`, `igracka.svg`, `konjic.svg`, `kruna.svg`, `gozba.svg`) along with English aliases.
+  - **Theme Registry Configuration:**
+    - Added Stage 7 (`zagorje-castles`) in `lib/theme-registry.ts` with royal purple and emerald tokens (`solidBg: "bg-purple-800"`, `gradient: "from-purple-900 via-fuchsia-800 to-emerald-800"`, `accentEmoji: "🏰"`).
+    - Registered scenery items for Units 31–35.
+  - **Pre-Flight Invariants:**
+    - `audit-curriculum-rules.ts`: Passed with 0 violations across 35 units, 140 lessons, 609 challenges, 2,436 options.
+    - `npm run typecheck`: Passed with 0 errors.
+    - `vitest run`: Passed with 24 suites, 270/270 tests passing.
+    - Live student progress (Adriana 5,470 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-01] - World 6: Slavonian Hearth & River Castles (CR-079)
 
 ### Added & Verified

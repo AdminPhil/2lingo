@@ -16,6 +16,8 @@ import { provisionDefaultLearnerProgress } from "@/actions/user-progress";
 
 import { Unit } from "./unit";
 import { Header } from "./header";
+import { WorldNavigator } from "./world-navigator";
+import { LevelMilestoneGateway } from "./level-milestone-gateway";
 import { CheerBanner } from "@/components/cheer-banner";
 import { ParentModeBanner } from "@/components/parent-mode-banner";
 import { getUnseenCheers } from "@/db/queries";
@@ -95,17 +97,28 @@ const LearnPage = async ({ searchParams }: Props) => {
         <Header title={userProgress.activeCourse.title} />
         {userProgress.role === "parent" && <ParentModeBanner />}
         <CheerBanner cheers={unseenCheers} />
+        <WorldNavigator
+          activeUnitOrder={
+            (courseProgress.activeLesson as { unit?: { order?: number } })?.unit
+              ?.order ?? 1
+          }
+        />
         {units.map((unit) => (
-          <div key={unit.id} className="mb-10">
+          <div key={unit.id} id={`unit-${unit.order}`} className="mb-10">
+            {unit.order === 21 && <LevelMilestoneGateway />}
             <Unit
               id={unit.id}
               order={unit.order}
               description={unit.description}
               title={unit.title}
               lessons={unit.lessons}
-              activeLesson={courseProgress.activeLesson as typeof lessons.$inferSelect & {
-                unit: typeof unitsSchema.$inferSelect;
-              } | undefined}
+              activeLesson={
+                courseProgress.activeLesson as
+                  | (typeof lessons.$inferSelect & {
+                      unit: typeof unitsSchema.$inferSelect;
+                    })
+                  | undefined
+              }
               activeLessonPercentage={lessonPercentage}
             />
           </div>
