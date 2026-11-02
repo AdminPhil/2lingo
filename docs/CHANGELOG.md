@@ -4,6 +4,20 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-02] - Repository-Wide Node.js 22 LTS Alignment & CI Modernization (CR-081)
+
+### Added & Verified
+- **[CR-081] ✅ IMPLEMENTED & VERIFIED - Repository-Wide Node.js 22 LTS Alignment & CI Modernization:**
+  - **CI/CD Quality Gate Modernization (`.github/workflows/ci.yml`):** Upgraded all 4 workflow jobs (`audit-and-typecheck`, `unit-and-integration-tests`, `e2e-smoke-tests`, `production-build`) from Node.js 20 to Node.js 22 LTS (`node-version: 22`).
+  - **Package Engine Alignment (`package.json` & `package-lock.json`):** Updated engine constraint to `"node": ">=22.0.0"` and devDependency `"@types/node"` to `"^22"`.
+  - **Pre-Flight Invariants:**
+    - `tsc --noEmit`: 0 TypeScript errors.
+    - `scripts/audit-curriculum-rules.ts`: 0 violations across 35 units, 140 lessons, 609 challenges, and 2,436 options.
+    - `npx vitest run`: 24/24 suites passed (270/270 tests).
+    - Live student progress (Adriana 5,950 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-01] - World 7: Zagorje Castles & Fast-Travel Navigator (CR-080)
 
 ### Added & Verified
@@ -32,8 +46,6 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
     - `npm run typecheck`: Passed with 0 errors.
     - `vitest run`: Passed with 24 suites, 270/270 tests passing.
     - Live student progress (Adriana 5,470 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
-
----
 
 ## [2026-11-01] - World 6: Slavonian Hearth & River Castles (CR-079)
 
