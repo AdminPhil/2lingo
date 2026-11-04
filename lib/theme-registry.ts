@@ -544,17 +544,17 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
     case 33:
       return {
         left: {
-          imageSrc: "/kljuc.svg",
-          alt: "Zlatni ključ",
-          title: "Tajni ključ",
-          badgeEmoji: "🔑",
+          imageSrc: "/lijevo.svg",
+          alt: "Skreni lijevo",
+          title: "Lijevo",
+          badgeEmoji: "⬅️",
           topOffsetClass: "top-10",
         },
         right: {
-          imageSrc: "/mac.svg",
-          alt: "Sjajni mač",
-          title: "Viteški mač",
-          badgeEmoji: "🗡️",
+          imageSrc: "/desno.svg",
+          alt: "Skreni desno",
+          title: "Desno",
+          badgeEmoji: "➡️",
           topOffsetClass: "top-44",
         },
       };

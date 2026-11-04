@@ -214,6 +214,36 @@ async function auditAllRules() {
     }
   }
 
+  // 3. Pre-Flight Audio-Text Synthesis Parity Guard (BUG-041)
+  // Scans all python audio generator scripts and ensures spoken synthesis text matches option text 1:1
+  const audioMaps = new Map<string, string>();
+  const scriptsDir = path.join(__dirname, "..", "scripts");
+  if (fs.existsSync(scriptsDir)) {
+    const pyFiles = fs.readdirSync(scriptsDir).filter((f) => f.endsWith(".py"));
+    for (const pf of pyFiles) {
+      const content = fs.readFileSync(path.join(scriptsDir, pf), "utf8");
+      const matches = Array.from(content.matchAll(/"([^"]+)":\s*"([^"]+)"/g));
+      for (const m of matches) {
+        audioMaps.set(m[1], m[2]);
+      }
+    }
+  }
+
+  for (const opt of options) {
+    if (!opt.audio_src) continue;
+    const baseSlug = path.basename(opt.audio_src, ".mp3");
+    if (audioMaps.has(baseSlug)) {
+      const spokenText = audioMaps.get(baseSlug)!;
+      const cleanSpoken = spokenText.toLowerCase().replace(/[^a-zčćšžđ0-9]/g, "");
+      const cleanText = (opt.text || "").toLowerCase().replace(/[^a-zčćšžđ0-9]/g, "");
+
+      if (cleanSpoken !== cleanText) {
+        console.error(`[RULE VIOLATION: Spoken Audio Parity Mismatch] Option "${opt.text}" mapped to ${opt.audio_src} which speaks "${spokenText}"!`);
+        totalErrors++;
+      }
+    }
+  }
+
   // 3. Audit User Progress & Leaderboard Privacy
   const users = await sql`SELECT user_id, user_name, points FROM user_progress ORDER BY points DESC`;
   console.log(`\nActive Learners in Database: ${users.length}`);

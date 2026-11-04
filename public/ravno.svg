@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#F0FDF4" stroke="#10B981" stroke-width="2"/>
+  <!-- Forward straight path / corridor perspective -->
+  <polygon points="12,30 24,30 20,16 16,16" fill="#CBD5E1"/>
+  <line x1="18" y1="30" x2="18" y2="18" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <!-- Upward straight arrow -->
+  <path fill="#059669" d="M18 6l7 8h-4v9h-6v-9h-4z"/>
+  <path fill="#047857" d="M18 6l7 8h-4z"/>
+</svg>

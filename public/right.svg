@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <!-- Rightward Arrow -->
+  <path fill="#2563EB" d="M20 11l8 7-8 7v-4H9v-6h11z"/>
+  <path fill="#1D4ED8" d="M28 18l-8 7v-4h4z"/>
+  <!-- Croatian checker tip on arrow tail -->
+  <rect x="9" y="15" width="2" height="3" fill="#DC2626"/>
+  <rect x="11" y="15" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="9" y="18" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="11" y="18" width="2" height="3" fill="#DC2626"/>
+</svg>

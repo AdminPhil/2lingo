@@ -803,7 +803,7 @@ const unitsData: UnitDef[] = [
             question: 'Which one means "Wooden boat"?',
             options: [
               { text: "Drveni čamac", correct: true, audioSrc: "/audio/hr/drveni_camac.mp3" },
-              { text: "Velika kuca", correct: false, audioSrc: "/audio/hr/velika_kuca.mp3" },
+              { text: "Velika kuća", correct: false, audioSrc: "/audio/hr/velika_kuca.mp3" },
               { text: "Stari most", correct: false, audioSrc: "/audio/hr/stari_most.mp3" },
               { text: "Dobar dan", correct: false, audioSrc: "/audio/hr/dobar_dan.mp3" },
             ],

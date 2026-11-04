@@ -91,7 +91,7 @@ AUDIO_MAP = {
     "velika_gozba_je_na_stolu": "Velika gozba je na stolu.",
     # Super Izazov Capstone sentences (Symmetric ending in !)
     "cestitamo_zavrsili_ste_sedmi_svijet": "Čestitamo, završili ste sedmi svijet!",
-    "posjetili_smo_dvorce_zagorja": "Posjetili smo predivne dvorce Zagorja!",
+    "posjetili_smo_dvorce_zagorja": "Posjetili smo dvorce Zagorja.",
     "naucili_smo_vazne_hrvatske_rijeci": "Naučili smo važne hrvatske riječi!",
     "ponosno_nastavljamo_nase_putovanje": "Ponosno nastavljamo naše putovanje!",
 }

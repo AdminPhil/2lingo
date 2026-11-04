@@ -4,6 +4,24 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-04] - World 7 Audio-Visual Alignment, Directional Vector Assets & Pre-Flight Synthesis Guards (BUG-041)
+
+### Fixed & Hardened
+- **[BUG-041] ✅ RESOLVED - World 7 Audio-Text Mismatch, Directional Asset Parity & Unit Building Modernization:**
+  - **Neural Audio Synthesis Parity (`posjetili_smo_dvorce_zagorja.mp3`):** Re-synthesized capstone audio file via Azure Cognitive Speech (`hr-HR-GabrijelaNeural`) with exact text `"Posjetili smo dvorce Zagorja."`, eliminating the unrendered spoken adjective `"predivne"` and establishing 1:1 parity with on-screen option cards across Units 34 and 35.
+  - **Bespoke Directional Vector SVGs:** Authored 4 authentic, high-contrast 36×36 vector SVGs (and English aliases) for castle navigation: `/lijevo.svg`, `/desno.svg`, `/ravno.svg`, and `/gore.svg`.
+  - **Unit 33 Lesson 1 Curriculum Alignment:** Realigned Unit 33 Lesson 1 SELECT challenges in live database and `scripts/seed-units-31-35.ts` to visually introduce the core target directional vocabulary (*Lijevo*, *Desno*, *Ravno*, *Gore*) before quizzing in subsequent lessons.
+  - **Unit 33 Scenery Tokens:** Updated `lib/theme-registry.ts` Unit 33 scenery anchors to render `/lijevo.svg` and `/desno.svg`.
+  - **Orthographic Diacritic Correction:** Fixed option row 7141 and `scripts/seed-units-26-30.ts` (`"Velika kuca"` → `"Velika kuća"`).
+  - **Pre-Flight Curriculum Audit Hardening (`scripts/audit-curriculum-rules.ts`):** Integrated an automated Audio-Text Synthesis Parity Guard that dynamically cross-references Python speech synthesis scripts against database challenge options to block future multi-word divergences prior to deployment.
+  - **Pre-Flight Invariants:**
+    - `tsc --noEmit`: 0 errors.
+    - `audit-curriculum-rules.ts`: 0 violations across 35 units, 140 lessons, 609 challenges, and 2,436 options.
+    - `vitest run`: 24/24 suites passed (270/270 tests).
+    - Core learner progress (Adriana 5,950 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-02] - Repository-Wide Node.js 22 LTS Alignment & CI Modernization (CR-081)
 
 ### Added & Verified

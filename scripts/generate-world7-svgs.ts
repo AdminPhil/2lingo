@@ -225,6 +225,59 @@ const gozbaSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
   <line x1="26" y1="14.5" x2="28" y2="16.5" stroke="#92400E" stroke-width="0.5"/>
 </svg>`;
 
+// 12. Lijevo (Castle direction: Left navigation arrow with Croatian chequy accent)
+const lijevoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <!-- Leftward Arrow -->
+  <path fill="#2563EB" d="M16 11l-8 7 8 7v-4h11v-6H16z"/>
+  <path fill="#1D4ED8" d="M8 18l8 7v-4h-4z"/>
+  <!-- Croatian checker tip on arrow tail -->
+  <rect x="23" y="15" width="2" height="3" fill="#DC2626"/>
+  <rect x="25" y="15" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="23" y="18" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="25" y="18" width="2" height="3" fill="#DC2626"/>
+</svg>`;
+
+// 13. Desno (Castle direction: Right navigation arrow with Croatian chequy accent)
+const desnoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <!-- Rightward Arrow -->
+  <path fill="#2563EB" d="M20 11l8 7-8 7v-4H9v-6h11z"/>
+  <path fill="#1D4ED8" d="M28 18l-8 7v-4h4z"/>
+  <!-- Croatian checker tip on arrow tail -->
+  <rect x="9" y="15" width="2" height="3" fill="#DC2626"/>
+  <rect x="11" y="15" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="9" y="18" width="2" height="3" fill="#FFFFFF"/>
+  <rect x="11" y="18" width="2" height="3" fill="#DC2626"/>
+</svg>`;
+
+// 14. Ravno (Castle direction: Straight ahead corridor & arrow)
+const ravnoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#F0FDF4" stroke="#10B981" stroke-width="2"/>
+  <!-- Forward straight path / corridor perspective -->
+  <polygon points="12,30 24,30 20,16 16,16" fill="#CBD5E1"/>
+  <line x1="18" y1="30" x2="18" y2="18" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <!-- Upward straight arrow -->
+  <path fill="#059669" d="M18 6l7 8h-4v9h-6v-9h-4z"/>
+  <path fill="#047857" d="M18 6l7 8h-4z"/>
+</svg>`;
+
+// 15. Gore (Castle direction: Upward stairs & ascending arrow)
+const goreSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Background navigation disk -->
+  <circle cx="18" cy="18" r="16" fill="#FAF5FF" stroke="#A855F7" stroke-width="2"/>
+  <!-- Castle stone steps ascending upward -->
+  <rect x="6" y="26" width="6" height="5" fill="#94A3B8"/>
+  <rect x="12" y="21" width="6" height="10" fill="#64748B"/>
+  <rect x="18" y="16" width="6" height="15" fill="#475569"/>
+  <!-- Upward arrow -->
+  <path fill="#9333EA" d="M26 6l5 6h-3v7h-4v-7h-3z"/>
+  <circle cx="18" cy="10" r="1.5" fill="#F59E0B"/>
+</svg>`;
+
 const assets = [
   { name: "dvorac", alt: "castle", content: dvoracSvg },
   { name: "kula", alt: "tower", content: kulaSvg },
@@ -237,6 +290,10 @@ const assets = [
   { name: "konjic", alt: "rocking_horse", content: konjicSvg },
   { name: "kruna", alt: "crown", content: krunaSvg },
   { name: "gozba", alt: "feast", content: gozbaSvg },
+  { name: "lijevo", alt: "left", content: lijevoSvg },
+  { name: "desno", alt: "right", content: desnoSvg },
+  { name: "ravno", alt: "straight", content: ravnoSvg },
+  { name: "gore", alt: "up", content: goreSvg },
 ];
 
 for (const asset of assets) {
