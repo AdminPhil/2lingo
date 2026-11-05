@@ -33,3 +33,8 @@ Before writing any curriculum code, proposing changes, or seeding challenges in 
    - `/bug-queue`: Log a bug defect into the backlog as `⏳ Queued` without touching code or deploying.
    - `/cr-mockup`: Produce visual or Generative UI mockups prior to writing code.
    - `/registry-status`: Query current backlog, completed counts, and learner health.
+
+8. **Session Continuity & Cold-Start Handover Protocol:**
+   - Instead of compacting long conversations (`/compact`), users can start a fresh conversation at any time.
+   - In any new conversation or when instructed to continue/resume, immediately read [`docs/SESSION_STATE.md`](../../docs/SESSION_STATE.md) and [`docs/REGISTRY.md`](../../docs/REGISTRY.md) to instantly orient to the current milestone, production health, and pending priorities without requiring the user to re-explain project history.
+   - Whenever concluding major milestones, keep `docs/SESSION_STATE.md` synchronized with the latest commit, learner XP invariants, and next sprint priorities.
