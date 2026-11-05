@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <!-- Antenna -->
+  <line x1="18" y1="5" x2="18" y2="9" stroke="#94A3B8" stroke-width="1.5"/>
+  <circle fill="#F59E0B" cx="18" cy="5" r="1.8"/>
+  <!-- Robot Head Box -->
+  <rect x="10" y="9" width="16" height="13" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+  <!-- Glowing Cyan Visor Screen -->
+  <rect x="12" y="11" width="12" height="6" rx="2" fill="#0284C7"/>
+  <!-- Animated Eyes on Screen -->
+  <circle fill="#38BDF8" cx="15" cy="14" r="1.5"/>
+  <circle fill="#FFFFFF" cx="15" cy="14" r="0.7"/>
+  <circle fill="#38BDF8" cx="21" cy="14" r="1.5"/>
+  <circle fill="#FFFFFF" cx="21" cy="14" r="0.7"/>
+  <!-- Speaker Smile -->
+  <line x1="14" y1="19" x2="22" y2="19" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Neck & Shoulders -->
+  <rect x="16" y="22" width="4" height="2" fill="#64748B"/>
+  <path fill="#94A3B8" d="M8 24h20v6H8z"/>
+</svg>

@@ -78,6 +78,15 @@ const WORLDS: WorldItem[] = [
     level: 2,
     activeColor: "bg-purple-600 text-white border-purple-800 shadow-purple-200",
   },
+  {
+    worldNum: 8,
+    name: "Tesla",
+    emoji: "⚡",
+    startUnit: 36,
+    endUnit: 40,
+    level: 2,
+    activeColor: "bg-cyan-600 text-white border-cyan-700 shadow-cyan-200",
+  },
 ];
 
 type Props = {
@@ -111,7 +120,7 @@ export const WorldNavigator = ({ activeUnitOrder = 1 }: Props) => {
           </span>
         </div>
         <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500 hidden sm:inline-flex items-center gap-1">
-          <Sparkles className="w-3 h-3 text-amber-500" /> 7 Svjetova • 35 Jedinica
+          <Sparkles className="w-3 h-3 text-amber-500" /> 8 Svjetova • 40 Jedinica
         </span>
       </div>
 
@@ -134,7 +143,7 @@ export const WorldNavigator = ({ activeUnitOrder = 1 }: Props) => {
               <span className="whitespace-nowrap">
                 W{world.worldNum}: {world.name}
               </span>
-              {world.worldNum === 7 && (
+              {world.worldNum === 8 && (
                 <span className="ml-0.5 px-1 py-0.2 rounded-md bg-amber-400 text-amber-950 text-[9px] font-black uppercase tracking-tight">
                   Novo
                 </span>

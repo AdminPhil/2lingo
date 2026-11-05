@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0C0A09" stroke="#E11D48" stroke-width="1.5"/>
+  <!-- Orbital Ring 1 (Horizontal tilt) -->
+  <ellipse cx="18" cy="18" rx="13" ry="5" fill="none" stroke="#06B6D4" stroke-width="1.2" transform="rotate(-30 18 18)"/>
+  <!-- Orbital Ring 2 (Vertical tilt) -->
+  <ellipse cx="18" cy="18" rx="13" ry="5" fill="none" stroke="#A855F7" stroke-width="1.2" transform="rotate(30 18 18)"/>
+  <!-- Orbiting electrons -->
+  <circle fill="#22D3EE" cx="8" cy="12" r="1.5"/>
+  <circle fill="#C084FC" cx="28" cy="12" r="1.5"/>
+  <!-- Central Energy Core Nucleus -->
+  <circle cx="18" cy="18" r="4.5" fill="#E11D48"/>
+  <circle cx="18" cy="18" r="3" fill="#FB7185"/>
+  <circle cx="18" cy="18" r="1.2" fill="#FFFFFF"/>
+</svg>

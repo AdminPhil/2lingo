@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <!-- Stone foundation base -->
+  <path fill="#475569" d="M7 26h22v6H7z"/>
+  <path fill="#334155" d="M9 28h18v4H9z"/>
+  <!-- White hemispherical dome -->
+  <path fill="#E2E8F0" d="M8 26c0-6 4-11 10-11s10 5 10 11H8z"/>
+  <!-- Shutter opening / viewing slit -->
+  <path fill="#0F172A" d="M16 15h4v11h-4z"/>
+  <!-- Telescope barrel peeking out of slit -->
+  <path fill="#0284C7" d="M16.5 13l3-4 2 1.5-3 4z"/>
+  <ellipse cx="20.5" cy="10" rx="1.5" ry="1" fill="#38BDF8"/>
+  <!-- Dome ring / rotation track -->
+  <rect x="7" y="25" width="22" height="2" fill="#94A3B8"/>
+</svg>

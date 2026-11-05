@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#090D16" stroke="#64748B" stroke-width="1.5"/>
+  <!-- Dark Nimbus Storm Cloud -->
+  <path fill="#475569" d="M26 19a5 5 0 0 0-4.5-3A7 7 0 0 0 8 18a4 4 0 0 0 1 8h17a4 4 0 0 0 0-8z"/>
+  <path fill="#334155" d="M25 20a4 4 0 0 0-4-2.5A6 6 0 0 0 10 19a3.5 3.5 0 0 0 1 6h14a3.5 3.5 0 0 0 0-7z"/>
+  <!-- Sound vibration waves (Thunder acoustic rumble) -->
+  <path fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" d="M12 28c2 2 6 2 8 0"/>
+  <path fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" d="M9 31c4 3 10 3 14 0"/>
+</svg>

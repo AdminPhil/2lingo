@@ -4,6 +4,34 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-04] - World 8: Nikola Tesla & The Starry Night Sky (Units 36–40) & Futur I Capstone (CR-082)
+
+### Added & Verified
+- **[CR-082] ✅ IMPLEMENTED & VERIFIED - Level 2 & World 8 (Nikola Tesla & The Starry Night Sky — Units 36–40) & Futur I Capstone:**
+  - **Level 2 Capstone Curriculum Expansion (Units 36–40):** Added 5 comprehensive units (20 lessons, 80 challenges, 320 options) concluding Level 2 (*Mali Istraživač*) with the Croatian Future Tense (*Futur I*):
+    - **Unit 36:** *Nikola Tesla i svjetlost* (The Spark of Invention — Smiljan, Light, Spark, Electricity, Invention, Shining, Turning on, Tesla creating sparks)
+    - **Unit 37:** *Noćno nebo i zvijezde* (The Night Sky & Stars — Star, Sky, Moon, Glow/Shine, Bright star, Dark sky, Full moon, Stars shining at night)
+    - **Unit 38:** *Zvjezdarnica i planeti* (The Observatory & Planets — Višnjan Astronomical Observatory, Telescope, Planet, Space/Universe, Dome, Observing, Discovering)
+    - **Unit 39:** *Grom, munja i snaga prirode* (Thunder & Lightning — Lightning, Thunder, Battery, Power/Strength, Powerful storm, Tesla researching lightning)
+    - **Unit 40:** *Izumitelji budućnosti* (Future Inventions & Capstone — Robot, Idea, Knowledge, Future, **Futur I Milestone: -t ćemo** (*Učit ćemo, Gledat ćemo, Putovat ćemo, Izumit ćemo*), and Grand Capstone Graduation celebration).
+  - **Bespoke Vector Artwork:**
+    - Authored 20 bespoke 36×36 vector SVGs (+ 20 English aliases, 40 total): `svjetlost.svg`, `iskra.svg`, `struja.svg`, `izum.svg`, `zvijezda.svg`, `nebo.svg`, `mjesec.svg`, `sjaj.svg`, `teleskop.svg`, `planet.svg`, `svemir.svg`, `kupola.svg`, `munja.svg`, `grom.svg`, `baterija.svg`, `snaga.svg`, `robot.svg`, `ideja.svg`, `znanje.svg`, `buducnost.svg`.
+  - **Authentic Neural Audio Synthesis:**
+    - Synthesized 79 neural audio clips (`public/audio/hr/`) using Azure Cognitive Speech (`hr-HR-GabrijelaNeural`) with exact 1:1 lexical parity.
+  - **Theme Registry Configuration (`lib/theme-registry.ts`):**
+    - Added Stage 8 (`tesla-astronomy`) with deep space slate and cosmic electric cyan tokens (`solidBg: "bg-slate-950"`, `gradient: "from-slate-950 via-indigo-950 to-cyan-950"`, `accentEmoji: "⚡"`, `nodeStrokeColor: "#0891b2"`).
+    - Added authentic scenery landmarks for Units 36 through 40.
+  - **Fast-Travel World Navigator Update (`app/(main)/learn/world-navigator.tsx`):**
+    - Updated world counter to `8 Svjetova • 40 Jedinica`.
+    - Added World 8 button: `W8: Tesla ⚡` with active "Novo" pill badge.
+  - **Pre-Flight Invariants:**
+    - `tsc --noEmit`: 0 TypeScript errors.
+    - `audit-curriculum-rules.ts`: 0 violations across 40 units, 160 lessons, 689 challenges, and 2,756 options.
+    - `vitest run`: 24/24 suites passed (271/271 tests).
+    - Core learner progress (Adriana 5,950 XP, Vanessa 1,750 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-04] - World 7 Audio-Visual Alignment, Directional Vector Assets & Pre-Flight Synthesis Guards (BUG-041)
 
 ### Fixed & Hardened

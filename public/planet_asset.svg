@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0B0F19" stroke="#8B5CF6" stroke-width="1.5"/>
+  <!-- Back arc of planetary ring -->
+  <path fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6" d="M7 14c3-4 17-6 24 2"/>
+  <path fill="none" stroke="#FDE68A" stroke-width="1.5" opacity="0.7" d="M8 15c3-3 15-5 22 2"/>
+  <!-- Planet sphere -->
+  <circle cx="18" cy="18" r="9" fill="#6366F1"/>
+  <!-- Cloud atmospheric bands -->
+  <path fill="#4F46E5" d="M9.5 16c2-1 15-1 17 0a9 9 0 0 1-17 0z"/>
+  <path fill="#A855F7" d="M10 20c2 1 14 1 16 0a9 9 0 0 1-16 0z"/>
+  <circle fill="#818CF8" cx="15" cy="14" r="1.5"/>
+  <!-- Front arc of planetary ring -->
+  <path fill="none" stroke="#F59E0B" stroke-width="2.5" d="M5 22c5 5 19 3 26-6"/>
+  <path fill="none" stroke="#FDE68A" stroke-width="1.2" d="M5 22c5 5 19 3 26-6"/>
+</svg>

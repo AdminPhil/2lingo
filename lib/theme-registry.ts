@@ -163,6 +163,26 @@ export const LEVEL_2_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-purple-700 border-purple-500",
     nodeArrowBorder: "border-t-purple-500",
   },
+  // World 8 (CR-082): Nikola Tesla & The Starry Night Sky (Units 36–40)
+  {
+    id: "tesla-astronomy",
+    stage: 8,
+    stageName: "Tesla & Astronomy",
+    stageBadgeLabel: "World 8: Tesla & Astronomy • The Spark of Invention & Starry Sky",
+    stageCroatianName: "World 8: Tesla & Astronomy • Zemlja izuma i zvjezdano nebo",
+    unitRange: [36, 40],
+    solidBg: "bg-slate-950",
+    gradient: "from-slate-950 via-indigo-950 to-cyan-950",
+    badgeBg: "bg-black/40 text-cyan-200 border-cyan-500/40",
+    accentEmoji: "⚡",
+    buttonClass: "bg-cyan-500 text-slate-950 hover:bg-cyan-400 border-cyan-400",
+    accentBorder: "border-cyan-400/50",
+    nodeActiveBg: "bg-cyan-600 hover:bg-cyan-600/90 border-cyan-800 active:border-b-0 text-white",
+    nodeBorderColor: "border-cyan-800",
+    nodeStrokeColor: "#0891b2",
+    nodeBadgeClasses: "bg-slate-900 text-cyan-400 border-cyan-500",
+    nodeArrowBorder: "border-t-cyan-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES];
@@ -589,6 +609,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Svečana gozba",
           title: "Kraljevska gozba",
           badgeEmoji: "🍗",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 36:
+      return {
+        left: {
+          imageSrc: "/svjetlost.svg",
+          alt: "Zraka svjetlosti",
+          title: "Svjetlost",
+          badgeEmoji: "💡",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/iskra.svg",
+          alt: "Teslina iskra",
+          title: "Iskra",
+          badgeEmoji: "⚡",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 37:
+      return {
+        left: {
+          imageSrc: "/zvijezda.svg",
+          alt: "Sjajna zvijezda",
+          title: "Zvijezda",
+          badgeEmoji: "⭐",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/mjesec.svg",
+          alt: "Noćni mjesec",
+          title: "Mjesec",
+          badgeEmoji: "🌙",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 38:
+      return {
+        left: {
+          imageSrc: "/teleskop.svg",
+          alt: "Veliki teleskop",
+          title: "Teleskop",
+          badgeEmoji: "🔭",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/kupola.svg",
+          alt: "Kupola zvjezdarnice",
+          title: "Kupola",
+          badgeEmoji: "🪐",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 39:
+      return {
+        left: {
+          imageSrc: "/munja.svg",
+          alt: "Moćna munja",
+          title: "Munja",
+          badgeEmoji: "⚡",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/snaga.svg",
+          alt: "Snaga prirode",
+          title: "Snaga",
+          badgeEmoji: "🔋",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 40:
+      return {
+        left: {
+          imageSrc: "/robot.svg",
+          alt: "Pametni robot",
+          title: "Robot",
+          badgeEmoji: "🤖",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/buducnost.svg",
+          alt: "Svijetla budućnost",
+          title: "Budućnost",
+          badgeEmoji: "🚀",
           topOffsetClass: "top-44",
         },
       };

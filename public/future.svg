@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#030712" stroke="#EC4899" stroke-width="1.5"/>
+  <!-- Rocket exhaust flame -->
+  <polygon fill="#DC2626" points="18,33 14,26 22,26"/>
+  <polygon fill="#F59E0B" points="18,30 15.5,26 20.5,26"/>
+  <polygon fill="#FEF08A" points="18,28 16.5,26 19.5,26"/>
+  <!-- Rocket Body -->
+  <path fill="#F8FAFC" d="M18 5c-3 4-5 12-5 18h10c0-6-2-14-5-18z"/>
+  <!-- Nose cone in crimson -->
+  <path fill="#DC2626" d="M18 5c-1.5 2.5-3 6-3.8 9h7.6c-.8-3-2.3-6.5-3.8-9z"/>
+  <!-- Porthole Window -->
+  <circle fill="#0284C7" cx="18" cy="17" r="2.5" stroke="#CBD5E1" stroke-width="1"/>
+  <circle fill="#38BDF8" cx="18" cy="17" r="1.5"/>
+  <!-- Fins -->
+  <path fill="#DC2626" d="M13 20l-4 4v2h4zM23 20l4 4v2h-4z"/>
+</svg>

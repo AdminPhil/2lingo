@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.5"/>
+  <!-- Tripod Legs -->
+  <line x1="17" y1="21" x2="9" y2="33" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="21" x2="17" y2="33" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+  <line x1="17" y1="21" x2="25" y2="33" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <!-- Tripod mount / swivel joint -->
+  <circle fill="#D97706" cx="17" cy="21" r="2.5"/>
+  <!-- Optical tube assembly pointing up-right at 40 degrees -->
+  <path fill="#E2E8F0" d="M11 25l15-12 2 2.5-15 12z"/>
+  <!-- Dew shield / Objective lens rim (Large front aperture) -->
+  <path fill="#F59E0B" d="M25 14l3-2.5 1.5 2-3 2.5z"/>
+  <!-- Objective glass reflection -->
+  <ellipse cx="28" cy="12.5" rx="1.5" ry="2.5" fill="#38BDF8" transform="rotate(-40 28 12.5)"/>
+  <!-- Eyepiece / diagonal mirror at back -->
+  <path fill="#334155" d="M9 24l2-1.5 1.5 1.5-2 1.5z"/>
+  <rect x="7" y="24" width="3" height="1.5" fill="#0EA5E9" transform="rotate(45 8.5 24.75)"/>
+</svg>

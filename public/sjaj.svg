@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#172554" stroke="#60A5FA" stroke-width="1.5"/>
+  <!-- Main 8-axis Starburst -->
+  <path fill="#60A5FA" opacity="0.4" d="M18 2L15 15 2 18l13 3 3 13 3-13 13-3-13-3z"/>
+  <!-- Core Crisp Diamond Sparkle -->
+  <path fill="#93C5FD" d="M18 5l2 11 11 2-11 2-2 11-2-11-11-2 11-2z"/>
+  <!-- Central White Brilliance -->
+  <path fill="#FFFFFF" d="M18 9l1.5 7.5L27 18l-7.5 1.5L18 27l-1.5-7.5L9 18l7.5-1.5z"/>
+  <!-- Corner gleams -->
+  <circle fill="#FDE047" cx="7" cy="7" r="1.2"/>
+  <circle fill="#FDE047" cx="29" cy="7" r="1.2"/>
+  <circle fill="#FDE047" cx="29" cy="29" r="1.2"/>
+  <circle fill="#FDE047" cx="7" cy="29" r="1.2"/>
+</svg>

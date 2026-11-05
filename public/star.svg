@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Deep cosmic background -->
+  <circle cx="18" cy="18" r="16" fill="#0B0F19" stroke="#EAB308" stroke-width="1.5"/>
+  <!-- Outer soft glow star -->
+  <polygon fill="#FDE047" opacity="0.4" points="18,3 22,13 33,13 24,20 28,31 18,24 8,31 12,20 3,13 14,13"/>
+  <!-- Core 5-point golden star -->
+  <polygon fill="#F59E0B" points="18,5 21.5,13.5 31,13.5 23.5,19.5 26.5,29 18,23 9.5,29 12.5,19.5 5,13.5 14.5,13.5"/>
+  <!-- Inner facet light reflection -->
+  <polygon fill="#FEF08A" points="18,5 21.5,13.5 18,19 14.5,13.5"/>
+  <polygon fill="#FFFFFF" points="18,8 19.5,13 18,16 16.5,13"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#082F49" stroke="#38BDF8" stroke-width="1.5"/>
+  <!-- Primary 4-point electric blue spark -->
+  <path fill="#38BDF8" d="M18 4c0 7-7 14-14 14 7 0 14 7 14 14 0-7 7-14 14-14-7 0-14-7-14-14z"/>
+  <!-- Inner electric cyan glow -->
+  <path fill="#7DD3FC" d="M18 8c0 5-5 10-10 10 5 0 10 5 10 10 0-5 5-10 10-10-5 0-10-5-10-10z"/>
+  <!-- Core white hot center -->
+  <circle fill="#FFFFFF" cx="18" cy="18" r="3"/>
+  <!-- Satellite micro sparks -->
+  <circle fill="#FACC15" cx="9" cy="9" r="1.5"/>
+  <circle fill="#FACC15" cx="27" cy="9" r="1.5"/>
+  <circle fill="#FACC15" cx="27" cy="27" r="1.5"/>
+  <circle fill="#FACC15" cx="9" cy="27" r="1.5"/>
+</svg>
