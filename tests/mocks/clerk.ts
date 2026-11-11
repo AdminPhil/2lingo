@@ -62,7 +62,10 @@ export const useAuth = () => ({
 export const useClerk = () => ({
   client: clerkClient,
   setActive: vi.fn().mockResolvedValue(undefined),
-  signOut: vi.fn().mockResolvedValue(undefined),
+  signOut: vi.fn((cb?: any) => {
+    if (typeof cb === "function") cb();
+    return Promise.resolve();
+  }),
 });
 
 export const useSignIn = () => ({

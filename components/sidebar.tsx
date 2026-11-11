@@ -11,19 +11,21 @@ import { cn } from "@/lib/utils";
 
 import { SidebarItem } from "./sidebar-item";
 import { SwitchProfileButton } from "./switch-profile-button";
+import { SignOutButton } from "./sign-out-button";
 
 type Props = {
   className?: string;
   isAdmin?: boolean;
+  onAction?: () => void;
 };
 
-export const Sidebar = ({ className, isAdmin }: Props) => {
+export const Sidebar = ({ className, isAdmin, onAction }: Props) => {
   return (
     <div className={cn(
       "flex h-full lg:w-[256px] lg:fixed left-0 top-0 px-4 border-r-2 flex-col",
       className,
     )}>
-      <Link href={isAdmin ? "/admin" : "/learn"} className="group">
+      <Link href={isAdmin ? "/admin" : "/learn"} onClick={onAction} className="group">
         <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-slate-200/90 shadow-2xs transition-transform group-hover:scale-105 bg-white shrink-0">
             <Image
@@ -61,31 +63,46 @@ export const Sidebar = ({ className, isAdmin }: Props) => {
             label="Parent Center" 
             href="/admin"
             iconSrc="/shield.svg"
+            onClick={onAction}
           />
         )}
         <SidebarItem 
           label="Learn" 
           href="/learn"
           iconSrc="/learn.svg"
+          onClick={onAction}
         />
         <SidebarItem 
           label="Leaderboard" 
           href="/leaderboard"
           iconSrc="/leaderboard.svg"
+          onClick={onAction}
         />
         <SidebarItem 
           label="Quests" 
           href="/quests"
           iconSrc="/quests.svg"
+          onClick={onAction}
         />
       </div>
-      <div className="p-4 flex items-center justify-between border-t border-slate-100">
+      <div className="p-4 flex items-center justify-between border-t border-slate-100 gap-x-2">
         <ClerkLoading>
           <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
         </ClerkLoading>
         <ClerkLoaded>
-          <UserButton afterSignOutUrl="/" />
-          <SwitchProfileButton />
+          <div className="flex items-center gap-x-1 sm:gap-x-2">
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  userButtonPopoverCard: "z-[150] shadow-xl",
+                  userButtonPopoverRoot: "z-[150]",
+                },
+              }}
+            />
+            <SignOutButton onAction={onAction} />
+          </div>
+          <SwitchProfileButton onAction={onAction} />
         </ClerkLoaded>
       </div>
     </div>

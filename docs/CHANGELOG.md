@@ -4,6 +4,23 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-10] - Mobile Sign Out & Switch Profile Resolution (BUG-043)
+
+### Fixed & Hardened
+- **[BUG-043] ✅ RESOLVED - Mobile Sign Out & Switch Profile Inactive in Navigation Drawer:**
+  - **Z-Index Layering & Dialog Elevation (`z-[150]`):** Elevated `DialogOverlay` and `DialogContent` in `components/ui/dialog.tsx` from `z-50` to **`z-[150]`**, ensuring that all application modals (including `ProfileSwitcherModal`, `HeartsModal`, and `PracticeModal`) layer cleanly above the mobile navigation drawer (`z-[100]`).
+  - **Dedicated Mobile `<SignOutButton />`:** Authored `components/sign-out-button.tsx` integrating Clerk's `useClerk().signOut()` with an explicit `LogOut` icon and label, offering a direct 1-tap sign-out action alongside the avatar.
+  - **Controlled Mobile Drawer & Auto-Dismissal:** Converted `components/mobile-sidebar.tsx` to a controlled component, propagating `onAction={() => setOpen(false)}` down to `Sidebar`, `SwitchProfileButton`, `SignOutButton`, and navigation links to automatically dismiss the drawer when actions or page jumps occur.
+  - **Clerk Popover Layering:** Configured Clerk's `<UserButton />` appearance tokens (`userButtonPopoverCard: "z-[150] shadow-xl"`, `userButtonPopoverRoot: "z-[150]"`) to prevent popover clipping behind drawer elements.
+  - **Automated Regression Testing:** Authored `tests/component/mobile-sidebar-actions.test.tsx` (7 tests) validating mobile drawer trigger accessibility, sign out execution, profile switcher dispatch, and drawer dismissal callbacks.
+  - **Pre-Flight Invariants:**
+    - `tsc --noEmit`: 0 errors.
+    - `audit-curriculum-rules.ts`: 0 violations across 40 units and 2,756 options.
+    - `vitest run`: 25/25 suites passed (278/278 tests).
+    - Core learner progress (Adriana 6,870 XP, Valentina 1,910 XP, Vanessa 1,760 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-10] - Overnight Heart Top-Up Resilience & Neon Cold-Start Protection (BUG-042)
 
 ### Fixed & Hardened
