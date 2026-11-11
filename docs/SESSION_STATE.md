@@ -11,8 +11,8 @@
 
 - **Curriculum Scale:** **40 Units**, **160 Lessons**, **689 Challenges**, **2,756 Options** across **8 Worlds**.
 - **Latest Completed Milestone:** **CR-082** — Level 2 Graduation Capstone: *Nikola Tesla & The Starry Night Sky (Units 36–40)* introducing the Croatian Future Tense (*Futur I: učit ćemo, gledat ćemo, putovat ćemo, izumit ćemo*).
-- **Latest Bug Fix:** **BUG-041** — World 7 audio-text synthesis alignment, directional vector assets (`lijevo.svg`, `desno.svg`, `ravno.svg`, `gore.svg`), and automated Audio-Text Synthesis Parity Guard in `scripts/audit-curriculum-rules.ts`.
-- **Master Registry Counts:** **82 Completed Change Requests** (CR-001 to CR-082) | **41 Resolved Bug Tickets** (BUG-001 to BUG-041) | **0 Queued**.
+- **Latest Bug Fix:** **BUG-042** — Overnight heart top-up workflow resilience, Neon serverless cold-start pre-flight warmup, exponential backoff retries, and batched atomic updates in `scripts/daily-heart-refill.ts` and `.github/workflows/daily-heart-refill.yml`.
+- **Master Registry Counts:** **82 Completed Change Requests** (CR-001 to CR-082) | **42 Resolved Bug Tickets** (BUG-001 to BUG-042) | **0 Queued**.
 - **Active Learners in Production DB:**
   1. Adriana: **5,950 XP**
   2. Vanessa: **1,750 XP**

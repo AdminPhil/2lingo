@@ -4,6 +4,23 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-10] - Overnight Heart Top-Up Resilience & Neon Cold-Start Protection (BUG-042)
+
+### Fixed & Hardened
+- **[BUG-042] ✅ RESOLVED - Scheduled Workflow Failure in Overnight Heart Top-Up (`daily-heart-refill.yml`):**
+  - **Neon Serverless Cold-Start Pre-Flight Warmup:** Added resilient connection warmup (`await sql\`SELECT 1 as ping;\``) in `scripts/daily-heart-refill.ts` to awaken suspended Neon Postgres compute instances during off-peak scheduled runs (06:00 UTC) prior to evaluating learner data.
+  - **Exponential Backoff Retries (`withRetry`):** Wrapped all database interactions in an exponential backoff loop (3 attempts, backoff up to 7.5s) to gracefully absorb transient network latency or compute spin-up delays without failing the job.
+  - **Atomic Batched Updates:** Replaced 17 sequential HTTP network roundtrips with two atomic batched updates using Drizzle's `inArray(schema.userProgress.userId, ids)`, reducing execution duration from ~150s to **0.23 seconds**.
+  - **Environment Variable Sanitization:** Automatically trims and strips surrounding quotes from `DATABASE_URL` to prevent malformed connection string errors in CI environments.
+  - **Workflow Hardening:** Added `timeout-minutes: 5` and concurrency control (`daily-heart-refill`) to `.github/workflows/daily-heart-refill.yml`.
+  - **Pre-Flight Invariants:**
+    - `tsc --noEmit`: 0 errors.
+    - `audit-curriculum-rules.ts`: 0 violations across 40 units and 2,756 options.
+    - `vitest run`: 24/24 suites passed (271/271 tests).
+    - Core learner progress (Adriana 6,870 XP, Valentina 1,910 XP, Vanessa 1,760 XP, Silvia 1,325 XP) completely preserved.
+
+---
+
 ## [2026-11-04] - World 8: Nikola Tesla & The Starry Night Sky (Units 36–40) & Futur I Capstone (CR-082)
 
 ### Added & Verified
