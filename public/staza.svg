@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Summer sky -->
+  <rect x="2" y="2" width="32" height="14" rx="4" fill="#38BDF8"/>
+  <circle cx="28" cy="7" r="3" fill="#FDE047"/>
+  <!-- Track surface (golden sand of Sinj) -->
+  <path fill="#D97706" d="M2 16h32v18H2z"/>
+  <!-- Perspective running track lines -->
+  <polygon points="12,16 24,16 30,34 6,34" fill="#F59E0B"/>
+  <line x1="18" y1="16" x2="18" y2="34" stroke="#FEF3C7" stroke-dasharray="2,2" stroke-width="1"/>
+  <!-- Wooden barrier fence / ograda trkališta -->
+  <line x1="6" y1="20" x2="6" y2="34" stroke="#78350F" stroke-width="1.5"/>
+  <line x1="30" y1="20" x2="30" y2="34" stroke="#78350F" stroke-width="1.5"/>
+  <line x1="2" y1="24" x2="34" y2="24" stroke="#92400E" stroke-width="1.2"/>
+  <line x1="2" y1="28" x2="34" y2="28" stroke="#92400E" stroke-width="1.2"/>
+</svg>

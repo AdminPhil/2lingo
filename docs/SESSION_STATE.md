@@ -9,23 +9,24 @@
 
 ## 🏛️ Current Architectural & Curriculum Status
 
-- **Curriculum Scale:** **40 Units**, **160 Lessons**, **689 Challenges**, **2,756 Options** across **8 Worlds**.
-- **Latest Completed Milestone:** **CR-082** — Level 2 Graduation Capstone: *Nikola Tesla & The Starry Night Sky (Units 36–40)* introducing the Croatian Future Tense (*Futur I: učit ćemo, gledat ćemo, putovat ćemo, izumit ćemo*).
+- **Curriculum Scale:** **45 Units**, **180 Lessons**, **769 Challenges**, **3,076 Options** across **9 Worlds**.
+- **Latest Completed Milestone:** **CR-083** — Level 3 Launch: *Sinjska Alka & Cetina Valley (Units 41–45)* introducing Croatian Reflexive Verbs (*Glagoli s česticom "se": kretati se, natjecati se, diviti se, grijati se, radovati se*), 40 bespoke vector SVGs, 160 neural audio clips, Level 3 gateway, and World 9 fast-travel navigation.
 - **Latest Bug Fix:** **BUG-043** — Mobile sign-out and profile-switcher inactive drawer buttons resolved via z-index elevation (`z-[150]`), dedicated `<SignOutButton />`, controlled mobile drawer auto-dismissal, and automated regression test suite.
-- **Master Registry Counts:** **82 Completed Change Requests** (CR-001 to CR-082) | **43 Resolved Bug Tickets** (BUG-001 to BUG-043) | **0 Queued**.
+- **Master Registry Counts:** **83 Completed Change Requests** (CR-001 to CR-083) | **43 Resolved Bug Tickets** (BUG-001 to BUG-043) | **0 Queued**.
 - **Active Learners in Production DB:**
-  1. Adriana: **5,950 XP**
-  2. Vanessa: **1,750 XP**
-  3. Silvia: **1,325 XP**
+  1. Adriana: **6,870 XP**
+  2. Valentina: **1,910 XP**
+  3. Vanessa: **1,760 XP**
+  4. Silvia: **1,325 XP**
   *(All live learner progress strictly guarded and preserved).*
 
 ---
 
 ## 🛡️ Pre-Flight Verification Gates (Current Baseline)
 
-- **Curriculum Rules Audit:** `npx tsx scripts/audit-curriculum-rules.ts` passes with **0 violations**.
+- **Curriculum Rules Audit:** `npx tsx scripts/audit-curriculum-rules.ts` passes with **0 violations** across 45 Units.
 - **TypeScript:** `npx tsc --noEmit` passes with **0 errors**.
-- **Test Suites:** `npx vitest run` passes with **24/24 suites**, **271/271 tests passing**.
+- **Test Suites:** `npx vitest run` passes with **25/25 suites**, **279/279 tests passing**.
 
 ---
 
@@ -34,15 +35,16 @@
 1. **Lesson 1 Visual Discovery Invariant:** Every Unit Lesson 1 must feature 4 `SELECT` challenges with 4 unique visual flashcards on disk before progressive fading in Lessons 2–4 (`ASSIST` mode, `imageSrc: null`).
 2. **Audio-Text Parity Guard:** Every spoken synthesis transcript in `scripts/generate-world*-audio.py` must match `challenge_options.text` 1:1.
 3. **No Shop Route:** Never add or re-introduce `/shop` into navigation. Heart restoration occurs through retrieval practice or parent magic wands.
-4. **Learner Preservation:** Never drop or reset database progress for Adriana, Vanessa, or Silvia.
+4. **Learner Preservation:** Never drop or reset database progress for Adriana, Valentina, Vanessa, or Silvia.
 
 ---
 
 ## 📋 Candidate Backlog & Next Horizons
 
-1. **Level 3 Ideation & Curriculum Planning (Worlds 9+):**
-   - Higher-level grammatical concepts (conditional tenses, reflexive verbs, cases, extended conversational dialogues).
-2. **Post-Launch World 8 Monitoring:**
+1. **World 10 & Level 3 Continuation (Units 46–50):**
+   - Candidate Concept: *Vis, Komiža & The Glowing Blue Cave* (Fishermen falkuša, Adriatic winds, modal verbs *moći/morati/željeti*).
+   - Candidate Concept: *Split, Diocletian's Palace & The Sunlit Riva* (Roman heritage, picigin, locatives & conversational questions).
+2. **Post-Launch World 9 Monitoring:**
    - Verify learner telemetry and end-to-end audio/visual playback on live production site.
 3. **Classroom & Parent Portal Enhancements:**
    - Teacher analytics, student print kit refinements, and family circle engagement features.

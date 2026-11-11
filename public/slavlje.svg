@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Festive purple night sky -->
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#581C87"/>
+  <!-- Golden brass trumpet / truba -->
+  <polygon points="6,26 18,18 20,20 8,28" fill="#F59E0B"/>
+  <path d="M18 18l10-8v12l-10-8z" fill="#FACC15"/>
+  <ellipse cx="28" cy="16" rx="2" ry="6" fill="#EAB308"/>
+  <ellipse cx="28" cy="16" rx="1" ry="4" fill="#CA8A04"/>
+  <!-- Confetti streamers & stars -->
+  <circle cx="8" cy="8" r="1.5" fill="#F43F5E"/>
+  <circle cx="16" cy="6" r="1.5" fill="#38BDF8"/>
+  <circle cx="24" cy="6" r="1.2" fill="#4ADE80"/>
+  <circle cx="12" cy="14" r="1.2" fill="#FDE047"/>
+  <!-- Star sparklers -->
+  <path fill="#FEF08A" d="M10 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/>
+  <path fill="#FEF08A" d="M26 26l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/>
+</svg>

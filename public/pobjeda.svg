@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#450A0A" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Golden laurel wreath leaves (Lovorov vijenac) -->
+  <!-- Left branch -->
+  <path fill="#F59E0B" d="M18 30c-7 0-11-5-11-12 0-5 3-10 8-12-1 2-1 5 0 7-3 2-4 5-3 8 1 3 3 5 6 6v3z"/>
+  <!-- Right branch -->
+  <path fill="#F59E0B" d="M18 30c7 0 11-5 11-12 0-5-3-10-8-12 1 2 1 5 0 7 3 2 4 5 3 8-1 3-3 5-6 6v3z"/>
+  <!-- Golden chalice / pehar u sredini -->
+  <path fill="#FDE047" d="M14 12h8v5c0 3-2 5-4 5s-4-2-4-5v-5z"/>
+  <rect x="16.5" y="22" width="3" height="4" fill="#EAB308"/>
+  <rect x="13" y="26" width="10" height="2.5" rx="1" fill="#CA8A04"/>
+  <!-- Trophy handles -->
+  <path fill="none" stroke="#FDE047" stroke-width="1.5" d="M14 13c-2 0-3 2-3 3.5s1 3.5 3 3.5m8-7c2 0 3 2 3 3.5s-1 3.5-3 3.5"/>
+  <!-- Star sparkle -->
+  <circle cx="18" cy="16" r="1.5" fill="#FFFFFF"/>
+</svg>

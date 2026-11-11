@@ -185,7 +185,30 @@ export const LEVEL_2_STAGES: RegionTheme[] = [
   },
 ];
 
-export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES];
+export const LEVEL_3_STAGES: RegionTheme[] = [
+  // World 9 (CR-083): Sinjska Alka & Cetina Canyon (Units 41–45)
+  {
+    id: "sinjska-alka-cetina",
+    stage: 9,
+    stageName: "Sinjska Alka & Cetina",
+    stageBadgeLabel: "World 9: Sinjska Alka • Knights of Sinj & Cetina Canyon",
+    stageCroatianName: "World 9: Sinjska Alka • Sinjski vitezovi i kanjon Cetine",
+    unitRange: [41, 45],
+    solidBg: "bg-rose-900",
+    gradient: "from-rose-950 via-red-900 to-teal-900",
+    badgeBg: "bg-black/35 text-amber-200 border-amber-500/40",
+    accentEmoji: "🏇",
+    buttonClass: "bg-amber-500 text-stone-950 hover:bg-amber-400 border-amber-600",
+    accentBorder: "border-amber-500/50",
+    nodeActiveBg: "bg-red-700 hover:bg-red-700/90 border-red-900 active:border-b-0 text-white",
+    nodeBorderColor: "border-red-900",
+    nodeStrokeColor: "#b91c1c",
+    nodeBadgeClasses: "bg-white text-red-800 border-red-600",
+    nodeArrowBorder: "border-t-red-600",
+  },
+];
+
+export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES, ...LEVEL_3_STAGES];
 
 export const getStageThemeForUnit = (unitOrder: number): RegionTheme => {
   return (
@@ -694,6 +717,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Svijetla budućnost",
           title: "Budućnost",
           badgeEmoji: "🚀",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 41:
+      return {
+        left: {
+          imageSrc: "/konj.svg",
+          alt: "Plemeniti konj",
+          title: "Konj",
+          badgeEmoji: "🏇",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/sedlo.svg",
+          alt: "Viteško sedlo",
+          title: "Sedlo",
+          badgeEmoji: "🛡️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 42:
+      return {
+        left: {
+          imageSrc: "/alka.svg",
+          alt: "Željezna alka",
+          title: "Alka",
+          badgeEmoji: "🎯",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/koplje.svg",
+          alt: "Viteško koplje",
+          title: "Koplje",
+          badgeEmoji: "⚔️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 43:
+      return {
+        left: {
+          imageSrc: "/kanjon.svg",
+          alt: "Kanjon Cetine",
+          title: "Kanjon",
+          badgeEmoji: "🏞️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/slap.svg",
+          alt: "Smaragdni slap",
+          title: "Slap",
+          badgeEmoji: "🌊",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 44:
+      return {
+        left: {
+          imageSrc: "/mlin.svg",
+          alt: "Mlinski kotač",
+          title: "Mlin",
+          badgeEmoji: "⚙️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/peka.svg",
+          alt: "Kruh ispod peke",
+          title: "Peka",
+          badgeEmoji: "🥖",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 45:
+      return {
+        left: {
+          imageSrc: "/pobjeda.svg",
+          alt: "Slavlje slavodobitnika",
+          title: "Pobjeda",
+          badgeEmoji: "🏆",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/medalja.svg",
+          alt: "Zlatna medalja",
+          title: "Medalja",
+          badgeEmoji: "🥇",
           topOffsetClass: "top-44",
         },
       };

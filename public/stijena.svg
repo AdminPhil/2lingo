@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Sky -->
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#0284C7"/>
+  <!-- Sheer jagged cliff profile -->
+  <polygon points="2,34 4,14 10,8 16,16 22,6 28,12 34,4 34,34" fill="#57534E"/>
+  <!-- Sunny rock facets -->
+  <polygon points="10,8 16,16 14,24 6,20" fill="#A8A29E"/>
+  <polygon points="22,6 28,12 25,22 18,18" fill="#D6D3D1"/>
+  <polygon points="28,12 34,4 34,18 29,24" fill="#A8A29E"/>
+  <!-- Mountain pine trees clinging to rock -->
+  <polygon points="10,7 8,11 12,11" fill="#166534"/>
+  <polygon points="24,5 22,9 26,9" fill="#166534"/>
+</svg>

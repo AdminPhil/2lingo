@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#1E1B4B" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Impact shockwave rings -->
+  <circle cx="18" cy="18" r="11" fill="none" stroke="#FDE047" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="18" cy="18" r="7" fill="none" stroke="#FACC15" stroke-width="1.5" opacity="0.8"/>
+  <!-- Alka ring in center -->
+  <circle cx="18" cy="18" r="4.5" fill="#334155" stroke="#94A3B8" stroke-width="1.5"/>
+  <!-- Lance tip hitting center hole -->
+  <polygon points="18,18 7,29 11,31" fill="#CBD5E1"/>
+  <!-- Explosive hit spark stars (srida!) -->
+  <path fill="#F59E0B" d="M18 10l1.5 5.5L25 17l-5.5 1.5L18 24l-1.5-5.5L11 17l5.5-1.5z"/>
+  <circle cx="18" cy="18" r="2.5" fill="#FFFFFF"/>
+</svg>

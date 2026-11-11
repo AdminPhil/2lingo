@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#1C1917" stroke="#EA580C" stroke-width="1.5"/>
+  <!-- Wooden logs arranged in campfire cross -->
+  <line x1="8" y1="30" x2="28" y2="24" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="8" y1="24" x2="28" y2="30" stroke="#92400E" stroke-width="4" stroke-linecap="round"/>
+  <!-- Outer orange fire flame -->
+  <path fill="#EA580C" d="M18 5c3 4 8 8 8 15 0 6-4 10-8 10s-8-4-8-10c0-7 5-11 8-15z"/>
+  <!-- Inner yellow flame core -->
+  <path fill="#FACC15" d="M18 12c2 3 5 5 5 9 0 4-2 7-5 7s-5-3-5-7c0-4 3-6 5-9z"/>
+  <!-- White-hot inner heart -->
+  <ellipse cx="18" cy="24" rx="2.5" ry="4" fill="#FFFFFF"/>
+</svg>

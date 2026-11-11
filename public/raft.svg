@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Foaming rapids river -->
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#0F766E"/>
+  <path d="M2 12c6-2 10 2 16 0s10-2 16 0v22H2z" fill="#0D9488"/>
+  <path d="M2 24c6 2 12-2 18 0s10 2 14 0" stroke="#CCFBF1" stroke-width="1.5" fill="none"/>
+  <!-- Inflatable rafting boat (bright yellow/orange) -->
+  <ellipse cx="18" cy="20" rx="13" ry="6" fill="#EA580C"/>
+  <ellipse cx="18" cy="20" rx="10" ry="4" fill="#FACC15"/>
+  <ellipse cx="18" cy="20" rx="8" ry="2.5" fill="#C2410C"/>
+  <!-- Rafting cross thwart tubes -->
+  <rect x="16.5" y="17.5" width="3" height="5" rx="1.5" fill="#EA580C"/>
+  <!-- Yellow safety paddle / veslo -->
+  <line x1="6" y1="26" x2="22" y2="12" stroke="#1E293B" stroke-width="1.8" stroke-linecap="round"/>
+  <polygon points="5,27 3,31 8,29" fill="#FACC15"/>
+</svg>

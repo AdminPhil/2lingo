@@ -4,6 +4,29 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-10] - Level 3 Launch: World 9 (Sinjska Alka & Cetina Valley — Units 41–45) (CR-083)
+
+### Added & Verified
+- **[CR-083] ✅ IMPLEMENTED & VERIFIED - Level 3 Launch & World 9 (Sinjska Alka & Cetina Valley — Units 41–45) & Reflexive Verbs:**
+  - **Level 3 Gateway (*Veliki Pustolov*):** Launched Level 3 of the CroLingo curriculum, taking learners beyond elementary concepts into authentic inland heritage, knightly traditions, and advanced communicative constructs across 5 new units (20 lessons, 80 challenges, 320 options):
+    - **Unit 41:** *Sinjski vitezovi i konji* (The Knights & Noble Steeds — Horse, Saddle, Track, Rider, and reflexive motion/preparation: *Konj se kreće brzo, Jahač se priprema*).
+    - **Unit 42:** *Alka i koplje* (The Tournament & Ring Target — Ring target, Lance, Target, Direct hit, and reflexive competition/aiming: *Vitezovi se natječu, Vitez se usmjerava na metu, Pogodak u sridu!*).
+    - **Unit 43:** *Kanjon rijeke Cetine* (The Emerald Canyon & River — Canyon, Waterfall, Cliff, Raft/Boat, and reflexive descent/admiration: *Čamac se spušta niz rijeku, Divimo se smaragdnoj rijeci*).
+    - **Unit 44:** *Stari mlin i kruh ispod peke* (Traditional Hearth & Watermill — Watermill, Baking dome, Flour, Fire, and reflexive rotation/warmth: *Mlinski kotač se okreće, Grijemo se uz vatru*).
+    - **Unit 45:** *Slavlje slavodobitnika* (The Champion's Celebration Capstone — Victory, Medal, Celebration, Pride, and reflexive rejoicing/pride: *Svi se raduju pobjedi, Ponosimo se našim vitezovima, Čestitamo, završili ste deveti svijet!*).
+  - **Bespoke Vector Graphics (40 SVGs):** Authored 20 bespoke Croatian vector SVGs and 20 English-aliased assets in `public/` matching the CroLingo design system (`konj.svg`, `sedlo.svg`, `staza.svg`, `jahac.svg`, `alka.svg`, `koplje.svg`, `meta.svg`, `pogodak.svg`, `kanjon.svg`, `slap.svg`, `stijena.svg`, `camac.svg`, `mlin.svg`, `peka.svg`, `brasno.svg`, `vatra.svg`, `pobjeda.svg`, `medalja.svg`, `slavlje.svg`, `ponos.svg`).
+  - **Neural Speech Synthesis (160 Audio Files):** Generated 160 neural audio clips via `scripts/generate-world9-audio.py` (`hr-HR-GabrijelaNeural`) with exact 1:1 audio-text parity across all single words and reflexive phrases.
+  - **Theming & Learning Path Scenery:** Registered World 9 theme in `lib/theme-registry.ts` with deep crimson, noble gold, and river teal styling (`solidBg: "bg-rose-900"`, `nodeActiveBg: "bg-red-700"`), and enriched units 41–45 with decorative landmark scenery (`left` / `right`).
+  - **Level 3 Celebratory Gateway:** Upgraded `app/(main)/learn/level-milestone-gateway.tsx` and `app/(main)/learn/page.tsx` to display the celebratory transition banner at Unit 41 ("Dobrodošli u Level 3: Veliki Pustolov • CEFR B1 Razina").
+  - **Fast-Travel World Navigator Update:** Added World 9 (Alka 🏇) to `app/(main)/learn/world-navigator.tsx` with `Novo` badge, dynamic scroll jump, and updated counter ("9 Svjetova • 45 Jedinica").
+  - **Pre-Flight Invariants & Quality Gates:**
+    - `audit-curriculum-rules.ts`: 0 violations across 45 units, 180 lessons, 769 challenges, and 3,076 options.
+    - `tsc --noEmit`: 0 errors.
+    - `vitest run`: 25/25 suites passed (279/279 tests).
+    - Learner accounts (Adriana 6,870 XP, Valentina 1,910 XP, Vanessa 1,760 XP, Silvia 1,325 XP) 100% preserved.
+
+---
+
 ## [2026-11-10] - Mobile Sign Out & Switch Profile Resolution (BUG-043)
 
 ### Fixed & Hardened

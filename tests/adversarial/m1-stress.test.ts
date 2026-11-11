@@ -341,7 +341,7 @@ describe("Adversarial Stress Test Suite: Milestone 1 Verification", () => {
 
     it("handles zero and large integers safely, falling back to Stage 1", () => {
       expect(getStageThemeForUnit(0).stage).toBe(1);
-      expect(getStageThemeForUnit(41).stage).toBe(1);
+      expect(getStageThemeForUnit(46).stage).toBe(1);
       expect(getStageThemeForUnit(100).stage).toBe(1);
       expect(getStageThemeForUnit(999999).stage).toBe(1);
       expect(getStageThemeForUnit(Number.MAX_SAFE_INTEGER).stage).toBe(1);

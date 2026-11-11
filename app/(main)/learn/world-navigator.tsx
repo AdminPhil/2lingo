@@ -10,7 +10,7 @@ type WorldItem = {
   emoji: string;
   startUnit: number;
   endUnit: number;
-  level: 1 | 2;
+  level: 1 | 2 | 3;
   activeColor: string;
 };
 
@@ -87,6 +87,15 @@ const WORLDS: WorldItem[] = [
     level: 2,
     activeColor: "bg-cyan-600 text-white border-cyan-700 shadow-cyan-200",
   },
+  {
+    worldNum: 9,
+    name: "Alka",
+    emoji: "🏇",
+    startUnit: 41,
+    endUnit: 45,
+    level: 3,
+    activeColor: "bg-rose-700 text-white border-rose-900 shadow-rose-200",
+  },
 ];
 
 type Props = {
@@ -120,7 +129,7 @@ export const WorldNavigator = ({ activeUnitOrder = 1 }: Props) => {
           </span>
         </div>
         <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500 hidden sm:inline-flex items-center gap-1">
-          <Sparkles className="w-3 h-3 text-amber-500" /> 8 Svjetova • 40 Jedinica
+          <Sparkles className="w-3 h-3 text-amber-500" /> 9 Svjetova • 45 Jedinica
         </span>
       </div>
 
@@ -143,7 +152,7 @@ export const WorldNavigator = ({ activeUnitOrder = 1 }: Props) => {
               <span className="whitespace-nowrap">
                 W{world.worldNum}: {world.name}
               </span>
-              {world.worldNum === 8 && (
+              {world.worldNum === 9 && (
                 <span className="ml-0.5 px-1 py-0.2 rounded-md bg-amber-400 text-amber-950 text-[9px] font-black uppercase tracking-tight">
                   Novo
                 </span>

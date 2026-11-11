@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#1E293B" stroke="#B45309" stroke-width="1.5"/>
+  <!-- Saddle seat curves -->
+  <path fill="#78350F" d="M8 17c2-5 7-7 10-5s8 0 10 5c1 3-2 6-5 6h-10c-3 0-6-3-5-6z"/>
+  <!-- Pommel & Cantle highlights -->
+  <path fill="#B45309" d="M8 17c1-3 4-5 6-4s-1 4-3 5-3 0-3-1zm14 1c2-1 4-2 6 0s0 3-2 3h-4z"/>
+  <!-- Padded saddle blanket / podsedlica (embroidered red & gold) -->
+  <path fill="#DC2626" d="M9 22h18v4c0 1-1 2-2 2H11c-1 0-2-1-2-2v-4z"/>
+  <line x1="9" y1="26" x2="27" y2="26" stroke="#FBBF24" stroke-width="1"/>
+  <!-- Stirrup leather and iron / stremen -->
+  <line x1="18" y1="23" x2="18" y2="30" stroke="#475569" stroke-width="1.2"/>
+  <path fill="none" stroke="#E2E8F0" stroke-width="1.5" d="M16 30h4v2a2 2 0 0 1-4 0v-2z"/>
+</svg>

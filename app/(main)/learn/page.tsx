@@ -105,7 +105,8 @@ const LearnPage = async ({ searchParams }: Props) => {
         />
         {units.map((unit) => (
           <div key={unit.id} id={`unit-${unit.order}`} className="mb-10">
-            {unit.order === 21 && <LevelMilestoneGateway />}
+            {unit.order === 21 && <LevelMilestoneGateway level={2} />}
+            {unit.order === 41 && <LevelMilestoneGateway level={3} />}
             <Unit
               id={unit.id}
               order={unit.order}
