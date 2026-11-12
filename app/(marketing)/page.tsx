@@ -209,7 +209,7 @@ export default async function Home({ searchParams }: Props) {
         </div>
 
         <p className="text-xs text-slate-500 font-semibold text-center sm:text-left mt-4">
-          Free for diaspora families & heritage language schools • Protected educational sanctuary • 25 Units across 5 Worlds
+          Free for diaspora families &amp; heritage language schools • Protected educational sanctuary • 45 Units across 9 Worlds
         </p>
       </div>
     </div>

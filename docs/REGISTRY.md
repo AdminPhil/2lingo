@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 83 Completed (CR-001 to CR-083) | 0 Queued  
+> **Total Change Requests:** 84 Completed (CR-001 to CR-084) | 0 Queued  
 > **Total Bug Tickets:** 45 Resolved (BUG-001 to BUG-045) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-083)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-084)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -95,6 +95,7 @@
 | **CR-081** | Infrastructure / CI/CD | **Repository-Wide Node.js 22 LTS Alignment & CI Runner Modernization:** Aligns all CI/CD workflows, package engine specifications (`>=22.0.0`), and development type definitions (`@types/node@^22`) with Node.js 22 LTS, eliminating deprecation warnings and standardizing runtime parity across local, GitHub Actions, and Render environments. | 2026-11-02 | ✅ Verified |
 | **CR-082** | Curriculum / Level 2 | **Level 2 & World 8 (Nikola Tesla & The Starry Night Sky — Units 36–40) & Futur I Capstone:** Capstone world for Level 2 setting learners in Smiljan (Tesla's birthplace) and the Višnjan Astronomical Observatory. Introduces 20 new core nouns/verbs, 40 bespoke vector SVGs (Croatian + English aliases), 79 neural audio clips, Stage 8 dark-sky electric cyan theme, fast-travel navigator update (8 worlds, 40 units), and introduces Croatian Future Tense (*Futur I: učit ćemo, gledat ćemo, putovat ćemo, izumit ćemo*), completing the past-present-future triad. | 2026-11-04 | ✅ Verified |
 | **CR-083** | Curriculum / Level 3 | **Level 3 Launch & World 9 (Sinjska Alka & Cetina Valley — Units 41–45) & Reflexive Verbs:** Launches Level 3 (*Veliki Pustolov*) with 5 new units set in Dalmatian Zagora and Sinj (300-year UNESCO equestrian knight tournament, Cetina canyon river rafting, Radmanove mlinice watermill, hearth peka, and champion's celebration). Introduces Croatian Reflexive Verbs (*se: kretati se, natjecati se, diviti se, grijati se, radovati se*), 40 bespoke vector SVGs, 160 neural audio clips, Level 3 milestone gateway, and World 9 fast-travel navigation. | 2026-11-10 | ✅ Verified |
+| **CR-084** | Landing / UX | **Landing Page Material 3 Action Parity & Parent/Teacher Setup Modal:** Reordered landing page CTAs so returning users (`Log in`) sit above new learners (`Start Learning (Free)`); fixed broken `h-13` class to unified Google Material 3 `h-12` (`48px`) button sizing across all CTAs; replaced the grey `#EEF2F8` role bar with clean white `I'm a Parent` and `I'm a Teacher` cards opening an exitable Family/Classroom Setup dialog (`Escape`, `✕`, backdrop click, or `← Back to Main Page`); and updated footer copy to `45 Units across 9 Worlds`. | 2026-11-12 | ✅ Verified |
 
 ---
 

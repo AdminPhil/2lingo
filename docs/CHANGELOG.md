@@ -4,6 +4,16 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Landing Page Material 3 Action Parity & Parent/Teacher Setup Modal (CR-084)
+
+### Changed & Verified
+- **[CR-084] ✅ IMPLEMENTED & VERIFIED - Landing Page UX Redesign (`components/onboarding/m3-role-hero.tsx`, `app/(marketing)/page.tsx`):**
+  - **Returning-First CTA Hierarchy:** Moved `Already have an account? Log in` above `Start Learning (Free)` so daily returning learners, parents, and teachers reach sign-in first.
+  - **Google Material 3 Button Parity (`h-12` / `48px`):** Replaced the non-standard Tailwind `h-13` class (which caused `Start Learning (Free)` to collapse to `height: auto`) with unified `h-12 px-6 rounded-full` across all primary, secondary, modal, and signed-in CTAs.
+  - **Clean White Parent & Teacher Cards + Exitable Setup Modal:** Removed the grey `#EEF2F8` role bar and replaced it with clean white `I'm a Parent` and `I'm a Teacher` cards under `"Setting up for a family or classroom?"`. Clicking either card opens an accessible Radix `Dialog` (`Family Setup` / `Classroom Setup`) with `✕`, `Escape`, backdrop click, and `← Back to Main Page` exit controls, while solo learners go straight into `Start Learning (Free)`.
+  - **Curriculum Copy Sync:** Updated marketing footer copy in `app/(marketing)/page.tsx` from `"25 Units across 5 Worlds"` to `"45 Units across 9 Worlds"`.
+  - **Verification:** `cmd /c npx tsc --noEmit` (0 errors).
+
 ## [2026-11-12] - Curriculum Audit Sibling Defects Remediation (BUG-045)
 
 ### Fixed & Verified
