@@ -957,7 +957,7 @@ const main = async () => {
       { id: 223, lessonId: 50, type: "ASSIST", order: 4, question: '"Near / Close"' },
 
       { id: 224, lessonId: 51, type: "ASSIST", order: 1, question: '"Where is the dog? Under the table!"' },
-      { id: 225, lessonId: 51, type: "ASSIST", order: 2, question: '"The book is on the table"' },
+      { id: 225, lessonId: 51, type: "ASSIST", order: 2, question: '"On the table"' },
       { id: 226, lessonId: 51, type: "ASSIST", order: 3, question: '"The cat is in the room"' },
       { id: 227, lessonId: 51, type: "ASSIST", order: 4, question: '"Look up!"' },
 

@@ -4,6 +4,18 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Unit 13 Lesson 3 Challenge 2 Prompt & Validation Fix (BUG-044)
+
+### Fixed & Verified
+- **[BUG-044] ✅ RESOLVED - Mismatched Answer Options & Incorrect Validation for "The book is on the table":**
+  - **Root Cause:** `scripts/refine-units-11-15.ts` (`setCoordOptions(13, 3, 2, ...)`) overwrote Unit 13 Lesson 3 Challenge 2 (`id: 225`) options with four prepositional location phrases (`Ispod kreveta`, `Ispod stola`, `Na stolu`, `U mojoj sobi`) and marked `Ispod kreveta` as `correct: true` instead of `Na stolu`, without updating `challenges.question` (`"The book is on the table"`) from `scripts/seed.ts`.
+  - **Fix Applied:**
+    - Updated `challenges.id = 225` in Neon DB and `scripts/seed.ts` to `question: '"On the table"'` so the prompt aligns with the prepositional phrase options and audio (`/audio/hr/na_stolu.mp3`).
+    - Updated `challenge_options` for `challenge_id = 225` in Neon DB and `scripts/refine-units-11-15.ts` so `Na stolu` is `correct: true`, `Ispod kreveta` is `correct: false`, and `"U mojoj sobi"` maps to `/audio/hr/u_mojoj_sobi.mp3`.
+  - **Verification:** `cmd /c npx tsc --noEmit` (0 errors) and `cmd /c npx tsx scripts/audit-curriculum-rules.ts` (0 violations across 45 units, 180 lessons, 769 challenges, 3,076 options).
+
+---
+
 ## [2026-11-10] - Level 3 Launch: World 9 (Sinjska Alka & Cetina Valley — Units 41–45) (CR-083)
 
 ### Added & Verified
