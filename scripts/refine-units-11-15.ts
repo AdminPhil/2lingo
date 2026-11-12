@@ -358,10 +358,10 @@ async function main() {
 
   // L3: Skrivača!
   await setCoordOptions(13, 3, 1, [
-    { text: "Na stolu", correct: true, audioSrc: "/audio/hr/na_stolu.mp3" },
-    { text: "Ispod stola", correct: false, audioSrc: "/audio/hr/ispod_stola.mp3" },
+    { text: "Ispod stola", correct: true, audioSrc: "/audio/hr/ispod_stola.mp3" },
+    { text: "Na stolu", correct: false, audioSrc: "/audio/hr/na_stolu.mp3" },
     { text: "Ispod kreveta", correct: false, audioSrc: "/audio/hr/ispod_kreveta.mp3" },
-    { text: "U mojoj sobi", correct: false, audioSrc: "/audio/hr/u_sobi.mp3" },
+    { text: "U mojoj sobi", correct: false, audioSrc: "/audio/hr/u_mojoj_sobi.mp3" },
   ]);
   await setCoordOptions(13, 3, 2, [
     { text: "Na stolu", correct: true, audioSrc: "/audio/hr/na_stolu.mp3" },

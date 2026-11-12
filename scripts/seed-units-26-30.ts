@@ -561,7 +561,7 @@ const unitsData: UnitDef[] = [
               { text: "Peći", correct: true, audioSrc: "/audio/hr/peci.mp3" },
               { text: "Kuća", correct: false, audioSrc: "/audio/hr/kuca.mp3" },
               { text: "Rijeka", correct: false, audioSrc: "/audio/hr/rijeka.mp3" },
-              { text: "Kuća", correct: false, audioSrc: "/audio/hr/kuca.mp3" },
+              { text: "Škola", correct: false, audioSrc: "/audio/hr/skola.mp3" },
             ],
           },
           {

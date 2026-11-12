@@ -4,6 +4,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Curriculum Audit Sibling Defects Remediation (BUG-045)
+
+### Fixed & Verified
+- **[BUG-045] ✅ RESOLVED - Unit 13 L3 Wrong Answer & Scope Mismatch, Unit 28 L2 Duplicate Option, and Unit 45 L4 Audio Slug Typo:**
+  - **Unit 13, Lesson 3 (`id: 224`, `226`):** Updated Challenge `224` prompt to `"Under the table"` and flipped `Ispod stola` to `correct: true` (`Na stolu` to `false`) in Neon DB, `scripts/seed.ts`, and `scripts/refine-units-11-15.ts`; updated Challenge `226` prompt to `"In the room"` to match `U sobi`; and fixed stale `/audio/hr/u_sobi.mp3` reference for `"U mojoj sobi"` in `scripts/refine-units-11-15.ts`.
+  - **Unit 28, Lesson 2 (`id: 484`):** Replaced duplicate distractor `"Kuća"` with `"Škola"` (`/audio/hr/skola.mp3`) in Neon DB and `scripts/seed-units-26-30.ts`.
+  - **Unit 45, Lesson 4 (`id: 766`, `769`):** Renamed `public/audio/hr/vitezovi_ponosno_jazu.mp3` to `public/audio/hr/vitezovi_ponosno_jasu.mp3` and updated Neon DB, `scripts/seed-units-41-45.ts`, and `scripts/generate-world9-audio.py`.
+  - **Verification:** `tsc --noEmit` (0 errors), `audit-curriculum-rules.ts` (0 violations), and DB integrity check (0 bad correct counts, 0 duplicate option texts, 0 audio slug mismatches).
+
 ## [2026-11-12] - Unit 13 Lesson 3 Challenge 2 Prompt & Validation Fix (BUG-044)
 
 ### Fixed & Verified

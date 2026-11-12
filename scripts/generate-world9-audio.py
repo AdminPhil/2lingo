@@ -185,7 +185,7 @@ AUDIO_MAP = {
     "cijeli_grad_se_raduje_i_pjeva": "Cijeli grad se raduje i pjeva.",
     "ponosimo_se_bogatom_hrvatskom_bastinom": "Ponosimo se bogatom hrvatskom baštinom.",
     "cestitamo_zavrsili_ste_deveti_svijet": "Čestitamo, završili ste deveti svijet!",
-    "vitezovi_ponosno_jazu": "Vitezovi ponosno jašu.",
+    "vitezovi_ponosno_jasu": "Vitezovi ponosno jašu.",
     "slavlje_traje_do_kasno_u_noc": "Slavlje traje do kasno u noć.",
     "zlatni_plamen_tradicije": "Zlatni plamen tradicije.",
     "zajedno_slavimo_veliku_pobjedu": "Zajedno slavimo veliku pobjedu!",

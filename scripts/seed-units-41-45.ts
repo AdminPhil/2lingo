@@ -1048,7 +1048,7 @@ const unitsData: UnitDef[] = [
               { text: "Slavodobitnik ponosno prima zlatnu medalju.", correct: true, audioSrc: "/audio/hr/slavodobitnik_ponosno_prima_zlatnu_medalju.mp3" },
               { text: "Cijeli grad se raduje i pjeva.", correct: false, audioSrc: "/audio/hr/cijeli_grad_se_raduje_i_pjeva.mp3" },
               { text: "Ponosimo se bogatom hrvatskom baštinom.", correct: false, audioSrc: "/audio/hr/ponosimo_se_bogatom_hrvatskom_bastinom.mp3" },
-              { text: "Vitezovi ponosno jašu.", correct: false, audioSrc: "/audio/hr/vitezovi_ponosno_jazu.mp3" },
+              { text: "Vitezovi ponosno jašu.", correct: false, audioSrc: "/audio/hr/vitezovi_ponosno_jasu.mp3" },
             ],
           },
           {
@@ -1081,7 +1081,7 @@ const unitsData: UnitDef[] = [
               { text: "Čestitamo, završili ste deveti svijet!", correct: true, audioSrc: "/audio/hr/cestitamo_zavrsili_ste_deveti_svijet.mp3" },
               { text: "Zajedno slavimo veliku pobjedu!", correct: false, audioSrc: "/audio/hr/zajedno_slavimo_veliku_pobjedu.mp3" },
               { text: "Slavlje traje do kasno u noć!", correct: false, audioSrc: "/audio/hr/slavlje_traje_do_kasno_u_noc.mp3" },
-              { text: "Vitezovi ponosno jašu!", correct: false, audioSrc: "/audio/hr/vitezovi_ponosno_jazu.mp3" },
+              { text: "Vitezovi ponosno jašu!", correct: false, audioSrc: "/audio/hr/vitezovi_ponosno_jasu.mp3" },
             ],
           },
         ],
