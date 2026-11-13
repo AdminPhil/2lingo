@@ -122,8 +122,8 @@ export const M3RoleHero = ({
           </div>
         )}
 
-        {/* Material 3 Action Card: Returning User ABOVE New User, unified h-12 (48px) */}
-        <div className="w-full bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm flex flex-col gap-3">
+        {/* Material 3 Action Stack: Returning User ABOVE New User, unified h-12 (48px) */}
+        <div className="w-full flex flex-col gap-3">
           {/* 1. Returning User FIRST (Material 3 Tonal/Outlined 48px) */}
           <SignInButton
             mode="modal"

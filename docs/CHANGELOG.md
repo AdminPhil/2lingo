@@ -4,6 +4,12 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Remove Outer Background Container on Landing Auth Actions (CR-089)
+### Changed
+- **Landing Hero Auth Stack (`components/onboarding/m3-role-hero.tsx`):** Removed the outer white card wrapper (`bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm`) around the "Already have an account? Log in" button, "Start Learning (Free)" CTA, team code toggle, and COPPA compliance footer so the controls sit cleanly on the page background.
+
+---
+
 ## [2026-11-12] - Teacher Setup Modal Polish, 50-Student Parity & Scroll-Lock Fix (CR-087)
 ### Changed
 - **Modal Corner & Border Polish (`components/admin/teacher-setup-wizard-modal.tsx`):** Updated `DialogContent` to `border-0 rounded-3xl sm:rounded-3xl overflow-hidden shadow-2xl [&>button]:text-white [&>button]:hover:text-white/90`, removed `rounded-t-3xl` from the gradient header with `shrink-0`, and moved `overflow-y-auto flex-1` to the inner body wrapper so rounded corners clip cleanly without white corner artifacts or outer borders.

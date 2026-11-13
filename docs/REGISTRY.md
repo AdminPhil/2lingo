@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 87 Completed (CR-001 to CR-087) | 0 Queued  
-> **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 0 Open  
+> **Total Change Requests:** 88 Completed | 1 Queued (CR-088)  
+> **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 1 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-087)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-089)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -99,6 +99,8 @@
 | **CR-085** | Landing / UX | **Landing Page Hero Frame, Caption & Section Heading Cleanup:** Removed the tinted gradient/grey container and ambient blur box around Paško (`pasko-hero.jpg`), replaced the pill-bordered `"Paško kaže"` box with clean borderless caption text, and converted `"Why Families & Heritage Schools Love CroLingo"` from a pill-button `<span>` into a clean typographic `<h2>` heading. | 2026-11-12 | ✅ Verified |
 | **CR-086** | Administration / Leaderboard | **Super-Admin Global Pod Visibility on Leaderboard:** Updates `getUserPods()` in `db/queries.ts` so `isSuperAdmin()` users see all configured pods and their leaderboards in `/leaderboard` (`PodSwitcher`) without needing `pod_members` rows in each pod. | 2026-11-12 | ✅ Verified |
 | **CR-087** | Administration / Classroom | **Teacher Setup Modal Polish, 50-Student Parity & Scroll-Lock Fix:** Removes `border-0` / `sm:rounded-lg` white corner artifacts on `TeacherSetupWizardModal` with crisp `rounded-3xl overflow-hidden` clipping and white close button, aligns `MAX_CLASSROOM_STUDENTS` and `classroom-roster.ts` capacity/copy from 35 to 50 students, and defers `router.refresh()` + clears Radix scroll-lock attributes on close so `/admin` remains scrollable. | 2026-11-12 | ✅ Verified |
+| **CR-088** | Learner Experience / Profile | **Self-Service Learner Avatar Picker & HUD Visibility:** Allows learners to switch their mascot avatar among the 6 curated Croatian mascots (`CLASSROOM_AVATARS`) via a new `AvatarPickerModal` and `updateLearnerAvatar` server action, and surfaces `userImageSrc` in the learner HUD. | 2026-11-12 | ⏳ Queued |
+| **CR-089** | Marketing / Onboarding UI | **Remove Outer Background Container on Landing Auth Actions:** Removes the outer white card wrapper (`bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm`) around the auth buttons and team code toggle in `M3RoleHero` (`components/onboarding/m3-role-hero.tsx`) so the actions sit cleanly on the page background. | 2026-11-12 | ✅ Verified |
 
 ---
 
@@ -152,3 +154,4 @@
 | **BUG-044** | High | **Mismatched Answer Options & Incorrect Validation for "The book is on the table":** Unit 13 Lesson 3 Challenge 2 (`"The book is on the table"`) presents prepositional phrases (`Ispod stola`, `U mojoj sobi`, `Na stolu`, `Ispod kreveta`) instead of full sentences, and selecting `Na stolu` triggers `Try again.` as incorrect. | Coordinate alignment mismatch in `scripts/refine-units-11-15.ts` (`setCoordOptions(13, 3, 1..2)`), which overwrote options (marking `Ispod kreveta` as `correct: true` on Ch 225) without updating `challenges.question` prompts from `scripts/seed.ts`. | Updated Ch 225 prompt to `"On the table"` in Neon DB & `scripts/seed.ts`; corrected `Na stolu` to `correct: true` (and `Ispod kreveta` to `false`, `U mojoj sobi` audio to `u_mojoj_sobi.mp3`) in Neon DB & `scripts/refine-units-11-15.ts`. | 2026-11-12 | ✅ Resolved |
 | **BUG-045** | High | **Curriculum Audit Sibling Defects (U13 L3 Wrong Answer & Scope Mismatch, U28 L2 Duplicate Option, U45 L4 Audio Slug Typo):** U13 L3 Ch 1 (`224`, `"Where is the dog? Under the table!"`) marks `Na stolu` as `correct: true` instead of `Ispod stola`; U13 L3 Ch 3 (`226`, `"The cat is in the room"`) accepts fragment `U sobi` and `refine-units-11-15.ts` has stale `u_sobi.mp3` for `"U mojoj sobi"`; U28 L2 Ch 2 (`484`, `"To bake"`) has duplicate distractor `Kuća`; U45 L4 Ch 1 & 4 (`766`, `769`) use `vitezovi_ponosno_jazu.mp3` for `"Vitezovi ponosno jašu"`. | `setCoordOptions` prompt/option desync in `scripts/refine-units-11-15.ts`, duplicate distractor in U28 seed, and `z`/`s` slug typo in U45 audio asset. | Aligned Ch 224/226 prompts & `Ispod stola` `correct: true` in DB/seed/refinement; replaced duplicate `Kuća` with `Škola` on Ch 484; renamed `vitezovi_ponosno_jazu.mp3` -> `vitezovi_ponosno_jasu.mp3` in `public/`, DB, seed, and audio generator. | 2026-11-12 | ✅ Resolved |
 | **BUG-046** | High | **CroLingo CI Quality Gate Workflow Failure (`ci.yml`):** Push to `main` (`9a9f0cc`) failed across Vitest (`curriculum-integrity-all-units.test.ts#L22`: missing `DATABASE_URL`), Static Audit/Typecheck/Lint, and Playwright Multi-Viewport Smoke Tests, skipping `Next.js Production Build Gate`. | `unit-and-integration-tests` job in `.github/workflows/ci.yml` omits `DATABASE_URL: ${{ secrets.DATABASE_URL }}` on `npx vitest run`; `e2e/smoke.spec.ts` asserted obsolete landing page copy. | Added `DATABASE_URL` env to Vitest CI job, guarded `curriculum-integrity-all-units.test.ts` with `describe.skipIf(!process.env.DATABASE_URL)`, and updated `e2e/smoke.spec.ts` to match current landing page (`CR-084`/`CR-085`). | 2026-11-12 | ✅ Resolved |
+| **BUG-047** | High | **`/admin` Scroll-Lock Freeze After Classroom Setup Wizard:** After completing the Teacher & Classroom Setup Wizard with multiple learners in the roster, `/admin` stops scrolling vertically. | Clicking `Finish Classroom Setup 🎉` calls `onOpenChange(false)` and `router.refresh()` synchronously in the same tick, interrupting Radix Dialog `RemoveScroll` cleanup so `<body>` retains `overflow: hidden`, `pointer-events: none`, or `data-scroll-locked`. | Pending triage | 2026-11-12 | ⏳ Queued |
