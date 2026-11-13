@@ -4,6 +4,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Landing Page Hero Frame, Caption & Section Heading Cleanup (CR-085)
+
+### Changed & Verified
+- **[CR-085] ✅ IMPLEMENTED & VERIFIED - Landing Page Visual Cleanup (`app/(marketing)/page.tsx`):**
+  - Removed the tinted gradient/grey bordered container and ambient blur layers behind Paško (`pasko-hero.jpg`) so the artwork blends cleanly onto the white page.
+  - Replaced the bordered pill box around `"Paško kaže: Idemo učiti hrvatski!"` with clean borderless caption text.
+  - Converted `"Why Families & Heritage Schools Love CroLingo"` from a pill-styled `<span>` into a clean typographic `<h2>` section heading.
+  - **Verification:** `cmd /c npx tsc --noEmit` (0 errors).
+
 ## [2026-11-12] - Landing Page Material 3 Action Parity & Parent/Teacher Setup Modal (CR-084)
 
 ### Changed & Verified

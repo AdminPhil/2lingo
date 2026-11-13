@@ -44,32 +44,25 @@ export default async function Home({ searchParams }: Props) {
         
         {/* Authentic Croatian Hero Artwork (Paško the Dalmatian) */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-          <div className="relative w-full max-w-[460px] rounded-[32px] bg-gradient-to-br from-blue-50/60 via-indigo-50/30 to-rose-50/20 border border-slate-200/80 p-6 flex flex-col items-center justify-center shadow-xs">
-            
-            {/* Ambient Tonal Glow Layers */}
-            <div className="absolute -top-12 -left-12 w-48 h-48 bg-blue-200/20 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-rose-200/20 rounded-full blur-2xl pointer-events-none" />
-
+          <div className="w-full max-w-[440px] flex flex-col items-center justify-center">
             {/* Paško Hero Image (Authentic file from public/pasko-hero.jpg) */}
             <div className="relative w-full h-[280px] sm:h-[340px] flex items-center justify-center">
               <Image
                 src="/pasko-hero.jpg"
                 fill
                 alt="Paško the Dalmatian Pup learning Croatian with CroLingo"
-                className="object-contain drop-shadow-sm select-none"
+                className="object-contain select-none"
                 priority
               />
             </div>
 
-            {/* Clean Paško Caption (No overlapping corner badges) */}
-            <div className="w-full max-w-sm mt-3 bg-white/90 backdrop-blur-xs px-4 py-2 rounded-2xl border border-slate-200 shadow-2xs flex items-center justify-center gap-2 text-center">
-              <span className="text-xs font-black text-blue-900 uppercase tracking-wider">
+            {/* Clean Paško Caption */}
+            <p className="mt-3 text-center text-xs sm:text-sm font-bold text-slate-600">
+              <span className="font-black text-blue-900 uppercase tracking-wider mr-1.5">
                 Paško kaže:
               </span>
-              <span className="text-xs font-bold text-slate-700">
-                &ldquo;Idemo učiti hrvatski!&rdquo; (Let&apos;s learn Croatian!)
-              </span>
-            </div>
+              &ldquo;Idemo učiti hrvatski!&rdquo; (Let&apos;s learn Croatian!)
+            </p>
           </div>
         </div>
 
@@ -125,11 +118,9 @@ export default async function Home({ searchParams }: Props) {
       {/* Responsive Bento Feature Grid */}
       <div className="max-w-[1120px] mx-auto w-full px-4 sm:px-6 lg:px-8 pb-14">
         <div className="mb-5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-100/80 border border-blue-200 px-3.5 py-1.5 rounded-full">
-              Why Families & Heritage Schools Love CroLingo
-            </span>
-          </div>
+          <h2 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+            Why Families &amp; Heritage Schools Love CroLingo
+          </h2>
           <span className="text-xs font-bold text-slate-500 hidden sm:inline">
             Croatian language learning sanctuary
           </span>
