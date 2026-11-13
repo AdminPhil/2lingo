@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Super-Admin Global Pod Visibility on Leaderboard (CR-086)
+
+### Changed & Verified
+- **[CR-086] ✅ IMPLEMENTED & VERIFIED - Super-Admin `getUserPods()` Parity (`db/queries.ts`):**
+  - Updated `getUserPods()` in `db/queries.ts` to check `await isSuperAdmin()`. Super-administrators now receive all configured `pods` (ordered by `pods.id`) with member counts so they can inspect any pod and its leaderboard via `/leaderboard` `PodSwitcher` even without a `pod_members` row.
+  - Non-super-admin users remain scoped strictly to their `pod_members` memberships.
+  - **Verification:** `cmd /c npx tsc --noEmit` (0 errors).
+
 ## [2026-11-12] - CroLingo CI Quality Gate Remediation (BUG-046)
 
 ### Fixed & Verified

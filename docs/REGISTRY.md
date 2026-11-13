@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 85 Completed (CR-001 to CR-085) | 0 Queued  
+> **Total Change Requests:** 86 Completed (CR-001 to CR-086) | 0 Queued  
 > **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-085)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-086)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -97,6 +97,7 @@
 | **CR-083** | Curriculum / Level 3 | **Level 3 Launch & World 9 (Sinjska Alka & Cetina Valley — Units 41–45) & Reflexive Verbs:** Launches Level 3 (*Veliki Pustolov*) with 5 new units set in Dalmatian Zagora and Sinj (300-year UNESCO equestrian knight tournament, Cetina canyon river rafting, Radmanove mlinice watermill, hearth peka, and champion's celebration). Introduces Croatian Reflexive Verbs (*se: kretati se, natjecati se, diviti se, grijati se, radovati se*), 40 bespoke vector SVGs, 160 neural audio clips, Level 3 milestone gateway, and World 9 fast-travel navigation. | 2026-11-10 | ✅ Verified |
 | **CR-084** | Landing / UX | **Landing Page Material 3 Action Parity & Parent/Teacher Setup Modal:** Reordered landing page CTAs so returning users (`Log in`) sit above new learners (`Start Learning (Free)`); fixed broken `h-13` class to unified Google Material 3 `h-12` (`48px`) button sizing across all CTAs; replaced the grey `#EEF2F8` role bar with clean white `I'm a Parent` and `I'm a Teacher` cards opening an exitable Family/Classroom Setup dialog (`Escape`, `✕`, backdrop click, or `← Back to Main Page`); and updated footer copy to `45 Units across 9 Worlds`. | 2026-11-12 | ✅ Verified |
 | **CR-085** | Landing / UX | **Landing Page Hero Frame, Caption & Section Heading Cleanup:** Removed the tinted gradient/grey container and ambient blur box around Paško (`pasko-hero.jpg`), replaced the pill-bordered `"Paško kaže"` box with clean borderless caption text, and converted `"Why Families & Heritage Schools Love CroLingo"` from a pill-button `<span>` into a clean typographic `<h2>` heading. | 2026-11-12 | ✅ Verified |
+| **CR-086** | Administration / Leaderboard | **Super-Admin Global Pod Visibility on Leaderboard:** Updates `getUserPods()` in `db/queries.ts` so `isSuperAdmin()` users see all configured pods and their leaderboards in `/leaderboard` (`PodSwitcher`) without needing `pod_members` rows in each pod. | 2026-11-12 | ✅ Verified |
 
 ---
 

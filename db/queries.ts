@@ -3,6 +3,7 @@ import { and, eq, gte, inArray } from "drizzle-orm";
 import { auth } from "@clerk/nextjs";
 
 import db from "@/db/drizzle";
+import { isSuperAdmin } from "@/lib/admin";
 import { shuffleArray } from "@/lib/utils";
 import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
 import { 
@@ -325,6 +326,25 @@ export const getUserPods = cache(async () => {
 
   if (!userId) {
     return [];
+  }
+
+  const superAdmin = await isSuperAdmin();
+  if (superAdmin) {
+    const allPods = await db.query.pods.findMany({
+      with: {
+        members: true,
+      },
+      orderBy: (pods, { asc }) => [asc(pods.id)],
+    });
+
+    return allPods.map((pod) => {
+      const ownMembership = pod.members.find((m) => m.userId === userId);
+      return {
+        pod,
+        role: ownMembership?.role || "owner",
+        memberCount: pod.members.length,
+      };
+    });
   }
 
   const memberships = await db.query.podMembers.findMany({
