@@ -21,7 +21,7 @@ export const CLASSROOM_XP_TIERS = [
   {
     targetXp: 10000,
     label: "Large Class",
-    description: "21–35 students • Full Elementary Class",
+    description: "21–50 students • Full Elementary Class",
   },
 ] as const;
 
@@ -100,13 +100,13 @@ export function buildClassroomPassword(fullName: string, index: number): string 
 }
 
 /**
- * Parses a multi-line or comma-separated bulk list of student names into up to `maxStudents` (default 35)
+ * Parses a multi-line or comma-separated bulk list of student names into up to `maxStudents` (default 50)
  * ready-to-provision classroom roster rows with Croatian diacritic-safe usernames and round-robin avatars.
  */
 export function parseBulkClassroomRoster(
   rawInput: string,
   inviteCode: string = "HRVAT1",
-  maxStudents: number = 35
+  maxStudents: number = 50
 ): ClassroomRosterDraft[] {
   const rawNames = rawInput
     .split(/[\r\n,;]+/)

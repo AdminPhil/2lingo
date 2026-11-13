@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 86 Completed (CR-001 to CR-086) | 0 Queued  
+> **Total Change Requests:** 87 Completed (CR-001 to CR-087) | 0 Queued  
 > **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 0 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-086)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-087)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -98,6 +98,7 @@
 | **CR-084** | Landing / UX | **Landing Page Material 3 Action Parity & Parent/Teacher Setup Modal:** Reordered landing page CTAs so returning users (`Log in`) sit above new learners (`Start Learning (Free)`); fixed broken `h-13` class to unified Google Material 3 `h-12` (`48px`) button sizing across all CTAs; replaced the grey `#EEF2F8` role bar with clean white `I'm a Parent` and `I'm a Teacher` cards opening an exitable Family/Classroom Setup dialog (`Escape`, `✕`, backdrop click, or `← Back to Main Page`); and updated footer copy to `45 Units across 9 Worlds`. | 2026-11-12 | ✅ Verified |
 | **CR-085** | Landing / UX | **Landing Page Hero Frame, Caption & Section Heading Cleanup:** Removed the tinted gradient/grey container and ambient blur box around Paško (`pasko-hero.jpg`), replaced the pill-bordered `"Paško kaže"` box with clean borderless caption text, and converted `"Why Families & Heritage Schools Love CroLingo"` from a pill-button `<span>` into a clean typographic `<h2>` heading. | 2026-11-12 | ✅ Verified |
 | **CR-086** | Administration / Leaderboard | **Super-Admin Global Pod Visibility on Leaderboard:** Updates `getUserPods()` in `db/queries.ts` so `isSuperAdmin()` users see all configured pods and their leaderboards in `/leaderboard` (`PodSwitcher`) without needing `pod_members` rows in each pod. | 2026-11-12 | ✅ Verified |
+| **CR-087** | Administration / Classroom | **Teacher Setup Modal Polish, 50-Student Parity & Scroll-Lock Fix:** Removes `border-0` / `sm:rounded-lg` white corner artifacts on `TeacherSetupWizardModal` with crisp `rounded-3xl overflow-hidden` clipping and white close button, aligns `MAX_CLASSROOM_STUDENTS` and `classroom-roster.ts` capacity/copy from 35 to 50 students, and defers `router.refresh()` + clears Radix scroll-lock attributes on close so `/admin` remains scrollable. | 2026-11-12 | ✅ Verified |
 
 ---
 

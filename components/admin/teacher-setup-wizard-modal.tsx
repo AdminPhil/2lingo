@@ -66,7 +66,7 @@ type CreatedClassroomStudent = {
   qrCodeUrl?: string;
 };
 
-const MAX_CLASSROOM_STUDENTS = 35;
+const MAX_CLASSROOM_STUDENTS = 50;
 const BATCH_CHUNK_SIZE = 5;
 
 export const TeacherSetupWizardModal = ({
@@ -118,6 +118,18 @@ export const TeacherSetupWizardModal = ({
       setOrigin(window.location.origin);
     }
   }, []);
+
+  // Ensure Radix RemoveScroll never leaves body scroll locked after modal closes
+  useEffect(() => {
+    if (!isOpen && typeof document !== "undefined") {
+      const timer = setTimeout(() => {
+        document.body.style.overflow = "";
+        document.body.style.pointerEvents = "";
+        document.body.removeAttribute("data-scroll-locked");
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (inviteCode) {
@@ -405,9 +417,9 @@ export const TeacherSetupWizardModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[92vh] overflow-y-auto p-0 rounded-3xl border-2 border-indigo-200 shadow-2xl">
+      <DialogContent className="max-w-4xl max-h-[92vh] flex flex-col overflow-hidden p-0 border-0 rounded-3xl sm:rounded-3xl shadow-2xl [&>button]:text-white [&>button]:hover:text-white/90">
         {/* Top Progress Header */}
-        <div className="bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-900 p-6 text-white rounded-t-3xl print:hidden">
+        <div className="bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-900 p-6 text-white shrink-0 print:hidden">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2.5">
               <div className="h-10 w-10 rounded-2xl bg-white/15 flex items-center justify-center border border-white/20">
@@ -443,7 +455,7 @@ export const TeacherSetupWizardModal = ({
             {currentStep === 1 &&
               "Step 1: Name your Croatian classroom, customize your 6-letter chalkboard code, and set a weekly class XP goal."}
             {currentStep === 2 &&
-              "Step 2: Paste your student list (up to 35 students) to auto-generate Croatian diacritic-safe usernames, PINs, and mascots."}
+              "Step 2: Paste your student list (up to 50 students) to auto-generate Croatian diacritic-safe usernames, PINs, and mascots."}
             {currentStep === 3 &&
               "Step 3: Print 8-Up Lanyard QR Badges, a 1-Page Teacher Master Roster Key, or export your CSV gradebook."}
             {currentStep === 4 &&
@@ -451,7 +463,7 @@ export const TeacherSetupWizardModal = ({
           </DialogDescription>
         </div>
 
-        <div className="p-6 sm:p-8">
+        <div className="p-6 sm:p-8 overflow-y-auto flex-1">
           {/* ========================================================= */}
           {/* STEP 1: CLASSROOM IDENTITY & WEEKLY CLASS XP GOAL         */}
           {/* ========================================================= */}
@@ -572,7 +584,7 @@ export const TeacherSetupWizardModal = ({
                   <div>
                     <h4 className="font-black text-sm text-indigo-950 flex items-center gap-1.5">
                       <FileSpreadsheet className="h-4 w-4 text-indigo-600" />
-                      Quick Paste Student Roster (Up to 35 Students)
+                      Quick Paste Student Roster (Up to 50 Students)
                     </h4>
                     <p className="text-xs text-slate-600">
                       Paste student names (one per line or comma-separated). Croatian letters (č, ć, š, ž, đ) are automatically normalized for login usernames!
@@ -1180,7 +1192,7 @@ export const TeacherSetupWizardModal = ({
                   variant="primary"
                   onClick={() => {
                     onOpenChange(false);
-                    router.refresh();
+                    setTimeout(() => router.refresh(), 150);
                   }}
                   className="bg-emerald-600 hover:bg-emerald-700 font-black px-8 h-12 rounded-xl cursor-pointer"
                 >

@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - Teacher Setup Modal Polish, 50-Student Parity & Scroll-Lock Fix (CR-087)
+### Changed
+- **Modal Corner & Border Polish (`components/admin/teacher-setup-wizard-modal.tsx`):** Updated `DialogContent` to `border-0 rounded-3xl sm:rounded-3xl overflow-hidden shadow-2xl [&>button]:text-white [&>button]:hover:text-white/90`, removed `rounded-t-3xl` from the gradient header with `shrink-0`, and moved `overflow-y-auto flex-1` to the inner body wrapper so rounded corners clip cleanly without white corner artifacts or outer borders.
+- **50-Student Classroom Capacity Parity (`components/admin/teacher-setup-wizard-modal.tsx`, `lib/classroom-roster.ts`, `tests/unit/classroom-roster.test.ts`):** Raised `MAX_CLASSROOM_STUDENTS` and `parseBulkClassroomRoster` default `maxStudents` from `35` to `50` to match `MAX_CLASSROOM_POD_MEMBERS = 50` in `actions/child-account.ts`, and updated Step 1 (`21–50 students • Full Elementary Class`), Step 2 copy, and unit tests accordingly.
+- **Post-Setup `/admin` Scroll-Lock Fix (`components/admin/teacher-setup-wizard-modal.tsx`):** Deferred `router.refresh()` by 150ms after `onOpenChange(false)` on the Finish action and added a defensive `!isOpen` `useEffect` that clears `document.body.style.overflow`, `document.body.style.pointerEvents`, and `data-scroll-locked` so `/admin` remains scrollable after completing classroom setup.
+
+---
+
 ## [2026-11-12] - Super-Admin Global Pod Visibility on Leaderboard (CR-086)
 
 ### Changed & Verified

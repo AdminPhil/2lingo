@@ -57,10 +57,10 @@ describe("Classroom Roster Parser & Utilities (CR-069)", () => {
     expect(roster[6].avatar).toBe(CLASSROOM_AVATARS[0].src);
   });
 
-  it("enforces maxStudents cap (default 35)", () => {
-    const fortyLines = Array.from({ length: 40 }, (_, i) => `Učenik Broj ${i + 1}`).join("\n");
-    const roster = parseBulkClassroomRoster(fortyLines, "SKOLA1");
-    expect(roster).toHaveLength(35);
+  it("enforces maxStudents cap (default 50)", () => {
+    const fiftyFiveLines = Array.from({ length: 55 }, (_, i) => `Učenik Broj ${i + 1}`).join("\n");
+    const roster = parseBulkClassroomRoster(fiftyFiveLines, "SKOLA1");
+    expect(roster).toHaveLength(50);
   });
 
   it("formats provisioned students into a valid CSV string", () => {
