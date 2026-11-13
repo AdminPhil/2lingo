@@ -55,6 +55,8 @@ jobs:
         run: npm ci
 
       - name: 🧪 Execute all Vitest suites
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx vitest run
 
   e2e-smoke-tests:

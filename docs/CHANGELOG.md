@@ -4,6 +4,15 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-12] - CroLingo CI Quality Gate Remediation (BUG-046)
+
+### Fixed & Verified
+- **[BUG-046] ✅ RESOLVED - CI Quality Gate Workflow (`ci.yml`, `curriculum-integrity-all-units.test.ts`, `e2e/smoke.spec.ts`):**
+  - Added `DATABASE_URL: ${{ secrets.DATABASE_URL }}` to the Vitest step in `.github/workflows/ci.yml`.
+  - Guarded `tests/integration/curriculum-integrity-all-units.test.ts` with `describe.skipIf(!process.env.DATABASE_URL)` and moved `neon()` initialization inside `beforeAll`.
+  - Updated obsolete October 2026 landing page selectors in `e2e/smoke.spec.ts` (`R4-SMOKE-01`, `R4-SMOKE-02`, `R4-SMOKE-03`) to match the `CR-084`/`CR-085` landing page.
+  - **Verification:** `tsc --noEmit` (0 errors), `npm run lint` (0 errors), `vitest run tests/integration/curriculum-integrity-all-units.test.ts` (6/6 passed).
+
 ## [2026-11-12] - Landing Page Hero Frame, Caption & Section Heading Cleanup (CR-085)
 
 ### Changed & Verified

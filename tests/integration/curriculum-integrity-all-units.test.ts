@@ -18,12 +18,12 @@ function normalizeWord(s: string): string {
     .replace(/[^a-z0-9]/g, "");
 }
 
-describe("BUG-037 Master Curriculum Integrity Suite (All 25 Units)", () => {
-  const sql = neon(process.env.DATABASE_URL || "");
+describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity Suite (All 25 Units)", () => {
   let challenges: any[] = [];
   let optionsByChallenge = new Map<number, any[]>();
 
   beforeAll(async () => {
+    const sql = neon(process.env.DATABASE_URL!);
     const rawChallenges = await sql`
       SELECT c.id, c.order as c_order, c.question, c.type, l.order as l_order, u.order as u_order
       FROM challenges c

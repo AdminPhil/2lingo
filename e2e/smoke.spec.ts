@@ -47,37 +47,39 @@ test.describe("E2E Smoke Tests - Public Landing Page & Viewports", () => {
     await expect(heritageBadge).toBeVisible();
 
     // Playful bold headline
-    const headline = page.locator("h1:has-text('Bok! Learn Croatian the playful way.')");
+    const headline = page.locator("h1:has-text('Bok!')");
     await expect(headline).toBeVisible();
   });
 
-  test("R4-SMOKE-02: Renders dual child-friendly action gates and parent intent link", async ({ page }) => {
+  test("R4-SMOKE-02: Renders returning-first action gates and Parent/Teacher cards", async ({ page }) => {
     await page.goto("/");
     await page.waitForLoadState("domcontentloaded");
 
-    // Gate 1: Returning Learner Button
-    const returningLearnerBtn = page.getByRole("button", { name: /I Already Have an Account/i });
+    // Gate 1: Returning Learner Button (above new learner)
+    const returningLearnerBtn = page.getByRole("button", { name: /Already have an account\?/i });
     await expect(returningLearnerBtn).toBeVisible({ timeout: 10000 });
 
     // Gate 2: New Learner Button
-    const newLearnerBtn = page.getByRole("button", { name: /I'm New Here! Start Learning/i });
+    const newLearnerBtn = page.getByRole("button", { name: /Start Learning \(Free\)/i });
     await expect(newLearnerBtn).toBeVisible({ timeout: 10000 });
 
-    // Secondary Parent Intent Gate
-    const parentCircleBtn = page.getByRole("button", { name: /Parents & Educators: Set Up Family Circle/i });
+    // Parent & Teacher Setup Cards
+    const parentCircleBtn = page.getByRole("button", { name: /I'm a Parent/i });
     await expect(parentCircleBtn).toBeVisible({ timeout: 10000 });
 
     // Free reassurance text
-    const reassuranceText = page.locator("text=Free for families & learners");
+    const reassuranceText = page.locator("text=100% Free • COPPA Compliant • No Ads");
     await expect(reassuranceText).toBeVisible({ timeout: 10000 });
   });
 
-  test("R4-SMOKE-03: Header navigation provides accessible Parent Portal link", async ({ page }) => {
+  test("R4-SMOKE-03: Parent and Teacher setup cards open exitable setup dialog", async ({ page }) => {
     await page.goto("/");
     await page.waitForLoadState("domcontentloaded");
 
-    const parentPortalBtn = page.getByRole("button", { name: /Parent Portal/i }).first();
-    await expect(parentPortalBtn).toBeVisible({ timeout: 10000 });
+    const teacherBtn = page.getByRole("button", { name: /I'm a Teacher/i }).first();
+    await expect(teacherBtn).toBeVisible({ timeout: 10000 });
+    await teacherBtn.click();
+    await expect(page.getByText("Classroom Setup")).toBeVisible({ timeout: 5000 });
   });
 
   test("R4-SMOKE-04: Footer renders cultural badge and feature tags on desktop viewports", async ({ page }) => {
