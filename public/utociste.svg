@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#065F46"/>
+  <!-- Wooden sanctuary fence -->
+  <line x1="4" y1="22" x2="32" y2="22" stroke="#92400E" stroke-width="2"/>
+  <line x1="4" y1="28" x2="32" y2="28" stroke="#92400E" stroke-width="2"/>
+  <rect x="6" y="18" width="3" height="14" fill="#78350F"/>
+  <rect x="27" y="18" width="3" height="14" fill="#78350F"/>
+  <!-- Timber shelter roof & heart emblem -->
+  <polygon points="8,16 18,7 28,16" fill="#B45309"/>
+  <rect x="11" y="16" width="14" height="12" fill="#D97706"/>
+  <circle cx="18" cy="22" r="3" fill="#FEF3C7"/>
+</svg>

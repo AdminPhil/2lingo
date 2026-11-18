@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-17] - World 12 (Velebit, Paklenica & Gacka, Units 56–60) & QA Hardening (CR-093)
+### Added
+- **World 12 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-56-60.ts`):** Registered World 12 (`id: "velebit-paklenica-gacka"`, `stage: 12`, `unitRange: [56, 60]`, `solidBg: "bg-stone-800"`, `gradient: "from-stone-900 via-emerald-900 to-sky-900"`, `accentEmoji: "🏔️"`) with scenery cases `56`–`60`, and additively seeded Units 56–60 (20 lessons, 80 challenges, 320 options, 100% net-new targets across all 4 lessons) while preserving Units 1–55 and all active learner progress.
+- **World 12 Visual & Audio Assets (`scripts/generate-world12-svgs.ts`, `scripts/generate-world12-audio.py`):** Generated 20 unique 36×36 vector SVGs (`vrh.svg`, `degenija.svg`, `greben.svg`, `bura.svg`, `penjac.svg`, `uze.svg`, `spilja.svg`, `bukva.svg`, `medvjedic.svg`, `utociste.svg`, `ris.svg`, `sova.svg`, `vrilo.svg`, `pastrva.svg`, `potok.svg`, `mostic.svg`, `koliba.svg`, `krumpir.svg`, `skripavac.svg`, `vuna.svg`) and synthesized 100 net-new Croatian neural TTS `.mp3` files (`hr-HR-GabrijelaNeural`) in `public/audio/hr/`.
+- **Seed-to-DB Drift & Scenery QA Guards (`scripts/audit-curriculum-rules.ts`, `tests/unit/theme-registry.test.ts`):** Added Check 2e verifying 1-to-1 parity between modern seed scripts (`seed-units-46-50.ts`, `seed-units-51-55.ts`, `seed-units-56-60.ts`) and live Neon DB rows, upgraded `runOfflineSeedAssetAudit()` with cross-seed target uniqueness checks for zero-secret CI, and added `getUnitScenery` coverage tests across `ALL_STAGES`.
+
+---
+
 ## [2026-11-17] - Zero-Secret GitHub Actions Hardening & Runner Cleanup (BUG-048)
 ### Fixed
 - **Zero-Secret CI Build & Offline Static Curriculum Audit (`db/drizzle.ts`, `scripts/audit-curriculum-rules.ts`, `.github/workflows/ci.yml`):** Added safe placeholder fallback in `db/drizzle.ts` so `next build` succeeds without production DB secrets in GitHub; added Offline Static Seed & Asset Audit mode to `scripts/audit-curriculum-rules.ts` (verifying 4,442 `.svg`/`.mp3` asset references across 9 seed scripts when `DATABASE_URL` is absent while preserving full live Neon DB audit locally); and wired safe build/E2E fallbacks in `ci.yml`.

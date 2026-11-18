@@ -246,6 +246,26 @@ export const LEVEL_3_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-indigo-800 border-indigo-500",
     nodeArrowBorder: "border-t-indigo-500",
   },
+  // World 12 (CR-093): Velebit Mountains, Paklenica & Gacka River (Units 56–60)
+  {
+    id: "velebit-paklenica-gacka",
+    stage: 12,
+    stageName: "Velebit & Gacka",
+    stageBadgeLabel: "World 12: Velebit & Gacka • Alpine Peaks, Paklenica & Springs",
+    stageCroatianName: "World 12: Velebit & Gacka • Velebit, Paklenica i rijeka Gacka",
+    unitRange: [56, 60],
+    solidBg: "bg-stone-800",
+    gradient: "from-stone-900 via-emerald-900 to-sky-900",
+    badgeBg: "bg-black/35 text-emerald-100 border-emerald-400/40",
+    accentEmoji: "🏔️",
+    buttonClass: "bg-white text-stone-950 hover:bg-stone-100 border-stone-300",
+    accentBorder: "border-emerald-400/50",
+    nodeActiveBg: "bg-stone-700 hover:bg-stone-700/90 border-stone-900 active:border-b-0 text-white",
+    nodeBorderColor: "border-stone-900",
+    nodeStrokeColor: "#44403c",
+    nodeBadgeClasses: "bg-white text-stone-800 border-stone-500",
+    nodeArrowBorder: "border-t-stone-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES, ...LEVEL_3_STAGES];
@@ -1012,6 +1032,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Međimurska tambura",
           title: "Tambura",
           badgeEmoji: "🎶",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 56:
+      return {
+        left: {
+          imageSrc: "/vrh.svg",
+          alt: "Velebitski vrh",
+          title: "Vrh",
+          badgeEmoji: "🏔️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/degenija.svg",
+          alt: "Velebitska degenija",
+          title: "Degenija",
+          badgeEmoji: "🌼",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 57:
+      return {
+        left: {
+          imageSrc: "/penjac.svg",
+          alt: "Penjač u Paklenici",
+          title: "Penjač",
+          badgeEmoji: "🧗",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/spilja.svg",
+          alt: "Špilja Manita peć",
+          title: "Špilja",
+          badgeEmoji: "🦇",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 58:
+      return {
+        left: {
+          imageSrc: "/medvjedic.svg",
+          alt: "Kuterevski medvjedić",
+          title: "Medvjedić",
+          badgeEmoji: "🐻",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/sova.svg",
+          alt: "Šumska sova",
+          title: "Sova",
+          badgeEmoji: "🦉",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 59:
+      return {
+        left: {
+          imageSrc: "/vrilo.svg",
+          alt: "Majerovo vrilo",
+          title: "Vrilo",
+          badgeEmoji: "💧",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/pastrva.svg",
+          alt: "Gacka pastrva",
+          title: "Pastrva",
+          badgeEmoji: "🐟",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 60:
+      return {
+        left: {
+          imageSrc: "/koliba.svg",
+          alt: "Lička koliba",
+          title: "Koliba",
+          badgeEmoji: "🪵",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/krumpir.svg",
+          alt: "Lički krumpir",
+          title: "Krumpir",
+          badgeEmoji: "🥔",
           topOffsetClass: "top-44",
         },
       };

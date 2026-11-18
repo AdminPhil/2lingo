@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#0284C7"/>
+  <!-- Green banks -->
+  <rect x="2" y="22" width="7" height="12" fill="#16A34A"/>
+  <rect x="27" y="22" width="7" height="12" fill="#16A34A"/>
+  <!-- Arched wooden bridge deck -->
+  <path d="M5 23c8-5 18-5 26 0" fill="none" stroke="#92400E" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Wooden railing -->
+  <path d="M6 17c7-4 17-4 24 0" fill="none" stroke="#D97706" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="9" y1="16" x2="9" y2="21" stroke="#B45309" stroke-width="1.5"/>
+  <line x1="18" y1="14" x2="18" y2="19.5" stroke="#B45309" stroke-width="1.5"/>
+  <line x1="27" y1="16" x2="27" y2="21" stroke="#B45309" stroke-width="1.5"/>
+</svg>

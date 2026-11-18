@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#57534E"/>
+  <!-- Cave dark opening -->
+  <path d="M6 34c0-14 5-22 12-22s12 8 12 22z" fill="#0F172A"/>
+  <!-- Stalactites hanging from arch -->
+  <polygon points="12,13 13.5,20 15,13" fill="#D6D3D1"/>
+  <polygon points="17,12 18.5,21 20,12" fill="#E7E5E4"/>
+  <polygon points="22,14 23.5,19 25,14" fill="#D6D3D1"/>
+  <!-- Stalagmites rising -->
+  <polygon points="10,34 12,26 14,34" fill="#A8A29E"/>
+  <polygon points="23,34 25,27 27,34" fill="#A8A29E"/>
+</svg>

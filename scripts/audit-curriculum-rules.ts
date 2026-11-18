@@ -10,6 +10,33 @@ const rawDbUrl = (process.env.DATABASE_URL || "").trim().replace(/^["']|["']$/g,
 const isOfflinePlaceholder =
   !rawDbUrl || rawDbUrl.includes("placeholder@localhost");
 
+function extractCorrectTargetsFromSeed(content: string): string[] {
+  const targets: string[] = [];
+  const regex = /\{\s*text:\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)')\s*,\s*correct:\s*true\b/g;
+  for (const m of Array.from(content.matchAll(regex))) {
+    const raw = (m[1] ?? m[2] ?? "").replace(/\\(["'])/g, "$1");
+    if (raw.trim()) {
+      targets.push(raw.trim());
+    }
+  }
+  return targets;
+}
+
+function discoverModernSeedFiles(scriptsDir: string): { file: string; start: number; end: number }[] {
+  const result: { file: string; start: number; end: number }[] = [];
+  for (const f of fs.readdirSync(scriptsDir)) {
+    const match = f.match(/^seed-units-(\d+)-(\d+)\.ts$/);
+    if (match) {
+      const start = parseInt(match[1], 10);
+      const end = parseInt(match[2], 10);
+      if (start >= 46) {
+        result.push({ file: f, start, end });
+      }
+    }
+  }
+  return result.sort((a, b) => a.start - b.start);
+}
+
 function runOfflineSeedAssetAudit(): number {
   console.log("ℹ️ DATABASE_URL not set — running Offline Static Seed & Asset Audit...\n");
   let errors = 0;
@@ -37,7 +64,27 @@ function runOfflineSeedAssetAudit(): number {
       }
     }
   }
-  console.log(`Checked ${checkedAssets} asset references across ${seedFiles.length} seed scripts.`);
+
+  // Cross-seed duplicate correct target check for modern worlds (Units >= 46)
+  const modernSeeds = discoverModernSeedFiles(scriptsDir);
+  const seenTargets = new Map<string, string>();
+  for (const { file } of modernSeeds) {
+    const content = fs.readFileSync(path.join(scriptsDir, file), "utf-8");
+    const targets = extractCorrectTargetsFromSeed(content);
+    const seenInSameSeed = new Set<string>();
+    for (const t of targets) {
+      const norm = t.toLowerCase();
+      if (seenTargets.has(norm) && !seenInSameSeed.has(norm)) {
+        console.error(`[OFFLINE AUDIT VIOLATION] ${file}: Duplicate correct target "${t}" already present in ${seenTargets.get(norm)}`);
+        errors++;
+      } else if (!seenTargets.has(norm)) {
+        seenTargets.set(norm, file);
+      }
+      seenInSameSeed.add(norm);
+    }
+  }
+
+  console.log(`Checked ${checkedAssets} asset references across ${seedFiles.length} seed scripts (${modernSeeds.length} modern world seeds >= Unit 46).`);
   return errors;
 }
 
@@ -353,6 +400,45 @@ async function auditAllRules() {
         totalErrors++;
       } else {
         seenTexts.add(normText);
+      }
+    }
+  }
+
+  // 2e. Seed-to-DB Parity / Drift Guard for modern world seeds (Units >= 46)
+  if (fs.existsSync(scriptsDir)) {
+    const modernSeeds = discoverModernSeedFiles(scriptsDir);
+    for (const { file, start, end } of modernSeeds) {
+      const content = fs.readFileSync(path.join(scriptsDir, file), "utf8");
+      const seedTargets = extractCorrectTargetsFromSeed(content).map((t) => t.toLowerCase());
+      const seedSet = new Set(seedTargets);
+
+      const dbTargets: string[] = [];
+      for (const c of challenges) {
+        if (c.u_order >= start && c.u_order <= end) {
+          const correctOpts = (optionsByChallenge.get(c.id) || []).filter((o: any) => o.correct === true);
+          for (const opt of correctOpts) {
+            dbTargets.push((opt.text || "").trim().toLowerCase());
+          }
+        }
+      }
+      const dbSet = new Set(dbTargets);
+
+      if (seedTargets.length !== dbTargets.length) {
+        console.error(`[RULE VIOLATION: Seed-to-DB Drift] ${file} (Units ${start}-${end}): seed has ${seedTargets.length} correct targets, DB has ${dbTargets.length}`);
+        totalErrors++;
+      }
+
+      for (const t of Array.from(seedSet)) {
+        if (!dbSet.has(t)) {
+          console.error(`[RULE VIOLATION: Seed-to-DB Drift] ${file} (Units ${start}-${end}): target "${t}" present in seed script but missing in DB`);
+          totalErrors++;
+        }
+      }
+      for (const t of Array.from(dbSet)) {
+        if (!seedSet.has(t)) {
+          console.error(`[RULE VIOLATION: Seed-to-DB Drift] ${file} (Units ${start}-${end}): target "${t}" present in DB but missing in seed script`);
+          totalErrors++;
+        }
       }
     }
   }

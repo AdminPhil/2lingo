@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#1E293B"/>
+  <rect x="2" y="27" width="32" height="7" fill="#E2E8F0"/>
+  <!-- Log cabin body -->
+  <rect x="8" y="16" width="20" height="12" fill="#92400E"/>
+  <line x1="8" y1="20" x2="28" y2="20" stroke="#78350F" stroke-width="1.2"/>
+  <line x1="8" y1="24" x2="28" y2="24" stroke="#78350F" stroke-width="1.2"/>
+  <!-- Steep pitched roof -->
+  <polygon points="6,16 18,7 30,16" fill="#44403C"/>
+  <polyline points="6,16 18,7 30,16" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <!-- Warm glowing window & door -->
+  <rect x="11" y="18" width="4" height="4" fill="#FACC15"/>
+  <rect x="19" y="19" width="5" height="9" fill="#451A03"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0369A1" stroke="#38BDF8" stroke-width="1.5"/>
+  <!-- Trout body -->
+  <path d="M7 18c4-5 13-5 18 0-5 5-14 5-18 0z" fill="#94A3B8"/>
+  <!-- Tail fin -->
+  <polygon points="24,18 30,13 30,23" fill="#64748B"/>
+  <!-- Dorsal fin -->
+  <polygon points="15,14 19,10 21,14" fill="#64748B"/>
+  <!-- Trout spots -->
+  <circle cx="14" cy="17" r="0.9" fill="#EF4444"/>
+  <circle cx="17" cy="18.5" r="0.9" fill="#1E293B"/>
+  <circle cx="20" cy="16.8" r="0.9" fill="#EF4444"/>
+  <!-- Eye -->
+  <circle cx="10.5" cy="17" r="1" fill="#0F172A"/>
+</svg>

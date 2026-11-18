@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <!-- Sweeping wind streamlines -->
+  <path d="M6 13h16c3 0 4-3 2-5-1.5-1.5-4 0-3 2" fill="none" stroke="#BAE6FD" stroke-width="2" stroke-linecap="round"/>
+  <path d="M5 19h22c3 0 4 3 2 5-1.5 1.5-4 0-3-2" fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M8 25h12c2 0 3 2 1.5 3.5" fill="none" stroke="#7DD3FC" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

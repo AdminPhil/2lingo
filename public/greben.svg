@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#312E81"/>
+  <!-- Sunset glow -->
+  <circle cx="26" cy="10" r="3.5" fill="#F59E0B"/>
+  <!-- Distant ridge -->
+  <polygon points="2,34 2,20 9,14 15,19 22,12 28,17 34,13 34,34" fill="#475569"/>
+  <!-- Foreground jagged karst ridge -->
+  <polygon points="2,34 2,24 8,18 14,22 20,15 26,21 34,18 34,34" fill="#1E293B"/>
+  <polyline points="2,24 8,18 14,22 20,15 26,21 34,18" fill="none" stroke="#CBD5E1" stroke-width="1"/>
+</svg>

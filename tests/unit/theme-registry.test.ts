@@ -5,6 +5,7 @@ import {
   LEVEL_3_STAGES,
   ALL_STAGES,
   getStageThemeForUnit,
+  getUnitScenery,
   RegionTheme,
 } from "@/lib/theme-registry";
 
@@ -296,6 +297,28 @@ describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () =>
         }
         expect(stage.nodeStrokeColor).toMatch(/^#[0-9a-fA-F]{6}$/);
       }
+    });
+
+    it("returns valid unit scenery for every unit 1..maxUnit across ALL_STAGES (non-null for all units >= 16 and stage-start units)", () => {
+      const maxUnit = ALL_STAGES[ALL_STAGES.length - 1].unitRange[1];
+      for (let unit = 1; unit <= maxUnit; unit++) {
+        const scenery = getUnitScenery(unit);
+        if (unit >= 16 || unit === 1 || unit === 6 || unit === 11) {
+          expect(scenery, `Unit ${unit} missing scenery`).not.toBeNull();
+        }
+        if (scenery) {
+          expect(scenery.left || scenery.right, `Unit ${unit} has neither left nor right scenery`).toBeDefined();
+          for (const side of [scenery.left, scenery.right]) {
+            if (side) {
+              expect(side.imageSrc.trim().length).toBeGreaterThan(0);
+              expect(side.alt.trim().length).toBeGreaterThan(0);
+              expect(side.title.trim().length).toBeGreaterThan(0);
+              expect(side.topOffsetClass.trim().length).toBeGreaterThan(0);
+            }
+          }
+        }
+      }
+      expect(getUnitScenery(maxUnit + 1)).toBeNull();
     });
   });
 });

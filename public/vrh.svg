@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#0369A1"/>
+  <!-- Limestone peak -->
+  <polygon points="3,34 18,7 33,34" fill="#78716C"/>
+  <polygon points="18,7 33,34 21,34" fill="#57534E"/>
+  <!-- Snow cap -->
+  <polygon points="18,7 13,16 16,15 19,17 23,16" fill="#F8FAFC"/>
+  <!-- Pine silhouettes at base -->
+  <polygon points="6,34 9,26 12,34" fill="#14532D"/>
+  <polygon points="24,34 27,27 30,34" fill="#14532D"/>
+</svg>
