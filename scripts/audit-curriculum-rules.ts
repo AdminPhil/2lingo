@@ -6,7 +6,40 @@ import { neon } from "@neondatabase/serverless";
 import * as fs from "fs";
 import * as path from "path";
 
-const sql = neon(process.env.DATABASE_URL || "");
+const rawDbUrl = (process.env.DATABASE_URL || "").trim().replace(/^["']|["']$/g, "");
+const isOfflinePlaceholder =
+  !rawDbUrl || rawDbUrl.includes("placeholder@localhost");
+
+function runOfflineSeedAssetAudit(): number {
+  console.log("ℹ️ DATABASE_URL not set — running Offline Static Seed & Asset Audit...\n");
+  let errors = 0;
+  const scriptsDir = path.join(process.cwd(), "scripts");
+  const seedFiles = fs
+    .readdirSync(scriptsDir)
+    .filter((f) => f.startsWith("seed") && f.endsWith(".ts"));
+
+  let checkedAssets = 0;
+  for (const file of seedFiles) {
+    const content = fs.readFileSync(path.join(scriptsDir, file), "utf-8");
+    const imgMatches = Array.from(content.matchAll(/imageSrc:\s*["']([^"']+)["']/g));
+    const audioMatches = Array.from(content.matchAll(/audioSrc:\s*["']([^"']+)["']/g));
+
+    for (const m of [...imgMatches, ...audioMatches]) {
+      const rel = m[1].replace(/^\//, "");
+      const fullPath = path.join(process.cwd(), "public", rel);
+      checkedAssets++;
+      if (!fs.existsSync(fullPath)) {
+        console.error(`[OFFLINE AUDIT VIOLATION] ${file}: Missing asset public/${rel}`);
+        errors++;
+      } else if (fs.statSync(fullPath).size === 0) {
+        console.error(`[OFFLINE AUDIT VIOLATION] ${file}: Empty (0-byte) asset public/${rel}`);
+        errors++;
+      }
+    }
+  }
+  console.log(`Checked ${checkedAssets} asset references across ${seedFiles.length} seed scripts.`);
+  return errors;
+}
 
 function normalizeWord(s: string): string {
   return s.toLowerCase()
@@ -30,6 +63,18 @@ function normalizeDiacritics(s: string): string {
 async function auditAllRules() {
   console.log("=== 🛡️ 2LINGO PRE-FLIGHT CURRICULUM & ARCHITECTURE AUDIT ===\n");
 
+  if (isOfflinePlaceholder) {
+    const offlineErrors = runOfflineSeedAssetAudit();
+    if (offlineErrors === 0) {
+      console.log("\n✅ OFFLINE STATIC AUDIT PASSED: 0 missing/empty assets.");
+      process.exit(0);
+    } else {
+      console.error(`\n❌ OFFLINE STATIC AUDIT FAILED: ${offlineErrors} asset error(s)!`);
+      process.exit(1);
+    }
+  }
+
+  const sql = neon(rawDbUrl);
   let totalErrors = 0;
 
   // 1. Check Units, Lessons, Challenges counts

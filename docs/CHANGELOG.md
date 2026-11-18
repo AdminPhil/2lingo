@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-17] - Zero-Secret GitHub Actions Hardening & Runner Cleanup (BUG-048)
+### Fixed
+- **Zero-Secret CI Build & Offline Static Curriculum Audit (`db/drizzle.ts`, `scripts/audit-curriculum-rules.ts`, `.github/workflows/ci.yml`):** Added safe placeholder fallback in `db/drizzle.ts` so `next build` succeeds without production DB secrets in GitHub; added Offline Static Seed & Asset Audit mode to `scripts/audit-curriculum-rules.ts` (verifying 4,442 `.svg`/`.mp3` asset references across 9 seed scripts when `DATABASE_URL` is absent while preserving full live Neon DB audit locally); and wired safe build/E2E fallbacks in `ci.yml`.
+- **Playwright Smoke Test & Overnight Cron Hardening (`e2e/smoke.spec.ts`, `.github/workflows/daily-heart-refill.yml`):** Updated `R4-SMOKE-07` to match current M3 `Already have an account?` pill classes (`rounded-full`), skipped `<ClerkLoaded>`-only gates when running with offline dummy Clerk keys, and added a clean skip guard to `daily-heart-refill.yml` when `DATABASE_URL` is not configured in GitHub Secrets.
+- **GitHub Runner & Node 24 Action Warnings (`.github/workflows/ci.yml`, `.github/workflows/daily-heart-refill.yml`):** Pinned `runs-on: ubuntu-24.04`, set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true`, and added `if-no-files-found: ignore` on `actions/upload-artifact@v4`.
+
+---
+
 ## [2026-11-17] - World 11 (Varaždin & Međimurje, Units 51–55) & QA Hardening (CR-092)
 ### Added
 - **World 11 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-51-55.ts`):** Registered World 11 (`id: "varazdin-medjimurje"`, `stage: 11`, `unitRange: [51, 55]`, `solidBg: "bg-indigo-800"`, `accentEmoji: "🎻"`) with scenery cases `51`–`55`, and additively seeded Units 51–55 (20 lessons, 80 challenges, 320 options, 100% net-new targets across all 4 lessons) while preserving Units 1–50 and all active learner progress.

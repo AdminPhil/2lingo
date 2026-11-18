@@ -6,6 +6,9 @@ on:
     - cron: "0 6 * * *"
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: daily-heart-refill
   cancel-in-progress: false
@@ -13,7 +16,7 @@ concurrency:
 jobs:
   overnight-heart-refill:
     name: 🌙 Top Up Learner Hearts to 5/5 Overnight
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - name: 📥 Checkout repository
@@ -31,4 +34,9 @@ jobs:
       - name: ❤️ Execute daily heart top-up
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npm run hearts:refill
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "ℹ️ Skipping overnight heart top-up: DATABASE_URL secret is not configured in GitHub Actions."
+            exit 0
+          fi
+          npm run hearts:refill
