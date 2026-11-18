@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#FDF2F8"/>
+  <!-- Harlequin tunic -->
+  <polygon points="11,13 25,13 28,31 8,31" fill="#7C3AED"/>
+  <polygon points="18,13 25,13 28,31 18,31" fill="#EC4899"/>
+  <!-- Ruff collar -->
+  <path d="M12,13 Q15,16 18,13 Q21,16 24,13" fill="none" stroke="#FACC15" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Gold buttons -->
+  <circle cx="18" cy="18" r="1.4" fill="#FACC15"/>
+  <circle cx="18" cy="23" r="1.4" fill="#FACC15"/>
+  <circle cx="18" cy="28" r="1.4" fill="#FACC15"/>
+  <!-- Jester hat -->
+  <path d="M12,11 Q10,5 15,7 L18,4 L21,7 Q26,5 24,11 Z" fill="#F59E0B"/>
+  <circle cx="12" cy="6" r="1.4" fill="#10B981"/>
+  <circle cx="18" cy="4" r="1.4" fill="#EF4444"/>
+  <circle cx="24" cy="6" r="1.4" fill="#3B82F6"/>
+</svg>

@@ -52,7 +52,7 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Port"?',
             options: [
               { text: "Luka", correct: true, imageSrc: "/luka.svg", audioSrc: "/audio/hr/luka.mp3" },
-              { text: "Brod", correct: false, imageSrc: "/brod.svg", audioSrc: "/audio/hr/brod.mp3" },
+              { text: "Katamaran", correct: false, imageSrc: "/katamaran.svg", audioSrc: "/audio/hr/katamaran.mp3" },
               { text: "Sidro", correct: false, imageSrc: "/sidro.svg", audioSrc: "/audio/hr/sidro.mp3" },
               { text: "Svjetionik", correct: false, imageSrc: "/svjetionik.svg", audioSrc: "/audio/hr/svjetionik.mp3" },
             ],
@@ -60,9 +60,9 @@ const unitsData: UnitDef[] = [
           {
             type: "SELECT",
             order: 2,
-            question: 'Which one of these is "Ship"?',
+            question: 'Which one of these is "Catamaran"?',
             options: [
-              { text: "Brod", correct: true, imageSrc: "/brod.svg", audioSrc: "/audio/hr/brod.mp3" },
+              { text: "Katamaran", correct: true, imageSrc: "/katamaran.svg", audioSrc: "/audio/hr/katamaran.mp3" },
               { text: "Luka", correct: false, imageSrc: "/luka.svg", audioSrc: "/audio/hr/luka.mp3" },
               { text: "Sidro", correct: false, imageSrc: "/sidro.svg", audioSrc: "/audio/hr/sidro.mp3" },
               { text: "Svjetionik", correct: false, imageSrc: "/svjetionik.svg", audioSrc: "/audio/hr/svjetionik.mp3" },
@@ -75,7 +75,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Sidro", correct: true, imageSrc: "/sidro.svg", audioSrc: "/audio/hr/sidro.mp3" },
               { text: "Luka", correct: false, imageSrc: "/luka.svg", audioSrc: "/audio/hr/luka.mp3" },
-              { text: "Brod", correct: false, imageSrc: "/brod.svg", audioSrc: "/audio/hr/brod.mp3" },
+              { text: "Katamaran", correct: false, imageSrc: "/katamaran.svg", audioSrc: "/audio/hr/katamaran.mp3" },
               { text: "Svjetionik", correct: false, imageSrc: "/svjetionik.svg", audioSrc: "/audio/hr/svjetionik.mp3" },
             ],
           },
@@ -86,7 +86,7 @@ const unitsData: UnitDef[] = [
             options: [
               { text: "Svjetionik", correct: true, imageSrc: "/svjetionik.svg", audioSrc: "/audio/hr/svjetionik.mp3" },
               { text: "Sidro", correct: false, imageSrc: "/sidro.svg", audioSrc: "/audio/hr/sidro.mp3" },
-              { text: "Brod", correct: false, imageSrc: "/brod.svg", audioSrc: "/audio/hr/brod.mp3" },
+              { text: "Katamaran", correct: false, imageSrc: "/katamaran.svg", audioSrc: "/audio/hr/katamaran.mp3" },
               { text: "Luka", correct: false, imageSrc: "/luka.svg", audioSrc: "/audio/hr/luka.mp3" },
             ],
           },
@@ -893,9 +893,9 @@ const unitsData: UnitDef[] = [
           {
             type: "SELECT",
             order: 1,
-            question: 'Which one of these is "Mask"?',
+            question: 'Which one of these is "Costume"?',
             options: [
-              { text: "Maska", correct: true, imageSrc: "/maska.svg", audioSrc: "/audio/hr/maska.mp3" },
+              { text: "Kostim", correct: true, imageSrc: "/kostim.svg", audioSrc: "/audio/hr/kostim.mp3" },
               { text: "Povorka", correct: false, imageSrc: "/povorka.svg", audioSrc: "/audio/hr/povorka.mp3" },
               { text: "Zvono", correct: false, imageSrc: "/zvono.svg", audioSrc: "/audio/hr/zvono.mp3" },
               { text: "Bubanj", correct: false, imageSrc: "/bubanj.svg", audioSrc: "/audio/hr/bubanj.mp3" },
@@ -907,7 +907,7 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Parade"?',
             options: [
               { text: "Povorka", correct: true, imageSrc: "/povorka.svg", audioSrc: "/audio/hr/povorka.mp3" },
-              { text: "Maska", correct: false, imageSrc: "/maska.svg", audioSrc: "/audio/hr/maska.mp3" },
+              { text: "Kostim", correct: false, imageSrc: "/kostim.svg", audioSrc: "/audio/hr/kostim.mp3" },
               { text: "Zvono", correct: false, imageSrc: "/zvono.svg", audioSrc: "/audio/hr/zvono.mp3" },
               { text: "Bubanj", correct: false, imageSrc: "/bubanj.svg", audioSrc: "/audio/hr/bubanj.mp3" },
             ],
@@ -918,7 +918,7 @@ const unitsData: UnitDef[] = [
             question: 'Which one of these is "Bell"?',
             options: [
               { text: "Zvono", correct: true, imageSrc: "/zvono.svg", audioSrc: "/audio/hr/zvono.mp3" },
-              { text: "Maska", correct: false, imageSrc: "/maska.svg", audioSrc: "/audio/hr/maska.mp3" },
+              { text: "Kostim", correct: false, imageSrc: "/kostim.svg", audioSrc: "/audio/hr/kostim.mp3" },
               { text: "Povorka", correct: false, imageSrc: "/povorka.svg", audioSrc: "/audio/hr/povorka.mp3" },
               { text: "Bubanj", correct: false, imageSrc: "/bubanj.svg", audioSrc: "/audio/hr/bubanj.mp3" },
             ],
@@ -931,7 +931,7 @@ const unitsData: UnitDef[] = [
               { text: "Bubanj", correct: true, imageSrc: "/bubanj.svg", audioSrc: "/audio/hr/bubanj.mp3" },
               { text: "Zvono", correct: false, imageSrc: "/zvono.svg", audioSrc: "/audio/hr/zvono.mp3" },
               { text: "Povorka", correct: false, imageSrc: "/povorka.svg", audioSrc: "/audio/hr/povorka.mp3" },
-              { text: "Maska", correct: false, imageSrc: "/maska.svg", audioSrc: "/audio/hr/maska.mp3" },
+              { text: "Kostim", correct: false, imageSrc: "/kostim.svg", audioSrc: "/audio/hr/kostim.mp3" },
             ],
           },
         ],

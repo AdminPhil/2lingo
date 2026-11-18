@@ -266,6 +266,26 @@ async function auditAllRules() {
     }
   }
 
+  // 2c. Cross-Unit Lesson 1 Target Word Uniqueness (Units >= 46 must not repeat prior correct targets)
+  const seenCorrectTargetsByUnit = new Map<string, number>();
+  for (const c of challenges) {
+    const opts = options.filter((o: any) => o.challenge_id === c.id && o.correct);
+    for (const opt of opts) {
+      const norm = (opt.text || "").trim().toLowerCase();
+      if (!norm) continue;
+      if (c.l_order === 1 && c.u_order >= 46 && seenCorrectTargetsByUnit.has(norm)) {
+        const firstUnit = seenCorrectTargetsByUnit.get(norm)!;
+        if (firstUnit < c.u_order) {
+          console.error(`[RULE VIOLATION: Cross-Unit Duplicate Target] U${c.u_order} L1 Ch${c.c_order} target "${opt.text}" already taught in Unit ${firstUnit}!`);
+          totalErrors++;
+        }
+      }
+      if (!seenCorrectTargetsByUnit.has(norm) || c.u_order < seenCorrectTargetsByUnit.get(norm)!) {
+        seenCorrectTargetsByUnit.set(norm, c.u_order);
+      }
+    }
+  }
+
   // 3. Audit User Progress & Leaderboard Privacy
   const users = await sql`SELECT user_id, user_name, points FROM user_progress ORDER BY points DESC`;
   console.log(`\nActive Learners in Database: ${users.length}`);

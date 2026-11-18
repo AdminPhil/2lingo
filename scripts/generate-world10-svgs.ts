@@ -24,7 +24,43 @@ const lukaSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
   <rect x="15" y="15" width="2" height="2.5" rx="0.5" fill="#1E293B"/>
 </svg>`;
 
-// 2. Brod (White Adriatic passenger/cargo ship sailing on Kvarner Bay)
+// 2. Katamaran (Fast Adriatic twin-hull catamaran on Kvarner Bay)
+const katamaranSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#38BDF8"/>
+  <rect x="2" y="24" width="32" height="10" fill="#0284C7"/>
+  <!-- Twin hulls -->
+  <polygon points="5,22 14,22 12,26 7,26" fill="#0F172A"/>
+  <polygon points="22,22 31,22 29,26 24,26" fill="#0F172A"/>
+  <!-- Connecting bridge deck & cabin -->
+  <rect x="7" y="18" width="22" height="4" rx="1" fill="#FFFFFF"/>
+  <polygon points="10,18 26,18 23,12 13,12" fill="#F8FAFC"/>
+  <rect x="13" y="13.5" width="4" height="2.5" rx="0.5" fill="#0EA5E9"/>
+  <rect x="19" y="13.5" width="4" height="2.5" rx="0.5" fill="#0EA5E9"/>
+  <!-- Mast & sail accent -->
+  <rect x="17.5" y="5" width="1.5" height="7" fill="#1E293B"/>
+  <polygon points="19,5.5 26,11 19,11" fill="#EF4444"/>
+</svg>`;
+
+// 2b. Kostim (Festive Rijeka Carnival jester/harlequin costume)
+const kostimSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#FDF2F8"/>
+  <!-- Harlequin tunic -->
+  <polygon points="11,13 25,13 28,31 8,31" fill="#7C3AED"/>
+  <polygon points="18,13 25,13 28,31 18,31" fill="#EC4899"/>
+  <!-- Ruff collar -->
+  <path d="M12,13 Q15,16 18,13 Q21,16 24,13" fill="none" stroke="#FACC15" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Gold buttons -->
+  <circle cx="18" cy="18" r="1.4" fill="#FACC15"/>
+  <circle cx="18" cy="23" r="1.4" fill="#FACC15"/>
+  <circle cx="18" cy="28" r="1.4" fill="#FACC15"/>
+  <!-- Jester hat -->
+  <path d="M12,11 Q10,5 15,7 L18,4 L21,7 Q26,5 24,11 Z" fill="#F59E0B"/>
+  <circle cx="12" cy="6" r="1.4" fill="#10B981"/>
+  <circle cx="18" cy="4" r="1.4" fill="#EF4444"/>
+  <circle cx="24" cy="6" r="1.4" fill="#3B82F6"/>
+</svg>`;
+
+// 2c. Brod (White Adriatic passenger/cargo ship sailing on Kvarner Bay)
 const brodSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
   <rect x="2" y="2" width="32" height="32" rx="4" fill="#38BDF8"/>
   <rect x="2" y="24" width="32" height="10" fill="#0284C7"/>
@@ -355,6 +391,7 @@ const bubanjSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
 const svgFiles = [
   // Unit 46
   { name: "luka.svg", content: lukaSvg },
+  { name: "katamaran.svg", content: katamaranSvg },
   { name: "brod.svg", content: brodSvg },
   { name: "sidro.svg", content: sidroSvg },
   { name: "svjetionik.svg", content: svjetionikSvg },
@@ -378,6 +415,7 @@ const svgFiles = [
   { name: "ovca.svg", content: ovcaSvg },
 
   // Unit 50
+  { name: "kostim.svg", content: kostimSvg },
   { name: "maska.svg", content: maskaSvg },
   { name: "povorka.svg", content: povorkaSvg },
   { name: "zvono.svg", content: zvonoSvg },

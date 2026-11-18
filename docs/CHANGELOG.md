@@ -4,6 +4,13 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-17] - World 10 Vocabulary Uniqueness & Cross-Unit Audit Guard (CR-091)
+### Changed
+- **Net-New World 10 Lesson 1 Vocabulary (`scripts/seed-units-46-50.ts`, `scripts/generate-world10-svgs.ts`, `scripts/generate-world10-audio.py`):** Replaced `Brod` (previously in U8 L2) in Unit 46 Lesson 1 with **`Katamaran`** (*Catamaran*) and `Maska` (previously in U25 L1) in Unit 50 Lesson 1 with **`Kostim`** (*Costume*), including bespoke `katamaran.svg` / `kostim.svg` assets and `hr-HR-GabrijelaNeural` audio (`katamaran.mp3` / `kostim.mp3`), and re-seeded Units 46–50 in Neon DB.
+- **Cross-Unit Target Word Uniqueness Guard (`scripts/audit-curriculum-rules.ts`):** Added Check 2c verifying that Lesson 1 target words in Units `>= 46` have never appeared as a `correct = true` answer in any earlier unit.
+
+---
+
 ## [2026-11-17] - World 10 (Kvarner & Rijeka, Units 46–50) & QA Hardening (CR-090)
 ### Added
 - **World 10 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-46-50.ts`):** Registered World 10 (`id: "kvarner-rijeka"`, `stage: 10`, `unitRange: [46, 50]`, `solidBg: "bg-teal-700"`, `accentEmoji: "⚓"`) with scenery cases `46`–`50`, and additively seeded Units 46–50 (20 lessons, 80 challenges, 320 options) while preserving Units 1–45 and all active learner progress.

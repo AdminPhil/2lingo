@@ -14,6 +14,7 @@ AUDIO_MAP = {
     # Unit 46: Luka Rijeka i brodovi (Rijeka Port & Ships)
     # ==========================================
     "luka": "Luka",
+    "katamaran": "Katamaran",
     "brod": "Brod",
     "sidro": "Sidro",
     "svjetionik": "Svjetionik",
@@ -109,6 +110,7 @@ AUDIO_MAP = {
     # ==========================================
     # Unit 50: Riječki karneval i Korzo (Rijeka Carnival & Korzo)
     # ==========================================
+    "kostim": "Kostim",
     "maska": "Maska",
     "povorka": "Povorka",
     "zvono": "Zvono",
