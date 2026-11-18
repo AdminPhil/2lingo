@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#1E1B4B"/>
+  <!-- Tower shaft -->
+  <rect x="13" y="15" width="10" height="18" fill="#FEF3C7"/>
+  <!-- Baroque copper dome -->
+  <path d="M12 15c0-4 3-6 6-8 3 2 6 4 6 8z" fill="#0D9488"/>
+  <line x1="18" y1="4" x2="18" y2="7" stroke="#FACC15" stroke-width="1.5"/>
+  <!-- Clock face -->
+  <circle cx="18" cy="20" r="2.8" fill="#FFFFFF" stroke="#B45309" stroke-width="0.8"/>
+  <line x1="18" y1="20" x2="18" y2="18.2" stroke="#1E293B" stroke-width="0.8"/>
+  <line x1="18" y1="20" x2="19.5" y2="20" stroke="#1E293B" stroke-width="0.8"/>
+  <!-- Door -->
+  <rect x="16" y="27" width="4" height="6" rx="1" fill="#78350F"/>
+</svg>

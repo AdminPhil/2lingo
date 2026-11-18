@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#4C1D95"/>
+  <!-- Stage curtains -->
+  <path d="M2 2h7c0 8-2 14-7 18z" fill="#991B1B"/>
+  <path d="M34 2h-7c0 8 2 14 7 18z" fill="#991B1B"/>
+  <!-- Stage floor -->
+  <rect x="2" y="25" width="32" height="9" fill="#78350F"/>
+  <!-- Conductor & musicians silhouettes -->
+  <circle cx="18" cy="14" r="2.2" fill="#FDE68A"/>
+  <path d="M15 17h6l1 8h-8z" fill="#1E293B"/>
+  <line x1="21" y1="18" x2="25" y2="12" stroke="#FBBF24" stroke-width="1.2"/>
+  <circle cx="10" cy="17" r="1.8" fill="#FDE68A"/>
+  <path d="M8 20h4l1 5H7z" fill="#0F172A"/>
+  <circle cx="26" cy="17" r="1.8" fill="#FDE68A"/>
+  <path d="M24 20h4l1 5h-6z" fill="#0F172A"/>
+</svg>

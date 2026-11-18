@@ -266,22 +266,48 @@ async function auditAllRules() {
     }
   }
 
-  // 2c. Cross-Unit Lesson 1 Target Word Uniqueness (Units >= 46 must not repeat prior correct targets)
+  // 2c. Cross-Unit Target Uniqueness (Units >= 46 must not repeat prior correct targets from earlier units across all lessons)
   const seenCorrectTargetsByUnit = new Map<string, number>();
   for (const c of challenges) {
-    const opts = options.filter((o: any) => o.challenge_id === c.id && o.correct);
+    const opts = (optionsByChallenge.get(c.id) || []).filter((o: any) => o.correct);
     for (const opt of opts) {
       const norm = (opt.text || "").trim().toLowerCase();
       if (!norm) continue;
-      if (c.l_order === 1 && c.u_order >= 46 && seenCorrectTargetsByUnit.has(norm)) {
+      if (c.u_order >= 46 && seenCorrectTargetsByUnit.has(norm)) {
         const firstUnit = seenCorrectTargetsByUnit.get(norm)!;
         if (firstUnit < c.u_order) {
-          console.error(`[RULE VIOLATION: Cross-Unit Duplicate Target] U${c.u_order} L1 Ch${c.c_order} target "${opt.text}" already taught in Unit ${firstUnit}!`);
+          console.error(`[RULE VIOLATION: Cross-Unit Duplicate Target] U${c.u_order} L${c.l_order} Ch${c.c_order} target "${opt.text}" already taught in Unit ${firstUnit}!`);
           totalErrors++;
         }
       }
       if (!seenCorrectTargetsByUnit.has(norm) || c.u_order < seenCorrectTargetsByUnit.get(norm)!) {
         seenCorrectTargetsByUnit.set(norm, c.u_order);
+      }
+    }
+  }
+
+  // 2d. Intra-Challenge Integrity (>= 2 options, exactly 1 correct option, 0 duplicate option texts)
+  for (const c of challenges) {
+    const opts = optionsByChallenge.get(c.id) || [];
+    if (opts.length < 2) {
+      console.error(`[RULE VIOLATION: Intra-Challenge Option Count] U${c.u_order} L${c.l_order} Ch${c.c_order} has ${opts.length} options (Expected >= 2)`);
+      totalErrors++;
+    }
+
+    const correctOpts = opts.filter((o: any) => o.correct === true);
+    if (correctOpts.length !== 1) {
+      console.error(`[RULE VIOLATION: Intra-Challenge Single-Correct] U${c.u_order} L${c.l_order} Ch${c.c_order} has ${correctOpts.length} correct options (Expected 1)`);
+      totalErrors++;
+    }
+
+    const seenTexts = new Set<string>();
+    for (const opt of opts) {
+      const normText = (opt.text || "").trim().toLowerCase();
+      if (seenTexts.has(normText)) {
+        console.error(`[RULE VIOLATION: Intra-Challenge Duplicate Option Text] U${c.u_order} L${c.l_order} Ch${c.c_order} has duplicate option "${opt.text}"`);
+        totalErrors++;
+      } else {
+        seenTexts.add(normText);
       }
     }
   }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#38BDF8"/>
+  <!-- Umbrella canopy -->
+  <path d="M6 19c0-7 5-12 12-12s12 5 12 12z" fill="#EF4444"/>
+  <path d="M10 19c0-7 3.5-12 8-12s8 5 8 12z" fill="#FACC15"/>
+  <path d="M14 19c0-7 1.8-12 4-12s4 5 4 12z" fill="#10B981"/>
+  <!-- Tip & handle -->
+  <line x1="18" y1="5" x2="18" y2="7" stroke="#1E293B" stroke-width="1.5"/>
+  <line x1="18" y1="19" x2="18" y2="28" stroke="#78350F" stroke-width="1.8"/>
+  <path d="M18 28c0 2.5 3.5 2.5 3.5 0" fill="none" stroke="#78350F" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

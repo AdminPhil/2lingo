@@ -157,4 +157,56 @@ describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity 
     }
     expect(violations).toEqual([]);
   });
+
+  it("enforces intra-challenge integrity (>= 2 options, exactly 1 correct option, 0 duplicate option texts)", () => {
+    const violations: string[] = [];
+
+    for (const c of challenges) {
+      const opts = optionsByChallenge.get(c.id) || [];
+      if (opts.length < 2) {
+        violations.push(`U${c.u_order} L${c.l_order} Ch${c.c_order} has ${opts.length} options (expected >= 2)`);
+      }
+
+      const correctCount = opts.filter((o) => o.correct === true).length;
+      if (correctCount !== 1) {
+        violations.push(`U${c.u_order} L${c.l_order} Ch${c.c_order} has ${correctCount} correct options (expected 1)`);
+      }
+
+      const seenTexts = new Set<string>();
+      for (const opt of opts) {
+        const normText = (opt.text || "").trim().toLowerCase();
+        if (seenTexts.has(normText)) {
+          violations.push(`U${c.u_order} L${c.l_order} Ch${c.c_order} has duplicate option text "${opt.text}"`);
+        } else {
+          seenTexts.add(normText);
+        }
+      }
+    }
+
+    expect(violations).toEqual([]);
+  });
+
+  it("enforces cross-unit target uniqueness for Units >= 46 (no repeated correct=true answers from earlier units)", () => {
+    const violations: string[] = [];
+    const seenCorrectTargetsByUnit = new Map<string, number>();
+
+    for (const c of challenges) {
+      const opts = (optionsByChallenge.get(c.id) || []).filter((o) => o.correct === true);
+      for (const opt of opts) {
+        const norm = (opt.text || "").trim().toLowerCase();
+        if (!norm) continue;
+        if (c.u_order >= 46 && seenCorrectTargetsByUnit.has(norm)) {
+          const firstUnit = seenCorrectTargetsByUnit.get(norm)!;
+          if (firstUnit < c.u_order) {
+            violations.push(`U${c.u_order} L${c.l_order} Ch${c.c_order} target "${opt.text}" already taught in Unit ${firstUnit}`);
+          }
+        }
+        if (!seenCorrectTargetsByUnit.has(norm) || c.u_order < seenCorrectTargetsByUnit.get(norm)!) {
+          seenCorrectTargetsByUnit.set(norm, c.u_order);
+        }
+      }
+    }
+
+    expect(violations).toEqual([]);
+  });
 });

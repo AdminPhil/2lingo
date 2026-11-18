@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#312E81" stroke="#CBD5E1" stroke-width="1.5"/>
+  <!-- Piano body -->
+  <path d="M7 18c0-6 5-9 11-9 5 0 9 3 9 7 0 2-2 3-2 5v4H7v-7z" fill="#0F172A"/>
+  <!-- Open lid -->
+  <polygon points="8,13 24,7 26,12 10,16" fill="#1E293B" stroke="#94A3B8" stroke-width="0.8"/>
+  <!-- Keyboard -->
+  <rect x="7" y="21" width="18" height="4" fill="#FFFFFF"/>
+  <rect x="9" y="21" width="1.6" height="2.4" fill="#0F172A"/>
+  <rect x="12" y="21" width="1.6" height="2.4" fill="#0F172A"/>
+  <rect x="16" y="21" width="1.6" height="2.4" fill="#0F172A"/>
+  <rect x="19" y="21" width="1.6" height="2.4" fill="#0F172A"/>
+  <rect x="22" y="21" width="1.6" height="2.4" fill="#0F172A"/>
+  <!-- Legs -->
+  <line x1="9" y1="25" x2="9" y2="30" stroke="#475569" stroke-width="1.8"/>
+  <line x1="23" y1="25" x2="23" y2="30" stroke="#475569" stroke-width="1.8"/>
+</svg>

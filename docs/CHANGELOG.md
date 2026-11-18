@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-17] - World 11 (Varaždin & Međimurje, Units 51–55) & QA Hardening (CR-092)
+### Added
+- **World 11 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-51-55.ts`):** Registered World 11 (`id: "varazdin-medjimurje"`, `stage: 11`, `unitRange: [51, 55]`, `solidBg: "bg-indigo-800"`, `accentEmoji: "🎻"`) with scenery cases `51`–`55`, and additively seeded Units 51–55 (20 lessons, 80 challenges, 320 options, 100% net-new targets across all 4 lessons) while preserving Units 1–50 and all active learner progress.
+- **World 11 Visual & Audio Assets (`scripts/generate-world11-svgs.ts`, `scripts/generate-world11-audio.py`):** Generated 20 unique 36×36 vector SVGs (`violina.svg`, `klavir.svg`, `nota.svg`, `orkestar.svg`, `pozornica.svg`, `glumac.svg`, `kisobran.svg`, `sesir.svg`, `andeo.svg`, `bedem.svg`, `toranj.svg`, `grb.svg`, `labud.svg`, `vrba.svg`, `splav.svg`, `obala.svg`, `vinograd.svg`, `grozde.svg`, `cipka.svg`, `tambura.svg`) and synthesized 100 net-new Croatian neural TTS `.mp3` files (`hr-HR-GabrijelaNeural`) in `public/audio/hr/`.
+- **All-Lessons Cross-Unit Uniqueness & Intra-Challenge QA Guards (`scripts/audit-curriculum-rules.ts`, `tests/integration/curriculum-integrity-all-units.test.ts`):** Upgraded Check 2c so all `correct = true` options across Lessons 1–4 in Units `>= 46` must be net-new against earlier units, and added Check 2d + Vitest assertions enforcing `>= 2` options, single `correct = true` option, and `0` duplicate option texts within every challenge across all 55 units.
+
+---
+
 ## [2026-11-17] - World 10 Vocabulary Uniqueness & Cross-Unit Audit Guard (CR-091)
 ### Changed
 - **Net-New World 10 Lesson 1 Vocabulary (`scripts/seed-units-46-50.ts`, `scripts/generate-world10-svgs.ts`, `scripts/generate-world10-audio.py`):** Replaced `Brod` (previously in U8 L2) in Unit 46 Lesson 1 with **`Katamaran`** (*Catamaran*) and `Maska` (previously in U25 L1) in Unit 50 Lesson 1 with **`Kostim`** (*Costume*), including bespoke `katamaran.svg` / `kostim.svg` assets and `hr-HR-GabrijelaNeural` audio (`katamaran.mp3` / `kostim.mp3`), and re-seeded Units 46–50 in Neon DB.

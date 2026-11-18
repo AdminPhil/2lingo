@@ -226,6 +226,26 @@ export const LEVEL_3_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-teal-700 border-teal-500",
     nodeArrowBorder: "border-t-teal-500",
   },
+  // World 11 (CR-092): Varaždin & Međimurje (Units 51–55)
+  {
+    id: "varazdin-medjimurje",
+    stage: 11,
+    stageName: "Varaždin & Međimurje",
+    stageBadgeLabel: "World 11: Varaždin & Međimurje • Baroque Music & Vineyards",
+    stageCroatianName: "World 11: Varaždin & Međimurje • Barokna glazba i vinogradi",
+    unitRange: [51, 55],
+    solidBg: "bg-indigo-800",
+    gradient: "from-indigo-900 via-violet-800 to-amber-600",
+    badgeBg: "bg-black/30 text-indigo-100 border-indigo-300/40",
+    accentEmoji: "🎻",
+    buttonClass: "bg-white text-indigo-950 hover:bg-indigo-50 border-indigo-300",
+    accentBorder: "border-indigo-400/50",
+    nodeActiveBg: "bg-indigo-700 hover:bg-indigo-700/90 border-indigo-900 active:border-b-0 text-white",
+    nodeBorderColor: "border-indigo-900",
+    nodeStrokeColor: "#4338ca",
+    nodeBadgeClasses: "bg-white text-indigo-800 border-indigo-500",
+    nodeArrowBorder: "border-t-indigo-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES, ...LEVEL_3_STAGES];
@@ -907,6 +927,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Zvončarsko zvono",
           title: "Zvono",
           badgeEmoji: "🔔",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 51:
+      return {
+        left: {
+          imageSrc: "/violina.svg",
+          alt: "Barokna violina",
+          title: "Violina",
+          badgeEmoji: "🎻",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/klavir.svg",
+          alt: "Koncertni klavir",
+          title: "Klavir",
+          badgeEmoji: "🎹",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 52:
+      return {
+        left: {
+          imageSrc: "/kisobran.svg",
+          alt: "Šareni kišobran",
+          title: "Kišobran",
+          badgeEmoji: "☂️",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/pozornica.svg",
+          alt: "Špancirfest pozornica",
+          title: "Pozornica",
+          badgeEmoji: "🎪",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 53:
+      return {
+        left: {
+          imageSrc: "/andeo.svg",
+          alt: "Varaždinski anđeo",
+          title: "Anđeo",
+          badgeEmoji: "👼",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/toranj.svg",
+          alt: "Barokni toranj",
+          title: "Toranj",
+          badgeEmoji: "🏰",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 54:
+      return {
+        left: {
+          imageSrc: "/labud.svg",
+          alt: "Bijeli labud",
+          title: "Labud",
+          badgeEmoji: "🦢",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/splav.svg",
+          alt: "Dravska splav",
+          title: "Splav",
+          badgeEmoji: "🛶",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 55:
+      return {
+        left: {
+          imageSrc: "/vinograd.svg",
+          alt: "Međimurski vinograd",
+          title: "Vinograd",
+          badgeEmoji: "🍇",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/tambura.svg",
+          alt: "Međimurska tambura",
+          title: "Tambura",
+          badgeEmoji: "🎶",
           topOffsetClass: "top-44",
         },
       };

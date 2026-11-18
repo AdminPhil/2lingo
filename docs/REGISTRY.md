@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 90 Completed | 1 Queued (CR-088)  
+> **Total Change Requests:** 91 Completed | 1 Queued (CR-088)  
 > **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 1 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-091)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-092)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -103,6 +103,7 @@
 | **CR-089** | Marketing / Onboarding UI | **Remove Outer Background Container on Landing Auth Actions:** Removes the outer white card wrapper (`bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm`) around the auth buttons and team code toggle in `M3RoleHero` (`components/onboarding/m3-role-hero.tsx`) so the actions sit cleanly on the page background. | 2026-11-12 | ✅ Verified |
 | **CR-090** | Curriculum & QA / World 10 | **World 10 (Kvarner & Rijeka, Units 46–50) + Progressive QA Hardening:** Adds World 10 (`kvarner-rijeka`, `unitRange: [46, 50]`) in `lib/theme-registry.ts`, 20 unique 36×36 SVGs, 95 newly synthesized neural TTS `.mp3` files (`hr-HR-GabrijelaNeural`), and additive seeding via `scripts/seed-units-46-50.ts` (80 challenges, 320 options); hardens `scripts/audit-curriculum-rules.ts` (disk asset existence/non-empty + 4-lesson completeness), `tests/integration/curriculum-integrity-all-units.test.ts`, `tests/unit/theme-registry.test.ts`, and `tests/adversarial/m1-stress.test.ts`. | 2026-11-17 | ✅ Verified |
 | **CR-091** | Curriculum & QA / World 10 | **World 10 Vocabulary Uniqueness & Cross-Unit Audit Guard:** Replaces overlapping Lesson 1 target words `Brod` (`U8 L2`) and `Maska` (`U25 L1`) in World 10 with net-new `Katamaran` (`U46 L1`) and `Kostim` (`U50 L1`) along with bespoke SVGs and `hr-HR-GabrijelaNeural` audio, and adds a Cross-Unit Lesson 1 Target Word Uniqueness check (`u_order >= 46`) to `scripts/audit-curriculum-rules.ts`. | 2026-11-17 | ✅ Verified |
+| **CR-092** | Curriculum & QA / World 11 | **World 11 (Varaždin & Međimurje, Units 51–55) + All-Lessons Uniqueness & Intra-Challenge QA Guards:** Adds World 11 (`varazdin-medjimurje`, `stage: 11`, `unitRange: [51, 55]`, `solidBg: "bg-indigo-800"`, `accentEmoji: "🎻"`) in `lib/theme-registry.ts`, 20 unique 36×36 SVGs, 100 net-new `hr-HR-GabrijelaNeural` `.mp3` files, and additive seeding via `scripts/seed-units-51-55.ts` (80 challenges, 320 options, 0 overlap with Units 1–50); upgrades `scripts/audit-curriculum-rules.ts` and `tests/integration/curriculum-integrity-all-units.test.ts` to enforce all-lessons (`L1–L4`) cross-unit target uniqueness (`u_order >= 46`) and intra-challenge single-correct / unique-option invariants across all 55 units. | 2026-11-17 | ✅ Verified |
 
 ---
 

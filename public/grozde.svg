@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#FEF9C3" stroke="#7E22CE" stroke-width="1.5"/>
+  <!-- Stem & leaf -->
+  <line x1="18" y1="6" x2="18" y2="11" stroke="#78350F" stroke-width="2"/>
+  <ellipse cx="22" cy="9" rx="4" ry="2" transform="rotate(-20 22 9)" fill="#16A34A"/>
+  <!-- Grape cluster -->
+  <circle cx="14" cy="14" r="3" fill="#7E22CE"/>
+  <circle cx="18" cy="14" r="3" fill="#9333EA"/>
+  <circle cx="22" cy="14" r="3" fill="#7E22CE"/>
+  <circle cx="15.5" cy="19" r="3" fill="#9333EA"/>
+  <circle cx="20.5" cy="19" r="3" fill="#7E22CE"/>
+  <circle cx="18" cy="24" r="3" fill="#6B21A8"/>
+</svg>
