@@ -206,6 +206,26 @@ export const LEVEL_3_STAGES: RegionTheme[] = [
     nodeBadgeClasses: "bg-white text-red-800 border-red-600",
     nodeArrowBorder: "border-t-red-600",
   },
+  // World 10 (CR-090): Kvarner & Rijeka (Units 46–50)
+  {
+    id: "kvarner-rijeka",
+    stage: 10,
+    stageName: "Kvarner & Rijeka",
+    stageBadgeLabel: "World 10: Kvarner & Rijeka • Maritime Port & Carnival",
+    stageCroatianName: "World 10: Kvarner & Rijeka • Kvarnerski zaljev i Riječki karneval",
+    unitRange: [46, 50],
+    solidBg: "bg-teal-700",
+    gradient: "from-teal-800 via-cyan-700 to-amber-600",
+    badgeBg: "bg-black/30 text-teal-100 border-teal-300/40",
+    accentEmoji: "⚓",
+    buttonClass: "bg-white text-teal-950 hover:bg-teal-50 border-teal-300",
+    accentBorder: "border-teal-400/50",
+    nodeActiveBg: "bg-teal-600 hover:bg-teal-600/90 border-teal-800 active:border-b-0 text-white",
+    nodeBorderColor: "border-teal-800",
+    nodeStrokeColor: "#0d9488",
+    nodeBadgeClasses: "bg-white text-teal-700 border-teal-500",
+    nodeArrowBorder: "border-t-teal-500",
+  },
 ];
 
 export const ALL_STAGES: RegionTheme[] = [...LEVEL_1_STAGES, ...LEVEL_2_STAGES, ...LEVEL_3_STAGES];
@@ -802,6 +822,91 @@ export const getUnitScenery = (unitOrder: number): UnitSceneryConfig | null => {
           alt: "Zlatna medalja",
           title: "Medalja",
           badgeEmoji: "🥇",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 46:
+      return {
+        left: {
+          imageSrc: "/luka.svg",
+          alt: "Riječka luka",
+          title: "Luka",
+          badgeEmoji: "⚓",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/svjetionik.svg",
+          alt: "Jadranski svjetionik",
+          title: "Svjetionik",
+          badgeEmoji: "🗼",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 47:
+      return {
+        left: {
+          imageSrc: "/gradina.svg",
+          alt: "Trsatska gradina",
+          title: "Gradina",
+          badgeEmoji: "🏰",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/zmaj.svg",
+          alt: "Trsatski zmaj",
+          title: "Zmaj",
+          badgeEmoji: "🐉",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 48:
+      return {
+        left: {
+          imageSrc: "/kamelija.svg",
+          alt: "Opatijska kamelija",
+          title: "Kamelija",
+          badgeEmoji: "🌺",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/vila.svg",
+          alt: "Opatijska vila",
+          title: "Vila",
+          badgeEmoji: "🏛️",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 49:
+      return {
+        left: {
+          imageSrc: "/ploca.svg",
+          alt: "Bašćanska ploča",
+          title: "Ploča",
+          badgeEmoji: "🪨",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/maslina.svg",
+          alt: "Krčka maslina",
+          title: "Maslina",
+          badgeEmoji: "🫒",
+          topOffsetClass: "top-44",
+        },
+      };
+    case 50:
+      return {
+        left: {
+          imageSrc: "/maska.svg",
+          alt: "Karnevalska maska",
+          title: "Maska",
+          badgeEmoji: "🎭",
+          topOffsetClass: "top-10",
+        },
+        right: {
+          imageSrc: "/zvono.svg",
+          alt: "Zvončarsko zvono",
+          title: "Zvono",
+          badgeEmoji: "🔔",
           topOffsetClass: "top-44",
         },
       };

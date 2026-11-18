@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { LEVEL_1_STAGES, getStageThemeForUnit, RegionTheme } from "@/lib/theme-registry";
+import {
+  LEVEL_1_STAGES,
+  LEVEL_2_STAGES,
+  LEVEL_3_STAGES,
+  ALL_STAGES,
+  getStageThemeForUnit,
+  RegionTheme,
+} from "@/lib/theme-registry";
 
 describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () => {
   describe("LEVEL_1_STAGES Registry Integrity", () => {
@@ -216,15 +223,79 @@ describe("lib/theme-registry.ts - Regional Theme Registry & Unit Mapping", () =>
       expect(unit41.solidBg).toBe("bg-rose-900");
     });
 
-    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (Unit 46, Unit 100)", () => {
-      const unit46 = getStageThemeForUnit(46);
-      expect(unit46.stage).toBe(1);
-      expect(unit46.id).toBe("zagreb-central");
-      expect(unit46.solidBg).toBe("bg-red-600");
+    it("falls back to Stage 1 (Zagreb) for out-of-bounds higher numbers (maxUnit + 1, Unit 100)", () => {
+      const maxUnit = ALL_STAGES[ALL_STAGES.length - 1].unitRange[1];
+      const beyondMax = getStageThemeForUnit(maxUnit + 1);
+      expect(beyondMax.stage).toBe(1);
+      expect(beyondMax.id).toBe("zagreb-central");
+      expect(beyondMax.solidBg).toBe("bg-red-600");
 
       const unit100 = getStageThemeForUnit(100);
       expect(unit100.stage).toBe(1);
       expect(unit100.id).toBe("zagreb-central");
+    });
+  });
+
+  describe("ALL_STAGES Registry Integrity (LEVEL_1_STAGES, LEVEL_2_STAGES, LEVEL_3_STAGES)", () => {
+    it("combines LEVEL_1_STAGES, LEVEL_2_STAGES, and LEVEL_3_STAGES with sequential stage numbers and unique IDs", () => {
+      expect(ALL_STAGES).toEqual([...LEVEL_1_STAGES, ...LEVEL_2_STAGES, ...LEVEL_3_STAGES]);
+      expect(ALL_STAGES.length).toBeGreaterThanOrEqual(9);
+
+      const expectedStages = ALL_STAGES.map((_, idx) => idx + 1);
+      expect(ALL_STAGES.map((s) => s.stage)).toEqual(expectedStages);
+
+      const ids = ALL_STAGES.map((s) => s.id);
+      expect(new Set(ids).size).toBe(ALL_STAGES.length);
+    });
+
+    it("partitions unitRange contiguously from Unit 1 across ALL_STAGES without gaps or overlaps", () => {
+      expect(ALL_STAGES[0].unitRange[0]).toBe(1);
+
+      for (let i = 0; i < ALL_STAGES.length; i++) {
+        const [start, end] = ALL_STAGES[i].unitRange;
+        expect(start).toBeLessThanOrEqual(end);
+        if (i > 0) {
+          const prevEnd = ALL_STAGES[i - 1].unitRange[1];
+          expect(start, `Gap or overlap before stage ${ALL_STAGES[i].stage}`).toBe(prevEnd + 1);
+        }
+
+        for (let unit = start; unit <= end; unit++) {
+          const resolved = getStageThemeForUnit(unit);
+          expect(resolved.stage).toBe(ALL_STAGES[i].stage);
+          expect(resolved.id).toBe(ALL_STAGES[i].id);
+        }
+      }
+    });
+
+    it("ensures all required visual styling tokens are non-empty for every stage in ALL_STAGES", () => {
+      const requiredKeys: (keyof RegionTheme)[] = [
+        "id",
+        "stage",
+        "stageName",
+        "stageBadgeLabel",
+        "stageCroatianName",
+        "solidBg",
+        "gradient",
+        "badgeBg",
+        "accentEmoji",
+        "buttonClass",
+        "accentBorder",
+        "nodeActiveBg",
+        "nodeBorderColor",
+        "nodeStrokeColor",
+        "nodeBadgeClasses",
+        "nodeArrowBorder",
+      ];
+
+      for (const stage of ALL_STAGES) {
+        for (const key of requiredKeys) {
+          expect(stage[key], `Stage ${stage.stage} (${stage.id}) missing ${key}`).toBeDefined();
+          if (typeof stage[key] === "string") {
+            expect((stage[key] as string).trim().length, `Stage ${stage.stage} (${stage.id}) empty ${key}`).toBeGreaterThan(0);
+          }
+        }
+        expect(stage.nodeStrokeColor).toMatch(/^#[0-9a-fA-F]{6}$/);
+      }
     });
   });
 });

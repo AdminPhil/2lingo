@@ -47,6 +47,22 @@ async function auditAllRules() {
 
   console.log(`Auditing: ${units.length} Units, ${lessons.length} Lessons, ${challenges.length} Challenges, ${options.length} Options...`);
 
+  // Rule: Unit Structural Completeness (every unit in course_id=1 must have 4 lessons)
+  const lessonsByUnit = new Map<number, any[]>();
+  for (const l of lessons) {
+    if (!lessonsByUnit.has(l.unit_id)) {
+      lessonsByUnit.set(l.unit_id, []);
+    }
+    lessonsByUnit.get(l.unit_id)!.push(l);
+  }
+  for (const u of units) {
+    const unitLessons = lessonsByUnit.get(u.id) || [];
+    if (unitLessons.length !== 4) {
+      console.error(`[RULE VIOLATION: Unit Structural Completeness] Unit ${u.order} ("${u.title}") has ${unitLessons.length} lessons (Expected 4)`);
+      totalErrors++;
+    }
+  }
+
   // Group options by challengeId
   const optionsByChallenge = new Map<number, any[]>();
   for (const opt of options) {
@@ -94,6 +110,9 @@ async function auditAllRules() {
         if (!fs.existsSync(audioPath)) {
           console.error(`[RULE VIOLATION: Audio File Missing on Disk] ${opt.audio_src} (Option: "${opt.text}")`);
           totalErrors++;
+        } else if (fs.statSync(audioPath).size === 0) {
+          console.error(`[RULE VIOLATION: Audio File Empty on Disk (0 bytes)] ${opt.audio_src} (Option: "${opt.text}")`);
+          totalErrors++;
         }
         const trimmedText = (opt.text || "").trim();
         if (trimmedText.includes(" ")) {
@@ -105,11 +124,14 @@ async function auditAllRules() {
         }
       }
 
-      // Rule: If imageSrc present, verify file on disk
+      // Rule: If imageSrc present, verify file on disk and non-empty
       if (opt.image_src) {
         const imgPath = path.join(__dirname, "..", "public", opt.image_src.replace(/^\//, ""));
         if (!fs.existsSync(imgPath)) {
           console.error(`[RULE VIOLATION: Image File Missing on Disk] ${opt.image_src} (Option: "${opt.text}")`);
+          totalErrors++;
+        } else if (fs.statSync(imgPath).size === 0) {
+          console.error(`[RULE VIOLATION: Image File Empty on Disk (0 bytes)] ${opt.image_src} (Option: "${opt.text}")`);
           totalErrors++;
         }
       }

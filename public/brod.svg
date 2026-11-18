@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="4" fill="#38BDF8"/>
+  <rect x="2" y="24" width="32" height="10" fill="#0284C7"/>
+  <!-- Ship hull -->
+  <polygon points="5,20 31,20 27,26 9,26" fill="#0F172A"/>
+  <rect x="8" y="17" width="20" height="3" fill="#FFFFFF"/>
+  <!-- Cabin & bridge -->
+  <rect x="11" y="12" width="13" height="5" rx="1" fill="#F8FAFC"/>
+  <rect x="13" y="13.5" width="3" height="2" fill="#0EA5E9"/>
+  <rect x="18" y="13.5" width="3" height="2" fill="#0EA5E9"/>
+  <!-- Funnel with red-white-blue stripe -->
+  <rect x="15" y="7" width="4" height="5" fill="#DC2626"/>
+  <rect x="15" y="9" width="4" height="1.2" fill="#FFFFFF"/>
+  <circle cx="19" cy="5.5" r="1.5" fill="#E2E8F0"/>
+  <circle cx="22" cy="4.5" r="1.2" fill="#CBD5E1"/>
+</svg>

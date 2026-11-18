@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 88 Completed | 1 Queued (CR-088)  
+> **Total Change Requests:** 89 Completed | 1 Queued (CR-088)  
 > **Total Bug Tickets:** 46 Resolved (BUG-001 to BUG-046) | 1 Open  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-089)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-090)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -101,6 +101,7 @@
 | **CR-087** | Administration / Classroom | **Teacher Setup Modal Polish, 50-Student Parity & Scroll-Lock Fix:** Removes `border-0` / `sm:rounded-lg` white corner artifacts on `TeacherSetupWizardModal` with crisp `rounded-3xl overflow-hidden` clipping and white close button, aligns `MAX_CLASSROOM_STUDENTS` and `classroom-roster.ts` capacity/copy from 35 to 50 students, and defers `router.refresh()` + clears Radix scroll-lock attributes on close so `/admin` remains scrollable. | 2026-11-12 | ✅ Verified |
 | **CR-088** | Learner Experience / Profile | **Self-Service Learner Avatar Picker & HUD Visibility:** Allows learners to switch their mascot avatar among the 6 curated Croatian mascots (`CLASSROOM_AVATARS`) via a new `AvatarPickerModal` and `updateLearnerAvatar` server action, and surfaces `userImageSrc` in the learner HUD. | 2026-11-12 | ⏳ Queued |
 | **CR-089** | Marketing / Onboarding UI | **Remove Outer Background Container on Landing Auth Actions:** Removes the outer white card wrapper (`bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm`) around the auth buttons and team code toggle in `M3RoleHero` (`components/onboarding/m3-role-hero.tsx`) so the actions sit cleanly on the page background. | 2026-11-12 | ✅ Verified |
+| **CR-090** | Curriculum & QA / World 10 | **World 10 (Kvarner & Rijeka, Units 46–50) + Progressive QA Hardening:** Adds World 10 (`kvarner-rijeka`, `unitRange: [46, 50]`) in `lib/theme-registry.ts`, 20 unique 36×36 SVGs, 95 newly synthesized neural TTS `.mp3` files (`hr-HR-GabrijelaNeural`), and additive seeding via `scripts/seed-units-46-50.ts` (80 challenges, 320 options); hardens `scripts/audit-curriculum-rules.ts` (disk asset existence/non-empty + 4-lesson completeness), `tests/integration/curriculum-integrity-all-units.test.ts`, `tests/unit/theme-registry.test.ts`, and `tests/adversarial/m1-stress.test.ts`. | 2026-11-17 | ✅ Verified |
 
 ---
 

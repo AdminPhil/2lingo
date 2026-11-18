@@ -18,12 +18,15 @@ function normalizeWord(s: string): string {
     .replace(/[^a-z0-9]/g, "");
 }
 
-describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity Suite (All 25 Units)", () => {
+describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity Suite (All Seeded Units)", () => {
+  let units: any[] = [];
   let challenges: any[] = [];
   let optionsByChallenge = new Map<number, any[]>();
 
   beforeAll(async () => {
     const sql = neon(process.env.DATABASE_URL!);
+    units = await sql`SELECT id, "order", title FROM units WHERE course_id = 1 ORDER BY "order"`;
+
     const rawChallenges = await sql`
       SELECT c.id, c.order as c_order, c.question, c.type, l.order as l_order, u.order as u_order
       FROM challenges c
@@ -43,9 +46,15 @@ describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity 
     }
   });
 
-  it("verifies all 25 units have challenges and options loaded", () => {
+  it("verifies all seeded units (>= 45) have challenges and options loaded", () => {
+    expect(units.length).toBeGreaterThanOrEqual(45);
     expect(challenges.length).toBeGreaterThanOrEqual(444);
     expect(optionsByChallenge.size).toBe(challenges.length);
+
+    const unitOrdersWithChallenges = new Set(challenges.map((c) => c.u_order));
+    for (const u of units) {
+      expect(unitOrdersWithChallenges.has(u.order), `Unit ${u.order} has no challenges`).toBe(true);
+    }
   });
 
   it("enforces Lesson 1 visual flashcard requirement: all SELECT challenges must have images", () => {
@@ -104,7 +113,7 @@ describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity 
     expect(violations).toEqual([]);
   });
 
-  it("enforces that all audio files referenced in the database exist on disk", () => {
+  it("enforces that all audio files referenced in the database exist on disk and are non-empty", () => {
     const missingFiles: string[] = [];
     for (const c of challenges) {
       const opts = optionsByChallenge.get(c.id) || [];
@@ -113,6 +122,8 @@ describe.skipIf(!process.env.DATABASE_URL)("BUG-037 Master Curriculum Integrity 
           const audioPath = path.join(process.cwd(), "public", opt.audio_src.replace(/^\//, ""));
           if (!fs.existsSync(audioPath)) {
             missingFiles.push(`Missing: ${opt.audio_src} for "${opt.text}" (U${c.u_order} L${c.l_order})`);
+          } else if (fs.statSync(audioPath).size === 0) {
+            missingFiles.push(`Empty (0 bytes): ${opt.audio_src} for "${opt.text}" (U${c.u_order} L${c.l_order})`);
           }
         }
       }

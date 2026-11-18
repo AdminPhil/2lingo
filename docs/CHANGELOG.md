@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-17] - World 10 (Kvarner & Rijeka, Units 46–50) & QA Hardening (CR-090)
+### Added
+- **World 10 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-46-50.ts`):** Registered World 10 (`id: "kvarner-rijeka"`, `stage: 10`, `unitRange: [46, 50]`, `solidBg: "bg-teal-700"`, `accentEmoji: "⚓"`) with scenery cases `46`–`50`, and additively seeded Units 46–50 (20 lessons, 80 challenges, 320 options) while preserving Units 1–45 and all active learner progress.
+- **World 10 Visual & Audio Assets (`scripts/generate-world10-svgs.ts`, `scripts/generate-world10-audio.py`):** Generated 20 unique 36×36 vector SVGs in `public/` and synthesized 95 new Croatian neural TTS `.mp3` files (`hr-HR-GabrijelaNeural`, 100 total in `AUDIO_MAP`) in `public/audio/hr/`.
+- **QA Gate Hardening (`scripts/audit-curriculum-rules.ts`, `tests/integration/curriculum-integrity-all-units.test.ts`, `tests/unit/theme-registry.test.ts`, `tests/adversarial/m1-stress.test.ts`):** Added disk asset existence & non-empty (`> 0` bytes) checks for all referenced `audio_src`/`image_src` paths, enforced 4-lesson structural completeness across all units, generalized integration & `ALL_STAGES` theme-registry tests to scale dynamically across all 50 units, and updated adversarial out-of-bounds unit checks to use dynamic `maxUnit + 1`.
+
+---
+
 ## [2026-11-12] - Remove Outer Background Container on Landing Auth Actions (CR-089)
 ### Changed
 - **Landing Hero Auth Stack (`components/onboarding/m3-role-hero.tsx`):** Removed the outer white card wrapper (`bg-white p-5 sm:p-6 rounded-[28px] border border-slate-200 shadow-sm`) around the "Already have an account? Log in" button, "Start Learning (Free)" CTA, team code toggle, and COPPA compliance footer so the controls sit cleanly on the page background.

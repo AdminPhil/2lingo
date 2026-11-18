@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#0F172A" stroke="#EF4444" stroke-width="1.5"/>
+  <!-- Drumsticks -->
+  <line x1="8" y1="8" x2="18" y2="15" stroke="#FDE68A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="18" cy="15" r="1.5" fill="#FFFFFF"/>
+  <line x1="28" y1="8" x2="18" y2="15" stroke="#FDE68A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Drum cylinder -->
+  <rect x="8" y="16" width="20" height="11" rx="2" fill="#DC2626"/>
+  <!-- Top drumhead -->
+  <ellipse cx="18" cy="16" rx="10" ry="3" fill="#FEF3C7" stroke="#B45309" stroke-width="1.2"/>
+  <!-- Zigzag tension cords -->
+  <polyline points="9,18 12,26 15,18 18,26 21,18 24,26 27,18" fill="none" stroke="#FACC15" stroke-width="1.3"/>
+</svg>

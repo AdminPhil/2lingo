@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <circle cx="18" cy="18" r="16" fill="#1E1B4B" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Dragon wing -->
+  <path d="M16 17c-5-7-10-5-11 0 3 0 5 2 6 4z" fill="#0D9488"/>
+  <!-- Dragon body & tail -->
+  <path d="M12 28c2-6 5-10 8-12 3-2 4-5 3-8l4 1c1 4-1 8-4 11s-2 7-4 9z" fill="#14B8A6"/>
+  <!-- Dragon head & snout -->
+  <path d="M22 8l6 2-2 3-5-1z" fill="#2DD4BF"/>
+  <!-- Horns -->
+  <polygon points="22,8 20,4 24,7" fill="#FBBF24"/>
+  <!-- Eye -->
+  <circle cx="25" cy="9.5" r="0.8" fill="#DC2626"/>
+  <!-- Fire spark -->
+  <polygon points="29,11 33,10 31,13" fill="#F97316"/>
+</svg>
