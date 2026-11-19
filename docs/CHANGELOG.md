@@ -4,6 +4,13 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-19] - Fix Quiz `NEXT` Button Disabled / Unselectable Answers Soft-Lock (BUG-049)
+### Fixed
+- **In-Flight Submission Deduplication & Stale-Response Guard (`app/lesson/quiz.tsx`):** Replaced React 18 `useTransition` (which does not hold `pending === true` across async `.then()` Server Actions) with explicit `isSubmitting` state + synchronous `isSubmittingRef` lock and `activeChallengeIdRef` check so duplicate clicks/Enter presses cannot fire overlapping `upsertChallengeProgress` / `reduceHearts` calls or overwrite a subsequent challenge's `status` with `"correct"`.
+- **Unblocked `NEXT` / `RETRY` & Keyboard Guard (`app/lesson/quiz.tsx`, `app/lesson/footer.tsx`, `tests/component/quiz-softlock.test.tsx`):** Evaluated `status === "correct"` and `status === "wrong"` before `if (!selectedOption) return;` in `onContinue()`, changed `<Footer>` to `disabled={isSubmitting || (status === "none" && !selectedOption)}`, guarded `useKey("Enter")` when `disabled` is `true`, and added Vitest regression test `tests/component/quiz-softlock.test.tsx`.
+
+---
+
 ## [2026-11-17] - World 12 (Velebit, Paklenica & Gacka, Units 56–60) & QA Hardening (CR-093)
 ### Added
 - **World 12 Curriculum & Theme (`lib/theme-registry.ts`, `scripts/seed-units-56-60.ts`):** Registered World 12 (`id: "velebit-paklenica-gacka"`, `stage: 12`, `unitRange: [56, 60]`, `solidBg: "bg-stone-800"`, `gradient: "from-stone-900 via-emerald-900 to-sky-900"`, `accentEmoji: "🏔️"`) with scenery cases `56`–`60`, and additively seeded Units 56–60 (20 lessons, 80 challenges, 320 options, 100% net-new targets across all 4 lessons) while preserving Units 1–55 and all active learner progress.

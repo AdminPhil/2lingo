@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import Image from "next/image";
 import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
-import { useState, useTransition, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAudio, useWindowSize, useMount } from "react-use";
 
 import { reduceHearts } from "@/actions/user-progress";
@@ -74,7 +74,8 @@ export const Quiz = ({
     _i,
     incorrectControls,
   ] = useAudio({ src: "/incorrect.wav" });
-  const [pending, startTransition] = useTransition();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   const [lessonId] = useState(initialLessonId);
   const [hearts, setHearts] = useState(initialHearts);
@@ -98,19 +99,21 @@ export const Quiz = ({
 
   const challenge = challenges[activeIndex];
   const options = challenge?.challengeOptions ?? [];
+  const activeChallengeIdRef = useRef<number | undefined>(challenge?.id);
+  activeChallengeIdRef.current = challenge?.id;
 
   const onNext = () => {
     setActiveIndex((current) => current + 1);
   };
 
   const onSelect = (id: number) => {
-    if (status !== "none") return;
+    if (status !== "none" || isSubmittingRef.current) return;
 
     setSelectedOption(id);
   };
 
   const onContinue = () => {
-    if (!selectedOption) return;
+    if (isSubmittingRef.current) return;
 
     if (status === "wrong") {
       setStatus("none");
@@ -137,64 +140,80 @@ export const Quiz = ({
       return;
     }
 
+    if (!selectedOption || !challenge) return;
+
     const correctOption = options.find((option) => option.correct);
 
     if (!correctOption) {
       return;
     }
 
+    const submittedChallengeId = challenge.id;
+    isSubmittingRef.current = true;
+    setIsSubmitting(true);
+
     if (correctOption.id === selectedOption) {
-      startTransition(() => {
-        upsertChallengeProgress(challenge.id)
-          .then((response) => {
-            if (response?.error === "hearts") {
-              openHeartsModal();
-              return;
-            }
+      upsertChallengeProgress(submittedChallengeId)
+        .then((response) => {
+          // BUG-049: Ignore stale responses if the active challenge already changed
+          if (activeChallengeIdRef.current !== submittedChallengeId) return;
 
-            correctControls.play();
-            setStatus("correct");
-            setPercentage((prev) => prev + 100 / challenges.length);
+          if (response?.error === "hearts") {
+            openHeartsModal();
+            return;
+          }
 
-            // BUG-026 & CR-068: Queue lesson completion heart reward for the completion screen transition
-            if (response?.isLessonCompleted && typeof response.newHearts === "number") {
-              setPendingCompletionReward({
-                newHearts: response.newHearts,
-                heartsAwarded: Boolean(response.heartsAwarded),
-                heartRewardAmount: response.heartRewardAmount ?? (isSuperIzazov ? 3 : 1),
-                isSuperIzazovCompleted: Boolean(response.isSuperIzazovCompleted),
-              });
-            }
-          })
-          .catch(() => toast.error("Something went wrong. Please try again."))
-      });
+          correctControls.play();
+          setStatus("correct");
+          setPercentage((prev) => prev + 100 / challenges.length);
+
+          // BUG-026 & CR-068: Queue lesson completion heart reward for the completion screen transition
+          if (response?.isLessonCompleted && typeof response.newHearts === "number") {
+            setPendingCompletionReward({
+              newHearts: response.newHearts,
+              heartsAwarded: Boolean(response.heartsAwarded),
+              heartRewardAmount: response.heartRewardAmount ?? (isSuperIzazov ? 3 : 1),
+              isSuperIzazovCompleted: Boolean(response.isSuperIzazovCompleted),
+            });
+          }
+        })
+        .catch(() => toast.error("Something went wrong. Please try again."))
+        .finally(() => {
+          isSubmittingRef.current = false;
+          setIsSubmitting(false);
+        });
     } else {
-      startTransition(() => {
-        reduceHearts(challenge.id, selectedOption)
-          .then((response) => {
-            if (response?.error === "hearts") {
+      reduceHearts(submittedChallengeId, selectedOption)
+        .then((response) => {
+          // BUG-049: Ignore stale responses if the active challenge already changed
+          if (activeChallengeIdRef.current !== submittedChallengeId) return;
+
+          if (response?.error === "hearts") {
+            openHeartsModal();
+            return;
+          }
+
+          incorrectControls.play();
+          setStatus("wrong");
+
+          if (!response?.error) {
+            const nextHearts =
+              typeof response?.hearts === "number"
+                ? response.hearts
+                : Math.max(hearts - 1, 0);
+            setHearts(nextHearts);
+
+            // BUG-025: Immediately prompt for practice when the last heart is lost (1 -> 0)
+            if (response?.depleted || nextHearts === 0) {
               openHeartsModal();
-              return;
             }
-
-            incorrectControls.play();
-            setStatus("wrong");
-
-            if (!response?.error) {
-              const nextHearts =
-                typeof response?.hearts === "number"
-                  ? response.hearts
-                  : Math.max(hearts - 1, 0);
-              setHearts(nextHearts);
-
-              // BUG-025: Immediately prompt for practice when the last heart is lost (1 -> 0)
-              if (response?.depleted || nextHearts === 0) {
-                openHeartsModal();
-              }
-            }
-          })
-          .catch(() => toast.error("Something went wrong. Please try again."))
-      });
+          }
+        })
+        .catch(() => toast.error("Something went wrong. Please try again."))
+        .finally(() => {
+          isSubmittingRef.current = false;
+          setIsSubmitting(false);
+        });
     }
   };
 
@@ -301,7 +320,7 @@ export const Quiz = ({
                 onSelect={onSelect}
                 status={status}
                 selectedOption={selectedOption}
-                disabled={pending}
+                disabled={isSubmitting}
                 type={challenge.type}
               />
             </div>
@@ -309,7 +328,7 @@ export const Quiz = ({
         </div>
       </div>
       <Footer
-        disabled={pending || !selectedOption}
+        disabled={isSubmitting || (status === "none" && !selectedOption)}
         status={status}
         onCheck={onContinue}
       />

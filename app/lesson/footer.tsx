@@ -17,7 +17,15 @@ export const Footer = ({
   disabled,
   lessonId,
 }: Props) => {
-  useKey("Enter", onCheck, {}, [onCheck]);
+  useKey(
+    "Enter",
+    () => {
+      if (disabled) return;
+      onCheck();
+    },
+    {},
+    [disabled, onCheck]
+  );
   const isMobile = useMedia("(max-width: 1024px)");
 
   return (
