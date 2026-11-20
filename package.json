@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "audit": "tsx scripts/audit-curriculum-rules.ts",
+    "audit:pedagogy": "tsx scripts/audit-pedagogy-metrics.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:unit": "vitest run tests/unit",

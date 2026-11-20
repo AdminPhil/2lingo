@@ -4,6 +4,14 @@ All notable changes, pedagogical updates, curriculum expansions, and infrastruct
 
 ---
 
+## [2026-11-19] - Pedagogical Scaling & Duolingo-Standard Curriculum Audit (CR-094)
+### Added
+- **Read-Only Pedagogical Telemetry Engine (`lib/pedagogy-metrics.ts`, `scripts/audit-pedagogy-metrics.ts`, `package.json`):** Implemented a strictly `SELECT`-only 4-pillar curriculum analytics script (`npm run audit:pedagogy`, supporting `--format=markdown|json|csv-worlds|csv-units` and `--out=<path>`) evaluating all 12 Worlds / 60 Units / 240 Lessons / 1,009 Challenges / 4,036 Options and anonymized `challenge_progress` / `challenge_mistakes` telemetry across lexical density, spaced-repetition spiral retention, distractor hardness & minimal-pair rates, Unicode diacritic-safe Croatian grammar/CEFR progression (`č, ć, š, ž, đ`), Duolingo 6-tier mechanic ladder coverage, and 1–5 Duolingo Alignment Rubric scoring.
+- **Unit Test Suite (`tests/unit/pedagogy-metrics.test.ts`):** Added 11 Vitest unit tests verifying Croatian stemming/tokenization, diacritic-safe `Futur I` / reflexive `se` / `Perfekt` / `Conditional` / subordinate clause classification (including regression guard preventing `kreće` from false-matching `će`), minimal-pair Jaccard/Levenshtein metrics, complexity dip detection, and CSV/Markdown formatters.
+- **Audit Report, Interactive 60-Unit Scaling Dashboard & Remediation Roadmap (`docs/REGISTRY.md`):** Scored the curriculum at **3.4 / 5.0 Duolingo Alignment**, quantifying the Worlds 7–8 complexity dip (`3.09w → 2.19w`), `0%` minimal-pair collapse in Worlds 6 & 10–12, post-introduction tense abandonment (`0` *Futur I* in W9–W12, `0` Conditional course-wide), `0%` active-production mechanic ceiling, and the Unit 13 spatial preposition friction wall (`40.5%` empirical error rate); queued follow-up roadmap tickets **CR-095 through CR-099**.
+
+---
+
 ## [2026-11-19] - Fix Quiz `NEXT` Button Disabled / Unselectable Answers Soft-Lock (BUG-049)
 ### Fixed
 - **In-Flight Submission Deduplication & Stale-Response Guard (`app/lesson/quiz.tsx`):** Replaced React 18 `useTransition` (which does not hold `pending === true` across async `.then()` Server Actions) with explicit `isSubmitting` state + synchronous `isSubmittingRef` lock and `activeChallengeIdRef` check so duplicate clicks/Enter presses cannot fire overlapping `upsertChallengeProgress` / `reduceHearts` calls or overwrite a subsequent challenge's `status` with `"correct"`.

@@ -2,13 +2,13 @@
 
 > **Status:** 🏛️ **LIVING TICKETING REGISTRY & HISTORICAL AUDIT TRAIL**  
 > **Repository:** `AdminPhil/2lingo`  
-> **Total Change Requests:** 92 Completed | 1 Queued (CR-088)  
+> **Total Change Requests:** 93 Completed | 6 Queued (CR-088, CR-095 to CR-099)  
 > **Total Bug Tickets:** 48 Resolved (BUG-001 to BUG-046, BUG-048, BUG-049) | 1 Open (BUG-047)  
 > **Chronological Narrative:** For detailed release notes and code diffs, see [`docs/CHANGELOG.md`](./CHANGELOG.md).  
 
 ---
 
-## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-093)
+## 🚀 Part 1: Change Requests Master Ledger (CR-001 to CR-099)
 
 | Ticket ID | Category / Epic | Title & Summary | Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
@@ -105,6 +105,12 @@
 | **CR-091** | Curriculum & QA / World 10 | **World 10 Vocabulary Uniqueness & Cross-Unit Audit Guard:** Replaces overlapping Lesson 1 target words `Brod` (`U8 L2`) and `Maska` (`U25 L1`) in World 10 with net-new `Katamaran` (`U46 L1`) and `Kostim` (`U50 L1`) along with bespoke SVGs and `hr-HR-GabrijelaNeural` audio, and adds a Cross-Unit Lesson 1 Target Word Uniqueness check (`u_order >= 46`) to `scripts/audit-curriculum-rules.ts`. | 2026-11-17 | ✅ Verified |
 | **CR-092** | Curriculum & QA / World 11 | **World 11 (Varaždin & Međimurje, Units 51–55) + All-Lessons Uniqueness & Intra-Challenge QA Guards:** Adds World 11 (`varazdin-medjimurje`, `stage: 11`, `unitRange: [51, 55]`, `solidBg: "bg-indigo-800"`, `accentEmoji: "🎻"`) in `lib/theme-registry.ts`, 20 unique 36×36 SVGs, 100 net-new `hr-HR-GabrijelaNeural` `.mp3` files, and additive seeding via `scripts/seed-units-51-55.ts` (80 challenges, 320 options, 0 overlap with Units 1–50); upgrades `scripts/audit-curriculum-rules.ts` and `tests/integration/curriculum-integrity-all-units.test.ts` to enforce all-lessons (`L1–L4`) cross-unit target uniqueness (`u_order >= 46`) and intra-challenge single-correct / unique-option invariants across all 55 units. | 2026-11-17 | ✅ Verified |
 | **CR-093** | Curriculum & QA / World 12 | **World 12 (Velebit, Paklenica & Gacka, Units 56–60) + Seed-to-DB Drift & Scenery QA Guards:** Adds World 12 (`velebit-paklenica-gacka`, `stage: 12`, `unitRange: [56, 60]`, `solidBg: "bg-stone-800"`, `accentEmoji: "🏔️"`) in `lib/theme-registry.ts`, 20 unique 36×36 SVGs, 100 net-new `hr-HR-GabrijelaNeural` `.mp3` files, and additive seeding via `scripts/seed-units-56-60.ts` (80 challenges, 320 options, 0 overlap with Units 1–55); adds Check 2e Seed-to-DB Drift Guard and offline cross-seed target uniqueness to `scripts/audit-curriculum-rules.ts`, plus `getUnitScenery` coverage across `ALL_STAGES` in `tests/unit/theme-registry.test.ts`. | 2026-11-17 | ✅ Verified |
+| **CR-094** | Curriculum Research / Pedagogy | **Pedagogical Scaling & Duolingo-Standard Curriculum Audit (Worlds 1–12):** Read-only 4-pillar telemetry engine (`lib/pedagogy-metrics.ts`, `scripts/audit-pedagogy-metrics.ts`, `tests/unit/pedagogy-metrics.test.ts`, `npm run audit:pedagogy`) + Pedagogical Audit Report & Interactive 60-Unit Scaling Dashboard scoring all 12 Worlds (`3.4/5.0` overall Duolingo alignment) and surfacing W7–W8 complexity dip, `0%` late-world minimal pairs, W9–W12 tense abandonment, `0%` active recall ceiling, and Unit 13 (`40.5%` error) learner wall. | 2026-11-19 | ✅ Verified |
+| **CR-095** | Curriculum / Retention | **Unit 13 Spatial Prepositions Wall & Early-A1 Scaffolding Remediation (P0):** Add spatial visual diagrams and deductive contrast pairs for Unit 13 (`U`, `Na`, `Ispod`, `Na stolu` — currently `40.5%` mistake rate where 2 of 4 active learners stalled) and smooth Unit 1 L1/L2 cold-start greeting spikes. | 2026-11-19 | ⏳ Queued |
+| **CR-096** | Curriculum / Scaling | **Worlds 7–8 Complexity Dip & Worlds 9–12 Tense/Syntax Spiral Remediation (P0):** Lift Worlds 7–8 sentence complexity (`AvgW 2.19 → 3.4+`), restore *Perfekt* and *Futur I* spiral reinforcement across Worlds 9–12, and add *Kondicional I* (`bih/bi/bismo`) + subordinate clauses (`jer/dok/kada/koji`) in Worlds 10–12 for authentic Early B1 scaling. | 2026-11-19 | ⏳ Queued |
+| **CR-097** | Curriculum / Distractors | **Minimal-Pair Morphological Distractors for Worlds 5–12 (P1):** Upgrade L3–L4 `ASSIST` options in Worlds 5–12 from `0%` minimal pairs to `30–45%` Croatian case & conjugation minimal pairs (e.g., *u luku* vs. *u luci*, *učimo* vs. *učit ćemo*) to eliminate 1-word keyword spotting and end the World 9 `0%` recognition ceiling. | 2026-11-19 | ⏳ Queued |
+| **CR-098** | Quiz Engine / Active Recall | **Active Recall Challenge Mechanics Phase 1: `LISTEN` & `BUILD_SENTENCE` (P1):** Extend `challengesEnum` (`db/schema.ts`) and `app/lesson/` UI with Tier 3 Audio-Only Listening (`LISTEN`, reusing existing 4,036 neural `.mp3` clips) and Tier 5 Word-Bank Sentence Assembly (`BUILD_SENTENCE`) to break the `0%` active production ceiling. | 2026-11-19 | ⏳ Queued |
+| **CR-099** | Pedagogy / Spaced Repetition | **Half-Life Regression Spiral Reviews & `MATCH_PAIRS` / `CLOZE` Mechanics (P2):** Introduce personalized cross-world spiral review nodes powered by `challenge_mistakes` + recency decay to lift forward vocabulary retention (`34.7% → 60%+`), alongside Tier 4 (`MATCH_PAIRS`) and Tier 6 (`CLOZE` case/verb-ending drills). | 2026-11-19 | ⏳ Queued |
 
 ---
 
