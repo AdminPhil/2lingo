@@ -21,7 +21,7 @@ vi.mock("react-confetti", () => ({
   default: () => <div data-testid="confetti" />,
 }));
 
-vi.mock("react-use", () => ({
+vi.mock("@/lib/hooks/browser-hooks", () => ({
   useAudio: () => [<audio key="a" />, {}, { play: vi.fn() }],
   useWindowSize: () => ({ width: 1024, height: 768 }),
   useMount: () => {},

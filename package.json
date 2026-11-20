@@ -28,7 +28,8 @@
     "xp:set": "tsx ./scripts/set_xp.ts",
     "hearts:refill": "tsx ./scripts/daily-heart-refill.ts",
     "v2:export": "tsx ./scripts/v2/export-curriculum-yaml.ts",
-    "v2:validate": "tsx ./scripts/v2/validate-curriculum.ts"
+    "v2:validate": "tsx ./scripts/v2/validate-curriculum.ts",
+    "v2:compile": "tsx ./scripts/v2/compile-curriculum.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
@@ -47,15 +48,11 @@
     "next": "14.1.1",
     "next-themes": "^0.2.1",
     "qrcode": "^1.5.4",
-    "ra-data-simple-rest": "^4.16.12",
     "react": "^18",
-    "react-admin": "^4.16.12",
     "react-circular-progressbar": "^2.1.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18",
-    "react-use": "^17.5.0",
     "sonner": "^1.4.3",
-    "stripe": "^14.20.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "yaml": "^2.9.1",

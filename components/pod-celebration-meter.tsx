@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Confetti from "react-confetti";
-import { useWindowSize } from "react-use";
+import { useWindowSize } from "@/lib/hooks/browser-hooks";
 import { Sparkles, Trophy, PartyPopper } from "lucide-react";
 
 import { Button } from "@/components/ui/button";

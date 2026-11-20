@@ -1,4 +1,4 @@
-import { useKey, useMedia } from "react-use";
+import { useKey, useMedia } from "@/lib/hooks/browser-hooks";
 import { CheckCircle, XCircle } from "lucide-react";
 
 import { cn } from "@/lib/utils";

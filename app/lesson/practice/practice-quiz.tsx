@@ -5,7 +5,7 @@ import Image from "next/image";
 import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { useAudio, useWindowSize, useMount } from "react-use";
+import { useAudio, useWindowSize, useMount } from "@/lib/hooks/browser-hooks";
 
 import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 import { awardPracticeSessionHeart } from "@/actions/user-progress";

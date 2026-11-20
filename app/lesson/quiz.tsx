@@ -5,7 +5,7 @@ import Image from "next/image";
 import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { useAudio, useWindowSize, useMount } from "react-use";
+import { useAudio, useWindowSize, useMount } from "@/lib/hooks/browser-hooks";
 
 import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";

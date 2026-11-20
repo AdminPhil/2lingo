@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useCallback, useState } from "react";
-import { useAudio, useKey } from "react-use";
+import { useAudio, useKey } from "@/lib/hooks/browser-hooks";
 import { Volume2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
