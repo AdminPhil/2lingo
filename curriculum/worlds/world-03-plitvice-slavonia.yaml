@@ -96,21 +96,25 @@ units:
                 audioSrc: /audio/hr/citam.mp3
           - order: 4
             legacyId: 183
-            type: ASSIST
-            prompt: '"I play / I am playing"'
+            type: SELECT
+            prompt: Which one of these is "I play / I am playing"?
             grammarTags: []
             options:
               - text: Igram se
                 correct: true
+                imageSrc: /play.svg
                 audioSrc: /audio/hr/igram_se.mp3
               - text: Spavam
                 correct: false
+                imageSrc: /sleep.svg
                 audioSrc: /audio/hr/spavam.mp3
               - text: Učim
                 correct: false
+                imageSrc: /study.svg
                 audioSrc: /audio/hr/ucim.mp3
               - text: Pjevam
                 correct: false
+                imageSrc: /sing.svg
                 audioSrc: /audio/hr/pjevam.mp3
       - order: 2
         legacyId: 42
@@ -532,21 +536,25 @@ units:
                 audioSrc: /audio/hr/auto.mp3
           - order: 4
             legacyId: 201
-            type: ASSIST
-            prompt: '"Grass"'
+            type: SELECT
+            prompt: Which one of these is "Grass"?
             grammarTags: []
             options:
               - text: Trava
                 correct: true
+                imageSrc: /grass.svg
                 audioSrc: /audio/hr/trava.mp3
               - text: Drvo
                 correct: false
+                imageSrc: /tree.svg
                 audioSrc: /audio/hr/drvo.mp3
               - text: Park
                 correct: false
+                imageSrc: /park.svg
                 audioSrc: /audio/hr/park.mp3
               - text: Ulica
                 correct: false
+                imageSrc: /street.svg
                 audioSrc: /audio/hr/ulica.mp3
       - order: 2
         legacyId: 46
@@ -968,21 +976,25 @@ units:
                 audioSrc: /audio/hr/tamo.mp3
           - order: 4
             legacyId: 219
-            type: ASSIST
-            prompt: '"Down / Below"'
+            type: SELECT
+            prompt: Which one of these is "Down / Below"?
             grammarTags: []
             options:
               - text: Dolje
                 correct: true
+                imageSrc: /down.svg
                 audioSrc: /audio/hr/dolje.mp3
               - text: Gore
                 correct: false
+                imageSrc: /up.svg
                 audioSrc: /audio/hr/gore.mp3
               - text: Tamo
                 correct: false
+                imageSrc: /there.svg
                 audioSrc: /audio/hr/tamo.mp3
               - text: Blizu
                 correct: false
+                imageSrc: /near.svg
                 audioSrc: /audio/hr/blizu.mp3
       - order: 2
         legacyId: 50
@@ -997,19 +1009,15 @@ units:
             options:
               - text: U
                 correct: true
-                imageSrc: /spatial_u.svg
                 audioSrc: /audio/hr/u.mp3
               - text: Na
                 correct: false
-                imageSrc: /spatial_na.svg
                 audioSrc: /audio/hr/na.mp3
               - text: Ispod
                 correct: false
-                imageSrc: /spatial_ispod.svg
                 audioSrc: /audio/hr/ispod.mp3
               - text: Blizu
                 correct: false
-                imageSrc: /spatial_blizu.svg
                 audioSrc: /audio/hr/blizu.mp3
           - order: 2
             legacyId: 221
@@ -1019,15 +1027,12 @@ units:
             options:
               - text: Na
                 correct: true
-                imageSrc: /spatial_na.svg
                 audioSrc: /audio/hr/na.mp3
               - text: U
                 correct: false
-                imageSrc: /spatial_u.svg
                 audioSrc: /audio/hr/u.mp3
               - text: Ispod
                 correct: false
-                imageSrc: /spatial_ispod.svg
                 audioSrc: /audio/hr/ispod.mp3
               - text: Gore
                 correct: false
@@ -1040,15 +1045,12 @@ units:
             options:
               - text: Ispod
                 correct: true
-                imageSrc: /spatial_ispod.svg
                 audioSrc: /audio/hr/ispod.mp3
               - text: Na
                 correct: false
-                imageSrc: /spatial_na.svg
                 audioSrc: /audio/hr/na.mp3
               - text: U
                 correct: false
-                imageSrc: /spatial_u.svg
                 audioSrc: /audio/hr/u.mp3
               - text: Dolje
                 correct: false
@@ -1061,7 +1063,6 @@ units:
             options:
               - text: Blizu
                 correct: true
-                imageSrc: /spatial_blizu.svg
                 audioSrc: /audio/hr/blizu.mp3
               - text: Tamo
                 correct: false
@@ -1071,7 +1072,6 @@ units:
                 audioSrc: /audio/hr/ovdje.mp3
               - text: Ispod
                 correct: false
-                imageSrc: /spatial_ispod.svg
                 audioSrc: /audio/hr/ispod.mp3
       - order: 3
         legacyId: 51
@@ -1414,21 +1414,25 @@ units:
                 audioSrc: /audio/hr/burek.mp3
           - order: 4
             legacyId: 237
-            type: ASSIST
-            prompt: '"Pastry"'
+            type: SELECT
+            prompt: Which one of these is "Pastry"?
             grammarTags: []
             options:
               - text: Burek
                 correct: true
+                imageSrc: /burek.svg
                 audioSrc: /audio/hr/burek.mp3
               - text: Kiflica
                 correct: false
+                imageSrc: /croissant.svg
                 audioSrc: /audio/hr/kiflica.mp3
               - text: Kruh
                 correct: false
+                imageSrc: /bread.svg
                 audioSrc: /audio/hr/kruh.mp3
               - text: Sir
                 correct: false
+                imageSrc: /cheese.svg
                 audioSrc: /audio/hr/sir.mp3
       - order: 2
         legacyId: 54
@@ -1850,21 +1854,25 @@ units:
                 audioSrc: /audio/hr/nogomet.mp3
           - order: 4
             legacyId: 255
-            type: ASSIST
-            prompt: '"Game / Play"'
+            type: SELECT
+            prompt: Which one of these is "Game / Play"?
             grammarTags: []
             options:
               - text: Igra
                 correct: true
+                imageSrc: /play.svg
                 audioSrc: /audio/hr/igra.mp3
               - text: Lopta
                 correct: false
+                imageSrc: /ball.svg
                 audioSrc: /audio/hr/lopta.mp3
               - text: Pobjeda
                 correct: false
+                imageSrc: /trophy.svg
                 audioSrc: /audio/hr/pobjeda.mp3
               - text: Pjesma
                 correct: false
+                imageSrc: /pjesma.svg
                 audioSrc: /audio/hr/pjesma.mp3
       - order: 2
         legacyId: 58

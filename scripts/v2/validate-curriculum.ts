@@ -84,13 +84,38 @@ function validateCurriculum() {
       seenUnitOrders.add(unit.order);
       totalUnits++;
 
+      if (unit.lessons.length !== 5) {
+        console.error(
+          `[UNIT ARC] ${file} U${unit.order}: expected 5 lessons (DISCOVERY..BOSS_CAPSTONE), got ${unit.lessons.length}`
+        );
+        errors++;
+      }
+
       for (const lesson of unit.lessons) {
         totalLessons++;
         for (const ch of lesson.challenges) {
           totalChallenges++;
           const ctx = `${file} U${unit.order} L${lesson.order} Ch${ch.order}`;
 
+          // Rule 1 (v2 Standards §3): Lesson 1 (DISCOVERY) must be 100% illustrated SELECT
+          if (lesson.order === 1) {
+            if (ch.type !== "SELECT") {
+              console.error(
+                `[L1 DISCOVERY INVARIANT] ${ctx}: expected type "SELECT" with visual flashcards, got "${ch.type}"`
+              );
+              errors++;
+            }
+          }
+
           if (ch.type === "SELECT" || ch.type === "ASSIST" || ch.type === "LISTEN" || ch.type === "CLOZE") {
+            // Rule 2 (v2 Standards §4): 4-option symmetry
+            if (ch.options.length !== 4) {
+              console.error(
+                `[4-OPTION GRID] ${ctx}: expected 4 options, got ${ch.options.length}`
+              );
+              errors++;
+            }
+
             const correctCount = ch.options.filter((o) => o.correct).length;
             if (correctCount !== 1) {
               console.error(`[OPTION INTEGRITY] ${ctx}: expected 1 correct option, got ${correctCount}`);
@@ -104,6 +129,29 @@ function validateCurriculum() {
                 errors++;
               }
               seenTexts.add(norm);
+
+              // Rule 3 (v2 Standards §3): Progressive Fading Invariant
+              if (lesson.order === 1 && !opt.imageSrc) {
+                console.error(
+                  `[L1 MISSING IMAGE] ${ctx} ("${opt.text}"): Lesson 1 SELECT options must include imageSrc`
+                );
+                errors++;
+              }
+              if (lesson.order >= 2 && opt.imageSrc) {
+                console.error(
+                  `[PROGRESSIVE FADING] ${ctx} ("${opt.text}"): Lesson ${lesson.order} must not include imageSrc (${opt.imageSrc})`
+                );
+                errors++;
+              }
+
+              // Rule 4 (v2 Standards §6): 100% Audio Integrity
+              if (!opt.audioSrc) {
+                console.error(
+                  `[AUDIO MISSING] ${ctx} ("${opt.text}"): option missing audioSrc`
+                );
+                errors++;
+              }
+
               checkAsset(opt.imageSrc, `${ctx} (${opt.text})`);
               checkAsset(opt.audioSrc, `${ctx} (${opt.text})`);
             }

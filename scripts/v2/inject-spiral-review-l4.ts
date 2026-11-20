@@ -31,6 +31,20 @@ function cloneChallenge(ch: ChallengeYaml, newOrder: number): ChallengeYaml {
   const copy = JSON.parse(JSON.stringify(ch)) as ChallengeYaml;
   delete copy.legacyId;
   copy.order = newOrder;
+  // Progressive Fading Invariant (v2 Standards §3): L4 Spiral Review is strictly images-OFF
+  if (
+    copy.type === "SELECT" ||
+    copy.type === "ASSIST" ||
+    copy.type === "LISTEN" ||
+    copy.type === "CLOZE"
+  ) {
+    for (const opt of copy.options) {
+      delete opt.imageSrc;
+    }
+    if (copy.type === "SELECT") {
+      return { ...copy, type: "ASSIST" };
+    }
+  }
   return copy;
 }
 

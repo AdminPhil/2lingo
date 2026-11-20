@@ -52,21 +52,25 @@ units:
                 audioSrc: /audio/hr/molim.mp3
           - order: 2
             legacyId: 2
-            type: ASSIST
-            prompt: '"Good day"'
+            type: SELECT
+            prompt: Which one of these is "Good day"?
             grammarTags: []
             options:
               - text: Dobar dan
                 correct: true
+                imageSrc: /dobar_dan.svg
                 audioSrc: /audio/hr/dobar_dan.mp3
               - text: Laku noć
                 correct: false
+                imageSrc: /laku_noc.svg
                 audioSrc: /audio/hr/laku_noc.mp3
               - text: Hvala lijepa
                 correct: false
+                imageSrc: /hvala_lijepa.svg
                 audioSrc: /audio/hr/hvala_lijepa.mp3
               - text: Dobro sam
                 correct: false
+                imageSrc: /dobro_sam.svg
                 audioSrc: /audio/hr/dobro_sam.mp3
           - order: 3
             legacyId: 3
@@ -92,21 +96,25 @@ units:
                 audioSrc: /audio/hr/molim.mp3
           - order: 4
             legacyId: 4
-            type: ASSIST
-            prompt: '"Good night"'
+            type: SELECT
+            prompt: Which one of these is "Good night"?
             grammarTags: []
             options:
               - text: Laku noć
                 correct: true
+                imageSrc: /laku_noc.svg
                 audioSrc: /audio/hr/laku_noc.mp3
               - text: Dobar dan
                 correct: false
+                imageSrc: /dobar_dan.svg
                 audioSrc: /audio/hr/dobar_dan.mp3
               - text: Dobro sam
                 correct: false
+                imageSrc: /dobro_sam.svg
                 audioSrc: /audio/hr/dobro_sam.mp3
               - text: Hvala lijepa
                 correct: false
+                imageSrc: /hvala_lijepa.svg
                 audioSrc: /audio/hr/hvala_lijepa.mp3
       - order: 2
         legacyId: 2
@@ -301,25 +309,21 @@ units:
                 correct: false
                 audioSrc: /audio/hr/molim.mp3
           - order: 3
-            type: SELECT
+            type: ASSIST
             prompt: Which one of these is "Hello / Hi"?
             grammarTags: []
             options:
               - text: Bok
                 correct: true
-                imageSrc: /mascot.svg
                 audioSrc: /audio/hr/bok.mp3
               - text: Doviđenja
                 correct: false
-                imageSrc: /mascot_sad.svg
                 audioSrc: /audio/hr/dovidenja.mp3
               - text: Hvala
                 correct: false
-                imageSrc: /points.svg
                 audioSrc: /audio/hr/hvala.mp3
               - text: Molim
                 correct: false
-                imageSrc: /heart.svg
                 audioSrc: /audio/hr/molim.mp3
           - order: 4
             type: ASSIST
@@ -507,39 +511,47 @@ units:
                 audioSrc: /audio/hr/brat.mp3
           - order: 3
             legacyId: 15
-            type: ASSIST
-            prompt: '"Grandma"'
+            type: SELECT
+            prompt: Which one of these is "Grandma"?
             grammarTags: []
             options:
               - text: Baka
                 correct: true
+                imageSrc: /grandma.svg
                 audioSrc: /audio/hr/baka.mp3
               - text: Djed
                 correct: false
+                imageSrc: /grandpa.svg
                 audioSrc: /audio/hr/djed.mp3
               - text: Mama
                 correct: false
+                imageSrc: /woman.svg
                 audioSrc: /audio/hr/mama.mp3
               - text: Tata
                 correct: false
+                imageSrc: /man.svg
                 audioSrc: /audio/hr/tata.mp3
           - order: 4
             legacyId: 16
-            type: ASSIST
-            prompt: '"Grandpa"'
+            type: SELECT
+            prompt: Which one of these is "Grandpa"?
             grammarTags: []
             options:
               - text: Djed
                 correct: true
+                imageSrc: /grandpa.svg
                 audioSrc: /audio/hr/djed.mp3
               - text: Baka
                 correct: false
+                imageSrc: /grandma.svg
                 audioSrc: /audio/hr/baka.mp3
               - text: Tata
                 correct: false
+                imageSrc: /man.svg
                 audioSrc: /audio/hr/tata.mp3
               - text: Mama
                 correct: false
+                imageSrc: /woman.svg
                 audioSrc: /audio/hr/mama.mp3
       - order: 2
         legacyId: 5
@@ -918,39 +930,47 @@ units:
                 audioSrc: /audio/hr/riba.mp3
           - order: 3
             legacyId: 26
-            type: ASSIST
-            prompt: '"Fish"'
+            type: SELECT
+            prompt: Which one of these is "Fish"?
             grammarTags: []
             options:
               - text: Riba
                 correct: true
+                imageSrc: /fish.svg
                 audioSrc: /audio/hr/riba.mp3
               - text: Ptica
                 correct: false
+                imageSrc: /bird.svg
                 audioSrc: /audio/hr/ptica.mp3
               - text: Pas
                 correct: false
+                imageSrc: /dog.svg
                 audioSrc: /audio/hr/pas.mp3
               - text: Mačka
                 correct: false
+                imageSrc: /cat.svg
                 audioSrc: /audio/hr/macka.mp3
           - order: 4
             legacyId: 27
-            type: ASSIST
-            prompt: '"Bird"'
+            type: SELECT
+            prompt: Which one of these is "Bird"?
             grammarTags: []
             options:
               - text: Ptica
                 correct: true
+                imageSrc: /bird.svg
                 audioSrc: /audio/hr/ptica.mp3
               - text: Riba
                 correct: false
+                imageSrc: /fish.svg
                 audioSrc: /audio/hr/riba.mp3
               - text: Patka
                 correct: false
+                imageSrc: /duck.svg
                 audioSrc: /audio/hr/patka.mp3
               - text: Mačka
                 correct: false
+                imageSrc: /cat.svg
                 audioSrc: /audio/hr/macka.mp3
       - order: 2
         legacyId: 8
@@ -1307,39 +1327,47 @@ units:
                 audioSrc: /audio/hr/zelena.mp3
           - order: 2
             legacyId: 36
-            type: ASSIST
-            prompt: '"Blue"'
+            type: SELECT
+            prompt: Which one of these is "Blue"?
             grammarTags: []
             options:
               - text: Plava
                 correct: true
+                imageSrc: /blue.svg
                 audioSrc: /audio/hr/plava.mp3
               - text: Crvena
                 correct: false
+                imageSrc: /red.svg
                 audioSrc: /audio/hr/crvena.mp3
               - text: Žuta
                 correct: false
+                imageSrc: /yellow.svg
                 audioSrc: /audio/hr/zuta.mp3
               - text: Zelena
                 correct: false
+                imageSrc: /green.svg
                 audioSrc: /audio/hr/zelena.mp3
           - order: 3
             legacyId: 37
-            type: ASSIST
-            prompt: '"Yellow"'
+            type: SELECT
+            prompt: Which one of these is "Yellow"?
             grammarTags: []
             options:
               - text: Žuta
                 correct: true
+                imageSrc: /yellow.svg
                 audioSrc: /audio/hr/zuta.mp3
               - text: Plava
                 correct: false
+                imageSrc: /blue.svg
                 audioSrc: /audio/hr/plava.mp3
               - text: Crvena
                 correct: false
+                imageSrc: /red.svg
                 audioSrc: /audio/hr/crvena.mp3
               - text: Zelena
                 correct: false
+                imageSrc: /green.svg
                 audioSrc: /audio/hr/zelena.mp3
           - order: 4
             legacyId: 38
@@ -1772,21 +1800,25 @@ units:
                 audioSrc: /audio/hr/cokolada.mp3
           - order: 2
             legacyId: 50
-            type: ASSIST
-            prompt: '"Banana"'
+            type: SELECT
+            prompt: Which one of these is "Banana"?
             grammarTags: []
             options:
               - text: Banana
                 correct: true
+                imageSrc: /banana.svg
                 audioSrc: /audio/hr/banana.mp3
               - text: Jabuka
                 correct: false
+                imageSrc: /apple.svg
                 audioSrc: /audio/hr/jabuka.mp3
               - text: Kruh
                 correct: false
+                imageSrc: /bread.svg
                 audioSrc: /audio/hr/kruh.mp3
               - text: Sladoled
                 correct: false
+                imageSrc: /ice_cream.svg
                 audioSrc: /audio/hr/sladoled.mp3
           - order: 3
             legacyId: 51

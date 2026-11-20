@@ -96,21 +96,25 @@ units:
                 audioSrc: /audio/hr/kuca.mp3
           - order: 4
             legacyId: 93
-            type: ASSIST
-            prompt: '"Table / Desk"'
+            type: SELECT
+            prompt: Which one of these is "Table / Desk"?
             grammarTags: []
             options:
               - text: Stol
                 correct: true
+                imageSrc: /table.svg
                 audioSrc: /audio/hr/stol.mp3
               - text: Krevet
                 correct: false
+                imageSrc: /bed.svg
                 audioSrc: /audio/hr/krevet.mp3
               - text: Soba
                 correct: false
+                imageSrc: /room.svg
                 audioSrc: /audio/hr/soba.mp3
               - text: Vrata
                 correct: false
+                imageSrc: /door.svg
                 audioSrc: /audio/hr/vrata.mp3
       - order: 2
         legacyId: 22
@@ -532,21 +536,25 @@ units:
                 audioSrc: /audio/hr/nos.mp3
           - order: 4
             legacyId: 111
-            type: ASSIST
-            prompt: '"Eye"'
+            type: SELECT
+            prompt: Which one of these is "Eye"?
             grammarTags: []
             options:
               - text: Oko
                 correct: true
+                imageSrc: /eye.svg
                 audioSrc: /audio/hr/oko.mp3
               - text: Uho
                 correct: false
+                imageSrc: /ear.svg
                 audioSrc: /audio/hr/uho.mp3
               - text: Nos
                 correct: false
+                imageSrc: /nose.svg
                 audioSrc: /audio/hr/nos.mp3
               - text: Usta
                 correct: false
+                imageSrc: /mouth.svg
                 audioSrc: /audio/hr/usta.mp3
       - order: 2
         legacyId: 26
@@ -968,21 +976,25 @@ units:
                 audioSrc: /audio/hr/plaza.mp3
           - order: 4
             legacyId: 129
-            type: ASSIST
-            prompt: '"Sand"'
+            type: SELECT
+            prompt: Which one of these is "Sand"?
             grammarTags: []
             options:
               - text: Pijesak
                 correct: true
+                imageSrc: /sand.svg
                 audioSrc: /audio/hr/pijesak.mp3
               - text: More
                 correct: false
+                imageSrc: /sea.svg
                 audioSrc: /audio/hr/more.mp3
               - text: Plaža
                 correct: false
+                imageSrc: /beach.svg
                 audioSrc: /audio/hr/plaza.mp3
               - text: Sunce
                 correct: false
+                imageSrc: /sun.svg
                 audioSrc: /audio/hr/sunce.mp3
       - order: 2
         legacyId: 30
@@ -1404,21 +1416,25 @@ units:
                 audioSrc: /audio/hr/hlace.mp3
           - order: 4
             legacyId: 147
-            type: ASSIST
-            prompt: '"Socks"'
+            type: SELECT
+            prompt: Which one of these is "Socks"?
             grammarTags: []
             options:
               - text: Čarape
                 correct: true
+                imageSrc: /socks.svg
                 audioSrc: /audio/hr/carape.mp3
               - text: Cipele
                 correct: false
+                imageSrc: /shoes.svg
                 audioSrc: /audio/hr/cipele.mp3
               - text: Majica
                 correct: false
+                imageSrc: /tshirt.svg
                 audioSrc: /audio/hr/majica.mp3
               - text: Hlače
                 correct: false
+                imageSrc: /pants.svg
                 audioSrc: /audio/hr/hlace.mp3
       - order: 2
         legacyId: 34
@@ -1840,21 +1856,25 @@ units:
                 audioSrc: /audio/hr/snijeg.mp3
           - order: 4
             legacyId: 165
-            type: ASSIST
-            prompt: '"Snow"'
+            type: SELECT
+            prompt: Which one of these is "Snow"?
             grammarTags: []
             options:
               - text: Snijeg
                 correct: true
+                imageSrc: /snow.svg
                 audioSrc: /audio/hr/snijeg.mp3
               - text: Kiša
                 correct: false
+                imageSrc: /rain.svg
                 audioSrc: /audio/hr/kisa.mp3
               - text: Vjetar
                 correct: false
+                imageSrc: /wind.svg
                 audioSrc: /audio/hr/vjetar.mp3
               - text: Sunčano
                 correct: false
+                imageSrc: /sunny.svg
                 audioSrc: /audio/hr/suncano.mp3
       - order: 2
         legacyId: 38
