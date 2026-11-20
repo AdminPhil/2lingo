@@ -2,7 +2,8 @@
 
 > **Branch:** `v2` (Isolated from live `main` production)  
 > **Target Horizon:** Levels 1–3 (`U1–60`, v2.0 MVP Cutover) → Level 4 (`U61–80`, Early B1) → Level 5 (`U81–100`, Solid B1) + Daily Refresh  
-> **Master Blueprint:** [`implementation_plan.md`](file:///C:/Users/phili/.gemini/antigravity/brain/c629a829-2e9b-4e6a-a598-bb4f714604f3/implementation_plan.md)
+> **Master Blueprint:** [`implementation_plan.md`](file:///C:/Users/phili/.gemini/antigravity/brain/c629a829-2e9b-4e6a-a598-bb4f714604f3/implementation_plan.md)  
+> **v2 Curriculum Specs:** [`3. CURRICULUM_STANDARDS_V2.md`](./3.%20CURRICULUM_STANDARDS_V2.md) • [`4. LESSON_PLANNING_GUIDE_V2.md`](./4.%20LESSON_PLANNING_GUIDE_V2.md) • [`V2_CUTOVER_RUNBOOK.md`](./V2_CUTOVER_RUNBOOK.md)
 
 ---
 
