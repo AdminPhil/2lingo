@@ -269,6 +269,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/jedem_i_pijem.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sir.mp3
+            grammarTags: []
+            options:
+              - text: Sir
+                correct: true
+                audioSrc: /audio/hr/sir.mp3
+              - text: Rajčica
+                correct: false
+                audioSrc: /audio/hr/rajcica.mp3
+              - text: Naranča
+                correct: false
+                audioSrc: /audio/hr/naranca.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"I drink water"'
+            grammarTags: []
+            options:
+              - text: Pijem vodu
+                correct: true
+                audioSrc: /audio/hr/pijem_vodu.mp3
+              - text: Jedem jabuku
+                correct: false
+                audioSrc: /audio/hr/jedem_jabuku.mp3
+              - text: Čitam knjigu
+                correct: false
+                audioSrc: /audio/hr/citam_knjigu.mp3
+              - text: Pijem mlijeko
+                correct: false
+                audioSrc: /audio/hr/pijem_mlijeko.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Score a goal!"'
+            grammarTags: []
+            options:
+              - text: Zabij gol
+                correct: true
+                audioSrc: /audio/hr/zabij_gol.mp3
+              - text: Dodaj loptu
+                correct: false
+                audioSrc: /audio/hr/dodaj_loptu.mp3
+              - text: Trči brzo
+                correct: false
+                audioSrc: /audio/hr/trci_brzo.mp3
+              - text: Skoči visoko
+                correct: false
+                audioSrc: /audio/hr/skoci_visoko.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: "\"Let's go to school\""
+            targetSentence: Idemo u školu
+            acceptedAnswers:
+              - Idemo u školu
+            wordBank:
+              - Idemo
+              - na
+              - školu
+              - u
+            audioSrc: /audio/hr/idemo_u_skolu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 64
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Školski Znalac"
@@ -629,6 +698,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/topla_juha.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/glazba.mp3
+            grammarTags: []
+            options:
+              - text: Glazba
+                correct: true
+                audioSrc: /audio/hr/glazba.mp3
+              - text: Pjesma
+                correct: false
+                audioSrc: /audio/hr/pjesma.mp3
+              - text: Crtanje
+                correct: false
+                audioSrc: /audio/hr/crtanje.mp3
+              - text: Igra
+                correct: false
+                audioSrc: /audio/hr/igra.mp3
+          - order: 2
+            type: ASSIST
+            prompt: "\"Let's go to the park!\""
+            grammarTags: []
+            options:
+              - text: Idemo u park
+                correct: true
+                audioSrc: /audio/hr/idemo_u_park.mp3
+              - text: Vozim bicikl
+                correct: false
+                audioSrc: /audio/hr/vozim_bicikl.mp3
+              - text: Ljuljam se visoko
+                correct: false
+                audioSrc: /audio/hr/ljuljam_se_visoko.mp3
+              - text: Gledam zeleno drvo
+                correct: false
+                audioSrc: /audio/hr/gledam_zeleno_drvo.mp3
+          - order: 3
+            type: BUILD_SENTENCE
+            prompt: "\"Let's go to school\""
+            targetSentence: Idemo u školu
+            acceptedAnswers:
+              - Idemo u školu
+            wordBank:
+              - Idemo
+              - na
+              - školu
+              - u
+            audioSrc: /audio/hr/idemo_u_skolu.mp3
+            grammarTags: []
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"Bear in the forest"'
+            targetSentence: Medvjed u šumi
+            acceptedAnswers:
+              - Medvjed u šumi
+            wordBank:
+              - na
+              - šumu
+              - u
+              - šumi
+              - Medvjed
+            audioSrc: /audio/hr/medvjed_u_sumi.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 68
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Šumski Čuvar"
@@ -990,6 +1125,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/vlak_vozi_brzo.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/uciteljica.mp3
+            grammarTags: []
+            options:
+              - text: Učiteljica
+                correct: true
+                audioSrc: /audio/hr/uciteljica.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Mama
+                correct: false
+                audioSrc: /audio/hr/mama.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Under the table"'
+            grammarTags: []
+            options:
+              - text: Na stolu
+                correct: false
+                audioSrc: /audio/hr/na_stolu.mp3
+              - text: Ispod stola
+                correct: true
+                audioSrc: /audio/hr/ispod_stola.mp3
+              - text: Ispod kreveta
+                correct: false
+                audioSrc: /audio/hr/ispod_kreveta.mp3
+              - text: U mojoj sobi
+                correct: false
+                audioSrc: /audio/hr/u_mojoj_sobi.mp3
+          - order: 3
+            type: BUILD_SENTENCE
+            prompt: '"Bear in the forest"'
+            targetSentence: Medvjed u šumi
+            acceptedAnswers:
+              - Medvjed u šumi
+            wordBank:
+              - na
+              - šumu
+              - u
+              - šumi
+              - Medvjed
+            audioSrc: /audio/hr/medvjed_u_sumi.mp3
+            grammarTags: []
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"The ferry goes to the island"'
+            targetSentence: Trajekt ide na otok
+            acceptedAnswers:
+              - Trajekt ide na otok
+            wordBank:
+              - ide
+              - ispod
+              - otok
+              - na
+              - Trajekt
+            audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 72
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Svjetski Putnik"
@@ -1350,6 +1552,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/kuham_juhu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medvjed.mp3
+            grammarTags: []
+            options:
+              - text: Medvjed
+                correct: true
+                audioSrc: /audio/hr/medvjed.mp3
+              - text: Jelen
+                correct: false
+                audioSrc: /audio/hr/jelen.mp3
+              - text: Vuk
+                correct: false
+                audioSrc: /audio/hr/vuk.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"One roll, please!"'
+            grammarTags: []
+            options:
+              - text: Molim jednu kiflicu
+                correct: true
+                audioSrc: /audio/hr/molim_jednu_kiflicu.mp3
+              - text: Molim jedan burek
+                correct: false
+                audioSrc: /audio/hr/molim_jedan_burek.mp3
+              - text: Molim malo sira
+                correct: false
+                audioSrc: /audio/hr/molim_malo_sira.mp3
+              - text: Molim jednu jabuku
+                correct: false
+                audioSrc: /audio/hr/molim_jednu_jabuku.mp3
+          - order: 3
+            type: BUILD_SENTENCE
+            prompt: '"The ferry goes to the island"'
+            targetSentence: Trajekt ide na otok
+            acceptedAnswers:
+              - Trajekt ide na otok
+            wordBank:
+              - ide
+              - ispod
+              - otok
+              - na
+              - Trajekt
+            audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
+            grammarTags: []
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"Mom is cooking soup"'
+            targetSentence: Mama kuha juhu
+            acceptedAnswers:
+              - Mama kuha juhu
+            wordBank:
+              - Mama
+              - nije
+              - juhu
+              - kuha
+            audioSrc: /audio/hr/mama_kuha_juhu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 76
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Veliki Kuhar"
@@ -1709,6 +1977,71 @@ units:
                 correct: false
                 audioSrc: /audio/hr/fina_hrana.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/karta.mp3
+            grammarTags: []
+            options:
+              - text: Karta
+                correct: true
+                audioSrc: /audio/hr/karta.mp3
+              - text: Kofer
+                correct: false
+                audioSrc: /audio/hr/kofer.mp3
+              - text: Torba
+                correct: false
+                audioSrc: /audio/hr/torba.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Score a goal!"'
+            grammarTags: []
+            options:
+              - text: Zabij gol
+                correct: true
+                audioSrc: /audio/hr/zabij_gol.mp3
+              - text: Dodaj loptu
+                correct: false
+                audioSrc: /audio/hr/dodaj_loptu.mp3
+              - text: Trči brzo
+                correct: false
+                audioSrc: /audio/hr/trci_brzo.mp3
+              - text: Skoči visoko
+                correct: false
+                audioSrc: /audio/hr/skoci_visoko.mp3
+          - order: 3
+            type: BUILD_SENTENCE
+            prompt: '"Mom is cooking soup"'
+            targetSentence: Mama kuha juhu
+            acceptedAnswers:
+              - Mama kuha juhu
+            wordBank:
+              - Mama
+              - nije
+              - juhu
+              - kuha
+            audioSrc: /audio/hr/mama_kuha_juhu.mp3
+            grammarTags: []
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"Blow out the candles"'
+            targetSentence: Puhni u svjećice
+            acceptedAnswers:
+              - Puhni u svjećice
+            wordBank:
+              - na
+              - Puhni
+              - u
+              - svjećice
+            audioSrc: /audio/hr/puhni_u_svjecice.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 80
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Kralj Slavlja"

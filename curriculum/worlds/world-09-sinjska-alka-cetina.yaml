@@ -277,6 +277,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/danas_gledamo_vitezove_na_stazi.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/velika_snaga.mp3
+            grammarTags: []
+            options:
+              - text: Velika snaga
+                correct: true
+                audioSrc: /audio/hr/velika_snaga.mp3
+              - text: Snažna munja
+                correct: false
+                audioSrc: /audio/hr/snazna_munja.mp3
+              - text: Glasni grom
+                correct: false
+                audioSrc: /audio/hr/glasni_grom.mp3
+              - text: Puna baterija
+                correct: false
+                audioSrc: /audio/hr/puna_baterija.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "Where is the castle?"'
+            targetSentence: Gdje je dvorac?
+            acceptedAnswers:
+              - Gdje je dvorac
+            wordBank:
+              - je
+              - su
+              - Gdje
+              - dvorac
+            audioSrc: /audio/hr/gdje_je_dvorac.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "Yesterday we visited the big castle."'
+            grammarTags:
+              - perfekt
+              - accusative
+            options:
+              - text: Jučer smo posjetili veliki dvorac.
+                correct: true
+                audioSrc: /audio/hr/jucer_smo_posjetili_veliki_dvorac.mp3
+              - text: Sutra ćemo posjetiti veliki dvorac.
+                correct: false
+                audioSrc: /audio/hr/sutra_cemo_posjetiti_veliki_dvorac.mp3
+              - text: Jučer smo posjetili velikom dvorcu.
+                correct: false
+                audioSrc: /audio/hr/jucer_smo_posjetili_velikom_dvorcu.mp3
+              - text: Danas posjećujemo mali dvorac.
+                correct: false
+                audioSrc: /audio/hr/danas_posjecujemo_mali_dvorac.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The riders prepare for the tournament."'
+            targetSentence: Jahači se pripremaju za natjecanje.
+            acceptedAnswers:
+              - Jahači se pripremaju za natjecanje
+            wordBank:
+              - Jahači
+              - se
+              - natjecanje
+              - za
+              - pripremaju
+              - nije
+            audioSrc: /audio/hr/jahaci_se_pripremaju_za_natjecanje.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 164
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Viteška priprema"
@@ -611,6 +680,76 @@ units:
                 correct: false
                 audioSrc: /audio/hr/publika_je_cekala_dok_su_konji_ulazili.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vazno_znanje.mp3
+            grammarTags: []
+            options:
+              - text: Važno znanje
+                correct: true
+                audioSrc: /audio/hr/vazno_znanje.mp3
+              - text: Pametni robot
+                correct: false
+                audioSrc: /audio/hr/pametni_robot.mp3
+              - text: Dobra ideja
+                correct: false
+                audioSrc: /audio/hr/dobra_ideja.mp3
+              - text: Svijetla budućnost
+                correct: false
+                audioSrc: /audio/hr/svijetla_buducnost.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: How do you say "The night sky is dark."?
+            targetSentence: Noćno nebo je tamno.
+            acceptedAnswers:
+              - Noćno nebo je tamno
+            wordBank:
+              - Noćno
+              - je
+              - su
+              - tamno
+              - nebo
+            audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "He carried a heavy wooden shield."'
+            grammarTags:
+              - perfekt
+              - accusative
+            options:
+              - text: Nosio je teški drveni štit.
+                correct: true
+                audioSrc: /audio/hr/nosio_je_teski_drveni_stit.mp3
+              - text: Nosi teški drveni štit.
+                correct: false
+                audioSrc: /audio/hr/nosi_teski_drveni_stit.mp3
+              - text: Nosio je teškim drvenim štitom.
+                correct: false
+                audioSrc: /audio/hr/nosio_je_teskim_drvenim_stitom.mp3
+              - text: Nosili smo stari kameni ključ.
+                correct: false
+                audioSrc: /audio/hr/nosili_smo_stari_kameni_kljuc.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The knight aims at the target."'
+            targetSentence: Vitez se usmjerava na metu.
+            acceptedAnswers:
+              - Vitez se usmjerava na metu
+            wordBank:
+              - metu
+              - se
+              - Vitez
+              - ispod
+              - usmjerava
+              - na
+            audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 168
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Pogodak u sridu!"
@@ -945,6 +1084,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/zelena_rijeka_cetina.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/konj_se_krece_brzo.mp3
+            grammarTags: []
+            options:
+              - text: Konj se kreće brzo.
+                correct: true
+                audioSrc: /audio/hr/konj_se_krece_brzo.mp3
+              - text: Jahač se priprema.
+                correct: false
+                audioSrc: /audio/hr/jahac_se_priprema.mp3
+              - text: Konj stoji mirno.
+                correct: false
+                audioSrc: /audio/hr/konj_stoji_mirno.mp3
+              - text: Vitez gleda konja.
+                correct: false
+                audioSrc: /audio/hr/vitez_gleda_konja.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: How do you say "I look through the telescope."?
+            targetSentence: Gledam kroz teleskop.
+            acceptedAnswers:
+              - Gledam kroz teleskop
+            wordBank:
+              - Gledam
+              - kroz
+              - teleskop
+              - nije
+            audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Turn right."'
+            grammarTags: []
+            options:
+              - text: Skreni desno.
+                correct: true
+                audioSrc: /audio/hr/skreni_desno.mp3
+              - text: Skreni lijevo.
+                correct: false
+                audioSrc: /audio/hr/skreni_lijevo.mp3
+              - text: Idi ravno.
+                correct: false
+                audioSrc: /audio/hr/idi_ravno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We admire the emerald river."'
+            targetSentence: Divimo se smaragdnoj rijeci.
+            acceptedAnswers:
+              - Divimo se smaragdnoj rijeci
+            wordBank:
+              - se
+              - rijeci
+              - rijeku
+              - smaragdnoj
+              - Divimo
+            audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 172
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Kroz kanjon Cetine"
@@ -1275,6 +1480,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/brasno_za_domaci_kruh.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vitezovi_se_natjecu.mp3
+            grammarTags: []
+            options:
+              - text: Vitezovi se natječu.
+                correct: true
+                audioSrc: /audio/hr/vitezovi_se_natjecu.mp3
+              - text: Koplje leti naprijed.
+                correct: false
+                audioSrc: /audio/hr/koplje_leti_naprijed.mp3
+              - text: Vitezovi gledaju alku.
+                correct: false
+                audioSrc: /audio/hr/vitezovi_gledaju_alku.mp3
+              - text: Željezna alka.
+                correct: false
+                audioSrc: /audio/hr/zeljezna_alka.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: How do you say "Lightning illuminates the sky."?
+            targetSentence: Munja obasjava nebo.
+            acceptedAnswers:
+              - Munja obasjava nebo
+            wordBank:
+              - Munja
+              - nebo
+              - nije
+              - obasjava
+            audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "We painted the little wooden horse red."'
+            grammarTags:
+              - perfekt
+              - accusative
+            options:
+              - text: Obojali smo malog drvenog konjića crveno.
+                correct: true
+                audioSrc: /audio/hr/obojali_smo_malog_drvenog_konjica_crveno.mp3
+              - text: Bojamo malog drvenog konjića crveno.
+                correct: false
+                audioSrc: /audio/hr/bojamo_malog_drvenog_konjica_crveno.mp3
+              - text: Obojali smo malog drvenog konjića plavo.
+                correct: false
+                audioSrc: /audio/hr/obojali_smo_malog_drvenog_konjica_plavo.mp3
+              - text: Kupili smo drvenog konjića na sajmu.
+                correct: false
+                audioSrc: /audio/hr/kupili_smo_drvenog_konjica_na_sajmu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We warm ourselves by the fire."'
+            targetSentence: Grijemo se uz vatru.
+            acceptedAnswers:
+              - Grijemo se uz vatru
+            wordBank:
+              - vatru
+              - nije
+              - se
+              - uz
+              - Grijemo
+            audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 176
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Mirisi starog mlina"
@@ -1611,6 +1884,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/camac_se_spusta_niz_rijeku.mp3
+            grammarTags: []
+            options:
+              - text: Čamac se spušta niz rijeku.
+                correct: true
+                audioSrc: /audio/hr/camac_se_spusta_niz_rijeku.mp3
+              - text: Voda teče kroz kanjon.
+                correct: false
+                audioSrc: /audio/hr/voda_tece_kroz_kanjon.mp3
+              - text: Stijene su visoke.
+                correct: false
+                audioSrc: /audio/hr/stijene_su_visoke.mp3
+              - text: Rijeka Cetina je zelena.
+                correct: false
+                audioSrc: /audio/hr/rijeka_cetina_je_zelena.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "We were in the castle."'
+            targetSentence: Bili smo u dvorcu.
+            acceptedAnswers:
+              - Bili smo u dvorcu
+            wordBank:
+              - Bili
+              - smo
+              - na
+              - dvorcu
+              - u
+              - ćemo
+            audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We saw a brave knight."'
+            grammarTags: []
+            options:
+              - text: Vidjeli smo hrabrog viteza.
+                correct: true
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Vidjeli su hrabrog viteza.
+                correct: false
+                audioSrc: /audio/hr/vidjeli_su_hrabrog_viteza.mp3
+              - text: Jučer vidjeli smo hrabrog viteza.
+                correct: false
+                audioSrc: /audio/hr/jucer_vidjeli_smo_hrabrog_viteza.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We are proud of our knights."'
+            targetSentence: Ponosimo se našim vitezovima.
+            acceptedAnswers:
+              - Ponosimo se našim vitezovima
+            wordBank:
+              - se
+              - nije
+              - vitezovima
+              - našim
+              - Ponosimo
+            audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 180
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Slavodobitnik Alke"

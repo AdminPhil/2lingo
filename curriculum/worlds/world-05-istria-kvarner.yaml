@@ -269,6 +269,71 @@ units:
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/juha.mp3
+            grammarTags: []
+            options:
+              - text: Juha
+                correct: true
+                audioSrc: /audio/hr/juha.mp3
+              - text: Ručak
+                correct: false
+                audioSrc: /audio/hr/rucak.mp3
+              - text: Doručak
+                correct: false
+                audioSrc: /audio/hr/dorucak.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: "\"Let's go to school\""
+            targetSentence: Idemo u školu
+            acceptedAnswers:
+              - Idemo u školu
+            wordBank:
+              - Idemo
+              - na
+              - školu
+              - u
+            audioSrc: /audio/hr/idemo_u_skolu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"I drink water"'
+            grammarTags: []
+            options:
+              - text: Pijem vodu
+                correct: true
+                audioSrc: /audio/hr/pijem_vodu.mp3
+              - text: Jedem jabuku
+                correct: false
+                audioSrc: /audio/hr/jedem_jabuku.mp3
+              - text: Čitam knjigu
+                correct: false
+                audioSrc: /audio/hr/citam_knjigu.mp3
+              - text: Pijem mlijeko
+                correct: false
+                audioSrc: /audio/hr/pijem_mlijeko.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"Today is Monday."'
+            targetSentence: Danas je ponedjeljak.
+            acceptedAnswers:
+              - Danas je ponedjeljak
+            wordBank:
+              - Danas
+              - ponedjeljak
+              - su
+              - je
+            audioSrc: /audio/hr/danas_je_ponedjeljak.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 84
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Gospodar Vremena"
@@ -611,6 +676,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/cestitam.mp3
+            grammarTags: []
+            options:
+              - text: Čestitam
+                correct: true
+                audioSrc: /audio/hr/cestitam.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+              - text: Bravo
+                correct: false
+                audioSrc: /audio/hr/bravo.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"Bear in the forest"'
+            targetSentence: Medvjed u šumi
+            acceptedAnswers:
+              - Medvjed u šumi
+            wordBank:
+              - na
+              - šumu
+              - u
+              - šumi
+              - Medvjed
+            audioSrc: /audio/hr/medvjed_u_sumi.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: "\"Let's go to the park!\""
+            grammarTags: []
+            options:
+              - text: Idemo u park
+                correct: true
+                audioSrc: /audio/hr/idemo_u_park.mp3
+              - text: Vozim bicikl
+                correct: false
+                audioSrc: /audio/hr/vozim_bicikl.mp3
+              - text: Ljuljam se visoko
+                correct: false
+                audioSrc: /audio/hr/ljuljam_se_visoko.mp3
+              - text: Gledam zeleno drvo
+                correct: false
+                audioSrc: /audio/hr/gledam_zeleno_drvo.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"I want chocolate ice cream."'
+            targetSentence: Želim sladoled od čokolade.
+            acceptedAnswers:
+              - Želim sladoled od čokolade
+            wordBank:
+              - sladoled
+              - čokolade
+              - nije
+              - od
+              - Želim
+            audioSrc: /audio/hr/zelim_sladoled_od_cokolade.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 88
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Majstor Sladoleda"
@@ -954,6 +1086,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/danas.mp3
+            grammarTags: []
+            options:
+              - text: Danas
+                correct: true
+                audioSrc: /audio/hr/danas.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"The ferry goes to the island"'
+            targetSentence: Trajekt ide na otok
+            acceptedAnswers:
+              - Trajekt ide na otok
+            wordBank:
+              - ide
+              - ispod
+              - otok
+              - na
+              - Trajekt
+            audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Under the table"'
+            grammarTags: []
+            options:
+              - text: Na stolu
+                correct: false
+                audioSrc: /audio/hr/na_stolu.mp3
+              - text: Ispod stola
+                correct: true
+                audioSrc: /audio/hr/ispod_stola.mp3
+              - text: Ispod kreveta
+                correct: false
+                audioSrc: /audio/hr/ispod_kreveta.mp3
+              - text: U mojoj sobi
+                correct: false
+                audioSrc: /audio/hr/u_mojoj_sobi.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"We explore the large Roman arena."'
+            targetSentence: Istražujemo veliku rimsku arenu.
+            acceptedAnswers:
+              - Istražujemo veliku rimsku arenu
+            wordBank:
+              - arenu
+              - nije
+              - veliku
+              - rimsku
+              - Istražujemo
+            audioSrc: /audio/hr/istrazujemo_veliku_rimsku_arenu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 92
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Mladi Arheolog"
@@ -1300,6 +1499,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/zelim.mp3
+            grammarTags: []
+            options:
+              - text: Želim
+                correct: true
+                audioSrc: /audio/hr/zelim.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Auto
+                correct: false
+                audioSrc: /audio/hr/auto.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"Mom is cooking soup"'
+            targetSentence: Mama kuha juhu
+            acceptedAnswers:
+              - Mama kuha juhu
+            wordBank:
+              - Mama
+              - nije
+              - juhu
+              - kuha
+            audioSrc: /audio/hr/mama_kuha_juhu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"One roll, please!"'
+            grammarTags: []
+            options:
+              - text: Molim jednu kiflicu
+                correct: true
+                audioSrc: /audio/hr/molim_jednu_kiflicu.mp3
+              - text: Molim jedan burek
+                correct: false
+                audioSrc: /audio/hr/molim_jedan_burek.mp3
+              - text: Molim malo sira
+                correct: false
+                audioSrc: /audio/hr/molim_malo_sira.mp3
+              - text: Molim jednu jabuku
+                correct: false
+                audioSrc: /audio/hr/molim_jednu_jabuku.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: "\"I wake up early at seven o'clock.\""
+            targetSentence: Budim se rano u sedam sati.
+            acceptedAnswers:
+              - Budim se rano u sedam sati
+            wordBank:
+              - rano
+              - u
+              - na
+              - Budim
+              - sati
+              - sedam
+              - se
+            audioSrc: /audio/hr/budim_se_rano_u_sedam_sati.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 96
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Gospodar Dana"
@@ -1646,6 +1913,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/istrazujemo.mp3
+            grammarTags: []
+            options:
+              - text: Istražujemo
+                correct: true
+                audioSrc: /audio/hr/istrazujemo.mp3
+              - text: Pijemo
+                correct: false
+                audioSrc: /audio/hr/pijemo.mp3
+              - text: Spavamo
+                correct: false
+                audioSrc: /audio/hr/spavamo.mp3
+              - text: Jedemo
+                correct: false
+                audioSrc: /audio/hr/jedemo.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"Blow out the candles"'
+            targetSentence: Puhni u svjećice
+            acceptedAnswers:
+              - Puhni u svjećice
+            wordBank:
+              - na
+              - Puhni
+              - u
+              - svjećice
+            audioSrc: /audio/hr/puhni_u_svjecice.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Score a goal!"'
+            grammarTags: []
+            options:
+              - text: Zabij gol
+                correct: true
+                audioSrc: /audio/hr/zabij_gol.mp3
+              - text: Dodaj loptu
+                correct: false
+                audioSrc: /audio/hr/dodaj_loptu.mp3
+              - text: Trči brzo
+                correct: false
+                audioSrc: /audio/hr/trci_brzo.mp3
+              - text: Skoči visoko
+                correct: false
+                audioSrc: /audio/hr/skoci_visoko.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"I jump into the sea and catch the wave."'
+            targetSentence: Skačem u more i hvatam val.
+            acceptedAnswers:
+              - Skačem u more i hvatam val
+            wordBank:
+              - u
+              - i
+              - na
+              - Skačem
+              - hvatam
+              - more
+              - val
+            audioSrc: /audio/hr/skacem_u_more_i_hvatam_val.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 100
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Morski Ronilac"

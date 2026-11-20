@@ -270,6 +270,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/budim_se.mp3
+            grammarTags: []
+            options:
+              - text: Budim se
+                correct: true
+                audioSrc: /audio/hr/budim_se.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"Today is Monday."'
+            targetSentence: Danas je ponedjeljak.
+            acceptedAnswers:
+              - Danas je ponedjeljak
+            wordBank:
+              - Danas
+              - ponedjeljak
+              - su
+              - je
+            audioSrc: /audio/hr/danas_je_ponedjeljak.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"I have a pencil"'
+            grammarTags: []
+            options:
+              - text: Imam olovku
+                correct: true
+                audioSrc: /audio/hr/imam_olovku.mp3
+              - text: Imam knjigu
+                correct: false
+                audioSrc: /audio/hr/imam_knjigu.mp3
+              - text: Imam loptu
+                correct: false
+                audioSrc: /audio/hr/imam_loptu.mp3
+              - text: Imam torbu
+                correct: false
+                audioSrc: /audio/hr/imam_torbu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"We sow corn in the spring."'
+            targetSentence: Sijemo kukuruz u proljeće.
+            acceptedAnswers:
+              - Sijemo kukuruz u proljeće
+            wordBank:
+              - proljeće
+              - na
+              - kukuruz
+              - u
+              - Sijemo
+            audioSrc: /audio/hr/sijemo_kukuruz_u_proljece.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 104
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Zlatna Slavonija"
@@ -617,6 +683,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/ronim.mp3
+            grammarTags: []
+            options:
+              - text: Ronim
+                correct: true
+                audioSrc: /audio/hr/ronim.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"I want chocolate ice cream."'
+            targetSentence: Želim sladoled od čokolade.
+            acceptedAnswers:
+              - Želim sladoled od čokolade
+            wordBank:
+              - sladoled
+              - čokolade
+              - nije
+              - od
+              - Želim
+            audioSrc: /audio/hr/zelim_sladoled_od_cokolade.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"High mountain"'
+            grammarTags: []
+            options:
+              - text: Visoka planina
+                correct: true
+                audioSrc: /audio/hr/visoka_planina.mp3
+              - text: Velika škola
+                correct: false
+                audioSrc: /audio/hr/velika_skola.mp3
+              - text: Bistra rijeka
+                correct: false
+                audioSrc: /audio/hr/bistra_rijeka.mp3
+              - text: Mala kuća
+                correct: false
+                audioSrc: /audio/hr/mala_kuca.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"The eagle flies high in the sky."'
+            targetSentence: Orao leti visoko na nebu.
+            acceptedAnswers:
+              - Orao leti visoko na nebu
+            wordBank:
+              - visoko
+              - na
+              - leti
+              - Orao
+              - ispod
+              - nebo
+              - nebu
+            audioSrc: /audio/hr/orao_leti_visoko_na_nebu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 108
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Šumski Istraživač"
@@ -962,6 +1097,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sijati.mp3
+            grammarTags: []
+            options:
+              - text: Sijati
+                correct: true
+                audioSrc: /audio/hr/sijati.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"We explore the large Roman arena."'
+            targetSentence: Istražujemo veliku rimsku arenu.
+            acceptedAnswers:
+              - Istražujemo veliku rimsku arenu
+            wordBank:
+              - arenu
+              - nije
+              - veliku
+              - rimsku
+              - Istražujemo
+            audioSrc: /audio/hr/istrazujemo_veliku_rimsku_arenu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"We travel by train"'
+            grammarTags: []
+            options:
+              - text: Putujemo vlakom
+                correct: true
+                audioSrc: /audio/hr/putujemo_vlakom.mp3
+              - text: Putujemo autom
+                correct: false
+                audioSrc: /audio/hr/putujemo_autom.mp3
+              - text: Idemo u park
+                correct: false
+                audioSrc: /audio/hr/idemo_u_park.mp3
+              - text: Idemo u školu
+                correct: false
+                audioSrc: /audio/hr/idemo_u_skolu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"Grandma bakes a sweet cake."'
+            targetSentence: Baka peče slatki kolač.
+            acceptedAnswers:
+              - Baka peče slatki kolač
+            wordBank:
+              - peče
+              - kolač
+              - nije
+              - slatki
+              - Baka
+            audioSrc: /audio/hr/baka_pece_slatki_kolac.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 112
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Mali Kuhar"
@@ -1307,6 +1509,76 @@ units:
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/letjeti.mp3
+            grammarTags: []
+            options:
+              - text: Letjeti
+                correct: true
+                audioSrc: /audio/hr/letjeti.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: "\"I wake up early at seven o'clock.\""
+            targetSentence: Budim se rano u sedam sati.
+            acceptedAnswers:
+              - Budim se rano u sedam sati
+            wordBank:
+              - rano
+              - u
+              - na
+              - Budim
+              - sati
+              - sedam
+              - se
+            audioSrc: /audio/hr/budim_se_rano_u_sedam_sati.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Warm soup on the table"'
+            grammarTags: []
+            options:
+              - text: Topla juha na stolu
+                correct: true
+                audioSrc: /audio/hr/topla_juha_na_stolu.mp3
+              - text: Hladna voda u čaši
+                correct: false
+                audioSrc: /audio/hr/hladna_voda_u_casi.mp3
+              - text: Bijeli kruh na stolu
+                correct: false
+                audioSrc: /audio/hr/bijeli_kruh_na_stolu.mp3
+              - text: Svježa jabuka na stolu
+                correct: false
+                audioSrc: /audio/hr/svjeza_jabuka_na_stolu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"We row a boat on the calm Drava river."'
+            targetSentence: Veslamo čamcem po mirnoj Dravi.
+            acceptedAnswers:
+              - Veslamo čamcem po mirnoj Dravi
+            wordBank:
+              - Veslamo
+              - čamcem
+              - Dravi
+              - mirnoj
+              - po
+              - nije
+            audioSrc: /audio/hr/veslamo_camcem_po_mirnoj_dravi.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 116
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Dunavski Kapetan"
@@ -1650,6 +1922,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/mijesati.mp3
+            grammarTags: []
+            options:
+              - text: Miješati
+                correct: true
+                audioSrc: /audio/hr/mijesati.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"I jump into the sea and catch the wave."'
+            targetSentence: Skačem u more i hvatam val.
+            acceptedAnswers:
+              - Skačem u more i hvatam val
+            wordBank:
+              - u
+              - i
+              - na
+              - Skačem
+              - hvatam
+              - more
+              - val
+            audioSrc: /audio/hr/skacem_u_more_i_hvatam_val.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Happy birthday"'
+            grammarTags: []
+            options:
+              - text: Sretan rođendan
+                correct: true
+                audioSrc: /audio/hr/sretan_rodendan.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Veliko hvala
+                correct: false
+                audioSrc: /audio/hr/veliko_hvala.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: '"The tamburitza players play a cheerful song."'
+            targetSentence: Tamburaši sviraju veselu pjesmu.
+            acceptedAnswers:
+              - Tamburaši sviraju veselu pjesmu
+            wordBank:
+              - sviraju
+              - nije
+              - pjesmu
+              - veselu
+              - Tamburaši
+            audioSrc: /audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 120
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Gospodar Tamburice"

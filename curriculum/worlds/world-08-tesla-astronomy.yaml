@@ -282,6 +282,71 @@ units:
                 correct: false
                 audioSrc: /audio/hr/sinoc_smo_upalili_svjetlo_u_kuhinji.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/drveni_konjic.mp3
+            grammarTags: []
+            options:
+              - text: Drveni konjić
+                correct: true
+                audioSrc: /audio/hr/drveni_konjic.mp3
+              - text: Drvena igračka
+                correct: false
+                audioSrc: /audio/hr/drvena_igracka.mp3
+              - text: Crveno srce
+                correct: false
+                audioSrc: /audio/hr/crveno_srce.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "Where is the castle?"'
+            targetSentence: Gdje je dvorac?
+            acceptedAnswers:
+              - Gdje je dvorac
+            wordBank:
+              - je
+              - su
+              - Gdje
+              - dvorac
+            audioSrc: /audio/hr/gdje_je_dvorac.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Bees make sweet honey."'
+            grammarTags: []
+            options:
+              - text: Pčele prave slatki med.
+                correct: true
+                audioSrc: /audio/hr/pcele_prave_slatki_med.mp3
+              - text: Pčele prave kiseli med.
+                correct: false
+                audioSrc: /audio/hr/pcele_prave_kiseli_med.mp3
+              - text: Jučer pčele prave slatki med.
+                correct: false
+                audioSrc: /audio/hr/jucer_pcele_prave_slatki_med.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: How do you say "Tesla creates sparks."?
+            targetSentence: Tesla stvara iskre.
+            acceptedAnswers:
+              - Tesla stvara iskre
+            wordBank:
+              - Tesla
+              - stvara
+              - iskre
+              - nije
+            audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 144
         kind: BOSS_CAPSTONE
         title: Smiljan i genij
@@ -612,6 +677,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/zvijezde_sjaje.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kraljevska_gozba.mp3
+            grammarTags: []
+            options:
+              - text: Kraljevska gozba
+                correct: true
+                audioSrc: /audio/hr/kraljevska_gozba.mp3
+              - text: Zlatna kruna
+                correct: false
+                audioSrc: /audio/hr/zlatna_kruna.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "The brave knight carries a shield."'
+            targetSentence: Hrabri vitez nosi štit.
+            acceptedAnswers:
+              - Hrabri vitez nosi štit
+            wordBank:
+              - vitez
+              - nije
+              - štit
+              - Hrabri
+              - nosi
+            audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"The white heron stands in the water."'
+            grammarTags: []
+            options:
+              - text: Bijela čaplja stoji u vodi.
+                correct: true
+                audioSrc: /audio/hr/bijela_caplja_stoji_u_vodi.mp3
+              - text: Bijela čaplja ne stoji u vodi.
+                correct: false
+                audioSrc: /audio/hr/bijela_caplja_ne_stoji_u_vodi.mp3
+              - text: crna čaplja stoji u vodi.
+                correct: false
+                audioSrc: /audio/hr/crna_caplja_stoji_u_vodi.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: How do you say "The night sky is dark."?
+            targetSentence: Noćno nebo je tamno.
+            acceptedAnswers:
+              - Noćno nebo je tamno
+            wordBank:
+              - Noćno
+              - je
+              - su
+              - tamno
+              - nebo
+            audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 148
         kind: BOSS_CAPSTONE
         title: Beskrajna noć
@@ -943,6 +1075,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/drveni_konjic.mp3
+            grammarTags: []
+            options:
+              - text: Drveni konjić
+                correct: true
+                audioSrc: /audio/hr/drveni_konjic.mp3
+              - text: Drvena igračka
+                correct: false
+                audioSrc: /audio/hr/drvena_igracka.mp3
+              - text: Crveno srce
+                correct: false
+                audioSrc: /audio/hr/crveno_srce.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "We are going straight then right."'
+            targetSentence: Idemo ravno pa desno.
+            acceptedAnswers:
+              - Idemo ravno pa desno
+            wordBank:
+              - nije
+              - desno
+              - ravno
+              - Idemo
+              - pa
+            audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"We drink warm tea with honey."'
+            grammarTags: []
+            options:
+              - text: Pijemo topli čaj s medom.
+                correct: true
+                audioSrc: /audio/hr/pijemo_topli_caj_s_medom.mp3
+              - text: Pijemo hladni čaj s medom.
+                correct: false
+                audioSrc: /audio/hr/pijemo_hladni_caj_s_medom.mp3
+              - text: Jučer pijemo topli čaj s medom.
+                correct: false
+                audioSrc: /audio/hr/jucer_pijemo_topli_caj_s_medom.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: How do you say "I look through the telescope."?
+            targetSentence: Gledam kroz teleskop.
+            acceptedAnswers:
+              - Gledam kroz teleskop
+            wordBank:
+              - Gledam
+              - kroz
+              - teleskop
+              - nije
+            audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 152
         kind: BOSS_CAPSTONE
         title: Višnjan zvjezdarnica
@@ -1276,6 +1474,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/napunit_cemo_bateriju_poslije_vecere.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kraljevska_gozba.mp3
+            grammarTags: []
+            options:
+              - text: Kraljevska gozba
+                correct: true
+                audioSrc: /audio/hr/kraljevska_gozba.mp3
+              - text: Zlatna kruna
+                correct: false
+                audioSrc: /audio/hr/zlatna_kruna.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "I gift a sweet licitar heart."'
+            targetSentence: Darujem slatko licitarsko srce.
+            acceptedAnswers:
+              - Darujem slatko licitarsko srce
+            wordBank:
+              - slatko
+              - srce
+              - nije
+              - licitarsko
+              - Darujem
+            audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"The fisherman throws the net into the Danube."'
+            grammarTags: []
+            options:
+              - text: Ribar baca mrežu u Dunav.
+                correct: true
+                audioSrc: /audio/hr/ribar_baca_mrezu_u_dunav.mp3
+              - text: Jučer ribar baca mrežu u Dunav.
+                correct: false
+                audioSrc: /audio/hr/jucer_ribar_baca_mrezu_u_dunav.mp3
+              - text: Sutra ribar baca mrežu u Dunav.
+                correct: false
+                audioSrc: /audio/hr/sutra_ribar_baca_mrezu_u_dunav.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: How do you say "Lightning illuminates the sky."?
+            targetSentence: Munja obasjava nebo.
+            acceptedAnswers:
+              - Munja obasjava nebo
+            wordBank:
+              - Munja
+              - nebo
+              - nije
+              - obasjava
+            audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 156
         kind: BOSS_CAPSTONE
         title: Snaga prirodnih sila
@@ -1616,6 +1880,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/sutra_cemo_uciti_o_cistoj_energiji.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/beskrajni_svemir.mp3
+            grammarTags: []
+            options:
+              - text: Beskrajni svemir
+                correct: true
+                audioSrc: /audio/hr/beskrajni_svemir.mp3
+              - text: Veliki teleskop
+                correct: false
+                audioSrc: /audio/hr/veliki_teleskop.mp3
+              - text: Daleki planet
+                correct: false
+                audioSrc: /audio/hr/daleki_planet.mp3
+              - text: Bijela kupola
+                correct: false
+                audioSrc: /audio/hr/bijela_kupola.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "We were in the castle."'
+            targetSentence: Bili smo u dvorcu.
+            acceptedAnswers:
+              - Bili smo u dvorcu
+            wordBank:
+              - Bili
+              - smo
+              - na
+              - dvorcu
+              - u
+              - ćemo
+            audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Together we all sing and dance."'
+            grammarTags: []
+            options:
+              - text: Svi zajedno pjevamo i plešemo.
+                correct: true
+                audioSrc: /audio/hr/svi_zajedno_pjevamo_i_plesemo.mp3
+              - text: Svi zajedno pjevamo i plesali smo.
+                correct: false
+                audioSrc: /audio/hr/svi_zajedno_pjevamo_i_plesali_smo.mp3
+              - text: Jučer svi zajedno pjevamo i plešemo.
+                correct: false
+                audioSrc: /audio/hr/jucer_svi_zajedno_pjevamo_i_plesemo.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: How do you say "We will learn about the universe."?
+            targetSentence: Učit ćemo o svemiru.
+            acceptedAnswers:
+              - Učit ćemo o svemiru
+            wordBank:
+              - o
+              - svemiru
+              - ćemo
+              - smo
+              - Učit
+            audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 160
         kind: BOSS_CAPSTONE
         title: Put u budućnost

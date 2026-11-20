@@ -276,6 +276,72 @@ units:
                 correct: false
                 audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/veslati.mp3
+            grammarTags: []
+            options:
+              - text: Veslati
+                correct: true
+                audioSrc: /audio/hr/veslati.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Sir
+                correct: false
+                audioSrc: /audio/hr/sir.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"We sow corn in the spring."'
+            targetSentence: Sijemo kukuruz u proljeće.
+            acceptedAnswers:
+              - Sijemo kukuruz u proljeće
+            wordBank:
+              - proljeće
+              - na
+              - kukuruz
+              - u
+              - Sijemo
+            audioSrc: /audio/hr/sijemo_kukuruz_u_proljece.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"Tomorrow is a new day."'
+            grammarTags: []
+            options:
+              - text: Sutra je novi dan.
+                correct: true
+                audioSrc: /audio/hr/sutra_je_novi_dan.mp3
+              - text: Sutra nije novi dan.
+                correct: false
+                audioSrc: /audio/hr/sutra_nije_novi_dan.mp3
+              - text: Sutra je stari dan.
+                correct: false
+                audioSrc: /audio/hr/sutra_je_stari_dan.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "Where is the castle?"'
+            targetSentence: Gdje je dvorac?
+            acceptedAnswers:
+              - Gdje je dvorac
+            wordBank:
+              - je
+              - su
+              - Gdje
+              - dvorac
+            audioSrc: /audio/hr/gdje_je_dvorac.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 124
         kind: BOSS_CAPSTONE
         title: Tajna Trakošćana
@@ -609,6 +675,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/pjevati.mp3
+            grammarTags: []
+            options:
+              - text: Pjevati
+                correct: true
+                audioSrc: /audio/hr/pjevati.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"The eagle flies high in the sky."'
+            targetSentence: Orao leti visoko na nebu.
+            acceptedAnswers:
+              - Orao leti visoko na nebu
+            wordBank:
+              - visoko
+              - na
+              - leti
+              - Orao
+              - ispod
+              - nebo
+              - nebu
+            audioSrc: /audio/hr/orao_leti_visoko_na_nebu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"One scoop of strawberry, please."'
+            grammarTags: []
+            options:
+              - text: Molim jednu kuglicu jagode.
+                correct: true
+                audioSrc: /audio/hr/molim_jednu_kuglicu_jagode.mp3
+              - text: Jučer molim jednu kuglicu jagode.
+                correct: false
+                audioSrc: /audio/hr/jucer_molim_jednu_kuglicu_jagode.mp3
+              - text: Sutra molim jednu kuglicu jagode.
+                correct: false
+                audioSrc: /audio/hr/sutra_molim_jednu_kuglicu_jagode.mp3
+              - text: Tata vozi auto.
+                correct: false
+                audioSrc: /audio/hr/tata_vozi_auto.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "The brave knight carries a shield."'
+            targetSentence: Hrabri vitez nosi štit.
+            acceptedAnswers:
+              - Hrabri vitez nosi štit
+            wordBank:
+              - vitez
+              - nije
+              - štit
+              - Hrabri
+              - nosi
+            audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 128
         kind: BOSS_CAPSTONE
         title: Legende Velikog Tabora
@@ -944,6 +1079,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/otvaram_vrata.mp3
+            grammarTags: []
+            options:
+              - text: Otvaram vrata.
+                correct: true
+                audioSrc: /audio/hr/otvaram_vrata.mp3
+              - text: Ulazimo u dvorac.
+                correct: false
+                audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
+              - text: Prelazimo preko mosta.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"Grandma bakes a sweet cake."'
+            targetSentence: Baka peče slatki kolač.
+            acceptedAnswers:
+              - Baka peče slatki kolač
+            wordBank:
+              - peče
+              - kolač
+              - nije
+              - slatki
+              - Baka
+            audioSrc: /audio/hr/baka_pece_slatki_kolac.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"The brave knight carries a shiny shield."'
+            grammarTags: []
+            options:
+              - text: Hrabri vitez nosi sjajni štit.
+                correct: true
+                audioSrc: /audio/hr/hrabri_vitez_nosi_sjajni_stit.mp3
+              - text: Hrabri vitez ne nosi sjajni štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_ne_nosi_sjajni_stit.mp3
+              - text: Jučer hrabri vitez nosi sjajni štit.
+                correct: false
+                audioSrc: /audio/hr/jucer_hrabri_vitez_nosi_sjajni_stit.mp3
+              - text: Riba pliva u plavom moru.
+                correct: false
+                audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "We are going straight then right."'
+            targetSentence: Idemo ravno pa desno.
+            acceptedAnswers:
+              - Idemo ravno pa desno
+            wordBank:
+              - nije
+              - desno
+              - ravno
+              - Idemo
+              - pa
+            audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 132
         kind: BOSS_CAPSTONE
         title: Tajni prolaz
@@ -1276,6 +1478,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/gdje_je_dvorac.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/hrvatska_zastava.mp3
+            grammarTags: []
+            options:
+              - text: Hrvatska zastava
+                correct: true
+                audioSrc: /audio/hr/hrvatska_zastava.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+              - text: Sjajni mač
+                correct: false
+                audioSrc: /audio/hr/sjajni_mac.mp3
+              - text: Stara kula
+                correct: false
+                audioSrc: /audio/hr/stara_kula.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"We row a boat on the calm Drava river."'
+            targetSentence: Veslamo čamcem po mirnoj Dravi.
+            acceptedAnswers:
+              - Veslamo čamcem po mirnoj Dravi
+            wordBank:
+              - Veslamo
+              - čamcem
+              - Dravi
+              - mirnoj
+              - po
+              - nije
+            audioSrc: /audio/hr/veslamo_camcem_po_mirnoj_dravi.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"I brush my teeth with my toothbrush."'
+            grammarTags: []
+            options:
+              - text: Perem zube sa svojom četkicom.
+                correct: true
+                audioSrc: /audio/hr/perem_zube_sa_svojom_cetkicom.mp3
+              - text: Jučer perem zube sa svojom četkicom.
+                correct: false
+                audioSrc: /audio/hr/jucer_perem_zube_sa_svojom_cetkicom.mp3
+              - text: Sutra perem zube sa svojom četkicom.
+                correct: false
+                audioSrc: /audio/hr/sutra_perem_zube_sa_svojom_cetkicom.mp3
+              - text: More šumi ispod sunčanog neba.
+                correct: false
+                audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "I gift a sweet licitar heart."'
+            targetSentence: Darujem slatko licitarsko srce.
+            acceptedAnswers:
+              - Darujem slatko licitarsko srce
+            wordBank:
+              - slatko
+              - srce
+              - nije
+              - licitarsko
+              - Darujem
+            audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 136
         kind: BOSS_CAPSTONE
         title: Marija Bistrica
@@ -1604,6 +1874,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/skreni_lijevo.mp3
+            grammarTags: []
+            options:
+              - text: Skreni lijevo.
+                correct: true
+                audioSrc: /audio/hr/skreni_lijevo.mp3
+              - text: Skreni desno.
+                correct: false
+                audioSrc: /audio/hr/skreni_desno.mp3
+              - text: Idi ravno.
+                correct: false
+                audioSrc: /audio/hr/idi_ravno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: '"The tamburitza players play a cheerful song."'
+            targetSentence: Tamburaši sviraju veselu pjesmu.
+            acceptedAnswers:
+              - Tamburaši sviraju veselu pjesmu
+            wordBank:
+              - sviraju
+              - nije
+              - pjesmu
+              - veselu
+              - Tamburaši
+            audioSrc: /audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: '"I snorkel with a mask and watch the fish."'
+            grammarTags: []
+            options:
+              - text: Ronim s maskom i gledam ribe.
+                correct: true
+                audioSrc: /audio/hr/ronim_s_maskom_i_gledam_ribe.mp3
+              - text: Jučer ronim s maskom i gledam ribe.
+                correct: false
+                audioSrc: /audio/hr/jucer_ronim_s_maskom_i_gledam_ribe.mp3
+              - text: Sutra ronim s maskom i gledam ribe.
+                correct: false
+                audioSrc: /audio/hr/sutra_ronim_s_maskom_i_gledam_ribe.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Translate to Croatian: "We were in the castle."'
+            targetSentence: Bili smo u dvorcu.
+            acceptedAnswers:
+              - Bili smo u dvorcu
+            wordBank:
+              - Bili
+              - smo
+              - na
+              - dvorcu
+              - u
+              - ćemo
+            audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 140
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Sedmi svijet"

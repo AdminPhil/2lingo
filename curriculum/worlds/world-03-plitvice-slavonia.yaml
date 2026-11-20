@@ -269,6 +269,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/jedem_jabuku_finu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kapa.mp3
+            grammarTags: []
+            options:
+              - text: Kapa
+                correct: true
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Šal
+                correct: false
+                audioSrc: /audio/hr/sal.mp3
+              - text: Haljina
+                correct: false
+                audioSrc: /audio/hr/haljina.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"My room"'
+            grammarTags: []
+            options:
+              - text: Moja soba
+                correct: true
+                audioSrc: /audio/hr/moja_soba.mp3
+              - text: Moj krevet
+                correct: false
+                audioSrc: /audio/hr/moj_krevet.mp3
+              - text: Velika kuća
+                correct: false
+                audioSrc: /audio/hr/velika_kuca.mp3
+              - text: Mala soba
+                correct: false
+                audioSrc: /audio/hr/mala_soba.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Happy"'
+            grammarTags: []
+            options:
+              - text: Sretan
+                correct: true
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Umoran
+                correct: false
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Nasmijan
+                correct: false
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Gladan
+                correct: false
+                audioSrc: /audio/hr/gladan.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"I drink water"'
+            grammarTags: []
+            options:
+              - text: Pijem vodu
+                correct: true
+                audioSrc: /audio/hr/pijem_vodu.mp3
+              - text: Jedem jabuku
+                correct: false
+                audioSrc: /audio/hr/jedem_jabuku.mp3
+              - text: Čitam knjigu
+                correct: false
+                audioSrc: /audio/hr/citam_knjigu.mp3
+              - text: Pijem mlijeko
+                correct: false
+                audioSrc: /audio/hr/pijem_mlijeko.mp3
+      - order: 5
         legacyId: 44
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Mali Aktivac (Busy Bee Trophy)"
@@ -632,6 +705,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/mali_brod.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/toplo.mp3
+            grammarTags: []
+            options:
+              - text: Toplo
+                correct: true
+                audioSrc: /audio/hr/toplo.mp3
+              - text: Hladno
+                correct: false
+                audioSrc: /audio/hr/hladno.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Jump!"'
+            grammarTags: []
+            options:
+              - text: Skoči
+                correct: true
+                audioSrc: /audio/hr/skoci.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"I drink water"'
+            grammarTags: []
+            options:
+              - text: Pijem vodu
+                correct: true
+                audioSrc: /audio/hr/pijem_vodu.mp3
+              - text: Jedem jabuku
+                correct: false
+                audioSrc: /audio/hr/jedem_jabuku.mp3
+              - text: Čitam knjigu
+                correct: false
+                audioSrc: /audio/hr/citam_knjigu.mp3
+              - text: Pijem mlijeko
+                correct: false
+                audioSrc: /audio/hr/pijem_mlijeko.mp3
+          - order: 4
+            type: ASSIST
+            prompt: "\"Let's go to the park!\""
+            grammarTags: []
+            options:
+              - text: Idemo u park
+                correct: true
+                audioSrc: /audio/hr/idemo_u_park.mp3
+              - text: Vozim bicikl
+                correct: false
+                audioSrc: /audio/hr/vozim_bicikl.mp3
+              - text: Ljuljam se visoko
+                correct: false
+                audioSrc: /audio/hr/ljuljam_se_visoko.mp3
+              - text: Gledam zeleno drvo
+                correct: false
+                audioSrc: /audio/hr/gledam_zeleno_drvo.mp3
+      - order: 5
         legacyId: 48
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Istraživač Parka (Park Explorer Trophy)"
@@ -851,20 +997,20 @@ units:
             options:
               - text: U
                 correct: true
-                audioSrc: /audio/hr/u.mp3
                 imageSrc: /spatial_u.svg
+                audioSrc: /audio/hr/u.mp3
               - text: Na
                 correct: false
-                audioSrc: /audio/hr/na.mp3
                 imageSrc: /spatial_na.svg
+                audioSrc: /audio/hr/na.mp3
               - text: Ispod
                 correct: false
-                audioSrc: /audio/hr/ispod.mp3
                 imageSrc: /spatial_ispod.svg
+                audioSrc: /audio/hr/ispod.mp3
               - text: Blizu
                 correct: false
-                audioSrc: /audio/hr/blizu.mp3
                 imageSrc: /spatial_blizu.svg
+                audioSrc: /audio/hr/blizu.mp3
           - order: 2
             legacyId: 221
             type: SELECT
@@ -873,16 +1019,16 @@ units:
             options:
               - text: Na
                 correct: true
-                audioSrc: /audio/hr/na.mp3
                 imageSrc: /spatial_na.svg
+                audioSrc: /audio/hr/na.mp3
               - text: U
                 correct: false
-                audioSrc: /audio/hr/u.mp3
                 imageSrc: /spatial_u.svg
+                audioSrc: /audio/hr/u.mp3
               - text: Ispod
                 correct: false
-                audioSrc: /audio/hr/ispod.mp3
                 imageSrc: /spatial_ispod.svg
+                audioSrc: /audio/hr/ispod.mp3
               - text: Gore
                 correct: false
                 audioSrc: /audio/hr/gore.mp3
@@ -894,16 +1040,16 @@ units:
             options:
               - text: Ispod
                 correct: true
-                audioSrc: /audio/hr/ispod.mp3
                 imageSrc: /spatial_ispod.svg
+                audioSrc: /audio/hr/ispod.mp3
               - text: Na
                 correct: false
-                audioSrc: /audio/hr/na.mp3
                 imageSrc: /spatial_na.svg
+                audioSrc: /audio/hr/na.mp3
               - text: U
                 correct: false
-                audioSrc: /audio/hr/u.mp3
                 imageSrc: /spatial_u.svg
+                audioSrc: /audio/hr/u.mp3
               - text: Dolje
                 correct: false
                 audioSrc: /audio/hr/dolje.mp3
@@ -915,8 +1061,8 @@ units:
             options:
               - text: Blizu
                 correct: true
-                audioSrc: /audio/hr/blizu.mp3
                 imageSrc: /spatial_blizu.svg
+                audioSrc: /audio/hr/blizu.mp3
               - text: Tamo
                 correct: false
                 audioSrc: /audio/hr/tamo.mp3
@@ -925,8 +1071,8 @@ units:
                 audioSrc: /audio/hr/ovdje.mp3
               - text: Ispod
                 correct: false
-                audioSrc: /audio/hr/ispod.mp3
                 imageSrc: /spatial_ispod.svg
+                audioSrc: /audio/hr/ispod.mp3
       - order: 3
         legacyId: 51
         kind: PRODUCTION
@@ -1005,6 +1151,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/na_stolu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/gledam.mp3
+            grammarTags: []
+            options:
+              - text: Gledam
+                correct: true
+                audioSrc: /audio/hr/gledam.mp3
+              - text: Čitam
+                correct: false
+                audioSrc: /audio/hr/citam.mp3
+              - text: Pjevam
+                correct: false
+                audioSrc: /audio/hr/pjevam.mp3
+              - text: Učim
+                correct: false
+                audioSrc: /audio/hr/ucim.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Small boat"'
+            grammarTags: []
+            options:
+              - text: Mali brod
+                correct: true
+                audioSrc: /audio/hr/mali_brod.mp3
+              - text: Toplo more
+                correct: false
+                audioSrc: /audio/hr/toplo_more.mp3
+              - text: Veliki brod
+                correct: false
+                audioSrc: /audio/hr/veliki_brod.mp3
+              - text: Lijepa plaža
+                correct: false
+                audioSrc: /audio/hr/lijepa_plaza.mp3
+          - order: 3
+            type: ASSIST
+            prompt: "\"Let's go to the park!\""
+            grammarTags: []
+            options:
+              - text: Idemo u park
+                correct: true
+                audioSrc: /audio/hr/idemo_u_park.mp3
+              - text: Vozim bicikl
+                correct: false
+                audioSrc: /audio/hr/vozim_bicikl.mp3
+              - text: Ljuljam se visoko
+                correct: false
+                audioSrc: /audio/hr/ljuljam_se_visoko.mp3
+              - text: Gledam zeleno drvo
+                correct: false
+                audioSrc: /audio/hr/gledam_zeleno_drvo.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Under the table"'
+            grammarTags: []
+            options:
+              - text: Na stolu
+                correct: false
+                audioSrc: /audio/hr/na_stolu.mp3
+              - text: Ispod stola
+                correct: true
+                audioSrc: /audio/hr/ispod_stola.mp3
+              - text: Ispod kreveta
+                correct: false
+                audioSrc: /audio/hr/ispod_kreveta.mp3
+              - text: U mojoj sobi
+                correct: false
+                audioSrc: /audio/hr/u_mojoj_sobi.mp3
+      - order: 5
         legacyId: 52
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Mali Navigator (Little Navigator Trophy)"
@@ -1368,6 +1587,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/topli_kruh.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/drvo.mp3
+            grammarTags: []
+            options:
+              - text: Drvo
+                correct: true
+                audioSrc: /audio/hr/drvo.mp3
+              - text: Trava
+                correct: false
+                audioSrc: /audio/hr/trava.mp3
+              - text: Auto
+                correct: false
+                audioSrc: /audio/hr/auto.mp3
+              - text: Ulica
+                correct: false
+                audioSrc: /audio/hr/ulica.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Put on the shirt"'
+            grammarTags: []
+            options:
+              - text: Obuci majicu
+                correct: true
+                audioSrc: /audio/hr/obuci_majicu.mp3
+              - text: Obuci jaknu
+                correct: false
+                audioSrc: /audio/hr/obuci_jaknu.mp3
+              - text: Obuci hlače
+                correct: false
+                audioSrc: /audio/hr/obuci_hlace.mp3
+              - text: Obuci cipele
+                correct: false
+                audioSrc: /audio/hr/obuci_cipele.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Under the table"'
+            grammarTags: []
+            options:
+              - text: Na stolu
+                correct: false
+                audioSrc: /audio/hr/na_stolu.mp3
+              - text: Ispod stola
+                correct: true
+                audioSrc: /audio/hr/ispod_stola.mp3
+              - text: Ispod kreveta
+                correct: false
+                audioSrc: /audio/hr/ispod_kreveta.mp3
+              - text: U mojoj sobi
+                correct: false
+                audioSrc: /audio/hr/u_mojoj_sobi.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"One roll, please!"'
+            grammarTags: []
+            options:
+              - text: Molim jednu kiflicu
+                correct: true
+                audioSrc: /audio/hr/molim_jednu_kiflicu.mp3
+              - text: Molim jedan burek
+                correct: false
+                audioSrc: /audio/hr/molim_jedan_burek.mp3
+              - text: Molim malo sira
+                correct: false
+                audioSrc: /audio/hr/molim_malo_sira.mp3
+              - text: Molim jednu jabuku
+                correct: false
+                audioSrc: /audio/hr/molim_jednu_jabuku.mp3
+      - order: 5
         legacyId: 56
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Glavni Kupac (Master Shopper Trophy)"
@@ -1731,6 +2023,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/gol.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/gledam.mp3
+            grammarTags: []
+            options:
+              - text: Gledam
+                correct: true
+                audioSrc: /audio/hr/gledam.mp3
+              - text: Čitam
+                correct: false
+                audioSrc: /audio/hr/citam.mp3
+              - text: Pjevam
+                correct: false
+                audioSrc: /audio/hr/pjevam.mp3
+              - text: Učim
+                correct: false
+                audioSrc: /audio/hr/ucim.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Happy"'
+            grammarTags: []
+            options:
+              - text: Sretan
+                correct: true
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Umoran
+                correct: false
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Nasmijan
+                correct: false
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Gladan
+                correct: false
+                audioSrc: /audio/hr/gladan.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"One roll, please!"'
+            grammarTags: []
+            options:
+              - text: Molim jednu kiflicu
+                correct: true
+                audioSrc: /audio/hr/molim_jednu_kiflicu.mp3
+              - text: Molim jedan burek
+                correct: false
+                audioSrc: /audio/hr/molim_jedan_burek.mp3
+              - text: Molim malo sira
+                correct: false
+                audioSrc: /audio/hr/molim_malo_sira.mp3
+              - text: Molim jednu jabuku
+                correct: false
+                audioSrc: /audio/hr/molim_jednu_jabuku.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Score a goal!"'
+            grammarTags: []
+            options:
+              - text: Zabij gol
+                correct: true
+                audioSrc: /audio/hr/zabij_gol.mp3
+              - text: Dodaj loptu
+                correct: false
+                audioSrc: /audio/hr/dodaj_loptu.mp3
+              - text: Trči brzo
+                correct: false
+                audioSrc: /audio/hr/trci_brzo.mp3
+              - text: Skoči visoko
+                correct: false
+                audioSrc: /audio/hr/skoci_visoko.mp3
+      - order: 5
         legacyId: 60
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Zlatni Prvak (Golden Champion Trophy)"

@@ -269,6 +269,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/to_je_moj_krevet.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: '"One (1)"'
+            grammarTags: []
+            options:
+              - text: Jedan
+                correct: true
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Yes"'
+            grammarTags: []
+            options:
+              - text: Da
+                correct: true
+                audioSrc: /audio/hr/da.mp3
+              - text: Ne
+                correct: false
+                audioSrc: /audio/hr/ne.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"I am hungry"'
+            grammarTags: []
+            options:
+              - text: Gladan sam
+                correct: true
+                audioSrc: /audio/hr/gladan_sam.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Umoran sam
+                correct: false
+                audioSrc: /audio/hr/umoran_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+          - order: 4
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vrata.mp3
+            grammarTags: []
+            options:
+              - text: Vrata
+                correct: true
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+      - order: 5
         legacyId: 24
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Arhitekt sobe (Room Architect Trophy)"
@@ -632,6 +705,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/hvala_lijepa.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: '"Water"'
+            grammarTags: []
+            options:
+              - text: Voda
+                correct: true
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+              - text: Čokolada
+                correct: false
+                audioSrc: /audio/hr/cokolada.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Baby"'
+            grammarTags: []
+            options:
+              - text: Beba
+                correct: true
+                audioSrc: /audio/hr/beba.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+          - order: 3
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vrata.mp3
+            grammarTags: []
+            options:
+              - text: Vrata
+                correct: true
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Jump!"'
+            grammarTags: []
+            options:
+              - text: Skoči
+                correct: true
+                audioSrc: /audio/hr/skoci.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+      - order: 5
         legacyId: 28
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Plesni majstor (Dance Master Trophy)"
@@ -995,6 +1141,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/lijepa_plaza.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vrata.mp3
+            grammarTags: []
+            options:
+              - text: Vrata
+                correct: true
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Little cat"'
+            grammarTags: []
+            options:
+              - text: Mala mačka
+                correct: true
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Dobra ptica
+                correct: false
+                audioSrc: /audio/hr/dobra_ptica.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Jump!"'
+            grammarTags: []
+            options:
+              - text: Skoči
+                correct: true
+                audioSrc: /audio/hr/skoci.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Small boat"'
+            grammarTags: []
+            options:
+              - text: Mali brod
+                correct: true
+                audioSrc: /audio/hr/mali_brod.mp3
+              - text: Toplo more
+                correct: false
+                audioSrc: /audio/hr/toplo_more.mp3
+              - text: Veliki brod
+                correct: false
+                audioSrc: /audio/hr/veliki_brod.mp3
+              - text: Lijepa plaža
+                correct: false
+                audioSrc: /audio/hr/lijepa_plaza.mp3
+      - order: 5
         legacyId: 32
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Kapetan Jadrana (Adriatic Captain Trophy)"
@@ -1358,6 +1577,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/gdje_su_mi_carape.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/uho.mp3
+            grammarTags: []
+            options:
+              - text: Uho
+                correct: true
+                audioSrc: /audio/hr/uho.mp3
+              - text: Nos
+                correct: false
+                audioSrc: /audio/hr/nos.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+              - text: Oko
+                correct: false
+                audioSrc: /audio/hr/oko.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Six (6)"'
+            grammarTags: []
+            options:
+              - text: Šest
+                correct: true
+                audioSrc: /audio/hr/sest.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Small boat"'
+            grammarTags: []
+            options:
+              - text: Mali brod
+                correct: true
+                audioSrc: /audio/hr/mali_brod.mp3
+              - text: Toplo more
+                correct: false
+                audioSrc: /audio/hr/toplo_more.mp3
+              - text: Veliki brod
+                correct: false
+                audioSrc: /audio/hr/veliki_brod.mp3
+              - text: Lijepa plaža
+                correct: false
+                audioSrc: /audio/hr/lijepa_plaza.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Put on the shirt"'
+            grammarTags: []
+            options:
+              - text: Obuci majicu
+                correct: true
+                audioSrc: /audio/hr/obuci_majicu.mp3
+              - text: Obuci jaknu
+                correct: false
+                audioSrc: /audio/hr/obuci_jaknu.mp3
+              - text: Obuci hlače
+                correct: false
+                audioSrc: /audio/hr/obuci_hlace.mp3
+              - text: Obuci cipele
+                correct: false
+                audioSrc: /audio/hr/obuci_cipele.mp3
+      - order: 5
         legacyId: 36
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Modni kreator (Fashion Star Trophy)"
@@ -1721,6 +2013,79 @@ units:
                 correct: false
                 audioSrc: /audio/hr/dobro_sam_ja.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/otok.mp3
+            grammarTags: []
+            options:
+              - text: Otok
+                correct: true
+                audioSrc: /audio/hr/otok.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+              - text: Plaža
+                correct: false
+                audioSrc: /audio/hr/plaza.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"I am hungry"'
+            grammarTags: []
+            options:
+              - text: Gladan sam
+                correct: true
+                audioSrc: /audio/hr/gladan_sam.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Umoran sam
+                correct: false
+                audioSrc: /audio/hr/umoran_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Put on the shirt"'
+            grammarTags: []
+            options:
+              - text: Obuci majicu
+                correct: true
+                audioSrc: /audio/hr/obuci_majicu.mp3
+              - text: Obuci jaknu
+                correct: false
+                audioSrc: /audio/hr/obuci_jaknu.mp3
+              - text: Obuci hlače
+                correct: false
+                audioSrc: /audio/hr/obuci_hlace.mp3
+              - text: Obuci cipele
+                correct: false
+                audioSrc: /audio/hr/obuci_cipele.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Happy"'
+            grammarTags: []
+            options:
+              - text: Sretan
+                correct: true
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Umoran
+                correct: false
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Nasmijan
+                correct: false
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Gladan
+                correct: false
+                audioSrc: /audio/hr/gladan.mp3
+      - order: 5
         legacyId: 40
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Vremenski čuvar (Weather Explorer Trophy)"

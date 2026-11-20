@@ -8,6 +8,8 @@ export function isSuperIzazovLesson(
   unitLessonsCountOrMaxOrder: number
 ): boolean {
   if (lesson.kind === "BOSS_CAPSTONE") return true;
+  if (lesson.kind === "SPIRAL_REVIEW") return false;
+  if (lesson.title.toLowerCase().includes("spiral review")) return false;
   if (lesson.title.toLowerCase().includes("super izazov")) return true;
   return lesson.order >= unitLessonsCountOrMaxOrder && unitLessonsCountOrMaxOrder >= 4;
 }

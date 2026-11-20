@@ -272,6 +272,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/publika_slusa_tihu_melodiju.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/bascanska_ploca_cuva_povijest.mp3
+            grammarTags: []
+            options:
+              - text: Bašćanska ploča čuva povijest.
+                correct: true
+                audioSrc: /audio/hr/bascanska_ploca_cuva_povijest.mp3
+              - text: Učimo stara glagoljska slova.
+                correct: false
+                audioSrc: /audio/hr/ucimo_stara_glagoljska_slova.mp3
+              - text: Masline rastu na otoku Krku.
+                correct: false
+                audioSrc: /audio/hr/masline_rastu_na_otoku_krku.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The sailors are waiting on the ship."'
+            targetSentence: Mornari čekaju na brodu.
+            acceptedAnswers:
+              - Mornari čekaju na brodu
+            wordBank:
+              - Mornari
+              - na
+              - ispod
+              - brodu
+              - čekaju
+            audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "The rider checked the leather saddle before the race."'
+            grammarTags:
+              - perfekt
+              - genitive
+            options:
+              - text: Jahač je provjerio kožno sedlo prije trke.
+                correct: true
+                audioSrc: /audio/hr/jahac_je_provjerio_kozno_sedlo_prije_trke.mp3
+              - text: Jahač provjerava kožno sedlo prije trke.
+                correct: false
+                audioSrc: /audio/hr/jahac_provjerava_kozno_sedlo_prije_trke.mp3
+              - text: Jahač će provjeriti kožno sedlo sutra ujutro.
+                correct: false
+                audioSrc: /audio/hr/jahac_ce_provjeriti_kozno_sedlo_sutra_ujutro.mp3
+              - text: Jahač je stavio teško koplje na sedlo.
+                correct: false
+                audioSrc: /audio/hr/jahac_je_stavio_tesko_koplje_na_sedlo.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The piano sounds very beautiful."'
+            targetSentence: Klavir zvuči vrlo lijepo.
+            acceptedAnswers:
+              - Klavir zvuči vrlo lijepo
+            wordBank:
+              - zvuči
+              - nije
+              - lijepo
+              - vrlo
+              - Klavir
+            audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 204
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Zvuk baroka"
@@ -601,6 +670,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/ulicni_sviraci_sviraju_do_mraka.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/karnevalska_povorka_prolazi_korzom.mp3
+            grammarTags: []
+            options:
+              - text: Karnevalska povorka prolazi Korzom.
+                correct: true
+                audioSrc: /audio/hr/karnevalska_povorka_prolazi_korzom.mp3
+              - text: Svi nose šarene maske.
+                correct: false
+                audioSrc: /audio/hr/svi_nose_sarene_maske.mp3
+              - text: Zvončari glasno zvone zvonima.
+                correct: false
+                audioSrc: /audio/hr/zvoncari_glasno_zvone_zvonima.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The dragon guards the old fortress."'
+            targetSentence: Zmaj čuva staru tvrđavu.
+            acceptedAnswers:
+              - Zmaj čuva staru tvrđavu
+            wordBank:
+              - tvrđavu
+              - nije
+              - čuva
+              - staru
+              - Zmaj
+            audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are competing together."'
+            grammarTags: []
+            options:
+              - text: Natječemo se zajedno.
+                correct: true
+                audioSrc: /audio/hr/natjecemo_se_zajedno.mp3
+              - text: Jučer natječemo se zajedno.
+                correct: false
+                audioSrc: /audio/hr/jucer_natjecemo_se_zajedno.mp3
+              - text: Sutra natječemo se zajedno.
+                correct: false
+                audioSrc: /audio/hr/sutra_natjecemo_se_zajedno.mp3
+              - text: Vitez se usmjerava na metu.
+                correct: false
+                audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Špancirfest gathers many artists."'
+            targetSentence: Špancirfest okuplja mnogo umjetnika.
+            acceptedAnswers:
+              - Špancirfest okuplja mnogo umjetnika
+            wordBank:
+              - okuplja
+              - umjetnika
+              - nije
+              - mnogo
+              - Špancirfest
+            audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 208
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Boje Špancirfesta"
@@ -928,6 +1064,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/violina_svira_u_dvorani.mp3
+            grammarTags: []
+            options:
+              - text: Violina svira u dvorani.
+                correct: true
+                audioSrc: /audio/hr/violina_svira_u_dvorani.mp3
+              - text: Orkestar izvodi baroknu glazbu.
+                correct: false
+                audioSrc: /audio/hr/orkestar_izvodi_baroknu_glazbu.mp3
+              - text: Glazbenik čita stare note.
+                correct: false
+                audioSrc: /audio/hr/glazbenik_cita_stare_note.mp3
+              - text: Klavir zvuči vrlo lijepo.
+                correct: false
+                audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Opatija is famous for its villas."'
+            targetSentence: Opatija je poznata po vilama.
+            acceptedAnswers:
+              - Opatija je poznata po vilama
+            wordBank:
+              - vilama
+              - je
+              - Opatija
+              - su
+              - poznata
+              - po
+            audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "The rapid water flows."'
+            grammarTags: []
+            options:
+              - text: Brza voda teče.
+                correct: true
+                audioSrc: /audio/hr/brza_voda_tece.mp3
+              - text: Brza voda ne teče.
+                correct: false
+                audioSrc: /audio/hr/brza_voda_ne_tece.mp3
+              - text: spora voda teče.
+                correct: false
+                audioSrc: /audio/hr/spora_voda_tece.mp3
+              - text: Divimo se smaragdnoj rijeci.
+                correct: false
+                audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The museum preserves old portraits."'
+            targetSentence: Muzej čuva stare portrete.
+            acceptedAnswers:
+              - Muzej čuva stare portrete
+            wordBank:
+              - portrete
+              - nije
+              - čuva
+              - stare
+              - Muzej
+            audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 212
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Barokna baština"
@@ -1261,6 +1465,76 @@ units:
                 correct: false
                 audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sareni_kisobrani_vise_nad_ulicom.mp3
+            grammarTags: []
+            options:
+              - text: Šareni kišobrani vise nad ulicom.
+                correct: true
+                audioSrc: /audio/hr/sareni_kisobrani_vise_nad_ulicom.mp3
+              - text: Glumac zabavlja djecu na trgu.
+                correct: false
+                audioSrc: /audio/hr/glumac_zabavlja_djecu_na_trgu.mp3
+              - text: Pjevači stoje na velikoj pozornici.
+                correct: false
+                audioSrc: /audio/hr/pjevaci_stoje_na_velikoj_pozornici.mp3
+              - text: Gosti šetaju varaždinskim trgovima.
+                correct: false
+                audioSrc: /audio/hr/gosti_setaju_varazdinskim_trgovima.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Sheep graze on the rocky pasture."'
+            targetSentence: Ovce pasu na kamenjaru.
+            acceptedAnswers:
+              - Ovce pasu na kamenjaru
+            wordBank:
+              - pasu
+              - kamenjaru
+              - ispod
+              - na
+              - Ovce
+            audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "The mill grinds grain into flour."'
+            grammarTags: []
+            options:
+              - text: Mlin melje žito u brašno.
+                correct: true
+                audioSrc: /audio/hr/mlin_melje_zito_u_brasno.mp3
+              - text: Jučer mlin melje žito u brašno.
+                correct: false
+                audioSrc: /audio/hr/jucer_mlin_melje_zito_u_brasno.mp3
+              - text: Sutra mlin melje žito u brašno.
+                correct: false
+                audioSrc: /audio/hr/sutra_mlin_melje_zito_u_brasno.mp3
+              - text: Grijemo se uz vatru.
+                correct: false
+                audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Two rivers meet in the forest."'
+            targetSentence: Dvije rijeke spajaju se u šumi.
+            acceptedAnswers:
+              - Dvije rijeke spajaju se u šumi
+            wordBank:
+              - Dvije
+              - se
+              - spajaju
+              - na
+              - rijeke
+              - šumu
+              - u
+              - šumi
+            audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 216
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Priroda sjevera"
@@ -1591,6 +1865,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/domaci_kruh_i_sir_cekaju_goste.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/varazdin_se_zove_grad_andela.mp3
+            grammarTags: []
+            options:
+              - text: Varaždin se zove grad anđela.
+                correct: true
+                audioSrc: /audio/hr/varazdin_se_zove_grad_andela.mp3
+              - text: Bijeli bedemi okružuju stari grad.
+                correct: false
+                audioSrc: /audio/hr/bijeli_bedemi_okruzuju_stari_grad.mp3
+              - text: Sat na tornju otkucava podne.
+                correct: false
+                audioSrc: /audio/hr/sat_na_tornju_otkucava_podne.mp3
+              - text: Plemićki grb krasi ulazna vrata.
+                correct: false
+                audioSrc: /audio/hr/plemicki_grb_krasi_ulazna_vrata.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The drums give rhythm to the dance."'
+            targetSentence: Bubnjevi daju ritam plesu.
+            acceptedAnswers:
+              - Bubnjevi daju ritam plesu
+            wordBank:
+              - plesu
+              - nije
+              - daju
+              - ritam
+              - Bubnjevi
+            audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "The winner rejoices on the horse."'
+            grammarTags: []
+            options:
+              - text: Pobjednik se raduje na konju.
+                correct: true
+                audioSrc: /audio/hr/pobjednik_se_raduje_na_konju.mp3
+              - text: Jučer pobjednik se raduje na konju.
+                correct: false
+                audioSrc: /audio/hr/jucer_pobjednik_se_raduje_na_konju.mp3
+              - text: Sutra pobjednik se raduje na konju.
+                correct: false
+                audioSrc: /audio/hr/sutra_pobjednik_se_raduje_na_konju.mp3
+              - text: Ponosimo se našim vitezovima.
+                correct: false
+                audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The tambura accompanies an old folk song."'
+            targetSentence: Tambura prati staru narodnu pjesmu.
+            acceptedAnswers:
+              - Tambura prati staru narodnu pjesmu
+            wordBank:
+              - Tambura
+              - pjesmu
+              - nije
+              - narodnu
+              - staru
+              - prati
+            audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 220
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Srce sjevera"

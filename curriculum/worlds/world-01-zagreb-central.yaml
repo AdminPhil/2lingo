@@ -263,6 +263,82 @@ units:
                 correct: false
                 audioSrc: /audio/hr/laku_noc.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: "\"Please / You're welcome\""
+            grammarTags: []
+            options:
+              - text: Molim
+                correct: true
+                audioSrc: /audio/hr/molim.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Oprosti
+                correct: false
+                audioSrc: /audio/hr/oprosti.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Yes"'
+            grammarTags: []
+            options:
+              - text: Da
+                correct: true
+                audioSrc: /audio/hr/da.mp3
+              - text: Ne
+                correct: false
+                audioSrc: /audio/hr/ne.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+          - order: 3
+            type: SELECT
+            prompt: Which one of these is "Hello / Hi"?
+            grammarTags: []
+            options:
+              - text: Bok
+                correct: true
+                imageSrc: /mascot.svg
+                audioSrc: /audio/hr/bok.mp3
+              - text: Doviđenja
+                correct: false
+                imageSrc: /mascot_sad.svg
+                audioSrc: /audio/hr/dovidenja.mp3
+              - text: Hvala
+                correct: false
+                imageSrc: /points.svg
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                imageSrc: /heart.svg
+                audioSrc: /audio/hr/molim.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"No"'
+            grammarTags: []
+            options:
+              - text: Ne
+                correct: true
+                audioSrc: /audio/hr/ne.mp3
+              - text: Da
+                correct: false
+                audioSrc: /audio/hr/da.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+      - order: 5
         legacyId: 16
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Prvi koraci (First Steps Trophy)"
@@ -602,6 +678,78 @@ units:
                 correct: false
                 audioSrc: /audio/hr/laku_noc.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: "\"Please / You're welcome\""
+            grammarTags: []
+            options:
+              - text: Molim
+                correct: true
+                audioSrc: /audio/hr/molim.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Oprosti
+                correct: false
+                audioSrc: /audio/hr/oprosti.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Yes"'
+            grammarTags: []
+            options:
+              - text: Da
+                correct: true
+                audioSrc: /audio/hr/da.mp3
+              - text: Ne
+                correct: false
+                audioSrc: /audio/hr/ne.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Brother"'
+            grammarTags: []
+            options:
+              - text: Brat
+                correct: true
+                audioSrc: /audio/hr/brat.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Baby"'
+            grammarTags: []
+            options:
+              - text: Beba
+                correct: true
+                audioSrc: /audio/hr/beba.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+      - order: 5
         legacyId: 17
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Obiteljski heroj (Family Hero Trophy)"
@@ -941,6 +1089,78 @@ units:
                 correct: false
                 audioSrc: /audio/hr/mala_macka.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: '"Brother"'
+            grammarTags: []
+            options:
+              - text: Brat
+                correct: true
+                audioSrc: /audio/hr/brat.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Yes"'
+            grammarTags: []
+            options:
+              - text: Da
+                correct: true
+                audioSrc: /audio/hr/da.mp3
+              - text: Ne
+                correct: false
+                audioSrc: /audio/hr/ne.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Cow"'
+            grammarTags: []
+            options:
+              - text: Krava
+                correct: true
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+              - text: Svinja
+                correct: false
+                audioSrc: /audio/hr/svinja.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Little cat"'
+            grammarTags: []
+            options:
+              - text: Mala mačka
+                correct: true
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Dobra ptica
+                correct: false
+                audioSrc: /audio/hr/dobra_ptica.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+      - order: 5
         legacyId: 18
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Šaptač životinjama (Animal Whisperer Trophy)"
@@ -1334,6 +1554,78 @@ units:
                 correct: false
                 audioSrc: /audio/hr/sedam.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: '"Cow"'
+            grammarTags: []
+            options:
+              - text: Krava
+                correct: true
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+              - text: Svinja
+                correct: false
+                audioSrc: /audio/hr/svinja.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Baby"'
+            grammarTags: []
+            options:
+              - text: Beba
+                correct: true
+                audioSrc: /audio/hr/beba.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"One (1)"'
+            grammarTags: []
+            options:
+              - text: Jedan
+                correct: true
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"Six (6)"'
+            grammarTags: []
+            options:
+              - text: Šest
+                correct: true
+                audioSrc: /audio/hr/sest.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+      - order: 5
         legacyId: 19
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Majstor boja i brojeva (Color & Number Master)"
@@ -1677,6 +1969,78 @@ units:
                 correct: false
                 audioSrc: /audio/hr/ne_hvala_lijepo.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: ASSIST
+            prompt: '"One (1)"'
+            grammarTags: []
+            options:
+              - text: Jedan
+                correct: true
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+          - order: 2
+            type: ASSIST
+            prompt: '"Little cat"'
+            grammarTags: []
+            options:
+              - text: Mala mačka
+                correct: true
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Dobra ptica
+                correct: false
+                audioSrc: /audio/hr/dobra_ptica.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 3
+            type: ASSIST
+            prompt: '"Water"'
+            grammarTags: []
+            options:
+              - text: Voda
+                correct: true
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+              - text: Čokolada
+                correct: false
+                audioSrc: /audio/hr/cokolada.mp3
+          - order: 4
+            type: ASSIST
+            prompt: '"I am hungry"'
+            grammarTags: []
+            options:
+              - text: Gladan sam
+                correct: true
+                audioSrc: /audio/hr/gladan_sam.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Umoran sam
+                correct: false
+                audioSrc: /audio/hr/umoran_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+      - order: 5
         legacyId: 20
         kind: BOSS_CAPSTONE
         title: "👑 Super Izazov: Mali kuhar (Little Chef Trophy)"

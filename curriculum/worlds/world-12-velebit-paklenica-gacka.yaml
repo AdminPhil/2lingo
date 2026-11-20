@@ -274,6 +274,76 @@ units:
                 correct: false
                 audioSrc: /audio/hr/premuziceva_staza_vodi_kroz_krs.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/bijeli_labud_pliva_po_dravi.mp3
+            grammarTags: []
+            options:
+              - text: Bijeli labud pliva po Dravi.
+                correct: true
+                audioSrc: /audio/hr/bijeli_labud_pliva_po_dravi.mp3
+              - text: Vrbe spuštaju grane do vode.
+                correct: false
+                audioSrc: /audio/hr/vrbe_spustaju_grane_do_vode.mp3
+              - text: Drvena splav prelazi rijeku Muru.
+                correct: false
+                audioSrc: /audio/hr/drvena_splav_prelazi_rijeku_muru.mp3
+              - text: Ribar sjedi na mirnoj obali.
+                correct: false
+                audioSrc: /audio/hr/ribar_sjedi_na_mirnoj_obali.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The piano sounds very beautiful."'
+            targetSentence: Klavir zvuči vrlo lijepo.
+            acceptedAnswers:
+              - Klavir zvuči vrlo lijepo
+            wordBank:
+              - zvuči
+              - nije
+              - lijepo
+              - vrlo
+              - Klavir
+            audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "The white ship sailed calmly across Kvarner Bay."'
+            grammarTags:
+              - perfekt
+              - instrumental
+            options:
+              - text: Bijeli brod je mirno plovio Kvarnerskim zaljevom.
+                correct: true
+                audioSrc: /audio/hr/bijeli_brod_je_mirno_plovio_kvarnerskim_zaljevom.mp3
+              - text: Bijeli brod mirno plovi Kvarnerskim zaljevom.
+                correct: false
+                audioSrc: /audio/hr/bijeli_brod_mirno_plovi_kvarnerskim_zaljevom.mp3
+              - text: Bijeli brod će zaploviti prema otoku Krku.
+                correct: false
+                audioSrc: /audio/hr/bijeli_brod_ce_zaploviti_prema_otoku_krku.mp3
+              - text: Veliki brod je čekao kapetana u luci.
+                correct: false
+                audioSrc: /audio/hr/veliki_brod_je_cekao_kapetana_u_luci.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Cold bora wind blows from the mountain."'
+            targetSentence: Hladna bura puše s planine.
+            acceptedAnswers:
+              - Hladna bura puše s planine
+            wordBank:
+              - Hladna
+              - bura
+              - planine
+              - s
+              - puše
+              - nije
+            audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 224
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Sjeverni Velebit"
@@ -606,6 +676,74 @@ units:
                 correct: false
                 audioSrc: /audio/hr/kanjon_velike_paklenice_je_strm.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medimurski_bregi_puni_su_vinograda.mp3
+            grammarTags: []
+            options:
+              - text: Međimurski bregi puni su vinograda.
+                correct: true
+                audioSrc: /audio/hr/medimurski_bregi_puni_su_vinograda.mp3
+              - text: Beremo slatko grožđe u košare.
+                correct: false
+                audioSrc: /audio/hr/beremo_slatko_grozde_u_kosare.mp3
+              - text: Žene pletu finu bijelu čipku.
+                correct: false
+                audioSrc: /audio/hr/zene_pletu_finu_bijelu_cipku.mp3
+              - text: Tambura prati staru narodnu pjesmu.
+                correct: false
+                audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Špancirfest gathers many artists."'
+            targetSentence: Špancirfest okuplja mnogo umjetnika.
+            acceptedAnswers:
+              - Špancirfest okuplja mnogo umjetnika
+            wordBank:
+              - okuplja
+              - umjetnika
+              - nije
+              - mnogo
+              - Špancirfest
+            audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "The way to the top is long."'
+            grammarTags: []
+            options:
+              - text: Put do vrha je dug.
+                correct: true
+                audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
+              - text: Put do vrha nije dug.
+                correct: false
+                audioSrc: /audio/hr/put_do_vrha_nije_dug.mp3
+              - text: Jučer put do vrha je dug.
+                correct: false
+                audioSrc: /audio/hr/jucer_put_do_vrha_je_dug.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Old beech trees form a dense forest."'
+            targetSentence: Stare bukve tvore gustu šumu.
+            acceptedAnswers:
+              - Stare bukve tvore gustu šumu
+            wordBank:
+              - šumu
+              - bukve
+              - Stare
+              - nije
+              - tvore
+              - gustu
+            audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 228
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Sjenoviti klanac"
@@ -935,6 +1073,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/velebit_cuva_rijetko_bilje.mp3
+            grammarTags: []
+            options:
+              - text: Velebit čuva rijetko bilje.
+                correct: true
+                audioSrc: /audio/hr/velebit_cuva_rijetko_bilje.mp3
+              - text: Žuta degenija raste na stijenama.
+                correct: false
+                audioSrc: /audio/hr/zuta_degenija_raste_na_stijenama.mp3
+              - text: Planinari hodaju duž grebena.
+                correct: false
+                audioSrc: /audio/hr/planinari_hodaju_duz_grebena.mp3
+              - text: Hladna bura puše s planine.
+                correct: false
+                audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The museum preserves old portraits."'
+            targetSentence: Muzej čuva stare portrete.
+            acceptedAnswers:
+              - Muzej čuva stare portrete
+            wordBank:
+              - portrete
+              - nije
+              - čuva
+              - stare
+              - Muzej
+            audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "Tall green palms grow along the sunlit Opatija coast."'
+            grammarTags:
+              - genitive
+            options:
+              - text: Visoke zelene palme rastu duž sunčane opatijske obale.
+                correct: true
+                audioSrc: /audio/hr/visoke_zelene_palme_rastu_duz_suncane_opatijske_obale.mp3
+              - text: Visoke zelene palme su rasle u starom parku.
+                correct: false
+                audioSrc: /audio/hr/visoke_zelene_palme_su_rasle_u_starom_parku.mp3
+              - text: Mirisne kamelije cvjetaju uz kamenu fontanu u gradu.
+                correct: false
+                audioSrc: /audio/hr/mirisne_kamelije_cvjetaju_uz_kamenu_fontanu_u_gradu.mp3
+              - text: Tihi valovi polako dolaze prema kamenoj šetnici.
+                correct: false
+                audioSrc: /audio/hr/tihi_valovi_polako_dolaze_prema_kamenoj_setnici.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Volunteers care for forest animals."'
+            targetSentence: Volonteri brinu o šumskim životinjama.
+            acceptedAnswers:
+              - Volonteri brinu o šumskim životinjama
+            wordBank:
+              - Volonteri
+              - životinjama
+              - nije
+              - šumskim
+              - o
+              - brinu
+            audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 232
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Mir šume"
@@ -1266,6 +1473,77 @@ units:
                 correct: false
                 audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/penjac_se_uspinje_uz_liticu.mp3
+            grammarTags: []
+            options:
+              - text: Penjač se uspinje uz liticu.
+                correct: true
+                audioSrc: /audio/hr/penjac_se_uspinje_uz_liticu.mp3
+              - text: Čvrsto uže osigurava svaki korak.
+                correct: false
+                audioSrc: /audio/hr/cvrsto_uze_osigurava_svaki_korak.mp3
+              - text: Špilja Manita peć krije sige.
+                correct: false
+                audioSrc: /audio/hr/spilja_manita_pec_krije_sige.mp3
+              - text: Stare bukve tvore gustu šumu.
+                correct: false
+                audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Two rivers meet in the forest."'
+            targetSentence: Dvije rijeke spajaju se u šumi.
+            acceptedAnswers:
+              - Dvije rijeke spajaju se u šumi
+            wordBank:
+              - Dvije
+              - se
+              - spajaju
+              - na
+              - rijeke
+              - šumu
+              - u
+              - šumi
+            audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are crossing the great Krk Bridge."'
+            grammarTags: []
+            options:
+              - text: Prelazimo veliki Krčki most.
+                correct: true
+                audioSrc: /audio/hr/prelazimo_veliki_krcki_most.mp3
+              - text: prešli smo veliki Krčki most.
+                correct: false
+                audioSrc: /audio/hr/presli_smo_veliki_krcki_most.mp3
+              - text: Prelazimo mali Krčki most.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_mali_krcki_most.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The water of the Gacka is exceptionally clean."'
+            targetSentence: Voda Gacke iznimno je čista.
+            acceptedAnswers:
+              - Voda Gacke iznimno je čista
+            wordBank:
+              - Voda
+              - Gacke
+              - čista
+              - je
+              - iznimno
+              - su
+            audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 236
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Gacka dolina"
@@ -1599,6 +1877,77 @@ units:
                 correct: false
                 audioSrc: /audio/hr/zima_u_lici_donosi_dubok_snijeg.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medvjedici_se_igraju_u_kuterevu.mp3
+            grammarTags: []
+            options:
+              - text: Medvjedići se igraju u Kuterevu.
+                correct: true
+                audioSrc: /audio/hr/medvjedici_se_igraju_u_kuterevu.mp3
+              - text: Utočište pomaže mladim medvjedima.
+                correct: false
+                audioSrc: /audio/hr/utociste_pomaze_mladim_medvjedima.mp3
+              - text: Oprezni ris tiho hoda šumom.
+                correct: false
+                audioSrc: /audio/hr/oprezni_ris_tiho_hoda_sumom.mp3
+              - text: Sova gleda s visoke grane.
+                correct: false
+                audioSrc: /audio/hr/sova_gleda_s_visoke_grane.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The tambura accompanies an old folk song."'
+            targetSentence: Tambura prati staru narodnu pjesmu.
+            acceptedAnswers:
+              - Tambura prati staru narodnu pjesmu
+            wordBank:
+              - Tambura
+              - pjesmu
+              - nije
+              - narodnu
+              - staru
+              - prati
+            audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "The whole city celebrates joyfully while musicians play on Korzo."'
+            grammarTags:
+              - locative
+              - subordinate_dok
+            options:
+              - text: Cijeli grad veselo slavi dok glazbenici sviraju na Korzu.
+                correct: true
+                audioSrc: /audio/hr/cijeli_grad_veselo_slavi_dok_glazbenici_sviraju_na_korzu.mp3
+              - text: Cijeli grad je slavio dok su glazbenici svirali na Korzu.
+                correct: false
+                audioSrc: /audio/hr/cijeli_grad_je_slavio_dok_su_glazbenici_svirali_na_korzu.mp3
+              - text: Cijeli grad će slaviti kada počne velika povorka.
+                correct: false
+                audioSrc: /audio/hr/cijeli_grad_ce_slaviti_kada_pocne_velika_povorka.mp3
+              - text: Šareni konfeti polako padaju po glavnoj ulici grada.
+                correct: false
+                audioSrc: /audio/hr/sareni_konfeti_polako_padaju_po_glavnoj_ulici_grada.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Grandmothers knit socks from wool."'
+            targetSentence: Bake pletu čarape od vune.
+            acceptedAnswers:
+              - Bake pletu čarape od vune
+            wordBank:
+              - vune
+              - pletu
+              - Bake
+              - nije
+              - čarape
+              - od
+            audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 240
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Ponos Like"

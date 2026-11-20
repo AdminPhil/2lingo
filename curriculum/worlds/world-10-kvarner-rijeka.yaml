@@ -275,6 +275,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/mlinski_kotac_se_okrece.mp3
+            grammarTags: []
+            options:
+              - text: Mlinski kotač se okreće.
+                correct: true
+                audioSrc: /audio/hr/mlinski_kotac_se_okrece.mp3
+              - text: Vatra gori u ognjištu.
+                correct: false
+                audioSrc: /audio/hr/vatra_gori_u_ognjistu.mp3
+              - text: Mlin melje žito.
+                correct: false
+                audioSrc: /audio/hr/mlin_melje_zito.mp3
+              - text: Stari kameni mlin.
+                correct: false
+                audioSrc: /audio/hr/stari_kameni_mlin.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The riders prepare for the tournament."'
+            targetSentence: Jahači se pripremaju za natjecanje.
+            acceptedAnswers:
+              - Jahači se pripremaju za natjecanje
+            wordBank:
+              - Jahači
+              - se
+              - natjecanje
+              - za
+              - pripremaju
+              - nije
+            audioSrc: /audio/hr/jahaci_se_pripremaju_za_natjecanje.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "The lamp will shine brightly tonight."'
+            grammarTags:
+              - futur_1
+            options:
+              - text: Lampa će večeras sjajno svijetliti.
+                correct: true
+                audioSrc: /audio/hr/lampa_ce_veceras_sjajno_svijetliti.mp3
+              - text: Lampa je sinoć sjajno svijetlila.
+                correct: false
+                audioSrc: /audio/hr/lampa_je_sinoc_sjajno_svijetlila.mp3
+              - text: Lampa večeras sjajno svijetli.
+                correct: false
+                audioSrc: /audio/hr/lampa_veceras_sjajno_svijetli.mp3
+              - text: Zvijezda će večeras sjajno sjati.
+                correct: false
+                audioSrc: /audio/hr/zvijezda_ce_veceras_sjajno_sjati.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The sailors are waiting on the ship."'
+            targetSentence: Mornari čekaju na brodu.
+            acceptedAnswers:
+              - Mornari čekaju na brodu
+            wordBank:
+              - Mornari
+              - na
+              - ispod
+              - brodu
+              - čekaju
+            audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 184
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Riječka luka"
@@ -608,6 +677,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/svi_se_raduju_pobjedi.mp3
+            grammarTags: []
+            options:
+              - text: Svi se raduju pobjedi.
+                correct: true
+                audioSrc: /audio/hr/svi_se_raduju_pobjedi.mp3
+              - text: Pobjednik nosi medalju.
+                correct: false
+                audioSrc: /audio/hr/pobjednik_nosi_medalju.mp3
+              - text: Narod pjeva i slavi.
+                correct: false
+                audioSrc: /audio/hr/narod_pjeva_i_slavi.mp3
+              - text: Veliko slavlje.
+                correct: false
+                audioSrc: /audio/hr/veliko_slavlje.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The knight aims at the target."'
+            targetSentence: Vitez se usmjerava na metu.
+            acceptedAnswers:
+              - Vitez se usmjerava na metu
+            wordBank:
+              - metu
+              - se
+              - Vitez
+              - ispod
+              - usmjerava
+              - na
+            audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "Thousands of bright stars shine above us."'
+            grammarTags:
+              - genitive
+            options:
+              - text: Tisuće sjajnih zvijezda sjaje iznad nas.
+                correct: true
+                audioSrc: /audio/hr/tisuce_sjajnih_zvijezda_sjaje_iznad_nas.mp3
+              - text: Tisuće sjajnih zvijezda sjale su sinoć.
+                correct: false
+                audioSrc: /audio/hr/tisuce_sjajnih_zvijezda_sjale_su_sinoc.mp3
+              - text: Tisuće tamnih oblaka plove iznad mora.
+                correct: false
+                audioSrc: /audio/hr/tisuce_tamnih_oblaka_plove_iznad_mora.mp3
+              - text: Jedna sjajna zvijezda sja iznad brda.
+                correct: false
+                audioSrc: /audio/hr/jedna_sjajna_zvijezda_sja_iznad_brda.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The dragon guards the old fortress."'
+            targetSentence: Zmaj čuva staru tvrđavu.
+            acceptedAnswers:
+              - Zmaj čuva staru tvrđavu
+            wordBank:
+              - tvrđavu
+              - nije
+              - čuva
+              - staru
+              - Zmaj
+            audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 188
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Pogled s Trsata"
@@ -942,6 +1080,76 @@ units:
                 correct: false
                 audioSrc: /audio/hr/palme_rastu_uz_obalu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kapetan_spusta_sidro.mp3
+            grammarTags: []
+            options:
+              - text: Kapetan spušta sidro.
+                correct: true
+                audioSrc: /audio/hr/kapetan_spusta_sidro.mp3
+              - text: Brod ulazi u luku.
+                correct: false
+                audioSrc: /audio/hr/brod_ulazi_u_luku.mp3
+              - text: Svjetionik svijetli noću.
+                correct: false
+                audioSrc: /audio/hr/svjetionik_svijetli_nocu.mp3
+              - text: Valovi udaraju o obalu.
+                correct: false
+                audioSrc: /audio/hr/valovi_udaraju_o_obalu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We admire the emerald river."'
+            targetSentence: Divimo se smaragdnoj rijeci.
+            acceptedAnswers:
+              - Divimo se smaragdnoj rijeci
+            wordBank:
+              - se
+              - rijeci
+              - rijeku
+              - smaragdnoj
+              - Divimo
+            audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "We will observe the stars from the observatory."'
+            grammarTags:
+              - futur_1
+              - genitive
+            options:
+              - text: Promatrat ćemo zvijezde iz zvjezdarnice.
+                correct: true
+                audioSrc: /audio/hr/promatrat_cemo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatrali smo zvijezde iz zvjezdarnice.
+                correct: false
+                audioSrc: /audio/hr/promatrali_smo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatramo zvijezde iz zvjezdarnice.
+                correct: false
+                audioSrc: /audio/hr/promatramo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatrat ćemo more s visokog brda.
+                correct: false
+                audioSrc: /audio/hr/promatrat_cemo_more_s_visokog_brda.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Opatija is famous for its villas."'
+            targetSentence: Opatija je poznata po vilama.
+            acceptedAnswers:
+              - Opatija je poznata po vilama
+            wordBank:
+              - vilama
+              - je
+              - Opatija
+              - su
+              - poznata
+              - po
+            audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 192
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Biser Jadrana"
@@ -1274,6 +1482,73 @@ units:
                 correct: false
                 audioSrc: /audio/hr/sutra_cemo_prijeci_veliki_krcki_most_prema_gradu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/trsatska_gradina_gleda_na_more.mp3
+            grammarTags: []
+            options:
+              - text: Trsatska gradina gleda na more.
+                correct: true
+                audioSrc: /audio/hr/trsatska_gradina_gleda_na_more.mp3
+              - text: Penjemo se uz stube.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_uz_stube.mp3
+              - text: Vidimo cijeli Kvarnerski zaljev.
+                correct: false
+                audioSrc: /audio/hr/vidimo_cijeli_kvarnerski_zaljev.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We warm ourselves by the fire."'
+            targetSentence: Grijemo se uz vatru.
+            acceptedAnswers:
+              - Grijemo se uz vatru
+            wordBank:
+              - vatru
+              - nije
+              - se
+              - uz
+              - Grijemo
+            audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: How do you say "We hear loud thunder."?
+            grammarTags: []
+            options:
+              - text: Čujemo glasni grom.
+                correct: true
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Čujemo tihi grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_tihi_grom.mp3
+              - text: Jučer čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/jucer_cujemo_glasni_grom.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "Sheep graze on the rocky pasture."'
+            targetSentence: Ovce pasu na kamenjaru.
+            acceptedAnswers:
+              - Ovce pasu na kamenjaru
+            wordBank:
+              - pasu
+              - kamenjaru
+              - ispod
+              - na
+              - Ovce
+            audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 196
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Zlatni otok"
@@ -1603,6 +1878,75 @@ units:
                 correct: false
                 audioSrc: /audio/hr/grad_slavi_uz_glazbu.mp3
       - order: 4
+        kind: SPIRAL_REVIEW
+        title: Spiral Review
+        challenges:
+          - order: 1
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/setamo_uz_more_navecer.mp3
+            grammarTags: []
+            options:
+              - text: Šetamo uz more navečer.
+                correct: true
+                audioSrc: /audio/hr/setamo_uz_more_navecer.mp3
+              - text: Kamelija cvjeta u parku.
+                correct: false
+                audioSrc: /audio/hr/kamelija_cvjeta_u_parku.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+              - text: Voda teče iz fontane.
+                correct: false
+                audioSrc: /audio/hr/voda_tece_iz_fontane.mp3
+          - order: 2
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "We are proud of our knights."'
+            targetSentence: Ponosimo se našim vitezovima.
+            acceptedAnswers:
+              - Ponosimo se našim vitezovima
+            wordBank:
+              - se
+              - nije
+              - vitezovima
+              - našim
+              - Ponosimo
+            audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
+            grammarTags: []
+          - order: 3
+            type: ASSIST
+            prompt: 'Translate: "Tomorrow we will learn new Croatian words."'
+            grammarTags:
+              - futur_1
+              - accusative
+            options:
+              - text: Sutra ćemo učiti nove hrvatske riječi.
+                correct: true
+                audioSrc: /audio/hr/sutra_cemo_uciti_nove_hrvatske_rijeci.mp3
+              - text: Jučer smo učili nove hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/jucer_smo_ucili_nove_hrvatske_rijeci.mp3
+              - text: Danas učimo nove hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/danas_ucimo_nove_hrvatske_rijeci.mp3
+              - text: Sutra ćemo čitati stare hrvatske priče.
+                correct: false
+                audioSrc: /audio/hr/sutra_cemo_citati_stare_hrvatske_price.mp3
+          - order: 4
+            type: BUILD_SENTENCE
+            prompt: 'Select the correct translation: "The drums give rhythm to the dance."'
+            targetSentence: Bubnjevi daju ritam plesu.
+            acceptedAnswers:
+              - Bubnjevi daju ritam plesu
+            wordBank:
+              - plesu
+              - nije
+              - daju
+              - ritam
+              - Bubnjevi
+            audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+            grammarTags: []
+      - order: 5
         legacyId: 200
         kind: BOSS_CAPSTONE
         title: "Super Izazov: Završno slavlje Kvarnera"
