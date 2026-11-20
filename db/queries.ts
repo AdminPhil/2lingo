@@ -1,6 +1,6 @@
 import { cache } from "react";
 import { and, eq, gte, inArray } from "drizzle-orm";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 import db from "@/db/drizzle";
 import { isSuperAdmin } from "@/lib/admin";

@@ -1,27 +1,30 @@
 import { redirect } from "next/navigation";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 
 import db from "@/db/drizzle";
 import { pods, podMembers, userProgress } from "@/db/schema";
 import { generateRandomPodCode } from "@/lib/pod-code";
 
+type SearchParamsObj = {
+  role?: string;
+  join?: string;
+  intent?: string;
+};
+
 type Props = {
-  searchParams?: {
-    role?: string;
-    join?: string;
-    intent?: string;
-  };
+  searchParams?: Promise<SearchParamsObj>;
 };
 
 const WelcomePage = async ({ searchParams }: Props) => {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) {
     redirect("/");
   }
 
+  const resolvedSearchParams = await searchParams;
   const user = await currentUser();
-  const roleParam = searchParams?.role || searchParams?.intent;
+  const roleParam = resolvedSearchParams?.role || resolvedSearchParams?.intent;
 
   // 1. Teacher Onboarding Intent
   if (roleParam === "teacher") {
@@ -141,8 +144,8 @@ const WelcomePage = async ({ searchParams }: Props) => {
   }
 
   // 3. Fallback / Join Preservation
-  if (searchParams?.join) {
-    redirect(`/learn?join=${encodeURIComponent(searchParams.join)}`);
+  if (resolvedSearchParams?.join) {
+    redirect(`/learn?join=${encodeURIComponent(resolvedSearchParams.join)}`);
   }
 
   const currentProgress = await db.query.userProgress.findFirst({

@@ -1,6 +1,10 @@
 "use server";
 
-import { auth, clerkClient } from "@clerk/nextjs";
+import { auth, clerkClient } from "@clerk/nextjs/server";
+
+async function getClerk() {
+  return typeof clerkClient === "function" ? await clerkClient() : (clerkClient as any);
+}
 import { and, eq, gte, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
@@ -94,9 +98,10 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
   }
 
   // 1. Create Clerk User with username & password (no email required)
+  const clerk = await getClerk();
   let clerkUser;
   try {
-    clerkUser = await clerkClient.users.createUser({
+    clerkUser = await clerk.users.createUser({
       username: cleanUsername,
       password,
       firstName: childName,
@@ -132,7 +137,7 @@ export const createChildAccount = async (data: CreateChildAccountInput) => {
   } catch (dbErr) {
     // If DB fails, attempt to delete Clerk user to maintain consistency
     try {
-      await clerkClient.users.deleteUser(clerkUser.id);
+      await clerk.users.deleteUser(clerkUser.id);
     } catch {}
     return { error: "Failed to initialize learner record in database." };
   }
@@ -208,7 +213,8 @@ export const createMultipleChildAccounts = async (
         const rolledBackCount = results.length;
         for (const created of results) {
           try {
-            await clerkClient.users.deleteUser(created.id);
+            const clerk = await getClerk();
+            await clerk.users.deleteUser(created.id);
           } catch (clerkErr) {
             console.error(`Failed to rollback Clerk user ${created.id}:`, clerkErr);
           }
@@ -232,7 +238,8 @@ export const createMultipleChildAccounts = async (
       const rolledBackCount = results.length;
       for (const created of results) {
         try {
-          await clerkClient.users.deleteUser(created.id);
+          const clerk = await getClerk();
+          await clerk.users.deleteUser(created.id);
         } catch (clerkErr) {
           console.error(`Failed to rollback Clerk user ${created.id}:`, clerkErr);
         }
@@ -290,9 +297,10 @@ export const adminGetOrResetStudentQrPass = async (targetUserId: string) => {
   }
 
   // Fetch Clerk user
+  const clerk = await getClerk();
   let clerkUser;
   try {
-    clerkUser = await clerkClient.users.getUser(targetUserId);
+    clerkUser = await clerk.users.getUser(targetUserId);
   } catch {
     return { error: "Failed to locate authentication profile for this learner." };
   }
@@ -306,7 +314,7 @@ export const adminGetOrResetStudentQrPass = async (targetUserId: string) => {
   const newPassword = `Cro${cleanName}${randomNum}!`;
 
   try {
-    await clerkClient.users.updateUser(targetUserId, {
+    await clerk.users.updateUser(targetUserId, {
       password: newPassword,
       skipPasswordChecks: true,
     });

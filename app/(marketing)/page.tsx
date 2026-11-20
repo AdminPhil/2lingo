@@ -9,17 +9,18 @@ import { getUserProgress } from "@/db/queries";
 import { M3RoleHero } from "@/components/onboarding/m3-role-hero";
 
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     join?: string;
     code?: string;
-  };
+  }>;
 };
 
 export default async function Home({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
   const userProgress = await getUserProgress();
   const isParent = userProgress?.role === "parent";
 
-  const rawJoin = searchParams?.join || searchParams?.code || "";
+  const rawJoin = resolvedSearchParams?.join || resolvedSearchParams?.code || "";
   const joinCode = typeof rawJoin === "string" ? rawJoin.trim().toUpperCase() : "";
 
   let teamName = "";

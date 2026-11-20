@@ -23,10 +23,11 @@ import { ParentModeBanner } from "@/components/parent-mode-banner";
 import { getUnseenCheers } from "@/db/queries";
 
 type Props = {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 const LearnPage = async ({ searchParams }: Props) => {
+  const resolvedSearchParams = await searchParams;
   const userProgressData = getUserProgress();
   const courseProgressData = getCourseProgress();
   const lessonPercentageData = getLessonPercentage();
@@ -51,20 +52,20 @@ const LearnPage = async ({ searchParams }: Props) => {
   ]);
 
   // Backward compatibility & direct routing for Parent / Teacher Onboarding
-  if (searchParams?.intent === "parent" || searchParams?.role === "parent") {
+  if (resolvedSearchParams?.intent === "parent" || resolvedSearchParams?.role === "parent") {
     redirect("/welcome?role=parent");
   }
-  if (searchParams?.role === "teacher") {
+  if (resolvedSearchParams?.role === "teacher") {
     redirect("/welcome?role=teacher");
   }
 
   const buildLearnRedirectUrl = () => {
     const params = new URLSearchParams();
-    if (typeof searchParams?.intent === "string") {
-      params.set("intent", searchParams.intent);
+    if (typeof resolvedSearchParams?.intent === "string") {
+      params.set("intent", resolvedSearchParams.intent);
     }
-    if (typeof searchParams?.join === "string") {
-      params.set("join", searchParams.join);
+    if (typeof resolvedSearchParams?.join === "string") {
+      params.set("join", resolvedSearchParams.join);
     }
     const qs = params.toString();
     return qs ? `/learn?${qs}` : "/learn";

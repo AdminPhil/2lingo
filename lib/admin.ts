@@ -1,4 +1,4 @@
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 import db from "@/db/drizzle";
 import { pods, userProgress } from "@/db/schema";
@@ -20,7 +20,7 @@ export const DEFAULT_ADMIN_IDS: string[] = (process.env.ADMIN_USER_IDS || proces
   .filter(Boolean);
 
 export const isSuperAdmin = async (): Promise<boolean> => {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) return false;
 
   // 1. Check env variable SUPER_ADMIN_USER_IDS or configured admin IDs
@@ -55,7 +55,7 @@ export const isSuperAdmin = async (): Promise<boolean> => {
 };
 
 export const isAdmin = async (): Promise<boolean> => {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) return false;
 
   // 1. Fast-path check for known admin user IDs

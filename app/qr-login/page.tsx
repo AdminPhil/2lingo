@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -8,7 +8,7 @@ import { useSignIn, useClerk } from "@clerk/nextjs";
 import { QrCode, Loader2, ArrowLeft, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function QRLoginPage() {
+function QRLoginContent() {
   const { isLoaded, signIn, setActive } = useSignIn();
   const { client } = useClerk();
   const searchParams = useSearchParams();
@@ -182,5 +182,19 @@ export default function QRLoginPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function QRLoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center bg-slate-50">
+          <Loader2 className="h-8 w-8 text-blue-900 animate-spin" />
+        </div>
+      }
+    >
+      <QRLoginContent />
+    </Suspense>
   );
 }

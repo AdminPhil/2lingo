@@ -17,6 +17,13 @@ vi.mock("@clerk/nextjs", async () => {
   };
 });
 
+vi.mock("@clerk/nextjs/server", async () => {
+  const mockClerk = await import("@/tests/mocks/clerk");
+  return {
+    ...mockClerk,
+  };
+});
+
 vi.mock("@/db/drizzle", async () => {
   const { mockDb } = await import("@/tests/mocks/drizzle");
   return {
@@ -57,7 +64,7 @@ describe("CR-075: /welcome Route & Intent-Driven Role Provisioning Integration",
       });
 
       await expect(
-        WelcomePage({ searchParams: { role: "teacher" } })
+        WelcomePage({ searchParams: Promise.resolve({ role: "teacher" }) })
       ).rejects.toThrow("NEXT_REDIRECT: /admin?wizard=classroom");
 
       expect(mockRedirect).toHaveBeenCalledWith("/admin?wizard=classroom");
@@ -100,7 +107,7 @@ describe("CR-075: /welcome Route & Intent-Driven Role Provisioning Integration",
       });
 
       await expect(
-        WelcomePage({ searchParams: { role: "teacher" } })
+        WelcomePage({ searchParams: Promise.resolve({ role: "teacher" }) })
       ).rejects.toThrow("NEXT_REDIRECT: /admin?wizard=classroom");
 
       expect(mockRedirect).toHaveBeenCalledWith("/admin?wizard=classroom");
@@ -121,7 +128,7 @@ describe("CR-075: /welcome Route & Intent-Driven Role Provisioning Integration",
       });
 
       await expect(
-        WelcomePage({ searchParams: { role: "parent" } })
+        WelcomePage({ searchParams: Promise.resolve({ role: "parent" }) })
       ).rejects.toThrow("NEXT_REDIRECT: /admin?wizard=family");
 
       expect(mockRedirect).toHaveBeenCalledWith("/admin?wizard=family");
@@ -164,7 +171,7 @@ describe("CR-075: /welcome Route & Intent-Driven Role Provisioning Integration",
       });
 
       await expect(
-        WelcomePage({ searchParams: { role: "parent" } })
+        WelcomePage({ searchParams: Promise.resolve({ role: "parent" }) })
       ).rejects.toThrow("NEXT_REDIRECT: /admin?wizard=family");
 
       expect(mockRedirect).toHaveBeenCalledWith("/admin?wizard=family");
@@ -183,7 +190,7 @@ describe("CR-075: /welcome Route & Intent-Driven Role Provisioning Integration",
       });
 
       await expect(
-        WelcomePage({ searchParams: { join: "SKOLA9" } })
+        WelcomePage({ searchParams: Promise.resolve({ join: "SKOLA9" }) })
       ).rejects.toThrow("NEXT_REDIRECT: /learn?join=SKOLA9");
 
       expect(mockRedirect).toHaveBeenCalledWith("/learn?join=SKOLA9");

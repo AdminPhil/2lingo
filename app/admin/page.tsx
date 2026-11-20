@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
-import { auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 
 import db from "@/db/drizzle";
@@ -15,17 +15,19 @@ import { AdminCommandCenter } from "@/components/admin/admin-command-center";
 import { getTrickyWordsAnalytics } from "@/db/queries";
 
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     podId?: string;
     wizard?: string;
-  };
+  }>;
 };
 
 const AdminPage = async ({ searchParams }: Props) => {
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) {
     redirect("/");
   }
+
+  const resolvedSearchParams = await searchParams;
 
   const adminAllowed = await isAdmin();
   if (!adminAllowed) {
@@ -90,9 +92,9 @@ const AdminPage = async ({ searchParams }: Props) => {
     ? allPodsData
     : allPodsData.filter((p) => p.ownerId === userId);
 
-  const isGlobalView = superAdmin && searchParams?.podId === "all";
+  const isGlobalView = superAdmin && resolvedSearchParams?.podId === "all";
   const requestedPodId =
-    searchParams?.podId && !isGlobalView ? Number(searchParams.podId) : null;
+    resolvedSearchParams?.podId && !isGlobalView ? Number(resolvedSearchParams.podId) : null;
   const activePod =
     (requestedPodId
       ? accessiblePods.find((p) => p.id === requestedPodId)
@@ -251,7 +253,7 @@ const AdminPage = async ({ searchParams }: Props) => {
             userImageSrc: l.userImageSrc,
           }))}
           analyticsData={analyticsData}
-          initialWizard={searchParams?.wizard as "family" | "classroom" | undefined}
+          initialWizard={resolvedSearchParams?.wizard as "family" | "classroom" | undefined}
         />
       </main>
     </div>

@@ -127,8 +127,8 @@ export const M3RoleHero = ({
           {/* 1. Returning User FIRST (Material 3 Tonal/Outlined 48px) */}
           <SignInButton
             mode="modal"
-            afterSignInUrl={learnerRedirectUrl}
-            afterSignUpUrl={learnerRedirectUrl}
+            forceRedirectUrl={learnerRedirectUrl}
+            signUpForceRedirectUrl={learnerRedirectUrl}
           >
             <button
               type="button"
@@ -144,8 +144,8 @@ export const M3RoleHero = ({
           {/* 2. New Learner Direct CTA SECOND (Material 3 Filled 48px) */}
           <SignUpButton
             mode="modal"
-            afterSignInUrl={learnerRedirectUrl}
-            afterSignUpUrl={learnerRedirectUrl}
+            forceRedirectUrl={learnerRedirectUrl}
+            signInForceRedirectUrl={learnerRedirectUrl}
           >
             <button
               type="button"
@@ -283,8 +283,8 @@ export const M3RoleHero = ({
                 <div className="flex flex-col gap-2.5 pt-1">
                   <SignInButton
                     mode="modal"
-                    afterSignInUrl="/admin"
-                    afterSignUpUrl={activeConfig.redirectUrl}
+                    forceRedirectUrl="/admin"
+                    signUpForceRedirectUrl={activeConfig.redirectUrl}
                   >
                     <button
                       type="button"
@@ -300,8 +300,8 @@ export const M3RoleHero = ({
 
                   <SignUpButton
                     mode="modal"
-                    afterSignInUrl="/admin"
-                    afterSignUpUrl={activeConfig.redirectUrl}
+                    signInForceRedirectUrl="/admin"
+                    forceRedirectUrl={activeConfig.redirectUrl}
                   >
                     <button
                       type="button"

@@ -92,7 +92,6 @@ export const Sidebar = ({ className, isAdmin, onAction }: Props) => {
         <ClerkLoaded>
           <div className="flex items-center gap-x-1 sm:gap-x-2">
             <UserButton
-              afterSignOutUrl="/"
               appearance={{
                 elements: {
                   userButtonPopoverCard: "z-[150] shadow-xl",

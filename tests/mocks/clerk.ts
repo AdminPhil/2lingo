@@ -89,24 +89,36 @@ export const SignedOut = ({ children }: any) => {
   return !currentMockUserId ? children : null;
 };
 
-export const SignInButton = ({ children, afterSignInUrl, afterSignUpUrl }: any) =>
+export const SignInButton = ({
+  children,
+  afterSignInUrl,
+  afterSignUpUrl,
+  forceRedirectUrl,
+  signUpForceRedirectUrl,
+}: any) =>
   React.createElement(
     "div",
     {
       "data-testid": "clerk-sign-in-btn",
-      "data-after-sign-in": afterSignInUrl,
-      "data-after-sign-up": afterSignUpUrl,
+      "data-after-sign-in": forceRedirectUrl ?? afterSignInUrl,
+      "data-after-sign-up": signUpForceRedirectUrl ?? afterSignUpUrl,
     },
     children
   );
 
-export const SignUpButton = ({ children, afterSignInUrl, afterSignUpUrl }: any) =>
+export const SignUpButton = ({
+  children,
+  afterSignInUrl,
+  afterSignUpUrl,
+  forceRedirectUrl,
+  signInForceRedirectUrl,
+}: any) =>
   React.createElement(
     "div",
     {
       "data-testid": "clerk-sign-up-btn",
-      "data-after-sign-in": afterSignInUrl,
-      "data-after-sign-up": afterSignUpUrl,
+      "data-after-sign-in": signInForceRedirectUrl ?? afterSignInUrl,
+      "data-after-sign-up": forceRedirectUrl ?? afterSignUpUrl,
     },
     children
   );

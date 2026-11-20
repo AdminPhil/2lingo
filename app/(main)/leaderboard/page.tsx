@@ -23,11 +23,12 @@ import { PodCelebrationMeter } from "@/components/pod-celebration-meter";
 import { PodSwitcher } from "@/components/pod-switcher";
 
 type Props = {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 const LeaderboardPage = async ({ searchParams }: Props) => {
-  const rawPodId = searchParams?.podId;
+  const resolvedSearchParams = await searchParams;
+  const rawPodId = resolvedSearchParams?.podId;
   const requestedPodId = rawPodId ? Number(rawPodId) : undefined;
 
   const userProgressData = getUserProgress();

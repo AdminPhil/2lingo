@@ -160,8 +160,8 @@ export const RoleOnboardingHero = ({
             <div className="flex flex-col gap-3">
               <SignUpButton
                 mode="modal"
-                afterSignInUrl={learnerSignInUrl}
-                afterSignUpUrl={learnerSignUpUrl}
+                signInForceRedirectUrl={learnerSignInUrl}
+                forceRedirectUrl={learnerSignUpUrl}
               >
                 <Button
                   size="lg"
@@ -174,8 +174,8 @@ export const RoleOnboardingHero = ({
 
               <SignInButton
                 mode="modal"
-                afterSignInUrl={learnerSignInUrl}
-                afterSignUpUrl={learnerSignUpUrl}
+                forceRedirectUrl={learnerSignInUrl}
+                signUpForceRedirectUrl={learnerSignUpUrl}
               >
                 <Button
                   size="lg"
@@ -214,8 +214,8 @@ export const RoleOnboardingHero = ({
             <div className="flex flex-col gap-3">
               <SignUpButton
                 mode="modal"
-                afterSignInUrl="/welcome?role=parent"
-                afterSignUpUrl="/welcome?role=parent"
+                signInForceRedirectUrl="/welcome?role=parent"
+                forceRedirectUrl="/welcome?role=parent"
               >
                 <Button
                   size="lg"
@@ -228,8 +228,8 @@ export const RoleOnboardingHero = ({
 
               <SignInButton
                 mode="modal"
-                afterSignInUrl="/admin"
-                afterSignUpUrl="/welcome?role=parent"
+                forceRedirectUrl="/admin"
+                signUpForceRedirectUrl="/welcome?role=parent"
               >
                 <Button
                   size="lg"
@@ -247,8 +247,8 @@ export const RoleOnboardingHero = ({
             <div className="flex flex-col gap-3">
               <SignUpButton
                 mode="modal"
-                afterSignInUrl="/welcome?role=teacher"
-                afterSignUpUrl="/welcome?role=teacher"
+                signInForceRedirectUrl="/welcome?role=teacher"
+                forceRedirectUrl="/welcome?role=teacher"
               >
                 <Button
                   size="lg"
@@ -261,8 +261,8 @@ export const RoleOnboardingHero = ({
 
               <SignInButton
                 mode="modal"
-                afterSignInUrl="/admin"
-                afterSignUpUrl="/welcome?role=teacher"
+                forceRedirectUrl="/admin"
+                signUpForceRedirectUrl="/welcome?role=teacher"
               >
                 <Button
                   size="lg"

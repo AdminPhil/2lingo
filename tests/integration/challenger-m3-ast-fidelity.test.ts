@@ -16,6 +16,13 @@ vi.mock("@clerk/nextjs", async () => {
   };
 });
 
+vi.mock("@clerk/nextjs/server", async () => {
+  const mockClerk = await import("@/tests/mocks/clerk");
+  return {
+    ...mockClerk,
+  };
+});
+
 vi.mock("@/db/drizzle", async () => {
   const { mockDb } = await import("@/tests/mocks/drizzle");
   return {
