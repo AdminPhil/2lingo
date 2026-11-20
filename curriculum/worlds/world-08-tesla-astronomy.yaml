@@ -124,75 +124,82 @@ units:
           - order: 1
             legacyId: 614
             type: ASSIST
-            prompt: How do you say "Bright light"?
-            grammarTags: []
+            prompt: 'Translate: "Bright light filled the whole room."'
+            grammarTags:
+              - perfekt
+              - accusative
             options:
-              - text: Svijetla svjetlost
+              - text: Svijetla svjetlost je ispunila cijelu sobu.
                 correct: true
-                audioSrc: /audio/hr/svijetla_svjetlost.mp3
-              - text: Mala iskra
+                audioSrc: /audio/hr/svijetla_svjetlost_je_ispunila_cijelu_sobu.mp3
+              - text: Svijetla svjetlost ispunjava cijelu sobu.
                 correct: false
-                audioSrc: /audio/hr/mala_iskra.mp3
-              - text: Električna struja
+                audioSrc: /audio/hr/svijetla_svjetlost_ispunjava_cijelu_sobu.mp3
+              - text: Svijetla svjetlost je ispunila cijeloj sobi.
                 correct: false
-                audioSrc: /audio/hr/elektricna_struja.mp3
-              - text: Važni izum
+                audioSrc: /audio/hr/svijetla_svjetlost_je_ispunila_cijeloj_sobi.mp3
+              - text: Mala iskra je obasjala tamnu sobu.
                 correct: false
-                audioSrc: /audio/hr/vazni_izum.mp3
+                audioSrc: /audio/hr/mala_iskra_je_obasjala_tamnu_sobu.mp3
           - order: 2
             legacyId: 615
             type: ASSIST
-            prompt: How do you say "Small spark"?
-            grammarTags: []
+            prompt: 'Translate: "We will learn about Nikola Tesla tomorrow."'
+            grammarTags:
+              - futur_1
+              - locative
             options:
-              - text: Mala iskra
+              - text: Sutra ćemo učiti o Nikoli Tesli.
                 correct: true
-                audioSrc: /audio/hr/mala_iskra.mp3
-              - text: Svijetla svjetlost
+                audioSrc: /audio/hr/sutra_cemo_uciti_o_nikoli_tesli.mp3
+              - text: Jučer smo učili o Nikoli Tesli.
                 correct: false
-                audioSrc: /audio/hr/svijetla_svjetlost.mp3
-              - text: Električna struja
+                audioSrc: /audio/hr/jucer_smo_ucili_o_nikoli_tesli.mp3
+              - text: Sutra učimo u velikoj školi.
                 correct: false
-                audioSrc: /audio/hr/elektricna_struja.mp3
-              - text: Važni izum
+                audioSrc: /audio/hr/sutra_ucimo_u_velikoj_skoli.mp3
+              - text: Sutra ćemo gledati sjajne zvijezde.
                 correct: false
-                audioSrc: /audio/hr/vazni_izum.mp3
+                audioSrc: /audio/hr/sutra_cemo_gledati_sjajne_zvijezde.mp3
           - order: 3
             legacyId: 616
             type: ASSIST
-            prompt: How do you say "Electric current"?
-            grammarTags: []
+            prompt: 'Translate: "Electric current flows quickly through the wire."'
+            grammarTags:
+              - accusative
             options:
-              - text: Električna struja
+              - text: Električna struja brzo teče kroz žicu.
                 correct: true
-                audioSrc: /audio/hr/elektricna_struja.mp3
-              - text: Svijetla svjetlost
+                audioSrc: /audio/hr/elektricna_struja_brzo_tece_kroz_zicu.mp3
+              - text: Električna struja brzo teče u žici.
                 correct: false
-                audioSrc: /audio/hr/svijetla_svjetlost.mp3
-              - text: Mala iskra
+                audioSrc: /audio/hr/elektricna_struja_brzo_tece_u_zici.mp3
+              - text: Električna struja će teći kroz kuću.
                 correct: false
-                audioSrc: /audio/hr/mala_iskra.mp3
-              - text: Važni izum
+                audioSrc: /audio/hr/elektricna_struja_ce_teci_kroz_kucu.mp3
+              - text: Hladna voda tiho teče kroz rijeku.
                 correct: false
-                audioSrc: /audio/hr/vazni_izum.mp3
+                audioSrc: /audio/hr/hladna_voda_tiho_tece_kroz_rijeku.mp3
           - order: 4
             legacyId: 617
             type: ASSIST
-            prompt: How do you say "Important invention"?
-            grammarTags: []
+            prompt: 'Translate: "Tesla created an important invention for the world."'
+            grammarTags:
+              - perfekt
+              - accusative
             options:
-              - text: Važni izum
+              - text: Tesla je stvorio važan izum za svijet.
                 correct: true
-                audioSrc: /audio/hr/vazni_izum.mp3
-              - text: Svijetla svjetlost
+                audioSrc: /audio/hr/tesla_je_stvorio_vazan_izum_za_svijet.mp3
+              - text: Tesla stvara važan izum za svijet.
                 correct: false
-                audioSrc: /audio/hr/svijetla_svjetlost.mp3
-              - text: Mala iskra
+                audioSrc: /audio/hr/tesla_stvara_vazan_izum_za_svijet.mp3
+              - text: Tesla će stvoriti novi izum sutra.
                 correct: false
-                audioSrc: /audio/hr/mala_iskra.mp3
-              - text: Električna struja
+                audioSrc: /audio/hr/tesla_ce_stvoriti_novi_izum_sutra.mp3
+              - text: Tesla je živio u malom selu Smiljanu.
                 correct: false
-                audioSrc: /audio/hr/elektricna_struja.mp3
+                audioSrc: /audio/hr/tesla_je_zivio_u_malom_selu_smiljanu.mp3
       - order: 3
         legacyId: 143
         kind: PRODUCTION
@@ -201,75 +208,79 @@ units:
           - order: 1
             legacyId: 618
             type: ASSIST
-            prompt: How do you say "To shine"?
-            grammarTags: []
+            prompt: 'Translate: "The lamp will shine brightly tonight."'
+            grammarTags:
+              - futur_1
             options:
-              - text: Svijetliti
+              - text: Lampa će večeras sjajno svijetliti.
                 correct: true
-                audioSrc: /audio/hr/svijetliti.mp3
-              - text: Paliti
+                audioSrc: /audio/hr/lampa_ce_veceras_sjajno_svijetliti.mp3
+              - text: Lampa je sinoć sjajno svijetlila.
                 correct: false
-                audioSrc: /audio/hr/paliti.mp3
-              - text: Promatrati
+                audioSrc: /audio/hr/lampa_je_sinoc_sjajno_svijetlila.mp3
+              - text: Lampa večeras sjajno svijetli.
                 correct: false
-                audioSrc: /audio/hr/promatrati.mp3
-              - text: Otkriti
+                audioSrc: /audio/hr/lampa_veceras_sjajno_svijetli.mp3
+              - text: Zvijezda će večeras sjajno sjati.
                 correct: false
-                audioSrc: /audio/hr/otkriti.mp3
+                audioSrc: /audio/hr/zvijezda_ce_veceras_sjajno_sjati.mp3
           - order: 2
             legacyId: 619
             type: ASSIST
-            prompt: How do you say "To turn on"?
-            grammarTags: []
+            prompt: 'Translate: "I turn on the light when it gets dark."'
+            grammarTags:
+              - subordinate_kada
             options:
-              - text: Paliti
+              - text: Palim svjetlo kada padne mrak.
                 correct: true
-                audioSrc: /audio/hr/paliti.mp3
-              - text: Svijetliti
+                audioSrc: /audio/hr/palim_svjetlo_kada_padne_mrak.mp3
+              - text: Upalio sam svjetlo kada je pao mrak.
                 correct: false
-                audioSrc: /audio/hr/svijetliti.mp3
-              - text: Promatrati
+                audioSrc: /audio/hr/upalio_sam_svjetlo_kada_je_pao_mrak.mp3
+              - text: Upalit ću svjetlo kada padne mrak.
                 correct: false
-                audioSrc: /audio/hr/promatrati.mp3
-              - text: Otkriti
+                audioSrc: /audio/hr/upalit_cu_svjetlo_kada_padne_mrak.mp3
+              - text: Gasim svjetlo prije spavanja.
                 correct: false
-                audioSrc: /audio/hr/otkriti.mp3
+                audioSrc: /audio/hr/gasim_svjetlo_prije_spavanja.mp3
           - order: 3
             legacyId: 620
             type: ASSIST
-            prompt: How do you say "The lamp shines."?
-            grammarTags: []
+            prompt: 'Translate: "The new lamp shines brightly on the desk."'
+            grammarTags:
+              - locative
             options:
-              - text: Lampa svijetli.
+              - text: Nova lampa sjajno svijetli na stolu.
                 correct: true
-                audioSrc: /audio/hr/lampa_svijetli.mp3
-              - text: Palim svjetlo.
+                audioSrc: /audio/hr/nova_lampa_sjajno_svijetli_na_stolu.mp3
+              - text: Nova lampa sjajno svijetli na stol.
                 correct: false
-                audioSrc: /audio/hr/palim_svjetlo.mp3
-              - text: Tesla stvara iskre.
+                audioSrc: /audio/hr/nova_lampa_sjajno_svijetli_na_stol.mp3
+              - text: Nova lampa je svijetlila u sobi.
                 correct: false
-                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
-              - text: Struja teče kroz žicu.
+                audioSrc: /audio/hr/nova_lampa_je_svijetlila_u_sobi.mp3
+              - text: Stara lampa ne svijetli večeras.
                 correct: false
-                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+                audioSrc: /audio/hr/stara_lampa_ne_svijetli_veceras.mp3
           - order: 4
             legacyId: 621
             type: ASSIST
-            prompt: How do you say "I turn on the light."?
-            grammarTags: []
+            prompt: 'Translate: "We turn on the light in the evening."'
+            grammarTags:
+              - locative
             options:
-              - text: Palim svjetlo.
+              - text: Navečer palimo toplo svjetlo u sobi.
                 correct: true
-                audioSrc: /audio/hr/palim_svjetlo.mp3
-              - text: Lampa svijetli.
+                audioSrc: /audio/hr/navecer_palimo_toplo_svjetlo_u_sobi.mp3
+              - text: Navečer palimo toplo svjetlo u sobu.
                 correct: false
-                audioSrc: /audio/hr/lampa_svijetli.mp3
-              - text: Tesla stvara iskre.
+                audioSrc: /audio/hr/navecer_palimo_toplo_svjetlo_u_sobu.mp3
+              - text: Ujutro gasimo toplo svjetlo u sobi.
                 correct: false
-                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
-              - text: Struja teče kroz žicu.
+                audioSrc: /audio/hr/ujutro_gasimo_toplo_svjetlo_u_sobi.mp3
+              - text: Sinoć smo upalili svjetlo u kuhinji.
                 correct: false
-                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+                audioSrc: /audio/hr/sinoc_smo_upalili_svjetlo_u_kuhinji.mp3
       - order: 4
         legacyId: 144
         kind: BOSS_CAPSTONE
@@ -277,22 +288,18 @@ units:
         challenges:
           - order: 1
             legacyId: 622
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "Tesla creates sparks."?
+            targetSentence: Tesla stvara iskre.
+            acceptedAnswers:
+              - Tesla stvara iskre
+            wordBank:
+              - Tesla
+              - stvara
+              - iskre
+              - nije
+            audioSrc: /audio/hr/tesla_stvara_iskre.mp3
             grammarTags: []
-            options:
-              - text: Tesla stvara iskre.
-                correct: true
-                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
-              - text: Struja teče kroz žicu.
-                correct: false
-                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
-              - text: Nikola Tesla je slavni izumitelj.
-                correct: false
-                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
-              - text: Svjetlost obasjava sobu.
-                correct: false
-                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
           - order: 2
             legacyId: 623
             type: ASSIST
@@ -302,15 +309,15 @@ units:
               - text: Struja teče kroz žicu.
                 correct: true
                 audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+              - text: Struja ne teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_ne_tece_kroz_zicu.mp3
+              - text: Jučer struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/jucer_struja_tece_kroz_zicu.mp3
               - text: Tesla stvara iskre.
                 correct: false
                 audioSrc: /audio/hr/tesla_stvara_iskre.mp3
-              - text: Nikola Tesla je slavni izumitelj.
-                correct: false
-                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
-              - text: Svjetlost obasjava sobu.
-                correct: false
-                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
           - order: 3
             legacyId: 624
             type: ASSIST
@@ -320,15 +327,15 @@ units:
               - text: Nikola Tesla je slavni izumitelj.
                 correct: true
                 audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
+              - text: Nikola Tesla nije slavni izumitelj.
+                correct: false
+                audioSrc: /audio/hr/nikola_tesla_nije_slavni_izumitelj.mp3
+              - text: Jučer nikola Tesla je slavni izumitelj.
+                correct: false
+                audioSrc: /audio/hr/jucer_nikola_tesla_je_slavni_izumitelj.mp3
               - text: Tesla stvara iskre.
                 correct: false
                 audioSrc: /audio/hr/tesla_stvara_iskre.mp3
-              - text: Struja teče kroz žicu.
-                correct: false
-                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
-              - text: Svjetlost obasjava sobu.
-                correct: false
-                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
           - order: 4
             legacyId: 625
             type: ASSIST
@@ -338,15 +345,15 @@ units:
               - text: Svjetlost obasjava sobu.
                 correct: true
                 audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
+              - text: Jučer svjetlost obasjava sobu.
+                correct: false
+                audioSrc: /audio/hr/jucer_svjetlost_obasjava_sobu.mp3
+              - text: Sutra svjetlost obasjava sobu.
+                correct: false
+                audioSrc: /audio/hr/sutra_svjetlost_obasjava_sobu.mp3
               - text: Nikola Tesla je slavni izumitelj.
                 correct: false
                 audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
-              - text: Struja teče kroz žicu.
-                correct: false
-                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
-              - text: Tesla stvara iskre.
-                correct: false
-                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
   - order: 37
     legacyId: 37
     title: Unit 37
@@ -453,75 +460,82 @@ units:
           - order: 1
             legacyId: 630
             type: ASSIST
-            prompt: How do you say "Bright star"?
-            grammarTags: []
+            prompt: 'Translate: "Tonight we will watch a bright star."'
+            grammarTags:
+              - futur_1
+              - accusative
             options:
-              - text: Sjajna zvijezda
+              - text: Večeras ćemo gledati sjajnu zvijezdu.
                 correct: true
-                audioSrc: /audio/hr/sjajna_zvijezda.mp3
-              - text: Tamno nebo
+                audioSrc: /audio/hr/veceras_cemo_gledati_sjajnu_zvijezdu.mp3
+              - text: Sinoć smo gledali sjajnu zvijezdu.
                 correct: false
-                audioSrc: /audio/hr/tamno_nebo.mp3
-              - text: Puni mjesec
+                audioSrc: /audio/hr/sinoc_smo_gledali_sjajnu_zvijezdu.mp3
+              - text: Večeras gledamo sjajnu zvijezdu.
                 correct: false
-                audioSrc: /audio/hr/puni_mjesec.mp3
-              - text: Zlatni sjaj
+                audioSrc: /audio/hr/veceras_gledamo_sjajnu_zvijezdu.mp3
+              - text: Večeras ćemo gledati puni mjesec.
                 correct: false
-                audioSrc: /audio/hr/zlatni_sjaj.mp3
+                audioSrc: /audio/hr/veceras_cemo_gledati_puni_mjesec.mp3
           - order: 2
             legacyId: 631
             type: ASSIST
-            prompt: How do you say "Dark sky"?
-            grammarTags: []
+            prompt: 'Translate: "The dark sky is full of stars."'
+            grammarTags:
+              - genitive
             options:
-              - text: Tamno nebo
+              - text: Tamno nebo je puno sjajnih zvijezda.
                 correct: true
-                audioSrc: /audio/hr/tamno_nebo.mp3
-              - text: Sjajna zvijezda
+                audioSrc: /audio/hr/tamno_nebo_je_puno_sjajnih_zvijezda.mp3
+              - text: Tamno nebo je puno bijelih oblaka.
                 correct: false
-                audioSrc: /audio/hr/sjajna_zvijezda.mp3
-              - text: Puni mjesec
+                audioSrc: /audio/hr/tamno_nebo_je_puno_bijelih_oblaka.mp3
+              - text: Tamno nebo će biti puno zvijezda.
                 correct: false
-                audioSrc: /audio/hr/puni_mjesec.mp3
-              - text: Zlatni sjaj
+                audioSrc: /audio/hr/tamno_nebo_ce_biti_puno_zvijezda.mp3
+              - text: Plavo nebo je puno toplog sunca.
                 correct: false
-                audioSrc: /audio/hr/zlatni_sjaj.mp3
+                audioSrc: /audio/hr/plavo_nebo_je_puno_toplog_sunca.mp3
           - order: 3
             legacyId: 632
             type: ASSIST
-            prompt: How do you say "Full moon"?
-            grammarTags: []
+            prompt: 'Translate: "The full moon shone above the mountain."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Puni mjesec
+              - text: Puni mjesec je sjao iznad planine.
                 correct: true
-                audioSrc: /audio/hr/puni_mjesec.mp3
-              - text: Sjajna zvijezda
+                audioSrc: /audio/hr/puni_mjesec_je_sjao_iznad_planine.mp3
+              - text: Puni mjesec sja iznad planine.
                 correct: false
-                audioSrc: /audio/hr/sjajna_zvijezda.mp3
-              - text: Tamno nebo
+                audioSrc: /audio/hr/puni_mjesec_sja_iznad_planine.mp3
+              - text: Puni mjesec će sjati iznad mora.
                 correct: false
-                audioSrc: /audio/hr/tamno_nebo.mp3
-              - text: Zlatni sjaj
+                audioSrc: /audio/hr/puni_mjesec_ce_sjati_iznad_mora.mp3
+              - text: Puni mjesec je sjao ispod planine.
                 correct: false
-                audioSrc: /audio/hr/zlatni_sjaj.mp3
+                audioSrc: /audio/hr/puni_mjesec_je_sjao_ispod_planine.mp3
           - order: 4
             legacyId: 633
             type: ASSIST
-            prompt: How do you say "Golden glow"?
-            grammarTags: []
+            prompt: 'Translate: "We saw a golden glow in the night."'
+            grammarTags:
+              - perfekt
+              - locative
             options:
-              - text: Zlatni sjaj
+              - text: Vidjeli smo zlatni sjaj u noći.
                 correct: true
-                audioSrc: /audio/hr/zlatni_sjaj.mp3
-              - text: Sjajna zvijezda
+                audioSrc: /audio/hr/vidjeli_smo_zlatni_sjaj_u_noci.mp3
+              - text: Vidjet ćemo zlatni sjaj u noći.
                 correct: false
-                audioSrc: /audio/hr/sjajna_zvijezda.mp3
-              - text: Tamno nebo
+                audioSrc: /audio/hr/vidjet_cemo_zlatni_sjaj_u_noci.mp3
+              - text: Vidimo zlatni sjaj na nebu.
                 correct: false
-                audioSrc: /audio/hr/tamno_nebo.mp3
-              - text: Puni mjesec
+                audioSrc: /audio/hr/vidimo_zlatni_sjaj_na_nebu.mp3
+              - text: Vidjeli smo zlatni sjaj u noć.
                 correct: false
-                audioSrc: /audio/hr/puni_mjesec.mp3
+                audioSrc: /audio/hr/vidjeli_smo_zlatni_sjaj_u_noc.mp3
       - order: 3
         legacyId: 147
         kind: PRODUCTION
@@ -530,39 +544,37 @@ units:
           - order: 1
             legacyId: 634
             type: ASSIST
-            prompt: How do you say "The stars shine."?
-            grammarTags: []
+            prompt: 'Translate: "Thousands of bright stars shine above us."'
+            grammarTags:
+              - genitive
             options:
-              - text: Zvijezde sjaje.
+              - text: Tisuće sjajnih zvijezda sjaje iznad nas.
                 correct: true
-                audioSrc: /audio/hr/zvijezde_sjaje.mp3
-              - text: Noćno nebo je tamno.
+                audioSrc: /audio/hr/tisuce_sjajnih_zvijezda_sjaje_iznad_nas.mp3
+              - text: Tisuće sjajnih zvijezda sjale su sinoć.
                 correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Gledam u nebo.
+                audioSrc: /audio/hr/tisuce_sjajnih_zvijezda_sjale_su_sinoc.mp3
+              - text: Tisuće tamnih oblaka plove iznad mora.
                 correct: false
-                audioSrc: /audio/hr/gledam_u_nebo.mp3
-              - text: Mjesec sja noću.
+                audioSrc: /audio/hr/tisuce_tamnih_oblaka_plove_iznad_mora.mp3
+              - text: Jedna sjajna zvijezda sja iznad brda.
                 correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+                audioSrc: /audio/hr/jedna_sjajna_zvijezda_sja_iznad_brda.mp3
           - order: 2
             legacyId: 635
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "The night sky is dark."?
+            targetSentence: Noćno nebo je tamno.
+            acceptedAnswers:
+              - Noćno nebo je tamno
+            wordBank:
+              - Noćno
+              - je
+              - su
+              - tamno
+              - nebo
+            audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
             grammarTags: []
-            options:
-              - text: Noćno nebo je tamno.
-                correct: true
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Zvijezde sjaje.
-                correct: false
-                audioSrc: /audio/hr/zvijezde_sjaje.mp3
-              - text: Gledam u nebo.
-                correct: false
-                audioSrc: /audio/hr/gledam_u_nebo.mp3
-              - text: Mjesec sja noću.
-                correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
           - order: 3
             legacyId: 636
             type: ASSIST
@@ -572,15 +584,15 @@ units:
               - text: Gledam u nebo.
                 correct: true
                 audioSrc: /audio/hr/gledam_u_nebo.mp3
+              - text: Jučer gledam u nebo.
+                correct: false
+                audioSrc: /audio/hr/jucer_gledam_u_nebo.mp3
+              - text: Sutra gledam u nebo.
+                correct: false
+                audioSrc: /audio/hr/sutra_gledam_u_nebo.mp3
               - text: Zvijezde sjaje.
                 correct: false
                 audioSrc: /audio/hr/zvijezde_sjaje.mp3
-              - text: Noćno nebo je tamno.
-                correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Mjesec sja noću.
-                correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
           - order: 4
             legacyId: 637
             type: ASSIST
@@ -590,15 +602,15 @@ units:
               - text: Mjesec sja noću.
                 correct: true
                 audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+              - text: Mjesec sja danju.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_danju.mp3
+              - text: Jučer mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/jucer_mjesec_sja_nocu.mp3
               - text: Zvijezde sjaje.
                 correct: false
                 audioSrc: /audio/hr/zvijezde_sjaje.mp3
-              - text: Noćno nebo je tamno.
-                correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Gledam u nebo.
-                correct: false
-                audioSrc: /audio/hr/gledam_u_nebo.mp3
       - order: 4
         legacyId: 148
         kind: BOSS_CAPSTONE
@@ -606,22 +618,18 @@ units:
         challenges:
           - order: 1
             legacyId: 638
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "A thousand shining stars."?
+            targetSentence: Tisuću sjajnih zvijezda.
+            acceptedAnswers:
+              - Tisuću sjajnih zvijezda
+            wordBank:
+              - zvijezda
+              - sjajnih
+              - Tisuću
+              - nije
+            audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
             grammarTags: []
-            options:
-              - text: Tisuću sjajnih zvijezda.
-                correct: true
-                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
-              - text: Nebo je puno zvijezda.
-                correct: false
-                audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
-              - text: Noćno nebo je tamno.
-                correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Mjesec sja noću.
-                correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
           - order: 2
             legacyId: 639
             type: ASSIST
@@ -631,15 +639,15 @@ units:
               - text: Nebo je puno zvijezda.
                 correct: true
                 audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
+              - text: Nebo nije puno zvijezda.
+                correct: false
+                audioSrc: /audio/hr/nebo_nije_puno_zvijezda.mp3
+              - text: Jučer nebo je puno zvijezda.
+                correct: false
+                audioSrc: /audio/hr/jucer_nebo_je_puno_zvijezda.mp3
               - text: Tisuću sjajnih zvijezda.
                 correct: false
                 audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
-              - text: Noćno nebo je tamno.
-                correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
-              - text: Mjesec sja noću.
-                correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
           - order: 3
             legacyId: 640
             type: ASSIST
@@ -649,15 +657,15 @@ units:
               - text: Noćno nebo je tamno.
                 correct: true
                 audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Noćno nebo nije tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_nije_tamno.mp3
+              - text: Jučer noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/jucer_nocno_nebo_je_tamno.mp3
               - text: Nebo je puno zvijezda.
                 correct: false
                 audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
-              - text: Tisuću sjajnih zvijezda.
-                correct: false
-                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
-              - text: Mjesec sja noću.
-                correct: false
-                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
           - order: 4
             legacyId: 641
             type: ASSIST
@@ -667,15 +675,15 @@ units:
               - text: Mjesec sja noću.
                 correct: true
                 audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+              - text: Mjesec sja danju.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_danju.mp3
+              - text: Jučer mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/jucer_mjesec_sja_nocu.mp3
               - text: Nebo je puno zvijezda.
                 correct: false
                 audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
-              - text: Tisuću sjajnih zvijezda.
-                correct: false
-                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
-              - text: Noćno nebo je tamno.
-                correct: false
-                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
   - order: 38
     legacyId: 38
     title: Unit 38
@@ -782,43 +790,48 @@ units:
           - order: 1
             legacyId: 646
             type: ASSIST
-            prompt: How do you say "Big telescope"?
-            grammarTags: []
+            prompt: 'Translate: "We will look through a big telescope."'
+            grammarTags:
+              - futur_1
+              - accusative
             options:
-              - text: Veliki teleskop
+              - text: Gledat ćemo kroz veliki teleskop.
                 correct: true
-                audioSrc: /audio/hr/veliki_teleskop.mp3
-              - text: Daleki planet
+                audioSrc: /audio/hr/gledat_cemo_kroz_veliki_teleskop.mp3
+              - text: Gledali smo kroz veliki teleskop.
                 correct: false
-                audioSrc: /audio/hr/daleki_planet.mp3
-              - text: Beskrajni svemir
+                audioSrc: /audio/hr/gledali_smo_kroz_veliki_teleskop.mp3
+              - text: Gledamo kroz veliki teleskop.
                 correct: false
-                audioSrc: /audio/hr/beskrajni_svemir.mp3
-              - text: Bijela kupola
+                audioSrc: /audio/hr/gledamo_kroz_veliki_teleskop.mp3
+              - text: Gledat ćemo prema dalekom planetu.
                 correct: false
-                audioSrc: /audio/hr/bijela_kupola.mp3
+                audioSrc: /audio/hr/gledat_cemo_prema_dalekom_planetu.mp3
           - order: 2
             legacyId: 647
             type: ASSIST
-            prompt: How do you say "Distant planet"?
-            grammarTags: []
+            prompt: 'Translate: "Astronomers discovered a distant planet."'
+            grammarTags:
+              - perfekt
+              - accusative
             options:
-              - text: Daleki planet
+              - text: Astronomi su otkrili daleki planet.
                 correct: true
-                audioSrc: /audio/hr/daleki_planet.mp3
-              - text: Veliki teleskop
+                audioSrc: /audio/hr/astronomi_su_otkrili_daleki_planet.mp3
+              - text: Astronomi će otkriti daleki planet.
                 correct: false
-                audioSrc: /audio/hr/veliki_teleskop.mp3
-              - text: Beskrajni svemir
+                audioSrc: /audio/hr/astronomi_ce_otkriti_daleki_planet.mp3
+              - text: Astronomi otkrivaju daleki planet.
                 correct: false
-                audioSrc: /audio/hr/beskrajni_svemir.mp3
-              - text: Bijela kupola
+                audioSrc: /audio/hr/astronomi_otkrivaju_daleki_planet.mp3
+              - text: Astronomi su promatrali sjajnu zvijezdu.
                 correct: false
-                audioSrc: /audio/hr/bijela_kupola.mp3
+                audioSrc: /audio/hr/astronomi_su_promatrali_sjajnu_zvijezdu.mp3
           - order: 3
             legacyId: 648
-            type: ASSIST
-            prompt: How do you say "Endless universe"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/beskrajni_svemir.mp3
             grammarTags: []
             options:
               - text: Beskrajni svemir
@@ -835,8 +848,9 @@ units:
                 audioSrc: /audio/hr/bijela_kupola.mp3
           - order: 4
             legacyId: 649
-            type: ASSIST
-            prompt: How do you say "White dome"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/bijela_kupola.mp3
             grammarTags: []
             options:
               - text: Bijela kupola
@@ -859,57 +873,57 @@ units:
           - order: 1
             legacyId: 650
             type: ASSIST
-            prompt: How do you say "To observe"?
-            grammarTags: []
+            prompt: 'Translate: "We will observe the stars from the observatory."'
+            grammarTags:
+              - futur_1
+              - genitive
             options:
-              - text: Promatrati
+              - text: Promatrat ćemo zvijezde iz zvjezdarnice.
                 correct: true
-                audioSrc: /audio/hr/promatrati.mp3
-              - text: Otkriti
+                audioSrc: /audio/hr/promatrat_cemo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatrali smo zvijezde iz zvjezdarnice.
                 correct: false
-                audioSrc: /audio/hr/otkriti.mp3
-              - text: Svijetliti
+                audioSrc: /audio/hr/promatrali_smo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatramo zvijezde iz zvjezdarnice.
                 correct: false
-                audioSrc: /audio/hr/svijetliti.mp3
-              - text: Paliti
+                audioSrc: /audio/hr/promatramo_zvijezde_iz_zvjezdarnice.mp3
+              - text: Promatrat ćemo more s visokog brda.
                 correct: false
-                audioSrc: /audio/hr/paliti.mp3
+                audioSrc: /audio/hr/promatrat_cemo_more_s_visokog_brda.mp3
           - order: 2
             legacyId: 651
             type: ASSIST
-            prompt: How do you say "To discover"?
-            grammarTags: []
+            prompt: 'Translate: "Soon we will discover new secrets of space."'
+            grammarTags:
+              - futur_1
+              - genitive
             options:
-              - text: Otkriti
+              - text: Uskoro ćemo otkriti nove tajne svemira.
                 correct: true
-                audioSrc: /audio/hr/otkriti.mp3
-              - text: Promatrati
+                audioSrc: /audio/hr/uskoro_cemo_otkriti_nove_tajne_svemira.mp3
+              - text: Jučer smo otkrili nove tajne svemira.
                 correct: false
-                audioSrc: /audio/hr/promatrati.mp3
-              - text: Svijetliti
+                audioSrc: /audio/hr/jucer_smo_otkrili_nove_tajne_svemira.mp3
+              - text: Danas otkrivamo nove tajne svemira.
                 correct: false
-                audioSrc: /audio/hr/svijetliti.mp3
-              - text: Paliti
+                audioSrc: /audio/hr/danas_otkrivamo_nove_tajne_svemira.mp3
+              - text: Uskoro ćemo posjetiti veliku zvjezdarnicu.
                 correct: false
-                audioSrc: /audio/hr/paliti.mp3
+                audioSrc: /audio/hr/uskoro_cemo_posjetiti_veliku_zvjezdarnicu.mp3
           - order: 3
             legacyId: 652
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "I look through the telescope."?
+            targetSentence: Gledam kroz teleskop.
+            acceptedAnswers:
+              - Gledam kroz teleskop
+            wordBank:
+              - Gledam
+              - kroz
+              - teleskop
+              - nije
+            audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
             grammarTags: []
-            options:
-              - text: Gledam kroz teleskop.
-                correct: true
-                audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
-              - text: Otkrivamo novi planet.
-                correct: false
-                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
-              - text: Kupola se otvara.
-                correct: false
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Promatramo tajne svemira.
-                correct: false
-                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
           - order: 4
             legacyId: 653
             type: ASSIST
@@ -919,15 +933,15 @@ units:
               - text: Otkrivamo novi planet.
                 correct: true
                 audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+              - text: Otkrivamo stari planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_stari_planet.mp3
+              - text: Jučer otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/jucer_otkrivamo_novi_planet.mp3
               - text: Gledam kroz teleskop.
                 correct: false
                 audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
-              - text: Kupola se otvara.
-                correct: false
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Promatramo tajne svemira.
-                correct: false
-                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
       - order: 4
         legacyId: 152
         kind: BOSS_CAPSTONE
@@ -935,40 +949,38 @@ units:
         challenges:
           - order: 1
             legacyId: 654
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "The Višnjan Observatory is famous."?
+            targetSentence: Zvjezdarnica Višnjan je poznata.
+            acceptedAnswers:
+              - Zvjezdarnica Višnjan je poznata
+            wordBank:
+              - Višnjan
+              - poznata
+              - je
+              - su
+              - Zvjezdarnica
+            audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
             grammarTags: []
-            options:
-              - text: Zvjezdarnica Višnjan je poznata.
-                correct: true
-                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
-              - text: Kupola se otvara.
-                correct: false
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Promatramo tajne svemira.
-                correct: false
-                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
-              - text: Otkrivamo novi planet.
-                correct: false
-                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
           - order: 2
             legacyId: 655
             type: ASSIST
-            prompt: How do you say "The dome is opening."?
-            grammarTags: []
+            prompt: 'Translate: "The white dome opens slowly at night."'
+            grammarTags:
+              - reflexive_se
             options:
-              - text: Kupola se otvara.
+              - text: Bijela kupola se polako otvara noću.
                 correct: true
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Zvjezdarnica Višnjan je poznata.
+                audioSrc: /audio/hr/bijela_kupola_se_polako_otvara_nocu.mp3
+              - text: Bijela kupola se polako zatvara ujutro.
                 correct: false
-                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
-              - text: Promatramo tajne svemira.
+                audioSrc: /audio/hr/bijela_kupola_se_polako_zatvara_ujutro.mp3
+              - text: Bijela kupola se jučer polako otvorila.
                 correct: false
-                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
-              - text: Otkrivamo novi planet.
+                audioSrc: /audio/hr/bijela_kupola_se_jucer_polako_otvorila.mp3
+              - text: Velika kupola će se otvoriti večeras.
                 correct: false
-                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+                audioSrc: /audio/hr/velika_kupola_ce_se_otvoriti_veceras.mp3
           - order: 3
             legacyId: 656
             type: ASSIST
@@ -978,15 +990,15 @@ units:
               - text: Promatramo tajne svemira.
                 correct: true
                 audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+              - text: Jučer promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/jucer_promatramo_tajne_svemira.mp3
+              - text: Sutra promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/sutra_promatramo_tajne_svemira.mp3
               - text: Zvjezdarnica Višnjan je poznata.
                 correct: false
                 audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
-              - text: Kupola se otvara.
-                correct: false
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Otkrivamo novi planet.
-                correct: false
-                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
           - order: 4
             legacyId: 657
             type: ASSIST
@@ -996,15 +1008,15 @@ units:
               - text: Otkrivamo novi planet.
                 correct: true
                 audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+              - text: Otkrivamo stari planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_stari_planet.mp3
+              - text: Jučer otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/jucer_otkrivamo_novi_planet.mp3
               - text: Zvjezdarnica Višnjan je poznata.
                 correct: false
                 audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
-              - text: Kupola se otvara.
-                correct: false
-                audioSrc: /audio/hr/kupola_se_otvara.mp3
-              - text: Promatramo tajne svemira.
-                correct: false
-                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
   - order: 39
     legacyId: 39
     title: Unit 39
@@ -1111,61 +1123,68 @@ units:
           - order: 1
             legacyId: 662
             type: ASSIST
-            prompt: How do you say "Powerful lightning"?
-            grammarTags: []
+            prompt: 'Translate: "Strong lightning lit up the dark sky."'
+            grammarTags:
+              - perfekt
+              - accusative
             options:
-              - text: Snažna munja
+              - text: Snažna munja je obasjala tamno nebo.
                 correct: true
-                audioSrc: /audio/hr/snazna_munja.mp3
-              - text: Glasni grom
+                audioSrc: /audio/hr/snazna_munja_je_obasjala_tamno_nebo.mp3
+              - text: Snažna munja obasjava tamno nebo.
                 correct: false
-                audioSrc: /audio/hr/glasni_grom.mp3
-              - text: Puna baterija
+                audioSrc: /audio/hr/snazna_munja_obasjava_tamno_nebo.mp3
+              - text: Snažna munja će obasjati tamno nebo.
                 correct: false
-                audioSrc: /audio/hr/puna_baterija.mp3
-              - text: Velika snaga
+                audioSrc: /audio/hr/snazna_munja_ce_obasjati_tamno_nebo.mp3
+              - text: Glasni grom je odjeknuo iznad sela.
                 correct: false
-                audioSrc: /audio/hr/velika_snaga.mp3
+                audioSrc: /audio/hr/glasni_grom_je_odjeknuo_iznad_sela.mp3
           - order: 2
             legacyId: 663
             type: ASSIST
-            prompt: How do you say "Loud thunder"?
-            grammarTags: []
+            prompt: 'Translate: "We stayed inside because loud thunder came."'
+            grammarTags:
+              - perfekt
+              - subordinate_jer
             options:
-              - text: Glasni grom
+              - text: Ostali smo unutra jer je došao glasni grom.
                 correct: true
-                audioSrc: /audio/hr/glasni_grom.mp3
-              - text: Snažna munja
+                audioSrc: /audio/hr/ostali_smo_unutra_jer_je_dosao_glasni_grom.mp3
+              - text: Ostajemo unutra jer dolazi oluja.
                 correct: false
-                audioSrc: /audio/hr/snazna_munja.mp3
-              - text: Puna baterija
+                audioSrc: /audio/hr/ostajemo_unutra_jer_dolazi_oluja.mp3
+              - text: Ostali smo vani dok je sjalo sunce.
                 correct: false
-                audioSrc: /audio/hr/puna_baterija.mp3
-              - text: Velika snaga
+                audioSrc: /audio/hr/ostali_smo_vani_dok_je_sjalo_sunce.mp3
+              - text: Ostat ćemo unutra ako dođe oluja.
                 correct: false
-                audioSrc: /audio/hr/velika_snaga.mp3
+                audioSrc: /audio/hr/ostat_cemo_unutra_ako_dode_oluja.mp3
           - order: 3
             legacyId: 664
             type: ASSIST
-            prompt: How do you say "Full battery"?
-            grammarTags: []
+            prompt: 'Translate: "We charged the battery before the trip."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Puna baterija
+              - text: Napunili smo bateriju prije puta.
                 correct: true
-                audioSrc: /audio/hr/puna_baterija.mp3
-              - text: Snažna munja
+                audioSrc: /audio/hr/napunili_smo_bateriju_prije_puta.mp3
+              - text: Punimo bateriju prije puta.
                 correct: false
-                audioSrc: /audio/hr/snazna_munja.mp3
-              - text: Glasni grom
+                audioSrc: /audio/hr/punimo_bateriju_prije_puta.mp3
+              - text: Napunit ćemo bateriju prije puta.
                 correct: false
-                audioSrc: /audio/hr/glasni_grom.mp3
-              - text: Velika snaga
+                audioSrc: /audio/hr/napunit_cemo_bateriju_prije_puta.mp3
+              - text: Napunili smo bateriju poslije škole.
                 correct: false
-                audioSrc: /audio/hr/velika_snaga.mp3
+                audioSrc: /audio/hr/napunili_smo_bateriju_poslije_skole.mp3
           - order: 4
             legacyId: 665
-            type: ASSIST
-            prompt: How do you say "Great power"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/velika_snaga.mp3
             grammarTags: []
             options:
               - text: Velika snaga
@@ -1187,22 +1206,18 @@ units:
         challenges:
           - order: 1
             legacyId: 666
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "Lightning illuminates the sky."?
+            targetSentence: Munja obasjava nebo.
+            acceptedAnswers:
+              - Munja obasjava nebo
+            wordBank:
+              - Munja
+              - nebo
+              - nije
+              - obasjava
+            audioSrc: /audio/hr/munja_obasjava_nebo.mp3
             grammarTags: []
-            options:
-              - text: Munja obasjava nebo.
-                correct: true
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Čujemo glasni grom.
-                correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
-              - text: Oluja dolazi.
-                correct: false
-                audioSrc: /audio/hr/oluja_dolazi.mp3
-              - text: Punimo bateriju.
-                correct: false
-                audioSrc: /audio/hr/punimo_bateriju.mp3
           - order: 2
             legacyId: 667
             type: ASSIST
@@ -1212,51 +1227,54 @@ units:
               - text: Čujemo glasni grom.
                 correct: true
                 audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Čujemo tihi grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_tihi_grom.mp3
+              - text: Jučer čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/jucer_cujemo_glasni_grom.mp3
               - text: Munja obasjava nebo.
                 correct: false
                 audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Oluja dolazi.
-                correct: false
-                audioSrc: /audio/hr/oluja_dolazi.mp3
-              - text: Punimo bateriju.
-                correct: false
-                audioSrc: /audio/hr/punimo_bateriju.mp3
           - order: 3
             legacyId: 668
             type: ASSIST
-            prompt: How do you say "The storm is coming."?
-            grammarTags: []
+            prompt: 'Translate: "A strong summer storm is coming from the sea."'
+            grammarTags:
+              - genitive
             options:
-              - text: Oluja dolazi.
+              - text: Snažna ljetna oluja dolazi s mora.
                 correct: true
-                audioSrc: /audio/hr/oluja_dolazi.mp3
-              - text: Munja obasjava nebo.
+                audioSrc: /audio/hr/snazna_ljetna_oluja_dolazi_s_mora.mp3
+              - text: Snažna ljetna oluja je došla s mora.
                 correct: false
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Čujemo glasni grom.
+                audioSrc: /audio/hr/snazna_ljetna_oluja_je_dosla_s_mora.mp3
+              - text: Snažna ljetna oluja dolazi prema gradu.
                 correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
-              - text: Punimo bateriju.
+                audioSrc: /audio/hr/snazna_ljetna_oluja_dolazi_prema_gradu.mp3
+              - text: Topli ljetni vjetar puše iz šume.
                 correct: false
-                audioSrc: /audio/hr/punimo_bateriju.mp3
+                audioSrc: /audio/hr/topli_ljetni_vjetar_puse_iz_sume.mp3
           - order: 4
             legacyId: 669
             type: ASSIST
-            prompt: How do you say "We are charging the battery."?
-            grammarTags: []
+            prompt: 'Translate: "We will charge the battery before the evening walk."'
+            grammarTags:
+              - futur_1
+              - genitive
             options:
-              - text: Punimo bateriju.
+              - text: Napunit ćemo bateriju prije večernje šetnje.
                 correct: true
-                audioSrc: /audio/hr/punimo_bateriju.mp3
-              - text: Munja obasjava nebo.
+                audioSrc: /audio/hr/napunit_cemo_bateriju_prije_vecernje_setnje.mp3
+              - text: Napunili smo bateriju prije večernje šetnje.
                 correct: false
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Čujemo glasni grom.
+                audioSrc: /audio/hr/napunili_smo_bateriju_prije_vecernje_setnje.mp3
+              - text: Punimo bateriju za večernju šetnju.
                 correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
-              - text: Oluja dolazi.
+                audioSrc: /audio/hr/punimo_bateriju_za_vecernju_setnju.mp3
+              - text: Napunit ćemo bateriju poslije večere.
                 correct: false
-                audioSrc: /audio/hr/oluja_dolazi.mp3
+                audioSrc: /audio/hr/napunit_cemo_bateriju_poslije_vecere.mp3
       - order: 4
         legacyId: 156
         kind: BOSS_CAPSTONE
@@ -1264,22 +1282,19 @@ units:
         challenges:
           - order: 1
             legacyId: 670
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "Nature has great power."?
+            targetSentence: Priroda ima veliku snagu.
+            acceptedAnswers:
+              - Priroda ima veliku snagu
+            wordBank:
+              - ima
+              - veliku
+              - snagu
+              - nije
+              - Priroda
+            audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
             grammarTags: []
-            options:
-              - text: Priroda ima veliku snagu.
-                correct: true
-                audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
-              - text: Tesla istražuje munje.
-                correct: false
-                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
-              - text: Munja obasjava nebo.
-                correct: false
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Čujemo glasni grom.
-                correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
           - order: 2
             legacyId: 671
             type: ASSIST
@@ -1289,15 +1304,15 @@ units:
               - text: Tesla istražuje munje.
                 correct: true
                 audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
+              - text: Jučer tesla istražuje munje.
+                correct: false
+                audioSrc: /audio/hr/jucer_tesla_istrazuje_munje.mp3
+              - text: Sutra tesla istražuje munje.
+                correct: false
+                audioSrc: /audio/hr/sutra_tesla_istrazuje_munje.mp3
               - text: Priroda ima veliku snagu.
                 correct: false
                 audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
-              - text: Munja obasjava nebo.
-                correct: false
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
-              - text: Čujemo glasni grom.
-                correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
           - order: 3
             legacyId: 672
             type: ASSIST
@@ -1307,15 +1322,15 @@ units:
               - text: Munja obasjava nebo.
                 correct: true
                 audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Jučer munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/jucer_munja_obasjava_nebo.mp3
+              - text: Sutra munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/sutra_munja_obasjava_nebo.mp3
               - text: Priroda ima veliku snagu.
                 correct: false
                 audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
-              - text: Tesla istražuje munje.
-                correct: false
-                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
-              - text: Čujemo glasni grom.
-                correct: false
-                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
           - order: 4
             legacyId: 673
             type: ASSIST
@@ -1325,15 +1340,15 @@ units:
               - text: Čujemo glasni grom.
                 correct: true
                 audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Čujemo tihi grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_tihi_grom.mp3
+              - text: Jučer čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/jucer_cujemo_glasni_grom.mp3
               - text: Priroda ima veliku snagu.
                 correct: false
                 audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
-              - text: Tesla istražuje munje.
-                correct: false
-                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
-              - text: Munja obasjava nebo.
-                correct: false
-                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
   - order: 40
     legacyId: 40
     title: Unit 40
@@ -1440,43 +1455,48 @@ units:
           - order: 1
             legacyId: 678
             type: ASSIST
-            prompt: How do you say "Smart robot"?
-            grammarTags: []
+            prompt: 'Translate: "The smart robot will help the scientists."'
+            grammarTags:
+              - futur_1
+              - dative
             options:
-              - text: Pametni robot
+              - text: Pametni robot će pomoći znanstvenicima.
                 correct: true
-                audioSrc: /audio/hr/pametni_robot.mp3
-              - text: Dobra ideja
+                audioSrc: /audio/hr/pametni_robot_ce_pomoci_znanstvenicima.mp3
+              - text: Pametni robot je pomogao znanstvenicima.
                 correct: false
-                audioSrc: /audio/hr/dobra_ideja.mp3
-              - text: Važno znanje
+                audioSrc: /audio/hr/pametni_robot_je_pomogao_znanstvenicima.mp3
+              - text: Pametni robot pomaže znanstvenicima.
                 correct: false
-                audioSrc: /audio/hr/vazno_znanje.mp3
-              - text: Svijetla budućnost
+                audioSrc: /audio/hr/pametni_robot_pomaze_znanstvenicima.mp3
+              - text: Pametni robot će graditi novu školu.
                 correct: false
-                audioSrc: /audio/hr/svijetla_buducnost.mp3
+                audioSrc: /audio/hr/pametni_robot_ce_graditi_novu_skolu.mp3
           - order: 2
             legacyId: 679
             type: ASSIST
-            prompt: How do you say "Good idea"?
-            grammarTags: []
+            prompt: 'Translate: "Would you like to invent a smart robot?"'
+            grammarTags:
+              - conditional
+              - accusative
             options:
-              - text: Dobra ideja
+              - text: Bi li htio izumiti pametnog robota?
                 correct: true
-                audioSrc: /audio/hr/dobra_ideja.mp3
-              - text: Pametni robot
+                audioSrc: /audio/hr/bi_li_htio_izumiti_pametnog_robota.mp3
+              - text: Htio si izumiti pametnog robota.
                 correct: false
-                audioSrc: /audio/hr/pametni_robot.mp3
-              - text: Važno znanje
+                audioSrc: /audio/hr/htio_si_izumiti_pametnog_robota.mp3
+              - text: Izumit ćeš pametnog robota sutra.
                 correct: false
-                audioSrc: /audio/hr/vazno_znanje.mp3
-              - text: Svijetla budućnost
+                audioSrc: /audio/hr/izumit_ces_pametnog_robota_sutra.mp3
+              - text: Bi li htio posjetiti veliku zvjezdarnicu?
                 correct: false
-                audioSrc: /audio/hr/svijetla_buducnost.mp3
+                audioSrc: /audio/hr/bi_li_htio_posjetiti_veliku_zvjezdarnicu.mp3
           - order: 3
             legacyId: 680
-            type: ASSIST
-            prompt: How do you say "Important knowledge"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vazno_znanje.mp3
             grammarTags: []
             options:
               - text: Važno znanje
@@ -1493,8 +1513,9 @@ units:
                 audioSrc: /audio/hr/svijetla_buducnost.mp3
           - order: 4
             legacyId: 681
-            type: ASSIST
-            prompt: How do you say "Bright future"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/svijetla_buducnost.mp3
             grammarTags: []
             options:
               - text: Svijetla budućnost
@@ -1517,75 +1538,83 @@ units:
           - order: 1
             legacyId: 682
             type: ASSIST
-            prompt: How do you say "We will learn."?
-            grammarTags: []
+            prompt: 'Translate: "Tomorrow we will learn new Croatian words."'
+            grammarTags:
+              - futur_1
+              - accusative
             options:
-              - text: Učit ćemo.
+              - text: Sutra ćemo učiti nove hrvatske riječi.
                 correct: true
-                audioSrc: /audio/hr/ucit_cemo.mp3
-              - text: Gledat ćemo.
+                audioSrc: /audio/hr/sutra_cemo_uciti_nove_hrvatske_rijeci.mp3
+              - text: Jučer smo učili nove hrvatske riječi.
                 correct: false
-                audioSrc: /audio/hr/gledat_cemo.mp3
-              - text: Putovat ćemo.
+                audioSrc: /audio/hr/jucer_smo_ucili_nove_hrvatske_rijeci.mp3
+              - text: Danas učimo nove hrvatske riječi.
                 correct: false
-                audioSrc: /audio/hr/putovat_cemo.mp3
-              - text: Izumit ćemo.
+                audioSrc: /audio/hr/danas_ucimo_nove_hrvatske_rijeci.mp3
+              - text: Sutra ćemo čitati stare hrvatske priče.
                 correct: false
-                audioSrc: /audio/hr/izumit_cemo.mp3
+                audioSrc: /audio/hr/sutra_cemo_citati_stare_hrvatske_price.mp3
           - order: 2
             legacyId: 683
             type: ASSIST
-            prompt: How do you say "We will watch."?
-            grammarTags: []
+            prompt: 'Translate: "Tonight we will watch the stars with a telescope."'
+            grammarTags:
+              - futur_1
+              - instrumental
             options:
-              - text: Gledat ćemo.
+              - text: Večeras ćemo gledati zvijezde velikim teleskopom.
                 correct: true
-                audioSrc: /audio/hr/gledat_cemo.mp3
-              - text: Učit ćemo.
+                audioSrc: /audio/hr/veceras_cemo_gledati_zvijezde_velikim_teleskopom.mp3
+              - text: Sinoć smo gledali zvijezde velikim teleskopom.
                 correct: false
-                audioSrc: /audio/hr/ucit_cemo.mp3
-              - text: Putovat ćemo.
+                audioSrc: /audio/hr/sinoc_smo_gledali_zvijezde_velikim_teleskopom.mp3
+              - text: Večeras gledamo zvijezde s visokog brda.
                 correct: false
-                audioSrc: /audio/hr/putovat_cemo.mp3
-              - text: Izumit ćemo.
+                audioSrc: /audio/hr/veceras_gledamo_zvijezde_s_visokog_brda.mp3
+              - text: Večeras ćemo gledati puni mjesec na nebu.
                 correct: false
-                audioSrc: /audio/hr/izumit_cemo.mp3
+                audioSrc: /audio/hr/veceras_cemo_gledati_puni_mjesec_na_nebu.mp3
           - order: 3
             legacyId: 684
             type: ASSIST
-            prompt: How do you say "We will travel."?
-            grammarTags: []
+            prompt: 'Translate: "One day we will travel to distant planets."'
+            grammarTags:
+              - futur_1
+              - accusative_motion
             options:
-              - text: Putovat ćemo.
+              - text: Jednog dana putovat ćemo na daleke planete.
                 correct: true
-                audioSrc: /audio/hr/putovat_cemo.mp3
-              - text: Učit ćemo.
+                audioSrc: /audio/hr/jednog_dana_putovat_cemo_na_daleke_planete.mp3
+              - text: Prošle godine putovali smo na daleke otoke.
                 correct: false
-                audioSrc: /audio/hr/ucit_cemo.mp3
-              - text: Gledat ćemo.
+                audioSrc: /audio/hr/prosle_godine_putovali_smo_na_daleke_otoke.mp3
+              - text: Jednog dana putovat ćemo na dalekim planetima.
                 correct: false
-                audioSrc: /audio/hr/gledat_cemo.mp3
-              - text: Izumit ćemo.
+                audioSrc: /audio/hr/jednog_dana_putovat_cemo_na_dalekim_planetima.mp3
+              - text: Danas putujemo brzim brodom prema otoku.
                 correct: false
-                audioSrc: /audio/hr/izumit_cemo.mp3
+                audioSrc: /audio/hr/danas_putujemo_brzim_brodom_prema_otoku.mp3
           - order: 4
             legacyId: 685
             type: ASSIST
-            prompt: How do you say "We will invent."?
-            grammarTags: []
+            prompt: 'Translate: "Together we will invent clean energy for everyone."'
+            grammarTags:
+              - futur_1
+              - accusative
             options:
-              - text: Izumit ćemo.
+              - text: Zajedno ćemo izumiti čistu energiju za sve.
                 correct: true
-                audioSrc: /audio/hr/izumit_cemo.mp3
-              - text: Učit ćemo.
+                audioSrc: /audio/hr/zajedno_cemo_izumiti_cistu_energiju_za_sve.mp3
+              - text: Zajedno smo izumili novu igru u školi.
                 correct: false
-                audioSrc: /audio/hr/ucit_cemo.mp3
-              - text: Gledat ćemo.
+                audioSrc: /audio/hr/zajedno_smo_izumili_novu_igru_u_skoli.mp3
+              - text: Zajedno izumljujemo pametnog robota za kuću.
                 correct: false
-                audioSrc: /audio/hr/gledat_cemo.mp3
-              - text: Putovat ćemo.
+                audioSrc: /audio/hr/zajedno_izumljujemo_pametnog_robota_za_kucu.mp3
+              - text: Sutra ćemo učiti o čistoj energiji.
                 correct: false
-                audioSrc: /audio/hr/putovat_cemo.mp3
+                audioSrc: /audio/hr/sutra_cemo_uciti_o_cistoj_energiji.mp3
       - order: 4
         legacyId: 160
         kind: BOSS_CAPSTONE
@@ -1593,22 +1622,19 @@ units:
         challenges:
           - order: 1
             legacyId: 686
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: How do you say "We will learn about the universe."?
+            targetSentence: Učit ćemo o svemiru.
+            acceptedAnswers:
+              - Učit ćemo o svemiru
+            wordBank:
+              - o
+              - svemiru
+              - ćemo
+              - smo
+              - Učit
+            audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
             grammarTags: []
-            options:
-              - text: Učit ćemo o svemiru.
-                correct: true
-                audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
-              - text: Gledat ćemo zvijezde.
-                correct: false
-                audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
-              - text: Putovat ćemo u svemir.
-                correct: false
-                audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
-              - text: Izumit ćemo nove stvari.
-                correct: false
-                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
           - order: 2
             legacyId: 687
             type: ASSIST
@@ -1618,15 +1644,15 @@ units:
               - text: Gledat ćemo zvijezde.
                 correct: true
                 audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
+              - text: Jučer gledat ćemo zvijezde.
+                correct: false
+                audioSrc: /audio/hr/jucer_gledat_cemo_zvijezde.mp3
+              - text: Sutra gledat ćemo zvijezde.
+                correct: false
+                audioSrc: /audio/hr/sutra_gledat_cemo_zvijezde.mp3
               - text: Učit ćemo o svemiru.
                 correct: false
                 audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
-              - text: Putovat ćemo u svemir.
-                correct: false
-                audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
-              - text: Izumit ćemo nove stvari.
-                correct: false
-                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
           - order: 3
             legacyId: 688
             type: ASSIST
@@ -1636,15 +1662,15 @@ units:
               - text: Putovat ćemo u svemir.
                 correct: true
                 audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
+              - text: Jučer putovat ćemo u svemir.
+                correct: false
+                audioSrc: /audio/hr/jucer_putovat_cemo_u_svemir.mp3
+              - text: Sutra putovat ćemo u svemir.
+                correct: false
+                audioSrc: /audio/hr/sutra_putovat_cemo_u_svemir.mp3
               - text: Učit ćemo o svemiru.
                 correct: false
                 audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
-              - text: Gledat ćemo zvijezde.
-                correct: false
-                audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
-              - text: Izumit ćemo nove stvari.
-                correct: false
-                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
           - order: 4
             legacyId: 689
             type: ASSIST

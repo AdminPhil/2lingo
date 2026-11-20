@@ -119,8 +119,9 @@ units:
         challenges:
           - order: 1
             legacyId: 184
-            type: SELECT
-            prompt: Which one of these is "I watch / look"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/gledam.mp3
             grammarTags: []
             options:
               - text: Gledam
@@ -137,8 +138,9 @@ units:
                 audioSrc: /audio/hr/ucim.mp3
           - order: 2
             legacyId: 185
-            type: SELECT
-            prompt: Which one of these is "I read"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/citam.mp3
             grammarTags: []
             options:
               - text: Čitam
@@ -480,8 +482,9 @@ units:
         challenges:
           - order: 1
             legacyId: 202
-            type: SELECT
-            prompt: Which one of these is "Tree"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/drvo.mp3
             grammarTags: []
             options:
               - text: Drvo
@@ -498,8 +501,9 @@ units:
                 audioSrc: /audio/hr/ulica.mp3
           - order: 2
             legacyId: 203
-            type: SELECT
-            prompt: Which one of these is "Car"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/auto.mp3
             grammarTags: []
             options:
               - text: Auto
@@ -848,15 +852,19 @@ units:
               - text: U
                 correct: true
                 audioSrc: /audio/hr/u.mp3
+                imageSrc: /spatial_u.svg
               - text: Na
                 correct: false
                 audioSrc: /audio/hr/na.mp3
+                imageSrc: /spatial_na.svg
               - text: Ispod
                 correct: false
                 audioSrc: /audio/hr/ispod.mp3
+                imageSrc: /spatial_ispod.svg
               - text: Blizu
                 correct: false
                 audioSrc: /audio/hr/blizu.mp3
+                imageSrc: /spatial_blizu.svg
           - order: 2
             legacyId: 221
             type: SELECT
@@ -866,12 +874,15 @@ units:
               - text: Na
                 correct: true
                 audioSrc: /audio/hr/na.mp3
+                imageSrc: /spatial_na.svg
               - text: U
                 correct: false
                 audioSrc: /audio/hr/u.mp3
+                imageSrc: /spatial_u.svg
               - text: Ispod
                 correct: false
                 audioSrc: /audio/hr/ispod.mp3
+                imageSrc: /spatial_ispod.svg
               - text: Gore
                 correct: false
                 audioSrc: /audio/hr/gore.mp3
@@ -884,24 +895,28 @@ units:
               - text: Ispod
                 correct: true
                 audioSrc: /audio/hr/ispod.mp3
+                imageSrc: /spatial_ispod.svg
               - text: Na
                 correct: false
                 audioSrc: /audio/hr/na.mp3
+                imageSrc: /spatial_na.svg
               - text: U
                 correct: false
                 audioSrc: /audio/hr/u.mp3
+                imageSrc: /spatial_u.svg
               - text: Dolje
                 correct: false
                 audioSrc: /audio/hr/dolje.mp3
           - order: 4
             legacyId: 223
-            type: ASSIST
+            type: SELECT
             prompt: '"Near / Close"'
             grammarTags: []
             options:
               - text: Blizu
                 correct: true
                 audioSrc: /audio/hr/blizu.mp3
+                imageSrc: /spatial_blizu.svg
               - text: Tamo
                 correct: false
                 audioSrc: /audio/hr/tamo.mp3
@@ -911,6 +926,7 @@ units:
               - text: Ispod
                 correct: false
                 audioSrc: /audio/hr/ispod.mp3
+                imageSrc: /spatial_ispod.svg
       - order: 3
         legacyId: 51
         kind: PRODUCTION
@@ -1202,8 +1218,9 @@ units:
         challenges:
           - order: 1
             legacyId: 238
-            type: SELECT
-            prompt: Which one of these is "Cheese"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sir.mp3
             grammarTags: []
             options:
               - text: Sir
@@ -1220,8 +1237,9 @@ units:
                 audioSrc: /audio/hr/jabuka.mp3
           - order: 2
             legacyId: 239
-            type: SELECT
-            prompt: Which one of these is "Tomato"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/rajcica.mp3
             grammarTags: []
             options:
               - text: Rajčica
@@ -1563,8 +1581,9 @@ units:
         challenges:
           - order: 1
             legacyId: 256
-            type: SELECT
-            prompt: Which one of these is "Music"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/glazba.mp3
             grammarTags: []
             options:
               - text: Glazba
@@ -1581,8 +1600,9 @@ units:
                 audioSrc: /audio/hr/igra.mp3
           - order: 2
             legacyId: 257
-            type: SELECT
-            prompt: Which one of these is "Song"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/pjesma.mp3
             grammarTags: []
             options:
               - text: Pjesma

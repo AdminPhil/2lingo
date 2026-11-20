@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="6" fill="#ECFDF5"/>
+  <!-- Wooden table top and legs -->
+  <rect x="6" y="19" width="24" height="4" rx="1.5" fill="#B45309"/>
+  <rect x="9" y="23" width="3" height="9" rx="1" fill="#92400E"/>
+  <rect x="24" y="23" width="3" height="9" rx="1" fill="#92400E"/>
+  <!-- Red ball sitting ON TOP of table -->
+  <circle cx="18" cy="13.5" r="5.5" fill="#EF4444" stroke="#991B1B" stroke-width="1.5"/>
+  <ellipse cx="18" cy="19" rx="4.5" ry="1" fill="#78350F" fill-opacity="0.4"/>
+</svg>

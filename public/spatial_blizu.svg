@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="6" fill="#F5F3FF"/>
+  <!-- Small blue house/box on left -->
+  <rect x="6" y="15" width="12" height="13" rx="2" fill="#6366F1" stroke="#312E81" stroke-width="1.5"/>
+  <!-- Red ball right NEXT TO / NEAR it -->
+  <circle cx="25.5" cy="22.5" r="5" fill="#EF4444" stroke="#991B1B" stroke-width="1.5"/>
+  <!-- Double-headed proximity arrow -->
+  <path d="M18.5,11 H25.5 M20.5,9 L18.5,11 L20.5,13 M23.5,9 L25.5,11 L23.5,13" fill="none" stroke="#4F46E5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

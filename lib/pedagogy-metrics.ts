@@ -1518,19 +1518,36 @@ export function computePedagogyAuditReport(input: {
     }
 
     // Mechanic Diversity rubric:
-    // Early worlds (W1-W2): SELECT+ASSIST with progressive visual fading is ~3.5/5 (missing LISTEN/MATCH_PAIRS)
-    // Mid worlds (W3-W6): Lack of BUILD_SENTENCE / LISTEN hurts -> ~2.5/5
-    // Late worlds (W7-W12): Pure 4-option multiple choice with 0% production -> ~1.5-2.0/5
-    const mechanicDiversity =
-      stageTheme.stage <= 2
-        ? 3.5
-        : stageTheme.stage <= 4
-          ? 2.8
-          : stageTheme.stage <= 6
-            ? 2.3
-            : stageTheme.stage <= 8
-              ? 1.9
-              : 1.5;
+    // Scores dynamically when Tier 3-6 active mechanics (LISTEN, MATCH_PAIRS, BUILD_SENTENCE, CLOZE)
+    // are present, while preserving the exact baseline penalty when only SELECT/ASSIST exist.
+    const wListenCount = wChs.filter((c) => c.type === "LISTEN").length;
+    const wBuildCount = wChs.filter((c) => c.type === "BUILD_SENTENCE").length;
+    const wMatchCount = wChs.filter((c) => c.type === "MATCH_PAIRS").length;
+    const wClozeCount = wChs.filter((c) => c.type === "CLOZE").length;
+    const wActiveCount = wListenCount + wBuildCount + wMatchCount + wClozeCount;
+
+    let mechanicDiversity: number;
+    if (wActiveCount === 0) {
+      mechanicDiversity =
+        stageTheme.stage <= 2
+          ? 3.5
+          : stageTheme.stage <= 4
+            ? 2.8
+            : stageTheme.stage <= 6
+              ? 2.3
+              : stageTheme.stage <= 8
+                ? 1.9
+                : 1.5;
+    } else {
+      const distinctActiveTypes =
+        (wListenCount > 0 ? 1 : 0) +
+        (wBuildCount > 0 ? 1 : 0) +
+        (wMatchCount > 0 ? 1 : 0) +
+        (wClozeCount > 0 ? 1 : 0);
+      const activeShare = wChs.length > 0 ? wActiveCount / wChs.length : 0;
+      const base = stageTheme.stage <= 2 ? 3.5 : 2.2;
+      mechanicDiversity = clampScore(base + distinctActiveTypes * 0.9 + Math.min(1.0, activeShare * 2.5));
+    }
 
     const compositeScore = round1(
       sentenceScaling * 0.25 +
@@ -1606,6 +1623,10 @@ export function computePedagogyAuditReport(input: {
   const totalCh = challengeMetricsList.length;
   const selectTotal = challengeMetricsList.filter((c) => c.type === "SELECT").length;
   const assistTotal = challengeMetricsList.filter((c) => c.type === "ASSIST").length;
+  const listenTotal = challengeMetricsList.filter((c) => c.type === "LISTEN").length;
+  const matchTotal = challengeMetricsList.filter((c) => c.type === "MATCH_PAIRS").length;
+  const buildTotal = challengeMetricsList.filter((c) => c.type === "BUILD_SENTENCE").length;
+  const clozeTotal = challengeMetricsList.filter((c) => c.type === "CLOZE").length;
 
   const mechanicLadder: MechanicLadderRow[] = [
     {
@@ -1631,36 +1652,36 @@ export function computePedagogyAuditReport(input: {
       mechanic: "Audio-Only Listening Comprehension",
       code: "LISTEN",
       cognitiveLevel: "Auditory Decoding (No English Cue)",
-      implemented: false,
-      challengeCount: 0,
-      sharePct: 0,
+      implemented: listenTotal > 0,
+      challengeCount: listenTotal,
+      sharePct: totalCh > 0 ? round1((listenTotal / totalCh) * 100) : 0,
     },
     {
       tier: 4,
       mechanic: "Rapid Vocabulary Pair Matching",
       code: "MATCH_PAIRS",
       cognitiveLevel: "Speed Lexical Retrieval",
-      implemented: false,
-      challengeCount: 0,
-      sharePct: 0,
+      implemented: matchTotal > 0,
+      challengeCount: matchTotal,
+      sharePct: totalCh > 0 ? round1((matchTotal / totalCh) * 100) : 0,
     },
     {
       tier: 5,
       mechanic: "Word-Bank Sentence Assembly",
       code: "BUILD_SENTENCE",
       cognitiveLevel: "Active Production & Word Order",
-      implemented: false,
-      challengeCount: 0,
-      sharePct: 0,
+      implemented: buildTotal > 0,
+      challengeCount: buildTotal,
+      sharePct: totalCh > 0 ? round1((buildTotal / totalCh) * 100) : 0,
     },
     {
       tier: 6,
       mechanic: "Cloze / Case & Verb Ending Drill",
       code: "CLOZE",
       cognitiveLevel: "Morphological Production (A2–B1)",
-      implemented: false,
-      challengeCount: 0,
-      sharePct: 0,
+      implemented: clozeTotal > 0,
+      challengeCount: clozeTotal,
+      sharePct: totalCh > 0 ? round1((clozeTotal / totalCh) * 100) : 0,
     },
   ];
 

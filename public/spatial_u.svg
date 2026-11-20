@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <rect x="2" y="2" width="32" height="32" rx="6" fill="#EFF6FF"/>
+  <!-- Open cardboard/blue box -->
+  <rect x="7" y="13" width="22" height="17" rx="2" fill="#BFDBFE" stroke="#1D4ED8" stroke-width="2"/>
+  <!-- Red ball clearly INSIDE the box -->
+  <circle cx="18" cy="21.5" r="5.5" fill="#EF4444" stroke="#991B1B" stroke-width="1.5"/>
+  <!-- Front translucent rim accent -->
+  <path d="M7,19 H29 V28 A2,2 0 0 1 27,30 H9 A2,2 0 0 1 7,28 Z" fill="#3B82F6" fill-opacity="0.35"/>
+  <!-- Downward arrow showing inside -->
+  <path d="M18,5 V11 M15,8.5 L18,11.5 L21,8.5" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

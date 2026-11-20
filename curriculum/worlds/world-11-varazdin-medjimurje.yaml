@@ -124,25 +124,28 @@ units:
           - order: 1
             legacyId: 854
             type: ASSIST
-            prompt: 'Select the correct translation: "The baroque violin"'
-            grammarTags: []
+            prompt: 'Translate: "The musician played a baroque violin in the hall."'
+            grammarTags:
+              - perfekt
+              - locative
             options:
-              - text: Barokna violina
+              - text: Glazbenik je svirao baroknu violinu u staroj dvorani.
                 correct: true
-                audioSrc: /audio/hr/barokna_violina.mp3
-              - text: Koncertni klavir
+                audioSrc: /audio/hr/glazbenik_je_svirao_baroknu_violinu_u_staroj_dvorani.mp3
+              - text: Glazbenik svira baroknu violinu u staroj dvorani.
                 correct: false
-                audioSrc: /audio/hr/koncertni_klavir.mp3
-              - text: Zlatna nota
+                audioSrc: /audio/hr/glazbenik_svira_baroknu_violinu_u_staroj_dvorani.mp3
+              - text: Glazbenik će svirati baroknu violinu večeras.
                 correct: false
-                audioSrc: /audio/hr/zlatna_nota.mp3
-              - text: Veliki orkestar
+                audioSrc: /audio/hr/glazbenik_ce_svirati_baroknu_violinu_veceras.mp3
+              - text: Glazbenik je čitao stare note prije koncerta.
                 correct: false
-                audioSrc: /audio/hr/veliki_orkestar.mp3
+                audioSrc: /audio/hr/glazbenik_je_citao_stare_note_prije_koncerta.mp3
           - order: 2
             legacyId: 855
-            type: ASSIST
-            prompt: 'Select the correct translation: "The violin plays in the hall."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/violina_svira_u_dvorani.mp3
             grammarTags: []
             options:
               - text: Violina svira u dvorani.
@@ -159,8 +162,9 @@ units:
                 audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
           - order: 3
             legacyId: 856
-            type: ASSIST
-            prompt: 'Select the correct translation: "The orchestra performs baroque music."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/orkestar_izvodi_baroknu_glazbu.mp3
             grammarTags: []
             options:
               - text: Orkestar izvodi baroknu glazbu.
@@ -200,22 +204,19 @@ units:
         challenges:
           - order: 1
             legacyId: 858
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The piano sounds very beautiful."'
+            targetSentence: Klavir zvuči vrlo lijepo.
+            acceptedAnswers:
+              - Klavir zvuči vrlo lijepo
+            wordBank:
+              - zvuči
+              - nije
+              - lijepo
+              - vrlo
+              - Klavir
+            audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
             grammarTags: []
-            options:
-              - text: Klavir zvuči vrlo lijepo.
-                correct: true
-                audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
-              - text: Varaždin slavi barokne večeri.
-                correct: false
-                audioSrc: /audio/hr/varazdin_slavi_barokne_veceri.mp3
-              - text: Publika sluša tihu melodiju.
-                correct: false
-                audioSrc: /audio/hr/publika_slusa_tihu_melodiju.mp3
-              - text: Dirigent vodi cijeli orkestar.
-                correct: false
-                audioSrc: /audio/hr/dirigent_vodi_cijeli_orkestar.mp3
           - order: 2
             legacyId: 859
             type: ASSIST
@@ -225,15 +226,15 @@ units:
               - text: Varaždin slavi barokne večeri.
                 correct: true
                 audioSrc: /audio/hr/varazdin_slavi_barokne_veceri.mp3
+              - text: Jučer varaždin slavi barokne večeri.
+                correct: false
+                audioSrc: /audio/hr/jucer_varazdin_slavi_barokne_veceri.mp3
+              - text: Sutra varaždin slavi barokne večeri.
+                correct: false
+                audioSrc: /audio/hr/sutra_varazdin_slavi_barokne_veceri.mp3
               - text: Klavir zvuči vrlo lijepo.
                 correct: false
                 audioSrc: /audio/hr/klavir_zvuci_vrlo_lijepo.mp3
-              - text: Publika sluša tihu melodiju.
-                correct: false
-                audioSrc: /audio/hr/publika_slusa_tihu_melodiju.mp3
-              - text: Dirigent vodi cijeli orkestar.
-                correct: false
-                audioSrc: /audio/hr/dirigent_vodi_cijeli_orkestar.mp3
           - order: 3
             legacyId: 860
             type: ASSIST
@@ -243,15 +244,15 @@ units:
               - text: Publika sluša tihu melodiju.
                 correct: true
                 audioSrc: /audio/hr/publika_slusa_tihu_melodiju.mp3
+              - text: Publika sluša glasnu melodiju.
+                correct: false
+                audioSrc: /audio/hr/publika_slusa_glasnu_melodiju.mp3
+              - text: Jučer publika sluša tihu melodiju.
+                correct: false
+                audioSrc: /audio/hr/jucer_publika_slusa_tihu_melodiju.mp3
               - text: Varaždin slavi barokne večeri.
                 correct: false
                 audioSrc: /audio/hr/varazdin_slavi_barokne_veceri.mp3
-              - text: Dirigent vodi cijeli orkestar.
-                correct: false
-                audioSrc: /audio/hr/dirigent_vodi_cijeli_orkestar.mp3
-              - text: Koncert počinje točno navečer.
-                correct: false
-                audioSrc: /audio/hr/koncert_pocinje_tocno_navecer.mp3
           - order: 4
             legacyId: 861
             type: ASSIST
@@ -261,15 +262,15 @@ units:
               - text: Dirigent vodi cijeli orkestar.
                 correct: true
                 audioSrc: /audio/hr/dirigent_vodi_cijeli_orkestar.mp3
+              - text: Dirigent ne vodi cijeli orkestar.
+                correct: false
+                audioSrc: /audio/hr/dirigent_ne_vodi_cijeli_orkestar.mp3
+              - text: Jučer dirigent vodi cijeli orkestar.
+                correct: false
+                audioSrc: /audio/hr/jucer_dirigent_vodi_cijeli_orkestar.mp3
               - text: Publika sluša tihu melodiju.
                 correct: false
                 audioSrc: /audio/hr/publika_slusa_tihu_melodiju.mp3
-              - text: Varaždin slavi barokne večeri.
-                correct: false
-                audioSrc: /audio/hr/varazdin_slavi_barokne_veceri.mp3
-              - text: Koncert počinje točno navečer.
-                correct: false
-                audioSrc: /audio/hr/koncert_pocinje_tocno_navecer.mp3
       - order: 4
         legacyId: 204
         kind: BOSS_CAPSTONE
@@ -277,22 +278,19 @@ units:
         challenges:
           - order: 1
             legacyId: 862
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The sound of the violin fills the church."'
+            targetSentence: Zvuk violine ispunjava crkvu.
+            acceptedAnswers:
+              - Zvuk violine ispunjava crkvu
+            wordBank:
+              - violine
+              - ispunjava
+              - crkvu
+              - nije
+              - Zvuk
+            audioSrc: /audio/hr/zvuk_violine_ispunjava_crkvu.mp3
             grammarTags: []
-            options:
-              - text: Zvuk violine ispunjava crkvu.
-                correct: true
-                audioSrc: /audio/hr/zvuk_violine_ispunjava_crkvu.mp3
-              - text: Mladi umjetnici vježbaju svaki dan.
-                correct: false
-                audioSrc: /audio/hr/mladi_umjetnici_vjezbaju_svaki_dan.mp3
-              - text: Barokna glazba donosi mir.
-                correct: false
-                audioSrc: /audio/hr/barokna_glazba_donosi_mir.mp3
-              - text: Pljesak odjekuje starim kazalištem.
-                correct: false
-                audioSrc: /audio/hr/pljesak_odjekuje_starim_kazalistem.mp3
           - order: 2
             legacyId: 863
             type: ASSIST
@@ -302,33 +300,35 @@ units:
               - text: Mladi umjetnici vježbaju svaki dan.
                 correct: true
                 audioSrc: /audio/hr/mladi_umjetnici_vjezbaju_svaki_dan.mp3
+              - text: Jučer mladi umjetnici vježbaju svaki dan.
+                correct: false
+                audioSrc: /audio/hr/jucer_mladi_umjetnici_vjezbaju_svaki_dan.mp3
+              - text: Sutra mladi umjetnici vježbaju svaki dan.
+                correct: false
+                audioSrc: /audio/hr/sutra_mladi_umjetnici_vjezbaju_svaki_dan.mp3
               - text: Zvuk violine ispunjava crkvu.
                 correct: false
                 audioSrc: /audio/hr/zvuk_violine_ispunjava_crkvu.mp3
-              - text: Barokna glazba donosi mir.
-                correct: false
-                audioSrc: /audio/hr/barokna_glazba_donosi_mir.mp3
-              - text: Pljesak odjekuje starim kazalištem.
-                correct: false
-                audioSrc: /audio/hr/pljesak_odjekuje_starim_kazalistem.mp3
           - order: 3
             legacyId: 864
             type: ASSIST
-            prompt: 'Select the correct translation: "Baroque music brings peace."'
-            grammarTags: []
+            prompt: 'Translate: "We will listen to baroque music in Varaždin."'
+            grammarTags:
+              - futur_1
+              - locative
             options:
-              - text: Barokna glazba donosi mir.
+              - text: Slušat ćemo baroknu glazbu u Varaždinu.
                 correct: true
-                audioSrc: /audio/hr/barokna_glazba_donosi_mir.mp3
-              - text: Zvuk violine ispunjava crkvu.
+                audioSrc: /audio/hr/slusat_cemo_baroknu_glazbu_u_varazdinu.mp3
+              - text: Slušali smo baroknu glazbu u Varaždinu.
                 correct: false
-                audioSrc: /audio/hr/zvuk_violine_ispunjava_crkvu.mp3
-              - text: Mladi umjetnici vježbaju svaki dan.
+                audioSrc: /audio/hr/slusali_smo_baroknu_glazbu_u_varazdinu.mp3
+              - text: Slušat ćemo baroknu glazbu u Varaždin.
                 correct: false
-                audioSrc: /audio/hr/mladi_umjetnici_vjezbaju_svaki_dan.mp3
-              - text: Pljesak odjekuje starim kazalištem.
+                audioSrc: /audio/hr/slusat_cemo_baroknu_glazbu_u_varazdin.mp3
+              - text: Slušamo baroknu glazbu u staroj dvorani.
                 correct: false
-                audioSrc: /audio/hr/pljesak_odjekuje_starim_kazalistem.mp3
+                audioSrc: /audio/hr/slusamo_baroknu_glazbu_u_staroj_dvorani.mp3
           - order: 4
             legacyId: 865
             type: ASSIST
@@ -338,15 +338,15 @@ units:
               - text: Pljesak odjekuje starim kazalištem.
                 correct: true
                 audioSrc: /audio/hr/pljesak_odjekuje_starim_kazalistem.mp3
+              - text: Pljesak odjekuje novim kazalištem.
+                correct: false
+                audioSrc: /audio/hr/pljesak_odjekuje_novim_kazalistem.mp3
+              - text: Jučer pljesak odjekuje starim kazalištem.
+                correct: false
+                audioSrc: /audio/hr/jucer_pljesak_odjekuje_starim_kazalistem.mp3
               - text: Zvuk violine ispunjava crkvu.
                 correct: false
                 audioSrc: /audio/hr/zvuk_violine_ispunjava_crkvu.mp3
-              - text: Mladi umjetnici vježbaju svaki dan.
-                correct: false
-                audioSrc: /audio/hr/mladi_umjetnici_vjezbaju_svaki_dan.mp3
-              - text: Barokna glazba donosi mir.
-                correct: false
-                audioSrc: /audio/hr/barokna_glazba_donosi_mir.mp3
   - order: 52
     legacyId: 52
     title: Unit 52
@@ -453,25 +453,28 @@ units:
           - order: 1
             legacyId: 870
             type: ASSIST
-            prompt: 'Select the correct translation: "The colorful umbrella"'
-            grammarTags: []
+            prompt: 'Translate: "We opened a colorful umbrella when the rain started."'
+            grammarTags:
+              - perfekt
+              - subordinate_kada
             options:
-              - text: Šareni kišobran
+              - text: Otvorili smo šareni kišobran kada je počela kiša.
                 correct: true
-                audioSrc: /audio/hr/sareni_kisobran.mp3
-              - text: Velika pozornica
+                audioSrc: /audio/hr/otvorili_smo_sareni_kisobran_kada_je_pocela_kisa.mp3
+              - text: Otvaramo šareni kišobran kada počne kiša.
                 correct: false
-                audioSrc: /audio/hr/velika_pozornica.mp3
-              - text: Veseli glumac
+                audioSrc: /audio/hr/otvaramo_sareni_kisobran_kada_pocne_kisa.mp3
+              - text: Otvorit ćemo šareni kišobran ako padne kiša.
                 correct: false
-                audioSrc: /audio/hr/veseli_glumac.mp3
-              - text: Slamni šešir
+                audioSrc: /audio/hr/otvorit_cemo_sareni_kisobran_ako_padne_kisa.mp3
+              - text: Gledali smo šarene kišobrane iznad uske ulice.
                 correct: false
-                audioSrc: /audio/hr/slamni_sesir.mp3
+                audioSrc: /audio/hr/gledali_smo_sarene_kisobrane_iznad_uske_ulice.mp3
           - order: 2
             legacyId: 871
-            type: ASSIST
-            prompt: 'Select the correct translation: "Colorful umbrellas hang above the street."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sareni_kisobrani_vise_nad_ulicom.mp3
             grammarTags: []
             options:
               - text: Šareni kišobrani vise nad ulicom.
@@ -488,8 +491,9 @@ units:
                 audioSrc: /audio/hr/gosti_setaju_varazdinskim_trgovima.mp3
           - order: 3
             legacyId: 872
-            type: ASSIST
-            prompt: 'Select the correct translation: "The actor entertains children on the square."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/glumac_zabavlja_djecu_na_trgu.mp3
             grammarTags: []
             options:
               - text: Glumac zabavlja djecu na trgu.
@@ -529,22 +533,19 @@ units:
         challenges:
           - order: 1
             legacyId: 874
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Špancirfest gathers many artists."'
+            targetSentence: Špancirfest okuplja mnogo umjetnika.
+            acceptedAnswers:
+              - Špancirfest okuplja mnogo umjetnika
+            wordBank:
+              - okuplja
+              - umjetnika
+              - nije
+              - mnogo
+              - Špancirfest
+            audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
             grammarTags: []
-            options:
-              - text: Špancirfest okuplja mnogo umjetnika.
-                correct: true
-                audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
-              - text: Ulični svirači sviraju do mraka.
-                correct: false
-                audioSrc: /audio/hr/ulicni_sviraci_sviraju_do_mraka.mp3
-              - text: Slikar crta portret ispod šešira.
-                correct: false
-                audioSrc: /audio/hr/slikar_crta_portret_ispod_sesira.mp3
-              - text: Djeca se smiju veseloj predstavi.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_smiju_veseloj_predstavi.mp3
           - order: 2
             legacyId: 875
             type: ASSIST
@@ -554,15 +555,15 @@ units:
               - text: Ulični svirači sviraju do mraka.
                 correct: true
                 audioSrc: /audio/hr/ulicni_sviraci_sviraju_do_mraka.mp3
+              - text: Ulični ne svirači sviraju do mraka.
+                correct: false
+                audioSrc: /audio/hr/ulicni_ne_sviraci_sviraju_do_mraka.mp3
+              - text: Jučer ulični svirači sviraju do mraka.
+                correct: false
+                audioSrc: /audio/hr/jucer_ulicni_sviraci_sviraju_do_mraka.mp3
               - text: Špancirfest okuplja mnogo umjetnika.
                 correct: false
                 audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
-              - text: Slikar crta portret ispod šešira.
-                correct: false
-                audioSrc: /audio/hr/slikar_crta_portret_ispod_sesira.mp3
-              - text: Djeca se smiju veseloj predstavi.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_smiju_veseloj_predstavi.mp3
           - order: 3
             legacyId: 876
             type: ASSIST
@@ -572,15 +573,15 @@ units:
               - text: Slikar crta portret ispod šešira.
                 correct: true
                 audioSrc: /audio/hr/slikar_crta_portret_ispod_sesira.mp3
+              - text: Jučer slikar crta portret ispod šešira.
+                correct: false
+                audioSrc: /audio/hr/jucer_slikar_crta_portret_ispod_sesira.mp3
+              - text: Sutra slikar crta portret ispod šešira.
+                correct: false
+                audioSrc: /audio/hr/sutra_slikar_crta_portret_ispod_sesira.mp3
               - text: Ulični svirači sviraju do mraka.
                 correct: false
                 audioSrc: /audio/hr/ulicni_sviraci_sviraju_do_mraka.mp3
-              - text: Špancirfest okuplja mnogo umjetnika.
-                correct: false
-                audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
-              - text: Djeca se smiju veseloj predstavi.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_smiju_veseloj_predstavi.mp3
           - order: 4
             legacyId: 877
             type: ASSIST
@@ -590,15 +591,15 @@ units:
               - text: Djeca se smiju veseloj predstavi.
                 correct: true
                 audioSrc: /audio/hr/djeca_se_smiju_veseloj_predstavi.mp3
+              - text: Jučer djeca se smiju veseloj predstavi.
+                correct: false
+                audioSrc: /audio/hr/jucer_djeca_se_smiju_veseloj_predstavi.mp3
+              - text: Sutra djeca se smiju veseloj predstavi.
+                correct: false
+                audioSrc: /audio/hr/sutra_djeca_se_smiju_veseloj_predstavi.mp3
               - text: Ulični svirači sviraju do mraka.
                 correct: false
                 audioSrc: /audio/hr/ulicni_sviraci_sviraju_do_mraka.mp3
-              - text: Slikar crta portret ispod šešira.
-                correct: false
-                audioSrc: /audio/hr/slikar_crta_portret_ispod_sesira.mp3
-              - text: Špancirfest okuplja mnogo umjetnika.
-                correct: false
-                audioSrc: /audio/hr/spancirfest_okuplja_mnogo_umjetnika.mp3
       - order: 4
         legacyId: 208
         kind: BOSS_CAPSTONE
@@ -606,22 +607,20 @@ units:
         challenges:
           - order: 1
             legacyId: 878
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The old town lives in colors."'
+            targetSentence: Stari grad živi u bojama.
+            acceptedAnswers:
+              - Stari grad živi u bojama
+            wordBank:
+              - Stari
+              - u
+              - bojama
+              - grad
+              - živi
+              - na
+            audioSrc: /audio/hr/stari_grad_zivi_u_bojama.mp3
             grammarTags: []
-            options:
-              - text: Stari grad živi u bojama.
-                correct: true
-                audioSrc: /audio/hr/stari_grad_zivi_u_bojama.mp3
-              - text: Ljudi kupuju ručne radove.
-                correct: false
-                audioSrc: /audio/hr/ljudi_kupuju_rucne_radove.mp3
-              - text: Ljetna večer miriše na pecivo.
-                correct: false
-                audioSrc: /audio/hr/ljetna_vecer_mirise_na_pecivo.mp3
-              - text: Festival donosi radost svima.
-                correct: false
-                audioSrc: /audio/hr/festival_donosi_radost_svima.mp3
           - order: 2
             legacyId: 879
             type: ASSIST
@@ -631,15 +630,15 @@ units:
               - text: Ljudi kupuju ručne radove.
                 correct: true
                 audioSrc: /audio/hr/ljudi_kupuju_rucne_radove.mp3
+              - text: Jučer ljudi kupuju ručne radove.
+                correct: false
+                audioSrc: /audio/hr/jucer_ljudi_kupuju_rucne_radove.mp3
+              - text: Sutra ljudi kupuju ručne radove.
+                correct: false
+                audioSrc: /audio/hr/sutra_ljudi_kupuju_rucne_radove.mp3
               - text: Stari grad živi u bojama.
                 correct: false
                 audioSrc: /audio/hr/stari_grad_zivi_u_bojama.mp3
-              - text: Ljetna večer miriše na pecivo.
-                correct: false
-                audioSrc: /audio/hr/ljetna_vecer_mirise_na_pecivo.mp3
-              - text: Festival donosi radost svima.
-                correct: false
-                audioSrc: /audio/hr/festival_donosi_radost_svima.mp3
           - order: 3
             legacyId: 880
             type: ASSIST
@@ -649,15 +648,15 @@ units:
               - text: Ljetna večer miriše na pecivo.
                 correct: true
                 audioSrc: /audio/hr/ljetna_vecer_mirise_na_pecivo.mp3
+              - text: Jučer ljetna večer miriše na pecivo.
+                correct: false
+                audioSrc: /audio/hr/jucer_ljetna_vecer_mirise_na_pecivo.mp3
+              - text: Sutra ljetna večer miriše na pecivo.
+                correct: false
+                audioSrc: /audio/hr/sutra_ljetna_vecer_mirise_na_pecivo.mp3
               - text: Stari grad živi u bojama.
                 correct: false
                 audioSrc: /audio/hr/stari_grad_zivi_u_bojama.mp3
-              - text: Ljudi kupuju ručne radove.
-                correct: false
-                audioSrc: /audio/hr/ljudi_kupuju_rucne_radove.mp3
-              - text: Festival donosi radost svima.
-                correct: false
-                audioSrc: /audio/hr/festival_donosi_radost_svima.mp3
           - order: 4
             legacyId: 881
             type: ASSIST
@@ -667,15 +666,15 @@ units:
               - text: Festival donosi radost svima.
                 correct: true
                 audioSrc: /audio/hr/festival_donosi_radost_svima.mp3
+              - text: Jučer festival donosi radost svima.
+                correct: false
+                audioSrc: /audio/hr/jucer_festival_donosi_radost_svima.mp3
+              - text: Sutra festival donosi radost svima.
+                correct: false
+                audioSrc: /audio/hr/sutra_festival_donosi_radost_svima.mp3
               - text: Stari grad živi u bojama.
                 correct: false
                 audioSrc: /audio/hr/stari_grad_zivi_u_bojama.mp3
-              - text: Ljudi kupuju ručne radove.
-                correct: false
-                audioSrc: /audio/hr/ljudi_kupuju_rucne_radove.mp3
-              - text: Ljetna večer miriše na pecivo.
-                correct: false
-                audioSrc: /audio/hr/ljetna_vecer_mirise_na_pecivo.mp3
   - order: 53
     legacyId: 53
     title: Unit 53
@@ -782,25 +781,27 @@ units:
           - order: 1
             legacyId: 886
             type: ASSIST
-            prompt: 'Select the correct translation: "The little angel"'
-            grammarTags: []
+            prompt: 'Translate: "A little golden angel watches over the quiet square."'
+            grammarTags:
+              - instrumental
             options:
-              - text: Mali anđeo
+              - text: Mali zlatni anđeo tiho bdije nad starim trgom.
                 correct: true
-                audioSrc: /audio/hr/mali_andeo.mp3
-              - text: Kameni bedem
+                audioSrc: /audio/hr/mali_zlatni_andeo_tiho_bdije_nad_starim_trgom.mp3
+              - text: Mali zlatni anđeo je spavao na starom prozoru.
                 correct: false
-                audioSrc: /audio/hr/kameni_bedem.mp3
-              - text: Visoki toranj
+                audioSrc: /audio/hr/mali_zlatni_andeo_je_spavao_na_starom_prozoru.mp3
+              - text: Mali zlatni anđeo će krasiti novi zid grada.
                 correct: false
-                audioSrc: /audio/hr/visoki_toranj.mp3
-              - text: Stari grb
+                audioSrc: /audio/hr/mali_zlatni_andeo_ce_krasiti_novi_zid_grada.mp3
+              - text: Veliki sat na tornju otkucava točno podne.
                 correct: false
-                audioSrc: /audio/hr/stari_grb.mp3
+                audioSrc: /audio/hr/veliki_sat_na_tornju_otkucava_tocno_podne.mp3
           - order: 2
             legacyId: 887
-            type: ASSIST
-            prompt: 'Select the correct translation: "Varaždin is called the city of angels."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/varazdin_se_zove_grad_andela.mp3
             grammarTags: []
             options:
               - text: Varaždin se zove grad anđela.
@@ -817,8 +818,9 @@ units:
                 audioSrc: /audio/hr/plemicki_grb_krasi_ulazna_vrata.mp3
           - order: 3
             legacyId: 888
-            type: ASSIST
-            prompt: 'Select the correct translation: "White ramparts surround the old town."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/bijeli_bedemi_okruzuju_stari_grad.mp3
             grammarTags: []
             options:
               - text: Bijeli bedemi okružuju stari grad.
@@ -858,22 +860,19 @@ units:
         challenges:
           - order: 1
             legacyId: 890
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The museum preserves old portraits."'
+            targetSentence: Muzej čuva stare portrete.
+            acceptedAnswers:
+              - Muzej čuva stare portrete
+            wordBank:
+              - portrete
+              - nije
+              - čuva
+              - stare
+              - Muzej
+            audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
             grammarTags: []
-            options:
-              - text: Muzej čuva stare portrete.
-                correct: true
-                audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
-              - text: Zlatni anđeo spava na prozoru.
-                correct: false
-                audioSrc: /audio/hr/zlatni_andeo_spava_na_prozoru.mp3
-              - text: Šetamo zelenim parkom oko tvrđave.
-                correct: false
-                audioSrc: /audio/hr/setamo_zelenim_parkom_oko_tvrdave.mp3
-              - text: Krovovi su prekriveni crvenim crijepom.
-                correct: false
-                audioSrc: /audio/hr/krovovi_su_prekriveni_crvenim_crijepom.mp3
           - order: 2
             legacyId: 891
             type: ASSIST
@@ -883,15 +882,15 @@ units:
               - text: Zlatni anđeo spava na prozoru.
                 correct: true
                 audioSrc: /audio/hr/zlatni_andeo_spava_na_prozoru.mp3
+              - text: Jučer zlatni anđeo spava na prozoru.
+                correct: false
+                audioSrc: /audio/hr/jucer_zlatni_andeo_spava_na_prozoru.mp3
+              - text: Sutra zlatni anđeo spava na prozoru.
+                correct: false
+                audioSrc: /audio/hr/sutra_zlatni_andeo_spava_na_prozoru.mp3
               - text: Muzej čuva stare portrete.
                 correct: false
                 audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
-              - text: Šetamo zelenim parkom oko tvrđave.
-                correct: false
-                audioSrc: /audio/hr/setamo_zelenim_parkom_oko_tvrdave.mp3
-              - text: Krovovi su prekriveni crvenim crijepom.
-                correct: false
-                audioSrc: /audio/hr/krovovi_su_prekriveni_crvenim_crijepom.mp3
           - order: 3
             legacyId: 892
             type: ASSIST
@@ -901,15 +900,15 @@ units:
               - text: Šetamo zelenim parkom oko tvrđave.
                 correct: true
                 audioSrc: /audio/hr/setamo_zelenim_parkom_oko_tvrdave.mp3
+              - text: Šetamo plavim parkom oko tvrđave.
+                correct: false
+                audioSrc: /audio/hr/setamo_plavim_parkom_oko_tvrdave.mp3
+              - text: Jučer šetamo zelenim parkom oko tvrđave.
+                correct: false
+                audioSrc: /audio/hr/jucer_setamo_zelenim_parkom_oko_tvrdave.mp3
               - text: Muzej čuva stare portrete.
                 correct: false
                 audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
-              - text: Zlatni anđeo spava na prozoru.
-                correct: false
-                audioSrc: /audio/hr/zlatni_andeo_spava_na_prozoru.mp3
-              - text: Krovovi su prekriveni crvenim crijepom.
-                correct: false
-                audioSrc: /audio/hr/krovovi_su_prekriveni_crvenim_crijepom.mp3
           - order: 4
             legacyId: 893
             type: ASSIST
@@ -919,15 +918,15 @@ units:
               - text: Krovovi su prekriveni crvenim crijepom.
                 correct: true
                 audioSrc: /audio/hr/krovovi_su_prekriveni_crvenim_crijepom.mp3
+              - text: Krovovi nisu prekriveni crvenim crijepom.
+                correct: false
+                audioSrc: /audio/hr/krovovi_nisu_prekriveni_crvenim_crijepom.mp3
+              - text: Jučer krovovi su prekriveni crvenim crijepom.
+                correct: false
+                audioSrc: /audio/hr/jucer_krovovi_su_prekriveni_crvenim_crijepom.mp3
               - text: Muzej čuva stare portrete.
                 correct: false
                 audioSrc: /audio/hr/muzej_cuva_stare_portrete.mp3
-              - text: Zlatni anđeo spava na prozoru.
-                correct: false
-                audioSrc: /audio/hr/zlatni_andeo_spava_na_prozoru.mp3
-              - text: Šetamo zelenim parkom oko tvrđave.
-                correct: false
-                audioSrc: /audio/hr/setamo_zelenim_parkom_oko_tvrdave.mp3
       - order: 4
         legacyId: 212
         kind: BOSS_CAPSTONE
@@ -935,22 +934,19 @@ units:
         challenges:
           - order: 1
             legacyId: 894
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Palaces testify to a rich past."'
+            targetSentence: Palače svjedoče bogatoj prošlosti.
+            acceptedAnswers:
+              - Palače svjedoče bogatoj prošlosti
+            wordBank:
+              - svjedoče
+              - prošlosti
+              - bogatoj
+              - nije
+              - Palače
+            audioSrc: /audio/hr/palace_svjedoce_bogatoj_proslosti.mp3
             grammarTags: []
-            options:
-              - text: Palače svjedoče bogatoj prošlosti.
-                correct: true
-                audioSrc: /audio/hr/palace_svjedoce_bogatoj_proslosti.mp3
-              - text: Kočija prolazi pokraj gradske vijećnice.
-                correct: false
-                audioSrc: /audio/hr/kocija_prolazi_pokraj_gradske_vijecnice.mp3
-              - text: Svjetiljke obasjavaju tihu uličicu.
-                correct: false
-                audioSrc: /audio/hr/svjetiljke_obasjavaju_tihu_ulicicu.mp3
-              - text: Povijest Varaždina živi u kamenu.
-                correct: false
-                audioSrc: /audio/hr/povijest_varazdina_zivi_u_kamenu.mp3
           - order: 2
             legacyId: 895
             type: ASSIST
@@ -960,33 +956,36 @@ units:
               - text: Kočija prolazi pokraj gradske vijećnice.
                 correct: true
                 audioSrc: /audio/hr/kocija_prolazi_pokraj_gradske_vijecnice.mp3
+              - text: Jučer kočija prolazi pokraj gradske vijećnice.
+                correct: false
+                audioSrc: /audio/hr/jucer_kocija_prolazi_pokraj_gradske_vijecnice.mp3
+              - text: Sutra kočija prolazi pokraj gradske vijećnice.
+                correct: false
+                audioSrc: /audio/hr/sutra_kocija_prolazi_pokraj_gradske_vijecnice.mp3
               - text: Palače svjedoče bogatoj prošlosti.
                 correct: false
                 audioSrc: /audio/hr/palace_svjedoce_bogatoj_proslosti.mp3
-              - text: Svjetiljke obasjavaju tihu uličicu.
-                correct: false
-                audioSrc: /audio/hr/svjetiljke_obasjavaju_tihu_ulicicu.mp3
-              - text: Povijest Varaždina živi u kamenu.
-                correct: false
-                audioSrc: /audio/hr/povijest_varazdina_zivi_u_kamenu.mp3
           - order: 3
             legacyId: 896
             type: ASSIST
-            prompt: 'Select the correct translation: "Lanterns illuminate the quiet alley."'
-            grammarTags: []
+            prompt: 'Translate: "We stayed in the old town while the bells rang."'
+            grammarTags:
+              - perfekt
+              - locative
+              - subordinate_dok
             options:
-              - text: Svjetiljke obasjavaju tihu uličicu.
+              - text: Ostali smo u starom gradu dok su zvona zvonila.
                 correct: true
-                audioSrc: /audio/hr/svjetiljke_obasjavaju_tihu_ulicicu.mp3
-              - text: Palače svjedoče bogatoj prošlosti.
+                audioSrc: /audio/hr/ostali_smo_u_starom_gradu_dok_su_zvona_zvonila.mp3
+              - text: Ostajemo u starom gradu dok zvona zvone.
                 correct: false
-                audioSrc: /audio/hr/palace_svjedoce_bogatoj_proslosti.mp3
-              - text: Kočija prolazi pokraj gradske vijećnice.
+                audioSrc: /audio/hr/ostajemo_u_starom_gradu_dok_zvona_zvone.mp3
+              - text: Ostali smo u stari grad dok je padala kiša.
                 correct: false
-                audioSrc: /audio/hr/kocija_prolazi_pokraj_gradske_vijecnice.mp3
-              - text: Povijest Varaždina živi u kamenu.
+                audioSrc: /audio/hr/ostali_smo_u_stari_grad_dok_je_padala_kisa.mp3
+              - text: Ostat ćemo u starom gradu do večeri.
                 correct: false
-                audioSrc: /audio/hr/povijest_varazdina_zivi_u_kamenu.mp3
+                audioSrc: /audio/hr/ostat_cemo_u_starom_gradu_do_veceri.mp3
           - order: 4
             legacyId: 897
             type: ASSIST
@@ -996,15 +995,15 @@ units:
               - text: Povijest Varaždina živi u kamenu.
                 correct: true
                 audioSrc: /audio/hr/povijest_varazdina_zivi_u_kamenu.mp3
+              - text: Jučer povijest Varaždina živi u kamenu.
+                correct: false
+                audioSrc: /audio/hr/jucer_povijest_varazdina_zivi_u_kamenu.mp3
+              - text: Sutra povijest Varaždina živi u kamenu.
+                correct: false
+                audioSrc: /audio/hr/sutra_povijest_varazdina_zivi_u_kamenu.mp3
               - text: Palače svjedoče bogatoj prošlosti.
                 correct: false
                 audioSrc: /audio/hr/palace_svjedoce_bogatoj_proslosti.mp3
-              - text: Kočija prolazi pokraj gradske vijećnice.
-                correct: false
-                audioSrc: /audio/hr/kocija_prolazi_pokraj_gradske_vijecnice.mp3
-              - text: Svjetiljke obasjavaju tihu uličicu.
-                correct: false
-                audioSrc: /audio/hr/svjetiljke_obasjavaju_tihu_ulicicu.mp3
   - order: 54
     legacyId: 54
     title: Unit 54
@@ -1111,25 +1110,28 @@ units:
           - order: 1
             legacyId: 902
             type: ASSIST
-            prompt: 'Select the correct translation: "The white swan"'
-            grammarTags: []
+            prompt: 'Translate: "I would like to watch the white swan on the Drava."'
+            grammarTags:
+              - conditional
+              - locative
             options:
-              - text: Bijeli labud
+              - text: Volio bih promatrati bijelog labuda na rijeci Dravi.
                 correct: true
-                audioSrc: /audio/hr/bijeli_labud.mp3
-              - text: Zelena vrba
+                audioSrc: /audio/hr/volio_bih_promatrati_bijelog_labuda_na_rijeci_dravi.mp3
+              - text: Promatrao sam bijelog labuda na rijeci Dravi.
                 correct: false
-                audioSrc: /audio/hr/zelena_vrba.mp3
-              - text: Drvena splav
+                audioSrc: /audio/hr/promatrao_sam_bijelog_labuda_na_rijeci_dravi.mp3
+              - text: Promatrat ću bijelog labuda sutra ujutro.
                 correct: false
-                audioSrc: /audio/hr/drvena_splav.mp3
-              - text: Mirna obala
+                audioSrc: /audio/hr/promatrat_cu_bijelog_labuda_sutra_ujutro.mp3
+              - text: Volio bih prijeći rijeku Muru drvenom splavi.
                 correct: false
-                audioSrc: /audio/hr/mirna_obala.mp3
+                audioSrc: /audio/hr/volio_bih_prijeci_rijeku_muru_drvenom_splavi.mp3
           - order: 2
             legacyId: 903
-            type: ASSIST
-            prompt: 'Select the correct translation: "A white swan swims on the Drava."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/bijeli_labud_pliva_po_dravi.mp3
             grammarTags: []
             options:
               - text: Bijeli labud pliva po Dravi.
@@ -1146,8 +1148,9 @@ units:
                 audioSrc: /audio/hr/ribar_sjedi_na_mirnoj_obali.mp3
           - order: 3
             legacyId: 904
-            type: ASSIST
-            prompt: 'Select the correct translation: "Willows lower their branches to the water."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vrbe_spustaju_grane_do_vode.mp3
             grammarTags: []
             options:
               - text: Vrbe spuštaju grane do vode.
@@ -1187,22 +1190,22 @@ units:
         challenges:
           - order: 1
             legacyId: 906
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Two rivers meet in the forest."'
+            targetSentence: Dvije rijeke spajaju se u šumi.
+            acceptedAnswers:
+              - Dvije rijeke spajaju se u šumi
+            wordBank:
+              - Dvije
+              - se
+              - spajaju
+              - na
+              - rijeke
+              - šumu
+              - u
+              - šumi
+            audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
             grammarTags: []
-            options:
-              - text: Dvije rijeke spajaju se u šumi.
-                correct: true
-                audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
-              - text: Jutarnja magla lebdi iznad vode.
-                correct: false
-                audioSrc: /audio/hr/jutarnja_magla_lebdi_iznad_vode.mp3
-              - text: Ptice pjevaju u gustoj trsci.
-                correct: false
-                audioSrc: /audio/hr/ptice_pjevaju_u_gustoj_trsci.mp3
-              - text: Voda teče tiho prema istoku.
-                correct: false
-                audioSrc: /audio/hr/voda_tece_tiho_prema_istoku.mp3
           - order: 2
             legacyId: 907
             type: ASSIST
@@ -1212,15 +1215,15 @@ units:
               - text: Jutarnja magla lebdi iznad vode.
                 correct: true
                 audioSrc: /audio/hr/jutarnja_magla_lebdi_iznad_vode.mp3
+              - text: Jučer jutarnja magla lebdi iznad vode.
+                correct: false
+                audioSrc: /audio/hr/jucer_jutarnja_magla_lebdi_iznad_vode.mp3
+              - text: Sutra jutarnja magla lebdi iznad vode.
+                correct: false
+                audioSrc: /audio/hr/sutra_jutarnja_magla_lebdi_iznad_vode.mp3
               - text: Dvije rijeke spajaju se u šumi.
                 correct: false
                 audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
-              - text: Ptice pjevaju u gustoj trsci.
-                correct: false
-                audioSrc: /audio/hr/ptice_pjevaju_u_gustoj_trsci.mp3
-              - text: Voda teče tiho prema istoku.
-                correct: false
-                audioSrc: /audio/hr/voda_tece_tiho_prema_istoku.mp3
           - order: 3
             legacyId: 908
             type: ASSIST
@@ -1230,15 +1233,15 @@ units:
               - text: Ptice pjevaju u gustoj trsci.
                 correct: true
                 audioSrc: /audio/hr/ptice_pjevaju_u_gustoj_trsci.mp3
+              - text: Jučer ptice pjevaju u gustoj trsci.
+                correct: false
+                audioSrc: /audio/hr/jucer_ptice_pjevaju_u_gustoj_trsci.mp3
+              - text: Sutra ptice pjevaju u gustoj trsci.
+                correct: false
+                audioSrc: /audio/hr/sutra_ptice_pjevaju_u_gustoj_trsci.mp3
               - text: Dvije rijeke spajaju se u šumi.
                 correct: false
                 audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
-              - text: Jutarnja magla lebdi iznad vode.
-                correct: false
-                audioSrc: /audio/hr/jutarnja_magla_lebdi_iznad_vode.mp3
-              - text: Voda teče tiho prema istoku.
-                correct: false
-                audioSrc: /audio/hr/voda_tece_tiho_prema_istoku.mp3
           - order: 4
             legacyId: 909
             type: ASSIST
@@ -1248,15 +1251,15 @@ units:
               - text: Voda teče tiho prema istoku.
                 correct: true
                 audioSrc: /audio/hr/voda_tece_tiho_prema_istoku.mp3
+              - text: Voda ne teče tiho prema istoku.
+                correct: false
+                audioSrc: /audio/hr/voda_ne_tece_tiho_prema_istoku.mp3
+              - text: Voda teče glasno prema istoku.
+                correct: false
+                audioSrc: /audio/hr/voda_tece_glasno_prema_istoku.mp3
               - text: Dvije rijeke spajaju se u šumi.
                 correct: false
                 audioSrc: /audio/hr/dvije_rijeke_spajaju_se_u_sumi.mp3
-              - text: Jutarnja magla lebdi iznad vode.
-                correct: false
-                audioSrc: /audio/hr/jutarnja_magla_lebdi_iznad_vode.mp3
-              - text: Ptice pjevaju u gustoj trsci.
-                correct: false
-                audioSrc: /audio/hr/ptice_pjevaju_u_gustoj_trsci.mp3
       - order: 4
         legacyId: 216
         kind: BOSS_CAPSTONE
@@ -1264,22 +1267,20 @@ units:
         challenges:
           - order: 1
             legacyId: 910
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Cyclists ride along the embankment trail."'
+            targetSentence: Biciklisti voze stazom uz nasip.
+            acceptedAnswers:
+              - Biciklisti voze stazom uz nasip
+            wordBank:
+              - Biciklisti
+              - nasip
+              - uz
+              - nije
+              - stazom
+              - voze
+            audioSrc: /audio/hr/biciklisti_voze_stazom_uz_nasip.mp3
             grammarTags: []
-            options:
-              - text: Biciklisti voze stazom uz nasip.
-                correct: true
-                audioSrc: /audio/hr/biciklisti_voze_stazom_uz_nasip.mp3
-              - text: Čista priroda štiti rijetke ptice.
-                correct: false
-                audioSrc: /audio/hr/cista_priroda_stiti_rijetke_ptice.mp3
-              - text: Sunce se zrcali na površini rijeke.
-                correct: false
-                audioSrc: /audio/hr/sunce_se_zrcali_na_povrsini_rijeke.mp3
-              - text: Drava i Mura hrane zelene livade.
-                correct: false
-                audioSrc: /audio/hr/drava_i_mura_hrane_zelene_livade.mp3
           - order: 2
             legacyId: 911
             type: ASSIST
@@ -1289,15 +1290,15 @@ units:
               - text: Čista priroda štiti rijetke ptice.
                 correct: true
                 audioSrc: /audio/hr/cista_priroda_stiti_rijetke_ptice.mp3
+              - text: Jučer čista priroda štiti rijetke ptice.
+                correct: false
+                audioSrc: /audio/hr/jucer_cista_priroda_stiti_rijetke_ptice.mp3
+              - text: Sutra čista priroda štiti rijetke ptice.
+                correct: false
+                audioSrc: /audio/hr/sutra_cista_priroda_stiti_rijetke_ptice.mp3
               - text: Biciklisti voze stazom uz nasip.
                 correct: false
                 audioSrc: /audio/hr/biciklisti_voze_stazom_uz_nasip.mp3
-              - text: Sunce se zrcali na površini rijeke.
-                correct: false
-                audioSrc: /audio/hr/sunce_se_zrcali_na_povrsini_rijeke.mp3
-              - text: Drava i Mura hrane zelene livade.
-                correct: false
-                audioSrc: /audio/hr/drava_i_mura_hrane_zelene_livade.mp3
           - order: 3
             legacyId: 912
             type: ASSIST
@@ -1307,15 +1308,15 @@ units:
               - text: Sunce se zrcali na površini rijeke.
                 correct: true
                 audioSrc: /audio/hr/sunce_se_zrcali_na_povrsini_rijeke.mp3
+              - text: Jučer sunce se zrcali na površini rijeke.
+                correct: false
+                audioSrc: /audio/hr/jucer_sunce_se_zrcali_na_povrsini_rijeke.mp3
+              - text: Sutra sunce se zrcali na površini rijeke.
+                correct: false
+                audioSrc: /audio/hr/sutra_sunce_se_zrcali_na_povrsini_rijeke.mp3
               - text: Biciklisti voze stazom uz nasip.
                 correct: false
                 audioSrc: /audio/hr/biciklisti_voze_stazom_uz_nasip.mp3
-              - text: Čista priroda štiti rijetke ptice.
-                correct: false
-                audioSrc: /audio/hr/cista_priroda_stiti_rijetke_ptice.mp3
-              - text: Drava i Mura hrane zelene livade.
-                correct: false
-                audioSrc: /audio/hr/drava_i_mura_hrane_zelene_livade.mp3
           - order: 4
             legacyId: 913
             type: ASSIST
@@ -1325,15 +1326,15 @@ units:
               - text: Drava i Mura hrane zelene livade.
                 correct: true
                 audioSrc: /audio/hr/drava_i_mura_hrane_zelene_livade.mp3
+              - text: Drava i Mura hrane plave livade.
+                correct: false
+                audioSrc: /audio/hr/drava_i_mura_hrane_plave_livade.mp3
+              - text: Jučer drava i Mura hrane zelene livade.
+                correct: false
+                audioSrc: /audio/hr/jucer_drava_i_mura_hrane_zelene_livade.mp3
               - text: Biciklisti voze stazom uz nasip.
                 correct: false
                 audioSrc: /audio/hr/biciklisti_voze_stazom_uz_nasip.mp3
-              - text: Čista priroda štiti rijetke ptice.
-                correct: false
-                audioSrc: /audio/hr/cista_priroda_stiti_rijetke_ptice.mp3
-              - text: Sunce se zrcali na površini rijeke.
-                correct: false
-                audioSrc: /audio/hr/sunce_se_zrcali_na_povrsini_rijeke.mp3
   - order: 55
     legacyId: 55
     title: Unit 55
@@ -1440,25 +1441,29 @@ units:
           - order: 1
             legacyId: 918
             type: ASSIST
-            prompt: 'Select the correct translation: "The green vineyard"'
-            grammarTags: []
+            prompt: 'Translate: "Next autumn we will pick sweet grapes in the green vineyard."'
+            grammarTags:
+              - futur_1
+              - genitive
+              - locative
             options:
-              - text: Zeleni vinograd
+              - text: Iduće jeseni brat ćemo slatko grožđe u zelenom vinogradu.
                 correct: true
-                audioSrc: /audio/hr/zeleni_vinograd.mp3
-              - text: Slatko grožđe
+                audioSrc: /audio/hr/iduce_jeseni_brat_cemo_slatko_grozde_u_zelenom_vinogradu.mp3
+              - text: Prošle jeseni brali smo slatko grožđe u zelenom vinogradu.
                 correct: false
-                audioSrc: /audio/hr/slatko_grozde.mp3
-              - text: Bijela čipka
+                audioSrc: /audio/hr/prosle_jeseni_brali_smo_slatko_grozde_u_zelenom_vinogradu.mp3
+              - text: Iduće jeseni brat ćemo slatko grožđe u zeleni vinograd.
                 correct: false
-                audioSrc: /audio/hr/bijela_cipka.mp3
-              - text: Stara tambura
+                audioSrc: /audio/hr/iduce_jeseni_brat_cemo_slatko_grozde_u_zeleni_vinograd.mp3
+              - text: Danas beremo zrelo grožđe na sunčanim bregima.
                 correct: false
-                audioSrc: /audio/hr/stara_tambura.mp3
+                audioSrc: /audio/hr/danas_beremo_zrelo_grozde_na_suncanim_bregima.mp3
           - order: 2
             legacyId: 919
-            type: ASSIST
-            prompt: 'Select the correct translation: "Međimurje hills are full of vineyards."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medimurski_bregi_puni_su_vinograda.mp3
             grammarTags: []
             options:
               - text: Međimurski bregi puni su vinograda.
@@ -1475,8 +1480,9 @@ units:
                 audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
           - order: 3
             legacyId: 920
-            type: ASSIST
-            prompt: 'Select the correct translation: "We pick sweet grapes into baskets."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/beremo_slatko_grozde_u_kosare.mp3
             grammarTags: []
             options:
               - text: Beremo slatko grožđe u košare.
@@ -1516,22 +1522,20 @@ units:
         challenges:
           - order: 1
             legacyId: 922
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The tambura accompanies an old folk song."'
+            targetSentence: Tambura prati staru narodnu pjesmu.
+            acceptedAnswers:
+              - Tambura prati staru narodnu pjesmu
+            wordBank:
+              - Tambura
+              - pjesmu
+              - nije
+              - narodnu
+              - staru
+              - prati
+            audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
             grammarTags: []
-            options:
-              - text: Tambura prati staru narodnu pjesmu.
-                correct: true
-                audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
-              - text: Pogled s Mađerkinog brega oduzima dah.
-                correct: false
-                audioSrc: /audio/hr/pogled_s_maderkinog_brega_oduzima_dah.mp3
-              - text: Domaći kruh i sir čekaju goste.
-                correct: false
-                audioSrc: /audio/hr/domaci_kruh_i_sir_cekaju_goste.mp3
-              - text: Podrumi čuvaju najbolja vina sjevera.
-                correct: false
-                audioSrc: /audio/hr/podrumi_cuvaju_najbolja_vina_sjevera.mp3
           - order: 2
             legacyId: 923
             type: ASSIST
@@ -1541,15 +1545,15 @@ units:
               - text: Pogled s Mađerkinog brega oduzima dah.
                 correct: true
                 audioSrc: /audio/hr/pogled_s_maderkinog_brega_oduzima_dah.mp3
+              - text: Jučer pogled s Mađerkinog brega oduzima dah.
+                correct: false
+                audioSrc: /audio/hr/jucer_pogled_s_maderkinog_brega_oduzima_dah.mp3
+              - text: Sutra pogled s Mađerkinog brega oduzima dah.
+                correct: false
+                audioSrc: /audio/hr/sutra_pogled_s_maderkinog_brega_oduzima_dah.mp3
               - text: Tambura prati staru narodnu pjesmu.
                 correct: false
                 audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
-              - text: Domaći kruh i sir čekaju goste.
-                correct: false
-                audioSrc: /audio/hr/domaci_kruh_i_sir_cekaju_goste.mp3
-              - text: Podrumi čuvaju najbolja vina sjevera.
-                correct: false
-                audioSrc: /audio/hr/podrumi_cuvaju_najbolja_vina_sjevera.mp3
           - order: 3
             legacyId: 924
             type: ASSIST
@@ -1559,15 +1563,15 @@ units:
               - text: Domaći kruh i sir čekaju goste.
                 correct: true
                 audioSrc: /audio/hr/domaci_kruh_i_sir_cekaju_goste.mp3
+              - text: Jučer domaći kruh i sir čekaju goste.
+                correct: false
+                audioSrc: /audio/hr/jucer_domaci_kruh_i_sir_cekaju_goste.mp3
+              - text: Sutra domaći kruh i sir čekaju goste.
+                correct: false
+                audioSrc: /audio/hr/sutra_domaci_kruh_i_sir_cekaju_goste.mp3
               - text: Pogled s Mađerkinog brega oduzima dah.
                 correct: false
                 audioSrc: /audio/hr/pogled_s_maderkinog_brega_oduzima_dah.mp3
-              - text: Tambura prati staru narodnu pjesmu.
-                correct: false
-                audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
-              - text: Podrumi čuvaju najbolja vina sjevera.
-                correct: false
-                audioSrc: /audio/hr/podrumi_cuvaju_najbolja_vina_sjevera.mp3
           - order: 4
             legacyId: 925
             type: ASSIST
@@ -1577,15 +1581,15 @@ units:
               - text: Podrumi čuvaju najbolja vina sjevera.
                 correct: true
                 audioSrc: /audio/hr/podrumi_cuvaju_najbolja_vina_sjevera.mp3
+              - text: Jučer podrumi čuvaju najbolja vina sjevera.
+                correct: false
+                audioSrc: /audio/hr/jucer_podrumi_cuvaju_najbolja_vina_sjevera.mp3
+              - text: Sutra podrumi čuvaju najbolja vina sjevera.
+                correct: false
+                audioSrc: /audio/hr/sutra_podrumi_cuvaju_najbolja_vina_sjevera.mp3
               - text: Domaći kruh i sir čekaju goste.
                 correct: false
                 audioSrc: /audio/hr/domaci_kruh_i_sir_cekaju_goste.mp3
-              - text: Pogled s Mađerkinog brega oduzima dah.
-                correct: false
-                audioSrc: /audio/hr/pogled_s_maderkinog_brega_oduzima_dah.mp3
-              - text: Tambura prati staru narodnu pjesmu.
-                correct: false
-                audioSrc: /audio/hr/tambura_prati_staru_narodnu_pjesmu.mp3
       - order: 4
         legacyId: 220
         kind: BOSS_CAPSTONE
@@ -1593,22 +1597,20 @@ units:
         challenges:
           - order: 1
             legacyId: 926
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The Međimurje folk song touches every heart."'
+            targetSentence: Međimurska popevka dira svako srce.
+            acceptedAnswers:
+              - Međimurska popevka dira svako srce
+            wordBank:
+              - Međimurska
+              - svako
+              - srce
+              - popevka
+              - dira
+              - nije
+            audioSrc: /audio/hr/medimurska_popevka_dira_svako_srce.mp3
             grammarTags: []
-            options:
-              - text: Međimurska popevka dira svako srce.
-                correct: true
-                audioSrc: /audio/hr/medimurska_popevka_dira_svako_srce.mp3
-              - text: Jesen boji lišće u zlatnu boju.
-                correct: false
-                audioSrc: /audio/hr/jesen_boji_lisce_u_zlatnu_boju.mp3
-              - text: Ljudi pjevaju uz zvuke tamburice.
-                correct: false
-                audioSrc: /audio/hr/ljudi_pjevaju_uz_zvuke_tamburice.mp3
-              - text: Sjever Hrvatske ponosi se tradicijom.
-                correct: false
-                audioSrc: /audio/hr/sjever_hrvatske_ponosi_se_tradicijom.mp3
           - order: 2
             legacyId: 927
             type: ASSIST
@@ -1618,33 +1620,35 @@ units:
               - text: Jesen boji lišće u zlatnu boju.
                 correct: true
                 audioSrc: /audio/hr/jesen_boji_lisce_u_zlatnu_boju.mp3
+              - text: Jučer jesen boji lišće u zlatnu boju.
+                correct: false
+                audioSrc: /audio/hr/jucer_jesen_boji_lisce_u_zlatnu_boju.mp3
+              - text: Sutra jesen boji lišće u zlatnu boju.
+                correct: false
+                audioSrc: /audio/hr/sutra_jesen_boji_lisce_u_zlatnu_boju.mp3
               - text: Međimurska popevka dira svako srce.
                 correct: false
                 audioSrc: /audio/hr/medimurska_popevka_dira_svako_srce.mp3
-              - text: Ljudi pjevaju uz zvuke tamburice.
-                correct: false
-                audioSrc: /audio/hr/ljudi_pjevaju_uz_zvuke_tamburice.mp3
-              - text: Sjever Hrvatske ponosi se tradicijom.
-                correct: false
-                audioSrc: /audio/hr/sjever_hrvatske_ponosi_se_tradicijom.mp3
           - order: 3
             legacyId: 928
             type: ASSIST
-            prompt: 'Select the correct translation: "People sing to the sounds of the tamburica."'
-            grammarTags: []
+            prompt: 'Translate: "We would gladly visit the vineyards of Međimurje."'
+            grammarTags:
+              - conditional
+              - locative
             options:
-              - text: Ljudi pjevaju uz zvuke tamburice.
+              - text: Rado bismo posjetili vinograde u Međimurju.
                 correct: true
-                audioSrc: /audio/hr/ljudi_pjevaju_uz_zvuke_tamburice.mp3
-              - text: Međimurska popevka dira svako srce.
+                audioSrc: /audio/hr/rado_bismo_posjetili_vinograde_u_medimurju.mp3
+              - text: Jučer smo posjetili vinograde u Međimurju.
                 correct: false
-                audioSrc: /audio/hr/medimurska_popevka_dira_svako_srce.mp3
-              - text: Jesen boji lišće u zlatnu boju.
+                audioSrc: /audio/hr/jucer_smo_posjetili_vinograde_u_medimurju.mp3
+              - text: Sutra ćemo posjetiti vinograde u Međimurju.
                 correct: false
-                audioSrc: /audio/hr/jesen_boji_lisce_u_zlatnu_boju.mp3
-              - text: Sjever Hrvatske ponosi se tradicijom.
+                audioSrc: /audio/hr/sutra_cemo_posjetiti_vinograde_u_medimurju.mp3
+              - text: Rado bismo slušali tradicionalnu međimursku popevku.
                 correct: false
-                audioSrc: /audio/hr/sjever_hrvatske_ponosi_se_tradicijom.mp3
+                audioSrc: /audio/hr/rado_bismo_slusali_tradicionalnu_medimursku_popevku.mp3
           - order: 4
             legacyId: 929
             type: ASSIST

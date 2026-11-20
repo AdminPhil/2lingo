@@ -124,25 +124,29 @@ units:
           - order: 1
             legacyId: 934
             type: ASSIST
-            prompt: 'Select the correct translation: "The high summit"'
-            grammarTags: []
+            prompt: 'Translate: "We reached the high peak where the Adriatic shines."'
+            grammarTags:
+              - perfekt
+              - accusative_motion
+              - subordinate_koji
             options:
-              - text: Visoki vrh
+              - text: Stigli smo na visoki vrh odakle se vidi Jadran.
                 correct: true
-                audioSrc: /audio/hr/visoki_vrh.mp3
-              - text: Žuta degenija
+                audioSrc: /audio/hr/stigli_smo_na_visoki_vrh_odakle_se_vidi_jadran.mp3
+              - text: Stižemo na visoki vrh odakle se vidi Jadran.
                 correct: false
-                audioSrc: /audio/hr/zuta_degenija.mp3
-              - text: Kameni greben
+                audioSrc: /audio/hr/stizemo_na_visoki_vrh_odakle_se_vidi_jadran.mp3
+              - text: Stigli smo na visokom vrhu prije zalaska sunca.
                 correct: false
-                audioSrc: /audio/hr/kameni_greben.mp3
-              - text: Snažna bura
+                audioSrc: /audio/hr/stigli_smo_na_visokom_vrhu_prije_zalaska_sunca.mp3
+              - text: Stići ćemo na visoki vrh ako hodamo polako.
                 correct: false
-                audioSrc: /audio/hr/snazna_bura.mp3
+                audioSrc: /audio/hr/stici_cemo_na_visoki_vrh_ako_hodamo_polako.mp3
           - order: 2
             legacyId: 935
-            type: ASSIST
-            prompt: 'Select the correct translation: "Velebit preserves rare plants."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/velebit_cuva_rijetko_bilje.mp3
             grammarTags: []
             options:
               - text: Velebit čuva rijetko bilje.
@@ -159,8 +163,9 @@ units:
                 audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
           - order: 3
             legacyId: 936
-            type: ASSIST
-            prompt: 'Select the correct translation: "Yellow degenia grows on the rocks."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/zuta_degenija_raste_na_stijenama.mp3
             grammarTags: []
             options:
               - text: Žuta degenija raste na stijenama.
@@ -200,22 +205,20 @@ units:
         challenges:
           - order: 1
             legacyId: 938
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Cold bora wind blows from the mountain."'
+            targetSentence: Hladna bura puše s planine.
+            acceptedAnswers:
+              - Hladna bura puše s planine
+            wordBank:
+              - Hladna
+              - bura
+              - planine
+              - s
+              - puše
+              - nije
+            audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
             grammarTags: []
-            options:
-              - text: Hladna bura puše s planine.
-                correct: true
-                audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
-              - text: Snijeg prekriva najviše vrhove.
-                correct: false
-                audioSrc: /audio/hr/snijeg_prekriva_najvise_vrhove.mp3
-              - text: Premužićeva staza vodi kroz krš.
-                correct: false
-                audioSrc: /audio/hr/premuziceva_staza_vodi_kroz_krs.mp3
-              - text: S vrha se vide jadranski otoci.
-                correct: false
-                audioSrc: /audio/hr/s_vrha_se_vide_jadranski_otoci.mp3
           - order: 2
             legacyId: 939
             type: ASSIST
@@ -225,15 +228,15 @@ units:
               - text: Snijeg prekriva najviše vrhove.
                 correct: true
                 audioSrc: /audio/hr/snijeg_prekriva_najvise_vrhove.mp3
+              - text: Jučer snijeg prekriva najviše vrhove.
+                correct: false
+                audioSrc: /audio/hr/jucer_snijeg_prekriva_najvise_vrhove.mp3
+              - text: Sutra snijeg prekriva najviše vrhove.
+                correct: false
+                audioSrc: /audio/hr/sutra_snijeg_prekriva_najvise_vrhove.mp3
               - text: Hladna bura puše s planine.
                 correct: false
                 audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
-              - text: Premužićeva staza vodi kroz krš.
-                correct: false
-                audioSrc: /audio/hr/premuziceva_staza_vodi_kroz_krs.mp3
-              - text: S vrha se vide jadranski otoci.
-                correct: false
-                audioSrc: /audio/hr/s_vrha_se_vide_jadranski_otoci.mp3
           - order: 3
             legacyId: 940
             type: ASSIST
@@ -243,15 +246,15 @@ units:
               - text: Premužićeva staza vodi kroz krš.
                 correct: true
                 audioSrc: /audio/hr/premuziceva_staza_vodi_kroz_krs.mp3
+              - text: Premužićeva staza ne vodi kroz krš.
+                correct: false
+                audioSrc: /audio/hr/premuziceva_staza_ne_vodi_kroz_krs.mp3
+              - text: Jučer premužićeva staza vodi kroz krš.
+                correct: false
+                audioSrc: /audio/hr/jucer_premuziceva_staza_vodi_kroz_krs.mp3
               - text: Snijeg prekriva najviše vrhove.
                 correct: false
                 audioSrc: /audio/hr/snijeg_prekriva_najvise_vrhove.mp3
-              - text: Hladna bura puše s planine.
-                correct: false
-                audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
-              - text: S vrha se vide jadranski otoci.
-                correct: false
-                audioSrc: /audio/hr/s_vrha_se_vide_jadranski_otoci.mp3
           - order: 4
             legacyId: 941
             type: ASSIST
@@ -261,15 +264,15 @@ units:
               - text: S vrha se vide jadranski otoci.
                 correct: true
                 audioSrc: /audio/hr/s_vrha_se_vide_jadranski_otoci.mp3
+              - text: Jučer s vrha se vide jadranski otoci.
+                correct: false
+                audioSrc: /audio/hr/jucer_s_vrha_se_vide_jadranski_otoci.mp3
+              - text: Sutra s vrha se vide jadranski otoci.
+                correct: false
+                audioSrc: /audio/hr/sutra_s_vrha_se_vide_jadranski_otoci.mp3
               - text: Premužićeva staza vodi kroz krš.
                 correct: false
                 audioSrc: /audio/hr/premuziceva_staza_vodi_kroz_krs.mp3
-              - text: Snijeg prekriva najviše vrhove.
-                correct: false
-                audioSrc: /audio/hr/snijeg_prekriva_najvise_vrhove.mp3
-              - text: Hladna bura puše s planine.
-                correct: false
-                audioSrc: /audio/hr/hladna_bura_puse_s_planine.mp3
       - order: 4
         legacyId: 224
         kind: BOSS_CAPSTONE
@@ -277,22 +280,20 @@ units:
         challenges:
           - order: 1
             legacyId: 942
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Alpine wind brings clean air."'
+            targetSentence: Alpski vjetar donosi čist zrak.
+            acceptedAnswers:
+              - Alpski vjetar donosi čist zrak
+            wordBank:
+              - zrak
+              - nije
+              - Alpski
+              - vjetar
+              - donosi
+              - čist
+            audioSrc: /audio/hr/alpski_vjetar_donosi_cist_zrak.mp3
             grammarTags: []
-            options:
-              - text: Alpski vjetar donosi čist zrak.
-                correct: true
-                audioSrc: /audio/hr/alpski_vjetar_donosi_cist_zrak.mp3
-              - text: Botanički vrt leži pod vrhom.
-                correct: false
-                audioSrc: /audio/hr/botanicki_vrt_lezi_pod_vrhom.mp3
-              - text: Bijeli kamen blista na suncu.
-                correct: false
-                audioSrc: /audio/hr/bijeli_kamen_blista_na_suncu.mp3
-              - text: Nacionalni park štiti Velebit.
-                correct: false
-                audioSrc: /audio/hr/nacionalni_park_stiti_velebit.mp3
           - order: 2
             legacyId: 943
             type: ASSIST
@@ -302,33 +303,36 @@ units:
               - text: Botanički vrt leži pod vrhom.
                 correct: true
                 audioSrc: /audio/hr/botanicki_vrt_lezi_pod_vrhom.mp3
+              - text: Jučer botanički vrt leži pod vrhom.
+                correct: false
+                audioSrc: /audio/hr/jucer_botanicki_vrt_lezi_pod_vrhom.mp3
+              - text: Sutra botanički vrt leži pod vrhom.
+                correct: false
+                audioSrc: /audio/hr/sutra_botanicki_vrt_lezi_pod_vrhom.mp3
               - text: Alpski vjetar donosi čist zrak.
                 correct: false
                 audioSrc: /audio/hr/alpski_vjetar_donosi_cist_zrak.mp3
-              - text: Bijeli kamen blista na suncu.
-                correct: false
-                audioSrc: /audio/hr/bijeli_kamen_blista_na_suncu.mp3
-              - text: Nacionalni park štiti Velebit.
-                correct: false
-                audioSrc: /audio/hr/nacionalni_park_stiti_velebit.mp3
           - order: 3
             legacyId: 944
             type: ASSIST
-            prompt: 'Select the correct translation: "White stone gleams in the sun."'
-            grammarTags: []
+            prompt: 'Translate: "Next summer we will hike along Velebit."'
+            grammarTags:
+              - futur_1
+              - genitive
+              - locative
             options:
-              - text: Bijeli kamen blista na suncu.
+              - text: Sljedećeg ljeta planinarit ćemo po Velebitu.
                 correct: true
-                audioSrc: /audio/hr/bijeli_kamen_blista_na_suncu.mp3
-              - text: Alpski vjetar donosi čist zrak.
+                audioSrc: /audio/hr/sljedeceg_ljeta_planinarit_cemo_po_velebitu.mp3
+              - text: Prošlog ljeta planinarili smo po Velebitu.
                 correct: false
-                audioSrc: /audio/hr/alpski_vjetar_donosi_cist_zrak.mp3
-              - text: Botanički vrt leži pod vrhom.
+                audioSrc: /audio/hr/proslog_ljeta_planinarili_smo_po_velebitu.mp3
+              - text: Sljedećeg ljeta planinarit ćemo u gradu.
                 correct: false
-                audioSrc: /audio/hr/botanicki_vrt_lezi_pod_vrhom.mp3
-              - text: Nacionalni park štiti Velebit.
+                audioSrc: /audio/hr/sljedeceg_ljeta_planinarit_cemo_u_gradu.mp3
+              - text: Danas planinarimo prema visokom vrhu.
                 correct: false
-                audioSrc: /audio/hr/nacionalni_park_stiti_velebit.mp3
+                audioSrc: /audio/hr/danas_planinarimo_prema_visokom_vrhu.mp3
           - order: 4
             legacyId: 945
             type: ASSIST
@@ -338,15 +342,15 @@ units:
               - text: Večer spušta tišinu na planinu.
                 correct: true
                 audioSrc: /audio/hr/vecer_spusta_tisinu_na_planinu.mp3
+              - text: Jučer večer spušta tišinu na planinu.
+                correct: false
+                audioSrc: /audio/hr/jucer_vecer_spusta_tisinu_na_planinu.mp3
+              - text: Sutra večer spušta tišinu na planinu.
+                correct: false
+                audioSrc: /audio/hr/sutra_vecer_spusta_tisinu_na_planinu.mp3
               - text: Alpski vjetar donosi čist zrak.
                 correct: false
                 audioSrc: /audio/hr/alpski_vjetar_donosi_cist_zrak.mp3
-              - text: Botanički vrt leži pod vrhom.
-                correct: false
-                audioSrc: /audio/hr/botanicki_vrt_lezi_pod_vrhom.mp3
-              - text: Nacionalni park štiti Velebit.
-                correct: false
-                audioSrc: /audio/hr/nacionalni_park_stiti_velebit.mp3
   - order: 57
     legacyId: 57
     title: Unit 57
@@ -453,25 +457,28 @@ units:
           - order: 1
             legacyId: 950
             type: ASSIST
-            prompt: 'Select the correct translation: "The brave climber"'
-            grammarTags: []
+            prompt: 'Translate: "The brave climber checked his rope before ascending."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Hrabri penjač
+              - text: Hrabri penjač je provjerio čvrsto uže prije uspona.
                 correct: true
-                audioSrc: /audio/hr/hrabri_penjac.mp3
-              - text: Čvrsto uže
+                audioSrc: /audio/hr/hrabri_penjac_je_provjerio_cvrsto_uze_prije_uspona.mp3
+              - text: Hrabri penjač provjerava čvrsto uže prije uspona.
                 correct: false
-                audioSrc: /audio/hr/cvrsto_uze.mp3
-              - text: Duboka špilja
+                audioSrc: /audio/hr/hrabri_penjac_provjerava_cvrsto_uze_prije_uspona.mp3
+              - text: Hrabri penjač će se popeti uz strmu liticu.
                 correct: false
-                audioSrc: /audio/hr/duboka_spilja.mp3
-              - text: Stara bukva
+                audioSrc: /audio/hr/hrabri_penjac_ce_se_popeti_uz_strmu_liticu.mp3
+              - text: Hrabri penjač je istražio hladnu špilju u kanjonu.
                 correct: false
-                audioSrc: /audio/hr/stara_bukva.mp3
+                audioSrc: /audio/hr/hrabri_penjac_je_istrazio_hladnu_spilju_u_kanjonu.mp3
           - order: 2
             legacyId: 951
-            type: ASSIST
-            prompt: 'Select the correct translation: "The climber ascends the cliff."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/penjac_se_uspinje_uz_liticu.mp3
             grammarTags: []
             options:
               - text: Penjač se uspinje uz liticu.
@@ -488,8 +495,9 @@ units:
                 audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
           - order: 3
             legacyId: 952
-            type: ASSIST
-            prompt: 'Select the correct translation: "A sturdy rope secures every step."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/cvrsto_uze_osigurava_svaki_korak.mp3
             grammarTags: []
             options:
               - text: Čvrsto uže osigurava svaki korak.
@@ -529,22 +537,20 @@ units:
         challenges:
           - order: 1
             legacyId: 954
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Old beech trees form a dense forest."'
+            targetSentence: Stare bukve tvore gustu šumu.
+            acceptedAnswers:
+              - Stare bukve tvore gustu šumu
+            wordBank:
+              - šumu
+              - bukve
+              - Stare
+              - nije
+              - tvore
+              - gustu
+            audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
             grammarTags: []
-            options:
-              - text: Stare bukve tvore gustu šumu.
-                correct: true
-                audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
-              - text: Kanjon Velike Paklenice je strm.
-                correct: false
-                audioSrc: /audio/hr/kanjon_velike_paklenice_je_strm.mp3
-              - text: Penjači dolaze iz cijelog svijeta.
-                correct: false
-                audioSrc: /audio/hr/penjaci_dolaze_iz_cijelog_svijeta.mp3
-              - text: Hlad u špilji osvježava izletnike.
-                correct: false
-                audioSrc: /audio/hr/hlad_u_spilji_osvjezava_izletnike.mp3
           - order: 2
             legacyId: 955
             type: ASSIST
@@ -554,15 +560,15 @@ units:
               - text: Kanjon Velike Paklenice je strm.
                 correct: true
                 audioSrc: /audio/hr/kanjon_velike_paklenice_je_strm.mp3
+              - text: Kanjon Velike Paklenice nije strm.
+                correct: false
+                audioSrc: /audio/hr/kanjon_velike_paklenice_nije_strm.mp3
+              - text: Kanjon male Paklenice je strm.
+                correct: false
+                audioSrc: /audio/hr/kanjon_male_paklenice_je_strm.mp3
               - text: Stare bukve tvore gustu šumu.
                 correct: false
                 audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
-              - text: Penjači dolaze iz cijelog svijeta.
-                correct: false
-                audioSrc: /audio/hr/penjaci_dolaze_iz_cijelog_svijeta.mp3
-              - text: Hlad u špilji osvježava izletnike.
-                correct: false
-                audioSrc: /audio/hr/hlad_u_spilji_osvjezava_izletnike.mp3
           - order: 3
             legacyId: 956
             type: ASSIST
@@ -572,15 +578,15 @@ units:
               - text: Penjači dolaze iz cijelog svijeta.
                 correct: true
                 audioSrc: /audio/hr/penjaci_dolaze_iz_cijelog_svijeta.mp3
+              - text: Jučer penjači dolaze iz cijelog svijeta.
+                correct: false
+                audioSrc: /audio/hr/jucer_penjaci_dolaze_iz_cijelog_svijeta.mp3
+              - text: Sutra penjači dolaze iz cijelog svijeta.
+                correct: false
+                audioSrc: /audio/hr/sutra_penjaci_dolaze_iz_cijelog_svijeta.mp3
               - text: Kanjon Velike Paklenice je strm.
                 correct: false
                 audioSrc: /audio/hr/kanjon_velike_paklenice_je_strm.mp3
-              - text: Stare bukve tvore gustu šumu.
-                correct: false
-                audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
-              - text: Hlad u špilji osvježava izletnike.
-                correct: false
-                audioSrc: /audio/hr/hlad_u_spilji_osvjezava_izletnike.mp3
           - order: 4
             legacyId: 957
             type: ASSIST
@@ -590,15 +596,15 @@ units:
               - text: Hlad u špilji osvježava izletnike.
                 correct: true
                 audioSrc: /audio/hr/hlad_u_spilji_osvjezava_izletnike.mp3
+              - text: Jučer hlad u špilji osvježava izletnike.
+                correct: false
+                audioSrc: /audio/hr/jucer_hlad_u_spilji_osvjezava_izletnike.mp3
+              - text: Sutra hlad u špilji osvježava izletnike.
+                correct: false
+                audioSrc: /audio/hr/sutra_hlad_u_spilji_osvjezava_izletnike.mp3
               - text: Kanjon Velike Paklenice je strm.
                 correct: false
                 audioSrc: /audio/hr/kanjon_velike_paklenice_je_strm.mp3
-              - text: Penjači dolaze iz cijelog svijeta.
-                correct: false
-                audioSrc: /audio/hr/penjaci_dolaze_iz_cijelog_svijeta.mp3
-              - text: Stare bukve tvore gustu šumu.
-                correct: false
-                audioSrc: /audio/hr/stare_bukve_tvore_gustu_sumu.mp3
       - order: 4
         legacyId: 228
         kind: BOSS_CAPSTONE
@@ -606,22 +612,20 @@ units:
         challenges:
           - order: 1
             legacyId: 958
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Clear water flows along the bottom of the gorge."'
+            targetSentence: Bistra voda teče dnom klanca.
+            acceptedAnswers:
+              - Bistra voda teče dnom klanca
+            wordBank:
+              - Bistra
+              - klanca
+              - dnom
+              - nije
+              - teče
+              - voda
+            audioSrc: /audio/hr/bistra_voda_tece_dnom_klanca.mp3
             grammarTags: []
-            options:
-              - text: Bistra voda teče dnom klanca.
-                correct: true
-                audioSrc: /audio/hr/bistra_voda_tece_dnom_klanca.mp3
-              - text: Sokol kruži iznad visoke stijene.
-                correct: false
-                audioSrc: /audio/hr/sokol_kruzi_iznad_visoke_stijene.mp3
-              - text: Staza prolazi kroz sjenovitu šumu.
-                correct: false
-                audioSrc: /audio/hr/staza_prolazi_kroz_sjenovitu_sumu.mp3
-              - text: Planinarski dom nudi topli čaj.
-                correct: false
-                audioSrc: /audio/hr/planinarski_dom_nudi_topli_caj.mp3
           - order: 2
             legacyId: 959
             type: ASSIST
@@ -631,15 +635,15 @@ units:
               - text: Sokol kruži iznad visoke stijene.
                 correct: true
                 audioSrc: /audio/hr/sokol_kruzi_iznad_visoke_stijene.mp3
+              - text: Sokol kruži iznad niske stijene.
+                correct: false
+                audioSrc: /audio/hr/sokol_kruzi_iznad_niske_stijene.mp3
+              - text: Jučer sokol kruži iznad visoke stijene.
+                correct: false
+                audioSrc: /audio/hr/jucer_sokol_kruzi_iznad_visoke_stijene.mp3
               - text: Bistra voda teče dnom klanca.
                 correct: false
                 audioSrc: /audio/hr/bistra_voda_tece_dnom_klanca.mp3
-              - text: Staza prolazi kroz sjenovitu šumu.
-                correct: false
-                audioSrc: /audio/hr/staza_prolazi_kroz_sjenovitu_sumu.mp3
-              - text: Planinarski dom nudi topli čaj.
-                correct: false
-                audioSrc: /audio/hr/planinarski_dom_nudi_topli_caj.mp3
           - order: 3
             legacyId: 960
             type: ASSIST
@@ -649,15 +653,15 @@ units:
               - text: Planinarski dom nudi topli čaj.
                 correct: true
                 audioSrc: /audio/hr/planinarski_dom_nudi_topli_caj.mp3
+              - text: Planinarski dom nudi hladni čaj.
+                correct: false
+                audioSrc: /audio/hr/planinarski_dom_nudi_hladni_caj.mp3
+              - text: Jučer planinarski dom nudi topli čaj.
+                correct: false
+                audioSrc: /audio/hr/jucer_planinarski_dom_nudi_topli_caj.mp3
               - text: Bistra voda teče dnom klanca.
                 correct: false
                 audioSrc: /audio/hr/bistra_voda_tece_dnom_klanca.mp3
-              - text: Sokol kruži iznad visoke stijene.
-                correct: false
-                audioSrc: /audio/hr/sokol_kruzi_iznad_visoke_stijene.mp3
-              - text: Staza prolazi kroz sjenovitu šumu.
-                correct: false
-                audioSrc: /audio/hr/staza_prolazi_kroz_sjenovitu_sumu.mp3
           - order: 4
             legacyId: 961
             type: ASSIST
@@ -667,15 +671,15 @@ units:
               - text: Paklenica spaja planinu i more.
                 correct: true
                 audioSrc: /audio/hr/paklenica_spaja_planinu_i_more.mp3
+              - text: Jučer paklenica spaja planinu i more.
+                correct: false
+                audioSrc: /audio/hr/jucer_paklenica_spaja_planinu_i_more.mp3
+              - text: Sutra paklenica spaja planinu i more.
+                correct: false
+                audioSrc: /audio/hr/sutra_paklenica_spaja_planinu_i_more.mp3
               - text: Bistra voda teče dnom klanca.
                 correct: false
                 audioSrc: /audio/hr/bistra_voda_tece_dnom_klanca.mp3
-              - text: Sokol kruži iznad visoke stijene.
-                correct: false
-                audioSrc: /audio/hr/sokol_kruzi_iznad_visoke_stijene.mp3
-              - text: Planinarski dom nudi topli čaj.
-                correct: false
-                audioSrc: /audio/hr/planinarski_dom_nudi_topli_caj.mp3
   - order: 58
     legacyId: 58
     title: Unit 58
@@ -782,25 +786,28 @@ units:
           - order: 1
             legacyId: 966
             type: ASSIST
-            prompt: 'Select the correct translation: "The little bear cub"'
-            grammarTags: []
+            prompt: 'Translate: "We would love to see the little bear cub in Kuterevo."'
+            grammarTags:
+              - conditional
+              - locative
             options:
-              - text: Mali medvjedić
+              - text: Rado bismo vidjeli malog medvjedića u utočištu Kuterevo.
                 correct: true
-                audioSrc: /audio/hr/mali_medvjedic.mp3
-              - text: Šumsko utočište
+                audioSrc: /audio/hr/rado_bismo_vidjeli_malog_medvjedica_u_utocistu_kuterevo.mp3
+              - text: Vidjeli smo malog medvjedića u utočištu Kuterevo.
                 correct: false
-                audioSrc: /audio/hr/sumsko_utociste.mp3
-              - text: Brzi ris
+                audioSrc: /audio/hr/vidjeli_smo_malog_medvjedica_u_utocistu_kuterevo.mp3
+              - text: Vidjet ćemo malog medvjedića kada dođemo u Liku.
                 correct: false
-                audioSrc: /audio/hr/brzi_ris.mp3
-              - text: Noćna sova
+                audioSrc: /audio/hr/vidjet_cemo_malog_medvjedica_kada_dodemo_u_liku.mp3
+              - text: Rado bismo šetali tihom bukovom šumom na Velebitu.
                 correct: false
-                audioSrc: /audio/hr/nocna_sova.mp3
+                audioSrc: /audio/hr/rado_bismo_setali_tihom_bukovom_sumom_na_velebitu.mp3
           - order: 2
             legacyId: 967
-            type: ASSIST
-            prompt: 'Select the correct translation: "Bear cubs play in Kuterevo."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medvjedici_se_igraju_u_kuterevu.mp3
             grammarTags: []
             options:
               - text: Medvjedići se igraju u Kuterevu.
@@ -817,8 +824,9 @@ units:
                 audioSrc: /audio/hr/sova_gleda_s_visoke_grane.mp3
           - order: 3
             legacyId: 968
-            type: ASSIST
-            prompt: 'Select the correct translation: "The sanctuary helps young bears."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/utociste_pomaze_mladim_medvjedima.mp3
             grammarTags: []
             options:
               - text: Utočište pomaže mladim medvjedima.
@@ -858,22 +866,20 @@ units:
         challenges:
           - order: 1
             legacyId: 970
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Volunteers care for forest animals."'
+            targetSentence: Volonteri brinu o šumskim životinjama.
+            acceptedAnswers:
+              - Volonteri brinu o šumskim životinjama
+            wordBank:
+              - Volonteri
+              - životinjama
+              - nije
+              - šumskim
+              - o
+              - brinu
+            audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
             grammarTags: []
-            options:
-              - text: Volonteri brinu o šumskim životinjama.
-                correct: true
-                audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
-              - text: Mladi medvjedić traži šumsko voće.
-                correct: false
-                audioSrc: /audio/hr/mladi_medvjedic_trazi_sumsko_voce.mp3
-              - text: Drvene ograde okružuju velik prostor.
-                correct: false
-                audioSrc: /audio/hr/drvene_ograde_okruzuju_veliki_prostor.mp3
-              - text: Posjetitelji uče poštovati divljinu.
-                correct: false
-                audioSrc: /audio/hr/posjetitelji_uce_postovati_divljinu.mp3
           - order: 2
             legacyId: 971
             type: ASSIST
@@ -883,15 +889,15 @@ units:
               - text: Mladi medvjedić traži šumsko voće.
                 correct: true
                 audioSrc: /audio/hr/mladi_medvjedic_trazi_sumsko_voce.mp3
+              - text: Jučer mladi medvjedić traži šumsko voće.
+                correct: false
+                audioSrc: /audio/hr/jucer_mladi_medvjedic_trazi_sumsko_voce.mp3
+              - text: Sutra mladi medvjedić traži šumsko voće.
+                correct: false
+                audioSrc: /audio/hr/sutra_mladi_medvjedic_trazi_sumsko_voce.mp3
               - text: Volonteri brinu o šumskim životinjama.
                 correct: false
                 audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
-              - text: Drvene ograde okružuju velik prostor.
-                correct: false
-                audioSrc: /audio/hr/drvene_ograde_okruzuju_veliki_prostor.mp3
-              - text: Posjetitelji uče poštovati divljinu.
-                correct: false
-                audioSrc: /audio/hr/posjetitelji_uce_postovati_divljinu.mp3
           - order: 3
             legacyId: 972
             type: ASSIST
@@ -901,15 +907,15 @@ units:
               - text: Drvene ograde okružuju velik prostor.
                 correct: true
                 audioSrc: /audio/hr/drvene_ograde_okruzuju_veliki_prostor.mp3
+              - text: Drvene ograde ne okružuju velik prostor.
+                correct: false
+                audioSrc: /audio/hr/drvene_ograde_ne_okruzuju_velik_prostor.mp3
+              - text: Jučer drvene ograde okružuju velik prostor.
+                correct: false
+                audioSrc: /audio/hr/jucer_drvene_ograde_okruzuju_velik_prostor.mp3
               - text: Volonteri brinu o šumskim životinjama.
                 correct: false
                 audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
-              - text: Mladi medvjedić traži šumsko voće.
-                correct: false
-                audioSrc: /audio/hr/mladi_medvjedic_trazi_sumsko_voce.mp3
-              - text: Posjetitelji uče poštovati divljinu.
-                correct: false
-                audioSrc: /audio/hr/posjetitelji_uce_postovati_divljinu.mp3
           - order: 4
             legacyId: 973
             type: ASSIST
@@ -919,15 +925,15 @@ units:
               - text: Posjetitelji uče poštovati divljinu.
                 correct: true
                 audioSrc: /audio/hr/posjetitelji_uce_postovati_divljinu.mp3
+              - text: Jučer posjetitelji uče poštovati divljinu.
+                correct: false
+                audioSrc: /audio/hr/jucer_posjetitelji_uce_postovati_divljinu.mp3
+              - text: Sutra posjetitelji uče poštovati divljinu.
+                correct: false
+                audioSrc: /audio/hr/sutra_posjetitelji_uce_postovati_divljinu.mp3
               - text: Volonteri brinu o šumskim životinjama.
                 correct: false
                 audioSrc: /audio/hr/volonteri_brinu_o_sumskim_zivotinjama.mp3
-              - text: Mladi medvjedić traži šumsko voće.
-                correct: false
-                audioSrc: /audio/hr/mladi_medvjedic_trazi_sumsko_voce.mp3
-              - text: Drvene ograde okružuju velik prostor.
-                correct: false
-                audioSrc: /audio/hr/drvene_ograde_okruzuju_veliki_prostor.mp3
       - order: 4
         legacyId: 232
         kind: BOSS_CAPSTONE
@@ -935,22 +941,20 @@ units:
         challenges:
           - order: 1
             legacyId: 974
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Dense firs protect the peace of the forest."'
+            targetSentence: Guste jele štite mir šume.
+            acceptedAnswers:
+              - Guste jele štite mir šume
+            wordBank:
+              - Guste
+              - mir
+              - šume
+              - jele
+              - štite
+              - nije
+            audioSrc: /audio/hr/guste_jele_stite_mir_sume.mp3
             grammarTags: []
-            options:
-              - text: Guste jele štite mir šume.
-                correct: true
-                audioSrc: /audio/hr/guste_jele_stite_mir_sume.mp3
-              - text: Jesen donosi obilje šumskih plodova.
-                correct: false
-                audioSrc: /audio/hr/jesen_donosi_obilje_sumskih_plodova.mp3
-              - text: Selo Kuterevo čuva prirodnu ravnotežu.
-                correct: false
-                audioSrc: /audio/hr/selo_kuterevo_cuva_prirodnu_ravnotezu.mp3
-              - text: Noću se čuje pjev šumskih ptica.
-                correct: false
-                audioSrc: /audio/hr/nocu_se_cuje_pjev_sumskih_ptica.mp3
           - order: 2
             legacyId: 975
             type: ASSIST
@@ -960,33 +964,35 @@ units:
               - text: Jesen donosi obilje šumskih plodova.
                 correct: true
                 audioSrc: /audio/hr/jesen_donosi_obilje_sumskih_plodova.mp3
+              - text: Jučer jesen donosi obilje šumskih plodova.
+                correct: false
+                audioSrc: /audio/hr/jucer_jesen_donosi_obilje_sumskih_plodova.mp3
+              - text: Sutra jesen donosi obilje šumskih plodova.
+                correct: false
+                audioSrc: /audio/hr/sutra_jesen_donosi_obilje_sumskih_plodova.mp3
               - text: Guste jele štite mir šume.
                 correct: false
                 audioSrc: /audio/hr/guste_jele_stite_mir_sume.mp3
-              - text: Selo Kuterevo čuva prirodnu ravnotežu.
-                correct: false
-                audioSrc: /audio/hr/selo_kuterevo_cuva_prirodnu_ravnotezu.mp3
-              - text: Noću se čuje pjev šumskih ptica.
-                correct: false
-                audioSrc: /audio/hr/nocu_se_cuje_pjev_sumskih_ptica.mp3
           - order: 3
             legacyId: 976
             type: ASSIST
-            prompt: 'Select the correct translation: "The village of Kuterevo preserves natural balance."'
-            grammarTags: []
+            prompt: 'Translate: "We walked quietly because we protected the peace of the forest."'
+            grammarTags:
+              - perfekt
+              - subordinate_jer
             options:
-              - text: Selo Kuterevo čuva prirodnu ravnotežu.
+              - text: Hodali smo tiho jer smo čuvali mir šume.
                 correct: true
-                audioSrc: /audio/hr/selo_kuterevo_cuva_prirodnu_ravnotezu.mp3
-              - text: Guste jele štite mir šume.
+                audioSrc: /audio/hr/hodali_smo_tiho_jer_smo_cuvali_mir_sume.mp3
+              - text: Hodamo tiho jer čuvamo mir šume.
                 correct: false
-                audioSrc: /audio/hr/guste_jele_stite_mir_sume.mp3
-              - text: Jesen donosi obilje šumskih plodova.
+                audioSrc: /audio/hr/hodamo_tiho_jer_cuvamo_mir_sume.mp3
+              - text: Hodat ćemo tiho kroz gustu bukovu šumu.
                 correct: false
-                audioSrc: /audio/hr/jesen_donosi_obilje_sumskih_plodova.mp3
-              - text: Noću se čuje pjev šumskih ptica.
+                audioSrc: /audio/hr/hodat_cemo_tiho_kroz_gustu_bukovu_sumu.mp3
+              - text: Stajali smo mirno dok je sova letjela.
                 correct: false
-                audioSrc: /audio/hr/nocu_se_cuje_pjev_sumskih_ptica.mp3
+                audioSrc: /audio/hr/stajali_smo_mirno_dok_je_sova_letjela.mp3
           - order: 4
             legacyId: 977
             type: ASSIST
@@ -996,15 +1002,15 @@ units:
               - text: Noću se čuje pjev šumskih ptica.
                 correct: true
                 audioSrc: /audio/hr/nocu_se_cuje_pjev_sumskih_ptica.mp3
+              - text: danju se čuje pjev šumskih ptica.
+                correct: false
+                audioSrc: /audio/hr/danju_se_cuje_pjev_sumskih_ptica.mp3
+              - text: Jučer noću se čuje pjev šumskih ptica.
+                correct: false
+                audioSrc: /audio/hr/jucer_nocu_se_cuje_pjev_sumskih_ptica.mp3
               - text: Guste jele štite mir šume.
                 correct: false
                 audioSrc: /audio/hr/guste_jele_stite_mir_sume.mp3
-              - text: Jesen donosi obilje šumskih plodova.
-                correct: false
-                audioSrc: /audio/hr/jesen_donosi_obilje_sumskih_plodova.mp3
-              - text: Selo Kuterevo čuva prirodnu ravnotežu.
-                correct: false
-                audioSrc: /audio/hr/selo_kuterevo_cuva_prirodnu_ravnotezu.mp3
   - order: 59
     legacyId: 59
     title: Unit 59
@@ -1111,25 +1117,28 @@ units:
           - order: 1
             legacyId: 982
             type: ASSIST
-            prompt: 'Select the correct translation: "The clear spring"'
-            grammarTags: []
+            prompt: 'Translate: "Cold water flows from the clear spring that feeds Gacka."'
+            grammarTags:
+              - genitive
+              - subordinate_koji
             options:
-              - text: Bistro vrilo
+              - text: Hladna voda izvire iz bistrog vrila koje hrani Gacku.
                 correct: true
-                audioSrc: /audio/hr/bistro_vrilo.mp3
-              - text: Riječna pastrva
+                audioSrc: /audio/hr/hladna_voda_izvire_iz_bistrog_vrila_koje_hrani_gacku.mp3
+              - text: Hladna voda je izvirala iz dubokog kamenog bunara.
                 correct: false
-                audioSrc: /audio/hr/rijecna_pastrva.mp3
-              - text: Hladni potok
+                audioSrc: /audio/hr/hladna_voda_je_izvirala_iz_dubokog_kamenog_bunara.mp3
+              - text: Hladna voda će teći ispod starog drvenog mostića.
                 correct: false
-                audioSrc: /audio/hr/hladni_potok.mp3
-              - text: Drveni mostić
+                audioSrc: /audio/hr/hladna_voda_ce_teci_ispod_starog_drvenog_mostica.mp3
+              - text: Brza pastrva pliva u bistroj i mirnoj rijeci.
                 correct: false
-                audioSrc: /audio/hr/drveni_mostic.mp3
+                audioSrc: /audio/hr/brza_pastrva_pliva_u_bistroj_i_mirnoj_rijeci.mp3
           - order: 2
             legacyId: 983
-            type: ASSIST
-            prompt: 'Select the correct translation: "Majerovo Vrilo springs from stone."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/majerovo_vrilo_izvire_iz_kamena.mp3
             grammarTags: []
             options:
               - text: Majerovo vrilo izvire iz kamena.
@@ -1146,8 +1155,9 @@ units:
                 audioSrc: /audio/hr/prelazimo_mali_drveni_mostic.mp3
           - order: 3
             legacyId: 984
-            type: ASSIST
-            prompt: 'Select the correct translation: "A trout swims in the clear Gacka."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/pastrva_pliva_u_bistroj_gacki.mp3
             grammarTags: []
             options:
               - text: Pastrva pliva u bistroj Gacki.
@@ -1187,22 +1197,20 @@ units:
         challenges:
           - order: 1
             legacyId: 986
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The water of the Gacka is exceptionally clean."'
+            targetSentence: Voda Gacke iznimno je čista.
+            acceptedAnswers:
+              - Voda Gacke iznimno je čista
+            wordBank:
+              - Voda
+              - Gacke
+              - čista
+              - je
+              - iznimno
+              - su
+            audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
             grammarTags: []
-            options:
-              - text: Voda Gacke iznimno je čista.
-                correct: true
-                audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
-              - text: Stare vodenice još uvijek melju.
-                correct: false
-                audioSrc: /audio/hr/stare_vodenice_jos_uvijek_melju.mp3
-              - text: Zelena trava okružuje modro jezerce.
-                correct: false
-                audioSrc: /audio/hr/zelena_trava_okruzuje_modro_jezerce.mp3
-              - text: Ribiči promatraju tihu površinu vode.
-                correct: false
-                audioSrc: /audio/hr/ribici_promatraju_tihu_povrsinu_vode.mp3
           - order: 2
             legacyId: 987
             type: ASSIST
@@ -1212,15 +1220,15 @@ units:
               - text: Stare vodenice još uvijek melju.
                 correct: true
                 audioSrc: /audio/hr/stare_vodenice_jos_uvijek_melju.mp3
+              - text: nove vodenice još uvijek melju.
+                correct: false
+                audioSrc: /audio/hr/nove_vodenice_jos_uvijek_melju.mp3
+              - text: Jučer stare vodenice još uvijek melju.
+                correct: false
+                audioSrc: /audio/hr/jucer_stare_vodenice_jos_uvijek_melju.mp3
               - text: Voda Gacke iznimno je čista.
                 correct: false
                 audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
-              - text: Zelena trava okružuje modro jezerce.
-                correct: false
-                audioSrc: /audio/hr/zelena_trava_okruzuje_modro_jezerce.mp3
-              - text: Ribiči promatraju tihu površinu vode.
-                correct: false
-                audioSrc: /audio/hr/ribici_promatraju_tihu_povrsinu_vode.mp3
           - order: 3
             legacyId: 988
             type: ASSIST
@@ -1230,15 +1238,15 @@ units:
               - text: Zelena trava okružuje modro jezerce.
                 correct: true
                 audioSrc: /audio/hr/zelena_trava_okruzuje_modro_jezerce.mp3
+              - text: plava trava okružuje modro jezerce.
+                correct: false
+                audioSrc: /audio/hr/plava_trava_okruzuje_modro_jezerce.mp3
+              - text: Jučer zelena trava okružuje modro jezerce.
+                correct: false
+                audioSrc: /audio/hr/jucer_zelena_trava_okruzuje_modro_jezerce.mp3
               - text: Voda Gacke iznimno je čista.
                 correct: false
                 audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
-              - text: Stare vodenice još uvijek melju.
-                correct: false
-                audioSrc: /audio/hr/stare_vodenice_jos_uvijek_melju.mp3
-              - text: Ribiči promatraju tihu površinu vode.
-                correct: false
-                audioSrc: /audio/hr/ribici_promatraju_tihu_povrsinu_vode.mp3
           - order: 4
             legacyId: 989
             type: ASSIST
@@ -1248,15 +1256,15 @@ units:
               - text: Ribiči promatraju tihu površinu vode.
                 correct: true
                 audioSrc: /audio/hr/ribici_promatraju_tihu_povrsinu_vode.mp3
+              - text: Ribiči promatraju glasnu površinu vode.
+                correct: false
+                audioSrc: /audio/hr/ribici_promatraju_glasnu_povrsinu_vode.mp3
+              - text: Jučer ribiči promatraju tihu površinu vode.
+                correct: false
+                audioSrc: /audio/hr/jucer_ribici_promatraju_tihu_povrsinu_vode.mp3
               - text: Voda Gacke iznimno je čista.
                 correct: false
                 audioSrc: /audio/hr/voda_gacke_iznimno_je_cista.mp3
-              - text: Stare vodenice još uvijek melju.
-                correct: false
-                audioSrc: /audio/hr/stare_vodenice_jos_uvijek_melju.mp3
-              - text: Zelena trava okružuje modro jezerce.
-                correct: false
-                audioSrc: /audio/hr/zelena_trava_okruzuje_modro_jezerce.mp3
       - order: 4
         legacyId: 236
         kind: BOSS_CAPSTONE
@@ -1264,22 +1272,20 @@ units:
         challenges:
           - order: 1
             legacyId: 990
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The transparent spring reflects the blue sky."'
+            targetSentence: Prozirni izvor odražava plavo nebo.
+            acceptedAnswers:
+              - Prozirni izvor odražava plavo nebo
+            wordBank:
+              - nebo
+              - nije
+              - Prozirni
+              - izvor
+              - odražava
+              - plavo
+            audioSrc: /audio/hr/prozirni_izvor_odrazava_plavo_nebo.mp3
             grammarTags: []
-            options:
-              - text: Prozirni izvor odražava plavo nebo.
-                correct: true
-                audioSrc: /audio/hr/prozirni_izvor_odrazava_plavo_nebo.mp3
-              - text: Gacka teče mirno kroz polje.
-                correct: false
-                audioSrc: /audio/hr/gacka_tece_mirno_kroz_polje.mp3
-              - text: Jutarnja svježina budi cijelu dolinu.
-                correct: false
-                audioSrc: /audio/hr/jutarnja_svjezina_budi_cijelu_dolinu.mp3
-              - text: Hladni potok spaja se s rijekom.
-                correct: false
-                audioSrc: /audio/hr/hladni_potok_spaja_se_s_rijekom.mp3
           - order: 2
             legacyId: 991
             type: ASSIST
@@ -1289,33 +1295,35 @@ units:
               - text: Gacka teče mirno kroz polje.
                 correct: true
                 audioSrc: /audio/hr/gacka_tece_mirno_kroz_polje.mp3
+              - text: Gacka ne teče mirno kroz polje.
+                correct: false
+                audioSrc: /audio/hr/gacka_ne_tece_mirno_kroz_polje.mp3
+              - text: Jučer gacka teče mirno kroz polje.
+                correct: false
+                audioSrc: /audio/hr/jucer_gacka_tece_mirno_kroz_polje.mp3
               - text: Prozirni izvor odražava plavo nebo.
                 correct: false
                 audioSrc: /audio/hr/prozirni_izvor_odrazava_plavo_nebo.mp3
-              - text: Jutarnja svježina budi cijelu dolinu.
-                correct: false
-                audioSrc: /audio/hr/jutarnja_svjezina_budi_cijelu_dolinu.mp3
-              - text: Hladni potok spaja se s rijekom.
-                correct: false
-                audioSrc: /audio/hr/hladni_potok_spaja_se_s_rijekom.mp3
           - order: 3
             legacyId: 992
             type: ASSIST
-            prompt: 'Select the correct translation: "The cold stream joins the river."'
-            grammarTags: []
+            prompt: 'Translate: "I would like to see the clear spring of the Gacka River."'
+            grammarTags:
+              - conditional
+              - genitive
             options:
-              - text: Hladni potok spaja se s rijekom.
+              - text: Volio bih vidjeti bistro vrilo rijeke Gacke.
                 correct: true
-                audioSrc: /audio/hr/hladni_potok_spaja_se_s_rijekom.mp3
-              - text: Prozirni izvor odražava plavo nebo.
+                audioSrc: /audio/hr/volio_bih_vidjeti_bistro_vrilo_rijeke_gacke.mp3
+              - text: Vidio sam bistro vrilo rijeke Gacke.
                 correct: false
-                audioSrc: /audio/hr/prozirni_izvor_odrazava_plavo_nebo.mp3
-              - text: Gacka teče mirno kroz polje.
+                audioSrc: /audio/hr/vidio_sam_bistro_vrilo_rijeke_gacke.mp3
+              - text: Vidjet ću bistro vrilo rijeke Gacke.
                 correct: false
-                audioSrc: /audio/hr/gacka_tece_mirno_kroz_polje.mp3
-              - text: Jutarnja svježina budi cijelu dolinu.
+                audioSrc: /audio/hr/vidjet_cu_bistro_vrilo_rijeke_gacke.mp3
+              - text: Volio bih prijeći mali drveni mostić.
                 correct: false
-                audioSrc: /audio/hr/jutarnja_svjezina_budi_cijelu_dolinu.mp3
+                audioSrc: /audio/hr/volio_bih_prijeci_mali_drveni_mostic.mp3
           - order: 4
             legacyId: 993
             type: ASSIST
@@ -1325,15 +1333,15 @@ units:
               - text: Jutarnja svježina budi cijelu dolinu.
                 correct: true
                 audioSrc: /audio/hr/jutarnja_svjezina_budi_cijelu_dolinu.mp3
+              - text: Jučer jutarnja svježina budi cijelu dolinu.
+                correct: false
+                audioSrc: /audio/hr/jucer_jutarnja_svjezina_budi_cijelu_dolinu.mp3
+              - text: Sutra jutarnja svježina budi cijelu dolinu.
+                correct: false
+                audioSrc: /audio/hr/sutra_jutarnja_svjezina_budi_cijelu_dolinu.mp3
               - text: Prozirni izvor odražava plavo nebo.
                 correct: false
                 audioSrc: /audio/hr/prozirni_izvor_odrazava_plavo_nebo.mp3
-              - text: Gacka teče mirno kroz polje.
-                correct: false
-                audioSrc: /audio/hr/gacka_tece_mirno_kroz_polje.mp3
-              - text: Hladni potok spaja se s rijekom.
-                correct: false
-                audioSrc: /audio/hr/hladni_potok_spaja_se_s_rijekom.mp3
   - order: 60
     legacyId: 60
     title: Unit 60
@@ -1440,25 +1448,30 @@ units:
           - order: 1
             legacyId: 998
             type: ASSIST
-            prompt: 'Select the correct translation: "The wooden cabin"'
-            grammarTags: []
+            prompt: 'Translate: "We will rest in a warm wooden cabin while snow falls."'
+            grammarTags:
+              - futur_1
+              - reflexive
+              - locative
+              - subordinate_dok
             options:
-              - text: Drvena koliba
+              - text: Odmarat ćemo se u toploj drvenoj kolibi dok pada snijeg.
                 correct: true
-                audioSrc: /audio/hr/drvena_koliba.mp3
-              - text: Lički krumpir
+                audioSrc: /audio/hr/odmarat_cemo_se_u_toploj_drvenoj_kolibi_dok_pada_snijeg.mp3
+              - text: Odmarali smo se u toploj drvenoj kolibi dok je padao snijeg.
                 correct: false
-                audioSrc: /audio/hr/licki_krumpir.mp3
-              - text: Svježi škripavac
+                audioSrc: /audio/hr/odmarali_smo_se_u_toploj_drvenoj_kolibi_dok_je_padao_snijeg.mp3
+              - text: Odmaramo se u toploj drvenoj kolibi pod visokim jelama.
                 correct: false
-                audioSrc: /audio/hr/svjezi_skripavac.mp3
-              - text: Topla vuna
+                audioSrc: /audio/hr/odmaramo_se_u_toploj_drvenoj_kolibi_pod_visokim_jelama.mp3
+              - text: Rado bismo kušali pečeni lički krumpir i svježi sir.
                 correct: false
-                audioSrc: /audio/hr/topla_vuna.mp3
+                audioSrc: /audio/hr/rado_bismo_kusali_peceni_licki_krumpir_i_svjezi_sir.mp3
           - order: 2
             legacyId: 999
-            type: ASSIST
-            prompt: 'Select the correct translation: "A wooden cabin stands beneath the firs."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/drvena_koliba_stoji_pod_jelama.mp3
             grammarTags: []
             options:
               - text: Drvena koliba stoji pod jelama.
@@ -1475,8 +1488,9 @@ units:
                 audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
           - order: 3
             legacyId: 1000
-            type: ASSIST
-            prompt: 'Select the correct translation: "Lika potatoes bake in the oven."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/licki_krumpir_pece_se_u_pecnici.mp3
             grammarTags: []
             options:
               - text: Lički krumpir peče se u pećnici.
@@ -1516,22 +1530,20 @@ units:
         challenges:
           - order: 1
             legacyId: 1002
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Grandmothers knit socks from wool."'
+            targetSentence: Bake pletu čarape od vune.
+            acceptedAnswers:
+              - Bake pletu čarape od vune
+            wordBank:
+              - vune
+              - pletu
+              - Bake
+              - nije
+              - čarape
+              - od
+            audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
             grammarTags: []
-            options:
-              - text: Bake pletu čarape od vune.
-                correct: true
-                audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
-              - text: Zima u Lici donosi dubok snijeg.
-                correct: false
-                audioSrc: /audio/hr/zima_u_lici_donosi_dubok_snijeg.mp3
-              - text: Tople peći griju planinske domove.
-                correct: false
-                audioSrc: /audio/hr/tople_peci_griju_planinske_domove.mp3
-              - text: Gorštaci čuvaju snagu i gostoljubivost.
-                correct: false
-                audioSrc: /audio/hr/gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
           - order: 2
             legacyId: 1003
             type: ASSIST
@@ -1541,15 +1553,15 @@ units:
               - text: Zima u Lici donosi dubok snijeg.
                 correct: true
                 audioSrc: /audio/hr/zima_u_lici_donosi_dubok_snijeg.mp3
+              - text: Jučer zima u Lici donosi dubok snijeg.
+                correct: false
+                audioSrc: /audio/hr/jucer_zima_u_lici_donosi_dubok_snijeg.mp3
+              - text: Sutra zima u Lici donosi dubok snijeg.
+                correct: false
+                audioSrc: /audio/hr/sutra_zima_u_lici_donosi_dubok_snijeg.mp3
               - text: Bake pletu čarape od vune.
                 correct: false
                 audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
-              - text: Tople peći griju planinske domove.
-                correct: false
-                audioSrc: /audio/hr/tople_peci_griju_planinske_domove.mp3
-              - text: Gorštaci čuvaju snagu i gostoljubivost.
-                correct: false
-                audioSrc: /audio/hr/gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
           - order: 3
             legacyId: 1004
             type: ASSIST
@@ -1559,15 +1571,15 @@ units:
               - text: Tople peći griju planinske domove.
                 correct: true
                 audioSrc: /audio/hr/tople_peci_griju_planinske_domove.mp3
+              - text: hladne peći griju planinske domove.
+                correct: false
+                audioSrc: /audio/hr/hladne_peci_griju_planinske_domove.mp3
+              - text: Jučer tople peći griju planinske domove.
+                correct: false
+                audioSrc: /audio/hr/jucer_tople_peci_griju_planinske_domove.mp3
               - text: Zima u Lici donosi dubok snijeg.
                 correct: false
                 audioSrc: /audio/hr/zima_u_lici_donosi_dubok_snijeg.mp3
-              - text: Bake pletu čarape od vune.
-                correct: false
-                audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
-              - text: Gorštaci čuvaju snagu i gostoljubivost.
-                correct: false
-                audioSrc: /audio/hr/gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
           - order: 4
             legacyId: 1005
             type: ASSIST
@@ -1577,15 +1589,15 @@ units:
               - text: Gorštaci čuvaju snagu i gostoljubivost.
                 correct: true
                 audioSrc: /audio/hr/gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
+              - text: Jučer gorštaci čuvaju snagu i gostoljubivost.
+                correct: false
+                audioSrc: /audio/hr/jucer_gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
+              - text: Sutra gorštaci čuvaju snagu i gostoljubivost.
+                correct: false
+                audioSrc: /audio/hr/sutra_gorstaci_cuvaju_snagu_i_gostoljubivost.mp3
               - text: Zima u Lici donosi dubok snijeg.
                 correct: false
                 audioSrc: /audio/hr/zima_u_lici_donosi_dubok_snijeg.mp3
-              - text: Tople peći griju planinske domove.
-                correct: false
-                audioSrc: /audio/hr/tople_peci_griju_planinske_domove.mp3
-              - text: Bake pletu čarape od vune.
-                correct: false
-                audioSrc: /audio/hr/bake_pletu_carape_od_vune.mp3
       - order: 4
         legacyId: 240
         kind: BOSS_CAPSTONE
@@ -1593,22 +1605,19 @@ units:
         challenges:
           - order: 1
             legacyId: 1006
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "Song echoes through the fields of Lika."'
+            targetSentence: Pjesma odjekuje ličkim poljima.
+            acceptedAnswers:
+              - Pjesma odjekuje ličkim poljima
+            wordBank:
+              - odjekuje
+              - ličkim
+              - poljima
+              - nije
+              - Pjesma
+            audioSrc: /audio/hr/pjesma_odjekuje_lickim_poljima.mp3
             grammarTags: []
-            options:
-              - text: Pjesma odjekuje ličkim poljima.
-                correct: true
-                audioSrc: /audio/hr/pjesma_odjekuje_lickim_poljima.mp3
-              - text: Svježi planinski zrak daje snagu.
-                correct: false
-                audioSrc: /audio/hr/svjezi_planinski_zrak_daje_snagu.mp3
-              - text: Domaća trpeza okuplja cijelu obitelj.
-                correct: false
-                audioSrc: /audio/hr/domaca_trpeza_okuplja_cijelu_obitelj.mp3
-              - text: Ponosni kraj spaja krš i šume.
-                correct: false
-                audioSrc: /audio/hr/ponosni_kraj_spaja_krs_i_sume.mp3
           - order: 2
             legacyId: 1007
             type: ASSIST
@@ -1618,15 +1627,15 @@ units:
               - text: Svježi planinski zrak daje snagu.
                 correct: true
                 audioSrc: /audio/hr/svjezi_planinski_zrak_daje_snagu.mp3
+              - text: Jučer svježi planinski zrak daje snagu.
+                correct: false
+                audioSrc: /audio/hr/jucer_svjezi_planinski_zrak_daje_snagu.mp3
+              - text: Sutra svježi planinski zrak daje snagu.
+                correct: false
+                audioSrc: /audio/hr/sutra_svjezi_planinski_zrak_daje_snagu.mp3
               - text: Pjesma odjekuje ličkim poljima.
                 correct: false
                 audioSrc: /audio/hr/pjesma_odjekuje_lickim_poljima.mp3
-              - text: Domaća trpeza okuplja cijelu obitelj.
-                correct: false
-                audioSrc: /audio/hr/domaca_trpeza_okuplja_cijelu_obitelj.mp3
-              - text: Ponosni kraj spaja krš i šume.
-                correct: false
-                audioSrc: /audio/hr/ponosni_kraj_spaja_krs_i_sume.mp3
           - order: 3
             legacyId: 1008
             type: ASSIST
@@ -1636,15 +1645,15 @@ units:
               - text: Domaća trpeza okuplja cijelu obitelj.
                 correct: true
                 audioSrc: /audio/hr/domaca_trpeza_okuplja_cijelu_obitelj.mp3
+              - text: Jučer domaća trpeza okuplja cijelu obitelj.
+                correct: false
+                audioSrc: /audio/hr/jucer_domaca_trpeza_okuplja_cijelu_obitelj.mp3
+              - text: Sutra domaća trpeza okuplja cijelu obitelj.
+                correct: false
+                audioSrc: /audio/hr/sutra_domaca_trpeza_okuplja_cijelu_obitelj.mp3
               - text: Pjesma odjekuje ličkim poljima.
                 correct: false
                 audioSrc: /audio/hr/pjesma_odjekuje_lickim_poljima.mp3
-              - text: Svježi planinski zrak daje snagu.
-                correct: false
-                audioSrc: /audio/hr/svjezi_planinski_zrak_daje_snagu.mp3
-              - text: Ponosni kraj spaja krš i šume.
-                correct: false
-                audioSrc: /audio/hr/ponosni_kraj_spaja_krs_i_sume.mp3
           - order: 4
             legacyId: 1009
             type: ASSIST

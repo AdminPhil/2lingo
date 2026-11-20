@@ -123,8 +123,9 @@ units:
         challenges:
           - order: 1
             legacyId: 274
-            type: SELECT
-            prompt: Which one of these is "Teacher"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/uciteljica.mp3
             grammarTags: []
             options:
               - text: Učiteljica
@@ -141,8 +142,9 @@ units:
                 audioSrc: /audio/hr/sestra.mp3
           - order: 2
             legacyId: 275
-            type: SELECT
-            prompt: Which one of these is "Friend"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/prijatelj.mp3
             grammarTags: []
             options:
               - text: Prijatelj
@@ -200,22 +202,18 @@ units:
         challenges:
           - order: 1
             legacyId: 278
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: "\"Let's go to school\""
+            targetSentence: Idemo u školu
+            acceptedAnswers:
+              - Idemo u školu
+            wordBank:
+              - Idemo
+              - na
+              - školu
+              - u
+            audioSrc: /audio/hr/idemo_u_skolu.mp3
             grammarTags: []
-            options:
-              - text: Idemo u školu
-                correct: true
-                audioSrc: /audio/hr/idemo_u_skolu.mp3
-              - text: Idemo u park
-                correct: false
-                audioSrc: /audio/hr/idemo_u_park.mp3
-              - text: Idemo u sobu
-                correct: false
-                audioSrc: /audio/hr/idemo_u_sobu.mp3
-              - text: Idemo na more
-                correct: false
-                audioSrc: /audio/hr/idemo_na_more.mp3
           - order: 2
             legacyId: 279
             type: ASSIST
@@ -331,22 +329,18 @@ units:
                 audioSrc: /audio/hr/torba.mp3
           - order: 4
             legacyId: 285
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: "\"Let's go to school\""
+            targetSentence: Idemo u školu
+            acceptedAnswers:
+              - Idemo u školu
+            wordBank:
+              - u
+              - na
+              - Idemo
+              - školu
+            audioSrc: /audio/hr/idemo_u_skolu.mp3
             grammarTags: []
-            options:
-              - text: Idemo u školu
-                correct: true
-                audioSrc: /audio/hr/idemo_u_skolu.mp3
-              - text: Idemo u park
-                correct: false
-                audioSrc: /audio/hr/idemo_u_park.mp3
-              - text: Idemo u sobu
-                correct: false
-                audioSrc: /audio/hr/idemo_u_sobu.mp3
-              - text: Idemo na more
-                correct: false
-                audioSrc: /audio/hr/idemo_na_more.mp3
           - order: 5
             legacyId: 286
             type: ASSIST
@@ -488,8 +482,9 @@ units:
         challenges:
           - order: 1
             legacyId: 292
-            type: SELECT
-            prompt: Which one of these is "Bear"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/medvjed.mp3
             grammarTags: []
             options:
               - text: Medvjed
@@ -506,8 +501,9 @@ units:
                 audioSrc: /audio/hr/pas.mp3
           - order: 2
             legacyId: 293
-            type: SELECT
-            prompt: Which one of these is "Wolf"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vuk.mp3
             grammarTags: []
             options:
               - text: Vuk
@@ -565,22 +561,19 @@ units:
         challenges:
           - order: 1
             legacyId: 296
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Bear in the forest"'
+            targetSentence: Medvjed u šumi
+            acceptedAnswers:
+              - Medvjed u šumi
+            wordBank:
+              - na
+              - šumu
+              - u
+              - šumi
+              - Medvjed
+            audioSrc: /audio/hr/medvjed_u_sumi.mp3
             grammarTags: []
-            options:
-              - text: Medvjed u šumi
-                correct: true
-                audioSrc: /audio/hr/medvjed_u_sumi.mp3
-              - text: Vuk u šumi
-                correct: false
-                audioSrc: /audio/hr/vuk_u_sumi.mp3
-              - text: Pas u kući
-                correct: false
-                audioSrc: /audio/hr/pas_u_kuci.mp3
-              - text: Ptica na drvu
-                correct: false
-                audioSrc: /audio/hr/ptica_na_drvu.mp3
           - order: 2
             legacyId: 297
             type: ASSIST
@@ -696,22 +689,19 @@ units:
                 audioSrc: /audio/hr/pas.mp3
           - order: 4
             legacyId: 303
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Bear in the forest"'
+            targetSentence: Medvjed u šumi
+            acceptedAnswers:
+              - Medvjed u šumi
+            wordBank:
+              - Medvjed
+              - u
+              - šumi
+              - šumu
+              - na
+            audioSrc: /audio/hr/medvjed_u_sumi.mp3
             grammarTags: []
-            options:
-              - text: Medvjed u šumi
-                correct: true
-                audioSrc: /audio/hr/medvjed_u_sumi.mp3
-              - text: Vuk u šumi
-                correct: false
-                audioSrc: /audio/hr/vuk_u_sumi.mp3
-              - text: Jelen u travi
-                correct: false
-                audioSrc: /audio/hr/jelen_u_travi.mp3
-              - text: Ptica na drvu
-                correct: false
-                audioSrc: /audio/hr/ptica_na_drvu.mp3
           - order: 5
             legacyId: 304
             type: ASSIST
@@ -853,8 +843,9 @@ units:
         challenges:
           - order: 1
             legacyId: 310
-            type: SELECT
-            prompt: Which one of these is "Ticket"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/karta.mp3
             grammarTags: []
             options:
               - text: Karta
@@ -871,8 +862,9 @@ units:
                 audioSrc: /audio/hr/knjiga.mp3
           - order: 2
             legacyId: 311
-            type: SELECT
-            prompt: Which one of these is "Suitcase"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kofer.mp3
             grammarTags: []
             options:
               - text: Kofer
@@ -930,22 +922,19 @@ units:
         challenges:
           - order: 1
             legacyId: 314
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"The ferry goes to the island"'
+            targetSentence: Trajekt ide na otok
+            acceptedAnswers:
+              - Trajekt ide na otok
+            wordBank:
+              - ide
+              - ispod
+              - otok
+              - na
+              - Trajekt
+            audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
             grammarTags: []
-            options:
-              - text: Trajekt ide na otok
-                correct: true
-                audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
-              - text: Brod plovi po moru
-                correct: false
-                audioSrc: /audio/hr/brod_plovi_po_moru.mp3
-              - text: Vlak ide na stanicu
-                correct: false
-                audioSrc: /audio/hr/vlak_ide_na_stanicu.mp3
-              - text: Autobus vozi u grad
-                correct: false
-                audioSrc: /audio/hr/autobus_vozi_u_grad.mp3
           - order: 2
             legacyId: 315
             type: ASSIST
@@ -1061,22 +1050,19 @@ units:
                 audioSrc: /audio/hr/kapa.mp3
           - order: 4
             legacyId: 321
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"The ferry goes to the island"'
+            targetSentence: Trajekt ide na otok
+            acceptedAnswers:
+              - Trajekt ide na otok
+            wordBank:
+              - na
+              - ide
+              - Trajekt
+              - ispod
+              - otok
+            audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
             grammarTags: []
-            options:
-              - text: Trajekt ide na otok
-                correct: true
-                audioSrc: /audio/hr/trajekt_ide_na_otok.mp3
-              - text: Brod plovi po moru
-                correct: false
-                audioSrc: /audio/hr/brod_plovi_po_moru.mp3
-              - text: Vlak ide na stanicu
-                correct: false
-                audioSrc: /audio/hr/vlak_ide_na_stanicu.mp3
-              - text: Autobus vozi u grad
-                correct: false
-                audioSrc: /audio/hr/autobus_vozi_u_grad.mp3
           - order: 5
             legacyId: 322
             type: ASSIST
@@ -1218,8 +1204,9 @@ units:
         challenges:
           - order: 1
             legacyId: 328
-            type: SELECT
-            prompt: Which one of these is "Soup"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/juha.mp3
             grammarTags: []
             options:
               - text: Juha
@@ -1236,8 +1223,9 @@ units:
                 audioSrc: /audio/hr/kruh.mp3
           - order: 2
             legacyId: 329
-            type: SELECT
-            prompt: Which one of these is "Lunch"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/rucak.mp3
             grammarTags: []
             options:
               - text: Ručak
@@ -1295,22 +1283,18 @@ units:
         challenges:
           - order: 1
             legacyId: 332
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Mom is cooking soup"'
+            targetSentence: Mama kuha juhu
+            acceptedAnswers:
+              - Mama kuha juhu
+            wordBank:
+              - Mama
+              - nije
+              - juhu
+              - kuha
+            audioSrc: /audio/hr/mama_kuha_juhu.mp3
             grammarTags: []
-            options:
-              - text: Mama kuha juhu
-                correct: true
-                audioSrc: /audio/hr/mama_kuha_juhu.mp3
-              - text: Tata jede juhu
-                correct: false
-                audioSrc: /audio/hr/tata_jede_juhu.mp3
-              - text: Mama pije kavu
-                correct: false
-                audioSrc: /audio/hr/mama_pije_kavu.mp3
-              - text: Baka peče kruh
-                correct: false
-                audioSrc: /audio/hr/baka_pece_kruh.mp3
           - order: 2
             legacyId: 333
             type: ASSIST
@@ -1426,22 +1410,18 @@ units:
                 audioSrc: /audio/hr/laku_noc.mp3
           - order: 4
             legacyId: 339
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Mom is cooking soup"'
+            targetSentence: Mama kuha juhu
+            acceptedAnswers:
+              - Mama kuha juhu
+            wordBank:
+              - kuha
+              - nije
+              - Mama
+              - juhu
+            audioSrc: /audio/hr/mama_kuha_juhu.mp3
             grammarTags: []
-            options:
-              - text: Mama kuha juhu
-                correct: true
-                audioSrc: /audio/hr/mama_kuha_juhu.mp3
-              - text: Tata jede juhu
-                correct: false
-                audioSrc: /audio/hr/tata_jede_juhu.mp3
-              - text: Baka peče kruh
-                correct: false
-                audioSrc: /audio/hr/baka_pece_kruh.mp3
-              - text: Sestra pije vodu
-                correct: false
-                audioSrc: /audio/hr/sestra_pije_vodu.mp3
           - order: 5
             legacyId: 340
             type: ASSIST
@@ -1583,8 +1563,9 @@ units:
         challenges:
           - order: 1
             legacyId: 346
-            type: SELECT
-            prompt: Which one of these is "Congratulations"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/cestitam.mp3
             grammarTags: []
             options:
               - text: Čestitam
@@ -1601,8 +1582,9 @@ units:
                 audioSrc: /audio/hr/bravo.mp3
           - order: 2
             legacyId: 347
-            type: SELECT
-            prompt: Which one of these is "Dance"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/ples.mp3
             grammarTags: []
             options:
               - text: Ples
@@ -1678,22 +1660,18 @@ units:
                 audioSrc: /audio/hr/veliko_hvala.mp3
           - order: 2
             legacyId: 351
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Blow out the candles"'
+            targetSentence: Puhni u svjećice
+            acceptedAnswers:
+              - Puhni u svjećice
+            wordBank:
+              - na
+              - Puhni
+              - u
+              - svjećice
+            audioSrc: /audio/hr/puhni_u_svjecice.mp3
             grammarTags: []
-            options:
-              - text: Puhni u svjećice
-                correct: true
-                audioSrc: /audio/hr/puhni_u_svjecice.mp3
-              - text: Pjevaj s nama
-                correct: false
-                audioSrc: /audio/hr/pjevaj_s_nama.mp3
-              - text: Otvori svoj poklon
-                correct: false
-                audioSrc: /audio/hr/otvori_svoj_poklon.mp3
-              - text: Reži slatku tortu
-                correct: false
-                audioSrc: /audio/hr/rezi_slatku_tortu.mp3
           - order: 3
             legacyId: 352
             type: ASSIST
@@ -1809,22 +1787,18 @@ units:
                 audioSrc: /audio/hr/laku_noc.mp3
           - order: 5
             legacyId: 358
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Blow out the candles"'
+            targetSentence: Puhni u svjećice
+            acceptedAnswers:
+              - Puhni u svjećice
+            wordBank:
+              - Puhni
+              - u
+              - svjećice
+              - na
+            audioSrc: /audio/hr/puhni_u_svjecice.mp3
             grammarTags: []
-            options:
-              - text: Puhni u svjećice
-                correct: true
-                audioSrc: /audio/hr/puhni_u_svjecice.mp3
-              - text: Pjevaj s nama
-                correct: false
-                audioSrc: /audio/hr/pjevaj_s_nama.mp3
-              - text: Otvori svoj poklon
-                correct: false
-                audioSrc: /audio/hr/otvori_svoj_poklon.mp3
-              - text: Reži slatku tortu
-                correct: false
-                audioSrc: /audio/hr/rezi_slatku_tortu.mp3
           - order: 6
             legacyId: 359
             type: ASSIST

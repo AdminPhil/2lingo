@@ -123,8 +123,9 @@ units:
         challenges:
           - order: 1
             legacyId: 364
-            type: SELECT
-            prompt: Which one means "Today"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/danas.mp3
             grammarTags: []
             options:
               - text: Danas
@@ -141,8 +142,9 @@ units:
                 audioSrc: /audio/hr/pas.mp3
           - order: 2
             legacyId: 365
-            type: SELECT
-            prompt: Which one means "Tomorrow"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/sutra.mp3
             grammarTags: []
             options:
               - text: Sutra
@@ -200,22 +202,18 @@ units:
         challenges:
           - order: 1
             legacyId: 368
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Today is Monday."'
+            targetSentence: Danas je ponedjeljak.
+            acceptedAnswers:
+              - Danas je ponedjeljak
+            wordBank:
+              - Danas
+              - ponedjeljak
+              - su
+              - je
+            audioSrc: /audio/hr/danas_je_ponedjeljak.mp3
             grammarTags: []
-            options:
-              - text: Danas je ponedjeljak.
-                correct: true
-                audioSrc: /audio/hr/danas_je_ponedjeljak.mp3
-              - text: Deda čita knjigu.
-                correct: false
-                audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 2
             legacyId: 369
             type: ASSIST
@@ -225,15 +223,15 @@ units:
               - text: Sutra je novi dan.
                 correct: true
                 audioSrc: /audio/hr/sutra_je_novi_dan.mp3
+              - text: Sutra nije novi dan.
+                correct: false
+                audioSrc: /audio/hr/sutra_nije_novi_dan.mp3
+              - text: Sutra je stari dan.
+                correct: false
+                audioSrc: /audio/hr/sutra_je_stari_dan.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 3
             legacyId: 370
             type: ASSIST
@@ -243,15 +241,15 @@ units:
               - text: Vikend počinje sutra.
                 correct: true
                 audioSrc: /audio/hr/vikend_pocinje_sutra.mp3
+              - text: Jučer vikend počinje sutra.
+                correct: false
+                audioSrc: /audio/hr/jucer_vikend_pocinje_sutra.mp3
+              - text: Sutra vikend počinje sutra.
+                correct: false
+                audioSrc: /audio/hr/sutra_vikend_pocinje_sutra.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 4
             legacyId: 371
             type: ASSIST
@@ -261,15 +259,15 @@ units:
               - text: Lijepo i toplo jutro.
                 correct: true
                 audioSrc: /audio/hr/lijepo_i_toplo_jutro.mp3
+              - text: Lijepo i hladno jutro.
+                correct: false
+                audioSrc: /audio/hr/lijepo_i_hladno_jutro.mp3
+              - text: Jučer lijepo i toplo jutro.
+                correct: false
+                audioSrc: /audio/hr/jucer_lijepo_i_toplo_jutro.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
       - order: 4
         legacyId: 84
         kind: BOSS_CAPSTONE
@@ -277,22 +275,18 @@ units:
         challenges:
           - order: 1
             legacyId: 372
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Good morning to everyone."'
+            targetSentence: Dobro jutro svima.
+            acceptedAnswers:
+              - Dobro jutro svima
+            wordBank:
+              - Dobro
+              - jutro
+              - svima
+              - nije
+            audioSrc: /audio/hr/dobro_jutro_svima.mp3
             grammarTags: []
-            options:
-              - text: Dobro jutro svima.
-                correct: true
-                audioSrc: /audio/hr/dobro_jutro_svima.mp3
-              - text: Deda čita knjigu.
-                correct: false
-                audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 2
             legacyId: 373
             type: ASSIST
@@ -302,15 +296,15 @@ units:
               - text: Dobra večer bako.
                 correct: true
                 audioSrc: /audio/hr/dobra_vecer_bako.mp3
+              - text: Jučer dobra večer bako.
+                correct: false
+                audioSrc: /audio/hr/jucer_dobra_vecer_bako.mp3
+              - text: Sutra dobra večer bako.
+                correct: false
+                audioSrc: /audio/hr/sutra_dobra_vecer_bako.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 3
             legacyId: 374
             type: ASSIST
@@ -320,15 +314,15 @@ units:
               - text: Radujemo se vikendu.
                 correct: true
                 audioSrc: /audio/hr/radujemo_se_vikendu.mp3
+              - text: Jučer radujemo se vikendu.
+                correct: false
+                audioSrc: /audio/hr/jucer_radujemo_se_vikendu.mp3
+              - text: Sutra radujemo se vikendu.
+                correct: false
+                audioSrc: /audio/hr/sutra_radujemo_se_vikendu.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 4
             legacyId: 375
             type: ASSIST
@@ -338,15 +332,15 @@ units:
               - text: Danas učimo hrvatski.
                 correct: true
                 audioSrc: /audio/hr/danas_ucimo_hrvatski.mp3
+              - text: Danas učili smo hrvatski.
+                correct: false
+                audioSrc: /audio/hr/danas_ucili_smo_hrvatski.mp3
+              - text: Jučer danas učimo hrvatski.
+                correct: false
+                audioSrc: /audio/hr/jucer_danas_ucimo_hrvatski.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
           - order: 5
             legacyId: 376
             type: ASSIST
@@ -356,15 +350,15 @@ units:
               - text: Tjedan ima sedam dana.
                 correct: true
                 audioSrc: /audio/hr/tjedan_ima_sedam_dana.mp3
+              - text: Tjedan nema sedam dana.
+                correct: false
+                audioSrc: /audio/hr/tjedan_nema_sedam_dana.mp3
+              - text: Jučer tjedan ima sedam dana.
+                correct: false
+                audioSrc: /audio/hr/jucer_tjedan_ima_sedam_dana.mp3
               - text: Deda čita knjigu.
                 correct: false
                 audioSrc: /audio/hr/deda_cita_knjigu.mp3
-              - text: Djeca se igraju u parku.
-                correct: false
-                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
-              - text: Mala mačka spava na travi.
-                correct: false
-                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
   - order: 22
     legacyId: 22
     title: Unit 22
@@ -470,8 +464,9 @@ units:
         challenges:
           - order: 1
             legacyId: 381
-            type: SELECT
-            prompt: Which one means "I want"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/zelim.mp3
             grammarTags: []
             options:
               - text: Želim
@@ -488,8 +483,9 @@ units:
                 audioSrc: /audio/hr/auto.mp3
           - order: 2
             legacyId: 382
-            type: SELECT
-            prompt: Which one means "To order"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/naruciti.mp3
             grammarTags: []
             options:
               - text: Naručiti
@@ -547,22 +543,19 @@ units:
         challenges:
           - order: 1
             legacyId: 385
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"I want chocolate ice cream."'
+            targetSentence: Želim sladoled od čokolade.
+            acceptedAnswers:
+              - Želim sladoled od čokolade
+            wordBank:
+              - sladoled
+              - čokolade
+              - nije
+              - od
+              - Želim
+            audioSrc: /audio/hr/zelim_sladoled_od_cokolade.mp3
             grammarTags: []
-            options:
-              - text: Želim sladoled od čokolade.
-                correct: true
-                audioSrc: /audio/hr/zelim_sladoled_od_cokolade.mp3
-              - text: Tata vozi auto.
-                correct: false
-                audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 2
             legacyId: 386
             type: ASSIST
@@ -572,15 +565,15 @@ units:
               - text: Molim jednu kuglicu jagode.
                 correct: true
                 audioSrc: /audio/hr/molim_jednu_kuglicu_jagode.mp3
+              - text: Jučer molim jednu kuglicu jagode.
+                correct: false
+                audioSrc: /audio/hr/jucer_molim_jednu_kuglicu_jagode.mp3
+              - text: Sutra molim jednu kuglicu jagode.
+                correct: false
+                audioSrc: /audio/hr/sutra_molim_jednu_kuglicu_jagode.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 3
             legacyId: 387
             type: ASSIST
@@ -590,15 +583,15 @@ units:
               - text: Ovaj kolač je jako sladak.
                 correct: true
                 audioSrc: /audio/hr/ovaj_kolac_je_jako_sladak.mp3
+              - text: Ovaj kolač nije jako sladak.
+                correct: false
+                audioSrc: /audio/hr/ovaj_kolac_nije_jako_sladak.mp3
+              - text: Jučer ovaj kolač je jako sladak.
+                correct: false
+                audioSrc: /audio/hr/jucer_ovaj_kolac_je_jako_sladak.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 4
             legacyId: 388
             type: ASSIST
@@ -608,15 +601,15 @@ units:
               - text: Kupujem hladni sladoled na plaži.
                 correct: true
                 audioSrc: /audio/hr/kupujem_hladni_sladoled_na_plazi.mp3
+              - text: Kupujem hladni sladoled prema plaži.
+                correct: false
+                audioSrc: /audio/hr/kupujem_hladni_sladoled_prema_plazi.mp3
+              - text: Kupujem topli sladoled na plaži.
+                correct: false
+                audioSrc: /audio/hr/kupujem_topli_sladoled_na_plazi.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
       - order: 4
         legacyId: 88
         kind: BOSS_CAPSTONE
@@ -624,22 +617,19 @@ units:
         challenges:
           - order: 1
             legacyId: 389
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"Two scoops in a cone."'
+            targetSentence: Dvije kuglice u kornetu.
+            acceptedAnswers:
+              - Dvije kuglice u kornetu
+            wordBank:
+              - u
+              - kornetu
+              - kuglice
+              - na
+              - Dvije
+            audioSrc: /audio/hr/dvije_kuglice_u_kornetu.mp3
             grammarTags: []
-            options:
-              - text: Dvije kuglice u kornetu.
-                correct: true
-                audioSrc: /audio/hr/dvije_kuglice_u_kornetu.mp3
-              - text: Tata vozi auto.
-                correct: false
-                audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 2
             legacyId: 390
             type: ASSIST
@@ -649,15 +639,15 @@ units:
               - text: Volim čokoladu i jagodu.
                 correct: true
                 audioSrc: /audio/hr/volim_cokoladu_i_jagodu.mp3
+              - text: ne volim čokoladu i jagodu.
+                correct: false
+                audioSrc: /audio/hr/ne_volim_cokoladu_i_jagodu.mp3
+              - text: Jučer volim čokoladu i jagodu.
+                correct: false
+                audioSrc: /audio/hr/jucer_volim_cokoladu_i_jagodu.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 3
             legacyId: 391
             type: ASSIST
@@ -667,15 +657,15 @@ units:
               - text: Hvala lijepa na sladoledu.
                 correct: true
                 audioSrc: /audio/hr/hvala_lijepa_na_sladoledu.mp3
+              - text: Jučer hvala lijepa na sladoledu.
+                correct: false
+                audioSrc: /audio/hr/jucer_hvala_lijepa_na_sladoledu.mp3
+              - text: Sutra hvala lijepa na sladoledu.
+                correct: false
+                audioSrc: /audio/hr/sutra_hvala_lijepa_na_sladoledu.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
           - order: 4
             legacyId: 392
             type: ASSIST
@@ -685,15 +675,15 @@ units:
               - text: Koliko košta ovaj sladoled?
                 correct: true
                 audioSrc: /audio/hr/koliko_kosta_ovaj_sladoled.mp3
+              - text: Jučer koliko košta ovaj sladoled?
+                correct: false
+                audioSrc: /audio/hr/jucer_koliko_kosta_ovaj_sladoled.mp3
+              - text: Sutra koliko košta ovaj sladoled?
+                correct: false
+                audioSrc: /audio/hr/sutra_koliko_kosta_ovaj_sladoled.mp3
               - text: Gdje je moj crveni auto?
                 correct: false
                 audioSrc: /audio/hr/gdje_je_moj_crveni_auto.mp3
-              - text: Kada polazi brzi vlak?
-                correct: false
-                audioSrc: /audio/hr/kada_polazi_brzi_vlak.mp3
-              - text: Tko pjeva na visokom stablu?
-                correct: false
-                audioSrc: /audio/hr/tko_pjeva_na_visokom_stablu.mp3
           - order: 5
             legacyId: 393
             type: ASSIST
@@ -703,15 +693,15 @@ units:
               - text: Paško jede fini sladoled.
                 correct: true
                 audioSrc: /audio/hr/pasko_jede_fini_sladoled.mp3
+              - text: Jučer paško jede fini sladoled.
+                correct: false
+                audioSrc: /audio/hr/jucer_pasko_jede_fini_sladoled.mp3
+              - text: Sutra paško jede fini sladoled.
+                correct: false
+                audioSrc: /audio/hr/sutra_pasko_jede_fini_sladoled.mp3
               - text: Tata vozi auto.
                 correct: false
                 audioSrc: /audio/hr/tata_vozi_auto.mp3
-              - text: Vlak putuje na kolodvor.
-                correct: false
-                audioSrc: /audio/hr/vlak_putuje_na_kolodvor.mp3
-              - text: Ptica pjeva na stablu.
-                correct: false
-                audioSrc: /audio/hr/ptica_pjeva_na_stablu.mp3
   - order: 23
     legacyId: 23
     title: Unit 23
@@ -817,8 +807,9 @@ units:
         challenges:
           - order: 1
             legacyId: 398
-            type: SELECT
-            prompt: Which one means "We explore"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/istrazujemo.mp3
             grammarTags: []
             options:
               - text: Istražujemo
@@ -835,8 +826,9 @@ units:
                 audioSrc: /audio/hr/jedemo.mp3
           - order: 2
             legacyId: 399
-            type: SELECT
-            prompt: Which one means "Brave"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/hrabar.mp3
             grammarTags: []
             options:
               - text: Hrabar
@@ -894,22 +886,19 @@ units:
         challenges:
           - order: 1
             legacyId: 402
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"We explore the large Roman arena."'
+            targetSentence: Istražujemo veliku rimsku arenu.
+            acceptedAnswers:
+              - Istražujemo veliku rimsku arenu
+            wordBank:
+              - arenu
+              - nije
+              - veliku
+              - rimsku
+              - Istražujemo
+            audioSrc: /audio/hr/istrazujemo_veliku_rimsku_arenu.mp3
             grammarTags: []
-            options:
-              - text: Istražujemo veliku rimsku arenu.
-                correct: true
-                audioSrc: /audio/hr/istrazujemo_veliku_rimsku_arenu.mp3
-              - text: Riba pliva u plavom moru.
-                correct: false
-                audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 2
             legacyId: 403
             type: ASSIST
@@ -919,15 +908,15 @@ units:
               - text: Hrabri vitez nosi sjajni štit.
                 correct: true
                 audioSrc: /audio/hr/hrabri_vitez_nosi_sjajni_stit.mp3
+              - text: Hrabri vitez ne nosi sjajni štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_ne_nosi_sjajni_stit.mp3
+              - text: Jučer hrabri vitez nosi sjajni štit.
+                correct: false
+                audioSrc: /audio/hr/jucer_hrabri_vitez_nosi_sjajni_stit.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 3
             legacyId: 404
             type: ASSIST
@@ -937,15 +926,15 @@ units:
               - text: Stari kameni zidovi su visoki.
                 correct: true
                 audioSrc: /audio/hr/stari_kameni_zidovi_su_visoki.mp3
+              - text: Stari kameni zidovi nisu visoki.
+                correct: false
+                audioSrc: /audio/hr/stari_kameni_zidovi_nisu_visoki.mp3
+              - text: novi kameni zidovi su visoki.
+                correct: false
+                audioSrc: /audio/hr/novi_kameni_zidovi_su_visoki.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 4
             legacyId: 405
             type: ASSIST
@@ -955,15 +944,15 @@ units:
               - text: Gledamo drevni dvorac na brdu.
                 correct: true
                 audioSrc: /audio/hr/gledamo_drevni_dvorac_na_brdu.mp3
+              - text: Gledamo drevni dvorac ispod brda.
+                correct: false
+                audioSrc: /audio/hr/gledamo_drevni_dvorac_ispod_brda.mp3
+              - text: gledali smo drevni dvorac na brdu.
+                correct: false
+                audioSrc: /audio/hr/gledali_smo_drevni_dvorac_na_brdu.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
       - order: 4
         legacyId: 92
         kind: BOSS_CAPSTONE
@@ -971,22 +960,20 @@ units:
         challenges:
           - order: 1
             legacyId: 406
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"The Pula arena has many arches."'
+            targetSentence: Pulska arena ima mnogo lukova.
+            acceptedAnswers:
+              - Pulska arena ima mnogo lukova
+            wordBank:
+              - lukova
+              - nije
+              - Pulska
+              - arena
+              - ima
+              - mnogo
+            audioSrc: /audio/hr/pulska_arena_ima_mnogo_lukova.mp3
             grammarTags: []
-            options:
-              - text: Pulska arena ima mnogo lukova.
-                correct: true
-                audioSrc: /audio/hr/pulska_arena_ima_mnogo_lukova.mp3
-              - text: Riba pliva u plavom moru.
-                correct: false
-                audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 2
             legacyId: 407
             type: ASSIST
@@ -996,15 +983,15 @@ units:
               - text: Ponosni vitez čuva staru kulu.
                 correct: true
                 audioSrc: /audio/hr/ponosni_vitez_cuva_staru_kulu.mp3
+              - text: Ponosni vitez čuva novu kulu.
+                correct: false
+                audioSrc: /audio/hr/ponosni_vitez_cuva_novu_kulu.mp3
+              - text: Jučer ponosni vitez čuva staru kulu.
+                correct: false
+                audioSrc: /audio/hr/jucer_ponosni_vitez_cuva_staru_kulu.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 3
             legacyId: 408
             type: ASSIST
@@ -1014,15 +1001,15 @@ units:
               - text: Kamen priča priču iz prošlosti.
                 correct: true
                 audioSrc: /audio/hr/kamen_prica_pricu_iz_proslosti.mp3
+              - text: Jučer kamen priča priču iz prošlosti.
+                correct: false
+                audioSrc: /audio/hr/jucer_kamen_prica_pricu_iz_proslosti.mp3
+              - text: Sutra kamen priča priču iz prošlosti.
+                correct: false
+                audioSrc: /audio/hr/sutra_kamen_prica_pricu_iz_proslosti.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 4
             legacyId: 409
             type: ASSIST
@@ -1032,15 +1019,15 @@ units:
               - text: Ovdje su živjeli hrabri junaci.
                 correct: true
                 audioSrc: /audio/hr/ovdje_su_zivjeli_hrabri_junaci.mp3
+              - text: Ovdje nisu živjeli hrabri junaci.
+                correct: false
+                audioSrc: /audio/hr/ovdje_nisu_zivjeli_hrabri_junaci.mp3
+              - text: Jučer ovdje su živjeli hrabri junaci.
+                correct: false
+                audioSrc: /audio/hr/jucer_ovdje_su_zivjeli_hrabri_junaci.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
           - order: 5
             legacyId: 410
             type: ASSIST
@@ -1050,15 +1037,15 @@ units:
               - text: Paško ponosno nosi zlatnu krunu.
                 correct: true
                 audioSrc: /audio/hr/pasko_ponosno_nosi_zlatnu_krunu.mp3
+              - text: Paško ponosno ne nosi zlatnu krunu.
+                correct: false
+                audioSrc: /audio/hr/pasko_ponosno_ne_nosi_zlatnu_krunu.mp3
+              - text: Jučer paško ponosno nosi zlatnu krunu.
+                correct: false
+                audioSrc: /audio/hr/jucer_pasko_ponosno_nosi_zlatnu_krunu.mp3
               - text: Riba pliva u plavom moru.
                 correct: false
                 audioSrc: /audio/hr/riba_pliva_u_plavom_moru.mp3
-              - text: Dječak piše olovkom.
-                correct: false
-                audioSrc: /audio/hr/djecak_pise_olovkom.mp3
-              - text: Auto stoji ispred kuće.
-                correct: false
-                audioSrc: /audio/hr/auto_stoji_ispred_kuce.mp3
   - order: 24
     legacyId: 24
     title: Unit 24
@@ -1164,8 +1151,9 @@ units:
         challenges:
           - order: 1
             legacyId: 415
-            type: SELECT
-            prompt: Which one means "I wake up"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/budim_se.mp3
             grammarTags: []
             options:
               - text: Budim se
@@ -1182,8 +1170,9 @@ units:
                 audioSrc: /audio/hr/kuca.mp3
           - order: 2
             legacyId: 416
-            type: SELECT
-            prompt: Which one means "I wash"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/perem.mp3
             grammarTags: []
             options:
               - text: Perem
@@ -1241,22 +1230,21 @@ units:
         challenges:
           - order: 1
             legacyId: 419
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: "\"I wake up early at seven o'clock.\""
+            targetSentence: Budim se rano u sedam sati.
+            acceptedAnswers:
+              - Budim se rano u sedam sati
+            wordBank:
+              - rano
+              - u
+              - na
+              - Budim
+              - sati
+              - sedam
+              - se
+            audioSrc: /audio/hr/budim_se_rano_u_sedam_sati.mp3
             grammarTags: []
-            options:
-              - text: Budim se rano u sedam sati.
-                correct: true
-                audioSrc: /audio/hr/budim_se_rano_u_sedam_sati.mp3
-              - text: More šumi ispod sunčanog neba.
-                correct: false
-                audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 2
             legacyId: 420
             type: ASSIST
@@ -1266,15 +1254,15 @@ units:
               - text: Perem zube sa svojom četkicom.
                 correct: true
                 audioSrc: /audio/hr/perem_zube_sa_svojom_cetkicom.mp3
+              - text: Jučer perem zube sa svojom četkicom.
+                correct: false
+                audioSrc: /audio/hr/jucer_perem_zube_sa_svojom_cetkicom.mp3
+              - text: Sutra perem zube sa svojom četkicom.
+                correct: false
+                audioSrc: /audio/hr/sutra_perem_zube_sa_svojom_cetkicom.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 3
             legacyId: 421
             type: ASSIST
@@ -1284,15 +1272,15 @@ units:
               - text: Ujutro jedem fini topli doručak.
                 correct: true
                 audioSrc: /audio/hr/ujutro_jedem_fini_topli_dorucak.mp3
+              - text: navečer jedem fini topli doručak.
+                correct: false
+                audioSrc: /audio/hr/navecer_jedem_fini_topli_dorucak.mp3
+              - text: Ujutro jedem fini hladni doručak.
+                correct: false
+                audioSrc: /audio/hr/ujutro_jedem_fini_hladni_dorucak.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 4
             legacyId: 422
             type: ASSIST
@@ -1302,15 +1290,15 @@ units:
               - text: Navečer idem u topli krevet.
                 correct: true
                 audioSrc: /audio/hr/navecer_idem_u_topli_krevet.mp3
+              - text: ujutro idem u topli krevet.
+                correct: false
+                audioSrc: /audio/hr/ujutro_idem_u_topli_krevet.mp3
+              - text: Navečer idem u hladni krevet.
+                correct: false
+                audioSrc: /audio/hr/navecer_idem_u_hladni_krevet.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
       - order: 4
         legacyId: 96
         kind: BOSS_CAPSTONE
@@ -1318,22 +1306,20 @@ units:
         challenges:
           - order: 1
             legacyId: 423
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"What time is it right now?"'
+            targetSentence: Koliko je sada točno sati?
+            acceptedAnswers:
+              - Koliko je sada točno sati
+            wordBank:
+              - Koliko
+              - sati
+              - točno
+              - su
+              - sada
+              - je
+            audioSrc: /audio/hr/koliko_je_sada_tocno_sati.mp3
             grammarTags: []
-            options:
-              - text: Koliko je sada točno sati?
-                correct: true
-                audioSrc: /audio/hr/koliko_je_sada_tocno_sati.mp3
-              - text: Zašto sunce sja na nebu?
-                correct: false
-                audioSrc: /audio/hr/zasto_sunce_sja_na_nebu.mp3
-              - text: Gdje se skriva mali zeko?
-                correct: false
-                audioSrc: /audio/hr/gdje_se_skriva_mali_zeko.mp3
-              - text: Kada plovi bijeli trajekt?
-                correct: false
-                audioSrc: /audio/hr/kada_plovi_bijeli_trajekt.mp3
           - order: 2
             legacyId: 424
             type: ASSIST
@@ -1343,15 +1329,15 @@ units:
               - text: Sada je točno osam sati.
                 correct: true
                 audioSrc: /audio/hr/sada_je_tocno_osam_sati.mp3
+              - text: Sada nije točno osam sati.
+                correct: false
+                audioSrc: /audio/hr/sada_nije_tocno_osam_sati.mp3
+              - text: Jučer sada je točno osam sati.
+                correct: false
+                audioSrc: /audio/hr/jucer_sada_je_tocno_osam_sati.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 3
             legacyId: 425
             type: ASSIST
@@ -1361,15 +1347,15 @@ units:
               - text: Nakon škole radim zadaću.
                 correct: true
                 audioSrc: /audio/hr/nakon_skole_radim_zadacu.mp3
+              - text: Jučer nakon škole radim zadaću.
+                correct: false
+                audioSrc: /audio/hr/jucer_nakon_skole_radim_zadacu.mp3
+              - text: Sutra nakon škole radim zadaću.
+                correct: false
+                audioSrc: /audio/hr/sutra_nakon_skole_radim_zadacu.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 4
             legacyId: 426
             type: ASSIST
@@ -1379,15 +1365,15 @@ units:
               - text: Laku noć i slatke snove.
                 correct: true
                 audioSrc: /audio/hr/laku_noc_i_slatke_snove.mp3
+              - text: Laku noć i kisele snove.
+                correct: false
+                audioSrc: /audio/hr/laku_noc_i_kisele_snove.mp3
+              - text: Jučer laku noć i slatke snove.
+                correct: false
+                audioSrc: /audio/hr/jucer_laku_noc_i_slatke_snove.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
           - order: 5
             legacyId: 427
             type: ASSIST
@@ -1397,15 +1383,15 @@ units:
               - text: Spreman sam za novi dan.
                 correct: true
                 audioSrc: /audio/hr/spreman_sam_za_novi_dan.mp3
+              - text: Spreman sam za stari dan.
+                correct: false
+                audioSrc: /audio/hr/spreman_sam_za_stari_dan.mp3
+              - text: Jučer spreman sam za novi dan.
+                correct: false
+                audioSrc: /audio/hr/jucer_spreman_sam_za_novi_dan.mp3
               - text: More šumi ispod sunčanog neba.
                 correct: false
                 audioSrc: /audio/hr/more_sumi_ispod_suncanog_neba.mp3
-              - text: Mali zeko trči po travi.
-                correct: false
-                audioSrc: /audio/hr/mali_zeko_trci_po_travi.mp3
-              - text: Trajekt plovi prema otoku.
-                correct: false
-                audioSrc: /audio/hr/trajekt_plovi_prema_otoku.mp3
   - order: 25
     legacyId: 25
     title: Unit 25
@@ -1511,8 +1497,9 @@ units:
         challenges:
           - order: 1
             legacyId: 432
-            type: SELECT
-            prompt: Which one means "I dive"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/ronim.mp3
             grammarTags: []
             options:
               - text: Ronim
@@ -1529,8 +1516,9 @@ units:
                 audioSrc: /audio/hr/voda.mp3
           - order: 2
             legacyId: 433
-            type: SELECT
-            prompt: Which one means "I jump"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/skacem.mp3
             grammarTags: []
             options:
               - text: Skačem
@@ -1588,22 +1576,21 @@ units:
         challenges:
           - order: 1
             legacyId: 436
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"I jump into the sea and catch the wave."'
+            targetSentence: Skačem u more i hvatam val.
+            acceptedAnswers:
+              - Skačem u more i hvatam val
+            wordBank:
+              - u
+              - i
+              - na
+              - Skačem
+              - hvatam
+              - more
+              - val
+            audioSrc: /audio/hr/skacem_u_more_i_hvatam_val.mp3
             grammarTags: []
-            options:
-              - text: Skačem u more i hvatam val.
-                correct: true
-                audioSrc: /audio/hr/skacem_u_more_i_hvatam_val.mp3
-              - text: Kupujem kruh i sir.
-                correct: false
-                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Danas je lijep i sunčan dan.
-                correct: false
-                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
           - order: 2
             legacyId: 437
             type: ASSIST
@@ -1613,15 +1600,15 @@ units:
               - text: Ronim s maskom i gledam ribe.
                 correct: true
                 audioSrc: /audio/hr/ronim_s_maskom_i_gledam_ribe.mp3
+              - text: Jučer ronim s maskom i gledam ribe.
+                correct: false
+                audioSrc: /audio/hr/jucer_ronim_s_maskom_i_gledam_ribe.mp3
+              - text: Sutra ronim s maskom i gledam ribe.
+                correct: false
+                audioSrc: /audio/hr/sutra_ronim_s_maskom_i_gledam_ribe.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Danas je lijep i sunčan dan.
-                correct: false
-                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
           - order: 3
             legacyId: 438
             type: ASSIST
@@ -1631,15 +1618,15 @@ units:
               - text: Našao sam sjajnu bijelu školjku.
                 correct: true
                 audioSrc: /audio/hr/nasao_sam_sjajnu_bijelu_skoljku.mp3
+              - text: Našao sam sjajnu crnu školjku.
+                correct: false
+                audioSrc: /audio/hr/nasao_sam_sjajnu_crnu_skoljku.mp3
+              - text: Jučer našao sam sjajnu bijelu školjku.
+                correct: false
+                audioSrc: /audio/hr/jucer_nasao_sam_sjajnu_bijelu_skoljku.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Danas je lijep i sunčan dan.
-                correct: false
-                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
           - order: 4
             legacyId: 439
             type: ASSIST
@@ -1649,15 +1636,15 @@ units:
               - text: Moj mekani ručnik leži na plaži.
                 correct: true
                 audioSrc: /audio/hr/moj_mekani_rucnik_lezi_na_plazi.mp3
+              - text: Moj mekani ručnik leži prema plaži.
+                correct: false
+                audioSrc: /audio/hr/moj_mekani_rucnik_lezi_prema_plazi.mp3
+              - text: Jučer moj mekani ručnik leži na plaži.
+                correct: false
+                audioSrc: /audio/hr/jucer_moj_mekani_rucnik_lezi_na_plazi.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Danas je lijep i sunčan dan.
-                correct: false
-                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
       - order: 4
         legacyId: 100
         kind: BOSS_CAPSTONE
@@ -1665,22 +1652,21 @@ units:
         challenges:
           - order: 1
             legacyId: 440
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: '"The sea is warm and blue today."'
+            targetSentence: More je toplo i plavo danas.
+            acceptedAnswers:
+              - More je toplo i plavo danas
+            wordBank:
+              - je
+              - i
+              - danas
+              - toplo
+              - plavo
+              - More
+              - su
+            audioSrc: /audio/hr/more_je_toplo_i_plavo_danas.mp3
             grammarTags: []
-            options:
-              - text: More je toplo i plavo danas.
-                correct: true
-                audioSrc: /audio/hr/more_je_toplo_i_plavo_danas.mp3
-              - text: Kupujem kruh i sir.
-                correct: false
-                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Sutra učimo nove riječi.
-                correct: false
-                audioSrc: /audio/hr/sutra_ucimo_nove_rijeci.mp3
           - order: 2
             legacyId: 441
             type: ASSIST
@@ -1690,15 +1676,15 @@ units:
               - text: Paško skače s mola u more.
                 correct: true
                 audioSrc: /audio/hr/pasko_skace_s_mola_u_more.mp3
+              - text: Jučer paško skače s mola u more.
+                correct: false
+                audioSrc: /audio/hr/jucer_pasko_skace_s_mola_u_more.mp3
+              - text: Sutra paško skače s mola u more.
+                correct: false
+                audioSrc: /audio/hr/sutra_pasko_skace_s_mola_u_more.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Sutra učimo nove riječi.
-                correct: false
-                audioSrc: /audio/hr/sutra_ucimo_nove_rijeci.mp3
           - order: 3
             legacyId: 442
             type: ASSIST
@@ -1708,15 +1694,15 @@ units:
               - text: Volim roniti u čistom Jadranu.
                 correct: true
                 audioSrc: /audio/hr/volim_roniti_u_cistom_jadranu.mp3
+              - text: ne volim roniti u čistom Jadranu.
+                correct: false
+                audioSrc: /audio/hr/ne_volim_roniti_u_cistom_jadranu.mp3
+              - text: Jučer volim roniti u čistom Jadranu.
+                correct: false
+                audioSrc: /audio/hr/jucer_volim_roniti_u_cistom_jadranu.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Sutra učimo nove riječi.
-                correct: false
-                audioSrc: /audio/hr/sutra_ucimo_nove_rijeci.mp3
           - order: 4
             legacyId: 443
             type: ASSIST
@@ -1726,15 +1712,15 @@ units:
               - text: Hvala ti na predivnom ljetu.
                 correct: true
                 audioSrc: /audio/hr/hvala_ti_na_predivnom_ljetu.mp3
+              - text: Jučer hvala ti na predivnom ljetu.
+                correct: false
+                audioSrc: /audio/hr/jucer_hvala_ti_na_predivnom_ljetu.mp3
+              - text: Sutra hvala ti na predivnom ljetu.
+                correct: false
+                audioSrc: /audio/hr/sutra_hvala_ti_na_predivnom_ljetu.mp3
               - text: Kupujem kruh i sir.
                 correct: false
                 audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
-              - text: Vitez nosi krunu u areni.
-                correct: false
-                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
-              - text: Sutra učimo nove riječi.
-                correct: false
-                audioSrc: /audio/hr/sutra_ucimo_nove_rijeci.mp3
           - order: 5
             legacyId: 444
             type: ASSIST

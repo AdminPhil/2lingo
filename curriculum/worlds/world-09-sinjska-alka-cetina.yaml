@@ -123,8 +123,9 @@ units:
         challenges:
           - order: 1
             legacyId: 694
-            type: ASSIST
-            prompt: 'Select the correct translation: "The horse moves fast."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/konj_se_krece_brzo.mp3
             grammarTags: []
             options:
               - text: Konj se kreće brzo.
@@ -141,8 +142,9 @@ units:
                 audioSrc: /audio/hr/vitez_gleda_konja.mp3
           - order: 2
             legacyId: 695
-            type: ASSIST
-            prompt: 'Select the correct translation: "The rider prepares."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/jahac_se_priprema.mp3
             grammarTags: []
             options:
               - text: Jahač se priprema.
@@ -160,21 +162,23 @@ units:
           - order: 3
             legacyId: 696
             type: ASSIST
-            prompt: 'Select the correct translation: "The fast horse"'
-            grammarTags: []
+            prompt: 'Translate: "The fast horse ran smoothly along the track."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Brzi konj
+              - text: Brzi konj je mirno trčao duž staze.
                 correct: true
-                audioSrc: /audio/hr/brzi_konj.mp3
-              - text: Plemeniti konj
+                audioSrc: /audio/hr/brzi_konj_je_mirno_trcao_duz_staze.mp3
+              - text: Brzi konj mirno trči duž staze.
                 correct: false
-                audioSrc: /audio/hr/plemeniti_konj.mp3
-              - text: Staza
+                audioSrc: /audio/hr/brzi_konj_mirno_trci_duz_staze.mp3
+              - text: Brzi konj će trčati duž cijele staze.
                 correct: false
-                audioSrc: /audio/hr/staza.mp3
-              - text: Sedlo
+                audioSrc: /audio/hr/brzi_konj_ce_trcati_duz_cijele_staze.mp3
+              - text: Brzi konj je stajao ispred stare štale.
                 correct: false
-                audioSrc: /audio/hr/sedlo.mp3
+                audioSrc: /audio/hr/brzi_konj_je_stajao_ispred_stare_stale.mp3
           - order: 4
             legacyId: 697
             type: ASSIST
@@ -200,40 +204,40 @@ units:
         challenges:
           - order: 1
             legacyId: 698
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The riders prepare for the tournament."'
+            targetSentence: Jahači se pripremaju za natjecanje.
+            acceptedAnswers:
+              - Jahači se pripremaju za natjecanje
+            wordBank:
+              - Jahači
+              - se
+              - natjecanje
+              - za
+              - pripremaju
+              - nije
+            audioSrc: /audio/hr/jahaci_se_pripremaju_za_natjecanje.mp3
             grammarTags: []
-            options:
-              - text: Jahači se pripremaju za natjecanje.
-                correct: true
-                audioSrc: /audio/hr/jahaci_se_pripremaju_za_natjecanje.mp3
-              - text: Vitezovi vole svoje konje.
-                correct: false
-                audioSrc: /audio/hr/vitezovi_vole_svoje_konje.mp3
-              - text: Konj nosi sedlo.
-                correct: false
-                audioSrc: /audio/hr/konj_nosi_sedlo.mp3
-              - text: Staza je puna pijeska.
-                correct: false
-                audioSrc: /audio/hr/staza_je_puna_pijeska.mp3
           - order: 2
             legacyId: 699
             type: ASSIST
-            prompt: 'Select the correct translation: "The leather saddle"'
-            grammarTags: []
+            prompt: 'Translate: "The rider checked the leather saddle before the race."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Kožno sedlo
+              - text: Jahač je provjerio kožno sedlo prije trke.
                 correct: true
-                audioSrc: /audio/hr/kozno_sedlo.mp3
-              - text: Crveno sedlo
+                audioSrc: /audio/hr/jahac_je_provjerio_kozno_sedlo_prije_trke.mp3
+              - text: Jahač provjerava kožno sedlo prije trke.
                 correct: false
-                audioSrc: /audio/hr/crveno_sedlo.mp3
-              - text: Dugačka trkaća staza
+                audioSrc: /audio/hr/jahac_provjerava_kozno_sedlo_prije_trke.mp3
+              - text: Jahač će provjeriti kožno sedlo sutra ujutro.
                 correct: false
-                audioSrc: /audio/hr/dugacka_trkaca_staza.mp3
-              - text: Brzi konj
+                audioSrc: /audio/hr/jahac_ce_provjeriti_kozno_sedlo_sutra_ujutro.mp3
+              - text: Jahač je stavio teško koplje na sedlo.
                 correct: false
-                audioSrc: /audio/hr/brzi_konj.mp3
+                audioSrc: /audio/hr/jahac_je_stavio_tesko_koplje_na_sedlo.mp3
           - order: 3
             legacyId: 700
             type: ASSIST
@@ -243,33 +247,35 @@ units:
               - text: Vitez jaše konja.
                 correct: true
                 audioSrc: /audio/hr/vitez_jase_konja.mp3
+              - text: Jučer vitez jaše konja.
+                correct: false
+                audioSrc: /audio/hr/jucer_vitez_jase_konja.mp3
+              - text: Sutra vitez jaše konja.
+                correct: false
+                audioSrc: /audio/hr/sutra_vitez_jase_konja.mp3
               - text: Konj nosi sedlo.
                 correct: false
                 audioSrc: /audio/hr/konj_nosi_sedlo.mp3
-              - text: Vitezovi vole svoje konje.
-                correct: false
-                audioSrc: /audio/hr/vitezovi_vole_svoje_konje.mp3
-              - text: Staza je puna pijeska.
-                correct: false
-                audioSrc: /audio/hr/staza_je_puna_pijeska.mp3
           - order: 4
             legacyId: 701
             type: ASSIST
-            prompt: 'Select the correct translation: "A long race track"'
-            grammarTags: []
+            prompt: 'Translate: "Tomorrow we will watch the knights in Sinj."'
+            grammarTags:
+              - futur_1
+              - locative
             options:
-              - text: Dugačka trkaća staza
+              - text: Sutra ćemo gledati vitezove u Sinju.
                 correct: true
-                audioSrc: /audio/hr/dugacka_trkaca_staza.mp3
-              - text: Kožno sedlo
+                audioSrc: /audio/hr/sutra_cemo_gledati_vitezove_u_sinju.mp3
+              - text: Jučer smo gledali vitezove u Sinju.
                 correct: false
-                audioSrc: /audio/hr/kozno_sedlo.mp3
-              - text: Crveno sedlo
+                audioSrc: /audio/hr/jucer_smo_gledali_vitezove_u_sinju.mp3
+              - text: Sutra ćemo gledati vitezove u Sinj.
                 correct: false
-                audioSrc: /audio/hr/crveno_sedlo.mp3
-              - text: Plemeniti konj
+                audioSrc: /audio/hr/sutra_cemo_gledati_vitezove_u_sinj.mp3
+              - text: Danas gledamo vitezove na stazi.
                 correct: false
-                audioSrc: /audio/hr/plemeniti_konj.mp3
+                audioSrc: /audio/hr/danas_gledamo_vitezove_na_stazi.mp3
       - order: 4
         legacyId: 164
         kind: BOSS_CAPSTONE
@@ -277,22 +283,18 @@ units:
         challenges:
           - order: 1
             legacyId: 702
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The noble horse is galloping."'
+            targetSentence: Plemeniti konj galopira.
+            acceptedAnswers:
+              - Plemeniti konj galopira
+            wordBank:
+              - Plemeniti
+              - galopira
+              - konj
+              - nije
+            audioSrc: /audio/hr/plemeniti_konj_galopira.mp3
             grammarTags: []
-            options:
-              - text: Plemeniti konj galopira.
-                correct: true
-                audioSrc: /audio/hr/plemeniti_konj_galopira.mp3
-              - text: Jahač je u sedlu.
-                correct: false
-                audioSrc: /audio/hr/jahac_je_u_sedlu.mp3
-              - text: Konj mirno čeka.
-                correct: false
-                audioSrc: /audio/hr/konj_mirno_ceka.mp3
-              - text: Sedlo je spremno.
-                correct: false
-                audioSrc: /audio/hr/sedlo_je_spremno.mp3
           - order: 2
             legacyId: 703
             type: ASSIST
@@ -302,15 +304,15 @@ units:
               - text: Jahač je u sedlu.
                 correct: true
                 audioSrc: /audio/hr/jahac_je_u_sedlu.mp3
+              - text: Jahač nije u sedlu.
+                correct: false
+                audioSrc: /audio/hr/jahac_nije_u_sedlu.mp3
+              - text: Jučer jahač je u sedlu.
+                correct: false
+                audioSrc: /audio/hr/jucer_jahac_je_u_sedlu.mp3
               - text: Plemeniti konj galopira.
                 correct: false
                 audioSrc: /audio/hr/plemeniti_konj_galopira.mp3
-              - text: Sedlo je spremno.
-                correct: false
-                audioSrc: /audio/hr/sedlo_je_spremno.mp3
-              - text: Konj mirno čeka.
-                correct: false
-                audioSrc: /audio/hr/konj_mirno_ceka.mp3
           - order: 3
             legacyId: 704
             type: ASSIST
@@ -320,15 +322,15 @@ units:
               - text: Svi se pripremaju za početak.
                 correct: true
                 audioSrc: /audio/hr/svi_se_pripremaju_za_pocetak.mp3
+              - text: Jučer svi se pripremaju za početak.
+                correct: false
+                audioSrc: /audio/hr/jucer_svi_se_pripremaju_za_pocetak.mp3
+              - text: Sutra svi se pripremaju za početak.
+                correct: false
+                audioSrc: /audio/hr/sutra_svi_se_pripremaju_za_pocetak.mp3
               - text: Vitez se kreće naprijed.
                 correct: false
                 audioSrc: /audio/hr/vitez_se_krece_naprijed.mp3
-              - text: Publika plješće jahačima.
-                correct: false
-                audioSrc: /audio/hr/publika_pljesce_jahacima.mp3
-              - text: Početak velikog natjecanja.
-                correct: false
-                audioSrc: /audio/hr/pocetak_velikog_natjecanja.mp3
           - order: 4
             legacyId: 705
             type: ASSIST
@@ -338,15 +340,15 @@ units:
               - text: Vitez se kreće naprijed.
                 correct: true
                 audioSrc: /audio/hr/vitez_se_krece_naprijed.mp3
+              - text: Jučer vitez se kreće naprijed.
+                correct: false
+                audioSrc: /audio/hr/jucer_vitez_se_krece_naprijed.mp3
+              - text: Sutra vitez se kreće naprijed.
+                correct: false
+                audioSrc: /audio/hr/sutra_vitez_se_krece_naprijed.mp3
               - text: Svi se pripremaju za početak.
                 correct: false
                 audioSrc: /audio/hr/svi_se_pripremaju_za_pocetak.mp3
-              - text: Publika plješće jahačima.
-                correct: false
-                audioSrc: /audio/hr/publika_pljesce_jahacima.mp3
-              - text: Početak velikog natjecanja.
-                correct: false
-                audioSrc: /audio/hr/pocetak_velikog_natjecanja.mp3
   - order: 42
     legacyId: 42
     title: Unit 42
@@ -452,8 +454,9 @@ units:
         challenges:
           - order: 1
             legacyId: 710
-            type: ASSIST
-            prompt: 'Select the correct translation: "The knights compete."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vitezovi_se_natjecu.mp3
             grammarTags: []
             options:
               - text: Vitezovi se natječu.
@@ -471,25 +474,28 @@ units:
           - order: 2
             legacyId: 711
             type: ASSIST
-            prompt: 'Select the correct translation: "The long lance"'
-            grammarTags: []
+            prompt: 'Translate: "The knight held a long wooden spear."'
+            grammarTags:
+              - perfekt
+              - locative
             options:
-              - text: Dugačko koplje
+              - text: Alkar je držao dugačko drveno koplje u ruci.
                 correct: true
-                audioSrc: /audio/hr/dugacko_koplje.mp3
-              - text: Željezna alka
+                audioSrc: /audio/hr/alkar_je_drzao_dugacko_drveno_koplje_u_ruci.mp3
+              - text: Alkar drži dugačko drveno koplje u ruci.
                 correct: false
-                audioSrc: /audio/hr/zeljezna_alka.mp3
-              - text: Promašena meta
+                audioSrc: /audio/hr/alkar_drzi_dugacko_drveno_koplje_u_ruci.mp3
+              - text: Alkar će držati dugačko drveno koplje na konju.
                 correct: false
-                audioSrc: /audio/hr/promasena_meta.mp3
-              - text: Mali željezni prsten
+                audioSrc: /audio/hr/alkar_ce_drzati_dugacko_drveno_koplje_na_konju.mp3
+              - text: Alkar je spustio željeznu alku na stol.
                 correct: false
-                audioSrc: /audio/hr/mali_zeljezni_prsten.mp3
+                audioSrc: /audio/hr/alkar_je_spustio_zeljeznu_alku_na_stol.mp3
           - order: 3
             legacyId: 712
-            type: ASSIST
-            prompt: 'Select the correct translation: "Direct hit in the center!"'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/pogodak_u_sridu.mp3
             grammarTags: []
             options:
               - text: Pogodak u sridu!
@@ -507,21 +513,23 @@ units:
           - order: 4
             legacyId: 713
             type: ASSIST
-            prompt: 'Select the correct translation: "The iron ring"'
-            grammarTags: []
+            prompt: 'Translate: "The iron ring hangs high above the track."'
+            grammarTags:
+              - genitive
+              - spatial_preposition
             options:
-              - text: Željezna alka
+              - text: Željezna alka visi visoko iznad cijele staze.
                 correct: true
-                audioSrc: /audio/hr/zeljezna_alka.mp3
-              - text: Dugačko koplje
+                audioSrc: /audio/hr/zeljezna_alka_visi_visoko_iznad_cijele_staze.mp3
+              - text: Željezna alka visi nisko ispod drvenog mosta.
                 correct: false
-                audioSrc: /audio/hr/dugacko_koplje.mp3
-              - text: Promašena meta
+                audioSrc: /audio/hr/zeljezna_alka_visi_nisko_ispod_drvenog_mosta.mp3
+              - text: Željezna alka će visjeti iznad staze sutra.
                 correct: false
-                audioSrc: /audio/hr/promasena_meta.mp3
-              - text: Mali željezni prsten
+                audioSrc: /audio/hr/zeljezna_alka_ce_visjeti_iznad_staze_sutra.mp3
+              - text: Sjajna medalja visi na prsima pobjednika.
                 correct: false
-                audioSrc: /audio/hr/mali_zeljezni_prsten.mp3
+                audioSrc: /audio/hr/sjajna_medalja_visi_na_prsima_pobjednika.mp3
       - order: 3
         legacyId: 167
         kind: PRODUCTION
@@ -529,22 +537,20 @@ units:
         challenges:
           - order: 1
             legacyId: 714
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The knight aims at the target."'
+            targetSentence: Vitez se usmjerava na metu.
+            acceptedAnswers:
+              - Vitez se usmjerava na metu
+            wordBank:
+              - metu
+              - se
+              - Vitez
+              - ispod
+              - usmjerava
+              - na
+            audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
             grammarTags: []
-            options:
-              - text: Vitez se usmjerava na metu.
-                correct: true
-                audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
-              - text: Natječemo se zajedno.
-                correct: false
-                audioSrc: /audio/hr/natjecemo_se_zajedno.mp3
-              - text: Vitez drži koplje.
-                correct: false
-                audioSrc: /audio/hr/vitez_drzi_koplje.mp3
-              - text: Koplje pogađa cilj.
-                correct: false
-                audioSrc: /audio/hr/koplje_pogada_cilj.mp3
           - order: 2
             legacyId: 715
             type: ASSIST
@@ -554,51 +560,56 @@ units:
               - text: Natječemo se zajedno.
                 correct: true
                 audioSrc: /audio/hr/natjecemo_se_zajedno.mp3
+              - text: Jučer natječemo se zajedno.
+                correct: false
+                audioSrc: /audio/hr/jucer_natjecemo_se_zajedno.mp3
+              - text: Sutra natječemo se zajedno.
+                correct: false
+                audioSrc: /audio/hr/sutra_natjecemo_se_zajedno.mp3
               - text: Vitez se usmjerava na metu.
                 correct: false
                 audioSrc: /audio/hr/vitez_se_usmjerava_na_metu.mp3
-              - text: Vitez drži koplje.
-                correct: false
-                audioSrc: /audio/hr/vitez_drzi_koplje.mp3
-              - text: Alka stoji na užetu.
-                correct: false
-                audioSrc: /audio/hr/alka_stoji_na_uzetu.mp3
           - order: 3
             legacyId: 716
             type: ASSIST
-            prompt: 'Select the correct translation: "Sharp lance"'
-            grammarTags: []
+            prompt: 'Translate: "He aimed carefully with the sharp spear."'
+            grammarTags:
+              - perfekt
+              - instrumental
+              - dative
             options:
-              - text: Oštro koplje
+              - text: Pažljivo je ciljao oštrim kopljem prema alki.
                 correct: true
-                audioSrc: /audio/hr/ostro_koplje.mp3
-              - text: Sjajan pogodak
+                audioSrc: /audio/hr/pazljivo_je_ciljao_ostrim_kopljem_prema_alki.mp3
+              - text: Pažljivo cilja oštrim kopljem prema alki.
                 correct: false
-                audioSrc: /audio/hr/sjajan_pogodak.mp3
-              - text: Velika drvena meta
+                audioSrc: /audio/hr/pazljivo_cilja_ostrim_kopljem_prema_alki.mp3
+              - text: Pažljivo će ciljati kada krene brzi konj.
                 correct: false
-                audioSrc: /audio/hr/velika_drvena_meta.mp3
-              - text: Dugačko koplje
+                audioSrc: /audio/hr/pazljivo_ce_ciljati_kada_krene_brzi_konj.mp3
+              - text: Brzo je jahao bez teškog koplja u ruci.
                 correct: false
-                audioSrc: /audio/hr/dugacko_koplje.mp3
+                audioSrc: /audio/hr/brzo_je_jahao_bez_teskog_koplja_u_ruci.mp3
           - order: 4
             legacyId: 717
             type: ASSIST
-            prompt: 'Select the correct translation: "A great hit"'
-            grammarTags: []
+            prompt: 'Translate: "The crowd cheered when he hit the center."'
+            grammarTags:
+              - perfekt
+              - subordinate_kada
             options:
-              - text: Sjajan pogodak
+              - text: Publika je pljeskala kada je pogodio u sridu.
                 correct: true
-                audioSrc: /audio/hr/sjajan_pogodak.mp3
-              - text: Oštro koplje
+                audioSrc: /audio/hr/publika_je_pljeskala_kada_je_pogodio_u_sridu.mp3
+              - text: Publika plješće kada vitez pogodi u sridu.
                 correct: false
-                audioSrc: /audio/hr/ostro_koplje.mp3
-              - text: Velika drvena meta
+                audioSrc: /audio/hr/publika_pljesce_kada_vitez_pogodi_u_sridu.mp3
+              - text: Publika će pljeskati ako pogodi u sridu.
                 correct: false
-                audioSrc: /audio/hr/velika_drvena_meta.mp3
-              - text: Željezna alka
+                audioSrc: /audio/hr/publika_ce_pljeskati_ako_pogodi_u_sridu.mp3
+              - text: Publika je čekala dok su konji ulazili.
                 correct: false
-                audioSrc: /audio/hr/zeljezna_alka.mp3
+                audioSrc: /audio/hr/publika_je_cekala_dok_su_konji_ulazili.mp3
       - order: 4
         legacyId: 168
         kind: BOSS_CAPSTONE
@@ -606,22 +617,20 @@ units:
         challenges:
           - order: 1
             legacyId: 718
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The rider aims the lance at the ring."'
+            targetSentence: Jahač usmjerava koplje u alku.
+            acceptedAnswers:
+              - Jahač usmjerava koplje u alku
+            wordBank:
+              - Jahač
+              - alku
+              - u
+              - na
+              - koplje
+              - usmjerava
+            audioSrc: /audio/hr/jahac_usmjerava_koplje_u_alku.mp3
             grammarTags: []
-            options:
-              - text: Jahač usmjerava koplje u alku.
-                correct: true
-                audioSrc: /audio/hr/jahac_usmjerava_koplje_u_alku.mp3
-              - text: Alka visi iznad staze.
-                correct: false
-                audioSrc: /audio/hr/alka_visi_iznad_staze.mp3
-              - text: Koplje udara u željezo.
-                correct: false
-                audioSrc: /audio/hr/koplje_udara_u_zeljezo.mp3
-              - text: Vitez pogađa u jedan.
-                correct: false
-                audioSrc: /audio/hr/vitez_pogada_u_jedan.mp3
           - order: 2
             legacyId: 719
             type: ASSIST
@@ -631,33 +640,35 @@ units:
               - text: Svi se natječu s ponosom.
                 correct: true
                 audioSrc: /audio/hr/svi_se_natjecu_s_ponosom.mp3
+              - text: Jučer svi se natječu s ponosom.
+                correct: false
+                audioSrc: /audio/hr/jucer_svi_se_natjecu_s_ponosom.mp3
+              - text: Sutra svi se natječu s ponosom.
+                correct: false
+                audioSrc: /audio/hr/sutra_svi_se_natjecu_s_ponosom.mp3
               - text: Alka visi iznad staze.
                 correct: false
                 audioSrc: /audio/hr/alka_visi_iznad_staze.mp3
-              - text: Koplje udara u željezo.
-                correct: false
-                audioSrc: /audio/hr/koplje_udara_u_zeljezo.mp3
-              - text: Vitez pogađa u jedan.
-                correct: false
-                audioSrc: /audio/hr/vitez_pogada_u_jedan.mp3
           - order: 3
             legacyId: 720
             type: ASSIST
-            prompt: 'Select the correct translation: "Three points for the center hit!"'
-            grammarTags: []
+            prompt: 'Translate: "The knight won because he aimed accurately."'
+            grammarTags:
+              - perfekt
+              - subordinate_jer
             options:
-              - text: Tri boda za pogodak u sridu!
+              - text: Vitez je pobijedio jer je točno ciljao.
                 correct: true
-                audioSrc: /audio/hr/tri_boda_za_pogodak_u_sridu.mp3
-              - text: Pogodak u sridu!
+                audioSrc: /audio/hr/vitez_je_pobijedio_jer_je_tocno_ciljao.mp3
+              - text: Vitez pobjeđuje jer točno cilja.
                 correct: false
-                audioSrc: /audio/hr/pogodak_u_sridu.mp3
-              - text: Dva boda u gornji dio!
+                audioSrc: /audio/hr/vitez_pobjeduje_jer_tocno_cilja.mp3
+              - text: Vitez će pobijediti ako točno pogodi.
                 correct: false
-                audioSrc: /audio/hr/dva_boda_u_gornji_dio.mp3
-              - text: Publika slavi sridu!
+                audioSrc: /audio/hr/vitez_ce_pobijediti_ako_tocno_pogodi.mp3
+              - text: Vitez je jahao brzo duž staze.
                 correct: false
-                audioSrc: /audio/hr/publika_slavi_sridu.mp3
+                audioSrc: /audio/hr/vitez_je_jahao_brzo_duz_staze.mp3
           - order: 4
             legacyId: 721
             type: ASSIST
@@ -667,15 +678,15 @@ units:
               - text: Alka visi iznad staze.
                 correct: true
                 audioSrc: /audio/hr/alka_visi_iznad_staze.mp3
+              - text: Jučer alka visi iznad staze.
+                correct: false
+                audioSrc: /audio/hr/jucer_alka_visi_iznad_staze.mp3
+              - text: Sutra alka visi iznad staze.
+                correct: false
+                audioSrc: /audio/hr/sutra_alka_visi_iznad_staze.mp3
               - text: Jahač usmjerava koplje u alku.
                 correct: false
                 audioSrc: /audio/hr/jahac_usmjerava_koplje_u_alku.mp3
-              - text: Koplje udara u željezo.
-                correct: false
-                audioSrc: /audio/hr/koplje_udara_u_zeljezo.mp3
-              - text: Vitez pogađa u jedan.
-                correct: false
-                audioSrc: /audio/hr/vitez_pogada_u_jedan.mp3
   - order: 43
     legacyId: 43
     title: Unit 43
@@ -781,8 +792,9 @@ units:
         challenges:
           - order: 1
             legacyId: 726
-            type: ASSIST
-            prompt: 'Select the correct translation: "The boat descends down the river."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/camac_se_spusta_niz_rijeku.mp3
             grammarTags: []
             options:
               - text: Čamac se spušta niz rijeku.
@@ -800,57 +812,64 @@ units:
           - order: 2
             legacyId: 727
             type: ASSIST
-            prompt: 'Select the correct translation: "The high cliff"'
-            grammarTags: []
+            prompt: 'Translate: "High cliffs rise above the emerald Cetina."'
+            grammarTags:
+              - reflexive
+              - genitive
             options:
-              - text: Visoka stijena
+              - text: Visoke stijene uzdižu se iznad smaragdne Cetine.
                 correct: true
-                audioSrc: /audio/hr/visoka_stijena.mp3
-              - text: Predivni slap
+                audioSrc: /audio/hr/visoke_stijene_uzdizu_se_iznad_smaragdne_cetine.mp3
+              - text: Visoke stijene stoje ispod dubokog kanjona.
                 correct: false
-                audioSrc: /audio/hr/predivni_slap.mp3
-              - text: Duboki kanjon
+                audioSrc: /audio/hr/visoke_stijene_stoje_ispod_dubokog_kanjona.mp3
+              - text: Visoke stijene su čuvale mirnu zelenu rijeku.
                 correct: false
-                audioSrc: /audio/hr/duboki_kanjon.mp3
-              - text: Mali drveni čamac
+                audioSrc: /audio/hr/visoke_stijene_su_cuvale_mirnu_zelenu_rijeku.mp3
+              - text: Strme staze vode prema starom kamenom mostu.
                 correct: false
-                audioSrc: /audio/hr/mali_drveni_camac.mp3
+                audioSrc: /audio/hr/strme_staze_vode_prema_starom_kamenom_mostu.mp3
           - order: 3
             legacyId: 728
             type: ASSIST
-            prompt: 'Select the correct translation: "The beautiful waterfall"'
-            grammarTags: []
+            prompt: 'Translate: "We would love to photograph the wonderful waterfall."'
+            grammarTags:
+              - conditional
+              - locative
             options:
-              - text: Predivni slap
+              - text: Rado bismo fotografirali predivni slap u kanjonu.
                 correct: true
-                audioSrc: /audio/hr/predivni_slap.mp3
-              - text: Visoka stijena
+                audioSrc: /audio/hr/rado_bismo_fotografirali_predivni_slap_u_kanjonu.mp3
+              - text: Jučer smo fotografirali predivni slap u kanjonu.
                 correct: false
-                audioSrc: /audio/hr/visoka_stijena.mp3
-              - text: Duboki kanjon
+                audioSrc: /audio/hr/jucer_smo_fotografirali_predivni_slap_u_kanjonu.mp3
+              - text: Sutra ćemo fotografirati predivni slap na rijeci.
                 correct: false
-                audioSrc: /audio/hr/duboki_kanjon.mp3
-              - text: Mali drveni čamac
+                audioSrc: /audio/hr/sutra_cemo_fotografirati_predivni_slap_na_rijeci.mp3
+              - text: Rado bismo veslali mirnim čamcem niz rijeku.
                 correct: false
-                audioSrc: /audio/hr/mali_drveni_camac.mp3
+                audioSrc: /audio/hr/rado_bismo_veslali_mirnim_camcem_niz_rijeku.mp3
           - order: 4
             legacyId: 729
             type: ASSIST
-            prompt: 'Select the correct translation: "Deep canyon"'
-            grammarTags: []
+            prompt: 'Translate: "Tomorrow we will paddle through the deep canyon."'
+            grammarTags:
+              - futur_1
+              - accusative_motion
+              - genitive
             options:
-              - text: Duboki kanjon
+              - text: Sutra ćemo veslati kroz duboki kanjon Cetine.
                 correct: true
-                audioSrc: /audio/hr/duboki_kanjon.mp3
-              - text: Predivni slap
+                audioSrc: /audio/hr/sutra_cemo_veslati_kroz_duboki_kanjon_cetine.mp3
+              - text: Jučer smo veslali kroz duboki kanjon Cetine.
                 correct: false
-                audioSrc: /audio/hr/predivni_slap.mp3
-              - text: Visoka stijena
+                audioSrc: /audio/hr/jucer_smo_veslali_kroz_duboki_kanjon_cetine.mp3
+              - text: Sutra ćemo veslati u dubokom kanjonu.
                 correct: false
-                audioSrc: /audio/hr/visoka_stijena.mp3
-              - text: Mali drveni čamac
+                audioSrc: /audio/hr/sutra_cemo_veslati_u_dubokom_kanjonu.mp3
+              - text: Danas veslamo mirnim čamcem uz zelenu obalu.
                 correct: false
-                audioSrc: /audio/hr/mali_drveni_camac.mp3
+                audioSrc: /audio/hr/danas_veslamo_mirnim_camcem_uz_zelenu_obalu.mp3
       - order: 3
         legacyId: 171
         kind: PRODUCTION
@@ -858,22 +877,19 @@ units:
         challenges:
           - order: 1
             legacyId: 730
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "We admire the emerald river."'
+            targetSentence: Divimo se smaragdnoj rijeci.
+            acceptedAnswers:
+              - Divimo se smaragdnoj rijeci
+            wordBank:
+              - se
+              - rijeci
+              - rijeku
+              - smaragdnoj
+              - Divimo
+            audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
             grammarTags: []
-            options:
-              - text: Divimo se smaragdnoj rijeci.
-                correct: true
-                audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
-              - text: Brza voda teče.
-                correct: false
-                audioSrc: /audio/hr/brza_voda_tece.mp3
-              - text: Čamac se kreće kroz kanjon.
-                correct: false
-                audioSrc: /audio/hr/camac_se_krece_kroz_kanjon.mp3
-              - text: Gledamo slap iz čamca.
-                correct: false
-                audioSrc: /audio/hr/gledamo_slap_iz_camca.mp3
           - order: 2
             legacyId: 731
             type: ASSIST
@@ -883,15 +899,15 @@ units:
               - text: Brza voda teče.
                 correct: true
                 audioSrc: /audio/hr/brza_voda_tece.mp3
+              - text: Brza voda ne teče.
+                correct: false
+                audioSrc: /audio/hr/brza_voda_ne_tece.mp3
+              - text: spora voda teče.
+                correct: false
+                audioSrc: /audio/hr/spora_voda_tece.mp3
               - text: Divimo se smaragdnoj rijeci.
                 correct: false
                 audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
-              - text: Čamac se kreće kroz kanjon.
-                correct: false
-                audioSrc: /audio/hr/camac_se_krece_kroz_kanjon.mp3
-              - text: Stijena se uzdiže visoko.
-                correct: false
-                audioSrc: /audio/hr/stijena_se_uzdize_visoko.mp3
           - order: 3
             legacyId: 732
             type: ASSIST
@@ -901,15 +917,15 @@ units:
               - text: Čamac se kreće kroz kanjon.
                 correct: true
                 audioSrc: /audio/hr/camac_se_krece_kroz_kanjon.mp3
+              - text: Jučer čamac se kreće kroz kanjon.
+                correct: false
+                audioSrc: /audio/hr/jucer_camac_se_krece_kroz_kanjon.mp3
+              - text: Sutra čamac se kreće kroz kanjon.
+                correct: false
+                audioSrc: /audio/hr/sutra_camac_se_krece_kroz_kanjon.mp3
               - text: Divimo se smaragdnoj rijeci.
                 correct: false
                 audioSrc: /audio/hr/divimo_se_smaragdnoj_rijeci.mp3
-              - text: Brza voda teče.
-                correct: false
-                audioSrc: /audio/hr/brza_voda_tece.mp3
-              - text: Gledamo slap iz čamca.
-                correct: false
-                audioSrc: /audio/hr/gledamo_slap_iz_camca.mp3
           - order: 4
             legacyId: 733
             type: ASSIST
@@ -919,15 +935,15 @@ units:
               - text: Strme stijene uz obalu
                 correct: true
                 audioSrc: /audio/hr/strme_stijene_uz_obalu.mp3
+              - text: Jučer strme stijene uz obalu
+                correct: false
+                audioSrc: /audio/hr/jucer_strme_stijene_uz_obalu.mp3
+              - text: Sutra strme stijene uz obalu
+                correct: false
+                audioSrc: /audio/hr/sutra_strme_stijene_uz_obalu.mp3
               - text: Zelena rijeka Cetina
                 correct: false
                 audioSrc: /audio/hr/zelena_rijeka_cetina.mp3
-              - text: Bijela riječna pjena
-                correct: false
-                audioSrc: /audio/hr/bijela_rijecna_pjena.mp3
-              - text: Hladna planinska voda
-                correct: false
-                audioSrc: /audio/hr/hladna_planinska_voda.mp3
       - order: 4
         legacyId: 172
         kind: BOSS_CAPSTONE
@@ -935,22 +951,20 @@ units:
         challenges:
           - order: 1
             legacyId: 734
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The river descends into the canyon."'
+            targetSentence: Rijeka se spušta u kanjon.
+            acceptedAnswers:
+              - Rijeka se spušta u kanjon
+            wordBank:
+              - Rijeka
+              - u
+              - kanjon
+              - se
+              - spušta
+              - na
+            audioSrc: /audio/hr/rijeka_se_spusta_u_kanjon.mp3
             grammarTags: []
-            options:
-              - text: Rijeka se spušta u kanjon.
-                correct: true
-                audioSrc: /audio/hr/rijeka_se_spusta_u_kanjon.mp3
-              - text: Divimo se glasnom slapu.
-                correct: false
-                audioSrc: /audio/hr/divimo_se_glasnom_slapu.mp3
-              - text: Čamac prolazi pokraj stijena.
-                correct: false
-                audioSrc: /audio/hr/camac_prolazi_pokraj_stijena.mp3
-              - text: Veslamo po rijeci.
-                correct: false
-                audioSrc: /audio/hr/veslamo_po_rijeci.mp3
           - order: 2
             legacyId: 735
             type: ASSIST
@@ -960,15 +974,15 @@ units:
               - text: Divimo se glasnom slapu.
                 correct: true
                 audioSrc: /audio/hr/divimo_se_glasnom_slapu.mp3
+              - text: Divimo se tihom slapu.
+                correct: false
+                audioSrc: /audio/hr/divimo_se_tihom_slapu.mp3
+              - text: Jučer divimo se glasnom slapu.
+                correct: false
+                audioSrc: /audio/hr/jucer_divimo_se_glasnom_slapu.mp3
               - text: Rijeka se spušta u kanjon.
                 correct: false
                 audioSrc: /audio/hr/rijeka_se_spusta_u_kanjon.mp3
-              - text: Čamac prolazi pokraj stijena.
-                correct: false
-                audioSrc: /audio/hr/camac_prolazi_pokraj_stijena.mp3
-              - text: Divimo se ljepoti prirode.
-                correct: false
-                audioSrc: /audio/hr/divimo_se_ljepoti_prirode.mp3
           - order: 3
             legacyId: 736
             type: ASSIST
@@ -978,15 +992,15 @@ units:
               - text: Čamac prolazi pokraj stijena.
                 correct: true
                 audioSrc: /audio/hr/camac_prolazi_pokraj_stijena.mp3
+              - text: Jučer čamac prolazi pokraj stijena.
+                correct: false
+                audioSrc: /audio/hr/jucer_camac_prolazi_pokraj_stijena.mp3
+              - text: Sutra čamac prolazi pokraj stijena.
+                correct: false
+                audioSrc: /audio/hr/sutra_camac_prolazi_pokraj_stijena.mp3
               - text: Rijeka se spušta u kanjon.
                 correct: false
                 audioSrc: /audio/hr/rijeka_se_spusta_u_kanjon.mp3
-              - text: Divimo se glasnom slapu.
-                correct: false
-                audioSrc: /audio/hr/divimo_se_glasnom_slapu.mp3
-              - text: Slap pada u rijeku.
-                correct: false
-                audioSrc: /audio/hr/slap_pada_u_rijeku.mp3
           - order: 4
             legacyId: 737
             type: ASSIST
@@ -996,15 +1010,15 @@ units:
               - text: Čista i zelena riječna voda
                 correct: true
                 audioSrc: /audio/hr/cista_i_zelena_rijecna_voda.mp3
+              - text: Čista i plava riječna voda
+                correct: false
+                audioSrc: /audio/hr/cista_i_plava_rijecna_voda.mp3
+              - text: Jučer čista i zelena riječna voda
+                correct: false
+                audioSrc: /audio/hr/jucer_cista_i_zelena_rijecna_voda.mp3
               - text: Strme stijene uz obalu
                 correct: false
                 audioSrc: /audio/hr/strme_stijene_uz_obalu.mp3
-              - text: Bijela riječna pjena
-                correct: false
-                audioSrc: /audio/hr/bijela_rijecna_pjena.mp3
-              - text: Hladna planinska voda
-                correct: false
-                audioSrc: /audio/hr/hladna_planinska_voda.mp3
   - order: 44
     legacyId: 44
     title: Unit 44
@@ -1110,8 +1124,9 @@ units:
         challenges:
           - order: 1
             legacyId: 742
-            type: ASSIST
-            prompt: 'Select the correct translation: "The watermill wheel turns."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/mlinski_kotac_se_okrece.mp3
             grammarTags: []
             options:
               - text: Mlinski kotač se okreće.
@@ -1129,43 +1144,48 @@ units:
           - order: 2
             legacyId: 743
             type: ASSIST
-            prompt: 'Select the correct translation: "Warm fire"'
-            grammarTags: []
+            prompt: 'Translate: "A warm fire crackled under the iron bell."'
+            grammarTags:
+              - perfekt
+              - genitive
             options:
-              - text: Topla vatra
+              - text: Topla vatra je pucketala ispod željezne peke.
                 correct: true
-                audioSrc: /audio/hr/topla_vatra.mp3
-              - text: Bijelo brašno
+                audioSrc: /audio/hr/topla_vatra_je_pucketala_ispod_zeljezne_peke.mp3
+              - text: Topla vatra pucketa ispod željezne peke.
                 correct: false
-                audioSrc: /audio/hr/bijelo_brasno.mp3
-              - text: Kruh ispod peke
+                audioSrc: /audio/hr/topla_vatra_pucketa_ispod_zeljezne_peke.mp3
+              - text: Topla vatra će grijati staru kamenu kuću.
                 correct: false
-                audioSrc: /audio/hr/kruh_ispod_peke.mp3
-              - text: Miris toplog kruha
+                audioSrc: /audio/hr/topla_vatra_ce_grijati_staru_kamenu_kucu.mp3
+              - text: Hladna voda je tekla ispod drvenog kotača.
                 correct: false
-                audioSrc: /audio/hr/miris_toplog_kruha.mp3
+                audioSrc: /audio/hr/hladna_voda_je_tekla_ispod_drvenog_kotaca.mp3
           - order: 3
             legacyId: 744
             type: ASSIST
-            prompt: 'Select the correct translation: "White flour"'
-            grammarTags: []
+            prompt: 'Translate: "The old mill ground grain into white flour."'
+            grammarTags:
+              - perfekt
+              - accusative
             options:
-              - text: Bijelo brašno
+              - text: Stari mlin je samljeo žito u bijelo brašno.
                 correct: true
-                audioSrc: /audio/hr/bijelo_brasno.mp3
-              - text: Topla vatra
+                audioSrc: /audio/hr/stari_mlin_je_samljeo_zito_u_bijelo_brasno.mp3
+              - text: Stari mlin melje žito u bijelo brašno.
                 correct: false
-                audioSrc: /audio/hr/topla_vatra.mp3
-              - text: Kruh ispod peke
+                audioSrc: /audio/hr/stari_mlin_melje_zito_u_bijelo_brasno.mp3
+              - text: Stari mlin će mljeti žito cijelo jutro.
                 correct: false
-                audioSrc: /audio/hr/kruh_ispod_peke.mp3
-              - text: Miris toplog kruha
+                audioSrc: /audio/hr/stari_mlin_ce_mljeti_zito_cijelo_jutro.mp3
+              - text: Baka je zamijesila svježi kruh od bijelog brašna.
                 correct: false
-                audioSrc: /audio/hr/miris_toplog_kruha.mp3
+                audioSrc: /audio/hr/baka_je_zamijesila_svjezi_kruh_od_bijelog_brasna.mp3
           - order: 4
             legacyId: 745
-            type: ASSIST
-            prompt: 'Select the correct translation: "Bread under the peka"'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kruh_ispod_peke.mp3
             grammarTags: []
             options:
               - text: Kruh ispod peke
@@ -1187,22 +1207,19 @@ units:
         challenges:
           - order: 1
             legacyId: 746
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "We warm ourselves by the fire."'
+            targetSentence: Grijemo se uz vatru.
+            acceptedAnswers:
+              - Grijemo se uz vatru
+            wordBank:
+              - vatru
+              - nije
+              - se
+              - uz
+              - Grijemo
+            audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
             grammarTags: []
-            options:
-              - text: Grijemo se uz vatru.
-                correct: true
-                audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
-              - text: Mlin melje žito u brašno.
-                correct: false
-                audioSrc: /audio/hr/mlin_melje_zito_u_brasno.mp3
-              - text: Peka se zagrijava na ognjištu.
-                correct: false
-                audioSrc: /audio/hr/peka_se_zagrijava_na_ognjistu.mp3
-              - text: Vatra grije cijelu kuću.
-                correct: false
-                audioSrc: /audio/hr/vatra_grije_cijelu_kucu.mp3
           - order: 2
             legacyId: 747
             type: ASSIST
@@ -1212,15 +1229,15 @@ units:
               - text: Mlin melje žito u brašno.
                 correct: true
                 audioSrc: /audio/hr/mlin_melje_zito_u_brasno.mp3
+              - text: Jučer mlin melje žito u brašno.
+                correct: false
+                audioSrc: /audio/hr/jucer_mlin_melje_zito_u_brasno.mp3
+              - text: Sutra mlin melje žito u brašno.
+                correct: false
+                audioSrc: /audio/hr/sutra_mlin_melje_zito_u_brasno.mp3
               - text: Grijemo se uz vatru.
                 correct: false
                 audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
-              - text: Peka se zagrijava na ognjištu.
-                correct: false
-                audioSrc: /audio/hr/peka_se_zagrijava_na_ognjistu.mp3
-              - text: Kruh se peče polako.
-                correct: false
-                audioSrc: /audio/hr/kruh_se_pece_polako.mp3
           - order: 3
             legacyId: 748
             type: ASSIST
@@ -1230,15 +1247,15 @@ units:
               - text: Peka se zagrijava na ognjištu.
                 correct: true
                 audioSrc: /audio/hr/peka_se_zagrijava_na_ognjistu.mp3
+              - text: Jučer peka se zagrijava na ognjištu.
+                correct: false
+                audioSrc: /audio/hr/jucer_peka_se_zagrijava_na_ognjistu.mp3
+              - text: Sutra peka se zagrijava na ognjištu.
+                correct: false
+                audioSrc: /audio/hr/sutra_peka_se_zagrijava_na_ognjistu.mp3
               - text: Grijemo se uz vatru.
                 correct: false
                 audioSrc: /audio/hr/grijemo_se_uz_vatru.mp3
-              - text: Mlin melje žito u brašno.
-                correct: false
-                audioSrc: /audio/hr/mlin_melje_zito_u_brasno.mp3
-              - text: Dim se diže iz dimnjaka.
-                correct: false
-                audioSrc: /audio/hr/dim_se_dize_iz_dimnjaka.mp3
           - order: 4
             legacyId: 749
             type: ASSIST
@@ -1248,15 +1265,15 @@ units:
               - text: Miris svježeg kruha
                 correct: true
                 audioSrc: /audio/hr/miris_svjezeg_kruha.mp3
+              - text: Jučer miris svježeg kruha
+                correct: false
+                audioSrc: /audio/hr/jucer_miris_svjezeg_kruha.mp3
+              - text: Sutra miris svježeg kruha
+                correct: false
+                audioSrc: /audio/hr/sutra_miris_svjezeg_kruha.mp3
               - text: Brašno za domaći kruh
                 correct: false
                 audioSrc: /audio/hr/brasno_za_domaci_kruh.mp3
-              - text: Miris toplog kruha
-                correct: false
-                audioSrc: /audio/hr/miris_toplog_kruha.mp3
-              - text: Kruh ispod peke
-                correct: false
-                audioSrc: /audio/hr/kruh_ispod_peke.mp3
       - order: 4
         legacyId: 176
         kind: BOSS_CAPSTONE
@@ -1264,22 +1281,21 @@ units:
         challenges:
           - order: 1
             legacyId: 750
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The old watermill turns beside the river."'
+            targetSentence: Stari mlin se okreće pokraj rijeke.
+            acceptedAnswers:
+              - Stari mlin se okreće pokraj rijeke
+            wordBank:
+              - nije
+              - Stari
+              - mlin
+              - se
+              - rijeke
+              - pokraj
+              - okreće
+            audioSrc: /audio/hr/stari_mlin_se_okrece_pokraj_rijeke.mp3
             grammarTags: []
-            options:
-              - text: Stari mlin se okreće pokraj rijeke.
-                correct: true
-                audioSrc: /audio/hr/stari_mlin_se_okrece_pokraj_rijeke.mp3
-              - text: Obitelj se grije uz ognjište.
-                correct: false
-                audioSrc: /audio/hr/obitelj_se_grije_uz_ognjiste.mp3
-              - text: Ukusna večera se priprema ispod peke.
-                correct: false
-                audioSrc: /audio/hr/ukusna_vecera_se_priprema_ispod_peke.mp3
-              - text: Zlatna vatra pucketa.
-                correct: false
-                audioSrc: /audio/hr/zlatna_vatra_pucketa.mp3
           - order: 2
             legacyId: 751
             type: ASSIST
@@ -1289,33 +1305,35 @@ units:
               - text: Obitelj se grije uz ognjište.
                 correct: true
                 audioSrc: /audio/hr/obitelj_se_grije_uz_ognjiste.mp3
+              - text: Obitelj se ne grije uz ognjište.
+                correct: false
+                audioSrc: /audio/hr/obitelj_se_ne_grije_uz_ognjiste.mp3
+              - text: Jučer obitelj se grije uz ognjište.
+                correct: false
+                audioSrc: /audio/hr/jucer_obitelj_se_grije_uz_ognjiste.mp3
               - text: Stari mlin se okreće pokraj rijeke.
                 correct: false
                 audioSrc: /audio/hr/stari_mlin_se_okrece_pokraj_rijeke.mp3
-              - text: Ukusna večera se priprema ispod peke.
-                correct: false
-                audioSrc: /audio/hr/ukusna_vecera_se_priprema_ispod_peke.mp3
-              - text: Voda pokreće veliki mlin.
-                correct: false
-                audioSrc: /audio/hr/voda_pokrece_veliki_mlin.mp3
           - order: 3
             legacyId: 752
             type: ASSIST
-            prompt: 'Select the correct translation: "Delicious dinner is preparing under the peka."'
-            grammarTags: []
+            prompt: 'Translate: "We would gladly taste warm bread under the bell."'
+            grammarTags:
+              - conditional
+              - genitive
             options:
-              - text: Ukusna večera se priprema ispod peke.
+              - text: Rado bismo kušali topli kruh ispod peke.
                 correct: true
-                audioSrc: /audio/hr/ukusna_vecera_se_priprema_ispod_peke.mp3
-              - text: Obitelj se grije uz ognjište.
+                audioSrc: /audio/hr/rado_bismo_kusali_topli_kruh_ispod_peke.mp3
+              - text: Jučer smo kušali topli kruh ispod peke.
                 correct: false
-                audioSrc: /audio/hr/obitelj_se_grije_uz_ognjiste.mp3
-              - text: Stari mlin se okreće pokraj rijeke.
+                audioSrc: /audio/hr/jucer_smo_kusali_topli_kruh_ispod_peke.mp3
+              - text: Sutra ćemo kušati topli kruh ispod peke.
                 correct: false
-                audioSrc: /audio/hr/stari_mlin_se_okrece_pokraj_rijeke.mp3
-              - text: Svježi kruh je spreman.
+                audioSrc: /audio/hr/sutra_cemo_kusati_topli_kruh_ispod_peke.mp3
+              - text: Rado bismo posjetili stari mlin na rijeci.
                 correct: false
-                audioSrc: /audio/hr/svjezi_kruh_je_spreman.mp3
+                audioSrc: /audio/hr/rado_bismo_posjetili_stari_mlin_na_rijeci.mp3
           - order: 4
             legacyId: 753
             type: ASSIST
@@ -1325,15 +1343,15 @@ units:
               - text: Zlatna vatra pucketa.
                 correct: true
                 audioSrc: /audio/hr/zlatna_vatra_pucketa.mp3
+              - text: Jučer zlatna vatra pucketa.
+                correct: false
+                audioSrc: /audio/hr/jucer_zlatna_vatra_pucketa.mp3
+              - text: Sutra zlatna vatra pucketa.
+                correct: false
+                audioSrc: /audio/hr/sutra_zlatna_vatra_pucketa.mp3
               - text: Stari mlin se okreće pokraj rijeke.
                 correct: false
                 audioSrc: /audio/hr/stari_mlin_se_okrece_pokraj_rijeke.mp3
-              - text: Obitelj se grije uz ognjište.
-                correct: false
-                audioSrc: /audio/hr/obitelj_se_grije_uz_ognjiste.mp3
-              - text: Mlin radi cijeli dan.
-                correct: false
-                audioSrc: /audio/hr/mlin_radi_cijeli_dan.mp3
   - order: 45
     legacyId: 45
     title: Unit 45
@@ -1439,8 +1457,9 @@ units:
         challenges:
           - order: 1
             legacyId: 758
-            type: ASSIST
-            prompt: 'Select the correct translation: "Everyone rejoices at the victory."'
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/svi_se_raduju_pobjedi.mp3
             grammarTags: []
             options:
               - text: Svi se raduju pobjedi.
@@ -1458,57 +1477,65 @@ units:
           - order: 2
             legacyId: 759
             type: ASSIST
-            prompt: 'Select the correct translation: "Golden medal"'
-            grammarTags: []
+            prompt: 'Translate: "The winner received a shiny gold medal."'
+            grammarTags:
+              - perfekt
+              - locative
             options:
-              - text: Zlatna medalja
+              - text: Pobjednik je primio sjajnu zlatnu medalju na trgu.
                 correct: true
-                audioSrc: /audio/hr/zlatna_medalja.mp3
-              - text: Veliko slavlje
+                audioSrc: /audio/hr/pobjednik_je_primio_sjajnu_zlatnu_medalju_na_trgu.mp3
+              - text: Pobjednik prima sjajnu zlatnu medalju na trgu.
                 correct: false
-                audioSrc: /audio/hr/veliko_slavlje.mp3
-              - text: Istinski ponos
+                audioSrc: /audio/hr/pobjednik_prima_sjajnu_zlatnu_medalju_na_trgu.mp3
+              - text: Pobjednik će primiti medalju nakon cijele trke.
                 correct: false
-                audioSrc: /audio/hr/istinski_ponos.mp3
-              - text: Sjajna zlatna medalja
+                audioSrc: /audio/hr/pobjednik_ce_primiti_medalju_nakon_cijele_trke.mp3
+              - text: Pobjednik je zahvalio publici koja je pljeskala.
                 correct: false
-                audioSrc: /audio/hr/sjajna_zlatna_medalja.mp3
+                audioSrc: /audio/hr/pobjednik_je_zahvalio_publici_koja_je_pljeskala.mp3
           - order: 3
             legacyId: 760
             type: ASSIST
-            prompt: 'Select the correct translation: "Great celebration"'
-            grammarTags: []
+            prompt: 'Translate: "We stayed at the big celebration until evening."'
+            grammarTags:
+              - perfekt
+              - locative
+              - genitive
             options:
-              - text: Veliko slavlje
+              - text: Ostali smo na velikom slavlju do večeri.
                 correct: true
-                audioSrc: /audio/hr/veliko_slavlje.mp3
-              - text: Zlatna medalja
+                audioSrc: /audio/hr/ostali_smo_na_velikom_slavlju_do_veceri.mp3
+              - text: Ostajemo na velikom slavlju do večeri.
                 correct: false
-                audioSrc: /audio/hr/zlatna_medalja.mp3
-              - text: Istinski ponos
+                audioSrc: /audio/hr/ostajemo_na_velikom_slavlju_do_veceri.mp3
+              - text: Ostat ćemo na velikom slavlju ako bude glazbe.
                 correct: false
-                audioSrc: /audio/hr/istinski_ponos.mp3
-              - text: Slavlje u cijelom gradu
+                audioSrc: /audio/hr/ostat_cemo_na_velikom_slavlju_ako_bude_glazbe.mp3
+              - text: Došli smo na veliko slavlje s prijateljima.
                 correct: false
-                audioSrc: /audio/hr/slavlje_u_cijelom_gradu.mp3
+                audioSrc: /audio/hr/dosli_smo_na_veliko_slavlje_s_prijateljima.mp3
           - order: 4
             legacyId: 761
             type: ASSIST
-            prompt: 'Select the correct translation: "True pride"'
-            grammarTags: []
+            prompt: 'Translate: "I would like to return to Sinj next summer."'
+            grammarTags:
+              - conditional
+              - reflexive
+              - genitive
             options:
-              - text: Istinski ponos
+              - text: Volio bih se vratiti u Sinj sljedećeg ljeta.
                 correct: true
-                audioSrc: /audio/hr/istinski_ponos.mp3
-              - text: Zlatna medalja
+                audioSrc: /audio/hr/volio_bih_se_vratiti_u_sinj_sljedeceg_ljeta.mp3
+              - text: Vratio sam se u Sinj prošlog ljeta.
                 correct: false
-                audioSrc: /audio/hr/zlatna_medalja.mp3
-              - text: Veliko slavlje
+                audioSrc: /audio/hr/vratio_sam_se_u_sinj_proslog_ljeta.mp3
+              - text: Vratit ću se u Sinj sljedećeg ljeta.
                 correct: false
-                audioSrc: /audio/hr/veliko_slavlje.mp3
-              - text: Sjajna zlatna medalja
+                audioSrc: /audio/hr/vratit_cu_se_u_sinj_sljedeceg_ljeta.mp3
+              - text: Volio bih vidjeti stare konje u dolini.
                 correct: false
-                audioSrc: /audio/hr/sjajna_zlatna_medalja.mp3
+                audioSrc: /audio/hr/volio_bih_vidjeti_stare_konje_u_dolini.mp3
       - order: 3
         legacyId: 179
         kind: PRODUCTION
@@ -1516,22 +1543,19 @@ units:
         challenges:
           - order: 1
             legacyId: 762
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "We are proud of our knights."'
+            targetSentence: Ponosimo se našim vitezovima.
+            acceptedAnswers:
+              - Ponosimo se našim vitezovima
+            wordBank:
+              - se
+              - nije
+              - vitezovima
+              - našim
+              - Ponosimo
+            audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
             grammarTags: []
-            options:
-              - text: Ponosimo se našim vitezovima.
-                correct: true
-                audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
-              - text: Pobjednik se raduje na konju.
-                correct: false
-                audioSrc: /audio/hr/pobjednik_se_raduje_na_konju.mp3
-              - text: Grad slavi viteško natjecanje.
-                correct: false
-                audioSrc: /audio/hr/grad_slavi_vitesko_natjecanje.mp3
-              - text: Ponosni vitez pozdravlja publiku.
-                correct: false
-                audioSrc: /audio/hr/ponosni_vitez_pozdravlja_publiku.mp3
           - order: 2
             legacyId: 763
             type: ASSIST
@@ -1541,15 +1565,15 @@ units:
               - text: Pobjednik se raduje na konju.
                 correct: true
                 audioSrc: /audio/hr/pobjednik_se_raduje_na_konju.mp3
+              - text: Jučer pobjednik se raduje na konju.
+                correct: false
+                audioSrc: /audio/hr/jucer_pobjednik_se_raduje_na_konju.mp3
+              - text: Sutra pobjednik se raduje na konju.
+                correct: false
+                audioSrc: /audio/hr/sutra_pobjednik_se_raduje_na_konju.mp3
               - text: Ponosimo se našim vitezovima.
                 correct: false
                 audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
-              - text: Grad slavi viteško natjecanje.
-                correct: false
-                audioSrc: /audio/hr/grad_slavi_vitesko_natjecanje.mp3
-              - text: Zlatna medalja sja.
-                correct: false
-                audioSrc: /audio/hr/zlatna_medalja_sja.mp3
           - order: 3
             legacyId: 764
             type: ASSIST
@@ -1559,15 +1583,15 @@ units:
               - text: Sjajna medalja na prsima
                 correct: true
                 audioSrc: /audio/hr/sjajna_medalja_na_prsima.mp3
+              - text: Jučer sjajna medalja na prsima
+                correct: false
+                audioSrc: /audio/hr/jucer_sjajna_medalja_na_prsima.mp3
+              - text: Sutra sjajna medalja na prsima
+                correct: false
+                audioSrc: /audio/hr/sutra_sjajna_medalja_na_prsima.mp3
               - text: Ponos hrvatske tradicije
                 correct: false
                 audioSrc: /audio/hr/ponos_hrvatske_tradicije.mp3
-              - text: Zlatna medalja
-                correct: false
-                audioSrc: /audio/hr/zlatna_medalja.mp3
-              - text: Slavlje u cijelom gradu
-                correct: false
-                audioSrc: /audio/hr/slavlje_u_cijelom_gradu.mp3
           - order: 4
             legacyId: 765
             type: ASSIST
@@ -1577,15 +1601,15 @@ units:
               - text: Grad slavi viteško natjecanje.
                 correct: true
                 audioSrc: /audio/hr/grad_slavi_vitesko_natjecanje.mp3
+              - text: Jučer grad slavi viteško natjecanje.
+                correct: false
+                audioSrc: /audio/hr/jucer_grad_slavi_vitesko_natjecanje.mp3
+              - text: Sutra grad slavi viteško natjecanje.
+                correct: false
+                audioSrc: /audio/hr/sutra_grad_slavi_vitesko_natjecanje.mp3
               - text: Ponosimo se našim vitezovima.
                 correct: false
                 audioSrc: /audio/hr/ponosimo_se_nasim_vitezovima.mp3
-              - text: Pobjednik se raduje na konju.
-                correct: false
-                audioSrc: /audio/hr/pobjednik_se_raduje_na_konju.mp3
-              - text: Svi pjevaju pobjedničku pjesmu.
-                correct: false
-                audioSrc: /audio/hr/svi_pjevaju_pobjednicku_pjesmu.mp3
       - order: 4
         legacyId: 180
         kind: BOSS_CAPSTONE
@@ -1593,22 +1617,20 @@ units:
         challenges:
           - order: 1
             legacyId: 766
-            type: ASSIST
+            type: BUILD_SENTENCE
             prompt: 'Select the correct translation: "The champion proudly receives the gold medal."'
+            targetSentence: Slavodobitnik ponosno prima zlatnu medalju.
+            acceptedAnswers:
+              - Slavodobitnik ponosno prima zlatnu medalju
+            wordBank:
+              - Slavodobitnik
+              - medalju
+              - zlatnu
+              - nije
+              - prima
+              - ponosno
+            audioSrc: /audio/hr/slavodobitnik_ponosno_prima_zlatnu_medalju.mp3
             grammarTags: []
-            options:
-              - text: Slavodobitnik ponosno prima zlatnu medalju.
-                correct: true
-                audioSrc: /audio/hr/slavodobitnik_ponosno_prima_zlatnu_medalju.mp3
-              - text: Cijeli grad se raduje i pjeva.
-                correct: false
-                audioSrc: /audio/hr/cijeli_grad_se_raduje_i_pjeva.mp3
-              - text: Ponosimo se bogatom hrvatskom baštinom.
-                correct: false
-                audioSrc: /audio/hr/ponosimo_se_bogatom_hrvatskom_bastinom.mp3
-              - text: Vitezovi ponosno jašu.
-                correct: false
-                audioSrc: /audio/hr/vitezovi_ponosno_jasu.mp3
           - order: 2
             legacyId: 767
             type: ASSIST
@@ -1618,15 +1640,15 @@ units:
               - text: Cijeli grad se raduje i pjeva.
                 correct: true
                 audioSrc: /audio/hr/cijeli_grad_se_raduje_i_pjeva.mp3
+              - text: Cijeli grad se raduje i ne pjeva.
+                correct: false
+                audioSrc: /audio/hr/cijeli_grad_se_raduje_i_ne_pjeva.mp3
+              - text: Jučer cijeli grad se raduje i pjeva.
+                correct: false
+                audioSrc: /audio/hr/jucer_cijeli_grad_se_raduje_i_pjeva.mp3
               - text: Slavodobitnik ponosno prima zlatnu medalju.
                 correct: false
                 audioSrc: /audio/hr/slavodobitnik_ponosno_prima_zlatnu_medalju.mp3
-              - text: Ponosimo se bogatom hrvatskom baštinom.
-                correct: false
-                audioSrc: /audio/hr/ponosimo_se_bogatom_hrvatskom_bastinom.mp3
-              - text: Slavlje traje do kasno u noć.
-                correct: false
-                audioSrc: /audio/hr/slavlje_traje_do_kasno_u_noc.mp3
           - order: 3
             legacyId: 768
             type: ASSIST
@@ -1636,15 +1658,15 @@ units:
               - text: Ponosimo se bogatom hrvatskom baštinom.
                 correct: true
                 audioSrc: /audio/hr/ponosimo_se_bogatom_hrvatskom_bastinom.mp3
+              - text: Jučer ponosimo se bogatom hrvatskom baštinom.
+                correct: false
+                audioSrc: /audio/hr/jucer_ponosimo_se_bogatom_hrvatskom_bastinom.mp3
+              - text: Sutra ponosimo se bogatom hrvatskom baštinom.
+                correct: false
+                audioSrc: /audio/hr/sutra_ponosimo_se_bogatom_hrvatskom_bastinom.mp3
               - text: Slavodobitnik ponosno prima zlatnu medalju.
                 correct: false
                 audioSrc: /audio/hr/slavodobitnik_ponosno_prima_zlatnu_medalju.mp3
-              - text: Cijeli grad se raduje i pjeva.
-                correct: false
-                audioSrc: /audio/hr/cijeli_grad_se_raduje_i_pjeva.mp3
-              - text: Zlatni plamen tradicije.
-                correct: false
-                audioSrc: /audio/hr/zlatni_plamen_tradicije.mp3
           - order: 4
             legacyId: 769
             type: ASSIST

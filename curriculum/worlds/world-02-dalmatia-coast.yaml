@@ -119,8 +119,9 @@ units:
         challenges:
           - order: 1
             legacyId: 94
-            type: SELECT
-            prompt: Which one of these is "Door"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/vrata.mp3
             grammarTags: []
             options:
               - text: Vrata
@@ -137,8 +138,9 @@ units:
                 audioSrc: /audio/hr/kuca.mp3
           - order: 2
             legacyId: 95
-            type: SELECT
-            prompt: Which one of these is "Window"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/prozor.mp3
             grammarTags: []
             options:
               - text: Prozor
@@ -480,8 +482,9 @@ units:
         challenges:
           - order: 1
             legacyId: 112
-            type: SELECT
-            prompt: Which one of these is "Ear"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/uho.mp3
             grammarTags: []
             options:
               - text: Uho
@@ -498,8 +501,9 @@ units:
                 audioSrc: /audio/hr/oko.mp3
           - order: 2
             legacyId: 113
-            type: SELECT
-            prompt: Which one of these is "Nose"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/nos.mp3
             grammarTags: []
             options:
               - text: Nos
@@ -841,8 +845,9 @@ units:
         challenges:
           - order: 1
             legacyId: 130
-            type: SELECT
-            prompt: Which one of these is "Island"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/otok.mp3
             grammarTags: []
             options:
               - text: Otok
@@ -859,8 +864,9 @@ units:
                 audioSrc: /audio/hr/more.mp3
           - order: 2
             legacyId: 131
-            type: SELECT
-            prompt: Which one of these is "Boat"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/brod.mp3
             grammarTags: []
             options:
               - text: Brod
@@ -1202,8 +1208,9 @@ units:
         challenges:
           - order: 1
             legacyId: 148
-            type: SELECT
-            prompt: Which one of these is "Hat / Cap"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/kapa.mp3
             grammarTags: []
             options:
               - text: Kapa
@@ -1220,8 +1227,9 @@ units:
                 audioSrc: /audio/hr/haljina.mp3
           - order: 2
             legacyId: 149
-            type: SELECT
-            prompt: Which one of these is "Jacket"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/jakna.mp3
             grammarTags: []
             options:
               - text: Jakna
@@ -1563,8 +1571,9 @@ units:
         challenges:
           - order: 1
             legacyId: 166
-            type: SELECT
-            prompt: Which one of these is "Warm / Hot"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/toplo.mp3
             grammarTags: []
             options:
               - text: Toplo
@@ -1581,8 +1590,9 @@ units:
                 audioSrc: /audio/hr/vjetar.mp3
           - order: 2
             legacyId: 167
-            type: SELECT
-            prompt: Which one of these is "Cold"?
+            type: LISTEN
+            prompt: Tap what you hear
+            audioSrc: /audio/hr/hladno.mp3
             grammarTags: []
             options:
               - text: Hladno
