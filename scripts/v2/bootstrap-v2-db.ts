@@ -25,6 +25,7 @@ import * as schemaV2 from "../../db/schema.v2";
  */
 
 const allowProd = process.argv.includes("--allow-prod-cutover");
+const resetSchema = process.argv.includes("--reset-schema");
 const targetUrl = (process.env.DATABASE_URL_V2 || "").trim().replace(/^["']|["']$/g, "");
 const prodUrl = (process.env.DATABASE_URL || "").trim().replace(/^["']|["']$/g, "");
 
@@ -53,9 +54,18 @@ async function main() {
   console.log("=== 🚀 CROLINGO v2 ISOLATED DATABASE BOOTSTRAP ===\n");
 
   runStep("Step 1/5: Validate v2 YAML curriculum & assets", "npm run v2:validate");
+
+  if (resetSchema) {
+    console.log("\n▶ Resetting public schema on isolated DATABASE_URL_V2...");
+    const resetSql = neon(targetUrl);
+    await resetSql("DROP SCHEMA IF EXISTS public CASCADE");
+    await resetSql("CREATE SCHEMA public");
+    console.log("  ✓ Clean public schema created on DATABASE_URL_V2");
+  }
+
   runStep(
     "Step 2/5: Push db/schema.v2.ts DDL to DATABASE_URL_V2",
-    "npx drizzle-kit push:pg --config=drizzle.config.v2.ts --force"
+    "npx drizzle-kit push:pg --config=drizzle.config.v2.ts"
   );
   runStep(
     "Step 3/5: Compile 12 Worlds / 60 Units / 1,009 Challenges from YAML",
