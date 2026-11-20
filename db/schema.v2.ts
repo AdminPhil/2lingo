@@ -80,6 +80,9 @@ export const worlds = pgTable("worlds", {
 
 export const units = pgTable("units", {
   id: serial("id").primaryKey(),
+  courseId: integer("course_id")
+    .references(() => courses.id, { onDelete: "cascade" })
+    .notNull(),
   worldId: integer("world_id")
     .references(() => worlds.id, { onDelete: "cascade" })
     .notNull(),
@@ -106,6 +109,7 @@ export const challenges = pgTable("challenges", {
     .notNull(),
   order: integer("order").notNull(),
   type: challengeTypeEnum("type").notNull(),
+  question: text("question").notNull(),
   prompt: text("prompt").notNull(),
   payload: jsonb("payload").$type<Record<string, unknown>>().notNull(),
   grammarTags: jsonb("grammar_tags").$type<string[]>().notNull().default([]),
@@ -253,6 +257,12 @@ export const podReactions = pgTable("pod_reactions", {
 });
 
 // Relations
+export const coursesRelations = relations(courses, ({ many }) => ({
+  userProgress: many(userProgress),
+  levels: many(levels),
+  units: many(units),
+}));
+
 export const levelsRelations = relations(levels, ({ one, many }) => ({
   course: one(courses, { fields: [levels.courseId], references: [courses.id] }),
   worlds: many(worlds),
@@ -264,6 +274,7 @@ export const worldsRelations = relations(worlds, ({ one, many }) => ({
 }));
 
 export const unitsRelations = relations(units, ({ one, many }) => ({
+  course: one(courses, { fields: [units.courseId], references: [courses.id] }),
   world: one(worlds, { fields: [units.worldId], references: [worlds.id] }),
   lessons: many(lessons),
 }));
@@ -275,10 +286,42 @@ export const lessonsRelations = relations(lessons, ({ one, many }) => ({
 
 export const challengesRelations = relations(challenges, ({ one, many }) => ({
   lesson: one(lessons, { fields: [challenges.lessonId], references: [lessons.id] }),
-  options: many(challengeOptions),
-  lexemes: many(challengeLexemes),
-  progress: many(challengeProgress),
-  mistakes: many(challengeMistakes),
+  challengeOptions: many(challengeOptions),
+  challengeLexemes: many(challengeLexemes),
+  challengeProgress: many(challengeProgress),
+  challengeMistakes: many(challengeMistakes),
+}));
+
+export const challengeOptionsRelations = relations(challengeOptions, ({ one }) => ({
+  challenge: one(challenges, {
+    fields: [challengeOptions.challengeId],
+    references: [challenges.id],
+  }),
+}));
+
+export const challengeProgressRelations = relations(challengeProgress, ({ one }) => ({
+  challenge: one(challenges, {
+    fields: [challengeProgress.challengeId],
+    references: [challenges.id],
+  }),
+}));
+
+export const challengeMistakesRelations = relations(challengeMistakes, ({ one }) => ({
+  challenge: one(challenges, {
+    fields: [challengeMistakes.challengeId],
+    references: [challenges.id],
+  }),
+  selectedOption: one(challengeOptions, {
+    fields: [challengeMistakes.selectedOptionId],
+    references: [challengeOptions.id],
+  }),
+}));
+
+export const userProgressRelations = relations(userProgress, ({ one }) => ({
+  activeCourse: one(courses, {
+    fields: [userProgress.activeCourseId],
+    references: [courses.id],
+  }),
 }));
 
 export const podsRelations = relations(pods, ({ many }) => ({
@@ -288,4 +331,8 @@ export const podsRelations = relations(pods, ({ many }) => ({
 
 export const podMembersRelations = relations(podMembers, ({ one }) => ({
   pod: one(pods, { fields: [podMembers.podId], references: [pods.id] }),
+}));
+
+export const podReactionsRelations = relations(podReactions, ({ one }) => ({
+  pod: one(pods, { fields: [podReactions.podId], references: [pods.id] }),
 }));

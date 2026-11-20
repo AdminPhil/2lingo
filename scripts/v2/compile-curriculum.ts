@@ -170,6 +170,7 @@ async function compileV2Curriculum() {
         [unitRow] = await db
           .insert(schemaV2.units)
           .values({
+            courseId: course.id,
             worldId: worldRow.id,
             order: u.order,
             title: u.title,
@@ -211,6 +212,7 @@ async function compileV2Curriculum() {
                 lessonId: lessonRow.id,
                 order: ch.order,
                 type: ch.type,
+                question: ch.prompt,
                 prompt: ch.prompt,
                 payload,
                 grammarTags: ch.grammarTags,
@@ -221,6 +223,7 @@ async function compileV2Curriculum() {
               .update(schemaV2.challenges)
               .set({
                 type: ch.type,
+                question: ch.prompt,
                 prompt: ch.prompt,
                 payload,
                 grammarTags: ch.grammarTags,

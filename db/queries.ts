@@ -1,8 +1,11 @@
 import { cache } from "react";
 import { and, eq, gte, inArray } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 
 import db from "@/db/drizzle";
+import * as schemaV2 from "@/db/schema.v2";
 import { isSuperAdmin } from "@/lib/admin";
 import { shuffleArray } from "@/lib/utils";
 import { evaluateDailyHeartRefill } from "@/lib/heart-refill";
@@ -193,6 +196,56 @@ export const getLesson = cache(async (id?: number) => {
     return null;
   }
 
+  const useV2Schema =
+    process.env.CROLINGO_SCHEMA_VERSION === "v2" ||
+    Boolean(process.env.DATABASE_URL_V2);
+
+  if (useV2Schema) {
+    const dbUrl = (process.env.DATABASE_URL_V2 || process.env.DATABASE_URL || "")
+      .trim()
+      .replace(/^["']|["']$/g, "");
+    if (dbUrl && !dbUrl.includes("placeholder@localhost")) {
+      const sqlV2 = neon(dbUrl);
+      // @ts-ignore - neon-http generic variance with drizzle-orm 0.30
+      const dbV2 = drizzle(sqlV2, { schema: schemaV2 });
+
+      const v2Data = await dbV2.query.lessons.findFirst({
+        where: eq(schemaV2.lessons.id, lessonId),
+        with: {
+          challenges: {
+            orderBy: (ch, { asc }) => [asc(ch.order)],
+            with: {
+              challengeOptions: true,
+              challengeProgress: {
+                where: eq(schemaV2.challengeProgress.userId, userId),
+              },
+            },
+          },
+        },
+      });
+
+      if (v2Data && v2Data.challenges) {
+        const normalizedV2 = v2Data.challenges.map((challenge) => {
+          const completed =
+            challenge.challengeProgress &&
+            challenge.challengeProgress.length > 0 &&
+            challenge.challengeProgress.every((progress) => progress.completed);
+
+          return {
+            ...challenge,
+            question: challenge.question || challenge.prompt,
+            completed,
+            challengeOptions: challenge.challengeOptions
+              ? shuffleArray(challenge.challengeOptions)
+              : [],
+          };
+        });
+
+        return { ...v2Data, challenges: normalizedV2 };
+      }
+    }
+  }
+
   const data = await db.query.lessons.findFirst({
     where: eq(lessons.id, lessonId),
     with: {
@@ -257,20 +310,28 @@ export const getUserSubscription = cache(async () => {
 
   if (!userId) return null;
 
-  const data = await db.query.userSubscription.findFirst({
-    where: eq(userSubscription.userId, userId),
-  });
+  if (process.env.CROLINGO_SCHEMA_VERSION === "v2") {
+    return null;
+  }
 
-  if (!data) return null;
+  try {
+    const data = await db.query.userSubscription.findFirst({
+      where: eq(userSubscription.userId, userId),
+    });
 
-  const isActive = 
-    data.stripePriceId &&
-    data.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS > Date.now();
+    if (!data) return null;
 
-  return {
-    ...data,
-    isActive: !!isActive,
-  };
+    const isActive =
+      data.stripePriceId &&
+      data.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS > Date.now();
+
+    return {
+      ...data,
+      isActive: !!isActive,
+    };
+  } catch {
+    return null;
+  }
 });
 
 export const getTopTenUsers = cache(async (activePodId?: number) => {

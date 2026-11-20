@@ -3,7 +3,9 @@ import { drizzle } from "drizzle-orm/neon-http";
 
 import * as schema from "./schema";
 
-const rawUrl = (process.env.DATABASE_URL || "").trim().replace(/^["']|["']$/g, "");
+const rawUrl = (process.env.DATABASE_URL_V2 || process.env.DATABASE_URL || "")
+  .trim()
+  .replace(/^["']|["']$/g, "");
 const connectionString =
   rawUrl || "postgresql://placeholder:placeholder@localhost:5432/placeholder";
 

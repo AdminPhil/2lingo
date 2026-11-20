@@ -31,7 +31,9 @@
     "v2:validate": "tsx ./scripts/v2/validate-curriculum.ts",
     "v2:compile": "tsx ./scripts/v2/compile-curriculum.ts",
     "v2:pedagogy": "tsx ./scripts/v2/audit-yaml-pedagogy.ts",
-    "v2:migrate": "tsx ./scripts/v2/migrate-v1-to-v2.ts"
+    "v2:migrate": "tsx ./scripts/v2/migrate-v1-to-v2.ts",
+    "v2:push": "drizzle-kit push:pg --config=drizzle.config.v2.ts",
+    "v2:bootstrap": "tsx ./scripts/v2/bootstrap-v2-db.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.39.9",

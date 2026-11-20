@@ -19,6 +19,7 @@ import { Header } from "./header";
 import { WorldNavigator } from "./world-navigator";
 import { LevelMilestoneGateway } from "./level-milestone-gateway";
 import { CheerBanner } from "@/components/cheer-banner";
+import { V2WelcomeBanner } from "@/components/v2-welcome-banner";
 import { ParentModeBanner } from "@/components/parent-mode-banner";
 import { getLevelForUnitOrder, getUnitRangeForLevel } from "@/lib/v2/lesson-helpers";
 import { getUnseenCheers } from "@/db/queries";
@@ -118,6 +119,10 @@ const LearnPage = async ({ searchParams }: Props) => {
       </StickyWrapper>
       <FeedWrapper>
         <Header title={userProgress.activeCourse.title} />
+        <V2WelcomeBanner
+          points={userProgress.points}
+          streak={userProgress.streak ?? 0}
+        />
         {userProgress.role === "parent" && <ParentModeBanner />}
         <CheerBanner cheers={unseenCheers} />
         <WorldNavigator

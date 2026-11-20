@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 
-import { getLesson, getUserProgress, getUserSubscription } from "@/db/queries";
-
-import { Quiz } from "../quiz";
+import { getLesson, getUserProgress } from "@/db/queries";
+import { isSuperIzazovLesson } from "@/lib/v2/lesson-helpers";
+import { LessonQuizClient } from "@/features/quiz/lesson-quiz-client";
 
 type Props = {
   params: Promise<{
@@ -10,45 +10,36 @@ type Props = {
   }>;
 };
 
-const LessonIdPage = async ({
-  params,
-}: Props) => {
+const LessonIdPage = async ({ params }: Props) => {
   const { lessonId } = await params;
-  const lessonData = getLesson(Number(lessonId));
-  const userProgressData = getUserProgress();
-  const userSubscriptionData = getUserSubscription();
-
-  const [
-    lesson,
-    userProgress,
-    userSubscription,
-  ] = await Promise.all([
-    lessonData,
-    userProgressData,
-    userSubscriptionData,
+  const [lesson, userProgress] = await Promise.all([
+    getLesson(Number(lessonId)),
+    getUserProgress(),
   ]);
 
   if (!lesson || !userProgress) {
     redirect("/learn");
   }
 
-  const initialPercentage = lesson.challenges
-    .filter((challenge) => challenge.completed)
-    .length / lesson.challenges.length * 100;
+  const initialPercentage =
+    lesson.challenges.length > 0
+      ? (lesson.challenges.filter((challenge) => challenge.completed).length /
+          lesson.challenges.length) *
+        100
+      : 0;
 
-  const isSuperIzazov = lesson.order === 4 || lesson.title.toLowerCase().includes("super izazov");
+  const isSuperIzazov = isSuperIzazovLesson(lesson, lesson.order >= 5 ? 5 : 4);
 
-  return ( 
-    <Quiz
+  return (
+    <LessonQuizClient
       initialLessonId={lesson.id}
       initialLessonChallenges={lesson.challenges}
       initialHearts={userProgress.hearts}
       initialPercentage={initialPercentage}
-      userSubscription={userSubscription}
       isSuperIzazov={isSuperIzazov}
       lessonOrder={lesson.order}
     />
   );
 };
- 
+
 export default LessonIdPage;
