@@ -1,0 +1,1825 @@
+schemaVersion: 2
+worldOrder: 2
+levelOrder: 1
+slug: dalmatia-coast
+name: Coastal Explorer
+badgeLabel: "World 2: Coastal Explorer • Adriatic Sea & Islands"
+cefrBand: Pre-A1
+theme:
+  solidBg: bg-sky-600
+  gradient: from-sky-500 via-blue-600 to-cyan-600
+  badgeBg: bg-black/25 text-white border-white/40
+  accentEmoji: 🌊
+  buttonClass: bg-white text-blue-950 hover:bg-sky-50 border-sky-300
+  accentBorder: border-sky-300/50
+  nodeActiveBg: bg-sky-500 hover:bg-sky-500/90 border-sky-600 active:border-b-0 text-white
+  nodeBorderColor: border-sky-600
+  nodeStrokeColor: "#0284c7"
+  nodeBadgeClasses: bg-white text-sky-600 border-sky-400
+  nodeArrowBorder: border-t-sky-400
+units:
+  - order: 6
+    legacyId: 6
+    title: Unit 6
+    description: Moja soba i kuća (My Room & Home)
+    lessons:
+      - order: 1
+        legacyId: 21
+        kind: DISCOVERY
+        title: Kuća i soba (House & Room)
+        challenges:
+          - order: 1
+            legacyId: 90
+            type: SELECT
+            prompt: Which one of these is "House / Home"?
+            grammarTags: []
+            options:
+              - text: Kuća
+                correct: true
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Soba
+                correct: false
+                imageSrc: /room.svg
+                audioSrc: /audio/hr/soba.mp3
+              - text: Vrata
+                correct: false
+                imageSrc: /door.svg
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                imageSrc: /window.svg
+                audioSrc: /audio/hr/prozor.mp3
+          - order: 2
+            legacyId: 91
+            type: SELECT
+            prompt: Which one of these is "Room"?
+            grammarTags: []
+            options:
+              - text: Soba
+                correct: true
+                imageSrc: /room.svg
+                audioSrc: /audio/hr/soba.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Krevet
+                correct: false
+                imageSrc: /bed.svg
+                audioSrc: /audio/hr/krevet.mp3
+              - text: Stol
+                correct: false
+                imageSrc: /table.svg
+                audioSrc: /audio/hr/stol.mp3
+          - order: 3
+            legacyId: 92
+            type: SELECT
+            prompt: Which one of these is "Bed"?
+            grammarTags: []
+            options:
+              - text: Krevet
+                correct: true
+                imageSrc: /bed.svg
+                audioSrc: /audio/hr/krevet.mp3
+              - text: Stol
+                correct: false
+                imageSrc: /table.svg
+                audioSrc: /audio/hr/stol.mp3
+              - text: Soba
+                correct: false
+                imageSrc: /room.svg
+                audioSrc: /audio/hr/soba.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 4
+            legacyId: 93
+            type: ASSIST
+            prompt: '"Table / Desk"'
+            grammarTags: []
+            options:
+              - text: Stol
+                correct: true
+                audioSrc: /audio/hr/stol.mp3
+              - text: Krevet
+                correct: false
+                audioSrc: /audio/hr/krevet.mp3
+              - text: Soba
+                correct: false
+                audioSrc: /audio/hr/soba.mp3
+              - text: Vrata
+                correct: false
+                audioSrc: /audio/hr/vrata.mp3
+      - order: 2
+        legacyId: 22
+        kind: PHRASE_LISTEN
+        title: Vrata i prozori (Doors, Windows & Toys)
+        challenges:
+          - order: 1
+            legacyId: 94
+            type: SELECT
+            prompt: Which one of these is "Door"?
+            grammarTags: []
+            options:
+              - text: Vrata
+                correct: true
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 2
+            legacyId: 95
+            type: SELECT
+            prompt: Which one of these is "Window"?
+            grammarTags: []
+            options:
+              - text: Prozor
+                correct: true
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Vrata
+                correct: false
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Krevet
+                correct: false
+                audioSrc: /audio/hr/krevet.mp3
+              - text: Soba
+                correct: false
+                audioSrc: /audio/hr/soba.mp3
+          - order: 3
+            legacyId: 96
+            type: SELECT
+            prompt: Which one of these is "Toy"?
+            grammarTags: []
+            options:
+              - text: Igračka
+                correct: true
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Lopta
+                correct: false
+                audioSrc: /audio/hr/lopta.mp3
+              - text: Vrata
+                correct: false
+                audioSrc: /audio/hr/vrata.mp3
+          - order: 4
+            legacyId: 97
+            type: ASSIST
+            prompt: '"Book"'
+            grammarTags: []
+            options:
+              - text: Knjiga
+                correct: true
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Igračka
+                correct: false
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Krevet
+                correct: false
+                audioSrc: /audio/hr/krevet.mp3
+      - order: 3
+        legacyId: 23
+        kind: PRODUCTION
+        title: U mojoj sobi (In My Room)
+        challenges:
+          - order: 1
+            legacyId: 98
+            type: ASSIST
+            prompt: '"My room"'
+            grammarTags: []
+            options:
+              - text: Moja soba
+                correct: true
+                audioSrc: /audio/hr/moja_soba.mp3
+              - text: Moj krevet
+                correct: false
+                audioSrc: /audio/hr/moj_krevet.mp3
+              - text: Velika kuća
+                correct: false
+                audioSrc: /audio/hr/velika_kuca.mp3
+              - text: Mala soba
+                correct: false
+                audioSrc: /audio/hr/mala_soba.mp3
+          - order: 2
+            legacyId: 99
+            type: ASSIST
+            prompt: '"Big house"'
+            grammarTags: []
+            options:
+              - text: Velika kuća
+                correct: true
+                audioSrc: /audio/hr/velika_kuca.mp3
+              - text: Moja soba
+                correct: false
+                audioSrc: /audio/hr/moja_soba.mp3
+              - text: Moj krevet
+                correct: false
+                audioSrc: /audio/hr/moj_krevet.mp3
+              - text: Veliki stol
+                correct: false
+                audioSrc: /audio/hr/veliki_stol.mp3
+          - order: 3
+            legacyId: 100
+            type: ASSIST
+            prompt: '"My bed"'
+            grammarTags: []
+            options:
+              - text: Moj krevet
+                correct: true
+                audioSrc: /audio/hr/moj_krevet.mp3
+              - text: Moja soba
+                correct: false
+                audioSrc: /audio/hr/moja_soba.mp3
+              - text: Velika kuća
+                correct: false
+                audioSrc: /audio/hr/velika_kuca.mp3
+              - text: Mali stol
+                correct: false
+                audioSrc: /audio/hr/mali_stol.mp3
+          - order: 4
+            legacyId: 101
+            type: ASSIST
+            prompt: '"That is my book"'
+            grammarTags: []
+            options:
+              - text: To je moja knjiga
+                correct: true
+                audioSrc: /audio/hr/to_je_moja_knjiga.mp3
+              - text: To je moja soba
+                correct: false
+                audioSrc: /audio/hr/to_je_moja_soba.mp3
+              - text: To je moja kuća
+                correct: false
+                audioSrc: /audio/hr/to_je_moja_kuca.mp3
+              - text: To je moj krevet
+                correct: false
+                audioSrc: /audio/hr/to_je_moj_krevet.mp3
+      - order: 4
+        legacyId: 24
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Arhitekt sobe (Room Architect Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 102
+            type: SELECT
+            prompt: Which one of these is "House"?
+            grammarTags: []
+            options:
+              - text: Kuća
+                correct: true
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Soba
+                correct: false
+                audioSrc: /audio/hr/soba.mp3
+              - text: Vrata
+                correct: false
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+          - order: 2
+            legacyId: 103
+            type: SELECT
+            prompt: Which one of these is "Bed"?
+            grammarTags: []
+            options:
+              - text: Krevet
+                correct: true
+                audioSrc: /audio/hr/krevet.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+              - text: Soba
+                correct: false
+                audioSrc: /audio/hr/soba.mp3
+          - order: 3
+            legacyId: 104
+            type: SELECT
+            prompt: Which one of these is "Toy"?
+            grammarTags: []
+            options:
+              - text: Igračka
+                correct: true
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Lopta
+                correct: false
+                audioSrc: /audio/hr/lopta.mp3
+          - order: 4
+            legacyId: 105
+            type: ASSIST
+            prompt: '"Open the window"'
+            grammarTags: []
+            options:
+              - text: Otvori prozor
+                correct: true
+                audioSrc: /audio/hr/otvori_prozor.mp3
+              - text: Otvori vrata
+                correct: false
+                audioSrc: /audio/hr/otvori_vrata.mp3
+              - text: Moja soba
+                correct: false
+                audioSrc: /audio/hr/moja_soba.mp3
+              - text: Velika kuća
+                correct: false
+                audioSrc: /audio/hr/velika_kuca.mp3
+          - order: 5
+            legacyId: 106
+            type: ASSIST
+            prompt: '"Where is the toy?"'
+            grammarTags: []
+            options:
+              - text: Gdje je igračka
+                correct: true
+                audioSrc: /audio/hr/gdje_je_igracka.mp3
+              - text: Gdje je knjiga
+                correct: false
+                audioSrc: /audio/hr/gdje_je_knjiga.mp3
+              - text: Gdje je soba
+                correct: false
+                audioSrc: /audio/hr/gdje_je_soba.mp3
+              - text: To je moja knjiga
+                correct: false
+                audioSrc: /audio/hr/to_je_moja_knjiga.mp3
+          - order: 6
+            legacyId: 107
+            type: ASSIST
+            prompt: '"That is my book"'
+            grammarTags: []
+            options:
+              - text: To je moja knjiga
+                correct: true
+                audioSrc: /audio/hr/to_je_moja_knjiga.mp3
+              - text: To je moja soba
+                correct: false
+                audioSrc: /audio/hr/to_je_moja_soba.mp3
+              - text: To je moja kuća
+                correct: false
+                audioSrc: /audio/hr/to_je_moja_kuca.mp3
+              - text: Gdje je igračka
+                correct: false
+                audioSrc: /audio/hr/gdje_je_igracka.mp3
+  - order: 7
+    legacyId: 7
+    title: Unit 7
+    description: Tijelo i pokret (Body & Movement)
+    lessons:
+      - order: 1
+        legacyId: 25
+        kind: DISCOVERY
+        title: Dijelovi tijela (Body Parts)
+        challenges:
+          - order: 1
+            legacyId: 108
+            type: SELECT
+            prompt: Which one of these is "Head"?
+            grammarTags: []
+            options:
+              - text: Glava
+                correct: true
+                imageSrc: /head.svg
+                audioSrc: /audio/hr/glava.mp3
+              - text: Ruka
+                correct: false
+                imageSrc: /hand.svg
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Noga
+                correct: false
+                imageSrc: /foot.svg
+                audioSrc: /audio/hr/noga.mp3
+              - text: Oko
+                correct: false
+                imageSrc: /eye.svg
+                audioSrc: /audio/hr/oko.mp3
+          - order: 2
+            legacyId: 109
+            type: SELECT
+            prompt: Which one of these is "Hand / Arm"?
+            grammarTags: []
+            options:
+              - text: Ruka
+                correct: true
+                imageSrc: /hand.svg
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Noga
+                correct: false
+                imageSrc: /foot.svg
+                audioSrc: /audio/hr/noga.mp3
+              - text: Glava
+                correct: false
+                imageSrc: /head.svg
+                audioSrc: /audio/hr/glava.mp3
+              - text: Uho
+                correct: false
+                imageSrc: /ear.svg
+                audioSrc: /audio/hr/uho.mp3
+          - order: 3
+            legacyId: 110
+            type: SELECT
+            prompt: Which one of these is "Leg / Foot"?
+            grammarTags: []
+            options:
+              - text: Noga
+                correct: true
+                imageSrc: /foot.svg
+                audioSrc: /audio/hr/noga.mp3
+              - text: Ruka
+                correct: false
+                imageSrc: /hand.svg
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Glava
+                correct: false
+                imageSrc: /head.svg
+                audioSrc: /audio/hr/glava.mp3
+              - text: Nos
+                correct: false
+                imageSrc: /nose.svg
+                audioSrc: /audio/hr/nos.mp3
+          - order: 4
+            legacyId: 111
+            type: ASSIST
+            prompt: '"Eye"'
+            grammarTags: []
+            options:
+              - text: Oko
+                correct: true
+                audioSrc: /audio/hr/oko.mp3
+              - text: Uho
+                correct: false
+                audioSrc: /audio/hr/uho.mp3
+              - text: Nos
+                correct: false
+                audioSrc: /audio/hr/nos.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+      - order: 2
+        legacyId: 26
+        kind: PHRASE_LISTEN
+        title: Lice i osjetila (Face & Senses)
+        challenges:
+          - order: 1
+            legacyId: 112
+            type: SELECT
+            prompt: Which one of these is "Ear"?
+            grammarTags: []
+            options:
+              - text: Uho
+                correct: true
+                audioSrc: /audio/hr/uho.mp3
+              - text: Nos
+                correct: false
+                audioSrc: /audio/hr/nos.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+              - text: Oko
+                correct: false
+                audioSrc: /audio/hr/oko.mp3
+          - order: 2
+            legacyId: 113
+            type: SELECT
+            prompt: Which one of these is "Nose"?
+            grammarTags: []
+            options:
+              - text: Nos
+                correct: true
+                audioSrc: /audio/hr/nos.mp3
+              - text: Uho
+                correct: false
+                audioSrc: /audio/hr/uho.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+              - text: Kosa
+                correct: false
+                audioSrc: /audio/hr/kosa.mp3
+          - order: 3
+            legacyId: 114
+            type: SELECT
+            prompt: Which one of these is "Mouth"?
+            grammarTags: []
+            options:
+              - text: Usta
+                correct: true
+                audioSrc: /audio/hr/usta.mp3
+              - text: Nos
+                correct: false
+                audioSrc: /audio/hr/nos.mp3
+              - text: Uho
+                correct: false
+                audioSrc: /audio/hr/uho.mp3
+              - text: Glava
+                correct: false
+                audioSrc: /audio/hr/glava.mp3
+          - order: 4
+            legacyId: 115
+            type: ASSIST
+            prompt: '"Hair"'
+            grammarTags: []
+            options:
+              - text: Kosa
+                correct: true
+                audioSrc: /audio/hr/kosa.mp3
+              - text: Glava
+                correct: false
+                audioSrc: /audio/hr/glava.mp3
+              - text: Ruka
+                correct: false
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+      - order: 3
+        legacyId: 27
+        kind: PRODUCTION
+        title: Pokret i akcija (Move & Play!)
+        challenges:
+          - order: 1
+            legacyId: 116
+            type: ASSIST
+            prompt: '"Jump!"'
+            grammarTags: []
+            options:
+              - text: Skoči
+                correct: true
+                audioSrc: /audio/hr/skoci.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+          - order: 2
+            legacyId: 117
+            type: ASSIST
+            prompt: '"Run!"'
+            grammarTags: []
+            options:
+              - text: Trči
+                correct: true
+                audioSrc: /audio/hr/trci.mp3
+              - text: Skoči
+                correct: false
+                audioSrc: /audio/hr/skoci.mp3
+              - text: Mačka
+                correct: false
+                audioSrc: /audio/hr/macka.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+          - order: 3
+            legacyId: 118
+            type: ASSIST
+            prompt: '"Hands up!"'
+            grammarTags: []
+            options:
+              - text: Ruke gore
+                correct: true
+                audioSrc: /audio/hr/ruke_gore.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Moja soba
+                correct: false
+                audioSrc: /audio/hr/moja_soba.mp3
+          - order: 4
+            legacyId: 119
+            type: ASSIST
+            prompt: '"Clap your hands!"'
+            grammarTags: []
+            options:
+              - text: Plješći rukama
+                correct: true
+                audioSrc: /audio/hr/pljesci_rukama.mp3
+              - text: Ruke gore
+                correct: false
+                audioSrc: /audio/hr/ruke_gore.mp3
+              - text: To je mama
+                correct: false
+                audioSrc: /audio/hr/to_je_mama.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+      - order: 4
+        legacyId: 28
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Plesni majstor (Dance Master Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 120
+            type: SELECT
+            prompt: Which one of these is "Head"?
+            grammarTags: []
+            options:
+              - text: Glava
+                correct: true
+                audioSrc: /audio/hr/glava.mp3
+              - text: Ruka
+                correct: false
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Noga
+                correct: false
+                audioSrc: /audio/hr/noga.mp3
+              - text: Oko
+                correct: false
+                audioSrc: /audio/hr/oko.mp3
+          - order: 2
+            legacyId: 121
+            type: SELECT
+            prompt: Which one of these is "Hand"?
+            grammarTags: []
+            options:
+              - text: Ruka
+                correct: true
+                audioSrc: /audio/hr/ruka.mp3
+              - text: Noga
+                correct: false
+                audioSrc: /audio/hr/noga.mp3
+              - text: Nos
+                correct: false
+                audioSrc: /audio/hr/nos.mp3
+              - text: Glava
+                correct: false
+                audioSrc: /audio/hr/glava.mp3
+          - order: 3
+            legacyId: 122
+            type: SELECT
+            prompt: Which one of these is "Nose"?
+            grammarTags: []
+            options:
+              - text: Nos
+                correct: true
+                audioSrc: /audio/hr/nos.mp3
+              - text: Uho
+                correct: false
+                audioSrc: /audio/hr/uho.mp3
+              - text: Usta
+                correct: false
+                audioSrc: /audio/hr/usta.mp3
+              - text: Oko
+                correct: false
+                audioSrc: /audio/hr/oko.mp3
+          - order: 4
+            legacyId: 123
+            type: ASSIST
+            prompt: '"Raise your hand!"'
+            grammarTags: []
+            options:
+              - text: Digni ruku
+                correct: true
+                audioSrc: /audio/hr/digni_ruku.mp3
+              - text: Ruke gore
+                correct: false
+                audioSrc: /audio/hr/ruke_gore.mp3
+              - text: Plješći rukama
+                correct: false
+                audioSrc: /audio/hr/pljesci_rukama.mp3
+              - text: Brzo trči
+                correct: false
+                audioSrc: /audio/hr/brzo_trci.mp3
+          - order: 5
+            legacyId: 124
+            type: ASSIST
+            prompt: '"Run fast!"'
+            grammarTags: []
+            options:
+              - text: Brzo trči
+                correct: true
+                audioSrc: /audio/hr/brzo_trci.mp3
+              - text: Digni ruku
+                correct: false
+                audioSrc: /audio/hr/digni_ruku.mp3
+              - text: Ruke gore
+                correct: false
+                audioSrc: /audio/hr/ruke_gore.mp3
+              - text: Plješći rukama
+                correct: false
+                audioSrc: /audio/hr/pljesci_rukama.mp3
+          - order: 6
+            legacyId: 125
+            type: ASSIST
+            prompt: '"Hands up!"'
+            grammarTags: []
+            options:
+              - text: Ruke gore
+                correct: true
+                audioSrc: /audio/hr/ruke_gore.mp3
+              - text: Digni ruku
+                correct: false
+                audioSrc: /audio/hr/digni_ruku.mp3
+              - text: Plješći rukama
+                correct: false
+                audioSrc: /audio/hr/pljesci_rukama.mp3
+              - text: Brzo trči
+                correct: false
+                audioSrc: /audio/hr/brzo_trci.mp3
+  - order: 8
+    legacyId: 8
+    title: Unit 8
+    description: More i ljeto (The Adriatic Coast & Summer)
+    lessons:
+      - order: 1
+        legacyId: 29
+        kind: DISCOVERY
+        title: Na plaži (At the Beach)
+        challenges:
+          - order: 1
+            legacyId: 126
+            type: SELECT
+            prompt: Which one of these is "Sea"?
+            grammarTags: []
+            options:
+              - text: More
+                correct: true
+                imageSrc: /sea.svg
+                audioSrc: /audio/hr/more.mp3
+              - text: Plaža
+                correct: false
+                imageSrc: /beach.svg
+                audioSrc: /audio/hr/plaza.mp3
+              - text: Sunce
+                correct: false
+                imageSrc: /sun.svg
+                audioSrc: /audio/hr/sunce.mp3
+              - text: Otok
+                correct: false
+                imageSrc: /island.svg
+                audioSrc: /audio/hr/otok.mp3
+          - order: 2
+            legacyId: 127
+            type: SELECT
+            prompt: Which one of these is "Beach"?
+            grammarTags: []
+            options:
+              - text: Plaža
+                correct: true
+                imageSrc: /beach.svg
+                audioSrc: /audio/hr/plaza.mp3
+              - text: More
+                correct: false
+                imageSrc: /sea.svg
+                audioSrc: /audio/hr/more.mp3
+              - text: Otok
+                correct: false
+                imageSrc: /island.svg
+                audioSrc: /audio/hr/otok.mp3
+              - text: Brod
+                correct: false
+                imageSrc: /boat.svg
+                audioSrc: /audio/hr/brod.mp3
+          - order: 3
+            legacyId: 128
+            type: SELECT
+            prompt: Which one of these is "Sun"?
+            grammarTags: []
+            options:
+              - text: Sunce
+                correct: true
+                imageSrc: /sun.svg
+                audioSrc: /audio/hr/sunce.mp3
+              - text: Pijesak
+                correct: false
+                imageSrc: /sand.svg
+                audioSrc: /audio/hr/pijesak.mp3
+              - text: More
+                correct: false
+                imageSrc: /sea.svg
+                audioSrc: /audio/hr/more.mp3
+              - text: Plaža
+                correct: false
+                imageSrc: /beach.svg
+                audioSrc: /audio/hr/plaza.mp3
+          - order: 4
+            legacyId: 129
+            type: ASSIST
+            prompt: '"Sand"'
+            grammarTags: []
+            options:
+              - text: Pijesak
+                correct: true
+                audioSrc: /audio/hr/pijesak.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+              - text: Plaža
+                correct: false
+                audioSrc: /audio/hr/plaza.mp3
+              - text: Sunce
+                correct: false
+                audioSrc: /audio/hr/sunce.mp3
+      - order: 2
+        legacyId: 30
+        kind: PHRASE_LISTEN
+        title: Plovidba i otoci (Islands & Sailing)
+        challenges:
+          - order: 1
+            legacyId: 130
+            type: SELECT
+            prompt: Which one of these is "Island"?
+            grammarTags: []
+            options:
+              - text: Otok
+                correct: true
+                audioSrc: /audio/hr/otok.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+              - text: Plaža
+                correct: false
+                audioSrc: /audio/hr/plaza.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            legacyId: 131
+            type: SELECT
+            prompt: Which one of these is "Boat"?
+            grammarTags: []
+            options:
+              - text: Brod
+                correct: true
+                audioSrc: /audio/hr/brod.mp3
+              - text: Otok
+                correct: false
+                audioSrc: /audio/hr/otok.mp3
+              - text: Dupin
+                correct: false
+                audioSrc: /audio/hr/dupin.mp3
+              - text: Galeb
+                correct: false
+                audioSrc: /audio/hr/galeb.mp3
+          - order: 3
+            legacyId: 132
+            type: SELECT
+            prompt: Which one of these is "Swimming / Bathing"?
+            grammarTags: []
+            options:
+              - text: Kupanje
+                correct: true
+                audioSrc: /audio/hr/kupanje.mp3
+              - text: Plivanje
+                correct: false
+                audioSrc: /audio/hr/plivanje.mp3
+              - text: Pijesak
+                correct: false
+                audioSrc: /audio/hr/pijesak.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+          - order: 4
+            legacyId: 133
+            type: ASSIST
+            prompt: '"Swimming"'
+            grammarTags: []
+            options:
+              - text: Plivanje
+                correct: true
+                audioSrc: /audio/hr/plivanje.mp3
+              - text: Kupanje
+                correct: false
+                audioSrc: /audio/hr/kupanje.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+      - order: 3
+        legacyId: 31
+        kind: PRODUCTION
+        title: Morska bića (Sea Creatures)
+        challenges:
+          - order: 1
+            legacyId: 134
+            type: SELECT
+            prompt: Which one of these is "Seashell"?
+            grammarTags: []
+            options:
+              - text: Školjka
+                correct: true
+                audioSrc: /audio/hr/skoljka.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+              - text: Dupin
+                correct: false
+                audioSrc: /audio/hr/dupin.mp3
+              - text: Galeb
+                correct: false
+                audioSrc: /audio/hr/galeb.mp3
+          - order: 2
+            legacyId: 135
+            type: SELECT
+            prompt: Which one of these is "Dolphin"?
+            grammarTags: []
+            options:
+              - text: Dupin
+                correct: true
+                audioSrc: /audio/hr/dupin.mp3
+              - text: Školjka
+                correct: false
+                audioSrc: /audio/hr/skoljka.mp3
+              - text: Galeb
+                correct: false
+                audioSrc: /audio/hr/galeb.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+          - order: 3
+            legacyId: 136
+            type: SELECT
+            prompt: Which one of these is "Seagull"?
+            grammarTags: []
+            options:
+              - text: Galeb
+                correct: true
+                audioSrc: /audio/hr/galeb.mp3
+              - text: Dupin
+                correct: false
+                audioSrc: /audio/hr/dupin.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+              - text: Ptica
+                correct: false
+                audioSrc: /audio/hr/ptica.mp3
+          - order: 4
+            legacyId: 137
+            type: ASSIST
+            prompt: '"Small boat"'
+            grammarTags: []
+            options:
+              - text: Mali brod
+                correct: true
+                audioSrc: /audio/hr/mali_brod.mp3
+              - text: Toplo more
+                correct: false
+                audioSrc: /audio/hr/toplo_more.mp3
+              - text: Veliki brod
+                correct: false
+                audioSrc: /audio/hr/veliki_brod.mp3
+              - text: Lijepa plaža
+                correct: false
+                audioSrc: /audio/hr/lijepa_plaza.mp3
+      - order: 4
+        legacyId: 32
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Kapetan Jadrana (Adriatic Captain Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 138
+            type: SELECT
+            prompt: Which one of these is "Sea"?
+            grammarTags: []
+            options:
+              - text: More
+                correct: true
+                audioSrc: /audio/hr/more.mp3
+              - text: Plaža
+                correct: false
+                audioSrc: /audio/hr/plaza.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+              - text: Sunce
+                correct: false
+                audioSrc: /audio/hr/sunce.mp3
+          - order: 2
+            legacyId: 139
+            type: SELECT
+            prompt: Which one of these is "Dolphin"?
+            grammarTags: []
+            options:
+              - text: Dupin
+                correct: true
+                audioSrc: /audio/hr/dupin.mp3
+              - text: Galeb
+                correct: false
+                audioSrc: /audio/hr/galeb.mp3
+              - text: Školjka
+                correct: false
+                audioSrc: /audio/hr/skoljka.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+          - order: 3
+            legacyId: 140
+            type: SELECT
+            prompt: Which one of these is "Island"?
+            grammarTags: []
+            options:
+              - text: Otok
+                correct: true
+                audioSrc: /audio/hr/otok.mp3
+              - text: Brod
+                correct: false
+                audioSrc: /audio/hr/brod.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+              - text: Plaža
+                correct: false
+                audioSrc: /audio/hr/plaza.mp3
+          - order: 4
+            legacyId: 141
+            type: ASSIST
+            prompt: '"Warm sea"'
+            grammarTags: []
+            options:
+              - text: Toplo more
+                correct: true
+                audioSrc: /audio/hr/toplo_more.mp3
+              - text: Mali brod
+                correct: false
+                audioSrc: /audio/hr/mali_brod.mp3
+              - text: Plavo more
+                correct: false
+                audioSrc: /audio/hr/plavo_more.mp3
+              - text: Toplo sunce
+                correct: false
+                audioSrc: /audio/hr/toplo_sunce.mp3
+          - order: 5
+            legacyId: 142
+            type: ASSIST
+            prompt: "\"Let's go to the beach!\""
+            grammarTags: []
+            options:
+              - text: Idemo na plažu
+                correct: true
+                audioSrc: /audio/hr/idemo_na_plazu.mp3
+              - text: Volim more
+                correct: false
+                audioSrc: /audio/hr/volim_more.mp3
+              - text: Gledam more
+                correct: false
+                audioSrc: /audio/hr/gledam_more.mp3
+              - text: Idemo u park
+                correct: false
+                audioSrc: /audio/hr/idemo_u_park.mp3
+          - order: 6
+            legacyId: 143
+            type: ASSIST
+            prompt: '"I love the sea!"'
+            grammarTags: []
+            options:
+              - text: Volim more
+                correct: true
+                audioSrc: /audio/hr/volim_more.mp3
+              - text: Idemo na plažu
+                correct: false
+                audioSrc: /audio/hr/idemo_na_plazu.mp3
+              - text: Volim sunce
+                correct: false
+                audioSrc: /audio/hr/volim_sunce.mp3
+              - text: Gledam brod
+                correct: false
+                audioSrc: /audio/hr/gledam_brod.mp3
+  - order: 9
+    legacyId: 9
+    title: Unit 9
+    description: Odjeća (Clothes & Dressing Up)
+    lessons:
+      - order: 1
+        legacyId: 33
+        kind: DISCOVERY
+        title: Svakodnevna odjeća (Everyday Clothes)
+        challenges:
+          - order: 1
+            legacyId: 144
+            type: SELECT
+            prompt: Which one of these is "T-Shirt"?
+            grammarTags: []
+            options:
+              - text: Majica
+                correct: true
+                imageSrc: /tshirt.svg
+                audioSrc: /audio/hr/majica.mp3
+              - text: Hlače
+                correct: false
+                imageSrc: /pants.svg
+                audioSrc: /audio/hr/hlace.mp3
+              - text: Cipele
+                correct: false
+                imageSrc: /shoes.svg
+                audioSrc: /audio/hr/cipele.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+          - order: 2
+            legacyId: 145
+            type: SELECT
+            prompt: Which one of these is "Pants / Trousers"?
+            grammarTags: []
+            options:
+              - text: Hlače
+                correct: true
+                imageSrc: /pants.svg
+                audioSrc: /audio/hr/hlace.mp3
+              - text: Majica
+                correct: false
+                imageSrc: /tshirt.svg
+                audioSrc: /audio/hr/majica.mp3
+              - text: Čarape
+                correct: false
+                imageSrc: /socks.svg
+                audioSrc: /audio/hr/carape.mp3
+              - text: Cipele
+                correct: false
+                imageSrc: /shoes.svg
+                audioSrc: /audio/hr/cipele.mp3
+          - order: 3
+            legacyId: 146
+            type: SELECT
+            prompt: Which one of these is "Shoes"?
+            grammarTags: []
+            options:
+              - text: Cipele
+                correct: true
+                imageSrc: /shoes.svg
+                audioSrc: /audio/hr/cipele.mp3
+              - text: Čarape
+                correct: false
+                imageSrc: /socks.svg
+                audioSrc: /audio/hr/carape.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Hlače
+                correct: false
+                imageSrc: /pants.svg
+                audioSrc: /audio/hr/hlace.mp3
+          - order: 4
+            legacyId: 147
+            type: ASSIST
+            prompt: '"Socks"'
+            grammarTags: []
+            options:
+              - text: Čarape
+                correct: true
+                audioSrc: /audio/hr/carape.mp3
+              - text: Cipele
+                correct: false
+                audioSrc: /audio/hr/cipele.mp3
+              - text: Majica
+                correct: false
+                audioSrc: /audio/hr/majica.mp3
+              - text: Hlače
+                correct: false
+                audioSrc: /audio/hr/hlace.mp3
+      - order: 2
+        legacyId: 34
+        kind: PHRASE_LISTEN
+        title: Za van i zimu (Cozy & Warm)
+        challenges:
+          - order: 1
+            legacyId: 148
+            type: SELECT
+            prompt: Which one of these is "Hat / Cap"?
+            grammarTags: []
+            options:
+              - text: Kapa
+                correct: true
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Šal
+                correct: false
+                audioSrc: /audio/hr/sal.mp3
+              - text: Haljina
+                correct: false
+                audioSrc: /audio/hr/haljina.mp3
+          - order: 2
+            legacyId: 149
+            type: SELECT
+            prompt: Which one of these is "Jacket"?
+            grammarTags: []
+            options:
+              - text: Jakna
+                correct: true
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Kapa
+                correct: false
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Haljina
+                correct: false
+                audioSrc: /audio/hr/haljina.mp3
+              - text: Šal
+                correct: false
+                audioSrc: /audio/hr/sal.mp3
+          - order: 3
+            legacyId: 150
+            type: SELECT
+            prompt: Which one of these is "Dress"?
+            grammarTags: []
+            options:
+              - text: Haljina
+                correct: true
+                audioSrc: /audio/hr/haljina.mp3
+              - text: Majica
+                correct: false
+                audioSrc: /audio/hr/majica.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Kapa
+                correct: false
+                audioSrc: /audio/hr/kapa.mp3
+          - order: 4
+            legacyId: 151
+            type: ASSIST
+            prompt: '"Scarf"'
+            grammarTags: []
+            options:
+              - text: Šal
+                correct: true
+                audioSrc: /audio/hr/sal.mp3
+              - text: Kapa
+                correct: false
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Čarape
+                correct: false
+                audioSrc: /audio/hr/carape.mp3
+      - order: 3
+        legacyId: 35
+        kind: PRODUCTION
+        title: Obuci se! (Getting Dressed)
+        challenges:
+          - order: 1
+            legacyId: 152
+            type: ASSIST
+            prompt: '"Put on the shirt"'
+            grammarTags: []
+            options:
+              - text: Obuci majicu
+                correct: true
+                audioSrc: /audio/hr/obuci_majicu.mp3
+              - text: Obuci jaknu
+                correct: false
+                audioSrc: /audio/hr/obuci_jaknu.mp3
+              - text: Obuci hlače
+                correct: false
+                audioSrc: /audio/hr/obuci_hlace.mp3
+              - text: Obuci cipele
+                correct: false
+                audioSrc: /audio/hr/obuci_cipele.mp3
+          - order: 2
+            legacyId: 153
+            type: ASSIST
+            prompt: '"Warm jacket"'
+            grammarTags: []
+            options:
+              - text: Topla jakna
+                correct: true
+                audioSrc: /audio/hr/topla_jakna.mp3
+              - text: Lijepa haljina
+                correct: false
+                audioSrc: /audio/hr/lijepa_haljina.mp3
+              - text: Crvena kapa
+                correct: false
+                audioSrc: /audio/hr/crvena_kapa.mp3
+              - text: Nova majica
+                correct: false
+                audioSrc: /audio/hr/nova_majica.mp3
+          - order: 3
+            legacyId: 154
+            type: ASSIST
+            prompt: '"Pretty dress"'
+            grammarTags: []
+            options:
+              - text: Lijepa haljina
+                correct: true
+                audioSrc: /audio/hr/lijepa_haljina.mp3
+              - text: Topla jakna
+                correct: false
+                audioSrc: /audio/hr/topla_jakna.mp3
+              - text: Crvena kapa
+                correct: false
+                audioSrc: /audio/hr/crvena_kapa.mp3
+              - text: Nova majica
+                correct: false
+                audioSrc: /audio/hr/nova_majica.mp3
+          - order: 4
+            legacyId: 155
+            type: ASSIST
+            prompt: '"Where are my shoes?"'
+            grammarTags: []
+            options:
+              - text: Gdje su mi cipele
+                correct: true
+                audioSrc: /audio/hr/gdje_su_mi_cipele.mp3
+              - text: Gdje je moja kapa
+                correct: false
+                audioSrc: /audio/hr/gdje_je_moja_kapa.mp3
+              - text: Gdje je moja jakna
+                correct: false
+                audioSrc: /audio/hr/gdje_je_moja_jakna.mp3
+              - text: Gdje su mi čarape
+                correct: false
+                audioSrc: /audio/hr/gdje_su_mi_carape.mp3
+      - order: 4
+        legacyId: 36
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Modni kreator (Fashion Star Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 156
+            type: SELECT
+            prompt: Which one of these is "Shoes"?
+            grammarTags: []
+            options:
+              - text: Cipele
+                correct: true
+                audioSrc: /audio/hr/cipele.mp3
+              - text: Čarape
+                correct: false
+                audioSrc: /audio/hr/carape.mp3
+              - text: Hlače
+                correct: false
+                audioSrc: /audio/hr/hlace.mp3
+              - text: Majica
+                correct: false
+                audioSrc: /audio/hr/majica.mp3
+          - order: 2
+            legacyId: 157
+            type: SELECT
+            prompt: Which one of these is "Hat"?
+            grammarTags: []
+            options:
+              - text: Kapa
+                correct: true
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Šal
+                correct: false
+                audioSrc: /audio/hr/sal.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+              - text: Haljina
+                correct: false
+                audioSrc: /audio/hr/haljina.mp3
+          - order: 3
+            legacyId: 158
+            type: SELECT
+            prompt: Which one of these is "T-Shirt"?
+            grammarTags: []
+            options:
+              - text: Majica
+                correct: true
+                audioSrc: /audio/hr/majica.mp3
+              - text: Haljina
+                correct: false
+                audioSrc: /audio/hr/haljina.mp3
+              - text: Hlače
+                correct: false
+                audioSrc: /audio/hr/hlace.mp3
+              - text: Jakna
+                correct: false
+                audioSrc: /audio/hr/jakna.mp3
+          - order: 4
+            legacyId: 159
+            type: ASSIST
+            prompt: '"Red hat"'
+            grammarTags: []
+            options:
+              - text: Crvena kapa
+                correct: true
+                audioSrc: /audio/hr/crvena_kapa.mp3
+              - text: Topla jakna
+                correct: false
+                audioSrc: /audio/hr/topla_jakna.mp3
+              - text: Lijepa haljina
+                correct: false
+                audioSrc: /audio/hr/lijepa_haljina.mp3
+              - text: Nova majica
+                correct: false
+                audioSrc: /audio/hr/nova_majica.mp3
+          - order: 5
+            legacyId: 160
+            type: ASSIST
+            prompt: '"Warm jacket"'
+            grammarTags: []
+            options:
+              - text: Topla jakna
+                correct: true
+                audioSrc: /audio/hr/topla_jakna.mp3
+              - text: Crvena kapa
+                correct: false
+                audioSrc: /audio/hr/crvena_kapa.mp3
+              - text: Lijepa haljina
+                correct: false
+                audioSrc: /audio/hr/lijepa_haljina.mp3
+              - text: Nova majica
+                correct: false
+                audioSrc: /audio/hr/nova_majica.mp3
+          - order: 6
+            legacyId: 161
+            type: ASSIST
+            prompt: '"Where are my shoes?"'
+            grammarTags: []
+            options:
+              - text: Gdje su mi cipele
+                correct: true
+                audioSrc: /audio/hr/gdje_su_mi_cipele.mp3
+              - text: Gdje je moja kapa
+                correct: false
+                audioSrc: /audio/hr/gdje_je_moja_kapa.mp3
+              - text: Gdje je moja jakna
+                correct: false
+                audioSrc: /audio/hr/gdje_je_moja_jakna.mp3
+              - text: Gdje su mi čarape
+                correct: false
+                audioSrc: /audio/hr/gdje_su_mi_carape.mp3
+  - order: 10
+    legacyId: 10
+    title: Unit 10
+    description: Vrijeme i osjećaji (Weather & Feelings)
+    lessons:
+      - order: 1
+        legacyId: 37
+        kind: DISCOVERY
+        title: Kakvo je vrijeme? (Weather)
+        challenges:
+          - order: 1
+            legacyId: 162
+            type: SELECT
+            prompt: Which one of these is "Sunny"?
+            grammarTags: []
+            options:
+              - text: Sunčano
+                correct: true
+                imageSrc: /sunny.svg
+                audioSrc: /audio/hr/suncano.mp3
+              - text: Kiša
+                correct: false
+                imageSrc: /rain.svg
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Vjetar
+                correct: false
+                imageSrc: /wind.svg
+                audioSrc: /audio/hr/vjetar.mp3
+              - text: Snijeg
+                correct: false
+                imageSrc: /snow.svg
+                audioSrc: /audio/hr/snijeg.mp3
+          - order: 2
+            legacyId: 163
+            type: SELECT
+            prompt: Which one of these is "Rain"?
+            grammarTags: []
+            options:
+              - text: Kiša
+                correct: true
+                imageSrc: /rain.svg
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Snijeg
+                correct: false
+                imageSrc: /snow.svg
+                audioSrc: /audio/hr/snijeg.mp3
+              - text: Sunčano
+                correct: false
+                imageSrc: /sunny.svg
+                audioSrc: /audio/hr/suncano.mp3
+              - text: Oblak
+                correct: false
+                imageSrc: /cloud.svg
+                audioSrc: /audio/hr/oblak.mp3
+          - order: 3
+            legacyId: 164
+            type: SELECT
+            prompt: Which one of these is "Wind"?
+            grammarTags: []
+            options:
+              - text: Vjetar
+                correct: true
+                imageSrc: /wind.svg
+                audioSrc: /audio/hr/vjetar.mp3
+              - text: Oblak
+                correct: false
+                imageSrc: /cloud.svg
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Kiša
+                correct: false
+                imageSrc: /rain.svg
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Snijeg
+                correct: false
+                imageSrc: /snow.svg
+                audioSrc: /audio/hr/snijeg.mp3
+          - order: 4
+            legacyId: 165
+            type: ASSIST
+            prompt: '"Snow"'
+            grammarTags: []
+            options:
+              - text: Snijeg
+                correct: true
+                audioSrc: /audio/hr/snijeg.mp3
+              - text: Kiša
+                correct: false
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+              - text: Sunčano
+                correct: false
+                audioSrc: /audio/hr/suncano.mp3
+      - order: 2
+        legacyId: 38
+        kind: PHRASE_LISTEN
+        title: Toplo ili hladno? (Hot & Cold)
+        challenges:
+          - order: 1
+            legacyId: 166
+            type: SELECT
+            prompt: Which one of these is "Warm / Hot"?
+            grammarTags: []
+            options:
+              - text: Toplo
+                correct: true
+                audioSrc: /audio/hr/toplo.mp3
+              - text: Hladno
+                correct: false
+                audioSrc: /audio/hr/hladno.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+          - order: 2
+            legacyId: 167
+            type: SELECT
+            prompt: Which one of these is "Cold"?
+            grammarTags: []
+            options:
+              - text: Hladno
+                correct: true
+                audioSrc: /audio/hr/hladno.mp3
+              - text: Toplo
+                correct: false
+                audioSrc: /audio/hr/toplo.mp3
+              - text: Snijeg
+                correct: false
+                audioSrc: /audio/hr/snijeg.mp3
+              - text: Kiša
+                correct: false
+                audioSrc: /audio/hr/kisa.mp3
+          - order: 3
+            legacyId: 168
+            type: SELECT
+            prompt: Which one of these is "Cloud"?
+            grammarTags: []
+            options:
+              - text: Oblak
+                correct: true
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Duga
+                correct: false
+                audioSrc: /audio/hr/duga.mp3
+              - text: Kiša
+                correct: false
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+          - order: 4
+            legacyId: 169
+            type: ASSIST
+            prompt: '"Rainbow"'
+            grammarTags: []
+            options:
+              - text: Duga
+                correct: true
+                audioSrc: /audio/hr/duga.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Sunce
+                correct: false
+                audioSrc: /audio/hr/sunce.mp3
+              - text: Kiša
+                correct: false
+                audioSrc: /audio/hr/kisa.mp3
+      - order: 3
+        legacyId: 39
+        kind: PRODUCTION
+        title: Kako se osjećaš? (How are you feeling?)
+        challenges:
+          - order: 1
+            legacyId: 170
+            type: ASSIST
+            prompt: '"Happy"'
+            grammarTags: []
+            options:
+              - text: Sretan
+                correct: true
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Umoran
+                correct: false
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Nasmijan
+                correct: false
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Gladan
+                correct: false
+                audioSrc: /audio/hr/gladan.mp3
+          - order: 2
+            legacyId: 171
+            type: ASSIST
+            prompt: '"Tired"'
+            grammarTags: []
+            options:
+              - text: Umoran
+                correct: true
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Sretan
+                correct: false
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Nasmijan
+                correct: false
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Gladan
+                correct: false
+                audioSrc: /audio/hr/gladan.mp3
+          - order: 3
+            legacyId: 172
+            type: ASSIST
+            prompt: '"Smiling / Cheerful"'
+            grammarTags: []
+            options:
+              - text: Nasmijan
+                correct: true
+                audioSrc: /audio/hr/nasmijan.mp3
+              - text: Sretan
+                correct: false
+                audioSrc: /audio/hr/sretan.mp3
+              - text: Umoran
+                correct: false
+                audioSrc: /audio/hr/umoran.mp3
+              - text: Dobro
+                correct: false
+                audioSrc: /audio/hr/dobro.mp3
+          - order: 4
+            legacyId: 173
+            type: ASSIST
+            prompt: '"I am happy!"'
+            grammarTags: []
+            options:
+              - text: Ja sam sretan
+                correct: true
+                audioSrc: /audio/hr/ja_sam_sretan.mp3
+              - text: Ja sam umoran
+                correct: false
+                audioSrc: /audio/hr/ja_sam_umoran.mp3
+              - text: Ja sam gladan
+                correct: false
+                audioSrc: /audio/hr/ja_sam_gladan.mp3
+              - text: Dobro sam ja
+                correct: false
+                audioSrc: /audio/hr/dobro_sam_ja.mp3
+      - order: 4
+        legacyId: 40
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Vremenski čuvar (Weather Explorer Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 174
+            type: SELECT
+            prompt: Which one of these is "Sunny"?
+            grammarTags: []
+            options:
+              - text: Sunčano
+                correct: true
+                audioSrc: /audio/hr/suncano.mp3
+              - text: Kiša
+                correct: false
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Snijeg
+                correct: false
+                audioSrc: /audio/hr/snijeg.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+          - order: 2
+            legacyId: 175
+            type: SELECT
+            prompt: Which one of these is "Rain"?
+            grammarTags: []
+            options:
+              - text: Kiša
+                correct: true
+                audioSrc: /audio/hr/kisa.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Sunčano
+                correct: false
+                audioSrc: /audio/hr/suncano.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+          - order: 3
+            legacyId: 176
+            type: SELECT
+            prompt: Which one of these is "Rainbow"?
+            grammarTags: []
+            options:
+              - text: Duga
+                correct: true
+                audioSrc: /audio/hr/duga.mp3
+              - text: Oblak
+                correct: false
+                audioSrc: /audio/hr/oblak.mp3
+              - text: Vjetar
+                correct: false
+                audioSrc: /audio/hr/vjetar.mp3
+              - text: Sunce
+                correct: false
+                audioSrc: /audio/hr/sunce.mp3
+          - order: 4
+            legacyId: 177
+            type: ASSIST
+            prompt: '"It is raining"'
+            grammarTags: []
+            options:
+              - text: Pada kiša
+                correct: true
+                audioSrc: /audio/hr/pada_kisa.mp3
+              - text: Sija sunce
+                correct: false
+                audioSrc: /audio/hr/sija_sunce.mp3
+              - text: Puše vjetar
+                correct: false
+                audioSrc: /audio/hr/puse_vjetar.mp3
+              - text: Hladno more
+                correct: false
+                audioSrc: /audio/hr/hladno_more.mp3
+          - order: 5
+            legacyId: 178
+            type: ASSIST
+            prompt: '"The sun is shining"'
+            grammarTags: []
+            options:
+              - text: Sija sunce
+                correct: true
+                audioSrc: /audio/hr/sija_sunce.mp3
+              - text: Pada kiša
+                correct: false
+                audioSrc: /audio/hr/pada_kisa.mp3
+              - text: Puše vjetar
+                correct: false
+                audioSrc: /audio/hr/puse_vjetar.mp3
+              - text: Hladno more
+                correct: false
+                audioSrc: /audio/hr/hladno_more.mp3
+          - order: 6
+            legacyId: 179
+            type: ASSIST
+            prompt: '"I am happy!"'
+            grammarTags: []
+            options:
+              - text: Ja sam sretan
+                correct: true
+                audioSrc: /audio/hr/ja_sam_sretan.mp3
+              - text: Ja sam umoran
+                correct: false
+                audioSrc: /audio/hr/ja_sam_umoran.mp3
+              - text: Pada kiša
+                correct: false
+                audioSrc: /audio/hr/pada_kisa.mp3
+              - text: Sija sunce
+                correct: false
+                audioSrc: /audio/hr/sija_sunce.mp3

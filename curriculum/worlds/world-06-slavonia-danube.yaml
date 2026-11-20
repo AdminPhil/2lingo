@@ -1,0 +1,1755 @@
+schemaVersion: 2
+worldOrder: 6
+levelOrder: 2
+slug: slavonia-danube
+name: Slavonian Hearth
+badgeLabel: "World 6: Slavonian Hearth • Golden Plains & River Castles"
+cefrBand: A1.2
+theme:
+  solidBg: bg-emerald-700
+  gradient: from-amber-600 via-emerald-700 to-blue-900
+  badgeBg: bg-black/25 text-white border-white/40
+  accentEmoji: 🌾
+  buttonClass: bg-white text-emerald-950 hover:bg-emerald-50 border-emerald-300
+  accentBorder: border-amber-400/50
+  nodeActiveBg: bg-emerald-600 hover:bg-emerald-600/90 border-emerald-800 active:border-b-0 text-white
+  nodeBorderColor: border-emerald-800
+  nodeStrokeColor: "#059669"
+  nodeBadgeClasses: bg-white text-emerald-700 border-emerald-500
+  nodeArrowBorder: border-t-emerald-500
+units:
+  - order: 26
+    legacyId: 26
+    title: Unit 26
+    description: Na tržnici i seoskom imanju (At the Farmers Market & Village Farm)
+    lessons:
+      - order: 1
+        legacyId: 101
+        kind: DISCOVERY
+        title: Domaći plodovi
+        challenges:
+          - order: 1
+            legacyId: 445
+            type: SELECT
+            prompt: Which one of these is "Corn"?
+            grammarTags: []
+            options:
+              - text: Kukuruz
+                correct: true
+                imageSrc: /kukuruz.svg
+                audioSrc: /audio/hr/kukuruz.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+          - order: 2
+            legacyId: 446
+            type: SELECT
+            prompt: Which one of these is "Pumpkin"?
+            grammarTags: []
+            options:
+              - text: Bundeva
+                correct: true
+                imageSrc: /bundeva.svg
+                audioSrc: /audio/hr/bundeva.mp3
+              - text: Rajčica
+                correct: false
+                imageSrc: /tomato.svg
+                audioSrc: /audio/hr/rajcica.mp3
+              - text: Burek
+                correct: false
+                imageSrc: /burek.svg
+                audioSrc: /audio/hr/burek.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 3
+            legacyId: 447
+            type: SELECT
+            prompt: Which one of these is "Honey"?
+            grammarTags: []
+            options:
+              - text: Med
+                correct: true
+                imageSrc: /med.svg
+                audioSrc: /audio/hr/med.mp3
+              - text: Sir
+                correct: false
+                imageSrc: /cheese.svg
+                audioSrc: /audio/hr/sir.mp3
+              - text: Mlijeko
+                correct: false
+                imageSrc: /milk.svg
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sok
+                correct: false
+                imageSrc: /juice.svg
+                audioSrc: /audio/hr/sok.mp3
+          - order: 4
+            legacyId: 448
+            type: SELECT
+            prompt: Which one of these is "Wheat"?
+            grammarTags: []
+            options:
+              - text: Pšenica
+                correct: true
+                imageSrc: /psenica.svg
+                audioSrc: /audio/hr/psenica.mp3
+              - text: Drvo
+                correct: false
+                imageSrc: /tree.svg
+                audioSrc: /audio/hr/drvo.mp3
+              - text: Trava
+                correct: false
+                imageSrc: /grass.svg
+                audioSrc: /audio/hr/trava.mp3
+              - text: Oblak
+                correct: false
+                imageSrc: /cloud.svg
+                audioSrc: /audio/hr/oblak.mp3
+      - order: 2
+        legacyId: 102
+        kind: PHRASE_LISTEN
+        title: Rad na polju
+        challenges:
+          - order: 1
+            legacyId: 449
+            type: SELECT
+            prompt: Which one means "To sow / To plant"?
+            grammarTags: []
+            options:
+              - text: Sijati
+                correct: true
+                audioSrc: /audio/hr/sijati.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            legacyId: 450
+            type: SELECT
+            prompt: Which one means "To harvest"?
+            grammarTags: []
+            options:
+              - text: Žeti
+                correct: true
+                audioSrc: /audio/hr/zeti.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kula
+                correct: false
+                audioSrc: /audio/hr/kula.mp3
+          - order: 3
+            legacyId: 451
+            type: SELECT
+            prompt: Which one means "In the field"?
+            grammarTags: []
+            options:
+              - text: Na polju
+                correct: true
+                audioSrc: /audio/hr/na_polju.mp3
+              - text: U sobi
+                correct: false
+                audioSrc: /audio/hr/u_sobi.mp3
+              - text: Na stolu
+                correct: false
+                audioSrc: /audio/hr/na_stolu.mp3
+              - text: Na stolu je slatki med
+                correct: false
+                audioSrc: /audio/hr/na_stolu_je_slatki_med.mp3
+          - order: 4
+            legacyId: 452
+            type: SELECT
+            prompt: Which one means "Golden wheat"?
+            grammarTags: []
+            options:
+              - text: Zlatna pšenica
+                correct: true
+                audioSrc: /audio/hr/zlatna_psenica.mp3
+              - text: Plavo more
+                correct: false
+                audioSrc: /audio/hr/plavo_more.mp3
+              - text: Topla juha
+                correct: false
+                audioSrc: /audio/hr/topla_juha.mp3
+              - text: Crvena jabuka
+                correct: false
+                audioSrc: /audio/hr/crvena_jabuka.mp3
+      - order: 3
+        legacyId: 103
+        kind: PRODUCTION
+        title: Seoski život
+        challenges:
+          - order: 1
+            legacyId: 453
+            type: ASSIST
+            prompt: '"We sow corn in the spring."'
+            grammarTags: []
+            options:
+              - text: Sijemo kukuruz u proljeće.
+                correct: true
+                audioSrc: /audio/hr/sijemo_kukuruz_u_proljece.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 454
+            type: ASSIST
+            prompt: '"Bees make sweet honey."'
+            grammarTags: []
+            options:
+              - text: Pčele prave slatki med.
+                correct: true
+                audioSrc: /audio/hr/pcele_prave_slatki_med.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 455
+            type: ASSIST
+            prompt: '"We harvest golden wheat in the field."'
+            grammarTags: []
+            options:
+              - text: Žanjemo zlatnu pšenicu na polju.
+                correct: true
+                audioSrc: /audio/hr/zanjemo_zlatnu_psenicu_na_polju.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 456
+            type: ASSIST
+            prompt: '"Grandma bakes bread from wheat."'
+            grammarTags: []
+            options:
+              - text: Baka peče kruh od pšenice.
+                correct: true
+                audioSrc: /audio/hr/baka_pece_kruh_od_psenice.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+      - order: 4
+        legacyId: 104
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Zlatna Slavonija"
+        challenges:
+          - order: 1
+            legacyId: 457
+            type: ASSIST
+            prompt: '"There is sweet honey on the table."'
+            grammarTags: []
+            options:
+              - text: Na stolu je slatki med.
+                correct: true
+                audioSrc: /audio/hr/na_stolu_je_slatki_med.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 458
+            type: ASSIST
+            prompt: '"We buy a big pumpkin at the market."'
+            grammarTags: []
+            options:
+              - text: Kupujemo veliku bundevu na tržnici.
+                correct: true
+                audioSrc: /audio/hr/kupujemo_veliku_bundevu_na_trznici.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 459
+            type: ASSIST
+            prompt: '"The sun shines over the golden field."'
+            grammarTags: []
+            options:
+              - text: Sunce sja nad zlatnim poljem.
+                correct: true
+                audioSrc: /audio/hr/sunce_sja_nad_zlatnim_poljem.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 460
+            type: ASSIST
+            prompt: '"Hardworking hands work in the village."'
+            grammarTags: []
+            options:
+              - text: Vrijedne ruke rade na selu.
+                correct: true
+                audioSrc: /audio/hr/vrijedne_ruke_rade_na_selu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 5
+            legacyId: 461
+            type: ASSIST
+            prompt: '"Grandma bakes bread from wheat."'
+            grammarTags: []
+            options:
+              - text: Baka peče kruh od pšenice.
+                correct: true
+                audioSrc: /audio/hr/baka_pece_kruh_od_psenice.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+  - order: 27
+    legacyId: 27
+    title: Unit 27
+    description: Divlje životinje Kopačkog rita (Wetland Wildlife & Bird Sanctuary)
+    lessons:
+      - order: 1
+        legacyId: 105
+        kind: DISCOVERY
+        title: Čuvari močvare
+        challenges:
+          - order: 1
+            legacyId: 462
+            type: SELECT
+            prompt: Which one of these is "Eagle"?
+            grammarTags: []
+            options:
+              - text: Orao
+                correct: true
+                imageSrc: /orao.svg
+                audioSrc: /audio/hr/orao.mp3
+              - text: Galeb
+                correct: false
+                imageSrc: /seagull.svg
+                audioSrc: /audio/hr/galeb.mp3
+              - text: Ptica
+                correct: false
+                imageSrc: /bird.svg
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Riba
+                correct: false
+                imageSrc: /fish.svg
+                audioSrc: /audio/hr/riba.mp3
+          - order: 2
+            legacyId: 463
+            type: SELECT
+            prompt: Which one of these is "Heron"?
+            grammarTags: []
+            options:
+              - text: Čaplja
+                correct: true
+                imageSrc: /caplja.svg
+                audioSrc: /audio/hr/caplja.mp3
+              - text: Patka
+                correct: false
+                imageSrc: /duck.svg
+                audioSrc: /audio/hr/patka.mp3
+              - text: Galeb
+                correct: false
+                imageSrc: /seagull.svg
+                audioSrc: /audio/hr/galeb.mp3
+              - text: Pas
+                correct: false
+                imageSrc: /dog.svg
+                audioSrc: /audio/hr/pas.mp3
+          - order: 3
+            legacyId: 464
+            type: SELECT
+            prompt: Which one of these is "Wild Boar"?
+            grammarTags: []
+            options:
+              - text: Vepar
+                correct: true
+                imageSrc: /vepar.svg
+                audioSrc: /audio/hr/vepar.mp3
+              - text: Konj
+                correct: false
+                imageSrc: /horse.svg
+                audioSrc: /audio/hr/konj.mp3
+              - text: Krava
+                correct: false
+                imageSrc: /cow.svg
+                audioSrc: /audio/hr/krava.mp3
+              - text: Svinja
+                correct: false
+                imageSrc: /pig.svg
+                audioSrc: /audio/hr/svinja.mp3
+          - order: 4
+            legacyId: 465
+            type: SELECT
+            prompt: Which one of these is "Deer"?
+            grammarTags: []
+            options:
+              - text: Jelen
+                correct: true
+                imageSrc: /jelen.svg
+                audioSrc: /audio/hr/jelen.mp3
+              - text: Medvjed
+                correct: false
+                imageSrc: /medvjed.svg
+                audioSrc: /audio/hr/medvjed.mp3
+              - text: Pas
+                correct: false
+                imageSrc: /dog.svg
+                audioSrc: /audio/hr/pas.mp3
+              - text: Mačka
+                correct: false
+                imageSrc: /cat.svg
+                audioSrc: /audio/hr/macka.mp3
+      - order: 2
+        legacyId: 106
+        kind: PHRASE_LISTEN
+        title: Moćna krila i brze noge
+        challenges:
+          - order: 1
+            legacyId: 466
+            type: SELECT
+            prompt: Which one means "To fly"?
+            grammarTags: []
+            options:
+              - text: Letjeti
+                correct: true
+                audioSrc: /audio/hr/letjeti.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 2
+            legacyId: 467
+            type: SELECT
+            prompt: Which one means "To hunt"?
+            grammarTags: []
+            options:
+              - text: Loviti
+                correct: true
+                audioSrc: /audio/hr/loviti.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kula
+                correct: false
+                audioSrc: /audio/hr/kula.mp3
+              - text: Sunce
+                correct: false
+                audioSrc: /audio/hr/sunce.mp3
+          - order: 3
+            legacyId: 468
+            type: SELECT
+            prompt: Which one means "White heron"?
+            grammarTags: []
+            options:
+              - text: Bijela čaplja
+                correct: true
+                audioSrc: /audio/hr/bijela_caplja.mp3
+              - text: Topla juha
+                correct: false
+                audioSrc: /audio/hr/topla_juha.mp3
+              - text: Zelena trava
+                correct: false
+                audioSrc: /audio/hr/zelena_trava.mp3
+              - text: Plavo more
+                correct: false
+                audioSrc: /audio/hr/plavo_more.mp3
+          - order: 4
+            legacyId: 469
+            type: SELECT
+            prompt: Which one means "Large eagle"?
+            grammarTags: []
+            options:
+              - text: Veliki orao
+                correct: true
+                audioSrc: /audio/hr/veliki_orao.mp3
+              - text: Bijela čaplja
+                correct: false
+                audioSrc: /audio/hr/bijela_caplja.mp3
+              - text: Divlji vepar
+                correct: false
+                audioSrc: /audio/hr/divlji_vepar.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+      - order: 3
+        legacyId: 107
+        kind: PRODUCTION
+        title: Kroz trsku i hrastove šume
+        challenges:
+          - order: 1
+            legacyId: 470
+            type: ASSIST
+            prompt: '"The eagle flies high in the sky."'
+            grammarTags: []
+            options:
+              - text: Orao leti visoko na nebu.
+                correct: true
+                audioSrc: /audio/hr/orao_leti_visoko_na_nebu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 2
+            legacyId: 471
+            type: ASSIST
+            prompt: '"The white heron stands in the water."'
+            grammarTags: []
+            options:
+              - text: Bijela čaplja stoji u vodi.
+                correct: true
+                audioSrc: /audio/hr/bijela_caplja_stoji_u_vodi.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 3
+            legacyId: 472
+            type: ASSIST
+            prompt: '"The deer runs through the green forest."'
+            grammarTags: []
+            options:
+              - text: Jelen trči kroz zelenu šumu.
+                correct: true
+                audioSrc: /audio/hr/jelen_trci_kroz_zelenu_sumu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 4
+            legacyId: 473
+            type: ASSIST
+            prompt: '"The wild boar searches for food."'
+            grammarTags: []
+            options:
+              - text: Divlji vepar traži hranu.
+                correct: true
+                audioSrc: /audio/hr/divlji_vepar_trazi_hranu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+      - order: 4
+        legacyId: 108
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Šumski Istraživač"
+        challenges:
+          - order: 1
+            legacyId: 474
+            type: ASSIST
+            prompt: '"Kopački rit is a home for birds."'
+            grammarTags: []
+            options:
+              - text: Kopački rit je dom za ptice.
+                correct: true
+                audioSrc: /audio/hr/kopacki_rit_je_dom_za_ptice.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 2
+            legacyId: 475
+            type: ASSIST
+            prompt: '"We watch the eagle fly."'
+            grammarTags: []
+            options:
+              - text: Promatramo orla kako leti.
+                correct: true
+                audioSrc: /audio/hr/promatramo_orla_kako_leti.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 3
+            legacyId: 476
+            type: ASSIST
+            prompt: '"A quiet river flows through the wetland."'
+            grammarTags: []
+            options:
+              - text: Tiha rijeka teče kroz močvaru.
+                correct: true
+                audioSrc: /audio/hr/tiha_rijeka_tece_kroz_mocvaru.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 4
+            legacyId: 477
+            type: ASSIST
+            prompt: '"The deer runs through the green forest."'
+            grammarTags: []
+            options:
+              - text: Jelen trči kroz zelenu šumu.
+                correct: true
+                audioSrc: /audio/hr/jelen_trci_kroz_zelenu_sumu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 5
+            legacyId: 478
+            type: ASSIST
+            prompt: '"The eagle flies high in the sky."'
+            grammarTags: []
+            options:
+              - text: Orao leti visoko na nebu.
+                correct: true
+                audioSrc: /audio/hr/orao_leti_visoko_na_nebu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+  - order: 28
+    legacyId: 28
+    title: Unit 28
+    description: U tradicionalnoj kuhinji kod bake (Grandma's Kitchen & Baking)
+    lessons:
+      - order: 1
+        legacyId: 109
+        kind: DISCOVERY
+        title: Slatki mirisi
+        challenges:
+          - order: 1
+            legacyId: 479
+            type: SELECT
+            prompt: Which one of these is "Cake"?
+            grammarTags: []
+            options:
+              - text: Kolač
+                correct: true
+                imageSrc: /kolac.svg
+                audioSrc: /audio/hr/kolac.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Sir
+                correct: false
+                imageSrc: /cheese.svg
+                audioSrc: /audio/hr/sir.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+          - order: 2
+            legacyId: 480
+            type: SELECT
+            prompt: Which one of these is "Tea"?
+            grammarTags: []
+            options:
+              - text: Čaj
+                correct: true
+                imageSrc: /caj.svg
+                audioSrc: /audio/hr/caj.mp3
+              - text: Sok
+                correct: false
+                imageSrc: /juice.svg
+                audioSrc: /audio/hr/sok.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                imageSrc: /milk.svg
+                audioSrc: /audio/hr/mlijeko.mp3
+          - order: 3
+            legacyId: 481
+            type: SELECT
+            prompt: Which one of these is "Pie"?
+            grammarTags: []
+            options:
+              - text: Pita
+                correct: true
+                imageSrc: /pita.svg
+                audioSrc: /audio/hr/pita.mp3
+              - text: Burek
+                correct: false
+                imageSrc: /burek.svg
+                audioSrc: /audio/hr/burek.mp3
+              - text: Juha
+                correct: false
+                imageSrc: /juha.svg
+                audioSrc: /audio/hr/juha.mp3
+              - text: Sladoled
+                correct: false
+                imageSrc: /ice_cream.svg
+                audioSrc: /audio/hr/sladoled.mp3
+          - order: 4
+            legacyId: 482
+            type: SELECT
+            prompt: Which one of these is "Cooking Pot"?
+            grammarTags: []
+            options:
+              - text: Lonac
+                correct: true
+                imageSrc: /lonac.svg
+                audioSrc: /audio/hr/lonac.mp3
+              - text: Tanjur
+                correct: false
+                imageSrc: /tanjur.svg
+                audioSrc: /audio/hr/tanjur.mp3
+              - text: Čaša
+                correct: false
+                imageSrc: /casa.svg
+                audioSrc: /audio/hr/casa.mp3
+              - text: Nož
+                correct: false
+                imageSrc: /noz.svg
+                audioSrc: /audio/hr/noz.mp3
+      - order: 2
+        legacyId: 110
+        kind: PHRASE_LISTEN
+        title: Bakin recept
+        challenges:
+          - order: 1
+            legacyId: 483
+            type: SELECT
+            prompt: Which one means "To stir"?
+            grammarTags: []
+            options:
+              - text: Miješati
+                correct: true
+                audioSrc: /audio/hr/mijesati.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Prozor
+                correct: false
+                audioSrc: /audio/hr/prozor.mp3
+          - order: 2
+            legacyId: 484
+            type: SELECT
+            prompt: Which one means "To bake"?
+            grammarTags: []
+            options:
+              - text: Peći
+                correct: true
+                audioSrc: /audio/hr/peci.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Rijeka
+                correct: false
+                audioSrc: /audio/hr/rijeka.mp3
+              - text: Škola
+                correct: false
+                audioSrc: /audio/hr/skola.mp3
+          - order: 3
+            legacyId: 485
+            type: SELECT
+            prompt: Which one means "Warm tea"?
+            grammarTags: []
+            options:
+              - text: Topli čaj
+                correct: true
+                audioSrc: /audio/hr/topli_caj.mp3
+              - text: Hladno more
+                correct: false
+                audioSrc: /audio/hr/hladno_more.mp3
+              - text: Bijeli kruh
+                correct: false
+                audioSrc: /audio/hr/bijeli_kruh.mp3
+              - text: Zelena trava
+                correct: false
+                audioSrc: /audio/hr/zelena_trava.mp3
+          - order: 4
+            legacyId: 486
+            type: SELECT
+            prompt: Which one means "Sweet cake"?
+            grammarTags: []
+            options:
+              - text: Slatki kolač
+                correct: true
+                audioSrc: /audio/hr/slatki_kolac.mp3
+              - text: Topla pita
+                correct: false
+                audioSrc: /audio/hr/topla_pita.mp3
+              - text: Stari most
+                correct: false
+                audioSrc: /audio/hr/stari_most.mp3
+              - text: Topli čaj
+                correct: false
+                audioSrc: /audio/hr/topli_caj.mp3
+      - order: 3
+        legacyId: 111
+        kind: PRODUCTION
+        title: Toplina doma
+        challenges:
+          - order: 1
+            legacyId: 487
+            type: ASSIST
+            prompt: '"Grandma bakes a sweet cake."'
+            grammarTags: []
+            options:
+              - text: Baka peče slatki kolač.
+                correct: true
+                audioSrc: /audio/hr/baka_pece_slatki_kolac.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 488
+            type: ASSIST
+            prompt: '"We drink warm tea with honey."'
+            grammarTags: []
+            options:
+              - text: Pijemo topli čaj s medom.
+                correct: true
+                audioSrc: /audio/hr/pijemo_topli_caj_s_medom.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 489
+            type: ASSIST
+            prompt: '"I stir the soup in a large pot."'
+            grammarTags: []
+            options:
+              - text: Miješam juhu u velikom loncu.
+                correct: true
+                audioSrc: /audio/hr/mijesam_juhu_u_velikom_loncu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 490
+            type: ASSIST
+            prompt: '"Delicious pie smells good in the kitchen."'
+            grammarTags: []
+            options:
+              - text: Fina pita miriše u kuhinji.
+                correct: true
+                audioSrc: /audio/hr/fina_pita_mirise_u_kuhinji.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+      - order: 4
+        legacyId: 112
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Mali Kuhar"
+        challenges:
+          - order: 1
+            legacyId: 491
+            type: ASSIST
+            prompt: '"The whole family sits at the table."'
+            grammarTags: []
+            options:
+              - text: Cijela obitelj sjedi za stolom.
+                correct: true
+                audioSrc: /audio/hr/cijela_obitelj_sjedi_za_stolom.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 492
+            type: ASSIST
+            prompt: '"Thank you grandma for the delicious cake."'
+            grammarTags: []
+            options:
+              - text: Hvala baka na finom kolaču.
+                correct: true
+                audioSrc: /audio/hr/hvala_baka_na_finom_kolacu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 493
+            type: ASSIST
+            prompt: '"The kitchen is full of warmth."'
+            grammarTags: []
+            options:
+              - text: Kuhinja je puna topline.
+                correct: true
+                audioSrc: /audio/hr/kuhinja_je_puna_topline.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 494
+            type: ASSIST
+            prompt: '"We drink warm tea with honey."'
+            grammarTags: []
+            options:
+              - text: Pijemo topli čaj s medom.
+                correct: true
+                audioSrc: /audio/hr/pijemo_topli_caj_s_medom.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 5
+            legacyId: 495
+            type: ASSIST
+            prompt: '"Grandma bakes a sweet cake."'
+            grammarTags: []
+            options:
+              - text: Baka peče slatki kolač.
+                correct: true
+                audioSrc: /audio/hr/baka_pece_slatki_kolac.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+  - order: 29
+    legacyId: 29
+    title: Unit 29
+    description: Riječna plovidba Dunavom i Dravom (River Navigation & Life on Water)
+    lessons:
+      - order: 1
+        legacyId: 113
+        kind: DISCOVERY
+        title: Na obali rijeke
+        challenges:
+          - order: 1
+            legacyId: 496
+            type: SELECT
+            prompt: Which one of these is "Bridge"?
+            grammarTags: []
+            options:
+              - text: Most
+                correct: true
+                imageSrc: /most.svg
+                audioSrc: /audio/hr/most.mp3
+              - text: Vrata
+                correct: false
+                imageSrc: /door.svg
+                audioSrc: /audio/hr/vrata.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Zid
+                correct: false
+                imageSrc: /zid.svg
+                audioSrc: /audio/hr/zid.mp3
+          - order: 2
+            legacyId: 497
+            type: SELECT
+            prompt: Which one of these is "Small Boat"?
+            grammarTags: []
+            options:
+              - text: Čamac
+                correct: true
+                imageSrc: /camac.svg
+                audioSrc: /audio/hr/camac.mp3
+              - text: Brod
+                correct: false
+                imageSrc: /boat.svg
+                audioSrc: /audio/hr/brod.mp3
+              - text: Auto
+                correct: false
+                imageSrc: /car.svg
+                audioSrc: /audio/hr/auto.mp3
+              - text: Vlak
+                correct: false
+                imageSrc: /vlak.svg
+                audioSrc: /audio/hr/vlak.mp3
+          - order: 3
+            legacyId: 498
+            type: SELECT
+            prompt: Which one of these is "Fisherman"?
+            grammarTags: []
+            options:
+              - text: Ribar
+                correct: true
+                imageSrc: /ribar.svg
+                audioSrc: /audio/hr/ribar.mp3
+              - text: Učenici
+                correct: false
+                imageSrc: /ucenici.svg
+                audioSrc: /audio/hr/ucenici.mp3
+              - text: Dječaci
+                correct: false
+                imageSrc: /djecaci.svg
+                audioSrc: /audio/hr/djecaci.mp3
+              - text: Prijatelji
+                correct: false
+                imageSrc: /prijatelji.svg
+                audioSrc: /audio/hr/prijatelji.mp3
+          - order: 4
+            legacyId: 499
+            type: SELECT
+            prompt: Which one of these is "Fishing Net"?
+            grammarTags: []
+            options:
+              - text: Mreža
+                correct: true
+                imageSrc: /mreza.svg
+                audioSrc: /audio/hr/mreza.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Torba
+                correct: false
+                imageSrc: /backpack.svg
+                audioSrc: /audio/hr/torba.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+      - order: 2
+        legacyId: 114
+        kind: PHRASE_LISTEN
+        title: Snaga rijeke
+        challenges:
+          - order: 1
+            legacyId: 500
+            type: SELECT
+            prompt: Which one means "To row"?
+            grammarTags: []
+            options:
+              - text: Veslati
+                correct: true
+                audioSrc: /audio/hr/veslati.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Sir
+                correct: false
+                audioSrc: /audio/hr/sir.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+          - order: 2
+            legacyId: 501
+            type: SELECT
+            prompt: Which one means "To catch"?
+            grammarTags: []
+            options:
+              - text: Uloviti
+                correct: true
+                audioSrc: /audio/hr/uloviti.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Knjiga
+                correct: false
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Stol
+                correct: false
+                audioSrc: /audio/hr/stol.mp3
+          - order: 3
+            legacyId: 502
+            type: SELECT
+            prompt: Which one means "Old bridge"?
+            grammarTags: []
+            options:
+              - text: Stari most
+                correct: true
+                audioSrc: /audio/hr/stari_most.mp3
+              - text: Plavo more
+                correct: false
+                audioSrc: /audio/hr/plavo_more.mp3
+              - text: Zelena trava
+                correct: false
+                audioSrc: /audio/hr/zelena_trava.mp3
+              - text: Topla juha
+                correct: false
+                audioSrc: /audio/hr/topla_juha.mp3
+          - order: 4
+            legacyId: 503
+            type: SELECT
+            prompt: Which one means "Wooden boat"?
+            grammarTags: []
+            options:
+              - text: Drveni čamac
+                correct: true
+                audioSrc: /audio/hr/drveni_camac.mp3
+              - text: Velika kuća
+                correct: false
+                audioSrc: /audio/hr/velika_kuca.mp3
+              - text: Stari most
+                correct: false
+                audioSrc: /audio/hr/stari_most.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+      - order: 3
+        legacyId: 115
+        kind: PRODUCTION
+        title: Riječne pustolovine
+        challenges:
+          - order: 1
+            legacyId: 504
+            type: ASSIST
+            prompt: '"We row a boat on the calm Drava river."'
+            grammarTags: []
+            options:
+              - text: Veslamo čamcem po mirnoj Dravi.
+                correct: true
+                audioSrc: /audio/hr/veslamo_camcem_po_mirnoj_dravi.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 2
+            legacyId: 505
+            type: ASSIST
+            prompt: '"The fisherman throws the net into the Danube."'
+            grammarTags: []
+            options:
+              - text: Ribar baca mrežu u Dunav.
+                correct: true
+                audioSrc: /audio/hr/ribar_baca_mrezu_u_dunav.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 3
+            legacyId: 506
+            type: ASSIST
+            prompt: '"We cross over the big bridge."'
+            grammarTags: []
+            options:
+              - text: Prelazimo preko velikog mosta.
+                correct: true
+                audioSrc: /audio/hr/prelazimo_preko_velikog_mosta.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 4
+            legacyId: 507
+            type: ASSIST
+            prompt: '"We caught a big fish."'
+            grammarTags: []
+            options:
+              - text: Ulovili smo veliku ribu.
+                correct: true
+                audioSrc: /audio/hr/ulovili_smo_veliku_ribu.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+      - order: 4
+        legacyId: 116
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Dunavski Kapetan"
+        challenges:
+          - order: 1
+            legacyId: 508
+            type: ASSIST
+            prompt: '"We sail by boat towards Vukovar."'
+            grammarTags: []
+            options:
+              - text: Plovimo brodom prema Vukovaru.
+                correct: true
+                audioSrc: /audio/hr/plovimo_brodom_prema_vukovaru.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 2
+            legacyId: 509
+            type: ASSIST
+            prompt: '"The Drava and Danube are powerful rivers."'
+            grammarTags: []
+            options:
+              - text: Drava i Dunav su snažne rijeke.
+                correct: true
+                audioSrc: /audio/hr/drava_i_dunav_su_snazne_rijeke.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 3
+            legacyId: 510
+            type: ASSIST
+            prompt: '"The sun sets behind the bridge."'
+            grammarTags: []
+            options:
+              - text: Sunce zalazi iza mosta.
+                correct: true
+                audioSrc: /audio/hr/sunce_zalazi_iza_mosta.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 4
+            legacyId: 511
+            type: ASSIST
+            prompt: '"We row a boat on the calm Drava river."'
+            grammarTags: []
+            options:
+              - text: Veslamo čamcem po mirnoj Dravi.
+                correct: true
+                audioSrc: /audio/hr/veslamo_camcem_po_mirnoj_dravi.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+          - order: 5
+            legacyId: 512
+            type: ASSIST
+            prompt: '"The fisherman throws the net into the Danube."'
+            grammarTags: []
+            options:
+              - text: Ribar baca mrežu u Dunav.
+                correct: true
+                audioSrc: /audio/hr/ribar_baca_mrezu_u_dunav.mp3
+              - text: Kupujem kruh i sir.
+                correct: false
+                audioSrc: /audio/hr/kupujem_kruh_i_sir.mp3
+              - text: Vitez nosi krunu u areni.
+                correct: false
+                audioSrc: /audio/hr/vitez_nosi_krunu_u_areni.mp3
+              - text: Danas je lijep i sunčan dan.
+                correct: false
+                audioSrc: /audio/hr/danas_je_lijep_i_suncan_dan.mp3
+  - order: 30
+    legacyId: 30
+    title: Unit 30
+    description: Velika tamburica i seoska proslava (Folk Music, Costumes & Grand Festival)
+    lessons:
+      - order: 1
+        legacyId: 117
+        kind: DISCOVERY
+        title: Slavonsko veselje
+        challenges:
+          - order: 1
+            legacyId: 513
+            type: SELECT
+            prompt: Which one of these is "Music"?
+            grammarTags: []
+            options:
+              - text: Glazba
+                correct: true
+                imageSrc: /glazba.svg
+                audioSrc: /audio/hr/glazba.mp3
+              - text: Knjiga
+                correct: false
+                imageSrc: /book.svg
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Igra
+                correct: false
+                imageSrc: /igra.svg
+                audioSrc: /audio/hr/igra.mp3
+              - text: Škola
+                correct: false
+                imageSrc: /school.svg
+                audioSrc: /audio/hr/skola.mp3
+          - order: 2
+            legacyId: 514
+            type: SELECT
+            prompt: Which one of these is "Song"?
+            grammarTags: []
+            options:
+              - text: Pjesma
+                correct: true
+                imageSrc: /pjesma.svg
+                audioSrc: /audio/hr/pjesma.mp3
+              - text: Sunce
+                correct: false
+                imageSrc: /sun.svg
+                audioSrc: /audio/hr/sunce.mp3
+              - text: More
+                correct: false
+                imageSrc: /sea.svg
+                audioSrc: /audio/hr/more.mp3
+              - text: Rijeka
+                correct: false
+                imageSrc: /rijeka.svg
+                audioSrc: /audio/hr/rijeka.mp3
+          - order: 3
+            legacyId: 515
+            type: SELECT
+            prompt: Which one of these is "Folk Costume"?
+            grammarTags: []
+            options:
+              - text: Nošnja
+                correct: true
+                imageSrc: /nosnja.svg
+                audioSrc: /audio/hr/nosnja.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Majica
+                correct: false
+                imageSrc: /tshirt.svg
+                audioSrc: /audio/hr/majica.mp3
+              - text: Cipele
+                correct: false
+                imageSrc: /shoes.svg
+                audioSrc: /audio/hr/cipele.mp3
+          - order: 4
+            legacyId: 516
+            type: SELECT
+            prompt: Which one of these is "Dance"?
+            grammarTags: []
+            options:
+              - text: Ples
+                correct: true
+                imageSrc: /ples.svg
+                audioSrc: /audio/hr/ples.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+              - text: Bicikl
+                correct: false
+                imageSrc: /bike.svg
+                audioSrc: /audio/hr/bicikl.mp3
+              - text: Igra
+                correct: false
+                imageSrc: /igra.svg
+                audioSrc: /audio/hr/igra.mp3
+      - order: 2
+        legacyId: 118
+        kind: PHRASE_LISTEN
+        title: Pjesma i tambure
+        challenges:
+          - order: 1
+            legacyId: 517
+            type: SELECT
+            prompt: Which one means "To sing"?
+            grammarTags: []
+            options:
+              - text: Pjevati
+                correct: true
+                audioSrc: /audio/hr/pjevati.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kuća
+                correct: false
+                audioSrc: /audio/hr/kuca.mp3
+          - order: 2
+            legacyId: 518
+            type: SELECT
+            prompt: Which one means "To play an instrument"?
+            grammarTags: []
+            options:
+              - text: Svirati
+                correct: true
+                audioSrc: /audio/hr/svirati.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: More
+                correct: false
+                audioSrc: /audio/hr/more.mp3
+          - order: 3
+            legacyId: 519
+            type: SELECT
+            prompt: Which one means "Cheerful song"?
+            grammarTags: []
+            options:
+              - text: Vesela pjesma
+                correct: true
+                audioSrc: /audio/hr/vesela_pjesma.mp3
+              - text: Topla juha
+                correct: false
+                audioSrc: /audio/hr/topla_juha.mp3
+              - text: Stari most
+                correct: false
+                audioSrc: /audio/hr/stari_most.mp3
+              - text: Plavo more
+                correct: false
+                audioSrc: /audio/hr/plavo_more.mp3
+          - order: 4
+            legacyId: 520
+            type: SELECT
+            prompt: Which one means "Slavonian folk costume"?
+            grammarTags: []
+            options:
+              - text: Slavonska nošnja
+                correct: true
+                audioSrc: /audio/hr/slavonska_nosnja.mp3
+              - text: Crvena jabuka
+                correct: false
+                audioSrc: /audio/hr/crvena_jabuka.mp3
+              - text: Zelena trava
+                correct: false
+                audioSrc: /audio/hr/zelena_trava.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+      - order: 3
+        legacyId: 119
+        kind: PRODUCTION
+        title: Kolo radosti
+        challenges:
+          - order: 1
+            legacyId: 521
+            type: ASSIST
+            prompt: '"The tamburitza players play a cheerful song."'
+            grammarTags: []
+            options:
+              - text: Tamburaši sviraju veselu pjesmu.
+                correct: true
+                audioSrc: /audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 522
+            type: ASSIST
+            prompt: '"Together we all sing and dance."'
+            grammarTags: []
+            options:
+              - text: Svi zajedno pjevamo i plešemo.
+                correct: true
+                audioSrc: /audio/hr/svi_zajedno_pjevamo_i_plesemo.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 523
+            type: ASSIST
+            prompt: '"Girls wear golden folk costumes."'
+            grammarTags: []
+            options:
+              - text: Djevojčice nose zlatnu nošnju.
+                correct: true
+                audioSrc: /audio/hr/djevojcice_nose_zlatnu_nosnju.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 524
+            type: ASSIST
+            prompt: '"The folk dance spins in the village square."'
+            grammarTags: []
+            options:
+              - text: Kolo se vrti na seoskom trgu.
+                correct: true
+                audioSrc: /audio/hr/kolo_se_vrti_na_seoskom_trgu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+      - order: 4
+        legacyId: 120
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Gospodar Tamburice"
+        challenges:
+          - order: 1
+            legacyId: 525
+            type: ASSIST
+            prompt: '"This is the most beautiful Slavonian celebration."'
+            grammarTags: []
+            options:
+              - text: Ovo je najljepša slavonska proslava.
+                correct: true
+                audioSrc: /audio/hr/ovo_je_najljepsa_slavonska_proslava.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 2
+            legacyId: 526
+            type: ASSIST
+            prompt: '"Together we all sing and dance."'
+            grammarTags: []
+            options:
+              - text: Svi zajedno pjevamo i plešemo.
+                correct: true
+                audioSrc: /audio/hr/svi_zajedno_pjevamo_i_plesemo.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 3
+            legacyId: 527
+            type: ASSIST
+            prompt: '"The tamburitza players play a cheerful song."'
+            grammarTags: []
+            options:
+              - text: Tamburaši sviraju veselu pjesmu.
+                correct: true
+                audioSrc: /audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 4
+            legacyId: 528
+            type: ASSIST
+            prompt: '"Girls wear golden folk costumes."'
+            grammarTags: []
+            options:
+              - text: Djevojčice nose zlatnu nošnju.
+                correct: true
+                audioSrc: /audio/hr/djevojcice_nose_zlatnu_nosnju.mp3
+              - text: Deda čita knjigu.
+                correct: false
+                audioSrc: /audio/hr/deda_cita_knjigu.mp3
+              - text: Djeca se igraju u parku.
+                correct: false
+                audioSrc: /audio/hr/djeca_se_igraju_u_parku.mp3
+              - text: Mala mačka spava na travi.
+                correct: false
+                audioSrc: /audio/hr/mala_macka_spava_na_travi.mp3
+          - order: 5
+            legacyId: 529
+            type: ASSIST
+            prompt: '"Congratulations, you have finished the sixth world!"'
+            grammarTags: []
+            options:
+              - text: Čestitamo, završili ste šesti svijet!
+                correct: true
+                audioSrc: /audio/hr/cestitamo_zavrsili_ste_sesti_svijet.mp3
+              - text: Svi zajedno pjevamo i plešemo!
+                correct: false
+                audioSrc: /audio/hr/svi_zajedno_pjevamo_i_plesemo.mp3
+              - text: Tamburaši sviraju veselu pjesmu!
+                correct: false
+                audioSrc: /audio/hr/tamburasi_sviraju_veselu_pjesmu.mp3
+              - text: Ovo je najljepša slavonska proslava!
+                correct: false
+                audioSrc: /audio/hr/ovo_je_najljepsa_slavonska_proslava.mp3

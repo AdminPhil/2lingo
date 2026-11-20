@@ -26,7 +26,9 @@
     "db:prod": "tsx ./scripts/prod.ts",
     "db:reset": "tsx ./scripts/reset.ts",
     "xp:set": "tsx ./scripts/set_xp.ts",
-    "hearts:refill": "tsx ./scripts/daily-heart-refill.ts"
+    "hearts:refill": "tsx ./scripts/daily-heart-refill.ts",
+    "v2:export": "tsx ./scripts/v2/export-curriculum-yaml.ts",
+    "v2:validate": "tsx ./scripts/v2/validate-curriculum.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
@@ -56,6 +58,8 @@
     "stripe": "^14.20.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

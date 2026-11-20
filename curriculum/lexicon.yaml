@@ -1,0 +1,2812 @@
+schemaVersion: 2
+generatedAt: 2026-11-20T03:08:20.641Z
+totalLexemes: 351
+lexemes:
+  - stem: bok
+    lemma: Bok
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/bok.mp3
+    imageSrc: /mascot.svg
+    occurrences: 2
+  - stem: da
+    lemma: Da
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/da.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: dovidenja
+    lemma: Doviđenja
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/dovidenja.mp3
+    imageSrc: /mascot_sad.svg
+    occurrences: 2
+  - stem: hvala
+    lemma: Hvala
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/hvala.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: molim
+    lemma: Molim
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/molim.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ne
+    lemma: Ne
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/ne.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: oprosti
+    lemma: Oprosti
+    cefrBand: Pre-A1
+    introducedUnitOrder: 1
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/oprosti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: baka
+    lemma: Baka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/baka.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: beba
+    lemma: Beba
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/beba.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: brat
+    lemma: Brat
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/brat.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: djecak
+    lemma: Dječak
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/djecak.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: djed
+    lemma: Djed
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/djed.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: djevojcica
+    lemma: Djevojčica
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/djevojcica.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: mama
+    lemma: Mama
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/mama.mp3
+    imageSrc: /woman.svg
+    occurrences: 2
+  - stem: sestra
+    lemma: Sestra
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/sestra.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: tata
+    lemma: Tata
+    cefrBand: Pre-A1
+    introducedUnitOrder: 2
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/tata.mp3
+    imageSrc: /man.svg
+    occurrences: 2
+  - stem: konj
+    lemma: Konj
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/konj.mp3
+    imageSrc: /konj.svg
+    occurrences: 3
+  - stem: krava
+    lemma: Krava
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/krava.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: macka
+    lemma: Mačka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/macka.mp3
+    imageSrc: /cat.svg
+    occurrences: 2
+  - stem: pas
+    lemma: Pas
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/pas.mp3
+    imageSrc: /dog.svg
+    occurrences: 2
+  - stem: patka
+    lemma: Patka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/patka.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ptica
+    lemma: Ptica
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/ptica.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: riba
+    lemma: Riba
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/riba.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: svinja
+    lemma: Svinja
+    cefrBand: Pre-A1
+    introducedUnitOrder: 3
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/svinja.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: cetiri
+    lemma: Četiri
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/cetiri.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: crvena
+    lemma: Crvena
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/crvena.mp3
+    imageSrc: /red.svg
+    occurrences: 2
+  - stem: deset
+    lemma: Deset
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/deset.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: devet
+    lemma: Devet
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/devet.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: dva
+    lemma: Dva
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/dva.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: jedan
+    lemma: Jedan
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/jedan.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: osam
+    lemma: Osam
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/osam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: pet
+    lemma: Pet
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/pet.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: plava
+    lemma: Plava
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/plava.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: sedam
+    lemma: Sedam
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/sedam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sest
+    lemma: Šest
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/sest.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: tri
+    lemma: Tri
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/tri.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: zelena
+    lemma: Zelena
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/zelena.mp3
+    imageSrc: /green.svg
+    occurrences: 2
+  - stem: zuta
+    lemma: Žuta
+    cefrBand: Pre-A1
+    introducedUnitOrder: 4
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/zuta.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: banana
+    lemma: Banana
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/banana.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: cokolada
+    lemma: Čokolada
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/cokolada.mp3
+    imageSrc: /chocolate.svg
+    occurrences: 2
+  - stem: jabuka
+    lemma: Jabuka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/jabuka.mp3
+    imageSrc: /apple.svg
+    occurrences: 2
+  - stem: kruh
+    lemma: Kruh
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/kruh.mp3
+    imageSrc: /bread.svg
+    occurrences: 2
+  - stem: mlijeko
+    lemma: Mlijeko
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/mlijeko.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sladoled
+    lemma: Sladoled
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/sladoled.mp3
+    imageSrc: /ice_cream.svg
+    occurrences: 3
+  - stem: sok
+    lemma: Sok
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/sok.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: voda
+    lemma: Voda
+    cefrBand: Pre-A1
+    introducedUnitOrder: 5
+    introducedWorldOrder: 1
+    audioSrc: /audio/hr/voda.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: igracka
+    lemma: Igračka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/igracka.mp3
+    imageSrc: /igracka.svg
+    occurrences: 4
+  - stem: knjiga
+    lemma: Knjiga
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/knjiga.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: krevet
+    lemma: Krevet
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/krevet.mp3
+    imageSrc: /bed.svg
+    occurrences: 3
+  - stem: kuca
+    lemma: Kuća
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/kuca.mp3
+    imageSrc: /house.svg
+    occurrences: 2
+  - stem: prozor
+    lemma: Prozor
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/prozor.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: soba
+    lemma: Soba
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/soba.mp3
+    imageSrc: /room.svg
+    occurrences: 1
+  - stem: stol
+    lemma: Stol
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/stol.mp3
+    imageSrc: /stol.svg
+    occurrences: 2
+  - stem: vrata
+    lemma: Vrata
+    cefrBand: Pre-A1
+    introducedUnitOrder: 6
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/vrata.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: glava
+    lemma: Glava
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/glava.mp3
+    imageSrc: /head.svg
+    occurrences: 2
+  - stem: kosa
+    lemma: Kosa
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/kosa.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: noga
+    lemma: Noga
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/noga.mp3
+    imageSrc: /foot.svg
+    occurrences: 1
+  - stem: nos
+    lemma: Nos
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/nos.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: oko
+    lemma: Oko
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/oko.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ruka
+    lemma: Ruka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/ruka.mp3
+    imageSrc: /hand.svg
+    occurrences: 2
+  - stem: skoci
+    lemma: Skoči
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/skoci.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: trci
+    lemma: Trči
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/trci.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: uho
+    lemma: Uho
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/uho.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: usta
+    lemma: Usta
+    cefrBand: Pre-A1
+    introducedUnitOrder: 7
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/usta.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: brod
+    lemma: Brod
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/brod.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: dupin
+    lemma: Dupin
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/dupin.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: galeb
+    lemma: Galeb
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/galeb.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: kupanje
+    lemma: Kupanje
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/kupanje.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: more
+    lemma: More
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/more.mp3
+    imageSrc: /sea.svg
+    occurrences: 2
+  - stem: otok
+    lemma: Otok
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/otok.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: pijesak
+    lemma: Pijesak
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/pijesak.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: plaza
+    lemma: Plaža
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/plaza.mp3
+    imageSrc: /beach.svg
+    occurrences: 1
+  - stem: plivanje
+    lemma: Plivanje
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/plivanje.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: skoljka
+    lemma: Školjka
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/skoljka.mp3
+    imageSrc: /shell.svg
+    occurrences: 2
+  - stem: sunce
+    lemma: Sunce
+    cefrBand: Pre-A1
+    introducedUnitOrder: 8
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/sunce.mp3
+    imageSrc: /sun.svg
+    occurrences: 1
+  - stem: carape
+    lemma: Čarape
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/carape.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: cipele
+    lemma: Cipele
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/cipele.mp3
+    imageSrc: /shoes.svg
+    occurrences: 2
+  - stem: haljina
+    lemma: Haljina
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/haljina.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: hlace
+    lemma: Hlače
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/hlace.mp3
+    imageSrc: /pants.svg
+    occurrences: 1
+  - stem: jakna
+    lemma: Jakna
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/jakna.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: kapa
+    lemma: Kapa
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/kapa.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: majica
+    lemma: Majica
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/majica.mp3
+    imageSrc: /tshirt.svg
+    occurrences: 2
+  - stem: sal
+    lemma: Šal
+    cefrBand: Pre-A1
+    introducedUnitOrder: 9
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/sal.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: duga
+    lemma: Duga
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/duga.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: hladno
+    lemma: Hladno
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/hladno.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: kisa
+    lemma: Kiša
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/kisa.mp3
+    imageSrc: /rain.svg
+    occurrences: 2
+  - stem: nasmijan
+    lemma: Nasmijan
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/nasmijan.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: oblak
+    lemma: Oblak
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/oblak.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: snijeg
+    lemma: Snijeg
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/snijeg.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sretan
+    lemma: Sretan
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/sretan.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: suncano
+    lemma: Sunčano
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/suncano.mp3
+    imageSrc: /sunny.svg
+    occurrences: 2
+  - stem: toplo
+    lemma: Toplo
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/toplo.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: umoran
+    lemma: Umoran
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/umoran.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: vjetar
+    lemma: Vjetar
+    cefrBand: Pre-A1
+    introducedUnitOrder: 10
+    introducedWorldOrder: 2
+    audioSrc: /audio/hr/vjetar.mp3
+    imageSrc: /wind.svg
+    occurrences: 1
+  - stem: citam
+    lemma: Čitam
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/citam.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: gledam
+    lemma: Gledam
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/gledam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: jedem
+    lemma: Jedem
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/jedem.mp3
+    imageSrc: /eat.svg
+    occurrences: 2
+  - stem: pijem
+    lemma: Pijem
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/pijem.mp3
+    imageSrc: /drink.svg
+    occurrences: 1
+  - stem: pjevam
+    lemma: Pjevam
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/pjevam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: spavam
+    lemma: Spavam
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/spavam.mp3
+    imageSrc: /sleep.svg
+    occurrences: 2
+  - stem: ucim
+    lemma: Učim
+    cefrBand: A1.1
+    introducedUnitOrder: 11
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/ucim.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: auto
+    lemma: Auto
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/auto.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: bicikl
+    lemma: Bicikl
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/bicikl.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: drvo
+    lemma: Drvo
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/drvo.mp3
+    imageSrc: /drvo.svg
+    occurrences: 2
+  - stem: ljuljacka
+    lemma: Ljuljačka
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/ljuljacka.mp3
+    imageSrc: /swing.svg
+    occurrences: 2
+  - stem: park
+    lemma: Park
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/park.mp3
+    imageSrc: /park.svg
+    occurrences: 1
+  - stem: tobogan
+    lemma: Tobogan
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/tobogan.mp3
+    imageSrc: /slide.svg
+    occurrences: 2
+  - stem: trava
+    lemma: Trava
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/trava.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ulica
+    lemma: Ulica
+    cefrBand: A1.1
+    introducedUnitOrder: 12
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/ulica.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: blizu
+    lemma: Blizu
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/blizu.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: dolje
+    lemma: Dolje
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/dolje.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: gore
+    lemma: Gore
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/gore.mp3
+    imageSrc: /up.svg
+    occurrences: 3
+  - stem: ispod
+    lemma: Ispod
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/ispod.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: na
+    lemma: Na
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/na.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ovdje
+    lemma: Ovdje
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/ovdje.mp3
+    imageSrc: /here.svg
+    occurrences: 2
+  - stem: tamo
+    lemma: Tamo
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/tamo.mp3
+    imageSrc: /there.svg
+    occurrences: 1
+  - stem: u
+    lemma: U
+    cefrBand: A1.1
+    introducedUnitOrder: 13
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/u.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: burek
+    lemma: Burek
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/burek.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: izvolite
+    lemma: Izvolite
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/izvolite.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: kiflica
+    lemma: Kiflica
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/kiflica.mp3
+    imageSrc: /croissant.svg
+    occurrences: 2
+  - stem: naranca
+    lemma: Naranča
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/naranca.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: pekara
+    lemma: Pekara
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/pekara.mp3
+    imageSrc: /bakery.svg
+    occurrences: 2
+  - stem: rajcica
+    lemma: Rajčica
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/rajcica.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sir
+    lemma: Sir
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/sir.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: trgovina
+    lemma: Trgovina
+    cefrBand: A1.1
+    introducedUnitOrder: 14
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/trgovina.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: bravo
+    lemma: Bravo
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/bravo.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: crtanje
+    lemma: Crtanje
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/crtanje.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: glazba
+    lemma: Glazba
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/glazba.mp3
+    imageSrc: /glazba.svg
+    occurrences: 2
+  - stem: gol
+    lemma: Gol
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/gol.mp3
+    imageSrc: /goal.svg
+    occurrences: 1
+  - stem: igra
+    lemma: Igra
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/igra.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: lopta
+    lemma: Lopta
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/lopta.mp3
+    imageSrc: /ball.svg
+    occurrences: 2
+  - stem: nogomet
+    lemma: Nogomet
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/nogomet.mp3
+    imageSrc: /soccer.svg
+    occurrences: 2
+  - stem: pjesma
+    lemma: Pjesma
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/pjesma.mp3
+    imageSrc: /pjesma.svg
+    occurrences: 3
+  - stem: pobjeda
+    lemma: Pobjeda
+    cefrBand: A1.1
+    introducedUnitOrder: 15
+    introducedWorldOrder: 3
+    audioSrc: /audio/hr/pobjeda.mp3
+    imageSrc: /pobjeda.svg
+    occurrences: 3
+  - stem: biljeznica
+    lemma: Bilježnica
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/biljeznica.mp3
+    imageSrc: /notebook.svg
+    occurrences: 2
+  - stem: olovka
+    lemma: Olovka
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/olovka.mp3
+    imageSrc: /pencil.svg
+    occurrences: 1
+  - stem: pisem
+    lemma: Pišem
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/pisem.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: prijatelj
+    lemma: Prijatelj
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/prijatelj.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: razred
+    lemma: Razred
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/razred.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: skola
+    lemma: Škola
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/skola.mp3
+    imageSrc: /school.svg
+    occurrences: 2
+  - stem: torba
+    lemma: Torba
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/torba.mp3
+    imageSrc: /backpack.svg
+    occurrences: 1
+  - stem: uciteljica
+    lemma: Učiteljica
+    cefrBand: A1.1
+    introducedUnitOrder: 16
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/uciteljica.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: jelen
+    lemma: Jelen
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/jelen.mp3
+    imageSrc: /jelen.svg
+    occurrences: 2
+  - stem: kamen
+    lemma: Kamen
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/kamen.mp3
+    imageSrc: /kamen.svg
+    occurrences: 2
+  - stem: medvjed
+    lemma: Medvjed
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/medvjed.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: orao
+    lemma: Orao
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/orao.mp3
+    imageSrc: /orao.svg
+    occurrences: 2
+  - stem: planina
+    lemma: Planina
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/planina.mp3
+    imageSrc: /planina.svg
+    occurrences: 1
+  - stem: rijeka
+    lemma: Rijeka
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/rijeka.mp3
+    imageSrc: /rijeka.svg
+    occurrences: 1
+  - stem: suma
+    lemma: Šuma
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/suma.mp3
+    imageSrc: /suma.svg
+    occurrences: 2
+  - stem: vuk
+    lemma: Vuk
+    cefrBand: A1.1
+    introducedUnitOrder: 17
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/vuk.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: autobus
+    lemma: Autobus
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/autobus.mp3
+    imageSrc: /autobus.svg
+    occurrences: 1
+  - stem: avion
+    lemma: Avion
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/avion.mp3
+    imageSrc: /avion.svg
+    occurrences: 1
+  - stem: karta
+    lemma: Karta
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/karta.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: kofer
+    lemma: Kofer
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/kofer.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: kolodvor
+    lemma: Kolodvor
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/kolodvor.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: putujemo
+    lemma: Putujemo
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/putujemo.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: trajekt
+    lemma: Trajekt
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/trajekt.mp3
+    imageSrc: /trajekt.svg
+    occurrences: 2
+  - stem: vlak
+    lemma: Vlak
+    cefrBand: A1.1
+    introducedUnitOrder: 18
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/vlak.mp3
+    imageSrc: /vlak.svg
+    occurrences: 1
+  - stem: dorucak
+    lemma: Doručak
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/dorucak.mp3
+    imageSrc: /dorucak.svg
+    occurrences: 2
+  - stem: juha
+    lemma: Juha
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/juha.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: kuham
+    lemma: Kuham
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/kuham.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: kuhinja
+    lemma: Kuhinja
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/kuhinja.mp3
+    imageSrc: /kuhinja.svg
+    occurrences: 1
+  - stem: rucak
+    lemma: Ručak
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/rucak.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: tanjur
+    lemma: Tanjur
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/tanjur.mp3
+    imageSrc: /tanjur.svg
+    occurrences: 2
+  - stem: vilica
+    lemma: Vilica
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/vilica.mp3
+    imageSrc: /vilica.svg
+    occurrences: 1
+  - stem: zlica
+    lemma: Žlica
+    cefrBand: A1.1
+    introducedUnitOrder: 19
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/zlica.mp3
+    imageSrc: /zlica.svg
+    occurrences: 1
+  - stem: balon
+    lemma: Balon
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/balon.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: cestitam
+    lemma: Čestitam
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/cestitam.mp3
+    imageSrc: null
+    occurrences: 2
+  - stem: ples
+    lemma: Ples
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/ples.mp3
+    imageSrc: /ples.svg
+    occurrences: 2
+  - stem: poklon
+    lemma: Poklon
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/poklon.mp3
+    imageSrc: /poklon.svg
+    occurrences: 2
+  - stem: prijatelji
+    lemma: Prijatelji
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/prijatelji.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: rodendan
+    lemma: Rođendan
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/rodendan.mp3
+    imageSrc: /rodendan.svg
+    occurrences: 1
+  - stem: svjecice
+    lemma: Svjećice
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/svjecice.mp3
+    imageSrc: /svjecice.svg
+    occurrences: 1
+  - stem: torta
+    lemma: Torta
+    cefrBand: A1.1
+    introducedUnitOrder: 20
+    introducedWorldOrder: 4
+    audioSrc: /audio/hr/torta.mp3
+    imageSrc: /torta.svg
+    occurrences: 2
+  - stem: danas
+    lemma: Danas
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/danas.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: jutro
+    lemma: Jutro
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/jutro.mp3
+    imageSrc: /morning.svg
+    occurrences: 1
+  - stem: nedjelja
+    lemma: Nedjelja
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/nedjelja.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ponedjeljak
+    lemma: Ponedjeljak
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/ponedjeljak.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sutra
+    lemma: Sutra
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/sutra.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: tjedan
+    lemma: Tjedan
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/tjedan.mp3
+    imageSrc: /week.svg
+    occurrences: 1
+  - stem: vecer
+    lemma: Večer
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/vecer.mp3
+    imageSrc: /evening.svg
+    occurrences: 1
+  - stem: vikend
+    lemma: Vikend
+    cefrBand: A1.2
+    introducedUnitOrder: 21
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/vikend.mp3
+    imageSrc: /weekend.svg
+    occurrences: 1
+  - stem: jagoda
+    lemma: Jagoda
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/jagoda.mp3
+    imageSrc: /strawberry.svg
+    occurrences: 1
+  - stem: kuglica
+    lemma: Kuglica
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/kuglica.mp3
+    imageSrc: /scoop.svg
+    occurrences: 1
+  - stem: kupujem
+    lemma: Kupujem
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/kupujem.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: naruciti
+    lemma: Naručiti
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/naruciti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sladak
+    lemma: Sladak
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/sladak.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: zelim
+    lemma: Želim
+    cefrBand: A1.2
+    introducedUnitOrder: 22
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/zelim.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: arena
+    lemma: Arena
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/arena.mp3
+    imageSrc: /arena.svg
+    occurrences: 1
+  - stem: gledamo
+    lemma: Gledamo
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/gledamo.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: hrabar
+    lemma: Hrabar
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/hrabar.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: istrazujemo
+    lemma: Istražujemo
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/istrazujemo.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: stari
+    lemma: Stari
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/stari.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: stit
+    lemma: Štit
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/stit.mp3
+    imageSrc: /shield.svg
+    occurrences: 3
+  - stem: vitez
+    lemma: Vitez
+    cefrBand: A1.2
+    introducedUnitOrder: 23
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/vitez.mp3
+    imageSrc: /knight.svg
+    occurrences: 2
+  - stem: cetkica
+    lemma: Četkica
+    cefrBand: A1.2
+    introducedUnitOrder: 24
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/cetkica.mp3
+    imageSrc: /toothbrush.svg
+    occurrences: 1
+  - stem: navecer
+    lemma: Navečer
+    cefrBand: A1.2
+    introducedUnitOrder: 24
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/navecer.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: perem
+    lemma: Perem
+    cefrBand: A1.2
+    introducedUnitOrder: 24
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/perem.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: sat
+    lemma: Sat
+    cefrBand: A1.2
+    introducedUnitOrder: 24
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/sat.mp3
+    imageSrc: /clock.svg
+    occurrences: 1
+  - stem: ujutro
+    lemma: Ujutro
+    cefrBand: A1.2
+    introducedUnitOrder: 24
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/ujutro.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: maska
+    lemma: Maska
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/maska.mp3
+    imageSrc: /goggles.svg
+    occurrences: 1
+  - stem: plivam
+    lemma: Plivam
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/plivam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: ronim
+    lemma: Ronim
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/ronim.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: rucnik
+    lemma: Ručnik
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/rucnik.mp3
+    imageSrc: /towel.svg
+    occurrences: 1
+  - stem: skacem
+    lemma: Skačem
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/skacem.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: uzivam
+    lemma: Uživam
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/uzivam.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: val
+    lemma: Val
+    cefrBand: A1.2
+    introducedUnitOrder: 25
+    introducedWorldOrder: 5
+    audioSrc: /audio/hr/val.mp3
+    imageSrc: /wave.svg
+    occurrences: 1
+  - stem: bundeva
+    lemma: Bundeva
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/bundeva.mp3
+    imageSrc: /bundeva.svg
+    occurrences: 1
+  - stem: kukuruz
+    lemma: Kukuruz
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/kukuruz.mp3
+    imageSrc: /kukuruz.svg
+    occurrences: 1
+  - stem: med
+    lemma: Med
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/med.mp3
+    imageSrc: /med.svg
+    occurrences: 1
+  - stem: psenica
+    lemma: Pšenica
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/psenica.mp3
+    imageSrc: /psenica.svg
+    occurrences: 1
+  - stem: sijati
+    lemma: Sijati
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/sijati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: zeti
+    lemma: Žeti
+    cefrBand: A1.2
+    introducedUnitOrder: 26
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/zeti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: caplja
+    lemma: Čaplja
+    cefrBand: A1.2
+    introducedUnitOrder: 27
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/caplja.mp3
+    imageSrc: /caplja.svg
+    occurrences: 1
+  - stem: letjeti
+    lemma: Letjeti
+    cefrBand: A1.2
+    introducedUnitOrder: 27
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/letjeti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: loviti
+    lemma: Loviti
+    cefrBand: A1.2
+    introducedUnitOrder: 27
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/loviti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: vepar
+    lemma: Vepar
+    cefrBand: A1.2
+    introducedUnitOrder: 27
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/vepar.mp3
+    imageSrc: /vepar.svg
+    occurrences: 1
+  - stem: caj
+    lemma: Čaj
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/caj.mp3
+    imageSrc: /caj.svg
+    occurrences: 1
+  - stem: kolac
+    lemma: Kolač
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/kolac.mp3
+    imageSrc: /kolac.svg
+    occurrences: 1
+  - stem: lonac
+    lemma: Lonac
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/lonac.mp3
+    imageSrc: /lonac.svg
+    occurrences: 1
+  - stem: mijesati
+    lemma: Miješati
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/mijesati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: peci
+    lemma: Peći
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/peci.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: pita
+    lemma: Pita
+    cefrBand: A1.2
+    introducedUnitOrder: 28
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/pita.mp3
+    imageSrc: /pita.svg
+    occurrences: 1
+  - stem: camac
+    lemma: Čamac
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/camac.mp3
+    imageSrc: /camac.svg
+    occurrences: 2
+  - stem: most
+    lemma: Most
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/most.mp3
+    imageSrc: /most.svg
+    occurrences: 2
+  - stem: mreza
+    lemma: Mreža
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/mreza.mp3
+    imageSrc: /mreza.svg
+    occurrences: 1
+  - stem: ribar
+    lemma: Ribar
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/ribar.mp3
+    imageSrc: /ribar.svg
+    occurrences: 1
+  - stem: uloviti
+    lemma: Uloviti
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/uloviti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: veslati
+    lemma: Veslati
+    cefrBand: A1.2
+    introducedUnitOrder: 29
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/veslati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: nosnja
+    lemma: Nošnja
+    cefrBand: A1.2
+    introducedUnitOrder: 30
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/nosnja.mp3
+    imageSrc: /nosnja.svg
+    occurrences: 1
+  - stem: pjevati
+    lemma: Pjevati
+    cefrBand: A1.2
+    introducedUnitOrder: 30
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/pjevati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: svirati
+    lemma: Svirati
+    cefrBand: A1.2
+    introducedUnitOrder: 30
+    introducedWorldOrder: 6
+    audioSrc: /audio/hr/svirati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: dvorac
+    lemma: Dvorac
+    cefrBand: A2.1
+    introducedUnitOrder: 31
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/dvorac.mp3
+    imageSrc: /dvorac.svg
+    occurrences: 2
+  - stem: kljuc
+    lemma: Ključ
+    cefrBand: A2.1
+    introducedUnitOrder: 31
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/kljuc.mp3
+    imageSrc: /kljuc.svg
+    occurrences: 1
+  - stem: kula
+    lemma: Kula
+    cefrBand: A2.1
+    introducedUnitOrder: 31
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/kula.mp3
+    imageSrc: /kula.svg
+    occurrences: 1
+  - stem: braniti
+    lemma: Braniti
+    cefrBand: A2.1
+    introducedUnitOrder: 32
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/braniti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: cuvati
+    lemma: Čuvati
+    cefrBand: A2.1
+    introducedUnitOrder: 32
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/cuvati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: mac
+    lemma: Mač
+    cefrBand: A2.1
+    introducedUnitOrder: 32
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/mac.mp3
+    imageSrc: /mac.svg
+    occurrences: 1
+  - stem: zastava
+    lemma: Zastava
+    cefrBand: A2.1
+    introducedUnitOrder: 32
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/zastava.mp3
+    imageSrc: /zastava.svg
+    occurrences: 2
+  - stem: desno
+    lemma: Desno
+    cefrBand: A2.1
+    introducedUnitOrder: 33
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/desno.mp3
+    imageSrc: /desno.svg
+    occurrences: 2
+  - stem: lijevo
+    lemma: Lijevo
+    cefrBand: A2.1
+    introducedUnitOrder: 33
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/lijevo.mp3
+    imageSrc: /lijevo.svg
+    occurrences: 2
+  - stem: ravno
+    lemma: Ravno
+    cefrBand: A2.1
+    introducedUnitOrder: 33
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/ravno.mp3
+    imageSrc: /ravno.svg
+    occurrences: 2
+  - stem: skrenuti
+    lemma: Skrenuti
+    cefrBand: A2.1
+    introducedUnitOrder: 33
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/skrenuti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: traziti
+    lemma: Tražiti
+    cefrBand: A2.1
+    introducedUnitOrder: 33
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/traziti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: bojati
+    lemma: Bojati
+    cefrBand: A2.1
+    introducedUnitOrder: 34
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/bojati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: darovati
+    lemma: Darovati
+    cefrBand: A2.1
+    introducedUnitOrder: 34
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/darovati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: konjic
+    lemma: Konjić
+    cefrBand: A2.1
+    introducedUnitOrder: 34
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/konjic.mp3
+    imageSrc: /konjic.svg
+    occurrences: 1
+  - stem: srce
+    lemma: Srce
+    cefrBand: A2.1
+    introducedUnitOrder: 34
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/srce.mp3
+    imageSrc: /srce.svg
+    occurrences: 1
+  - stem: gozba
+    lemma: Gozba
+    cefrBand: A2.1
+    introducedUnitOrder: 35
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/gozba.mp3
+    imageSrc: /gozba.svg
+    occurrences: 1
+  - stem: kruna
+    lemma: Kruna
+    cefrBand: A2.1
+    introducedUnitOrder: 35
+    introducedWorldOrder: 7
+    audioSrc: /audio/hr/kruna.mp3
+    imageSrc: /kruna.svg
+    occurrences: 1
+  - stem: iskra
+    lemma: Iskra
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/iskra.mp3
+    imageSrc: /iskra.svg
+    occurrences: 1
+  - stem: izum
+    lemma: Izum
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/izum.mp3
+    imageSrc: /izum.svg
+    occurrences: 1
+  - stem: paliti
+    lemma: Paliti
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/paliti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: struja
+    lemma: Struja
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/struja.mp3
+    imageSrc: /struja.svg
+    occurrences: 1
+  - stem: svijetliti
+    lemma: Svijetliti
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/svijetliti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: svjetlost
+    lemma: Svjetlost
+    cefrBand: A2.1
+    introducedUnitOrder: 36
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/svjetlost.mp3
+    imageSrc: /svjetlost.svg
+    occurrences: 1
+  - stem: mjesec
+    lemma: Mjesec
+    cefrBand: A2.1
+    introducedUnitOrder: 37
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/mjesec.mp3
+    imageSrc: /mjesec.svg
+    occurrences: 1
+  - stem: nebo
+    lemma: Nebo
+    cefrBand: A2.1
+    introducedUnitOrder: 37
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/nebo.mp3
+    imageSrc: /nebo.svg
+    occurrences: 1
+  - stem: sjaj
+    lemma: Sjaj
+    cefrBand: A2.1
+    introducedUnitOrder: 37
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/sjaj.mp3
+    imageSrc: /sjaj.svg
+    occurrences: 1
+  - stem: zvijezda
+    lemma: Zvijezda
+    cefrBand: A2.1
+    introducedUnitOrder: 37
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/zvijezda.mp3
+    imageSrc: /zvijezda.svg
+    occurrences: 1
+  - stem: kupola
+    lemma: Kupola
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/kupola.mp3
+    imageSrc: /kupola.svg
+    occurrences: 1
+  - stem: otkriti
+    lemma: Otkriti
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/otkriti.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: planet
+    lemma: Planet
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/planet.mp3
+    imageSrc: /planet.svg
+    occurrences: 1
+  - stem: promatrati
+    lemma: Promatrati
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/promatrati.mp3
+    imageSrc: null
+    occurrences: 1
+  - stem: svemir
+    lemma: Svemir
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/svemir.mp3
+    imageSrc: /svemir.svg
+    occurrences: 1
+  - stem: teleskop
+    lemma: Teleskop
+    cefrBand: A2.1
+    introducedUnitOrder: 38
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/teleskop.mp3
+    imageSrc: /teleskop.svg
+    occurrences: 1
+  - stem: baterija
+    lemma: Baterija
+    cefrBand: A2.1
+    introducedUnitOrder: 39
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/baterija.mp3
+    imageSrc: /baterija.svg
+    occurrences: 1
+  - stem: grom
+    lemma: Grom
+    cefrBand: A2.1
+    introducedUnitOrder: 39
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/grom.mp3
+    imageSrc: /grom.svg
+    occurrences: 1
+  - stem: munja
+    lemma: Munja
+    cefrBand: A2.1
+    introducedUnitOrder: 39
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/munja.mp3
+    imageSrc: /munja.svg
+    occurrences: 1
+  - stem: snaga
+    lemma: Snaga
+    cefrBand: A2.1
+    introducedUnitOrder: 39
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/snaga.mp3
+    imageSrc: /snaga.svg
+    occurrences: 1
+  - stem: buducnost
+    lemma: Budućnost
+    cefrBand: A2.1
+    introducedUnitOrder: 40
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/buducnost.mp3
+    imageSrc: /buducnost.svg
+    occurrences: 1
+  - stem: ideja
+    lemma: Ideja
+    cefrBand: A2.1
+    introducedUnitOrder: 40
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/ideja.mp3
+    imageSrc: /ideja.svg
+    occurrences: 1
+  - stem: robot
+    lemma: Robot
+    cefrBand: A2.1
+    introducedUnitOrder: 40
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/robot.mp3
+    imageSrc: /robot.svg
+    occurrences: 1
+  - stem: znanje
+    lemma: Znanje
+    cefrBand: A2.1
+    introducedUnitOrder: 40
+    introducedWorldOrder: 8
+    audioSrc: /audio/hr/znanje.mp3
+    imageSrc: /znanje.svg
+    occurrences: 1
+  - stem: jahac
+    lemma: Jahač
+    cefrBand: A2.1
+    introducedUnitOrder: 41
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/jahac.mp3
+    imageSrc: /jahac.svg
+    occurrences: 1
+  - stem: sedlo
+    lemma: Sedlo
+    cefrBand: A2.1
+    introducedUnitOrder: 41
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/sedlo.mp3
+    imageSrc: /sedlo.svg
+    occurrences: 1
+  - stem: staza
+    lemma: Staza
+    cefrBand: A2.1
+    introducedUnitOrder: 41
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/staza.mp3
+    imageSrc: /staza.svg
+    occurrences: 1
+  - stem: alka
+    lemma: Alka
+    cefrBand: A2.1
+    introducedUnitOrder: 42
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/alka.mp3
+    imageSrc: /alka.svg
+    occurrences: 1
+  - stem: koplje
+    lemma: Koplje
+    cefrBand: A2.1
+    introducedUnitOrder: 42
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/koplje.mp3
+    imageSrc: /koplje.svg
+    occurrences: 1
+  - stem: meta
+    lemma: Meta
+    cefrBand: A2.1
+    introducedUnitOrder: 42
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/meta.mp3
+    imageSrc: /meta.svg
+    occurrences: 1
+  - stem: pogodak
+    lemma: Pogodak
+    cefrBand: A2.1
+    introducedUnitOrder: 42
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/pogodak.mp3
+    imageSrc: /pogodak.svg
+    occurrences: 1
+  - stem: kanjon
+    lemma: Kanjon
+    cefrBand: A2.1
+    introducedUnitOrder: 43
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/kanjon.mp3
+    imageSrc: /kanjon.svg
+    occurrences: 1
+  - stem: slap
+    lemma: Slap
+    cefrBand: A2.1
+    introducedUnitOrder: 43
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/slap.mp3
+    imageSrc: /slap.svg
+    occurrences: 1
+  - stem: stijena
+    lemma: Stijena
+    cefrBand: A2.1
+    introducedUnitOrder: 43
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/stijena.mp3
+    imageSrc: /stijena.svg
+    occurrences: 1
+  - stem: brasno
+    lemma: Brašno
+    cefrBand: A2.1
+    introducedUnitOrder: 44
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/brasno.mp3
+    imageSrc: /brasno.svg
+    occurrences: 1
+  - stem: mlin
+    lemma: Mlin
+    cefrBand: A2.1
+    introducedUnitOrder: 44
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/mlin.mp3
+    imageSrc: /mlin.svg
+    occurrences: 1
+  - stem: peka
+    lemma: Peka
+    cefrBand: A2.1
+    introducedUnitOrder: 44
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/peka.mp3
+    imageSrc: /peka.svg
+    occurrences: 1
+  - stem: vatra
+    lemma: Vatra
+    cefrBand: A2.1
+    introducedUnitOrder: 44
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/vatra.mp3
+    imageSrc: /vatra.svg
+    occurrences: 1
+  - stem: medalja
+    lemma: Medalja
+    cefrBand: A2.1
+    introducedUnitOrder: 45
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/medalja.mp3
+    imageSrc: /medalja.svg
+    occurrences: 1
+  - stem: ponos
+    lemma: Ponos
+    cefrBand: A2.1
+    introducedUnitOrder: 45
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/ponos.mp3
+    imageSrc: /ponos.svg
+    occurrences: 1
+  - stem: slavlje
+    lemma: Slavlje
+    cefrBand: A2.1
+    introducedUnitOrder: 45
+    introducedWorldOrder: 9
+    audioSrc: /audio/hr/slavlje.mp3
+    imageSrc: /slavlje.svg
+    occurrences: 1
+  - stem: katamaran
+    lemma: Katamaran
+    cefrBand: A2.2
+    introducedUnitOrder: 46
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/katamaran.mp3
+    imageSrc: /katamaran.svg
+    occurrences: 1
+  - stem: luka
+    lemma: Luka
+    cefrBand: A2.2
+    introducedUnitOrder: 46
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/luka.mp3
+    imageSrc: /luka.svg
+    occurrences: 1
+  - stem: sidro
+    lemma: Sidro
+    cefrBand: A2.2
+    introducedUnitOrder: 46
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/sidro.mp3
+    imageSrc: /sidro.svg
+    occurrences: 1
+  - stem: svjetionik
+    lemma: Svjetionik
+    cefrBand: A2.2
+    introducedUnitOrder: 46
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/svjetionik.mp3
+    imageSrc: /svjetionik.svg
+    occurrences: 1
+  - stem: gradina
+    lemma: Gradina
+    cefrBand: A2.2
+    introducedUnitOrder: 47
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/gradina.mp3
+    imageSrc: /gradina.svg
+    occurrences: 1
+  - stem: stube
+    lemma: Stube
+    cefrBand: A2.2
+    introducedUnitOrder: 47
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/stube.mp3
+    imageSrc: /stube.svg
+    occurrences: 1
+  - stem: vidikovac
+    lemma: Vidikovac
+    cefrBand: A2.2
+    introducedUnitOrder: 47
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/vidikovac.mp3
+    imageSrc: /vidikovac.svg
+    occurrences: 1
+  - stem: zmaj
+    lemma: Zmaj
+    cefrBand: A2.2
+    introducedUnitOrder: 47
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/zmaj.mp3
+    imageSrc: /zmaj.svg
+    occurrences: 1
+  - stem: fontana
+    lemma: Fontana
+    cefrBand: A2.2
+    introducedUnitOrder: 48
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/fontana.mp3
+    imageSrc: /fontana.svg
+    occurrences: 1
+  - stem: kamelija
+    lemma: Kamelija
+    cefrBand: A2.2
+    introducedUnitOrder: 48
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/kamelija.mp3
+    imageSrc: /kamelija.svg
+    occurrences: 1
+  - stem: setnica
+    lemma: Šetnica
+    cefrBand: A2.2
+    introducedUnitOrder: 48
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/setnica.mp3
+    imageSrc: /setnica.svg
+    occurrences: 1
+  - stem: vila
+    lemma: Vila
+    cefrBand: A2.2
+    introducedUnitOrder: 48
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/vila.mp3
+    imageSrc: /vila.svg
+    occurrences: 1
+  - stem: maslina
+    lemma: Maslina
+    cefrBand: A2.2
+    introducedUnitOrder: 49
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/maslina.mp3
+    imageSrc: /maslina.svg
+    occurrences: 1
+  - stem: ovca
+    lemma: Ovca
+    cefrBand: A2.2
+    introducedUnitOrder: 49
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/ovca.mp3
+    imageSrc: /ovca.svg
+    occurrences: 1
+  - stem: ploca
+    lemma: Ploča
+    cefrBand: A2.2
+    introducedUnitOrder: 49
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/ploca.mp3
+    imageSrc: /ploca.svg
+    occurrences: 1
+  - stem: slovo
+    lemma: Slovo
+    cefrBand: A2.2
+    introducedUnitOrder: 49
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/slovo.mp3
+    imageSrc: /slovo.svg
+    occurrences: 1
+  - stem: bubanj
+    lemma: Bubanj
+    cefrBand: A2.2
+    introducedUnitOrder: 50
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/bubanj.mp3
+    imageSrc: /bubanj.svg
+    occurrences: 1
+  - stem: kostim
+    lemma: Kostim
+    cefrBand: A2.2
+    introducedUnitOrder: 50
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/kostim.mp3
+    imageSrc: /kostim.svg
+    occurrences: 1
+  - stem: povorka
+    lemma: Povorka
+    cefrBand: A2.2
+    introducedUnitOrder: 50
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/povorka.mp3
+    imageSrc: /povorka.svg
+    occurrences: 1
+  - stem: zvono
+    lemma: Zvono
+    cefrBand: A2.2
+    introducedUnitOrder: 50
+    introducedWorldOrder: 10
+    audioSrc: /audio/hr/zvono.mp3
+    imageSrc: /zvono.svg
+    occurrences: 1
+  - stem: klavir
+    lemma: Klavir
+    cefrBand: A2.2
+    introducedUnitOrder: 51
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/klavir.mp3
+    imageSrc: /klavir.svg
+    occurrences: 1
+  - stem: nota
+    lemma: Nota
+    cefrBand: A2.2
+    introducedUnitOrder: 51
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/nota.mp3
+    imageSrc: /nota.svg
+    occurrences: 1
+  - stem: orkestar
+    lemma: Orkestar
+    cefrBand: A2.2
+    introducedUnitOrder: 51
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/orkestar.mp3
+    imageSrc: /orkestar.svg
+    occurrences: 1
+  - stem: violina
+    lemma: Violina
+    cefrBand: A2.2
+    introducedUnitOrder: 51
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/violina.mp3
+    imageSrc: /violina.svg
+    occurrences: 1
+  - stem: glumac
+    lemma: Glumac
+    cefrBand: A2.2
+    introducedUnitOrder: 52
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/glumac.mp3
+    imageSrc: /glumac.svg
+    occurrences: 1
+  - stem: kisobran
+    lemma: Kišobran
+    cefrBand: A2.2
+    introducedUnitOrder: 52
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/kisobran.mp3
+    imageSrc: /kisobran.svg
+    occurrences: 1
+  - stem: pozornica
+    lemma: Pozornica
+    cefrBand: A2.2
+    introducedUnitOrder: 52
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/pozornica.mp3
+    imageSrc: /pozornica.svg
+    occurrences: 1
+  - stem: sesir
+    lemma: Šešir
+    cefrBand: A2.2
+    introducedUnitOrder: 52
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/sesir.mp3
+    imageSrc: /sesir.svg
+    occurrences: 1
+  - stem: andeo
+    lemma: Anđeo
+    cefrBand: A2.2
+    introducedUnitOrder: 53
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/andeo.mp3
+    imageSrc: /andeo.svg
+    occurrences: 1
+  - stem: bedem
+    lemma: Bedem
+    cefrBand: A2.2
+    introducedUnitOrder: 53
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/bedem.mp3
+    imageSrc: /bedem.svg
+    occurrences: 1
+  - stem: grb
+    lemma: Grb
+    cefrBand: A2.2
+    introducedUnitOrder: 53
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/grb.mp3
+    imageSrc: /grb.svg
+    occurrences: 1
+  - stem: toranj
+    lemma: Toranj
+    cefrBand: A2.2
+    introducedUnitOrder: 53
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/toranj.mp3
+    imageSrc: /toranj.svg
+    occurrences: 1
+  - stem: labud
+    lemma: Labud
+    cefrBand: A2.2
+    introducedUnitOrder: 54
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/labud.mp3
+    imageSrc: /labud.svg
+    occurrences: 1
+  - stem: obala
+    lemma: Obala
+    cefrBand: A2.2
+    introducedUnitOrder: 54
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/obala.mp3
+    imageSrc: /obala.svg
+    occurrences: 1
+  - stem: splav
+    lemma: Splav
+    cefrBand: A2.2
+    introducedUnitOrder: 54
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/splav.mp3
+    imageSrc: /splav.svg
+    occurrences: 1
+  - stem: vrba
+    lemma: Vrba
+    cefrBand: A2.2
+    introducedUnitOrder: 54
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/vrba.mp3
+    imageSrc: /vrba.svg
+    occurrences: 1
+  - stem: cipka
+    lemma: Čipka
+    cefrBand: A2.2
+    introducedUnitOrder: 55
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/cipka.mp3
+    imageSrc: /cipka.svg
+    occurrences: 1
+  - stem: grozde
+    lemma: Grožđe
+    cefrBand: A2.2
+    introducedUnitOrder: 55
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/grozde.mp3
+    imageSrc: /grozde.svg
+    occurrences: 1
+  - stem: tambura
+    lemma: Tambura
+    cefrBand: A2.2
+    introducedUnitOrder: 55
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/tambura.mp3
+    imageSrc: /tambura.svg
+    occurrences: 1
+  - stem: vinograd
+    lemma: Vinograd
+    cefrBand: A2.2
+    introducedUnitOrder: 55
+    introducedWorldOrder: 11
+    audioSrc: /audio/hr/vinograd.mp3
+    imageSrc: /vinograd.svg
+    occurrences: 1
+  - stem: bura
+    lemma: Bura
+    cefrBand: A2.2
+    introducedUnitOrder: 56
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/bura.mp3
+    imageSrc: /bura.svg
+    occurrences: 1
+  - stem: degenija
+    lemma: Degenija
+    cefrBand: A2.2
+    introducedUnitOrder: 56
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/degenija.mp3
+    imageSrc: /degenija.svg
+    occurrences: 1
+  - stem: greben
+    lemma: Greben
+    cefrBand: A2.2
+    introducedUnitOrder: 56
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/greben.mp3
+    imageSrc: /greben.svg
+    occurrences: 1
+  - stem: vrh
+    lemma: Vrh
+    cefrBand: A2.2
+    introducedUnitOrder: 56
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/vrh.mp3
+    imageSrc: /vrh.svg
+    occurrences: 1
+  - stem: bukva
+    lemma: Bukva
+    cefrBand: A2.2
+    introducedUnitOrder: 57
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/bukva.mp3
+    imageSrc: /bukva.svg
+    occurrences: 1
+  - stem: penjac
+    lemma: Penjač
+    cefrBand: A2.2
+    introducedUnitOrder: 57
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/penjac.mp3
+    imageSrc: /penjac.svg
+    occurrences: 1
+  - stem: spilja
+    lemma: Špilja
+    cefrBand: A2.2
+    introducedUnitOrder: 57
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/spilja.mp3
+    imageSrc: /spilja.svg
+    occurrences: 1
+  - stem: uze
+    lemma: Uže
+    cefrBand: A2.2
+    introducedUnitOrder: 57
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/uze.mp3
+    imageSrc: /uze.svg
+    occurrences: 1
+  - stem: medvjedic
+    lemma: Medvjedić
+    cefrBand: A2.2
+    introducedUnitOrder: 58
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/medvjedic.mp3
+    imageSrc: /medvjedic.svg
+    occurrences: 1
+  - stem: ris
+    lemma: Ris
+    cefrBand: A2.2
+    introducedUnitOrder: 58
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/ris.mp3
+    imageSrc: /ris.svg
+    occurrences: 1
+  - stem: sova
+    lemma: Sova
+    cefrBand: A2.2
+    introducedUnitOrder: 58
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/sova.mp3
+    imageSrc: /sova.svg
+    occurrences: 1
+  - stem: utociste
+    lemma: Utočište
+    cefrBand: A2.2
+    introducedUnitOrder: 58
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/utociste.mp3
+    imageSrc: /utociste.svg
+    occurrences: 1
+  - stem: mostic
+    lemma: Mostić
+    cefrBand: A2.2
+    introducedUnitOrder: 59
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/mostic.mp3
+    imageSrc: /mostic.svg
+    occurrences: 1
+  - stem: pastrva
+    lemma: Pastrva
+    cefrBand: A2.2
+    introducedUnitOrder: 59
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/pastrva.mp3
+    imageSrc: /pastrva.svg
+    occurrences: 1
+  - stem: potok
+    lemma: Potok
+    cefrBand: A2.2
+    introducedUnitOrder: 59
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/potok.mp3
+    imageSrc: /potok.svg
+    occurrences: 1
+  - stem: vrilo
+    lemma: Vrilo
+    cefrBand: A2.2
+    introducedUnitOrder: 59
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/vrilo.mp3
+    imageSrc: /vrilo.svg
+    occurrences: 1
+  - stem: koliba
+    lemma: Koliba
+    cefrBand: A2.2
+    introducedUnitOrder: 60
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/koliba.mp3
+    imageSrc: /koliba.svg
+    occurrences: 1
+  - stem: krumpir
+    lemma: Krumpir
+    cefrBand: A2.2
+    introducedUnitOrder: 60
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/krumpir.mp3
+    imageSrc: /krumpir.svg
+    occurrences: 1
+  - stem: skripavac
+    lemma: Škripavac
+    cefrBand: A2.2
+    introducedUnitOrder: 60
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/skripavac.mp3
+    imageSrc: /skripavac.svg
+    occurrences: 1
+  - stem: vuna
+    lemma: Vuna
+    cefrBand: A2.2
+    introducedUnitOrder: 60
+    introducedWorldOrder: 12
+    audioSrc: /audio/hr/vuna.mp3
+    imageSrc: /vuna.svg
+    occurrences: 1

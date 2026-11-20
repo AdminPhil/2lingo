@@ -1,0 +1,1665 @@
+schemaVersion: 2
+worldOrder: 8
+levelOrder: 2
+slug: tesla-astronomy
+name: Tesla & Astronomy
+badgeLabel: "World 8: Tesla & Astronomy • The Spark of Invention & Starry Sky"
+cefrBand: A2.1
+theme:
+  solidBg: bg-slate-950
+  gradient: from-slate-950 via-indigo-950 to-cyan-950
+  badgeBg: bg-black/40 text-cyan-200 border-cyan-500/40
+  accentEmoji: ⚡
+  buttonClass: bg-cyan-500 text-slate-950 hover:bg-cyan-400 border-cyan-400
+  accentBorder: border-cyan-400/50
+  nodeActiveBg: bg-cyan-600 hover:bg-cyan-600/90 border-cyan-800 active:border-b-0 text-white
+  nodeBorderColor: border-cyan-800
+  nodeStrokeColor: "#0891b2"
+  nodeBadgeClasses: bg-slate-900 text-cyan-400 border-cyan-500
+  nodeArrowBorder: border-t-cyan-500
+units:
+  - order: 36
+    legacyId: 36
+    title: Unit 36
+    description: Nikola Tesla i svjetlost (The Spark of Invention)
+    lessons:
+      - order: 1
+        legacyId: 141
+        kind: DISCOVERY
+        title: Iskra i svjetlost
+        challenges:
+          - order: 1
+            legacyId: 610
+            type: SELECT
+            prompt: Which one of these is "Light"?
+            grammarTags: []
+            options:
+              - text: Svjetlost
+                correct: true
+                imageSrc: /svjetlost.svg
+                audioSrc: /audio/hr/svjetlost.mp3
+              - text: Iskra
+                correct: false
+                imageSrc: /iskra.svg
+                audioSrc: /audio/hr/iskra.mp3
+              - text: Struja
+                correct: false
+                imageSrc: /struja.svg
+                audioSrc: /audio/hr/struja.mp3
+              - text: Izum
+                correct: false
+                imageSrc: /izum.svg
+                audioSrc: /audio/hr/izum.mp3
+          - order: 2
+            legacyId: 611
+            type: SELECT
+            prompt: Which one of these is "Spark"?
+            grammarTags: []
+            options:
+              - text: Iskra
+                correct: true
+                imageSrc: /iskra.svg
+                audioSrc: /audio/hr/iskra.mp3
+              - text: Svjetlost
+                correct: false
+                imageSrc: /svjetlost.svg
+                audioSrc: /audio/hr/svjetlost.mp3
+              - text: Struja
+                correct: false
+                imageSrc: /struja.svg
+                audioSrc: /audio/hr/struja.mp3
+              - text: Izum
+                correct: false
+                imageSrc: /izum.svg
+                audioSrc: /audio/hr/izum.mp3
+          - order: 3
+            legacyId: 612
+            type: SELECT
+            prompt: Which one of these is "Electricity"?
+            grammarTags: []
+            options:
+              - text: Struja
+                correct: true
+                imageSrc: /struja.svg
+                audioSrc: /audio/hr/struja.mp3
+              - text: Svjetlost
+                correct: false
+                imageSrc: /svjetlost.svg
+                audioSrc: /audio/hr/svjetlost.mp3
+              - text: Iskra
+                correct: false
+                imageSrc: /iskra.svg
+                audioSrc: /audio/hr/iskra.mp3
+              - text: Izum
+                correct: false
+                imageSrc: /izum.svg
+                audioSrc: /audio/hr/izum.mp3
+          - order: 4
+            legacyId: 613
+            type: SELECT
+            prompt: Which one of these is "Invention"?
+            grammarTags: []
+            options:
+              - text: Izum
+                correct: true
+                imageSrc: /izum.svg
+                audioSrc: /audio/hr/izum.mp3
+              - text: Svjetlost
+                correct: false
+                imageSrc: /svjetlost.svg
+                audioSrc: /audio/hr/svjetlost.mp3
+              - text: Iskra
+                correct: false
+                imageSrc: /iskra.svg
+                audioSrc: /audio/hr/iskra.mp3
+              - text: Struja
+                correct: false
+                imageSrc: /struja.svg
+                audioSrc: /audio/hr/struja.mp3
+      - order: 2
+        legacyId: 142
+        kind: PHRASE_LISTEN
+        title: Opis izuma
+        challenges:
+          - order: 1
+            legacyId: 614
+            type: ASSIST
+            prompt: How do you say "Bright light"?
+            grammarTags: []
+            options:
+              - text: Svijetla svjetlost
+                correct: true
+                audioSrc: /audio/hr/svijetla_svjetlost.mp3
+              - text: Mala iskra
+                correct: false
+                audioSrc: /audio/hr/mala_iskra.mp3
+              - text: Električna struja
+                correct: false
+                audioSrc: /audio/hr/elektricna_struja.mp3
+              - text: Važni izum
+                correct: false
+                audioSrc: /audio/hr/vazni_izum.mp3
+          - order: 2
+            legacyId: 615
+            type: ASSIST
+            prompt: How do you say "Small spark"?
+            grammarTags: []
+            options:
+              - text: Mala iskra
+                correct: true
+                audioSrc: /audio/hr/mala_iskra.mp3
+              - text: Svijetla svjetlost
+                correct: false
+                audioSrc: /audio/hr/svijetla_svjetlost.mp3
+              - text: Električna struja
+                correct: false
+                audioSrc: /audio/hr/elektricna_struja.mp3
+              - text: Važni izum
+                correct: false
+                audioSrc: /audio/hr/vazni_izum.mp3
+          - order: 3
+            legacyId: 616
+            type: ASSIST
+            prompt: How do you say "Electric current"?
+            grammarTags: []
+            options:
+              - text: Električna struja
+                correct: true
+                audioSrc: /audio/hr/elektricna_struja.mp3
+              - text: Svijetla svjetlost
+                correct: false
+                audioSrc: /audio/hr/svijetla_svjetlost.mp3
+              - text: Mala iskra
+                correct: false
+                audioSrc: /audio/hr/mala_iskra.mp3
+              - text: Važni izum
+                correct: false
+                audioSrc: /audio/hr/vazni_izum.mp3
+          - order: 4
+            legacyId: 617
+            type: ASSIST
+            prompt: How do you say "Important invention"?
+            grammarTags: []
+            options:
+              - text: Važni izum
+                correct: true
+                audioSrc: /audio/hr/vazni_izum.mp3
+              - text: Svijetla svjetlost
+                correct: false
+                audioSrc: /audio/hr/svijetla_svjetlost.mp3
+              - text: Mala iskra
+                correct: false
+                audioSrc: /audio/hr/mala_iskra.mp3
+              - text: Električna struja
+                correct: false
+                audioSrc: /audio/hr/elektricna_struja.mp3
+      - order: 3
+        legacyId: 143
+        kind: PRODUCTION
+        title: Rad s energijom
+        challenges:
+          - order: 1
+            legacyId: 618
+            type: ASSIST
+            prompt: How do you say "To shine"?
+            grammarTags: []
+            options:
+              - text: Svijetliti
+                correct: true
+                audioSrc: /audio/hr/svijetliti.mp3
+              - text: Paliti
+                correct: false
+                audioSrc: /audio/hr/paliti.mp3
+              - text: Promatrati
+                correct: false
+                audioSrc: /audio/hr/promatrati.mp3
+              - text: Otkriti
+                correct: false
+                audioSrc: /audio/hr/otkriti.mp3
+          - order: 2
+            legacyId: 619
+            type: ASSIST
+            prompt: How do you say "To turn on"?
+            grammarTags: []
+            options:
+              - text: Paliti
+                correct: true
+                audioSrc: /audio/hr/paliti.mp3
+              - text: Svijetliti
+                correct: false
+                audioSrc: /audio/hr/svijetliti.mp3
+              - text: Promatrati
+                correct: false
+                audioSrc: /audio/hr/promatrati.mp3
+              - text: Otkriti
+                correct: false
+                audioSrc: /audio/hr/otkriti.mp3
+          - order: 3
+            legacyId: 620
+            type: ASSIST
+            prompt: How do you say "The lamp shines."?
+            grammarTags: []
+            options:
+              - text: Lampa svijetli.
+                correct: true
+                audioSrc: /audio/hr/lampa_svijetli.mp3
+              - text: Palim svjetlo.
+                correct: false
+                audioSrc: /audio/hr/palim_svjetlo.mp3
+              - text: Tesla stvara iskre.
+                correct: false
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+              - text: Struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+          - order: 4
+            legacyId: 621
+            type: ASSIST
+            prompt: How do you say "I turn on the light."?
+            grammarTags: []
+            options:
+              - text: Palim svjetlo.
+                correct: true
+                audioSrc: /audio/hr/palim_svjetlo.mp3
+              - text: Lampa svijetli.
+                correct: false
+                audioSrc: /audio/hr/lampa_svijetli.mp3
+              - text: Tesla stvara iskre.
+                correct: false
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+              - text: Struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+      - order: 4
+        legacyId: 144
+        kind: BOSS_CAPSTONE
+        title: Smiljan i genij
+        challenges:
+          - order: 1
+            legacyId: 622
+            type: ASSIST
+            prompt: How do you say "Tesla creates sparks."?
+            grammarTags: []
+            options:
+              - text: Tesla stvara iskre.
+                correct: true
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+              - text: Struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+              - text: Nikola Tesla je slavni izumitelj.
+                correct: false
+                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
+              - text: Svjetlost obasjava sobu.
+                correct: false
+                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
+          - order: 2
+            legacyId: 623
+            type: ASSIST
+            prompt: How do you say "Electricity flows through the wire."?
+            grammarTags: []
+            options:
+              - text: Struja teče kroz žicu.
+                correct: true
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+              - text: Tesla stvara iskre.
+                correct: false
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+              - text: Nikola Tesla je slavni izumitelj.
+                correct: false
+                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
+              - text: Svjetlost obasjava sobu.
+                correct: false
+                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
+          - order: 3
+            legacyId: 624
+            type: ASSIST
+            prompt: How do you say "Nikola Tesla is a famous inventor."?
+            grammarTags: []
+            options:
+              - text: Nikola Tesla je slavni izumitelj.
+                correct: true
+                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
+              - text: Tesla stvara iskre.
+                correct: false
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+              - text: Struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+              - text: Svjetlost obasjava sobu.
+                correct: false
+                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
+          - order: 4
+            legacyId: 625
+            type: ASSIST
+            prompt: How do you say "Light illuminates the room."?
+            grammarTags: []
+            options:
+              - text: Svjetlost obasjava sobu.
+                correct: true
+                audioSrc: /audio/hr/svjetlost_obasjava_sobu.mp3
+              - text: Nikola Tesla je slavni izumitelj.
+                correct: false
+                audioSrc: /audio/hr/nikola_tesla_je_slavni_izumitelj.mp3
+              - text: Struja teče kroz žicu.
+                correct: false
+                audioSrc: /audio/hr/struja_tece_kroz_zicu.mp3
+              - text: Tesla stvara iskre.
+                correct: false
+                audioSrc: /audio/hr/tesla_stvara_iskre.mp3
+  - order: 37
+    legacyId: 37
+    title: Unit 37
+    description: Noćno nebo i zvijezde (The Night Sky & Stars)
+    lessons:
+      - order: 1
+        legacyId: 145
+        kind: DISCOVERY
+        title: Zvijezde i mjesec
+        challenges:
+          - order: 1
+            legacyId: 626
+            type: SELECT
+            prompt: Which one of these is "Star"?
+            grammarTags: []
+            options:
+              - text: Zvijezda
+                correct: true
+                imageSrc: /zvijezda.svg
+                audioSrc: /audio/hr/zvijezda.mp3
+              - text: Nebo
+                correct: false
+                imageSrc: /nebo.svg
+                audioSrc: /audio/hr/nebo.mp3
+              - text: Mjesec
+                correct: false
+                imageSrc: /mjesec.svg
+                audioSrc: /audio/hr/mjesec.mp3
+              - text: Sjaj
+                correct: false
+                imageSrc: /sjaj.svg
+                audioSrc: /audio/hr/sjaj.mp3
+          - order: 2
+            legacyId: 627
+            type: SELECT
+            prompt: Which one of these is "Sky"?
+            grammarTags: []
+            options:
+              - text: Nebo
+                correct: true
+                imageSrc: /nebo.svg
+                audioSrc: /audio/hr/nebo.mp3
+              - text: Zvijezda
+                correct: false
+                imageSrc: /zvijezda.svg
+                audioSrc: /audio/hr/zvijezda.mp3
+              - text: Mjesec
+                correct: false
+                imageSrc: /mjesec.svg
+                audioSrc: /audio/hr/mjesec.mp3
+              - text: Sjaj
+                correct: false
+                imageSrc: /sjaj.svg
+                audioSrc: /audio/hr/sjaj.mp3
+          - order: 3
+            legacyId: 628
+            type: SELECT
+            prompt: Which one of these is "Moon"?
+            grammarTags: []
+            options:
+              - text: Mjesec
+                correct: true
+                imageSrc: /mjesec.svg
+                audioSrc: /audio/hr/mjesec.mp3
+              - text: Nebo
+                correct: false
+                imageSrc: /nebo.svg
+                audioSrc: /audio/hr/nebo.mp3
+              - text: Zvijezda
+                correct: false
+                imageSrc: /zvijezda.svg
+                audioSrc: /audio/hr/zvijezda.mp3
+              - text: Sjaj
+                correct: false
+                imageSrc: /sjaj.svg
+                audioSrc: /audio/hr/sjaj.mp3
+          - order: 4
+            legacyId: 629
+            type: SELECT
+            prompt: Which one of these is "Shine"?
+            grammarTags: []
+            options:
+              - text: Sjaj
+                correct: true
+                imageSrc: /sjaj.svg
+                audioSrc: /audio/hr/sjaj.mp3
+              - text: Nebo
+                correct: false
+                imageSrc: /nebo.svg
+                audioSrc: /audio/hr/nebo.mp3
+              - text: Zvijezda
+                correct: false
+                imageSrc: /zvijezda.svg
+                audioSrc: /audio/hr/zvijezda.mp3
+              - text: Mjesec
+                correct: false
+                imageSrc: /mjesec.svg
+                audioSrc: /audio/hr/mjesec.mp3
+      - order: 2
+        legacyId: 146
+        kind: PHRASE_LISTEN
+        title: Sjaj u tami
+        challenges:
+          - order: 1
+            legacyId: 630
+            type: ASSIST
+            prompt: How do you say "Bright star"?
+            grammarTags: []
+            options:
+              - text: Sjajna zvijezda
+                correct: true
+                audioSrc: /audio/hr/sjajna_zvijezda.mp3
+              - text: Tamno nebo
+                correct: false
+                audioSrc: /audio/hr/tamno_nebo.mp3
+              - text: Puni mjesec
+                correct: false
+                audioSrc: /audio/hr/puni_mjesec.mp3
+              - text: Zlatni sjaj
+                correct: false
+                audioSrc: /audio/hr/zlatni_sjaj.mp3
+          - order: 2
+            legacyId: 631
+            type: ASSIST
+            prompt: How do you say "Dark sky"?
+            grammarTags: []
+            options:
+              - text: Tamno nebo
+                correct: true
+                audioSrc: /audio/hr/tamno_nebo.mp3
+              - text: Sjajna zvijezda
+                correct: false
+                audioSrc: /audio/hr/sjajna_zvijezda.mp3
+              - text: Puni mjesec
+                correct: false
+                audioSrc: /audio/hr/puni_mjesec.mp3
+              - text: Zlatni sjaj
+                correct: false
+                audioSrc: /audio/hr/zlatni_sjaj.mp3
+          - order: 3
+            legacyId: 632
+            type: ASSIST
+            prompt: How do you say "Full moon"?
+            grammarTags: []
+            options:
+              - text: Puni mjesec
+                correct: true
+                audioSrc: /audio/hr/puni_mjesec.mp3
+              - text: Sjajna zvijezda
+                correct: false
+                audioSrc: /audio/hr/sjajna_zvijezda.mp3
+              - text: Tamno nebo
+                correct: false
+                audioSrc: /audio/hr/tamno_nebo.mp3
+              - text: Zlatni sjaj
+                correct: false
+                audioSrc: /audio/hr/zlatni_sjaj.mp3
+          - order: 4
+            legacyId: 633
+            type: ASSIST
+            prompt: How do you say "Golden glow"?
+            grammarTags: []
+            options:
+              - text: Zlatni sjaj
+                correct: true
+                audioSrc: /audio/hr/zlatni_sjaj.mp3
+              - text: Sjajna zvijezda
+                correct: false
+                audioSrc: /audio/hr/sjajna_zvijezda.mp3
+              - text: Tamno nebo
+                correct: false
+                audioSrc: /audio/hr/tamno_nebo.mp3
+              - text: Puni mjesec
+                correct: false
+                audioSrc: /audio/hr/puni_mjesec.mp3
+      - order: 3
+        legacyId: 147
+        kind: PRODUCTION
+        title: Pogled gore
+        challenges:
+          - order: 1
+            legacyId: 634
+            type: ASSIST
+            prompt: How do you say "The stars shine."?
+            grammarTags: []
+            options:
+              - text: Zvijezde sjaje.
+                correct: true
+                audioSrc: /audio/hr/zvijezde_sjaje.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Gledam u nebo.
+                correct: false
+                audioSrc: /audio/hr/gledam_u_nebo.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 2
+            legacyId: 635
+            type: ASSIST
+            prompt: How do you say "The night sky is dark."?
+            grammarTags: []
+            options:
+              - text: Noćno nebo je tamno.
+                correct: true
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Zvijezde sjaje.
+                correct: false
+                audioSrc: /audio/hr/zvijezde_sjaje.mp3
+              - text: Gledam u nebo.
+                correct: false
+                audioSrc: /audio/hr/gledam_u_nebo.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 3
+            legacyId: 636
+            type: ASSIST
+            prompt: How do you say "I look at the sky."?
+            grammarTags: []
+            options:
+              - text: Gledam u nebo.
+                correct: true
+                audioSrc: /audio/hr/gledam_u_nebo.mp3
+              - text: Zvijezde sjaje.
+                correct: false
+                audioSrc: /audio/hr/zvijezde_sjaje.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 4
+            legacyId: 637
+            type: ASSIST
+            prompt: How do you say "The moon shines at night."?
+            grammarTags: []
+            options:
+              - text: Mjesec sja noću.
+                correct: true
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+              - text: Zvijezde sjaje.
+                correct: false
+                audioSrc: /audio/hr/zvijezde_sjaje.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Gledam u nebo.
+                correct: false
+                audioSrc: /audio/hr/gledam_u_nebo.mp3
+      - order: 4
+        legacyId: 148
+        kind: BOSS_CAPSTONE
+        title: Beskrajna noć
+        challenges:
+          - order: 1
+            legacyId: 638
+            type: ASSIST
+            prompt: How do you say "A thousand shining stars."?
+            grammarTags: []
+            options:
+              - text: Tisuću sjajnih zvijezda.
+                correct: true
+                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
+              - text: Nebo je puno zvijezda.
+                correct: false
+                audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 2
+            legacyId: 639
+            type: ASSIST
+            prompt: How do you say "The sky is full of stars."?
+            grammarTags: []
+            options:
+              - text: Nebo je puno zvijezda.
+                correct: true
+                audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
+              - text: Tisuću sjajnih zvijezda.
+                correct: false
+                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 3
+            legacyId: 640
+            type: ASSIST
+            prompt: 'Select the statement: "The night sky is dark."'
+            grammarTags: []
+            options:
+              - text: Noćno nebo je tamno.
+                correct: true
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+              - text: Nebo je puno zvijezda.
+                correct: false
+                audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
+              - text: Tisuću sjajnih zvijezda.
+                correct: false
+                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
+              - text: Mjesec sja noću.
+                correct: false
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+          - order: 4
+            legacyId: 641
+            type: ASSIST
+            prompt: 'Select the statement: "The moon shines at night."'
+            grammarTags: []
+            options:
+              - text: Mjesec sja noću.
+                correct: true
+                audioSrc: /audio/hr/mjesec_sja_nocu.mp3
+              - text: Nebo je puno zvijezda.
+                correct: false
+                audioSrc: /audio/hr/nebo_je_puno_zvijezda.mp3
+              - text: Tisuću sjajnih zvijezda.
+                correct: false
+                audioSrc: /audio/hr/tisucu_sjajnih_zvijezda.mp3
+              - text: Noćno nebo je tamno.
+                correct: false
+                audioSrc: /audio/hr/nocno_nebo_je_tamno.mp3
+  - order: 38
+    legacyId: 38
+    title: Unit 38
+    description: Zvjezdarnica i planeti (The Observatory & Planets)
+    lessons:
+      - order: 1
+        legacyId: 149
+        kind: DISCOVERY
+        title: Teleskop i svemir
+        challenges:
+          - order: 1
+            legacyId: 642
+            type: SELECT
+            prompt: Which one of these is "Telescope"?
+            grammarTags: []
+            options:
+              - text: Teleskop
+                correct: true
+                imageSrc: /teleskop.svg
+                audioSrc: /audio/hr/teleskop.mp3
+              - text: Planet
+                correct: false
+                imageSrc: /planet.svg
+                audioSrc: /audio/hr/planet.mp3
+              - text: Svemir
+                correct: false
+                imageSrc: /svemir.svg
+                audioSrc: /audio/hr/svemir.mp3
+              - text: Kupola
+                correct: false
+                imageSrc: /kupola.svg
+                audioSrc: /audio/hr/kupola.mp3
+          - order: 2
+            legacyId: 643
+            type: SELECT
+            prompt: Which one of these is "Planet"?
+            grammarTags: []
+            options:
+              - text: Planet
+                correct: true
+                imageSrc: /planet.svg
+                audioSrc: /audio/hr/planet.mp3
+              - text: Teleskop
+                correct: false
+                imageSrc: /teleskop.svg
+                audioSrc: /audio/hr/teleskop.mp3
+              - text: Svemir
+                correct: false
+                imageSrc: /svemir.svg
+                audioSrc: /audio/hr/svemir.mp3
+              - text: Kupola
+                correct: false
+                imageSrc: /kupola.svg
+                audioSrc: /audio/hr/kupola.mp3
+          - order: 3
+            legacyId: 644
+            type: SELECT
+            prompt: Which one of these is "Universe"?
+            grammarTags: []
+            options:
+              - text: Svemir
+                correct: true
+                imageSrc: /svemir.svg
+                audioSrc: /audio/hr/svemir.mp3
+              - text: Planet
+                correct: false
+                imageSrc: /planet.svg
+                audioSrc: /audio/hr/planet.mp3
+              - text: Teleskop
+                correct: false
+                imageSrc: /teleskop.svg
+                audioSrc: /audio/hr/teleskop.mp3
+              - text: Kupola
+                correct: false
+                imageSrc: /kupola.svg
+                audioSrc: /audio/hr/kupola.mp3
+          - order: 4
+            legacyId: 645
+            type: SELECT
+            prompt: Which one of these is "Dome"?
+            grammarTags: []
+            options:
+              - text: Kupola
+                correct: true
+                imageSrc: /kupola.svg
+                audioSrc: /audio/hr/kupola.mp3
+              - text: Planet
+                correct: false
+                imageSrc: /planet.svg
+                audioSrc: /audio/hr/planet.mp3
+              - text: Teleskop
+                correct: false
+                imageSrc: /teleskop.svg
+                audioSrc: /audio/hr/teleskop.mp3
+              - text: Svemir
+                correct: false
+                imageSrc: /svemir.svg
+                audioSrc: /audio/hr/svemir.mp3
+      - order: 2
+        legacyId: 150
+        kind: PHRASE_LISTEN
+        title: Pogled u dubinu
+        challenges:
+          - order: 1
+            legacyId: 646
+            type: ASSIST
+            prompt: How do you say "Big telescope"?
+            grammarTags: []
+            options:
+              - text: Veliki teleskop
+                correct: true
+                audioSrc: /audio/hr/veliki_teleskop.mp3
+              - text: Daleki planet
+                correct: false
+                audioSrc: /audio/hr/daleki_planet.mp3
+              - text: Beskrajni svemir
+                correct: false
+                audioSrc: /audio/hr/beskrajni_svemir.mp3
+              - text: Bijela kupola
+                correct: false
+                audioSrc: /audio/hr/bijela_kupola.mp3
+          - order: 2
+            legacyId: 647
+            type: ASSIST
+            prompt: How do you say "Distant planet"?
+            grammarTags: []
+            options:
+              - text: Daleki planet
+                correct: true
+                audioSrc: /audio/hr/daleki_planet.mp3
+              - text: Veliki teleskop
+                correct: false
+                audioSrc: /audio/hr/veliki_teleskop.mp3
+              - text: Beskrajni svemir
+                correct: false
+                audioSrc: /audio/hr/beskrajni_svemir.mp3
+              - text: Bijela kupola
+                correct: false
+                audioSrc: /audio/hr/bijela_kupola.mp3
+          - order: 3
+            legacyId: 648
+            type: ASSIST
+            prompt: How do you say "Endless universe"?
+            grammarTags: []
+            options:
+              - text: Beskrajni svemir
+                correct: true
+                audioSrc: /audio/hr/beskrajni_svemir.mp3
+              - text: Veliki teleskop
+                correct: false
+                audioSrc: /audio/hr/veliki_teleskop.mp3
+              - text: Daleki planet
+                correct: false
+                audioSrc: /audio/hr/daleki_planet.mp3
+              - text: Bijela kupola
+                correct: false
+                audioSrc: /audio/hr/bijela_kupola.mp3
+          - order: 4
+            legacyId: 649
+            type: ASSIST
+            prompt: How do you say "White dome"?
+            grammarTags: []
+            options:
+              - text: Bijela kupola
+                correct: true
+                audioSrc: /audio/hr/bijela_kupola.mp3
+              - text: Veliki teleskop
+                correct: false
+                audioSrc: /audio/hr/veliki_teleskop.mp3
+              - text: Daleki planet
+                correct: false
+                audioSrc: /audio/hr/daleki_planet.mp3
+              - text: Beskrajni svemir
+                correct: false
+                audioSrc: /audio/hr/beskrajni_svemir.mp3
+      - order: 3
+        legacyId: 151
+        kind: PRODUCTION
+        title: Istraživanje neba
+        challenges:
+          - order: 1
+            legacyId: 650
+            type: ASSIST
+            prompt: How do you say "To observe"?
+            grammarTags: []
+            options:
+              - text: Promatrati
+                correct: true
+                audioSrc: /audio/hr/promatrati.mp3
+              - text: Otkriti
+                correct: false
+                audioSrc: /audio/hr/otkriti.mp3
+              - text: Svijetliti
+                correct: false
+                audioSrc: /audio/hr/svijetliti.mp3
+              - text: Paliti
+                correct: false
+                audioSrc: /audio/hr/paliti.mp3
+          - order: 2
+            legacyId: 651
+            type: ASSIST
+            prompt: How do you say "To discover"?
+            grammarTags: []
+            options:
+              - text: Otkriti
+                correct: true
+                audioSrc: /audio/hr/otkriti.mp3
+              - text: Promatrati
+                correct: false
+                audioSrc: /audio/hr/promatrati.mp3
+              - text: Svijetliti
+                correct: false
+                audioSrc: /audio/hr/svijetliti.mp3
+              - text: Paliti
+                correct: false
+                audioSrc: /audio/hr/paliti.mp3
+          - order: 3
+            legacyId: 652
+            type: ASSIST
+            prompt: How do you say "I look through the telescope."?
+            grammarTags: []
+            options:
+              - text: Gledam kroz teleskop.
+                correct: true
+                audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
+              - text: Otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+              - text: Kupola se otvara.
+                correct: false
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+          - order: 4
+            legacyId: 653
+            type: ASSIST
+            prompt: How do you say "We are discovering a new planet."?
+            grammarTags: []
+            options:
+              - text: Otkrivamo novi planet.
+                correct: true
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+              - text: Gledam kroz teleskop.
+                correct: false
+                audioSrc: /audio/hr/gledam_kroz_teleskop.mp3
+              - text: Kupola se otvara.
+                correct: false
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+      - order: 4
+        legacyId: 152
+        kind: BOSS_CAPSTONE
+        title: Višnjan zvjezdarnica
+        challenges:
+          - order: 1
+            legacyId: 654
+            type: ASSIST
+            prompt: How do you say "The Višnjan Observatory is famous."?
+            grammarTags: []
+            options:
+              - text: Zvjezdarnica Višnjan je poznata.
+                correct: true
+                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
+              - text: Kupola se otvara.
+                correct: false
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+              - text: Otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+          - order: 2
+            legacyId: 655
+            type: ASSIST
+            prompt: How do you say "The dome is opening."?
+            grammarTags: []
+            options:
+              - text: Kupola se otvara.
+                correct: true
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Zvjezdarnica Višnjan je poznata.
+                correct: false
+                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
+              - text: Promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+              - text: Otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+          - order: 3
+            legacyId: 656
+            type: ASSIST
+            prompt: How do you say "We observe the secrets of the universe."?
+            grammarTags: []
+            options:
+              - text: Promatramo tajne svemira.
+                correct: true
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+              - text: Zvjezdarnica Višnjan je poznata.
+                correct: false
+                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
+              - text: Kupola se otvara.
+                correct: false
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Otkrivamo novi planet.
+                correct: false
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+          - order: 4
+            legacyId: 657
+            type: ASSIST
+            prompt: 'Select the statement: "We are discovering a new planet."'
+            grammarTags: []
+            options:
+              - text: Otkrivamo novi planet.
+                correct: true
+                audioSrc: /audio/hr/otkrivamo_novi_planet.mp3
+              - text: Zvjezdarnica Višnjan je poznata.
+                correct: false
+                audioSrc: /audio/hr/zvjezdarnica_visnjan_je_poznata.mp3
+              - text: Kupola se otvara.
+                correct: false
+                audioSrc: /audio/hr/kupola_se_otvara.mp3
+              - text: Promatramo tajne svemira.
+                correct: false
+                audioSrc: /audio/hr/promatramo_tajne_svemira.mp3
+  - order: 39
+    legacyId: 39
+    title: Unit 39
+    description: Grom, munja i snaga prirode (Thunder & Lightning)
+    lessons:
+      - order: 1
+        legacyId: 153
+        kind: DISCOVERY
+        title: Snaga oluje
+        challenges:
+          - order: 1
+            legacyId: 658
+            type: SELECT
+            prompt: Which one of these is "Lightning"?
+            grammarTags: []
+            options:
+              - text: Munja
+                correct: true
+                imageSrc: /munja.svg
+                audioSrc: /audio/hr/munja.mp3
+              - text: Grom
+                correct: false
+                imageSrc: /grom.svg
+                audioSrc: /audio/hr/grom.mp3
+              - text: Baterija
+                correct: false
+                imageSrc: /baterija.svg
+                audioSrc: /audio/hr/baterija.mp3
+              - text: Snaga
+                correct: false
+                imageSrc: /snaga.svg
+                audioSrc: /audio/hr/snaga.mp3
+          - order: 2
+            legacyId: 659
+            type: SELECT
+            prompt: Which one of these is "Thunder"?
+            grammarTags: []
+            options:
+              - text: Grom
+                correct: true
+                imageSrc: /grom.svg
+                audioSrc: /audio/hr/grom.mp3
+              - text: Munja
+                correct: false
+                imageSrc: /munja.svg
+                audioSrc: /audio/hr/munja.mp3
+              - text: Baterija
+                correct: false
+                imageSrc: /baterija.svg
+                audioSrc: /audio/hr/baterija.mp3
+              - text: Snaga
+                correct: false
+                imageSrc: /snaga.svg
+                audioSrc: /audio/hr/snaga.mp3
+          - order: 3
+            legacyId: 660
+            type: SELECT
+            prompt: Which one of these is "Battery"?
+            grammarTags: []
+            options:
+              - text: Baterija
+                correct: true
+                imageSrc: /baterija.svg
+                audioSrc: /audio/hr/baterija.mp3
+              - text: Munja
+                correct: false
+                imageSrc: /munja.svg
+                audioSrc: /audio/hr/munja.mp3
+              - text: Grom
+                correct: false
+                imageSrc: /grom.svg
+                audioSrc: /audio/hr/grom.mp3
+              - text: Snaga
+                correct: false
+                imageSrc: /snaga.svg
+                audioSrc: /audio/hr/snaga.mp3
+          - order: 4
+            legacyId: 661
+            type: SELECT
+            prompt: Which one of these is "Power"?
+            grammarTags: []
+            options:
+              - text: Snaga
+                correct: true
+                imageSrc: /snaga.svg
+                audioSrc: /audio/hr/snaga.mp3
+              - text: Munja
+                correct: false
+                imageSrc: /munja.svg
+                audioSrc: /audio/hr/munja.mp3
+              - text: Grom
+                correct: false
+                imageSrc: /grom.svg
+                audioSrc: /audio/hr/grom.mp3
+              - text: Baterija
+                correct: false
+                imageSrc: /baterija.svg
+                audioSrc: /audio/hr/baterija.mp3
+      - order: 2
+        legacyId: 154
+        kind: PHRASE_LISTEN
+        title: Glasno i snažno
+        challenges:
+          - order: 1
+            legacyId: 662
+            type: ASSIST
+            prompt: How do you say "Powerful lightning"?
+            grammarTags: []
+            options:
+              - text: Snažna munja
+                correct: true
+                audioSrc: /audio/hr/snazna_munja.mp3
+              - text: Glasni grom
+                correct: false
+                audioSrc: /audio/hr/glasni_grom.mp3
+              - text: Puna baterija
+                correct: false
+                audioSrc: /audio/hr/puna_baterija.mp3
+              - text: Velika snaga
+                correct: false
+                audioSrc: /audio/hr/velika_snaga.mp3
+          - order: 2
+            legacyId: 663
+            type: ASSIST
+            prompt: How do you say "Loud thunder"?
+            grammarTags: []
+            options:
+              - text: Glasni grom
+                correct: true
+                audioSrc: /audio/hr/glasni_grom.mp3
+              - text: Snažna munja
+                correct: false
+                audioSrc: /audio/hr/snazna_munja.mp3
+              - text: Puna baterija
+                correct: false
+                audioSrc: /audio/hr/puna_baterija.mp3
+              - text: Velika snaga
+                correct: false
+                audioSrc: /audio/hr/velika_snaga.mp3
+          - order: 3
+            legacyId: 664
+            type: ASSIST
+            prompt: How do you say "Full battery"?
+            grammarTags: []
+            options:
+              - text: Puna baterija
+                correct: true
+                audioSrc: /audio/hr/puna_baterija.mp3
+              - text: Snažna munja
+                correct: false
+                audioSrc: /audio/hr/snazna_munja.mp3
+              - text: Glasni grom
+                correct: false
+                audioSrc: /audio/hr/glasni_grom.mp3
+              - text: Velika snaga
+                correct: false
+                audioSrc: /audio/hr/velika_snaga.mp3
+          - order: 4
+            legacyId: 665
+            type: ASSIST
+            prompt: How do you say "Great power"?
+            grammarTags: []
+            options:
+              - text: Velika snaga
+                correct: true
+                audioSrc: /audio/hr/velika_snaga.mp3
+              - text: Snažna munja
+                correct: false
+                audioSrc: /audio/hr/snazna_munja.mp3
+              - text: Glasni grom
+                correct: false
+                audioSrc: /audio/hr/glasni_grom.mp3
+              - text: Puna baterija
+                correct: false
+                audioSrc: /audio/hr/puna_baterija.mp3
+      - order: 3
+        legacyId: 155
+        kind: PRODUCTION
+        title: Zvukovi neba
+        challenges:
+          - order: 1
+            legacyId: 666
+            type: ASSIST
+            prompt: How do you say "Lightning illuminates the sky."?
+            grammarTags: []
+            options:
+              - text: Munja obasjava nebo.
+                correct: true
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Oluja dolazi.
+                correct: false
+                audioSrc: /audio/hr/oluja_dolazi.mp3
+              - text: Punimo bateriju.
+                correct: false
+                audioSrc: /audio/hr/punimo_bateriju.mp3
+          - order: 2
+            legacyId: 667
+            type: ASSIST
+            prompt: How do you say "We hear loud thunder."?
+            grammarTags: []
+            options:
+              - text: Čujemo glasni grom.
+                correct: true
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Oluja dolazi.
+                correct: false
+                audioSrc: /audio/hr/oluja_dolazi.mp3
+              - text: Punimo bateriju.
+                correct: false
+                audioSrc: /audio/hr/punimo_bateriju.mp3
+          - order: 3
+            legacyId: 668
+            type: ASSIST
+            prompt: How do you say "The storm is coming."?
+            grammarTags: []
+            options:
+              - text: Oluja dolazi.
+                correct: true
+                audioSrc: /audio/hr/oluja_dolazi.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Punimo bateriju.
+                correct: false
+                audioSrc: /audio/hr/punimo_bateriju.mp3
+          - order: 4
+            legacyId: 669
+            type: ASSIST
+            prompt: How do you say "We are charging the battery."?
+            grammarTags: []
+            options:
+              - text: Punimo bateriju.
+                correct: true
+                audioSrc: /audio/hr/punimo_bateriju.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Oluja dolazi.
+                correct: false
+                audioSrc: /audio/hr/oluja_dolazi.mp3
+      - order: 4
+        legacyId: 156
+        kind: BOSS_CAPSTONE
+        title: Snaga prirodnih sila
+        challenges:
+          - order: 1
+            legacyId: 670
+            type: ASSIST
+            prompt: How do you say "Nature has great power."?
+            grammarTags: []
+            options:
+              - text: Priroda ima veliku snagu.
+                correct: true
+                audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
+              - text: Tesla istražuje munje.
+                correct: false
+                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+          - order: 2
+            legacyId: 671
+            type: ASSIST
+            prompt: How do you say "Tesla researches lightning."?
+            grammarTags: []
+            options:
+              - text: Tesla istražuje munje.
+                correct: true
+                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
+              - text: Priroda ima veliku snagu.
+                correct: false
+                audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+          - order: 3
+            legacyId: 672
+            type: ASSIST
+            prompt: 'Select the statement: "Lightning illuminates the sky."'
+            grammarTags: []
+            options:
+              - text: Munja obasjava nebo.
+                correct: true
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+              - text: Priroda ima veliku snagu.
+                correct: false
+                audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
+              - text: Tesla istražuje munje.
+                correct: false
+                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
+              - text: Čujemo glasni grom.
+                correct: false
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+          - order: 4
+            legacyId: 673
+            type: ASSIST
+            prompt: 'Select the statement: "We hear loud thunder."'
+            grammarTags: []
+            options:
+              - text: Čujemo glasni grom.
+                correct: true
+                audioSrc: /audio/hr/cujemo_glasni_grom.mp3
+              - text: Priroda ima veliku snagu.
+                correct: false
+                audioSrc: /audio/hr/priroda_ima_veliku_snagu.mp3
+              - text: Tesla istražuje munje.
+                correct: false
+                audioSrc: /audio/hr/tesla_istrazuje_munje.mp3
+              - text: Munja obasjava nebo.
+                correct: false
+                audioSrc: /audio/hr/munja_obasjava_nebo.mp3
+  - order: 40
+    legacyId: 40
+    title: Unit 40
+    description: Izumitelji budućnosti (The Future of Inventions)
+    lessons:
+      - order: 1
+        legacyId: 157
+        kind: DISCOVERY
+        title: Roboti i ideje
+        challenges:
+          - order: 1
+            legacyId: 674
+            type: SELECT
+            prompt: Which one of these is "Robot"?
+            grammarTags: []
+            options:
+              - text: Robot
+                correct: true
+                imageSrc: /robot.svg
+                audioSrc: /audio/hr/robot.mp3
+              - text: Ideja
+                correct: false
+                imageSrc: /ideja.svg
+                audioSrc: /audio/hr/ideja.mp3
+              - text: Znanje
+                correct: false
+                imageSrc: /znanje.svg
+                audioSrc: /audio/hr/znanje.mp3
+              - text: Budućnost
+                correct: false
+                imageSrc: /buducnost.svg
+                audioSrc: /audio/hr/buducnost.mp3
+          - order: 2
+            legacyId: 675
+            type: SELECT
+            prompt: Which one of these is "Idea"?
+            grammarTags: []
+            options:
+              - text: Ideja
+                correct: true
+                imageSrc: /ideja.svg
+                audioSrc: /audio/hr/ideja.mp3
+              - text: Robot
+                correct: false
+                imageSrc: /robot.svg
+                audioSrc: /audio/hr/robot.mp3
+              - text: Znanje
+                correct: false
+                imageSrc: /znanje.svg
+                audioSrc: /audio/hr/znanje.mp3
+              - text: Budućnost
+                correct: false
+                imageSrc: /buducnost.svg
+                audioSrc: /audio/hr/buducnost.mp3
+          - order: 3
+            legacyId: 676
+            type: SELECT
+            prompt: Which one of these is "Knowledge"?
+            grammarTags: []
+            options:
+              - text: Znanje
+                correct: true
+                imageSrc: /znanje.svg
+                audioSrc: /audio/hr/znanje.mp3
+              - text: Robot
+                correct: false
+                imageSrc: /robot.svg
+                audioSrc: /audio/hr/robot.mp3
+              - text: Ideja
+                correct: false
+                imageSrc: /ideja.svg
+                audioSrc: /audio/hr/ideja.mp3
+              - text: Budućnost
+                correct: false
+                imageSrc: /buducnost.svg
+                audioSrc: /audio/hr/buducnost.mp3
+          - order: 4
+            legacyId: 677
+            type: SELECT
+            prompt: Which one of these is "Future"?
+            grammarTags: []
+            options:
+              - text: Budućnost
+                correct: true
+                imageSrc: /buducnost.svg
+                audioSrc: /audio/hr/buducnost.mp3
+              - text: Robot
+                correct: false
+                imageSrc: /robot.svg
+                audioSrc: /audio/hr/robot.mp3
+              - text: Ideja
+                correct: false
+                imageSrc: /ideja.svg
+                audioSrc: /audio/hr/ideja.mp3
+              - text: Znanje
+                correct: false
+                imageSrc: /znanje.svg
+                audioSrc: /audio/hr/znanje.mp3
+      - order: 2
+        legacyId: 158
+        kind: PHRASE_LISTEN
+        title: Vizija sutrašnjice
+        challenges:
+          - order: 1
+            legacyId: 678
+            type: ASSIST
+            prompt: How do you say "Smart robot"?
+            grammarTags: []
+            options:
+              - text: Pametni robot
+                correct: true
+                audioSrc: /audio/hr/pametni_robot.mp3
+              - text: Dobra ideja
+                correct: false
+                audioSrc: /audio/hr/dobra_ideja.mp3
+              - text: Važno znanje
+                correct: false
+                audioSrc: /audio/hr/vazno_znanje.mp3
+              - text: Svijetla budućnost
+                correct: false
+                audioSrc: /audio/hr/svijetla_buducnost.mp3
+          - order: 2
+            legacyId: 679
+            type: ASSIST
+            prompt: How do you say "Good idea"?
+            grammarTags: []
+            options:
+              - text: Dobra ideja
+                correct: true
+                audioSrc: /audio/hr/dobra_ideja.mp3
+              - text: Pametni robot
+                correct: false
+                audioSrc: /audio/hr/pametni_robot.mp3
+              - text: Važno znanje
+                correct: false
+                audioSrc: /audio/hr/vazno_znanje.mp3
+              - text: Svijetla budućnost
+                correct: false
+                audioSrc: /audio/hr/svijetla_buducnost.mp3
+          - order: 3
+            legacyId: 680
+            type: ASSIST
+            prompt: How do you say "Important knowledge"?
+            grammarTags: []
+            options:
+              - text: Važno znanje
+                correct: true
+                audioSrc: /audio/hr/vazno_znanje.mp3
+              - text: Pametni robot
+                correct: false
+                audioSrc: /audio/hr/pametni_robot.mp3
+              - text: Dobra ideja
+                correct: false
+                audioSrc: /audio/hr/dobra_ideja.mp3
+              - text: Svijetla budućnost
+                correct: false
+                audioSrc: /audio/hr/svijetla_buducnost.mp3
+          - order: 4
+            legacyId: 681
+            type: ASSIST
+            prompt: How do you say "Bright future"?
+            grammarTags: []
+            options:
+              - text: Svijetla budućnost
+                correct: true
+                audioSrc: /audio/hr/svijetla_buducnost.mp3
+              - text: Pametni robot
+                correct: false
+                audioSrc: /audio/hr/pametni_robot.mp3
+              - text: Dobra ideja
+                correct: false
+                audioSrc: /audio/hr/dobra_ideja.mp3
+              - text: Važno znanje
+                correct: false
+                audioSrc: /audio/hr/vazno_znanje.mp3
+      - order: 3
+        legacyId: 159
+        kind: PRODUCTION
+        title: Glagoli u budućnosti (Futur I)
+        challenges:
+          - order: 1
+            legacyId: 682
+            type: ASSIST
+            prompt: How do you say "We will learn."?
+            grammarTags: []
+            options:
+              - text: Učit ćemo.
+                correct: true
+                audioSrc: /audio/hr/ucit_cemo.mp3
+              - text: Gledat ćemo.
+                correct: false
+                audioSrc: /audio/hr/gledat_cemo.mp3
+              - text: Putovat ćemo.
+                correct: false
+                audioSrc: /audio/hr/putovat_cemo.mp3
+              - text: Izumit ćemo.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo.mp3
+          - order: 2
+            legacyId: 683
+            type: ASSIST
+            prompt: How do you say "We will watch."?
+            grammarTags: []
+            options:
+              - text: Gledat ćemo.
+                correct: true
+                audioSrc: /audio/hr/gledat_cemo.mp3
+              - text: Učit ćemo.
+                correct: false
+                audioSrc: /audio/hr/ucit_cemo.mp3
+              - text: Putovat ćemo.
+                correct: false
+                audioSrc: /audio/hr/putovat_cemo.mp3
+              - text: Izumit ćemo.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo.mp3
+          - order: 3
+            legacyId: 684
+            type: ASSIST
+            prompt: How do you say "We will travel."?
+            grammarTags: []
+            options:
+              - text: Putovat ćemo.
+                correct: true
+                audioSrc: /audio/hr/putovat_cemo.mp3
+              - text: Učit ćemo.
+                correct: false
+                audioSrc: /audio/hr/ucit_cemo.mp3
+              - text: Gledat ćemo.
+                correct: false
+                audioSrc: /audio/hr/gledat_cemo.mp3
+              - text: Izumit ćemo.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo.mp3
+          - order: 4
+            legacyId: 685
+            type: ASSIST
+            prompt: How do you say "We will invent."?
+            grammarTags: []
+            options:
+              - text: Izumit ćemo.
+                correct: true
+                audioSrc: /audio/hr/izumit_cemo.mp3
+              - text: Učit ćemo.
+                correct: false
+                audioSrc: /audio/hr/ucit_cemo.mp3
+              - text: Gledat ćemo.
+                correct: false
+                audioSrc: /audio/hr/gledat_cemo.mp3
+              - text: Putovat ćemo.
+                correct: false
+                audioSrc: /audio/hr/putovat_cemo.mp3
+      - order: 4
+        legacyId: 160
+        kind: BOSS_CAPSTONE
+        title: Put u budućnost
+        challenges:
+          - order: 1
+            legacyId: 686
+            type: ASSIST
+            prompt: How do you say "We will learn about the universe."?
+            grammarTags: []
+            options:
+              - text: Učit ćemo o svemiru.
+                correct: true
+                audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
+              - text: Gledat ćemo zvijezde.
+                correct: false
+                audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
+              - text: Putovat ćemo u svemir.
+                correct: false
+                audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
+              - text: Izumit ćemo nove stvari.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
+          - order: 2
+            legacyId: 687
+            type: ASSIST
+            prompt: How do you say "We will watch the stars."?
+            grammarTags: []
+            options:
+              - text: Gledat ćemo zvijezde.
+                correct: true
+                audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
+              - text: Učit ćemo o svemiru.
+                correct: false
+                audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
+              - text: Putovat ćemo u svemir.
+                correct: false
+                audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
+              - text: Izumit ćemo nove stvari.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
+          - order: 3
+            legacyId: 688
+            type: ASSIST
+            prompt: How do you say "We will travel to space."?
+            grammarTags: []
+            options:
+              - text: Putovat ćemo u svemir.
+                correct: true
+                audioSrc: /audio/hr/putovat_cemo_u_svemir.mp3
+              - text: Učit ćemo o svemiru.
+                correct: false
+                audioSrc: /audio/hr/ucit_cemo_o_svemiru.mp3
+              - text: Gledat ćemo zvijezde.
+                correct: false
+                audioSrc: /audio/hr/gledat_cemo_zvijezde.mp3
+              - text: Izumit ćemo nove stvari.
+                correct: false
+                audioSrc: /audio/hr/izumit_cemo_nove_stvari.mp3
+          - order: 4
+            legacyId: 689
+            type: ASSIST
+            prompt: 'Select the capstone graduation motto: "Congratulations, you finished the eighth world!"'
+            grammarTags: []
+            options:
+              - text: Čestitamo, završili ste osmi svijet!
+                correct: true
+                audioSrc: /audio/hr/cestitamo_zavrsili_ste_osmi_svijet.mp3
+              - text: Zajedno ćemo graditi bolju budućnost!
+                correct: false
+                audioSrc: /audio/hr/zajedno_cemo_graditi_bolju_buducnost.mp3
+              - text: Znanje je naša najveća snaga!
+                correct: false
+                audioSrc: /audio/hr/znanje_je_nasa_najveca_snaga.mp3
+              - text: Ponosno koračamo kroz svijet znanosti!
+                correct: false
+                audioSrc: /audio/hr/ponosno_koracamo_kroz_svijet_znanosti.mp3

@@ -1,0 +1,1791 @@
+schemaVersion: 2
+worldOrder: 1
+levelOrder: 1
+slug: zagreb-central
+name: Capital Adventure
+badgeLabel: "World 1: Capital Adventure • Zagreb & Castles"
+cefrBand: Pre-A1
+theme:
+  solidBg: bg-red-600
+  gradient: from-red-600 via-rose-600 to-amber-600
+  badgeBg: bg-black/25 text-white border-white/40
+  accentEmoji: 🏰
+  buttonClass: bg-white text-rose-950 hover:bg-rose-50 border-rose-300
+  accentBorder: border-red-400/50
+  nodeActiveBg: bg-red-500 hover:bg-red-500/90 border-red-600 active:border-b-0 text-white
+  nodeBorderColor: border-red-600
+  nodeStrokeColor: "#ef4444"
+  nodeBadgeClasses: bg-white text-red-600 border-red-400
+  nodeArrowBorder: border-t-red-400
+units:
+  - order: 1
+    legacyId: 1
+    title: Unit 1
+    description: Prve riječi i pozdravi (First Words & Greetings)
+    lessons:
+      - order: 1
+        legacyId: 1
+        kind: DISCOVERY
+        title: Pozdravi (Hello & Bye)
+        challenges:
+          - order: 1
+            legacyId: 1
+            type: SELECT
+            prompt: Which one of these is "Hello / Hi"?
+            grammarTags: []
+            options:
+              - text: Bok
+                correct: true
+                imageSrc: /mascot.svg
+                audioSrc: /audio/hr/bok.mp3
+              - text: Doviđenja
+                correct: false
+                imageSrc: /mascot_sad.svg
+                audioSrc: /audio/hr/dovidenja.mp3
+              - text: Hvala
+                correct: false
+                imageSrc: /points.svg
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                imageSrc: /heart.svg
+                audioSrc: /audio/hr/molim.mp3
+          - order: 2
+            legacyId: 2
+            type: ASSIST
+            prompt: '"Good day"'
+            grammarTags: []
+            options:
+              - text: Dobar dan
+                correct: true
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+          - order: 3
+            legacyId: 3
+            type: SELECT
+            prompt: Which one of these is "Goodbye"?
+            grammarTags: []
+            options:
+              - text: Doviđenja
+                correct: true
+                imageSrc: /mascot_sad.svg
+                audioSrc: /audio/hr/dovidenja.mp3
+              - text: Bok
+                correct: false
+                imageSrc: /mascot.svg
+                audioSrc: /audio/hr/bok.mp3
+              - text: Hvala
+                correct: false
+                imageSrc: /points.svg
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                imageSrc: /heart.svg
+                audioSrc: /audio/hr/molim.mp3
+          - order: 4
+            legacyId: 4
+            type: ASSIST
+            prompt: '"Good night"'
+            grammarTags: []
+            options:
+              - text: Laku noć
+                correct: true
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+      - order: 2
+        legacyId: 2
+        kind: PHRASE_LISTEN
+        title: Lijepe riječi (Polite Words)
+        challenges:
+          - order: 1
+            legacyId: 5
+            type: SELECT
+            prompt: Which one of these is "Thank you"?
+            grammarTags: []
+            options:
+              - text: Hvala
+                correct: true
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Oprosti
+                correct: false
+                audioSrc: /audio/hr/oprosti.mp3
+          - order: 2
+            legacyId: 6
+            type: ASSIST
+            prompt: "\"Please / You're welcome\""
+            grammarTags: []
+            options:
+              - text: Molim
+                correct: true
+                audioSrc: /audio/hr/molim.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Oprosti
+                correct: false
+                audioSrc: /audio/hr/oprosti.mp3
+          - order: 3
+            legacyId: 7
+            type: ASSIST
+            prompt: '"Thank you very much"'
+            grammarTags: []
+            options:
+              - text: Hvala lijepa
+                correct: true
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+          - order: 4
+            legacyId: 8
+            type: SELECT
+            prompt: Which one of these is "Sorry / Excuse me"?
+            grammarTags: []
+            options:
+              - text: Oprosti
+                correct: true
+                audioSrc: /audio/hr/oprosti.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+      - order: 3
+        legacyId: 3
+        kind: PRODUCTION
+        title: Da, Ne i osjećaji (Yes, No & Feelings)
+        challenges:
+          - order: 1
+            legacyId: 9
+            type: ASSIST
+            prompt: '"Yes"'
+            grammarTags: []
+            options:
+              - text: Da
+                correct: true
+                audioSrc: /audio/hr/da.mp3
+              - text: Ne
+                correct: false
+                audioSrc: /audio/hr/ne.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+          - order: 2
+            legacyId: 10
+            type: ASSIST
+            prompt: '"No"'
+            grammarTags: []
+            options:
+              - text: Ne
+                correct: true
+                audioSrc: /audio/hr/ne.mp3
+              - text: Da
+                correct: false
+                audioSrc: /audio/hr/da.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+          - order: 3
+            legacyId: 11
+            type: SELECT
+            prompt: Which one of these is "How are you?"
+            grammarTags: []
+            options:
+              - text: Kako si
+                correct: true
+                audioSrc: /audio/hr/kako_si.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+          - order: 4
+            legacyId: 12
+            type: ASSIST
+            prompt: '"I am good!"'
+            grammarTags: []
+            options:
+              - text: Dobro sam
+                correct: true
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+      - order: 4
+        legacyId: 16
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Prvi koraci (First Steps Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 60
+            type: SELECT
+            prompt: Which one of these is "Hello / Hi"?
+            grammarTags: []
+            options:
+              - text: Bok
+                correct: true
+                audioSrc: /audio/hr/bok.mp3
+              - text: Doviđenja
+                correct: false
+                audioSrc: /audio/hr/dovidenja.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+          - order: 2
+            legacyId: 61
+            type: ASSIST
+            prompt: '"Good day"'
+            grammarTags: []
+            options:
+              - text: Dobar dan
+                correct: true
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+          - order: 3
+            legacyId: 62
+            type: SELECT
+            prompt: Which one of these is "Thank you"?
+            grammarTags: []
+            options:
+              - text: Hvala
+                correct: true
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Oprosti
+                correct: false
+                audioSrc: /audio/hr/oprosti.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+          - order: 4
+            legacyId: 63
+            type: ASSIST
+            prompt: '"Good night"'
+            grammarTags: []
+            options:
+              - text: Laku noć
+                correct: true
+                audioSrc: /audio/hr/laku_noc.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Kako si
+                correct: false
+                audioSrc: /audio/hr/kako_si.mp3
+          - order: 5
+            legacyId: 64
+            type: ASSIST
+            prompt: '"How are you?"'
+            grammarTags: []
+            options:
+              - text: Kako si
+                correct: true
+                audioSrc: /audio/hr/kako_si.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+          - order: 6
+            legacyId: 65
+            type: SELECT
+            prompt: Which one of these is "Goodbye"?
+            grammarTags: []
+            options:
+              - text: Doviđenja
+                correct: true
+                audioSrc: /audio/hr/dovidenja.mp3
+              - text: Bok
+                correct: false
+                audioSrc: /audio/hr/bok.mp3
+              - text: Hvala
+                correct: false
+                audioSrc: /audio/hr/hvala.mp3
+              - text: Molim
+                correct: false
+                audioSrc: /audio/hr/molim.mp3
+  - order: 2
+    legacyId: 2
+    title: Unit 2
+    description: Obitelj i ljudi (Family & People)
+    lessons:
+      - order: 1
+        legacyId: 4
+        kind: DISCOVERY
+        title: Mama, Tata i djedovi (Parents & Grandparents)
+        challenges:
+          - order: 1
+            legacyId: 13
+            type: SELECT
+            prompt: Which one of these is "Mom"?
+            grammarTags: []
+            options:
+              - text: Mama
+                correct: true
+                imageSrc: /woman.svg
+                audioSrc: /audio/hr/mama.mp3
+              - text: Tata
+                correct: false
+                imageSrc: /man.svg
+                audioSrc: /audio/hr/tata.mp3
+              - text: Baka
+                correct: false
+                imageSrc: /grandma.svg
+                audioSrc: /audio/hr/baka.mp3
+              - text: Sestra
+                correct: false
+                imageSrc: /girl.svg
+                audioSrc: /audio/hr/sestra.mp3
+          - order: 2
+            legacyId: 14
+            type: SELECT
+            prompt: Which one of these is "Dad"?
+            grammarTags: []
+            options:
+              - text: Tata
+                correct: true
+                imageSrc: /man.svg
+                audioSrc: /audio/hr/tata.mp3
+              - text: Mama
+                correct: false
+                imageSrc: /woman.svg
+                audioSrc: /audio/hr/mama.mp3
+              - text: Djed
+                correct: false
+                imageSrc: /grandpa.svg
+                audioSrc: /audio/hr/djed.mp3
+              - text: Brat
+                correct: false
+                imageSrc: /boy.svg
+                audioSrc: /audio/hr/brat.mp3
+          - order: 3
+            legacyId: 15
+            type: ASSIST
+            prompt: '"Grandma"'
+            grammarTags: []
+            options:
+              - text: Baka
+                correct: true
+                audioSrc: /audio/hr/baka.mp3
+              - text: Djed
+                correct: false
+                audioSrc: /audio/hr/djed.mp3
+              - text: Mama
+                correct: false
+                audioSrc: /audio/hr/mama.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+          - order: 4
+            legacyId: 16
+            type: ASSIST
+            prompt: '"Grandpa"'
+            grammarTags: []
+            options:
+              - text: Djed
+                correct: true
+                audioSrc: /audio/hr/djed.mp3
+              - text: Baka
+                correct: false
+                audioSrc: /audio/hr/baka.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+              - text: Mama
+                correct: false
+                audioSrc: /audio/hr/mama.mp3
+      - order: 2
+        legacyId: 5
+        kind: PHRASE_LISTEN
+        title: Djeca i rođaci (Kids & Siblings)
+        challenges:
+          - order: 1
+            legacyId: 17
+            type: SELECT
+            prompt: Which one of these is "the boy"?
+            grammarTags: []
+            options:
+              - text: Dječak
+                correct: true
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Brat
+                correct: false
+                audioSrc: /audio/hr/brat.mp3
+              - text: Beba
+                correct: false
+                audioSrc: /audio/hr/beba.mp3
+          - order: 2
+            legacyId: 18
+            type: SELECT
+            prompt: Which one of these is "the girl"?
+            grammarTags: []
+            options:
+              - text: Djevojčica
+                correct: true
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Beba
+                correct: false
+                audioSrc: /audio/hr/beba.mp3
+          - order: 3
+            legacyId: 19
+            type: ASSIST
+            prompt: '"Brother"'
+            grammarTags: []
+            options:
+              - text: Brat
+                correct: true
+                audioSrc: /audio/hr/brat.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+          - order: 4
+            legacyId: 20
+            type: ASSIST
+            prompt: '"Sister"'
+            grammarTags: []
+            options:
+              - text: Sestra
+                correct: true
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Brat
+                correct: false
+                audioSrc: /audio/hr/brat.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Mama
+                correct: false
+                audioSrc: /audio/hr/mama.mp3
+      - order: 3
+        legacyId: 6
+        kind: PRODUCTION
+        title: Moji najdraži (Loved Ones)
+        challenges:
+          - order: 1
+            legacyId: 21
+            type: ASSIST
+            prompt: '"Baby"'
+            grammarTags: []
+            options:
+              - text: Beba
+                correct: true
+                audioSrc: /audio/hr/beba.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+          - order: 2
+            legacyId: 22
+            type: SELECT
+            prompt: Which one means "That is mom"?
+            grammarTags: []
+            options:
+              - text: To je mama
+                correct: true
+                audioSrc: /audio/hr/to_je_mama.mp3
+              - text: To je tata
+                correct: false
+                audioSrc: /audio/hr/to_je_tata.mp3
+              - text: To je brat
+                correct: false
+                audioSrc: /audio/hr/to_je_brat.mp3
+              - text: To je sestra
+                correct: false
+                audioSrc: /audio/hr/to_je_sestra.mp3
+          - order: 3
+            legacyId: 23
+            type: ASSIST
+            prompt: '"I love you" ❤️'
+            grammarTags: []
+            options:
+              - text: Volim te
+                correct: true
+                audioSrc: /audio/hr/volim_te.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+      - order: 4
+        legacyId: 17
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Obiteljski heroj (Family Hero Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 66
+            type: SELECT
+            prompt: Which one of these is "Mom"?
+            grammarTags: []
+            options:
+              - text: Mama
+                correct: true
+                audioSrc: /audio/hr/mama.mp3
+              - text: Tata
+                correct: false
+                audioSrc: /audio/hr/tata.mp3
+              - text: Baka
+                correct: false
+                audioSrc: /audio/hr/baka.mp3
+              - text: Djed
+                correct: false
+                audioSrc: /audio/hr/djed.mp3
+          - order: 2
+            legacyId: 67
+            type: SELECT
+            prompt: Which one of these is "Dad"?
+            grammarTags: []
+            options:
+              - text: Tata
+                correct: true
+                audioSrc: /audio/hr/tata.mp3
+              - text: Mama
+                correct: false
+                audioSrc: /audio/hr/mama.mp3
+              - text: Brat
+                correct: false
+                audioSrc: /audio/hr/brat.mp3
+              - text: Djed
+                correct: false
+                audioSrc: /audio/hr/djed.mp3
+          - order: 3
+            legacyId: 68
+            type: SELECT
+            prompt: Which one of these is "Boy"?
+            grammarTags: []
+            options:
+              - text: Dječak
+                correct: true
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Djevojčica
+                correct: false
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Beba
+                correct: false
+                audioSrc: /audio/hr/beba.mp3
+              - text: Brat
+                correct: false
+                audioSrc: /audio/hr/brat.mp3
+          - order: 4
+            legacyId: 69
+            type: SELECT
+            prompt: Which one of these is "Girl"?
+            grammarTags: []
+            options:
+              - text: Djevojčica
+                correct: true
+                audioSrc: /audio/hr/djevojcica.mp3
+              - text: Dječak
+                correct: false
+                audioSrc: /audio/hr/djecak.mp3
+              - text: Sestra
+                correct: false
+                audioSrc: /audio/hr/sestra.mp3
+              - text: Beba
+                correct: false
+                audioSrc: /audio/hr/beba.mp3
+          - order: 5
+            legacyId: 70
+            type: ASSIST
+            prompt: '"That is mom"'
+            grammarTags: []
+            options:
+              - text: To je mama
+                correct: true
+                audioSrc: /audio/hr/to_je_mama.mp3
+              - text: To je tata
+                correct: false
+                audioSrc: /audio/hr/to_je_tata.mp3
+              - text: To je brat
+                correct: false
+                audioSrc: /audio/hr/to_je_brat.mp3
+              - text: To je sestra
+                correct: false
+                audioSrc: /audio/hr/to_je_sestra.mp3
+          - order: 6
+            legacyId: 71
+            type: ASSIST
+            prompt: '"I love you"'
+            grammarTags: []
+            options:
+              - text: Volim te
+                correct: true
+                audioSrc: /audio/hr/volim_te.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Dobar dan
+                correct: false
+                audioSrc: /audio/hr/dobar_dan.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+  - order: 3
+    legacyId: 3
+    title: Unit 3
+    description: Slatke životinje (Cute Animals)
+    lessons:
+      - order: 1
+        legacyId: 7
+        kind: DISCOVERY
+        title: Kućni ljubimci (Pets at Home)
+        challenges:
+          - order: 1
+            legacyId: 24
+            type: SELECT
+            prompt: Which one of these is "the dog"?
+            grammarTags: []
+            options:
+              - text: Pas
+                correct: true
+                imageSrc: /dog.svg
+                audioSrc: /audio/hr/pas.mp3
+              - text: Mačka
+                correct: false
+                imageSrc: /cat.svg
+                audioSrc: /audio/hr/macka.mp3
+              - text: Ptica
+                correct: false
+                imageSrc: /bird.svg
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Riba
+                correct: false
+                imageSrc: /fish.svg
+                audioSrc: /audio/hr/riba.mp3
+          - order: 2
+            legacyId: 25
+            type: SELECT
+            prompt: Which one of these is "the cat"?
+            grammarTags: []
+            options:
+              - text: Mačka
+                correct: true
+                imageSrc: /cat.svg
+                audioSrc: /audio/hr/macka.mp3
+              - text: Pas
+                correct: false
+                imageSrc: /dog.svg
+                audioSrc: /audio/hr/pas.mp3
+              - text: Ptica
+                correct: false
+                imageSrc: /bird.svg
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Riba
+                correct: false
+                imageSrc: /fish.svg
+                audioSrc: /audio/hr/riba.mp3
+          - order: 3
+            legacyId: 26
+            type: ASSIST
+            prompt: '"Fish"'
+            grammarTags: []
+            options:
+              - text: Riba
+                correct: true
+                audioSrc: /audio/hr/riba.mp3
+              - text: Ptica
+                correct: false
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Mačka
+                correct: false
+                audioSrc: /audio/hr/macka.mp3
+          - order: 4
+            legacyId: 27
+            type: ASSIST
+            prompt: '"Bird"'
+            grammarTags: []
+            options:
+              - text: Ptica
+                correct: true
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+              - text: Mačka
+                correct: false
+                audioSrc: /audio/hr/macka.mp3
+      - order: 2
+        legacyId: 8
+        kind: PHRASE_LISTEN
+        title: Domaće životinje (Farm Animals)
+        challenges:
+          - order: 1
+            legacyId: 28
+            type: ASSIST
+            prompt: '"Cow"'
+            grammarTags: []
+            options:
+              - text: Krava
+                correct: true
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+              - text: Svinja
+                correct: false
+                audioSrc: /audio/hr/svinja.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+          - order: 2
+            legacyId: 29
+            type: ASSIST
+            prompt: '"Horse"'
+            grammarTags: []
+            options:
+              - text: Konj
+                correct: true
+                audioSrc: /audio/hr/konj.mp3
+              - text: Krava
+                correct: false
+                audioSrc: /audio/hr/krava.mp3
+              - text: Svinja
+                correct: false
+                audioSrc: /audio/hr/svinja.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+          - order: 3
+            legacyId: 30
+            type: SELECT
+            prompt: Which one of these is "the duck"?
+            grammarTags: []
+            options:
+              - text: Patka
+                correct: true
+                audioSrc: /audio/hr/patka.mp3
+              - text: Ptica
+                correct: false
+                audioSrc: /audio/hr/ptica.mp3
+              - text: Krava
+                correct: false
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+          - order: 4
+            legacyId: 31
+            type: ASSIST
+            prompt: '"Pig"'
+            grammarTags: []
+            options:
+              - text: Svinja
+                correct: true
+                audioSrc: /audio/hr/svinja.mp3
+              - text: Krava
+                correct: false
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+      - order: 3
+        legacyId: 9
+        kind: PRODUCTION
+        title: Opisujemo životinje (Describing Animals)
+        challenges:
+          - order: 1
+            legacyId: 32
+            type: SELECT
+            prompt: Which one means "Big dog"?
+            grammarTags: []
+            options:
+              - text: Veliki pas
+                correct: true
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Mala mačka
+                correct: false
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Dobar pas
+                correct: false
+                audioSrc: /audio/hr/dobar_pas.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 2
+            legacyId: 33
+            type: ASSIST
+            prompt: '"Little cat"'
+            grammarTags: []
+            options:
+              - text: Mala mačka
+                correct: true
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Dobra ptica
+                correct: false
+                audioSrc: /audio/hr/dobra_ptica.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 3
+            legacyId: 34
+            type: ASSIST
+            prompt: '"Good dog"'
+            grammarTags: []
+            options:
+              - text: Dobar pas
+                correct: true
+                audioSrc: /audio/hr/dobar_pas.mp3
+              - text: Zao pas
+                correct: false
+                audioSrc: /audio/hr/zao_pas.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Mala mačka
+                correct: false
+                audioSrc: /audio/hr/mala_macka.mp3
+      - order: 4
+        legacyId: 18
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Šaptač životinjama (Animal Whisperer Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 72
+            type: SELECT
+            prompt: Which one of these is "Dog"?
+            grammarTags: []
+            options:
+              - text: Pas
+                correct: true
+                audioSrc: /audio/hr/pas.mp3
+              - text: Mačka
+                correct: false
+                audioSrc: /audio/hr/macka.mp3
+              - text: Krava
+                correct: false
+                audioSrc: /audio/hr/krava.mp3
+              - text: Konj
+                correct: false
+                audioSrc: /audio/hr/konj.mp3
+          - order: 2
+            legacyId: 73
+            type: SELECT
+            prompt: Which one of these is "Cat"?
+            grammarTags: []
+            options:
+              - text: Mačka
+                correct: true
+                audioSrc: /audio/hr/macka.mp3
+              - text: Pas
+                correct: false
+                audioSrc: /audio/hr/pas.mp3
+              - text: Riba
+                correct: false
+                audioSrc: /audio/hr/riba.mp3
+              - text: Ptica
+                correct: false
+                audioSrc: /audio/hr/ptica.mp3
+          - order: 3
+            legacyId: 74
+            type: SELECT
+            prompt: Which one of these is "Horse"?
+            grammarTags: []
+            options:
+              - text: Konj
+                correct: true
+                audioSrc: /audio/hr/konj.mp3
+              - text: Krava
+                correct: false
+                audioSrc: /audio/hr/krava.mp3
+              - text: Patka
+                correct: false
+                audioSrc: /audio/hr/patka.mp3
+              - text: Svinja
+                correct: false
+                audioSrc: /audio/hr/svinja.mp3
+          - order: 4
+            legacyId: 75
+            type: ASSIST
+            prompt: '"Big dog"'
+            grammarTags: []
+            options:
+              - text: Veliki pas
+                correct: true
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Mala mačka
+                correct: false
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Dobar pas
+                correct: false
+                audioSrc: /audio/hr/dobar_pas.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 5
+            legacyId: 76
+            type: ASSIST
+            prompt: '"Little cat"'
+            grammarTags: []
+            options:
+              - text: Mala mačka
+                correct: true
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Dobar pas
+                correct: false
+                audioSrc: /audio/hr/dobar_pas.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+          - order: 6
+            legacyId: 77
+            type: ASSIST
+            prompt: '"Good dog"'
+            grammarTags: []
+            options:
+              - text: Dobar pas
+                correct: true
+                audioSrc: /audio/hr/dobar_pas.mp3
+              - text: Veliki pas
+                correct: false
+                audioSrc: /audio/hr/veliki_pas.mp3
+              - text: Mala mačka
+                correct: false
+                audioSrc: /audio/hr/mala_macka.mp3
+              - text: Velika krava
+                correct: false
+                audioSrc: /audio/hr/velika_krava.mp3
+  - order: 4
+    legacyId: 4
+    title: Unit 4
+    description: Boje i brojevi (Colors & Numbers)
+    lessons:
+      - order: 1
+        legacyId: 10
+        kind: DISCOVERY
+        title: Dugine boje (Rainbow Colors)
+        challenges:
+          - order: 1
+            legacyId: 35
+            type: SELECT
+            prompt: Which one of these is "Red"?
+            grammarTags: []
+            options:
+              - text: Crvena
+                correct: true
+                imageSrc: /red.svg
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Plava
+                correct: false
+                imageSrc: /blue.svg
+                audioSrc: /audio/hr/plava.mp3
+              - text: Žuta
+                correct: false
+                imageSrc: /yellow.svg
+                audioSrc: /audio/hr/zuta.mp3
+              - text: Zelena
+                correct: false
+                imageSrc: /green.svg
+                audioSrc: /audio/hr/zelena.mp3
+          - order: 2
+            legacyId: 36
+            type: ASSIST
+            prompt: '"Blue"'
+            grammarTags: []
+            options:
+              - text: Plava
+                correct: true
+                audioSrc: /audio/hr/plava.mp3
+              - text: Crvena
+                correct: false
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Žuta
+                correct: false
+                audioSrc: /audio/hr/zuta.mp3
+              - text: Zelena
+                correct: false
+                audioSrc: /audio/hr/zelena.mp3
+          - order: 3
+            legacyId: 37
+            type: ASSIST
+            prompt: '"Yellow"'
+            grammarTags: []
+            options:
+              - text: Žuta
+                correct: true
+                audioSrc: /audio/hr/zuta.mp3
+              - text: Plava
+                correct: false
+                audioSrc: /audio/hr/plava.mp3
+              - text: Crvena
+                correct: false
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Zelena
+                correct: false
+                audioSrc: /audio/hr/zelena.mp3
+          - order: 4
+            legacyId: 38
+            type: SELECT
+            prompt: Which one of these is "Green"?
+            grammarTags: []
+            options:
+              - text: Zelena
+                correct: true
+                imageSrc: /green.svg
+                audioSrc: /audio/hr/zelena.mp3
+              - text: Crvena
+                correct: false
+                imageSrc: /red.svg
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Plava
+                correct: false
+                imageSrc: /blue.svg
+                audioSrc: /audio/hr/plava.mp3
+              - text: Crna
+                correct: false
+                imageSrc: /black.svg
+                audioSrc: /audio/hr/crna.mp3
+      - order: 2
+        legacyId: 11
+        kind: PHRASE_LISTEN
+        title: Brojimo od 1 do 5 (Count 1 to 5)
+        challenges:
+          - order: 1
+            legacyId: 39
+            type: ASSIST
+            prompt: '"One (1)"'
+            grammarTags: []
+            options:
+              - text: Jedan
+                correct: true
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+          - order: 2
+            legacyId: 40
+            type: ASSIST
+            prompt: '"Two (2)"'
+            grammarTags: []
+            options:
+              - text: Dva
+                correct: true
+                audioSrc: /audio/hr/dva.mp3
+              - text: Jedan
+                correct: false
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+          - order: 3
+            legacyId: 41
+            type: ASSIST
+            prompt: '"Three (3)"'
+            grammarTags: []
+            options:
+              - text: Tri
+                correct: true
+                audioSrc: /audio/hr/tri.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+          - order: 4
+            legacyId: 42
+            type: SELECT
+            prompt: Which one of these is "Four (4)"?
+            grammarTags: []
+            options:
+              - text: Četiri
+                correct: true
+                audioSrc: /audio/hr/cetiri.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+              - text: Jedan
+                correct: false
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+          - order: 5
+            legacyId: 43
+            type: ASSIST
+            prompt: '"Five (5)"'
+            grammarTags: []
+            options:
+              - text: Četiri
+                correct: false
+                audioSrc: /audio/hr/cetiri.mp3
+              - text: Pet
+                correct: true
+                audioSrc: /audio/hr/pet.mp3
+              - text: Jedan
+                correct: false
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+      - order: 3
+        legacyId: 12
+        kind: PRODUCTION
+        title: Brojimo od 6 do 10 (Count 6 to 10)
+        challenges:
+          - order: 1
+            legacyId: 44
+            type: ASSIST
+            prompt: '"Six (6)"'
+            grammarTags: []
+            options:
+              - text: Šest
+                correct: true
+                audioSrc: /audio/hr/sest.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+          - order: 2
+            legacyId: 45
+            type: ASSIST
+            prompt: '"Seven (7)"'
+            grammarTags: []
+            options:
+              - text: Sedam
+                correct: true
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Šest
+                correct: false
+                audioSrc: /audio/hr/sest.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Devet
+                correct: false
+                audioSrc: /audio/hr/devet.mp3
+          - order: 3
+            legacyId: 46
+            type: ASSIST
+            prompt: '"Eight (8)"'
+            grammarTags: []
+            options:
+              - text: Osam
+                correct: true
+                audioSrc: /audio/hr/osam.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Devet
+                correct: false
+                audioSrc: /audio/hr/devet.mp3
+              - text: Deset
+                correct: false
+                audioSrc: /audio/hr/deset.mp3
+          - order: 4
+            legacyId: 47
+            type: ASSIST
+            prompt: Nine (9)
+            grammarTags: []
+            options:
+              - text: Devet
+                correct: true
+                audioSrc: /audio/hr/devet.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Šest
+                correct: false
+                audioSrc: /audio/hr/sest.mp3
+          - order: 5
+            legacyId: 48
+            type: SELECT
+            prompt: Ten (10)
+            grammarTags: []
+            options:
+              - text: Deset
+                correct: true
+                audioSrc: /audio/hr/deset.mp3
+              - text: Devet
+                correct: false
+                audioSrc: /audio/hr/devet.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+      - order: 4
+        legacyId: 19
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Majstor boja i brojeva (Color & Number Master)"
+        challenges:
+          - order: 1
+            legacyId: 78
+            type: SELECT
+            prompt: Which one of these is "Red"?
+            grammarTags: []
+            options:
+              - text: Crvena
+                correct: true
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Plava
+                correct: false
+                audioSrc: /audio/hr/plava.mp3
+              - text: Žuta
+                correct: false
+                audioSrc: /audio/hr/zuta.mp3
+              - text: Zelena
+                correct: false
+                audioSrc: /audio/hr/zelena.mp3
+          - order: 2
+            legacyId: 79
+            type: SELECT
+            prompt: Which one of these is "Green"?
+            grammarTags: []
+            options:
+              - text: Zelena
+                correct: true
+                audioSrc: /audio/hr/zelena.mp3
+              - text: Crvena
+                correct: false
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Plava
+                correct: false
+                audioSrc: /audio/hr/plava.mp3
+              - text: Crna
+                correct: false
+                audioSrc: /audio/hr/crna.mp3
+          - order: 3
+            legacyId: 80
+            type: SELECT
+            prompt: Which one of these is "Four"?
+            grammarTags: []
+            options:
+              - text: Četiri
+                correct: true
+                audioSrc: /audio/hr/cetiri.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+              - text: Šest
+                correct: false
+                audioSrc: /audio/hr/sest.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+          - order: 4
+            legacyId: 81
+            type: ASSIST
+            prompt: '"Blue"'
+            grammarTags: []
+            options:
+              - text: Plava
+                correct: true
+                audioSrc: /audio/hr/plava.mp3
+              - text: Crvena
+                correct: false
+                audioSrc: /audio/hr/crvena.mp3
+              - text: Žuta
+                correct: false
+                audioSrc: /audio/hr/zuta.mp3
+              - text: Zelena
+                correct: false
+                audioSrc: /audio/hr/zelena.mp3
+          - order: 5
+            legacyId: 82
+            type: SELECT
+            prompt: Which one of these is "One"?
+            grammarTags: []
+            options:
+              - text: Jedan
+                correct: true
+                audioSrc: /audio/hr/jedan.mp3
+              - text: Dva
+                correct: false
+                audioSrc: /audio/hr/dva.mp3
+              - text: Tri
+                correct: false
+                audioSrc: /audio/hr/tri.mp3
+              - text: Pet
+                correct: false
+                audioSrc: /audio/hr/pet.mp3
+          - order: 6
+            legacyId: 83
+            type: SELECT
+            prompt: Which one of these is "Ten"?
+            grammarTags: []
+            options:
+              - text: Deset
+                correct: true
+                audioSrc: /audio/hr/deset.mp3
+              - text: Devet
+                correct: false
+                audioSrc: /audio/hr/devet.mp3
+              - text: Sedam
+                correct: false
+                audioSrc: /audio/hr/sedam.mp3
+              - text: Osam
+                correct: false
+                audioSrc: /audio/hr/osam.mp3
+  - order: 5
+    legacyId: 5
+    title: Unit 5
+    description: Ukusna hrana i poslastice (Yummy Food & Drinks)
+    lessons:
+      - order: 1
+        legacyId: 13
+        kind: DISCOVERY
+        title: Voće i poslastice (Fruits & Treats)
+        challenges:
+          - order: 1
+            legacyId: 49
+            type: SELECT
+            prompt: Which one of these is "Apple"?
+            grammarTags: []
+            options:
+              - text: Jabuka
+                correct: true
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Banana
+                correct: false
+                imageSrc: /banana.svg
+                audioSrc: /audio/hr/banana.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Čokolada
+                correct: false
+                imageSrc: /chocolate.svg
+                audioSrc: /audio/hr/cokolada.mp3
+          - order: 2
+            legacyId: 50
+            type: ASSIST
+            prompt: '"Banana"'
+            grammarTags: []
+            options:
+              - text: Banana
+                correct: true
+                audioSrc: /audio/hr/banana.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Sladoled
+                correct: false
+                audioSrc: /audio/hr/sladoled.mp3
+          - order: 3
+            legacyId: 51
+            type: SELECT
+            prompt: Which one of these is "Ice cream"? 🍦
+            grammarTags: []
+            options:
+              - text: Sladoled
+                correct: true
+                imageSrc: /ice_cream.svg
+                audioSrc: /audio/hr/sladoled.mp3
+              - text: Čokolada
+                correct: false
+                imageSrc: /chocolate.svg
+                audioSrc: /audio/hr/cokolada.mp3
+              - text: Sok
+                correct: false
+                imageSrc: /juice.svg
+                audioSrc: /audio/hr/sok.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 4
+            legacyId: 52
+            type: SELECT
+            prompt: '"Chocolate" 🍫'
+            grammarTags: []
+            options:
+              - text: Čokolada
+                correct: true
+                imageSrc: /chocolate.svg
+                audioSrc: /audio/hr/cokolada.mp3
+              - text: Sladoled
+                correct: false
+                imageSrc: /ice_cream.svg
+                audioSrc: /audio/hr/sladoled.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+      - order: 2
+        legacyId: 14
+        kind: PHRASE_LISTEN
+        title: Pića i hrana (Drinks & Food)
+        challenges:
+          - order: 1
+            legacyId: 53
+            type: ASSIST
+            prompt: '"Water"'
+            grammarTags: []
+            options:
+              - text: Voda
+                correct: true
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+              - text: Čokolada
+                correct: false
+                audioSrc: /audio/hr/cokolada.mp3
+          - order: 2
+            legacyId: 54
+            type: ASSIST
+            prompt: '"Milk"'
+            grammarTags: []
+            options:
+              - text: Mlijeko
+                correct: true
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 3
+            legacyId: 55
+            type: SELECT
+            prompt: Which one of these is "Juice"?
+            grammarTags: []
+            options:
+              - text: Sok
+                correct: true
+                audioSrc: /audio/hr/sok.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sir
+                correct: false
+                audioSrc: /audio/hr/sir.mp3
+          - order: 4
+            legacyId: 56
+            type: ASSIST
+            prompt: '"Bread"'
+            grammarTags: []
+            options:
+              - text: Kruh
+                correct: true
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Čokolada
+                correct: false
+                audioSrc: /audio/hr/cokolada.mp3
+              - text: Sladoled
+                correct: false
+                audioSrc: /audio/hr/sladoled.mp3
+              - text: Jabuka
+                correct: false
+                audioSrc: /audio/hr/jabuka.mp3
+      - order: 3
+        legacyId: 15
+        kind: PRODUCTION
+        title: Vrijeme za jelo (Snack Time!)
+        challenges:
+          - order: 1
+            legacyId: 57
+            type: ASSIST
+            prompt: '"I am hungry"'
+            grammarTags: []
+            options:
+              - text: Gladan sam
+                correct: true
+                audioSrc: /audio/hr/gladan_sam.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Umoran sam
+                correct: false
+                audioSrc: /audio/hr/umoran_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+          - order: 2
+            legacyId: 58
+            type: SELECT
+            prompt: Which one means "May I have ice cream, please?"
+            grammarTags: []
+            options:
+              - text: Mogu li dobiti sladoled, molim
+                correct: true
+                audioSrc: /audio/hr/mogu_li_dobiti_sladoled_molim.mp3
+              - text: Mogu li dobiti jabuku, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_jabuku_molim.mp3
+              - text: Mogu li dobiti vodu, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_vodu_molim.mp3
+              - text: Mogu li dobiti sok, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_sok_molim.mp3
+          - order: 3
+            legacyId: 59
+            type: ASSIST
+            prompt: '"Very tasty / Delicious!"'
+            grammarTags: []
+            options:
+              - text: Jako je ukusno
+                correct: true
+                audioSrc: /audio/hr/jako_je_ukusno.mp3
+              - text: Jako je dobro
+                correct: false
+                audioSrc: /audio/hr/jako_je_dobro.mp3
+              - text: Hvala na jelu
+                correct: false
+                audioSrc: /audio/hr/hvala_na_jelu.mp3
+              - text: Ne hvala lijepo
+                correct: false
+                audioSrc: /audio/hr/ne_hvala_lijepo.mp3
+      - order: 4
+        legacyId: 20
+        kind: BOSS_CAPSTONE
+        title: "👑 Super Izazov: Mali kuhar (Little Chef Trophy)"
+        challenges:
+          - order: 1
+            legacyId: 84
+            type: SELECT
+            prompt: Which one of these is "Apple"?
+            grammarTags: []
+            options:
+              - text: Jabuka
+                correct: true
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Banana
+                correct: false
+                audioSrc: /audio/hr/banana.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Sladoled
+                correct: false
+                audioSrc: /audio/hr/sladoled.mp3
+          - order: 2
+            legacyId: 85
+            type: SELECT
+            prompt: Which one of these is "Ice cream"?
+            grammarTags: []
+            options:
+              - text: Sladoled
+                correct: true
+                audioSrc: /audio/hr/sladoled.mp3
+              - text: Čokolada
+                correct: false
+                audioSrc: /audio/hr/cokolada.mp3
+              - text: Voda
+                correct: false
+                audioSrc: /audio/hr/voda.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+          - order: 3
+            legacyId: 86
+            type: SELECT
+            prompt: Which one of these is "Water"?
+            grammarTags: []
+            options:
+              - text: Voda
+                correct: true
+                audioSrc: /audio/hr/voda.mp3
+              - text: Mlijeko
+                correct: false
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sok
+                correct: false
+                audioSrc: /audio/hr/sok.mp3
+              - text: Kruh
+                correct: false
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 4
+            legacyId: 87
+            type: ASSIST
+            prompt: '"I am hungry"'
+            grammarTags: []
+            options:
+              - text: Gladan sam
+                correct: true
+                audioSrc: /audio/hr/gladan_sam.mp3
+              - text: Dobro sam
+                correct: false
+                audioSrc: /audio/hr/dobro_sam.mp3
+              - text: Hvala lijepa
+                correct: false
+                audioSrc: /audio/hr/hvala_lijepa.mp3
+              - text: Laku noć
+                correct: false
+                audioSrc: /audio/hr/laku_noc.mp3
+          - order: 5
+            legacyId: 88
+            type: SELECT
+            prompt: Which one means "May I have ice cream, please?"
+            grammarTags: []
+            options:
+              - text: Mogu li dobiti sladoled, molim
+                correct: true
+                audioSrc: /audio/hr/mogu_li_dobiti_sladoled_molim.mp3
+              - text: Mogu li dobiti jabuku, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_jabuku_molim.mp3
+              - text: Mogu li dobiti vodu, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_vodu_molim.mp3
+              - text: Mogu li dobiti sok, molim
+                correct: false
+                audioSrc: /audio/hr/mogu_li_dobiti_sok_molim.mp3
+          - order: 6
+            legacyId: 89
+            type: ASSIST
+            prompt: '"Very tasty / Delicious!"'
+            grammarTags: []
+            options:
+              - text: Jako je ukusno
+                correct: true
+                audioSrc: /audio/hr/jako_je_ukusno.mp3
+              - text: Jako je dobro
+                correct: false
+                audioSrc: /audio/hr/jako_je_dobro.mp3
+              - text: Hvala na jelu
+                correct: false
+                audioSrc: /audio/hr/hvala_na_jelu.mp3
+              - text: Ne hvala lijepo
+                correct: false
+                audioSrc: /audio/hr/ne_hvala_lijepo.mp3

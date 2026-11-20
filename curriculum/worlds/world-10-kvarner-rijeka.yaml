@@ -1,0 +1,1665 @@
+schemaVersion: 2
+worldOrder: 10
+levelOrder: 3
+slug: kvarner-rijeka
+name: Kvarner & Rijeka
+badgeLabel: "World 10: Kvarner & Rijeka • Maritime Port & Carnival"
+cefrBand: A2.2
+theme:
+  solidBg: bg-teal-700
+  gradient: from-teal-800 via-cyan-700 to-amber-600
+  badgeBg: bg-black/30 text-teal-100 border-teal-300/40
+  accentEmoji: ⚓
+  buttonClass: bg-white text-teal-950 hover:bg-teal-50 border-teal-300
+  accentBorder: border-teal-400/50
+  nodeActiveBg: bg-teal-600 hover:bg-teal-600/90 border-teal-800 active:border-b-0 text-white
+  nodeBorderColor: border-teal-800
+  nodeStrokeColor: "#0d9488"
+  nodeBadgeClasses: bg-white text-teal-700 border-teal-500
+  nodeArrowBorder: border-t-teal-500
+units:
+  - order: 46
+    legacyId: 46
+    title: Unit 46
+    description: Luka Rijeka i brodovi (Rijeka Port & Ships)
+    lessons:
+      - order: 1
+        legacyId: 181
+        kind: DISCOVERY
+        title: Pomorski pojmovi u luci
+        challenges:
+          - order: 1
+            legacyId: 770
+            type: SELECT
+            prompt: Which one of these is "Port"?
+            grammarTags: []
+            options:
+              - text: Luka
+                correct: true
+                imageSrc: /luka.svg
+                audioSrc: /audio/hr/luka.mp3
+              - text: Katamaran
+                correct: false
+                imageSrc: /katamaran.svg
+                audioSrc: /audio/hr/katamaran.mp3
+              - text: Sidro
+                correct: false
+                imageSrc: /sidro.svg
+                audioSrc: /audio/hr/sidro.mp3
+              - text: Svjetionik
+                correct: false
+                imageSrc: /svjetionik.svg
+                audioSrc: /audio/hr/svjetionik.mp3
+          - order: 2
+            legacyId: 771
+            type: SELECT
+            prompt: Which one of these is "Catamaran"?
+            grammarTags: []
+            options:
+              - text: Katamaran
+                correct: true
+                imageSrc: /katamaran.svg
+                audioSrc: /audio/hr/katamaran.mp3
+              - text: Luka
+                correct: false
+                imageSrc: /luka.svg
+                audioSrc: /audio/hr/luka.mp3
+              - text: Sidro
+                correct: false
+                imageSrc: /sidro.svg
+                audioSrc: /audio/hr/sidro.mp3
+              - text: Svjetionik
+                correct: false
+                imageSrc: /svjetionik.svg
+                audioSrc: /audio/hr/svjetionik.mp3
+          - order: 3
+            legacyId: 772
+            type: SELECT
+            prompt: Which one of these is "Anchor"?
+            grammarTags: []
+            options:
+              - text: Sidro
+                correct: true
+                imageSrc: /sidro.svg
+                audioSrc: /audio/hr/sidro.mp3
+              - text: Luka
+                correct: false
+                imageSrc: /luka.svg
+                audioSrc: /audio/hr/luka.mp3
+              - text: Katamaran
+                correct: false
+                imageSrc: /katamaran.svg
+                audioSrc: /audio/hr/katamaran.mp3
+              - text: Svjetionik
+                correct: false
+                imageSrc: /svjetionik.svg
+                audioSrc: /audio/hr/svjetionik.mp3
+          - order: 4
+            legacyId: 773
+            type: SELECT
+            prompt: Which one of these is "Lighthouse"?
+            grammarTags: []
+            options:
+              - text: Svjetionik
+                correct: true
+                imageSrc: /svjetionik.svg
+                audioSrc: /audio/hr/svjetionik.mp3
+              - text: Sidro
+                correct: false
+                imageSrc: /sidro.svg
+                audioSrc: /audio/hr/sidro.mp3
+              - text: Katamaran
+                correct: false
+                imageSrc: /katamaran.svg
+                audioSrc: /audio/hr/katamaran.mp3
+              - text: Luka
+                correct: false
+                imageSrc: /luka.svg
+                audioSrc: /audio/hr/luka.mp3
+      - order: 2
+        legacyId: 182
+        kind: PHRASE_LISTEN
+        title: Dolazak broda u luku
+        challenges:
+          - order: 1
+            legacyId: 774
+            type: ASSIST
+            prompt: 'Select the correct translation: "The big port"'
+            grammarTags: []
+            options:
+              - text: Velika luka
+                correct: true
+                audioSrc: /audio/hr/velika_luka.mp3
+              - text: Bijeli brod
+                correct: false
+                audioSrc: /audio/hr/bijeli_brod.mp3
+              - text: Teško sidro
+                correct: false
+                audioSrc: /audio/hr/tesko_sidro.mp3
+              - text: Visoki svjetionik
+                correct: false
+                audioSrc: /audio/hr/visoki_svjetionik.mp3
+          - order: 2
+            legacyId: 775
+            type: ASSIST
+            prompt: 'Select the correct translation: "The ship enters the port."'
+            grammarTags: []
+            options:
+              - text: Brod ulazi u luku.
+                correct: true
+                audioSrc: /audio/hr/brod_ulazi_u_luku.mp3
+              - text: Kapetan spušta sidro.
+                correct: false
+                audioSrc: /audio/hr/kapetan_spusta_sidro.mp3
+              - text: Svjetionik svijetli noću.
+                correct: false
+                audioSrc: /audio/hr/svjetionik_svijetli_nocu.mp3
+              - text: Valovi udaraju o obalu.
+                correct: false
+                audioSrc: /audio/hr/valovi_udaraju_o_obalu.mp3
+          - order: 3
+            legacyId: 776
+            type: ASSIST
+            prompt: 'Select the correct translation: "The captain drops the anchor."'
+            grammarTags: []
+            options:
+              - text: Kapetan spušta sidro.
+                correct: true
+                audioSrc: /audio/hr/kapetan_spusta_sidro.mp3
+              - text: Brod ulazi u luku.
+                correct: false
+                audioSrc: /audio/hr/brod_ulazi_u_luku.mp3
+              - text: Svjetionik svijetli noću.
+                correct: false
+                audioSrc: /audio/hr/svjetionik_svijetli_nocu.mp3
+              - text: Valovi udaraju o obalu.
+                correct: false
+                audioSrc: /audio/hr/valovi_udaraju_o_obalu.mp3
+          - order: 4
+            legacyId: 777
+            type: ASSIST
+            prompt: 'Select the correct translation: "The lighthouse shines at night."'
+            grammarTags: []
+            options:
+              - text: Svjetionik svijetli noću.
+                correct: true
+                audioSrc: /audio/hr/svjetionik_svijetli_nocu.mp3
+              - text: Brod ulazi u luku.
+                correct: false
+                audioSrc: /audio/hr/brod_ulazi_u_luku.mp3
+              - text: Kapetan spušta sidro.
+                correct: false
+                audioSrc: /audio/hr/kapetan_spusta_sidro.mp3
+              - text: Valovi udaraju o obalu.
+                correct: false
+                audioSrc: /audio/hr/valovi_udaraju_o_obalu.mp3
+      - order: 3
+        legacyId: 183
+        kind: PRODUCTION
+        title: Plovidba Kvarnerom
+        challenges:
+          - order: 1
+            legacyId: 778
+            type: ASSIST
+            prompt: 'Select the correct translation: "The white ship"'
+            grammarTags: []
+            options:
+              - text: Bijeli brod
+                correct: true
+                audioSrc: /audio/hr/bijeli_brod.mp3
+              - text: Velika luka
+                correct: false
+                audioSrc: /audio/hr/velika_luka.mp3
+              - text: Teško sidro
+                correct: false
+                audioSrc: /audio/hr/tesko_sidro.mp3
+              - text: Visoki svjetionik
+                correct: false
+                audioSrc: /audio/hr/visoki_svjetionik.mp3
+          - order: 2
+            legacyId: 779
+            type: ASSIST
+            prompt: 'Select the correct translation: "The sailors are waiting on the ship."'
+            grammarTags: []
+            options:
+              - text: Mornari čekaju na brodu.
+                correct: true
+                audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
+              - text: Teretni brod plovi Kvarnerom.
+                correct: false
+                audioSrc: /audio/hr/teretni_brod_plovi_kvarnerom.mp3
+              - text: Rijeka ima veliku luku.
+                correct: false
+                audioSrc: /audio/hr/rijeka_ima_veliku_luku.mp3
+              - text: Jako svjetlo vodi brodove.
+                correct: false
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+          - order: 3
+            legacyId: 780
+            type: ASSIST
+            prompt: 'Select the correct translation: "A cargo ship sails through Kvarner."'
+            grammarTags: []
+            options:
+              - text: Teretni brod plovi Kvarnerom.
+                correct: true
+                audioSrc: /audio/hr/teretni_brod_plovi_kvarnerom.mp3
+              - text: Mornari čekaju na brodu.
+                correct: false
+                audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
+              - text: Rijeka ima veliku luku.
+                correct: false
+                audioSrc: /audio/hr/rijeka_ima_veliku_luku.mp3
+              - text: Jako svjetlo vodi brodove.
+                correct: false
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+          - order: 4
+            legacyId: 781
+            type: ASSIST
+            prompt: 'Select the correct translation: "Rijeka has a large port."'
+            grammarTags: []
+            options:
+              - text: Rijeka ima veliku luku.
+                correct: true
+                audioSrc: /audio/hr/rijeka_ima_veliku_luku.mp3
+              - text: Mornari čekaju na brodu.
+                correct: false
+                audioSrc: /audio/hr/mornari_cekaju_na_brodu.mp3
+              - text: Teretni brod plovi Kvarnerom.
+                correct: false
+                audioSrc: /audio/hr/teretni_brod_plovi_kvarnerom.mp3
+              - text: Jako svjetlo vodi brodove.
+                correct: false
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+      - order: 4
+        legacyId: 184
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Riječka luka"
+        challenges:
+          - order: 1
+            legacyId: 782
+            type: ASSIST
+            prompt: 'Select the correct translation: "The strong light guides the ships."'
+            grammarTags: []
+            options:
+              - text: Jako svjetlo vodi brodove.
+                correct: true
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+              - text: Putnici izlaze na kopno.
+                correct: false
+                audioSrc: /audio/hr/putnici_izlaze_na_kopno.mp3
+              - text: Sidro drži brod mirno.
+                correct: false
+                audioSrc: /audio/hr/sidro_drzi_brod_mirno.mp3
+              - text: Vjetar puše s Jadrana.
+                correct: false
+                audioSrc: /audio/hr/vjetar_puse_s_jadrana.mp3
+          - order: 2
+            legacyId: 783
+            type: ASSIST
+            prompt: 'Select the correct translation: "The passengers step onto the mainland."'
+            grammarTags: []
+            options:
+              - text: Putnici izlaze na kopno.
+                correct: true
+                audioSrc: /audio/hr/putnici_izlaze_na_kopno.mp3
+              - text: Jako svjetlo vodi brodove.
+                correct: false
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+              - text: Sidro drži brod mirno.
+                correct: false
+                audioSrc: /audio/hr/sidro_drzi_brod_mirno.mp3
+              - text: Vjetar puše s Jadrana.
+                correct: false
+                audioSrc: /audio/hr/vjetar_puse_s_jadrana.mp3
+          - order: 3
+            legacyId: 784
+            type: ASSIST
+            prompt: 'Select the correct translation: "The anchor holds the ship steady."'
+            grammarTags: []
+            options:
+              - text: Sidro drži brod mirno.
+                correct: true
+                audioSrc: /audio/hr/sidro_drzi_brod_mirno.mp3
+              - text: Putnici izlaze na kopno.
+                correct: false
+                audioSrc: /audio/hr/putnici_izlaze_na_kopno.mp3
+              - text: Jako svjetlo vodi brodove.
+                correct: false
+                audioSrc: /audio/hr/jako_svjetlo_vodi_brodove.mp3
+              - text: Vjetar puše s Jadrana.
+                correct: false
+                audioSrc: /audio/hr/vjetar_puse_s_jadrana.mp3
+          - order: 4
+            legacyId: 785
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are sailing toward the island in the morning."'
+            grammarTags: []
+            options:
+              - text: Plovimo prema otoku ujutro.
+                correct: true
+                audioSrc: /audio/hr/plovimo_prema_otoku_ujutro.mp3
+              - text: Putnici izlaze na kopno.
+                correct: false
+                audioSrc: /audio/hr/putnici_izlaze_na_kopno.mp3
+              - text: Sidro drži brod mirno.
+                correct: false
+                audioSrc: /audio/hr/sidro_drzi_brod_mirno.mp3
+              - text: Vjetar puše s Jadrana.
+                correct: false
+                audioSrc: /audio/hr/vjetar_puse_s_jadrana.mp3
+  - order: 47
+    legacyId: 47
+    title: Unit 47
+    description: Trsatska gradina i stube (Trsat Castle & Historic Staircase)
+    lessons:
+      - order: 1
+        legacyId: 185
+        kind: DISCOVERY
+        title: Simboli Trsata
+        challenges:
+          - order: 1
+            legacyId: 786
+            type: SELECT
+            prompt: Which one of these is "Fortress"?
+            grammarTags: []
+            options:
+              - text: Gradina
+                correct: true
+                imageSrc: /gradina.svg
+                audioSrc: /audio/hr/gradina.mp3
+              - text: Stube
+                correct: false
+                imageSrc: /stube.svg
+                audioSrc: /audio/hr/stube.mp3
+              - text: Vidikovac
+                correct: false
+                imageSrc: /vidikovac.svg
+                audioSrc: /audio/hr/vidikovac.mp3
+              - text: Zmaj
+                correct: false
+                imageSrc: /zmaj.svg
+                audioSrc: /audio/hr/zmaj.mp3
+          - order: 2
+            legacyId: 787
+            type: SELECT
+            prompt: Which one of these is "Stairs"?
+            grammarTags: []
+            options:
+              - text: Stube
+                correct: true
+                imageSrc: /stube.svg
+                audioSrc: /audio/hr/stube.mp3
+              - text: Gradina
+                correct: false
+                imageSrc: /gradina.svg
+                audioSrc: /audio/hr/gradina.mp3
+              - text: Vidikovac
+                correct: false
+                imageSrc: /vidikovac.svg
+                audioSrc: /audio/hr/vidikovac.mp3
+              - text: Zmaj
+                correct: false
+                imageSrc: /zmaj.svg
+                audioSrc: /audio/hr/zmaj.mp3
+          - order: 3
+            legacyId: 788
+            type: SELECT
+            prompt: Which one of these is "Viewpoint"?
+            grammarTags: []
+            options:
+              - text: Vidikovac
+                correct: true
+                imageSrc: /vidikovac.svg
+                audioSrc: /audio/hr/vidikovac.mp3
+              - text: Gradina
+                correct: false
+                imageSrc: /gradina.svg
+                audioSrc: /audio/hr/gradina.mp3
+              - text: Stube
+                correct: false
+                imageSrc: /stube.svg
+                audioSrc: /audio/hr/stube.mp3
+              - text: Zmaj
+                correct: false
+                imageSrc: /zmaj.svg
+                audioSrc: /audio/hr/zmaj.mp3
+          - order: 4
+            legacyId: 789
+            type: SELECT
+            prompt: Which one of these is "Dragon"?
+            grammarTags: []
+            options:
+              - text: Zmaj
+                correct: true
+                imageSrc: /zmaj.svg
+                audioSrc: /audio/hr/zmaj.mp3
+              - text: Vidikovac
+                correct: false
+                imageSrc: /vidikovac.svg
+                audioSrc: /audio/hr/vidikovac.mp3
+              - text: Stube
+                correct: false
+                imageSrc: /stube.svg
+                audioSrc: /audio/hr/stube.mp3
+              - text: Gradina
+                correct: false
+                imageSrc: /gradina.svg
+                audioSrc: /audio/hr/gradina.mp3
+      - order: 2
+        legacyId: 186
+        kind: PHRASE_LISTEN
+        title: Uspon na Trsat
+        challenges:
+          - order: 1
+            legacyId: 790
+            type: ASSIST
+            prompt: 'Select the correct translation: "The old fortress"'
+            grammarTags: []
+            options:
+              - text: Stara gradina
+                correct: true
+                audioSrc: /audio/hr/stara_gradina.mp3
+              - text: Kamene stube
+                correct: false
+                audioSrc: /audio/hr/kamene_stube.mp3
+              - text: Lijepi vidikovac
+                correct: false
+                audioSrc: /audio/hr/lijepi_vidikovac.mp3
+              - text: Brončani zmaj
+                correct: false
+                audioSrc: /audio/hr/broncani_zmaj.mp3
+          - order: 2
+            legacyId: 791
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are climbing up the stairs."'
+            grammarTags: []
+            options:
+              - text: Penjemo se uz stube.
+                correct: true
+                audioSrc: /audio/hr/penjemo_se_uz_stube.mp3
+              - text: Trsatska gradina gleda na more.
+                correct: false
+                audioSrc: /audio/hr/trsatska_gradina_gleda_na_more.mp3
+              - text: Vidimo cijeli Kvarnerski zaljev.
+                correct: false
+                audioSrc: /audio/hr/vidimo_cijeli_kvarnerski_zaljev.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+          - order: 3
+            legacyId: 792
+            type: ASSIST
+            prompt: 'Select the correct translation: "Trsat Castle overlooks the sea."'
+            grammarTags: []
+            options:
+              - text: Trsatska gradina gleda na more.
+                correct: true
+                audioSrc: /audio/hr/trsatska_gradina_gleda_na_more.mp3
+              - text: Penjemo se uz stube.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_uz_stube.mp3
+              - text: Vidimo cijeli Kvarnerski zaljev.
+                correct: false
+                audioSrc: /audio/hr/vidimo_cijeli_kvarnerski_zaljev.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+          - order: 4
+            legacyId: 793
+            type: ASSIST
+            prompt: 'Select the correct translation: "We see the whole Kvarner Bay."'
+            grammarTags: []
+            options:
+              - text: Vidimo cijeli Kvarnerski zaljev.
+                correct: true
+                audioSrc: /audio/hr/vidimo_cijeli_kvarnerski_zaljev.mp3
+              - text: Penjemo se uz stube.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_uz_stube.mp3
+              - text: Trsatska gradina gleda na more.
+                correct: false
+                audioSrc: /audio/hr/trsatska_gradina_gleda_na_more.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+      - order: 3
+        legacyId: 187
+        kind: PRODUCTION
+        title: Kamene zidine i zmaj
+        challenges:
+          - order: 1
+            legacyId: 794
+            type: ASSIST
+            prompt: 'Select the correct translation: "The dragon guards the old fortress."'
+            grammarTags: []
+            options:
+              - text: Zmaj čuva staru tvrđavu.
+                correct: true
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+              - text: Put do vrha je dug.
+                correct: false
+                audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
+              - text: Zidine su vrlo visoke.
+                correct: false
+                audioSrc: /audio/hr/zidine_su_vrlo_visoke.mp3
+              - text: Stube vode prema gradini.
+                correct: false
+                audioSrc: /audio/hr/stube_vode_prema_gradini.mp3
+          - order: 2
+            legacyId: 795
+            type: ASSIST
+            prompt: 'Select the correct translation: "The way to the top is long."'
+            grammarTags: []
+            options:
+              - text: Put do vrha je dug.
+                correct: true
+                audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+              - text: Zidine su vrlo visoke.
+                correct: false
+                audioSrc: /audio/hr/zidine_su_vrlo_visoke.mp3
+              - text: Stube vode prema gradini.
+                correct: false
+                audioSrc: /audio/hr/stube_vode_prema_gradini.mp3
+          - order: 3
+            legacyId: 796
+            type: ASSIST
+            prompt: 'Select the correct translation: "The fortress walls are very high."'
+            grammarTags: []
+            options:
+              - text: Zidine su vrlo visoke.
+                correct: true
+                audioSrc: /audio/hr/zidine_su_vrlo_visoke.mp3
+              - text: Put do vrha je dug.
+                correct: false
+                audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
+              - text: Zmaj čuva staru tvrđavu.
+                correct: false
+                audioSrc: /audio/hr/zmaj_cuva_staru_tvrdavu.mp3
+              - text: Stube vode prema gradini.
+                correct: false
+                audioSrc: /audio/hr/stube_vode_prema_gradini.mp3
+          - order: 4
+            legacyId: 797
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are standing on the stone viewpoint."'
+            grammarTags: []
+            options:
+              - text: Stojimo na kamenom vidikovcu.
+                correct: true
+                audioSrc: /audio/hr/stojimo_na_kamenom_vidikovcu.mp3
+              - text: Put do vrha je dug.
+                correct: false
+                audioSrc: /audio/hr/put_do_vrha_je_dug.mp3
+              - text: Zidine su vrlo visoke.
+                correct: false
+                audioSrc: /audio/hr/zidine_su_vrlo_visoke.mp3
+              - text: Stube vode prema gradini.
+                correct: false
+                audioSrc: /audio/hr/stube_vode_prema_gradini.mp3
+      - order: 4
+        legacyId: 188
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Pogled s Trsata"
+        challenges:
+          - order: 1
+            legacyId: 798
+            type: ASSIST
+            prompt: 'Select the correct translation: "From the towers you can see the city."'
+            grammarTags: []
+            options:
+              - text: S kula se vidi grad.
+                correct: true
+                audioSrc: /audio/hr/s_kula_se_vidi_grad.mp3
+              - text: Legenda govori o zmaju.
+                correct: false
+                audioSrc: /audio/hr/legenda_govori_o_zmaju.mp3
+              - text: Odmaramo se na vrhu brda.
+                correct: false
+                audioSrc: /audio/hr/odmaramo_se_na_vrhu_brda.mp3
+              - text: Gledamo zalazak sunca nad Rijekom.
+                correct: false
+                audioSrc: /audio/hr/gledamo_zalazak_sunca_nad_rijekom.mp3
+          - order: 2
+            legacyId: 799
+            type: ASSIST
+            prompt: 'Select the correct translation: "The legend speaks of a dragon."'
+            grammarTags: []
+            options:
+              - text: Legenda govori o zmaju.
+                correct: true
+                audioSrc: /audio/hr/legenda_govori_o_zmaju.mp3
+              - text: S kula se vidi grad.
+                correct: false
+                audioSrc: /audio/hr/s_kula_se_vidi_grad.mp3
+              - text: Odmaramo se na vrhu brda.
+                correct: false
+                audioSrc: /audio/hr/odmaramo_se_na_vrhu_brda.mp3
+              - text: Gledamo zalazak sunca nad Rijekom.
+                correct: false
+                audioSrc: /audio/hr/gledamo_zalazak_sunca_nad_rijekom.mp3
+          - order: 3
+            legacyId: 800
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are resting at the top of the hill."'
+            grammarTags: []
+            options:
+              - text: Odmaramo se na vrhu brda.
+                correct: true
+                audioSrc: /audio/hr/odmaramo_se_na_vrhu_brda.mp3
+              - text: S kula se vidi grad.
+                correct: false
+                audioSrc: /audio/hr/s_kula_se_vidi_grad.mp3
+              - text: Legenda govori o zmaju.
+                correct: false
+                audioSrc: /audio/hr/legenda_govori_o_zmaju.mp3
+              - text: Gledamo zalazak sunca nad Rijekom.
+                correct: false
+                audioSrc: /audio/hr/gledamo_zalazak_sunca_nad_rijekom.mp3
+          - order: 4
+            legacyId: 801
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are watching the sunset over Rijeka."'
+            grammarTags: []
+            options:
+              - text: Gledamo zalazak sunca nad Rijekom.
+                correct: true
+                audioSrc: /audio/hr/gledamo_zalazak_sunca_nad_rijekom.mp3
+              - text: S kula se vidi grad.
+                correct: false
+                audioSrc: /audio/hr/s_kula_se_vidi_grad.mp3
+              - text: Legenda govori o zmaju.
+                correct: false
+                audioSrc: /audio/hr/legenda_govori_o_zmaju.mp3
+              - text: Odmaramo se na vrhu brda.
+                correct: false
+                audioSrc: /audio/hr/odmaramo_se_na_vrhu_brda.mp3
+  - order: 48
+    legacyId: 48
+    title: Unit 48
+    description: Opatijska rivijera i kamelije (Opatija Riviera & Camellias)
+    lessons:
+      - order: 1
+        legacyId: 189
+        kind: DISCOVERY
+        title: Šetnja Opatijom
+        challenges:
+          - order: 1
+            legacyId: 802
+            type: SELECT
+            prompt: Which one of these is "Promenade"?
+            grammarTags: []
+            options:
+              - text: Šetnica
+                correct: true
+                imageSrc: /setnica.svg
+                audioSrc: /audio/hr/setnica.mp3
+              - text: Kamelija
+                correct: false
+                imageSrc: /kamelija.svg
+                audioSrc: /audio/hr/kamelija.mp3
+              - text: Vila
+                correct: false
+                imageSrc: /vila.svg
+                audioSrc: /audio/hr/vila.mp3
+              - text: Fontana
+                correct: false
+                imageSrc: /fontana.svg
+                audioSrc: /audio/hr/fontana.mp3
+          - order: 2
+            legacyId: 803
+            type: SELECT
+            prompt: Which one of these is "Camellia"?
+            grammarTags: []
+            options:
+              - text: Kamelija
+                correct: true
+                imageSrc: /kamelija.svg
+                audioSrc: /audio/hr/kamelija.mp3
+              - text: Šetnica
+                correct: false
+                imageSrc: /setnica.svg
+                audioSrc: /audio/hr/setnica.mp3
+              - text: Vila
+                correct: false
+                imageSrc: /vila.svg
+                audioSrc: /audio/hr/vila.mp3
+              - text: Fontana
+                correct: false
+                imageSrc: /fontana.svg
+                audioSrc: /audio/hr/fontana.mp3
+          - order: 3
+            legacyId: 804
+            type: SELECT
+            prompt: Which one of these is "Villa"?
+            grammarTags: []
+            options:
+              - text: Vila
+                correct: true
+                imageSrc: /vila.svg
+                audioSrc: /audio/hr/vila.mp3
+              - text: Šetnica
+                correct: false
+                imageSrc: /setnica.svg
+                audioSrc: /audio/hr/setnica.mp3
+              - text: Kamelija
+                correct: false
+                imageSrc: /kamelija.svg
+                audioSrc: /audio/hr/kamelija.mp3
+              - text: Fontana
+                correct: false
+                imageSrc: /fontana.svg
+                audioSrc: /audio/hr/fontana.mp3
+          - order: 4
+            legacyId: 805
+            type: SELECT
+            prompt: Which one of these is "Fountain"?
+            grammarTags: []
+            options:
+              - text: Fontana
+                correct: true
+                imageSrc: /fontana.svg
+                audioSrc: /audio/hr/fontana.mp3
+              - text: Vila
+                correct: false
+                imageSrc: /vila.svg
+                audioSrc: /audio/hr/vila.mp3
+              - text: Kamelija
+                correct: false
+                imageSrc: /kamelija.svg
+                audioSrc: /audio/hr/kamelija.mp3
+              - text: Šetnica
+                correct: false
+                imageSrc: /setnica.svg
+                audioSrc: /audio/hr/setnica.mp3
+      - order: 2
+        legacyId: 190
+        kind: PHRASE_LISTEN
+        title: Lungomare i parkovi
+        challenges:
+          - order: 1
+            legacyId: 806
+            type: ASSIST
+            prompt: 'Select the correct translation: "The long promenade"'
+            grammarTags: []
+            options:
+              - text: Duga šetnica
+                correct: true
+                audioSrc: /audio/hr/duga_setnica.mp3
+              - text: Ružičasta kamelija
+                correct: false
+                audioSrc: /audio/hr/ruzicasta_kamelija.mp3
+              - text: Stara vila
+                correct: false
+                audioSrc: /audio/hr/stara_vila.mp3
+              - text: Kamena fontana
+                correct: false
+                audioSrc: /audio/hr/kamena_fontana.mp3
+          - order: 2
+            legacyId: 807
+            type: ASSIST
+            prompt: 'Select the correct translation: "We walk by the sea in the evening."'
+            grammarTags: []
+            options:
+              - text: Šetamo uz more navečer.
+                correct: true
+                audioSrc: /audio/hr/setamo_uz_more_navecer.mp3
+              - text: Kamelija cvjeta u parku.
+                correct: false
+                audioSrc: /audio/hr/kamelija_cvjeta_u_parku.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+              - text: Voda teče iz fontane.
+                correct: false
+                audioSrc: /audio/hr/voda_tece_iz_fontane.mp3
+          - order: 3
+            legacyId: 808
+            type: ASSIST
+            prompt: 'Select the correct translation: "The camellia blooms in the park."'
+            grammarTags: []
+            options:
+              - text: Kamelija cvjeta u parku.
+                correct: true
+                audioSrc: /audio/hr/kamelija_cvjeta_u_parku.mp3
+              - text: Šetamo uz more navečer.
+                correct: false
+                audioSrc: /audio/hr/setamo_uz_more_navecer.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+              - text: Voda teče iz fontane.
+                correct: false
+                audioSrc: /audio/hr/voda_tece_iz_fontane.mp3
+          - order: 4
+            legacyId: 809
+            type: ASSIST
+            prompt: 'Select the correct translation: "Water flows from the fountain."'
+            grammarTags: []
+            options:
+              - text: Voda teče iz fontane.
+                correct: true
+                audioSrc: /audio/hr/voda_tece_iz_fontane.mp3
+              - text: Šetamo uz more navečer.
+                correct: false
+                audioSrc: /audio/hr/setamo_uz_more_navecer.mp3
+              - text: Kamelija cvjeta u parku.
+                correct: false
+                audioSrc: /audio/hr/kamelija_cvjeta_u_parku.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+      - order: 3
+        legacyId: 191
+        kind: PRODUCTION
+        title: Stare vile i palme
+        challenges:
+          - order: 1
+            legacyId: 810
+            type: ASSIST
+            prompt: 'Select the correct translation: "Opatija is famous for its villas."'
+            grammarTags: []
+            options:
+              - text: Opatija je poznata po vilama.
+                correct: true
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+              - text: Palme rastu uz obalu.
+                correct: false
+                audioSrc: /audio/hr/palme_rastu_uz_obalu.mp3
+              - text: Miris mora osvježava zrak.
+                correct: false
+                audioSrc: /audio/hr/miris_mora_osvjezava_zrak.mp3
+              - text: Park je pun cvijeća.
+                correct: false
+                audioSrc: /audio/hr/park_je_pun_cvijeca.mp3
+          - order: 2
+            legacyId: 811
+            type: ASSIST
+            prompt: 'Select the correct translation: "Palm trees grow along the coast."'
+            grammarTags: []
+            options:
+              - text: Palme rastu uz obalu.
+                correct: true
+                audioSrc: /audio/hr/palme_rastu_uz_obalu.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+              - text: Miris mora osvježava zrak.
+                correct: false
+                audioSrc: /audio/hr/miris_mora_osvjezava_zrak.mp3
+              - text: Park je pun cvijeća.
+                correct: false
+                audioSrc: /audio/hr/park_je_pun_cvijeca.mp3
+          - order: 3
+            legacyId: 812
+            type: ASSIST
+            prompt: 'Select the correct translation: "The scent of the sea refreshes the air."'
+            grammarTags: []
+            options:
+              - text: Miris mora osvježava zrak.
+                correct: true
+                audioSrc: /audio/hr/miris_mora_osvjezava_zrak.mp3
+              - text: Palme rastu uz obalu.
+                correct: false
+                audioSrc: /audio/hr/palme_rastu_uz_obalu.mp3
+              - text: Park je pun cvijeća.
+                correct: false
+                audioSrc: /audio/hr/park_je_pun_cvijeca.mp3
+              - text: Opatija je poznata po vilama.
+                correct: false
+                audioSrc: /audio/hr/opatija_je_poznata_po_vilama.mp3
+          - order: 4
+            legacyId: 813
+            type: ASSIST
+            prompt: 'Select the correct translation: "We listen to the waves on the promenade."'
+            grammarTags: []
+            options:
+              - text: Slušamo valove na šetnici.
+                correct: true
+                audioSrc: /audio/hr/slusamo_valove_na_setnici.mp3
+              - text: Palme rastu uz obalu.
+                correct: false
+                audioSrc: /audio/hr/palme_rastu_uz_obalu.mp3
+              - text: Miris mora osvježava zrak.
+                correct: false
+                audioSrc: /audio/hr/miris_mora_osvjezava_zrak.mp3
+              - text: Park je pun cvijeća.
+                correct: false
+                audioSrc: /audio/hr/park_je_pun_cvijeca.mp3
+      - order: 4
+        legacyId: 192
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Biser Jadrana"
+        challenges:
+          - order: 1
+            legacyId: 814
+            type: ASSIST
+            prompt: 'Select the correct translation: "People drink coffee on the terrace."'
+            grammarTags: []
+            options:
+              - text: Ljudi piju kavu na terasi.
+                correct: true
+                audioSrc: /audio/hr/ljudi_piju_kavu_na_terasi.mp3
+              - text: Sunce grije opatijsku rivijeru.
+                correct: false
+                audioSrc: /audio/hr/sunce_grije_opatijsku_rivijeru.mp3
+              - text: Stare lampe svijetle uz put.
+                correct: false
+                audioSrc: /audio/hr/stare_lampe_svijetle_uz_put.mp3
+              - text: Cvijet kamelije simbol je grada.
+                correct: false
+                audioSrc: /audio/hr/cvijet_kamelije_simbol_je_grada.mp3
+          - order: 2
+            legacyId: 815
+            type: ASSIST
+            prompt: 'Select the correct translation: "The sun warms the Opatija Riviera."'
+            grammarTags: []
+            options:
+              - text: Sunce grije opatijsku rivijeru.
+                correct: true
+                audioSrc: /audio/hr/sunce_grije_opatijsku_rivijeru.mp3
+              - text: Ljudi piju kavu na terasi.
+                correct: false
+                audioSrc: /audio/hr/ljudi_piju_kavu_na_terasi.mp3
+              - text: Stare lampe svijetle uz put.
+                correct: false
+                audioSrc: /audio/hr/stare_lampe_svijetle_uz_put.mp3
+              - text: Cvijet kamelije simbol je grada.
+                correct: false
+                audioSrc: /audio/hr/cvijet_kamelije_simbol_je_grada.mp3
+          - order: 3
+            legacyId: 816
+            type: ASSIST
+            prompt: 'Select the correct translation: "Old lamps shine along the path."'
+            grammarTags: []
+            options:
+              - text: Stare lampe svijetle uz put.
+                correct: true
+                audioSrc: /audio/hr/stare_lampe_svijetle_uz_put.mp3
+              - text: Ljudi piju kavu na terasi.
+                correct: false
+                audioSrc: /audio/hr/ljudi_piju_kavu_na_terasi.mp3
+              - text: Sunce grije opatijsku rivijeru.
+                correct: false
+                audioSrc: /audio/hr/sunce_grije_opatijsku_rivijeru.mp3
+              - text: Cvijet kamelije simbol je grada.
+                correct: false
+                audioSrc: /audio/hr/cvijet_kamelije_simbol_je_grada.mp3
+          - order: 4
+            legacyId: 817
+            type: ASSIST
+            prompt: 'Select the correct translation: "The camellia flower is the symbol of the city."'
+            grammarTags: []
+            options:
+              - text: Cvijet kamelije simbol je grada.
+                correct: true
+                audioSrc: /audio/hr/cvijet_kamelije_simbol_je_grada.mp3
+              - text: Ljudi piju kavu na terasi.
+                correct: false
+                audioSrc: /audio/hr/ljudi_piju_kavu_na_terasi.mp3
+              - text: Sunce grije opatijsku rivijeru.
+                correct: false
+                audioSrc: /audio/hr/sunce_grije_opatijsku_rivijeru.mp3
+              - text: Stare lampe svijetle uz put.
+                correct: false
+                audioSrc: /audio/hr/stare_lampe_svijetle_uz_put.mp3
+  - order: 49
+    legacyId: 49
+    title: Unit 49
+    description: Otok Krk i glagoljica (Krk Island & Glagolitic Script)
+    lessons:
+      - order: 1
+        legacyId: 193
+        kind: DISCOVERY
+        title: Baština otoka Krka
+        challenges:
+          - order: 1
+            legacyId: 818
+            type: SELECT
+            prompt: Which one of these is "Stone tablet"?
+            grammarTags: []
+            options:
+              - text: Ploča
+                correct: true
+                imageSrc: /ploca.svg
+                audioSrc: /audio/hr/ploca.mp3
+              - text: Slovo
+                correct: false
+                imageSrc: /slovo.svg
+                audioSrc: /audio/hr/slovo.mp3
+              - text: Maslina
+                correct: false
+                imageSrc: /maslina.svg
+                audioSrc: /audio/hr/maslina.mp3
+              - text: Ovca
+                correct: false
+                imageSrc: /ovca.svg
+                audioSrc: /audio/hr/ovca.mp3
+          - order: 2
+            legacyId: 819
+            type: SELECT
+            prompt: Which one of these is "Letter"?
+            grammarTags: []
+            options:
+              - text: Slovo
+                correct: true
+                imageSrc: /slovo.svg
+                audioSrc: /audio/hr/slovo.mp3
+              - text: Ploča
+                correct: false
+                imageSrc: /ploca.svg
+                audioSrc: /audio/hr/ploca.mp3
+              - text: Maslina
+                correct: false
+                imageSrc: /maslina.svg
+                audioSrc: /audio/hr/maslina.mp3
+              - text: Ovca
+                correct: false
+                imageSrc: /ovca.svg
+                audioSrc: /audio/hr/ovca.mp3
+          - order: 3
+            legacyId: 820
+            type: SELECT
+            prompt: Which one of these is "Olive"?
+            grammarTags: []
+            options:
+              - text: Maslina
+                correct: true
+                imageSrc: /maslina.svg
+                audioSrc: /audio/hr/maslina.mp3
+              - text: Ploča
+                correct: false
+                imageSrc: /ploca.svg
+                audioSrc: /audio/hr/ploca.mp3
+              - text: Slovo
+                correct: false
+                imageSrc: /slovo.svg
+                audioSrc: /audio/hr/slovo.mp3
+              - text: Ovca
+                correct: false
+                imageSrc: /ovca.svg
+                audioSrc: /audio/hr/ovca.mp3
+          - order: 4
+            legacyId: 821
+            type: SELECT
+            prompt: Which one of these is "Sheep"?
+            grammarTags: []
+            options:
+              - text: Ovca
+                correct: true
+                imageSrc: /ovca.svg
+                audioSrc: /audio/hr/ovca.mp3
+              - text: Maslina
+                correct: false
+                imageSrc: /maslina.svg
+                audioSrc: /audio/hr/maslina.mp3
+              - text: Slovo
+                correct: false
+                imageSrc: /slovo.svg
+                audioSrc: /audio/hr/slovo.mp3
+              - text: Ploča
+                correct: false
+                imageSrc: /ploca.svg
+                audioSrc: /audio/hr/ploca.mp3
+      - order: 2
+        legacyId: 194
+        kind: PHRASE_LISTEN
+        title: Bašćanska ploča i glagoljica
+        challenges:
+          - order: 1
+            legacyId: 822
+            type: ASSIST
+            prompt: 'Select the correct translation: "The stone tablet"'
+            grammarTags: []
+            options:
+              - text: Kamena ploča
+                correct: true
+                audioSrc: /audio/hr/kamena_ploca.mp3
+              - text: Staro slovo
+                correct: false
+                audioSrc: /audio/hr/staro_slovo.mp3
+              - text: Zelena maslina
+                correct: false
+                audioSrc: /audio/hr/zelena_maslina.mp3
+              - text: Bijela ovca
+                correct: false
+                audioSrc: /audio/hr/bijela_ovca.mp3
+          - order: 2
+            legacyId: 823
+            type: ASSIST
+            prompt: 'Select the correct translation: "The Baška Tablet preserves history."'
+            grammarTags: []
+            options:
+              - text: Bašćanska ploča čuva povijest.
+                correct: true
+                audioSrc: /audio/hr/bascanska_ploca_cuva_povijest.mp3
+              - text: Učimo stara glagoljska slova.
+                correct: false
+                audioSrc: /audio/hr/ucimo_stara_glagoljska_slova.mp3
+              - text: Masline rastu na otoku Krku.
+                correct: false
+                audioSrc: /audio/hr/masline_rastu_na_otoku_krku.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+          - order: 3
+            legacyId: 824
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are learning old Glagolitic letters."'
+            grammarTags: []
+            options:
+              - text: Učimo stara glagoljska slova.
+                correct: true
+                audioSrc: /audio/hr/ucimo_stara_glagoljska_slova.mp3
+              - text: Bašćanska ploča čuva povijest.
+                correct: false
+                audioSrc: /audio/hr/bascanska_ploca_cuva_povijest.mp3
+              - text: Masline rastu na otoku Krku.
+                correct: false
+                audioSrc: /audio/hr/masline_rastu_na_otoku_krku.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+          - order: 4
+            legacyId: 825
+            type: ASSIST
+            prompt: 'Select the correct translation: "Olives grow on the island of Krk."'
+            grammarTags: []
+            options:
+              - text: Masline rastu na otoku Krku.
+                correct: true
+                audioSrc: /audio/hr/masline_rastu_na_otoku_krku.mp3
+              - text: Bašćanska ploča čuva povijest.
+                correct: false
+                audioSrc: /audio/hr/bascanska_ploca_cuva_povijest.mp3
+              - text: Učimo stara glagoljska slova.
+                correct: false
+                audioSrc: /audio/hr/ucimo_stara_glagoljska_slova.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+      - order: 3
+        legacyId: 195
+        kind: PRODUCTION
+        title: Krčki most i maslinici
+        challenges:
+          - order: 1
+            legacyId: 826
+            type: ASSIST
+            prompt: 'Select the correct translation: "Sheep graze on the rocky pasture."'
+            grammarTags: []
+            options:
+              - text: Ovce pasu na kamenjaru.
+                correct: true
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+              - text: Prelazimo veliki Krčki most.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_veliki_krcki_most.mp3
+              - text: Klesari su pisali u kamenu.
+                correct: false
+                audioSrc: /audio/hr/klesari_su_pisali_u_kamenu.mp3
+              - text: Beremo masline u jesen.
+                correct: false
+                audioSrc: /audio/hr/beremo_masline_u_jesen.mp3
+          - order: 2
+            legacyId: 827
+            type: ASSIST
+            prompt: 'Select the correct translation: "We are crossing the great Krk Bridge."'
+            grammarTags: []
+            options:
+              - text: Prelazimo veliki Krčki most.
+                correct: true
+                audioSrc: /audio/hr/prelazimo_veliki_krcki_most.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+              - text: Klesari su pisali u kamenu.
+                correct: false
+                audioSrc: /audio/hr/klesari_su_pisali_u_kamenu.mp3
+              - text: Beremo masline u jesen.
+                correct: false
+                audioSrc: /audio/hr/beremo_masline_u_jesen.mp3
+          - order: 3
+            legacyId: 828
+            type: ASSIST
+            prompt: 'Select the correct translation: "Stonemasons wrote in stone."'
+            grammarTags: []
+            options:
+              - text: Klesari su pisali u kamenu.
+                correct: true
+                audioSrc: /audio/hr/klesari_su_pisali_u_kamenu.mp3
+              - text: Prelazimo veliki Krčki most.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_veliki_krcki_most.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+              - text: Beremo masline u jesen.
+                correct: false
+                audioSrc: /audio/hr/beremo_masline_u_jesen.mp3
+          - order: 4
+            legacyId: 829
+            type: ASSIST
+            prompt: 'Select the correct translation: "We harvest olives in autumn."'
+            grammarTags: []
+            options:
+              - text: Beremo masline u jesen.
+                correct: true
+                audioSrc: /audio/hr/beremo_masline_u_jesen.mp3
+              - text: Prelazimo veliki Krčki most.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_veliki_krcki_most.mp3
+              - text: Klesari su pisali u kamenu.
+                correct: false
+                audioSrc: /audio/hr/klesari_su_pisali_u_kamenu.mp3
+              - text: Ovce pasu na kamenjaru.
+                correct: false
+                audioSrc: /audio/hr/ovce_pasu_na_kamenjaru.mp3
+      - order: 4
+        legacyId: 196
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Zlatni otok"
+        challenges:
+          - order: 1
+            legacyId: 830
+            type: ASSIST
+            prompt: 'Select the correct translation: "Olive oil is golden."'
+            grammarTags: []
+            options:
+              - text: Maslinovo ulje je zlatno.
+                correct: true
+                audioSrc: /audio/hr/maslinovo_ulje_je_zlatno.mp3
+              - text: Otok Krk ima bogatu baštinu.
+                correct: false
+                audioSrc: /audio/hr/otok_krk_ima_bogatu_bastinu.mp3
+              - text: Stari zapisi su vrlo vrijedni.
+                correct: false
+                audioSrc: /audio/hr/stari_zapisi_su_vrlo_vrijedni.mp3
+              - text: Čuvamo našu pisanu riječ.
+                correct: false
+                audioSrc: /audio/hr/cuvamo_nasu_pisanu_rijec.mp3
+          - order: 2
+            legacyId: 831
+            type: ASSIST
+            prompt: 'Select the correct translation: "The island of Krk has a rich heritage."'
+            grammarTags: []
+            options:
+              - text: Otok Krk ima bogatu baštinu.
+                correct: true
+                audioSrc: /audio/hr/otok_krk_ima_bogatu_bastinu.mp3
+              - text: Maslinovo ulje je zlatno.
+                correct: false
+                audioSrc: /audio/hr/maslinovo_ulje_je_zlatno.mp3
+              - text: Stari zapisi su vrlo vrijedni.
+                correct: false
+                audioSrc: /audio/hr/stari_zapisi_su_vrlo_vrijedni.mp3
+              - text: Čuvamo našu pisanu riječ.
+                correct: false
+                audioSrc: /audio/hr/cuvamo_nasu_pisanu_rijec.mp3
+          - order: 3
+            legacyId: 832
+            type: ASSIST
+            prompt: 'Select the correct translation: "The village of Baška lies by the beach."'
+            grammarTags: []
+            options:
+              - text: Selo Baška leži uz plažu.
+                correct: true
+                audioSrc: /audio/hr/selo_baska_lezi_uz_plazu.mp3
+              - text: Otok Krk ima bogatu baštinu.
+                correct: false
+                audioSrc: /audio/hr/otok_krk_ima_bogatu_bastinu.mp3
+              - text: Stari zapisi su vrlo vrijedni.
+                correct: false
+                audioSrc: /audio/hr/stari_zapisi_su_vrlo_vrijedni.mp3
+              - text: Čuvamo našu pisanu riječ.
+                correct: false
+                audioSrc: /audio/hr/cuvamo_nasu_pisanu_rijec.mp3
+          - order: 4
+            legacyId: 833
+            type: ASSIST
+            prompt: 'Select the correct translation: "We preserve our written word."'
+            grammarTags: []
+            options:
+              - text: Čuvamo našu pisanu riječ.
+                correct: true
+                audioSrc: /audio/hr/cuvamo_nasu_pisanu_rijec.mp3
+              - text: Maslinovo ulje je zlatno.
+                correct: false
+                audioSrc: /audio/hr/maslinovo_ulje_je_zlatno.mp3
+              - text: Otok Krk ima bogatu baštinu.
+                correct: false
+                audioSrc: /audio/hr/otok_krk_ima_bogatu_bastinu.mp3
+              - text: Stari zapisi su vrlo vrijedni.
+                correct: false
+                audioSrc: /audio/hr/stari_zapisi_su_vrlo_vrijedni.mp3
+  - order: 50
+    legacyId: 50
+    title: Unit 50
+    description: Riječki karneval i Korzo (Rijeka Carnival & Korzo Capstone)
+    lessons:
+      - order: 1
+        legacyId: 197
+        kind: DISCOVERY
+        title: Karnevalska oprema
+        challenges:
+          - order: 1
+            legacyId: 834
+            type: SELECT
+            prompt: Which one of these is "Costume"?
+            grammarTags: []
+            options:
+              - text: Kostim
+                correct: true
+                imageSrc: /kostim.svg
+                audioSrc: /audio/hr/kostim.mp3
+              - text: Povorka
+                correct: false
+                imageSrc: /povorka.svg
+                audioSrc: /audio/hr/povorka.mp3
+              - text: Zvono
+                correct: false
+                imageSrc: /zvono.svg
+                audioSrc: /audio/hr/zvono.mp3
+              - text: Bubanj
+                correct: false
+                imageSrc: /bubanj.svg
+                audioSrc: /audio/hr/bubanj.mp3
+          - order: 2
+            legacyId: 835
+            type: SELECT
+            prompt: Which one of these is "Parade"?
+            grammarTags: []
+            options:
+              - text: Povorka
+                correct: true
+                imageSrc: /povorka.svg
+                audioSrc: /audio/hr/povorka.mp3
+              - text: Kostim
+                correct: false
+                imageSrc: /kostim.svg
+                audioSrc: /audio/hr/kostim.mp3
+              - text: Zvono
+                correct: false
+                imageSrc: /zvono.svg
+                audioSrc: /audio/hr/zvono.mp3
+              - text: Bubanj
+                correct: false
+                imageSrc: /bubanj.svg
+                audioSrc: /audio/hr/bubanj.mp3
+          - order: 3
+            legacyId: 836
+            type: SELECT
+            prompt: Which one of these is "Bell"?
+            grammarTags: []
+            options:
+              - text: Zvono
+                correct: true
+                imageSrc: /zvono.svg
+                audioSrc: /audio/hr/zvono.mp3
+              - text: Kostim
+                correct: false
+                imageSrc: /kostim.svg
+                audioSrc: /audio/hr/kostim.mp3
+              - text: Povorka
+                correct: false
+                imageSrc: /povorka.svg
+                audioSrc: /audio/hr/povorka.mp3
+              - text: Bubanj
+                correct: false
+                imageSrc: /bubanj.svg
+                audioSrc: /audio/hr/bubanj.mp3
+          - order: 4
+            legacyId: 837
+            type: SELECT
+            prompt: Which one of these is "Drum"?
+            grammarTags: []
+            options:
+              - text: Bubanj
+                correct: true
+                imageSrc: /bubanj.svg
+                audioSrc: /audio/hr/bubanj.mp3
+              - text: Zvono
+                correct: false
+                imageSrc: /zvono.svg
+                audioSrc: /audio/hr/zvono.mp3
+              - text: Povorka
+                correct: false
+                imageSrc: /povorka.svg
+                audioSrc: /audio/hr/povorka.mp3
+              - text: Kostim
+                correct: false
+                imageSrc: /kostim.svg
+                audioSrc: /audio/hr/kostim.mp3
+      - order: 2
+        legacyId: 198
+        kind: PHRASE_LISTEN
+        title: Povorka na Korzu
+        challenges:
+          - order: 1
+            legacyId: 838
+            type: ASSIST
+            prompt: 'Select the correct translation: "The colorful mask"'
+            grammarTags: []
+            options:
+              - text: Šarena maska
+                correct: true
+                audioSrc: /audio/hr/sarena_maska.mp3
+              - text: Velika povorka
+                correct: false
+                audioSrc: /audio/hr/velika_povorka.mp3
+              - text: Glasno zvono
+                correct: false
+                audioSrc: /audio/hr/glasno_zvono.mp3
+              - text: Veliki bubanj
+                correct: false
+                audioSrc: /audio/hr/veliki_bubanj.mp3
+          - order: 2
+            legacyId: 839
+            type: ASSIST
+            prompt: 'Select the correct translation: "The carnival parade passes through Korzo."'
+            grammarTags: []
+            options:
+              - text: Karnevalska povorka prolazi Korzom.
+                correct: true
+                audioSrc: /audio/hr/karnevalska_povorka_prolazi_korzom.mp3
+              - text: Svi nose šarene maske.
+                correct: false
+                audioSrc: /audio/hr/svi_nose_sarene_maske.mp3
+              - text: Zvončari glasno zvone zvonima.
+                correct: false
+                audioSrc: /audio/hr/zvoncari_glasno_zvone_zvonima.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+          - order: 3
+            legacyId: 840
+            type: ASSIST
+            prompt: 'Select the correct translation: "Everyone wears colorful masks."'
+            grammarTags: []
+            options:
+              - text: Svi nose šarene maske.
+                correct: true
+                audioSrc: /audio/hr/svi_nose_sarene_maske.mp3
+              - text: Karnevalska povorka prolazi Korzom.
+                correct: false
+                audioSrc: /audio/hr/karnevalska_povorka_prolazi_korzom.mp3
+              - text: Zvončari glasno zvone zvonima.
+                correct: false
+                audioSrc: /audio/hr/zvoncari_glasno_zvone_zvonima.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+          - order: 4
+            legacyId: 841
+            type: ASSIST
+            prompt: 'Select the correct translation: "The bellringers ring their bells loudly."'
+            grammarTags: []
+            options:
+              - text: Zvončari glasno zvone zvonima.
+                correct: true
+                audioSrc: /audio/hr/zvoncari_glasno_zvone_zvonima.mp3
+              - text: Karnevalska povorka prolazi Korzom.
+                correct: false
+                audioSrc: /audio/hr/karnevalska_povorka_prolazi_korzom.mp3
+              - text: Svi nose šarene maske.
+                correct: false
+                audioSrc: /audio/hr/svi_nose_sarene_maske.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+      - order: 3
+        legacyId: 199
+        kind: PRODUCTION
+        title: Glazba i radost
+        challenges:
+          - order: 1
+            legacyId: 842
+            type: ASSIST
+            prompt: 'Select the correct translation: "The drums give rhythm to the dance."'
+            grammarTags: []
+            options:
+              - text: Bubnjevi daju ritam plesu.
+                correct: true
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+              - text: Grad slavi uz glazbu.
+                correct: false
+                audioSrc: /audio/hr/grad_slavi_uz_glazbu.mp3
+              - text: Publika plješće veselim maskama.
+                correct: false
+                audioSrc: /audio/hr/publika_pljesce_veselim_maskama.mp3
+              - text: Konfeti padaju po ulici.
+                correct: false
+                audioSrc: /audio/hr/konfeti_padaju_po_ulici.mp3
+          - order: 2
+            legacyId: 843
+            type: ASSIST
+            prompt: 'Select the correct translation: "The city celebrates with music."'
+            grammarTags: []
+            options:
+              - text: Grad slavi uz glazbu.
+                correct: true
+                audioSrc: /audio/hr/grad_slavi_uz_glazbu.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+              - text: Publika plješće veselim maskama.
+                correct: false
+                audioSrc: /audio/hr/publika_pljesce_veselim_maskama.mp3
+              - text: Konfeti padaju po ulici.
+                correct: false
+                audioSrc: /audio/hr/konfeti_padaju_po_ulici.mp3
+          - order: 3
+            legacyId: 844
+            type: ASSIST
+            prompt: 'Select the correct translation: "The crowd applauds the cheerful masks."'
+            grammarTags: []
+            options:
+              - text: Publika plješće veselim maskama.
+                correct: true
+                audioSrc: /audio/hr/publika_pljesce_veselim_maskama.mp3
+              - text: Grad slavi uz glazbu.
+                correct: false
+                audioSrc: /audio/hr/grad_slavi_uz_glazbu.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+              - text: Konfeti padaju po ulici.
+                correct: false
+                audioSrc: /audio/hr/konfeti_padaju_po_ulici.mp3
+          - order: 4
+            legacyId: 845
+            type: ASSIST
+            prompt: 'Select the correct translation: "Confetti falls along the street."'
+            grammarTags: []
+            options:
+              - text: Konfeti padaju po ulici.
+                correct: true
+                audioSrc: /audio/hr/konfeti_padaju_po_ulici.mp3
+              - text: Grad slavi uz glazbu.
+                correct: false
+                audioSrc: /audio/hr/grad_slavi_uz_glazbu.mp3
+              - text: Publika plješće veselim maskama.
+                correct: false
+                audioSrc: /audio/hr/publika_pljesce_veselim_maskama.mp3
+              - text: Bubnjevi daju ritam plesu.
+                correct: false
+                audioSrc: /audio/hr/bubnjevi_daju_ritam_plesu.mp3
+      - order: 4
+        legacyId: 200
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Završno slavlje Kvarnera"
+        challenges:
+          - order: 1
+            legacyId: 846
+            type: ASSIST
+            prompt: 'Select the correct translation: "Korzo is full of joy."'
+            grammarTags: []
+            options:
+              - text: Korzo je pun radosti.
+                correct: true
+                audioSrc: /audio/hr/korzo_je_pun_radosti.mp3
+              - text: Tradicionalni zvončari tjeraju zimu.
+                correct: false
+                audioSrc: /audio/hr/tradicionalni_zvoncari_tjeraju_zimu.mp3
+              - text: Plešemo i pjevamo na karnevalu.
+                correct: false
+                audioSrc: /audio/hr/plesemo_i_pjevamo_na_karnevalu.mp3
+              - text: Rijeka slavi svoju tradiciju.
+                correct: false
+                audioSrc: /audio/hr/rijeka_slavi_svoju_tradiciju.mp3
+          - order: 2
+            legacyId: 847
+            type: ASSIST
+            prompt: 'Select the correct translation: "Traditional bellringers chase away winter."'
+            grammarTags: []
+            options:
+              - text: Tradicionalni zvončari tjeraju zimu.
+                correct: true
+                audioSrc: /audio/hr/tradicionalni_zvoncari_tjeraju_zimu.mp3
+              - text: Korzo je pun radosti.
+                correct: false
+                audioSrc: /audio/hr/korzo_je_pun_radosti.mp3
+              - text: Plešemo i pjevamo na karnevalu.
+                correct: false
+                audioSrc: /audio/hr/plesemo_i_pjevamo_na_karnevalu.mp3
+              - text: Rijeka slavi svoju tradiciju.
+                correct: false
+                audioSrc: /audio/hr/rijeka_slavi_svoju_tradiciju.mp3
+          - order: 3
+            legacyId: 848
+            type: ASSIST
+            prompt: 'Select the correct translation: "We dance and sing at the carnival."'
+            grammarTags: []
+            options:
+              - text: Plešemo i pjevamo na karnevalu.
+                correct: true
+                audioSrc: /audio/hr/plesemo_i_pjevamo_na_karnevalu.mp3
+              - text: Korzo je pun radosti.
+                correct: false
+                audioSrc: /audio/hr/korzo_je_pun_radosti.mp3
+              - text: Tradicionalni zvončari tjeraju zimu.
+                correct: false
+                audioSrc: /audio/hr/tradicionalni_zvoncari_tjeraju_zimu.mp3
+              - text: Rijeka slavi svoju tradiciju.
+                correct: false
+                audioSrc: /audio/hr/rijeka_slavi_svoju_tradiciju.mp3
+          - order: 4
+            legacyId: 849
+            type: ASSIST
+            prompt: 'Select the correct translation: "Congratulations, you have completed the tenth world!"'
+            grammarTags: []
+            options:
+              - text: Čestitamo, završili ste deseti svijet!
+                correct: true
+                audioSrc: /audio/hr/cestitamo_zavrsili_ste_deseti_svijet.mp3
+              - text: Korzo je pun radosti!
+                correct: false
+                audioSrc: /audio/hr/korzo_je_pun_radosti.mp3
+              - text: Plešemo i pjevamo na karnevalu!
+                correct: false
+                audioSrc: /audio/hr/plesemo_i_pjevamo_na_karnevalu.mp3
+              - text: Rijeka slavi svoju tradiciju!
+                correct: false
+                audioSrc: /audio/hr/rijeka_slavi_svoju_tradiciju.mp3

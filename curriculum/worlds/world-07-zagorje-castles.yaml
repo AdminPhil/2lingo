@@ -1,0 +1,1665 @@
+schemaVersion: 2
+worldOrder: 7
+levelOrder: 2
+slug: zagorje-castles
+name: Zagorje Castles
+badgeLabel: "World 7: Zagorje Castles • Fairy Tale Hills & Legends"
+cefrBand: A2.1
+theme:
+  solidBg: bg-purple-800
+  gradient: from-purple-900 via-fuchsia-800 to-emerald-800
+  badgeBg: bg-black/25 text-white border-white/40
+  accentEmoji: 🏰
+  buttonClass: bg-white text-purple-950 hover:bg-purple-50 border-purple-300
+  accentBorder: border-purple-400/50
+  nodeActiveBg: bg-purple-600 hover:bg-purple-600/90 border-purple-800 active:border-b-0 text-white
+  nodeBorderColor: border-purple-800
+  nodeStrokeColor: "#9333ea"
+  nodeBadgeClasses: bg-white text-purple-700 border-purple-500
+  nodeArrowBorder: border-t-purple-500
+units:
+  - order: 31
+    legacyId: 31
+    title: Unit 31
+    description: Vrata dvorca (The Castle Gates)
+    lessons:
+      - order: 1
+        legacyId: 121
+        kind: DISCOVERY
+        title: Dvorac i kula
+        challenges:
+          - order: 1
+            legacyId: 530
+            type: SELECT
+            prompt: Which one of these is "Castle"?
+            grammarTags: []
+            options:
+              - text: Dvorac
+                correct: true
+                imageSrc: /dvorac.svg
+                audioSrc: /audio/hr/dvorac.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 2
+            legacyId: 531
+            type: SELECT
+            prompt: Which one of these is "Tower"?
+            grammarTags: []
+            options:
+              - text: Kula
+                correct: true
+                imageSrc: /kula.svg
+                audioSrc: /audio/hr/kula.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Mlijeko
+                correct: false
+                imageSrc: /milk.svg
+                audioSrc: /audio/hr/mlijeko.mp3
+              - text: Sir
+                correct: false
+                imageSrc: /cheese.svg
+                audioSrc: /audio/hr/sir.mp3
+          - order: 3
+            legacyId: 532
+            type: SELECT
+            prompt: Which one of these is "Key"?
+            grammarTags: []
+            options:
+              - text: Ključ
+                correct: true
+                imageSrc: /kljuc.svg
+                audioSrc: /audio/hr/kljuc.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+              - text: Knjiga
+                correct: false
+                imageSrc: /book.svg
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+          - order: 4
+            legacyId: 533
+            type: SELECT
+            prompt: Which one of these is "Bridge"?
+            grammarTags: []
+            options:
+              - text: Most
+                correct: true
+                imageSrc: /most.svg
+                audioSrc: /audio/hr/most.mp3
+              - text: Dvorac
+                correct: false
+                imageSrc: /dvorac.svg
+                audioSrc: /audio/hr/dvorac.mp3
+              - text: Kula
+                correct: false
+                imageSrc: /kula.svg
+                audioSrc: /audio/hr/kula.mp3
+              - text: Ključ
+                correct: false
+                imageSrc: /kljuc.svg
+                audioSrc: /audio/hr/kljuc.mp3
+      - order: 2
+        legacyId: 122
+        kind: PHRASE_LISTEN
+        title: Otvaranje vrata
+        challenges:
+          - order: 1
+            legacyId: 534
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Castle"'
+            grammarTags: []
+            options:
+              - text: Dvorac
+                correct: true
+                audioSrc: /audio/hr/dvorac.mp3
+              - text: Kula
+                correct: false
+                audioSrc: /audio/hr/kula.mp3
+              - text: Ključ
+                correct: false
+                audioSrc: /audio/hr/kljuc.mp3
+              - text: Most
+                correct: false
+                audioSrc: /audio/hr/most.mp3
+          - order: 2
+            legacyId: 535
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Golden key"'
+            grammarTags: []
+            options:
+              - text: Zlatni ključ
+                correct: true
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Stara kula
+                correct: false
+                audioSrc: /audio/hr/stara_kula.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 3
+            legacyId: 536
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Old tower"'
+            grammarTags: []
+            options:
+              - text: Stara kula
+                correct: true
+                audioSrc: /audio/hr/stara_kula.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Zlatni ključ
+                correct: false
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 4
+            legacyId: 537
+            type: ASSIST
+            prompt: 'Translate to Croatian: "I am opening the door."'
+            grammarTags: []
+            options:
+              - text: Otvaram vrata.
+                correct: true
+                audioSrc: /audio/hr/otvaram_vrata.mp3
+              - text: Ulazimo u dvorac.
+                correct: false
+                audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
+              - text: Prelazimo preko mosta.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+      - order: 3
+        legacyId: 123
+        kind: PRODUCTION
+        title: Ulazak u dvorac
+        challenges:
+          - order: 1
+            legacyId: 538
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Big castle"'
+            grammarTags: []
+            options:
+              - text: Veliki dvorac
+                correct: true
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Stara kula
+                correct: false
+                audioSrc: /audio/hr/stara_kula.mp3
+              - text: Zlatni ključ
+                correct: false
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 2
+            legacyId: 539
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Where is the castle?"'
+            grammarTags: []
+            options:
+              - text: Gdje je dvorac?
+                correct: true
+                audioSrc: /audio/hr/gdje_je_dvorac.mp3
+              - text: Gdje je kula?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_kula.mp3
+              - text: Gdje je soba?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_soba.mp3
+              - text: Gdje je knjiga?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_knjiga.mp3
+          - order: 3
+            legacyId: 540
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are entering the castle."'
+            grammarTags: []
+            options:
+              - text: Ulazimo u dvorac.
+                correct: true
+                audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
+              - text: Otvaram vrata.
+                correct: false
+                audioSrc: /audio/hr/otvaram_vrata.mp3
+              - text: Prelazimo preko mosta.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+          - order: 4
+            legacyId: 541
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are crossing over the bridge."'
+            grammarTags: []
+            options:
+              - text: Prelazimo preko mosta.
+                correct: true
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+              - text: Ulazimo u dvorac.
+                correct: false
+                audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
+              - text: Otvaram vrata.
+                correct: false
+                audioSrc: /audio/hr/otvaram_vrata.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+      - order: 4
+        legacyId: 124
+        kind: BOSS_CAPSTONE
+        title: Tajna Trakošćana
+        challenges:
+          - order: 1
+            legacyId: 542
+            type: ASSIST
+            prompt: 'Translate to Croatian: "I open the heavy door with a key."'
+            grammarTags: []
+            options:
+              - text: Otvaram teška vrata ključem.
+                correct: true
+                audioSrc: /audio/hr/otvaram_teska_vrata_kljucem.mp3
+              - text: Dvorac Trakošćan je prekrasan.
+                correct: false
+                audioSrc: /audio/hr/dvorac_trakoscan_je_prekrasan.mp3
+              - text: Prelazimo preko mosta.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+          - order: 2
+            legacyId: 543
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Trakošćan castle is gorgeous."'
+            grammarTags: []
+            options:
+              - text: Dvorac Trakošćan je prekrasan.
+                correct: true
+                audioSrc: /audio/hr/dvorac_trakoscan_je_prekrasan.mp3
+              - text: Otvaram teška vrata ključem.
+                correct: false
+                audioSrc: /audio/hr/otvaram_teska_vrata_kljucem.mp3
+              - text: Velika gozba je na stolu.
+                correct: false
+                audioSrc: /audio/hr/velika_gozba_je_na_stolu.mp3
+              - text: Zastava se vijori na kuli.
+                correct: false
+                audioSrc: /audio/hr/zastava_se_vijori_na_kuli.mp3
+          - order: 3
+            legacyId: 544
+            type: ASSIST
+            prompt: 'Translate to Croatian: "I see a tall tower."'
+            grammarTags: []
+            options:
+              - text: Vidim visoku kulu.
+                correct: true
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+              - text: Ulazimo u dvorac.
+                correct: false
+                audioSrc: /audio/hr/ulazimo_u_dvorac.mp3
+              - text: Otvaram teška vrata ključem.
+                correct: false
+                audioSrc: /audio/hr/otvaram_teska_vrata_kljucem.mp3
+              - text: Prelazimo preko mosta.
+                correct: false
+                audioSrc: /audio/hr/prelazimo_preko_mosta.mp3
+          - order: 4
+            legacyId: 545
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The castle is near."'
+            grammarTags: []
+            options:
+              - text: Dvorac je blizu.
+                correct: true
+                audioSrc: /audio/hr/dvorac_je_blizu.mp3
+              - text: Kula je daleko.
+                correct: false
+                audioSrc: /audio/hr/kula_je_daleko.mp3
+              - text: Vidim visoku kulu.
+                correct: false
+                audioSrc: /audio/hr/vidim_visoku_kulu.mp3
+              - text: Dvorac Trakošćan je prekrasan.
+                correct: false
+                audioSrc: /audio/hr/dvorac_trakoscan_je_prekrasan.mp3
+  - order: 32
+    legacyId: 32
+    title: Unit 32
+    description: Vitezovi i legende (Knights & Legends)
+    lessons:
+      - order: 1
+        legacyId: 125
+        kind: DISCOVERY
+        title: Viteški oklop
+        challenges:
+          - order: 1
+            legacyId: 546
+            type: SELECT
+            prompt: Which one of these is "Knight"?
+            grammarTags: []
+            options:
+              - text: Vitez
+                correct: true
+                imageSrc: /vitez.svg
+                audioSrc: /audio/hr/vitez.mp3
+              - text: Dvorac
+                correct: false
+                imageSrc: /dvorac.svg
+                audioSrc: /audio/hr/dvorac.mp3
+              - text: Kula
+                correct: false
+                imageSrc: /kula.svg
+                audioSrc: /audio/hr/kula.mp3
+              - text: Most
+                correct: false
+                imageSrc: /most.svg
+                audioSrc: /audio/hr/most.mp3
+          - order: 2
+            legacyId: 547
+            type: SELECT
+            prompt: Which one of these is "Shield"?
+            grammarTags: []
+            options:
+              - text: Štit
+                correct: true
+                imageSrc: /stit.svg
+                audioSrc: /audio/hr/stit.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+          - order: 3
+            legacyId: 548
+            type: SELECT
+            prompt: Which one of these is "Sword"?
+            grammarTags: []
+            options:
+              - text: Mač
+                correct: true
+                imageSrc: /mac.svg
+                audioSrc: /audio/hr/mac.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+              - text: Knjiga
+                correct: false
+                imageSrc: /book.svg
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+          - order: 4
+            legacyId: 549
+            type: SELECT
+            prompt: Which one of these is "Flag"?
+            grammarTags: []
+            options:
+              - text: Zastava
+                correct: true
+                imageSrc: /zastava.svg
+                audioSrc: /audio/hr/zastava.mp3
+              - text: Vitez
+                correct: false
+                imageSrc: /vitez.svg
+                audioSrc: /audio/hr/vitez.mp3
+              - text: Štit
+                correct: false
+                imageSrc: /stit.svg
+                audioSrc: /audio/hr/stit.mp3
+              - text: Mač
+                correct: false
+                imageSrc: /mac.svg
+                audioSrc: /audio/hr/mac.mp3
+      - order: 2
+        legacyId: 126
+        kind: PHRASE_LISTEN
+        title: Obrane i dvorac
+        challenges:
+          - order: 1
+            legacyId: 550
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Brave knight"'
+            grammarTags: []
+            options:
+              - text: Hrabri vitez
+                correct: true
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+              - text: Sjajni mač
+                correct: false
+                audioSrc: /audio/hr/sjajni_mac.mp3
+              - text: Hrvatska zastava
+                correct: false
+                audioSrc: /audio/hr/hrvatska_zastava.mp3
+              - text: Zlatni ključ
+                correct: false
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+          - order: 2
+            legacyId: 551
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Shining sword"'
+            grammarTags: []
+            options:
+              - text: Sjajni mač
+                correct: true
+                audioSrc: /audio/hr/sjajni_mac.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+              - text: Hrvatska zastava
+                correct: false
+                audioSrc: /audio/hr/hrvatska_zastava.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+          - order: 3
+            legacyId: 552
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Croatian flag"'
+            grammarTags: []
+            options:
+              - text: Hrvatska zastava
+                correct: true
+                audioSrc: /audio/hr/hrvatska_zastava.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+              - text: Sjajni mač
+                correct: false
+                audioSrc: /audio/hr/sjajni_mac.mp3
+              - text: Stara kula
+                correct: false
+                audioSrc: /audio/hr/stara_kula.mp3
+          - order: 4
+            legacyId: 553
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The knight guards the castle."'
+            grammarTags: []
+            options:
+              - text: Vitez čuva dvorac.
+                correct: true
+                audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
+              - text: Hrabri vitez nosi štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+              - text: Zastava se vijori na kuli.
+                correct: false
+                audioSrc: /audio/hr/zastava_se_vijori_na_kuli.mp3
+              - text: Slušamo staru legendu o vitezu.
+                correct: false
+                audioSrc: /audio/hr/slusamo_staru_legendu_o_vitezu.mp3
+      - order: 3
+        legacyId: 127
+        kind: PRODUCTION
+        title: Viteški štit
+        challenges:
+          - order: 1
+            legacyId: 554
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Shield"'
+            grammarTags: []
+            options:
+              - text: Štit
+                correct: true
+                audioSrc: /audio/hr/stit.mp3
+              - text: Mač
+                correct: false
+                audioSrc: /audio/hr/mac.mp3
+              - text: Vitez
+                correct: false
+                audioSrc: /audio/hr/vitez.mp3
+              - text: Zastava
+                correct: false
+                audioSrc: /audio/hr/zastava.mp3
+          - order: 2
+            legacyId: 555
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Flag"'
+            grammarTags: []
+            options:
+              - text: Zastava
+                correct: true
+                audioSrc: /audio/hr/zastava.mp3
+              - text: Štit
+                correct: false
+                audioSrc: /audio/hr/stit.mp3
+              - text: Mač
+                correct: false
+                audioSrc: /audio/hr/mac.mp3
+              - text: Vitez
+                correct: false
+                audioSrc: /audio/hr/vitez.mp3
+          - order: 3
+            legacyId: 556
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The brave knight carries a shield."'
+            grammarTags: []
+            options:
+              - text: Hrabri vitez nosi štit.
+                correct: true
+                audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+              - text: Vitez čuva dvorac.
+                correct: false
+                audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
+              - text: Zastava se vijori na kuli.
+                correct: false
+                audioSrc: /audio/hr/zastava_se_vijori_na_kuli.mp3
+              - text: Slušamo staru legendu o vitezu.
+                correct: false
+                audioSrc: /audio/hr/slusamo_staru_legendu_o_vitezu.mp3
+          - order: 4
+            legacyId: 557
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The flag flutters on the tower."'
+            grammarTags: []
+            options:
+              - text: Zastava se vijori na kuli.
+                correct: true
+                audioSrc: /audio/hr/zastava_se_vijori_na_kuli.mp3
+              - text: Vitez čuva dvorac.
+                correct: false
+                audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
+              - text: Hrabri vitez nosi štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+              - text: Slušamo staru legendu o vitezu.
+                correct: false
+                audioSrc: /audio/hr/slusamo_staru_legendu_o_vitezu.mp3
+      - order: 4
+        legacyId: 128
+        kind: BOSS_CAPSTONE
+        title: Legende Velikog Tabora
+        challenges:
+          - order: 1
+            legacyId: 558
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are listening to an old legend about a knight."'
+            grammarTags: []
+            options:
+              - text: Slušamo staru legendu o vitezu.
+                correct: true
+                audioSrc: /audio/hr/slusamo_staru_legendu_o_vitezu.mp3
+              - text: Vitez čuva dvorac.
+                correct: false
+                audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
+              - text: Hrabri vitez nosi štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+              - text: Zastava se vijori na kuli.
+                correct: false
+                audioSrc: /audio/hr/zastava_se_vijori_na_kuli.mp3
+          - order: 2
+            legacyId: 559
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To guard"'
+            grammarTags: []
+            options:
+              - text: Čuvati
+                correct: true
+                audioSrc: /audio/hr/cuvati.mp3
+              - text: Braniti
+                correct: false
+                audioSrc: /audio/hr/braniti.mp3
+              - text: Otvoriti
+                correct: false
+                audioSrc: /audio/hr/otvoriti.mp3
+              - text: Ući
+                correct: false
+                audioSrc: /audio/hr/uci.mp3
+          - order: 3
+            legacyId: 560
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To defend"'
+            grammarTags: []
+            options:
+              - text: Braniti
+                correct: true
+                audioSrc: /audio/hr/braniti.mp3
+              - text: Čuvati
+                correct: false
+                audioSrc: /audio/hr/cuvati.mp3
+              - text: Otvoriti
+                correct: false
+                audioSrc: /audio/hr/otvoriti.mp3
+              - text: Ući
+                correct: false
+                audioSrc: /audio/hr/uci.mp3
+          - order: 4
+            legacyId: 561
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We saw a brave knight."'
+            grammarTags: []
+            options:
+              - text: Vidjeli smo hrabrog viteza.
+                correct: true
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Slušamo staru legendu o vitezu.
+                correct: false
+                audioSrc: /audio/hr/slusamo_staru_legendu_o_vitezu.mp3
+              - text: Vitez čuva dvorac.
+                correct: false
+                audioSrc: /audio/hr/vitez_cuva_dvorac.mp3
+              - text: Hrabri vitez nosi štit.
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez_nosi_stit.mp3
+  - order: 33
+    legacyId: 33
+    title: Unit 33
+    description: "Kroz dvorac: Lijevo i desno (Directions & Castle Halls)"
+    lessons:
+      - order: 1
+        legacyId: 129
+        kind: DISCOVERY
+        title: Dvorane i sobe
+        challenges:
+          - order: 1
+            legacyId: 562
+            type: SELECT
+            prompt: Which one of these is "Left"?
+            grammarTags: []
+            options:
+              - text: Lijevo
+                correct: true
+                imageSrc: /lijevo.svg
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Desno
+                correct: false
+                imageSrc: /desno.svg
+                audioSrc: /audio/hr/desno.mp3
+              - text: Ravno
+                correct: false
+                imageSrc: /ravno.svg
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Gore
+                correct: false
+                imageSrc: /gore.svg
+                audioSrc: /audio/hr/gore.mp3
+          - order: 2
+            legacyId: 563
+            type: SELECT
+            prompt: Which one of these is "Right"?
+            grammarTags: []
+            options:
+              - text: Desno
+                correct: true
+                imageSrc: /desno.svg
+                audioSrc: /audio/hr/desno.mp3
+              - text: Lijevo
+                correct: false
+                imageSrc: /lijevo.svg
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Ravno
+                correct: false
+                imageSrc: /ravno.svg
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Gore
+                correct: false
+                imageSrc: /gore.svg
+                audioSrc: /audio/hr/gore.mp3
+          - order: 3
+            legacyId: 564
+            type: SELECT
+            prompt: Which one of these is "Straight"?
+            grammarTags: []
+            options:
+              - text: Ravno
+                correct: true
+                imageSrc: /ravno.svg
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Lijevo
+                correct: false
+                imageSrc: /lijevo.svg
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Desno
+                correct: false
+                imageSrc: /desno.svg
+                audioSrc: /audio/hr/desno.mp3
+              - text: Gore
+                correct: false
+                imageSrc: /gore.svg
+                audioSrc: /audio/hr/gore.mp3
+          - order: 4
+            legacyId: 565
+            type: SELECT
+            prompt: Which one of these is "Up"?
+            grammarTags: []
+            options:
+              - text: Gore
+                correct: true
+                imageSrc: /gore.svg
+                audioSrc: /audio/hr/gore.mp3
+              - text: Lijevo
+                correct: false
+                imageSrc: /lijevo.svg
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Desno
+                correct: false
+                imageSrc: /desno.svg
+                audioSrc: /audio/hr/desno.mp3
+              - text: Ravno
+                correct: false
+                imageSrc: /ravno.svg
+                audioSrc: /audio/hr/ravno.mp3
+      - order: 2
+        legacyId: 130
+        kind: PHRASE_LISTEN
+        title: Lijevo i desno
+        challenges:
+          - order: 1
+            legacyId: 566
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Left"'
+            grammarTags: []
+            options:
+              - text: Lijevo
+                correct: true
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Desno
+                correct: false
+                audioSrc: /audio/hr/desno.mp3
+              - text: Ravno
+                correct: false
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Gore
+                correct: false
+                audioSrc: /audio/hr/gore.mp3
+          - order: 2
+            legacyId: 567
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Right"'
+            grammarTags: []
+            options:
+              - text: Desno
+                correct: true
+                audioSrc: /audio/hr/desno.mp3
+              - text: Lijevo
+                correct: false
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Ravno
+                correct: false
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Gore
+                correct: false
+                audioSrc: /audio/hr/gore.mp3
+          - order: 3
+            legacyId: 568
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Straight"'
+            grammarTags: []
+            options:
+              - text: Ravno
+                correct: true
+                audioSrc: /audio/hr/ravno.mp3
+              - text: Lijevo
+                correct: false
+                audioSrc: /audio/hr/lijevo.mp3
+              - text: Desno
+                correct: false
+                audioSrc: /audio/hr/desno.mp3
+              - text: Gore
+                correct: false
+                audioSrc: /audio/hr/gore.mp3
+          - order: 4
+            legacyId: 569
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Turn left."'
+            grammarTags: []
+            options:
+              - text: Skreni lijevo.
+                correct: true
+                audioSrc: /audio/hr/skreni_lijevo.mp3
+              - text: Skreni desno.
+                correct: false
+                audioSrc: /audio/hr/skreni_desno.mp3
+              - text: Idi ravno.
+                correct: false
+                audioSrc: /audio/hr/idi_ravno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+      - order: 3
+        legacyId: 131
+        kind: PRODUCTION
+        title: Kroz prolaze dvorca
+        challenges:
+          - order: 1
+            legacyId: 570
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Turn right."'
+            grammarTags: []
+            options:
+              - text: Skreni desno.
+                correct: true
+                audioSrc: /audio/hr/skreni_desno.mp3
+              - text: Skreni lijevo.
+                correct: false
+                audioSrc: /audio/hr/skreni_lijevo.mp3
+              - text: Idi ravno.
+                correct: false
+                audioSrc: /audio/hr/idi_ravno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+          - order: 2
+            legacyId: 571
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Go straight."'
+            grammarTags: []
+            options:
+              - text: Idi ravno.
+                correct: true
+                audioSrc: /audio/hr/idi_ravno.mp3
+              - text: Skreni lijevo.
+                correct: false
+                audioSrc: /audio/hr/skreni_lijevo.mp3
+              - text: Skreni desno.
+                correct: false
+                audioSrc: /audio/hr/skreni_desno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+          - order: 3
+            legacyId: 572
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are going straight then right."'
+            grammarTags: []
+            options:
+              - text: Idemo ravno pa desno.
+                correct: true
+                audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+              - text: Tražimo tajni prolaz.
+                correct: false
+                audioSrc: /audio/hr/trazimo_tajni_prolaz.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+          - order: 4
+            legacyId: 573
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are climbing up."'
+            grammarTags: []
+            options:
+              - text: Penjemo se gore.
+                correct: true
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+              - text: Idemo ravno pa desno.
+                correct: false
+                audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+              - text: Tražimo tajni prolaz.
+                correct: false
+                audioSrc: /audio/hr/trazimo_tajni_prolaz.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+      - order: 4
+        legacyId: 132
+        kind: BOSS_CAPSTONE
+        title: Tajni prolaz
+        challenges:
+          - order: 1
+            legacyId: 574
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We are searching for the secret passage."'
+            grammarTags: []
+            options:
+              - text: Tražimo tajni prolaz.
+                correct: true
+                audioSrc: /audio/hr/trazimo_tajni_prolaz.mp3
+              - text: Idemo ravno pa desno.
+                correct: false
+                audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+              - text: Otvaram teška vrata ključem.
+                correct: false
+                audioSrc: /audio/hr/otvaram_teska_vrata_kljucem.mp3
+          - order: 2
+            legacyId: 575
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To turn"'
+            grammarTags: []
+            options:
+              - text: Skrenuti
+                correct: true
+                audioSrc: /audio/hr/skrenuti.mp3
+              - text: Tražiti
+                correct: false
+                audioSrc: /audio/hr/traziti.mp3
+              - text: Otvoriti
+                correct: false
+                audioSrc: /audio/hr/otvoriti.mp3
+              - text: Ući
+                correct: false
+                audioSrc: /audio/hr/uci.mp3
+          - order: 3
+            legacyId: 576
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To search"'
+            grammarTags: []
+            options:
+              - text: Tražiti
+                correct: true
+                audioSrc: /audio/hr/traziti.mp3
+              - text: Skrenuti
+                correct: false
+                audioSrc: /audio/hr/skrenuti.mp3
+              - text: Otvoriti
+                correct: false
+                audioSrc: /audio/hr/otvoriti.mp3
+              - text: Ući
+                correct: false
+                audioSrc: /audio/hr/uci.mp3
+          - order: 4
+            legacyId: 577
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We went into the great hall."'
+            grammarTags: []
+            options:
+              - text: Išli smo u veliku dvoranu.
+                correct: true
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+              - text: Tražimo tajni prolaz.
+                correct: false
+                audioSrc: /audio/hr/trazimo_tajni_prolaz.mp3
+              - text: Penjemo se gore.
+                correct: false
+                audioSrc: /audio/hr/penjemo_se_gore.mp3
+              - text: Idemo ravno pa desno.
+                correct: false
+                audioSrc: /audio/hr/idemo_ravno_pa_desno.mp3
+  - order: 34
+    legacyId: 34
+    title: Unit 34
+    description: Drvene igračke i licitari (UNESCO Folk Crafts)
+    lessons:
+      - order: 1
+        legacyId: 133
+        kind: DISCOVERY
+        title: Zagorski obrt
+        challenges:
+          - order: 1
+            legacyId: 578
+            type: SELECT
+            prompt: Which one of these is "Toy"?
+            grammarTags: []
+            options:
+              - text: Igračka
+                correct: true
+                imageSrc: /igracka.svg
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Most
+                correct: false
+                imageSrc: /most.svg
+                audioSrc: /audio/hr/most.mp3
+              - text: Knjiga
+                correct: false
+                imageSrc: /book.svg
+                audioSrc: /audio/hr/knjiga.mp3
+          - order: 2
+            legacyId: 579
+            type: SELECT
+            prompt: Which one of these is "Little wooden horse"?
+            grammarTags: []
+            options:
+              - text: Konjić
+                correct: true
+                imageSrc: /konjic.svg
+                audioSrc: /audio/hr/konjic.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Jabuka
+                correct: false
+                imageSrc: /apple.svg
+                audioSrc: /audio/hr/jabuka.mp3
+          - order: 3
+            legacyId: 580
+            type: SELECT
+            prompt: Which one of these is "Tree / Wood"?
+            grammarTags: []
+            options:
+              - text: Drvo
+                correct: true
+                imageSrc: /drvo.svg
+                audioSrc: /audio/hr/drvo.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+              - text: Sir
+                correct: false
+                imageSrc: /cheese.svg
+                audioSrc: /audio/hr/sir.mp3
+          - order: 4
+            legacyId: 581
+            type: SELECT
+            prompt: Which one of these is "Heart"?
+            grammarTags: []
+            options:
+              - text: Srce
+                correct: true
+                imageSrc: /srce.svg
+                audioSrc: /audio/hr/srce.mp3
+              - text: Igračka
+                correct: false
+                imageSrc: /igracka.svg
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Konjić
+                correct: false
+                imageSrc: /konjic.svg
+                audioSrc: /audio/hr/konjic.mp3
+              - text: Drvo
+                correct: false
+                imageSrc: /drvo.svg
+                audioSrc: /audio/hr/drvo.mp3
+      - order: 2
+        legacyId: 134
+        kind: PHRASE_LISTEN
+        title: Boje i drvo
+        challenges:
+          - order: 1
+            legacyId: 582
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Wooden toy"'
+            grammarTags: []
+            options:
+              - text: Drvena igračka
+                correct: true
+                audioSrc: /audio/hr/drvena_igracka.mp3
+              - text: Drveni konjić
+                correct: false
+                audioSrc: /audio/hr/drveni_konjic.mp3
+              - text: Crveno srce
+                correct: false
+                audioSrc: /audio/hr/crveno_srce.mp3
+              - text: Zlatni ključ
+                correct: false
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+          - order: 2
+            legacyId: 583
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Wooden horse"'
+            grammarTags: []
+            options:
+              - text: Drveni konjić
+                correct: true
+                audioSrc: /audio/hr/drveni_konjic.mp3
+              - text: Drvena igračka
+                correct: false
+                audioSrc: /audio/hr/drvena_igracka.mp3
+              - text: Crveno srce
+                correct: false
+                audioSrc: /audio/hr/crveno_srce.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+          - order: 3
+            legacyId: 584
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Red heart"'
+            grammarTags: []
+            options:
+              - text: Crveno srce
+                correct: true
+                audioSrc: /audio/hr/crveno_srce.mp3
+              - text: Drvena igračka
+                correct: false
+                audioSrc: /audio/hr/drvena_igracka.mp3
+              - text: Drveni konjić
+                correct: false
+                audioSrc: /audio/hr/drveni_konjic.mp3
+              - text: Zlatna kruna
+                correct: false
+                audioSrc: /audio/hr/zlatna_kruna.mp3
+          - order: 4
+            legacyId: 585
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We paint the wooden horse."'
+            grammarTags: []
+            options:
+              - text: Bojamo drvenog konjića.
+                correct: true
+                audioSrc: /audio/hr/bojamo_drvenog_konjica.mp3
+              - text: Darujem slatko licitarsko srce.
+                correct: false
+                audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+              - text: Majstor izrađuje drvene igračke.
+                correct: false
+                audioSrc: /audio/hr/majstor_izraduje_drvene_igracke.mp3
+              - text: Tržnica je puna šarenih igračaka.
+                correct: false
+                audioSrc: /audio/hr/trznica_je_puna_sarenih_igracaka.mp3
+      - order: 3
+        legacyId: 135
+        kind: PRODUCTION
+        title: Licitarsko srce
+        challenges:
+          - order: 1
+            legacyId: 586
+            type: ASSIST
+            prompt: 'Translate to Croatian: "I gift a sweet licitar heart."'
+            grammarTags: []
+            options:
+              - text: Darujem slatko licitarsko srce.
+                correct: true
+                audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+              - text: Bojamo drvenog konjića.
+                correct: false
+                audioSrc: /audio/hr/bojamo_drvenog_konjica.mp3
+              - text: Majstor izrađuje drvene igračke.
+                correct: false
+                audioSrc: /audio/hr/majstor_izraduje_drvene_igracke.mp3
+              - text: Tržnica je puna šarenih igračaka.
+                correct: false
+                audioSrc: /audio/hr/trznica_je_puna_sarenih_igracaka.mp3
+          - order: 2
+            legacyId: 587
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To paint"'
+            grammarTags: []
+            options:
+              - text: Bojati
+                correct: true
+                audioSrc: /audio/hr/bojati.mp3
+              - text: Darovati
+                correct: false
+                audioSrc: /audio/hr/darovati.mp3
+              - text: Čuvati
+                correct: false
+                audioSrc: /audio/hr/cuvati.mp3
+              - text: Braniti
+                correct: false
+                audioSrc: /audio/hr/braniti.mp3
+          - order: 3
+            legacyId: 588
+            type: ASSIST
+            prompt: 'Translate to Croatian: "To gift"'
+            grammarTags: []
+            options:
+              - text: Darovati
+                correct: true
+                audioSrc: /audio/hr/darovati.mp3
+              - text: Bojati
+                correct: false
+                audioSrc: /audio/hr/bojati.mp3
+              - text: Čuvati
+                correct: false
+                audioSrc: /audio/hr/cuvati.mp3
+              - text: Braniti
+                correct: false
+                audioSrc: /audio/hr/braniti.mp3
+          - order: 4
+            legacyId: 589
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Where is the toy?"'
+            grammarTags: []
+            options:
+              - text: Gdje je igračka?
+                correct: true
+                audioSrc: /audio/hr/gdje_je_igracka.mp3
+              - text: Gdje je dvorac?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_dvorac.mp3
+              - text: Gdje je kula?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_kula.mp3
+              - text: Gdje je knjiga?
+                correct: false
+                audioSrc: /audio/hr/gdje_je_knjiga.mp3
+      - order: 4
+        legacyId: 136
+        kind: BOSS_CAPSTONE
+        title: Marija Bistrica
+        challenges:
+          - order: 1
+            legacyId: 590
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The craftsman crafts wooden toys."'
+            grammarTags: []
+            options:
+              - text: Majstor izrađuje drvene igračke.
+                correct: true
+                audioSrc: /audio/hr/majstor_izraduje_drvene_igracke.mp3
+              - text: Tržnica je puna šarenih igračaka.
+                correct: false
+                audioSrc: /audio/hr/trznica_je_puna_sarenih_igracaka.mp3
+              - text: Bojamo drvenog konjića.
+                correct: false
+                audioSrc: /audio/hr/bojamo_drvenog_konjica.mp3
+              - text: Darujem slatko licitarsko srce.
+                correct: false
+                audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+          - order: 2
+            legacyId: 591
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The market is full of colorful toys."'
+            grammarTags: []
+            options:
+              - text: Tržnica je puna šarenih igračaka.
+                correct: true
+                audioSrc: /audio/hr/trznica_je_puna_sarenih_igracaka.mp3
+              - text: Majstor izrađuje drvene igračke.
+                correct: false
+                audioSrc: /audio/hr/majstor_izraduje_drvene_igracke.mp3
+              - text: Bojamo drvenog konjića.
+                correct: false
+                audioSrc: /audio/hr/bojamo_drvenog_konjica.mp3
+              - text: Darujem slatko licitarsko srce.
+                correct: false
+                audioSrc: /audio/hr/darujem_slatko_licitarsko_srce.mp3
+          - order: 3
+            legacyId: 592
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Toy"'
+            grammarTags: []
+            options:
+              - text: Igračka
+                correct: true
+                audioSrc: /audio/hr/igracka.mp3
+              - text: Konjić
+                correct: false
+                audioSrc: /audio/hr/konjic.mp3
+              - text: Drvo
+                correct: false
+                audioSrc: /audio/hr/drvo.mp3
+              - text: Srce
+                correct: false
+                audioSrc: /audio/hr/srce.mp3
+          - order: 4
+            legacyId: 593
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We visited the castles of Zagorje."'
+            grammarTags: []
+            options:
+              - text: Posjetili smo dvorce Zagorja.
+                correct: true
+                audioSrc: /audio/hr/posjetili_smo_dvorce_zagorja.mp3
+              - text: Naučili smo važne hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/naucili_smo_vazne_hrvatske_rijeci.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+              - text: Ponosno nastavljamo naše putovanje.
+                correct: false
+                audioSrc: /audio/hr/ponosno_nastavljamo_nase_putovanje.mp3
+  - order: 35
+    legacyId: 35
+    title: Unit 35
+    description: Kraljevska gozba (Past Tense Capstone & Banquet)
+    lessons:
+      - order: 1
+        legacyId: 137
+        kind: DISCOVERY
+        title: Dvorana za gozbu
+        challenges:
+          - order: 1
+            legacyId: 594
+            type: SELECT
+            prompt: Which one of these is "Feast / Banquet"?
+            grammarTags: []
+            options:
+              - text: Gozba
+                correct: true
+                imageSrc: /gozba.svg
+                audioSrc: /audio/hr/gozba.mp3
+              - text: Kuća
+                correct: false
+                imageSrc: /house.svg
+                audioSrc: /audio/hr/kuca.mp3
+              - text: Voda
+                correct: false
+                imageSrc: /water.svg
+                audioSrc: /audio/hr/voda.mp3
+              - text: Kruh
+                correct: false
+                imageSrc: /bread.svg
+                audioSrc: /audio/hr/kruh.mp3
+          - order: 2
+            legacyId: 595
+            type: SELECT
+            prompt: Which one of these is "Crown"?
+            grammarTags: []
+            options:
+              - text: Kruna
+                correct: true
+                imageSrc: /kruna.svg
+                audioSrc: /audio/hr/kruna.mp3
+              - text: Kapa
+                correct: false
+                imageSrc: /hat.svg
+                audioSrc: /audio/hr/kapa.mp3
+              - text: Knjiga
+                correct: false
+                imageSrc: /book.svg
+                audioSrc: /audio/hr/knjiga.mp3
+              - text: Lopta
+                correct: false
+                imageSrc: /ball.svg
+                audioSrc: /audio/hr/lopta.mp3
+          - order: 3
+            legacyId: 596
+            type: SELECT
+            prompt: Which one of these is "Table"?
+            grammarTags: []
+            options:
+              - text: Stol
+                correct: true
+                imageSrc: /stol.svg
+                audioSrc: /audio/hr/stol.mp3
+              - text: Dvorac
+                correct: false
+                imageSrc: /dvorac.svg
+                audioSrc: /audio/hr/dvorac.mp3
+              - text: Kula
+                correct: false
+                imageSrc: /kula.svg
+                audioSrc: /audio/hr/kula.mp3
+              - text: Most
+                correct: false
+                imageSrc: /most.svg
+                audioSrc: /audio/hr/most.mp3
+          - order: 4
+            legacyId: 597
+            type: SELECT
+            prompt: Which one of these is "Song"?
+            grammarTags: []
+            options:
+              - text: Pjesma
+                correct: true
+                imageSrc: /pjesma.svg
+                audioSrc: /audio/hr/pjesma.mp3
+              - text: Gozba
+                correct: false
+                imageSrc: /gozba.svg
+                audioSrc: /audio/hr/gozba.mp3
+              - text: Kruna
+                correct: false
+                imageSrc: /kruna.svg
+                audioSrc: /audio/hr/kruna.mp3
+              - text: Stol
+                correct: false
+                imageSrc: /stol.svg
+                audioSrc: /audio/hr/stol.mp3
+      - order: 2
+        legacyId: 138
+        kind: PHRASE_LISTEN
+        title: Kraljevski stol
+        challenges:
+          - order: 1
+            legacyId: 598
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Royal feast"'
+            grammarTags: []
+            options:
+              - text: Kraljevska gozba
+                correct: true
+                audioSrc: /audio/hr/kraljevska_gozba.mp3
+              - text: Zlatna kruna
+                correct: false
+                audioSrc: /audio/hr/zlatna_kruna.mp3
+              - text: Veliki dvorac
+                correct: false
+                audioSrc: /audio/hr/veliki_dvorac.mp3
+              - text: Hrabri vitez
+                correct: false
+                audioSrc: /audio/hr/hrabri_vitez.mp3
+          - order: 2
+            legacyId: 599
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Golden crown"'
+            grammarTags: []
+            options:
+              - text: Zlatna kruna
+                correct: true
+                audioSrc: /audio/hr/zlatna_kruna.mp3
+              - text: Kraljevska gozba
+                correct: false
+                audioSrc: /audio/hr/kraljevska_gozba.mp3
+              - text: Zlatni ključ
+                correct: false
+                audioSrc: /audio/hr/zlatni_kljuc.mp3
+              - text: Sjajni mač
+                correct: false
+                audioSrc: /audio/hr/sjajni_mac.mp3
+          - order: 3
+            legacyId: 600
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The king wears a shining crown."'
+            grammarTags: []
+            options:
+              - text: Kralj nosi sjajnu krunu.
+                correct: true
+                audioSrc: /audio/hr/kralj_nosi_sjajnu_krunu.mp3
+              - text: Velika gozba je na stolu.
+                correct: false
+                audioSrc: /audio/hr/velika_gozba_je_na_stolu.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+          - order: 4
+            legacyId: 601
+            type: ASSIST
+            prompt: 'Translate to Croatian: "The great feast is on the table."'
+            grammarTags: []
+            options:
+              - text: Velika gozba je na stolu.
+                correct: true
+                audioSrc: /audio/hr/velika_gozba_je_na_stolu.mp3
+              - text: Kralj nosi sjajnu krunu.
+                correct: false
+                audioSrc: /audio/hr/kralj_nosi_sjajnu_krunu.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+      - order: 3
+        legacyId: 139
+        kind: PRODUCTION
+        title: Prošlost i sjećanja
+        challenges:
+          - order: 1
+            legacyId: 602
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We were in the castle."'
+            grammarTags: []
+            options:
+              - text: Bili smo u dvorcu.
+                correct: true
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+              - text: Vidjeli smo hrabrog viteza.
+                correct: false
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+          - order: 2
+            legacyId: 603
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We saw a brave knight."'
+            grammarTags: []
+            options:
+              - text: Vidjeli smo hrabrog viteza.
+                correct: true
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+          - order: 3
+            legacyId: 604
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We went to the big hall."'
+            grammarTags: []
+            options:
+              - text: Išli smo u veliku dvoranu.
+                correct: true
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+              - text: Vidjeli smo hrabrog viteza.
+                correct: false
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+          - order: 4
+            legacyId: 605
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Together we sang songs."'
+            grammarTags: []
+            options:
+              - text: Zajedno smo pjevali pjesme.
+                correct: true
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+              - text: Vidjeli smo hrabrog viteza.
+                correct: false
+                audioSrc: /audio/hr/vidjeli_smo_hrabrog_viteza.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+      - order: 4
+        legacyId: 140
+        kind: BOSS_CAPSTONE
+        title: "Super Izazov: Sedmi svijet"
+        challenges:
+          - order: 1
+            legacyId: 606
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We visited the castles of Zagorje."'
+            grammarTags: []
+            options:
+              - text: Posjetili smo dvorce Zagorja.
+                correct: true
+                audioSrc: /audio/hr/posjetili_smo_dvorce_zagorja.mp3
+              - text: Naučili smo važne hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/naucili_smo_vazne_hrvatske_rijeci.mp3
+              - text: Ponosno nastavljamo naše putovanje.
+                correct: false
+                audioSrc: /audio/hr/ponosno_nastavljamo_nase_putovanje.mp3
+              - text: Bili smo u dvorcu.
+                correct: false
+                audioSrc: /audio/hr/bili_smo_u_dvorcu.mp3
+          - order: 2
+            legacyId: 607
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We learned important Croatian words."'
+            grammarTags: []
+            options:
+              - text: Naučili smo važne hrvatske riječi.
+                correct: true
+                audioSrc: /audio/hr/naucili_smo_vazne_hrvatske_rijeci.mp3
+              - text: Posjetili smo dvorce Zagorja.
+                correct: false
+                audioSrc: /audio/hr/posjetili_smo_dvorce_zagorja.mp3
+              - text: Ponosno nastavljamo naše putovanje.
+                correct: false
+                audioSrc: /audio/hr/ponosno_nastavljamo_nase_putovanje.mp3
+              - text: Zajedno smo pjevali pjesme.
+                correct: false
+                audioSrc: /audio/hr/zajedno_smo_pjevali_pjesme.mp3
+          - order: 3
+            legacyId: 608
+            type: ASSIST
+            prompt: 'Translate to Croatian: "We proudly continue our journey."'
+            grammarTags: []
+            options:
+              - text: Ponosno nastavljamo naše putovanje.
+                correct: true
+                audioSrc: /audio/hr/ponosno_nastavljamo_nase_putovanje.mp3
+              - text: Posjetili smo dvorce Zagorja.
+                correct: false
+                audioSrc: /audio/hr/posjetili_smo_dvorce_zagorja.mp3
+              - text: Naučili smo važne hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/naucili_smo_vazne_hrvatske_rijeci.mp3
+              - text: Išli smo u veliku dvoranu.
+                correct: false
+                audioSrc: /audio/hr/isli_smo_u_veliku_dvoranu.mp3
+          - order: 4
+            legacyId: 609
+            type: ASSIST
+            prompt: 'Translate to Croatian: "Congratulations, you have finished the seventh world!"'
+            grammarTags: []
+            options:
+              - text: Čestitamo, završili ste sedmi svijet.
+                correct: true
+                audioSrc: /audio/hr/cestitamo_zavrsili_ste_sedmi_svijet.mp3
+              - text: Posjetili smo dvorce Zagorja.
+                correct: false
+                audioSrc: /audio/hr/posjetili_smo_dvorce_zagorja.mp3
+              - text: Naučili smo važne hrvatske riječi.
+                correct: false
+                audioSrc: /audio/hr/naucili_smo_vazne_hrvatske_rijeci.mp3
+              - text: Ponosno nastavljamo naše putovanje.
+                correct: false
+                audioSrc: /audio/hr/ponosno_nastavljamo_nase_putovanje.mp3

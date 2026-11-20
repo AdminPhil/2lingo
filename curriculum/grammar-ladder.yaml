@@ -1,0 +1,237 @@
+schemaVersion: 2
+courseName: CroLingo Croatian (Hrvatski)
+targetHorizonWorlds: 20
+worlds:
+  - worldOrder: 1
+    levelOrder: 1
+    title: Capital Adventure
+    cefrBand: Pre-A1
+    targetAvgWords: 1.5
+    targetMinimalPairPct: 10
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+    grammarFocus:
+      - Nominative nouns
+      - Greetings
+      - Present 1sg
+  - worldOrder: 2
+    levelOrder: 1
+    title: Coastal Explorer
+    cefrBand: Pre-A1
+    targetAvgWords: 1.8
+    targetMinimalPairPct: 15
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+    grammarFocus:
+      - Adjective-noun gender agreement
+      - Present singular
+  - worldOrder: 3
+    levelOrder: 1
+    title: Nature Quest
+    cefrBand: A1.1
+    targetAvgWords: 2.2
+    targetMinimalPairPct: 20
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+    grammarFocus:
+      - Spatial prepositions (u/na/ispod) with visual diagrams
+      - Locative vs Accusative intro
+  - worldOrder: 4
+    levelOrder: 1
+    title: King's Landing
+    cefrBand: A1.1
+    targetAvgWords: 2.5
+    targetMinimalPairPct: 25
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Present plural
+      - Simple SVO sentences
+      - Accusative direct objects
+  - worldOrder: 5
+    levelOrder: 2
+    title: Istrian Explorer
+    cefrBand: A1.2
+    targetAvgWords: 3
+    targetMinimalPairPct: 30
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Days/time expressions
+      - Ordering & polite requests
+      - Accusative & Locative contrast
+  - worldOrder: 6
+    levelOrder: 2
+    title: Slavonian Hearth
+    cefrBand: A1.2
+    targetAvgWords: 3.3
+    targetMinimalPairPct: 30
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Genitive of quantity/origin
+      - Instrumental with s/sa
+      - Daily household verbs
+  - worldOrder: 7
+    levelOrder: 2
+    title: Zagorje Castles
+    cefrBand: A2.1
+    targetAvgWords: 3.5
+    targetMinimalPairPct: 35
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Past tense (Perfekt)
+      - Spatial directions
+      - Storytelling phrases
+  - worldOrder: 8
+    levelOrder: 2
+    title: Tesla & Astronomy
+    cefrBand: A2.1
+    targetAvgWords: 3.8
+    targetMinimalPairPct: 35
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Future tense (Futur I)
+      - Perfekt spiral retention
+      - Cause & discovery clauses
+  - worldOrder: 9
+    levelOrder: 3
+    title: Sinjska Alka & Cetina
+    cefrBand: A2.2
+    targetAvgWords: 4
+    targetMinimalPairPct: 35
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Reflexive verbs (se)
+      - Perfekt + Futur I spiral
+      - Dative & Locative contrast
+  - worldOrder: 10
+    levelOrder: 3
+    title: Kvarner & Rijeka
+    cefrBand: A2.2
+    targetAvgWords: 4.2
+    targetMinimalPairPct: 40
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Maritime motion Accusative vs static Locative
+      - Compound clauses (jer/ali/dok)
+  - worldOrder: 11
+    levelOrder: 3
+    title: Varaždin & Međimurje
+    cefrBand: A2.2
+    targetAvgWords: 4.5
+    targetMinimalPairPct: 40
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - Instrumental without prepositions
+      - Conditional I intro (bih/bi/bismo)
+      - Cultural narrative sentences
+  - worldOrder: 12
+    levelOrder: 3
+    title: Velebit & Gacka
+    cefrBand: A2.2
+    targetAvgWords: 4.8
+    targetMinimalPairPct: 45
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+    grammarFocus:
+      - All 7 Croatian cases in context
+      - Subordinate clauses (kada/koji)
+      - Level 3 Capstone synthesis
+  - worldOrder: 13
+    levelOrder: 4
+    title: Šibenik, Krka & Kornati
+    cefrBand: B1.1
+    targetAvgWords: 5
+    targetMinimalPairPct: 45
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+      - CLOZE
+    grammarFocus:
+      - Verbal aspect pairs (pisati/napisati, gledati/pogledati)
+      - 5-lesson arc with Cross-World Spiral
+  - worldOrder: 14
+    levelOrder: 4
+    title: Split, Diocletian & Hvar
+    cefrBand: B1.1
+    targetAvgWords: 5.2
+    targetMinimalPairPct: 45
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+      - CLOZE
+    grammarFocus:
+      - Conditional mood (Kondicional I) in travel & polite requests
+      - Relative clauses (koji/koja/koje)
+  - worldOrder: 15
+    levelOrder: 4
+    title: Neretva, Ston & Korčula
+    cefrBand: B1.1
+    targetAvgWords: 5.4
+    targetMinimalPairPct: 45
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+      - CLOZE
+    grammarFocus:
+      - Real-world dialogues (market, doctor, family visits)
+      - Imperative & Vocative mastery
+  - worldOrder: 16
+    levelOrder: 4
+    title: Osijek & Baranja
+    cefrBand: B1.1
+    targetAvgWords: 5.6
+    targetMinimalPairPct: 50
+    requiredMechanics:
+      - SELECT
+      - ASSIST
+      - LISTEN
+      - BUILD_SENTENCE
+      - CLOZE
+    grammarFocus:
+      - Opinions, comparisons, and multi-clause storytelling
+      - Level 4 Early B1 Capstone
