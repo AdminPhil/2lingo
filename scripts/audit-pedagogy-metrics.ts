@@ -102,7 +102,10 @@ async function runReadOnlyAudit() {
              COUNT(*)::int AS completions,
              COUNT(DISTINCT cp.user_id)::int AS unique_users
       FROM challenge_progress cp
-      WHERE cp.completed = true
+      JOIN challenges c ON cp.challenge_id = c.id
+      JOIN lessons l ON c.lesson_id = l.id
+      JOIN units u ON l.unit_id = u.id
+      WHERE cp.completed = true AND u.course_id = 1
       GROUP BY cp.challenge_id
     `,
     sql`
@@ -110,15 +113,39 @@ async function runReadOnlyAudit() {
              COUNT(*)::int AS mistake_count,
              COUNT(DISTINCT cm.user_id)::int AS unique_users
       FROM challenge_mistakes cm
+      JOIN challenges c ON cm.challenge_id = c.id
+      JOIN lessons l ON c.lesson_id = l.id
+      JOIN units u ON l.unit_id = u.id
+      WHERE u.course_id = 1
       GROUP BY cm.challenge_id
     `,
     sql`
       SELECT
         (SELECT COUNT(*)::int FROM user_progress) AS total_learners,
-        (SELECT COUNT(DISTINCT user_id)::int FROM challenge_progress WHERE completed = true) AS active_learners_with_progress,
-        (SELECT COUNT(DISTINCT user_id)::int FROM challenge_mistakes) AS active_learners_with_mistakes,
-        (SELECT COUNT(*)::int FROM challenge_progress WHERE completed = true) AS total_completed_challenges,
-        (SELECT COUNT(*)::int FROM challenge_mistakes) AS total_mistakes
+        (SELECT COUNT(DISTINCT cp.user_id)::int
+         FROM challenge_progress cp
+         JOIN challenges c ON cp.challenge_id = c.id
+         JOIN lessons l ON c.lesson_id = l.id
+         JOIN units u ON l.unit_id = u.id
+         WHERE cp.completed = true AND u.course_id = 1) AS active_learners_with_progress,
+        (SELECT COUNT(DISTINCT cm.user_id)::int
+         FROM challenge_mistakes cm
+         JOIN challenges c ON cm.challenge_id = c.id
+         JOIN lessons l ON c.lesson_id = l.id
+         JOIN units u ON l.unit_id = u.id
+         WHERE u.course_id = 1) AS active_learners_with_mistakes,
+        (SELECT COUNT(*)::int
+         FROM challenge_progress cp
+         JOIN challenges c ON cp.challenge_id = c.id
+         JOIN lessons l ON c.lesson_id = l.id
+         JOIN units u ON l.unit_id = u.id
+         WHERE cp.completed = true AND u.course_id = 1) AS total_completed_challenges,
+        (SELECT COUNT(*)::int
+         FROM challenge_mistakes cm
+         JOIN challenges c ON cm.challenge_id = c.id
+         JOIN lessons l ON c.lesson_id = l.id
+         JOIN units u ON l.unit_id = u.id
+         WHERE u.course_id = 1) AS total_mistakes
     `,
     sql`
       SELECT u."order" AS unit_order,

@@ -100,6 +100,7 @@ export interface ChallengeMetrics {
   contentStems: string[];
   priorWorldStemHits: number;
   priorUnitStemHits: number;
+  priorUnitInWorldStemHits: number;
   avgTokenOverlap: number;
   avgCharSimilarity: number;
   wordCountParity: number;
@@ -297,24 +298,24 @@ export const CROATIAN_STOPWORDS = new Set([
   "moj", "moja", "moje", "tvoj", "tvoja", "tvoje", "naš", "naša", "naše", "vaš", "vaša",
   "njegov", "njezin", "njihov", "ovdje", "tamo", "sada", "uvijek", "nikad", "često",
   "nisam", "nisi", "nije", "nismo", "niste", "nisu", "neću", "neće", "nećemo",
-  "ovog", "ovom", "toga", "tom", "k", "ka", "pa", "ni", "niti", "nego", "već",
+  "ovog", "ovom", "toga", "tom", "k", "ka", "pa", "ni", "niti", "nego",
 ]);
 
 const ABSTRACT_CONCEPT_CUES = new Set([
   // Croatian stems / words representing abstract, temporal, emotional, cultural, scientific concepts
-  "dan", "tjedan", "vikend", "ponedjelj", "utor", "srijed", "četvrt", "pet", "subot", "nedjelj",
+  "dan", "tjedan", "vikend", "ponedjelj", "utor", "srijed", "četvrt", "petak", "petk", "subot", "nedjelj",
   "vrijem", "jutr", "večer", "noć", "jučer", "danas", "sutra", "budućn", "prošl", "povijest",
   "legend", "prič", "tajna", "tajn", "snag", "moć", "energij", "struj", "svjetl", "izum",
-  "znanj", "idej", "mis", "san", "snov", "želj", "ljubav", "sreć", "radost", "veselj",
-  "strah", "mir", "tišin", "buka", "glazb", "melodij", "ritam", "not", "pjesm", "ples",
+  "znanj", "idej", "mis", "snov", "želj", "ljubav", "sreć", "radost", "veselj",
+  "strah", "mir", "tišin", "buka", "glazb", "melodij", "ritam", "pjesm", "ples",
   "tradicij", "baštin", "kultur", "slobod", "pobjed", "natjecan", "pravil", "izazov",
   "pustolov", "avantur", "putovan", "smjer", "lijev", "desn", "ravn", "blizu", "dalek",
-  "visok", "nisk", "brz", "spor", "hrabr", "mudr", "pamet", "dobar", "dobr", "lijep",
-  "sret", "tuž", "umorn", "glad", "žed", "hlad", "topl", "nov", "star", "velik", "mal",
+  "hrabr", "mudr", "pamet",
+  "sret", "tuž", "umorn", "glad", "žed",
   "zdravlj", "prijatelj", "obitelj", "rođend", "proslav", "čestit", "hval", "molim",
   "oprost", "pozdrav", "dobrodoš", "svemir", "galaksij", "planet", "orbit", "gravitacij",
   "prirod", "zaštit", "tiš", "karneval", "svečan", "barok", "umjetn", "kazališt",
-  "predstav", "uloga", "publik", "aplaud", "uspjeh", "čudo", "čarolij", "magij",
+  "predstav", "ulog", "publik", "aplaud", "uspjeh", "čudo", "čarolij", "magij",
 ]);
 
 const ABSTRACT_ENGLISH_CUES = [
@@ -439,6 +440,67 @@ export function croatianStem(token: string): string {
     bilo: "bi",
     bili: "bi",
     bile: "bi",
+    // Common Croatian palatalization / fleeting-a / suppletive alternations
+    otok: "otok",
+    otoka: "otok",
+    otoku: "otok",
+    otoci: "otok",
+    otocima: "otok",
+    knjiga: "knjig",
+    knjige: "knjig",
+    knjigu: "knjig",
+    knjizi: "knjig",
+    ruka: "ruk",
+    ruke: "ruk",
+    ruku: "ruk",
+    ruci: "ruk",
+    rukom: "ruk",
+    noga: "nog",
+    noge: "nog",
+    nogu: "nog",
+    nozi: "nog",
+    nogom: "nog",
+    slika: "slik",
+    slike: "slik",
+    sliku: "slik",
+    slici: "slik",
+    vuk: "vuk",
+    vuka: "vuk",
+    vuci: "vuk",
+    vukovi: "vuk",
+    oblak: "oblak",
+    oblaka: "oblak",
+    oblaci: "oblak",
+    oblacima: "oblak",
+    putnik: "putnik",
+    putnika: "putnik",
+    putnici: "putnik",
+    putnicima: "putnik",
+    junak: "junak",
+    junaka: "junak",
+    junaci: "junak",
+    praznik: "praznik",
+    praznici: "praznik",
+    pjesnik: "pjesnik",
+    pjesnici: "pjesnik",
+    korak: "korak",
+    koraci: "korak",
+    san: "san",
+    sna: "san",
+    snovi: "san",
+    snova: "san",
+    snovima: "san",
+    drvo: "drv",
+    drva: "drv",
+    drveće: "drv",
+    cvijet: "cvijet",
+    cvijeta: "cvijet",
+    cvijeće: "cvijet",
+    dijete: "dijet",
+    djeteta: "dijet",
+    djeca: "dijet",
+    djeci: "dijet",
+    djece: "dijet",
   };
   if (irregulars[w]) return irregulars[w];
 
@@ -542,49 +604,109 @@ function hrRe(pattern: string): RegExp {
   return new RegExp(`${WB_START}(?:${pattern})${WB_END}`, "i");
 }
 
-const LOCATIVE_PREP_RE = hrRe(`(?:u|na|o|po|pri)\\s+[${HR_CHAR}]+(?:i|u|oj|em|om|ima|ama)`);
+// Directional feminine singular nouns after u/na take ACCUSATIVE of motion, not Locative
+const ACC_DIRECTION_FEM_NOUNS =
+  "školu|plažu|luku|dvoranu|šumu|sobu|kuću|sridu|metu|alku|rijeku|planinu|crkvu|tržnicu|pekaru|kuhinju|katedralu|ulicu|dolinu|stazu|obalu|galeriju|arenu|tvrđavu|utvrdu|spilju|kolibu|šetnicu";
+const ACC_MOTION_PREP_RE = hrRe(
+  `(?:u|na)\\s+(?:[${HR_CHAR}]+\\s+)?(?:${ACC_DIRECTION_FEM_NOUNS})|(?:idem|ideš|ide|idemo|idu|išao|išla|išli|ulazi|ulaze|skačem|skače|usmjerava|putovat|putujemo|pogodak)\\s+(?:[${HR_CHAR}]+\\s+){0,2}(?:u|na)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`
+);
+const ACC_ALWAYS_PREP_RE = hrRe(`(?:kroz|za)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`);
+
+const LOCATIVE_PREP_STATIC_RE = hrRe(
+  `(?:u|na|o|po|pri)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+(?:i|u|oj|em|om|ima|ama)`
+);
 const GENITIVE_PREP_RE = hrRe(
-  `(?:od|do|iz|bez|kod|kraj|pokraj|pored|duž|oko|blizu|ispred|iza|ispod|iznad|usred|puno|malo|pun|puna|puno|čaša|čašu|kuglica|kuglicu|komad|šalica|šalicu|boca|bocu|tanjur)\\s+[${HR_CHAR}]+`
+  `(?:od|do|iz|bez|kod|kraj|pokraj|pored|duž|oko|blizu|ispred|iza|ispod|iznad|usred|nakon|puno|malo|čaša|čašu|kuglica|kuglicu|komad|šalica|šalicu|boca|bocu|tanjur)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+|(?:je|su)\\s+(?:pun|puna|puno)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`
 );
-const INSTRUMENTAL_PREP_RE = hrRe(`(?:s|sa|pod|nad|pred|među)\\s+[${HR_CHAR}]+(?:om|em|ima|ama)`);
+const INSTRUMENTAL_PREP_RE = hrRe(
+  `(?:s|sa|pod|nad|pred|među)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+(?:om|em|ima|ama)`
+);
 const INSTRUMENTAL_BARE_RE = hrRe(
-  `[${HR_CHAR}]*(?:stazom|brodom|vlakom|autom|čamcem|morem|rijekom|šumom|ulicom|cestom|mostom|zrakom|nebom|snijegom|vodom|vatrom|rukom|nogom|očima|srcem|pjesmom|glazbom|osmijehom|ponosom|radošću|ljubavlju|snagom|poljima|planinama|dolinama|stijenama|valovima)`
+  `[${HR_CHAR}]*(?:stazom|brodom|vlakom|autom|čamcem|morem|rijekom|šumom|ulicom|cestom|mostom|zrakom|nebom|snijegom|vodom|vatrom|rukom|nogom|očima|srcem|pjesmom|glazbom|osmijehom|ponosom|radošću|ljubavlju|snagom|poljem|ključem|kvarnerom|korzom|kazalištem|parkom|crijepom|baštinom|dunavom|dravom|murom|cetinom|gackom|tradicijom|ljepotom|tamburom|violinom|klavirom|kopljem|mačem|štitom|užetom)`
 );
-const DATIVE_RE = hrRe(
-  `(?:prema|k|ka)\\s+[${HR_CHAR}]+|mami|tati|baki|djedu|didi|prijatelju|prijateljima|bratu|sestri|učiteljici|konju|psu|vitezu|kralju|djeci|ljudima|maskama|gostima|putnicima|plesu`
+const INSTRUMENTAL_BARE_PLURAL_RE = hrRe(
+  `poljima|planinama|dolinama|stijenama|valovima`
+);
+const LOCATIVE_BEFORE_PLURAL_RE = hrRe(
+  `(?:u|na|o|po|pri)\\s+(?:[${HR_CHAR}]+\\s+)?(?:poljima|planinama|dolinama|stijenama|valovima)`
+);
+const DATIVE_PREP_RE = hrRe(`(?:prema|k|ka)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`);
+const DATIVE_VERB_RE = hrRe(
+  `(?:raduje|radujem|radujemo|divi|divim|divimo|pomaže|pomažem|pomažemo|plješće|plješću)\\s+(?:se\\s+)?(?!(?:u|na|o|po|pri)\\s)(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+(?:u|i|ima|ama)`
+);
+const DATIVE_BARE_NOUN_RE = hrRe(
+  `mami|tati|baki|djedu|didi|prijatelju|prijateljima|bratu|sestri|učiteljici|konju|psu|vitezu|kralju|djeci|ljudima|maskama|gostima|putnicima|plesu|vikendu|slapu|medvjedima`
+);
+const NON_DATIVE_PREP_BEFORE_NOUN_RE = hrRe(
+  `(?:u|na|o|po|pri|s|sa|pod|nad|pred|među)\\s+(?:[${HR_CHAR}]+\\s+)?(?:mami|tati|baki|djedu|didi|prijatelju|prijateljima|bratu|sestri|učiteljici|konju|psu|vitezu|kralju|djeci|ljudima|maskama|gostima|putnicima|plesu|vikendu|slapu|medvjedima)`
 );
 const VOCATIVE_RE = hrRe(
-  `prijatelju|viteže|kralju|bako|djede|dide|brate|sestro|sine|kćeri|majko|oče|učiteljice|bože|hrvatska|zagrebe|dubrovniče`
+  `viteže|bako|djede|dide|brate|sestro|sine|kćeri|majko|oče|učiteljice|bože|zagrebe|dubrovniče`
 );
+const VOCATIVE_AMBIGUOUS_RE = hrRe(`prijatelju|kralju`);
 const PREPOSITION_RE = hrRe(
-  `(?:u|na|s|sa|od|do|iz|za|po|o|kod|kroz|uz|niz|pred|pod|nad|oko|duž|kraj|pokraj|pored|prema|pri|bez|ispred|iza|ispod|iznad|među)\\s+[${HR_CHAR}]+`
+  `(?:u|na|s|sa|od|do|iz|za|po|o|kod|kroz|uz|niz|pred|pod|nad|oko|duž|kraj|pokraj|pored|prema|pri|bez|ispred|iza|ispod|iznad|među|nakon)\\s+[${HR_CHAR}]+`
 );
 const SUBORDINATE_CONJ_RE = hrRe(
   `jer|dok|kad|kada|ako|koji|koja|koje|kojeg|kojoj|kojima|ali|zato|iako|čim|prije nego|nakon što`
 );
 
 const PERFEKT_AUX_RE = hrRe(`sam|si|je|smo|ste|su|nisam|nisi|nije|nismo|niste|nisu`);
-const L_PARTICIPLE_RE = hrRe(
-  `[${HR_CHAR}]{2,}(?:ao|la|lo|li|le|io|ila|ilo|ili|ile)|bio|bila|bilo|bili|bile|išao|išla|išli|došao|došla|došli|našao|našla|rekao|rekla|mogao|mogla`
+const NON_PARTICIPLE_L_WORDS = new Set([
+  "cipele", "toplo", "topla", "topli", "tople", "vrlo", "nikola", "tesla",
+  "škola", "škole", "mala", "malo", "mali", "male", "bijela", "bijelo", "bijeli", "bijele",
+  "svijetla", "svijetlo", "svijetli", "svijetle", "selo", "tijelo", "veselo", "vesela", "veseli", "vesele",
+  "stola", "pčela", "pčele", "kapele", "kapela", "ali", "posao", "svjetlo", "krilo", "staklo",
+  "jelo", "pravilo", "kolo", "obala", "obale", "uvala", "uvale", "kula", "kule", "vrilo",
+  "katedrala", "katedrale", "cijela", "cijelo", "cijeli", "cijele", "naočale", "sandale",
+  "fritule", "zrcalo", "odijelo", "vozilo", "čelo", "djelo", "sedlo", "veslo", "svjetlo",
+  "ogledalo", "palača", "čokolada", "tlo", "grlo", "maslo", "stablo", "krilo", "bilo",
+]);
+const L_PARTICIPLE_TOKEN_RE = new RegExp(
+  `^(?:[${HR_CHAR}]{2,}(?:ao|la|lo|li|le|io|ila|ilo|ili|ile)|bio|bila|bili|bile|išao|išla|išli|došao|došla|došli|našao|našla|rekao|rekla|mogao|mogla|htio|htjela|htjeli)$`,
+  "i"
 );
+
+function isCroatianLParticipleToken(token: string, hasAux: boolean): boolean {
+  const lower = token.toLowerCase();
+  if (lower === "bilo") return hasAux;
+  if (NON_PARTICIPLE_L_WORDS.has(lower)) return false;
+  return L_PARTICIPLE_TOKEN_RE.test(lower);
+}
+
 const FUTUR_I_RE = hrRe(`ću|ćeš|će|ćemo|ćete|neću|nećeš|neće|nećemo|nećete`);
 const CONDITIONAL_RE = hrRe(`bih|bi|bismo|biste`);
 const REFLEXIVE_SE_RE = hrRe(`se`);
 
+const NON_VERB_PLURAL_LIKE = new Set([
+  "tamo", "kamo", "samo", "dijete", "vrijeme", "ime", "rame", "sjeme", "vreme", "ovamo", "onamo",
+]);
+
 const PRESENT_PLURAL_VERB_RE = hrRe(
-  `[${HR_CHAR}]{2,}(?:amo|emo|imo|ate|ete|ite|aju|uju|eju)|smo|ste|su|idemo|idu|jedemo|jedu|pijemo|piju|volimo|vole|vidimo|vide|učimo|uče|gledamo|gledaju|sviramo|sviraju|pjevamo|pjevaju|plivamo|plivaju|trčimo|trče|hodamo|hodaju|čitamo|čitaju|pišemo|pišu|kupujemo|kupuju|beremo|beru|slavimo|slave|putujemo|putuju|penjemo|penju|čuvamo|čuvaju|gradimo|grade|otvaramo|otvaraju|igramo|igraju|tražimo|traže|radimo|rade|živimo|žive|spavamo|spavaju|jedrimo|jedre|plovimo|plove|stojimo|stoje|sjedimo|sjede|griju|pletu|teku|nose|vode|daju|plješću|tjeraju|padaju|okupljaju|spajaju|čuvaju`
+  `[${HR_CHAR}]{2,}(?:amo|emo|imo|ate|ete|ite|aju|uju|eju)|smo|ste|su|idemo|idu|jedemo|jedu|pijemo|piju|volimo|vole|vidimo|vide|učimo|uče|gledamo|gledaju|sviramo|sviraju|pjevamo|pjevaju|plivamo|plivaju|trčimo|trče|hodamo|hodaju|čitamo|čitaju|pišemo|pišu|kupujemo|kupuju|beremo|beru|slavimo|slave|putujemo|putuju|penjemo|penju|čuvamo|čuvaju|gradimo|grade|otvaramo|otvaraju|igramo|igraju|tražimo|traže|radimo|rade|živimo|žive|spavamo|spavaju|jedrimo|jedre|plovimo|plove|stojimo|stoje|sjedimo|sjede|griju|pletu|teku|nose|vode|daju|plješću|tjeraju|padaju|okupljaju|spajaju|čekaju|dolaze|prolaze|spuštaju|plešemo|plešu|ponosimo`
 );
 const PRESENT_SINGULAR_VERB_RE = hrRe(
-  `sam|si|je|imam|imaš|ima|idem|ideš|ide|volim|voliš|voli|jedem|jedeš|jede|pijem|piješ|pije|vidim|vidiš|vidi|gledam|gledaš|gleda|učim|učiš|uči|trčim|trčiš|trči|plivam|plivaš|pliva|spavam|spavaš|spava|čitam|čitaš|čita|pišem|pišeš|piše|sviram|sviraš|svira|pjevam|pjevaš|pjeva|kupujem|kupuješ|kupuje|vozim|voziš|vozi|kuham|kuhaš|kuha|hodam|hodaš|hoda|skačem|skače|letim|leti|raste|puše|sja|sjaji|svijetli|teče|miriše|stoji|sjedi|nosi|drži|čuva|traži|otvara|zatvara|priprema|kreće|natječe|divi|grije|raduje|penje|vesla|jedri|plovi|slavi|gradi|bere|šeta|igra|crta|pomaže|zove|živi|radi|misli|zna|može|želi|treba|hoće|sanja|sluša|govori|priča|pita|odgovara|smije|plače|pada|grmi|bljeska|zvoni|kuca|donosi|odjekuje|daje|okuplja|spaja|plješće|tjera|štiti|vodi|prati|pokazuje`
+  `sam|si|je|imam|imaš|ima|idem|ideš|ide|volim|voliš|voli|jedem|jedeš|jede|pijem|piješ|pije|vidim|vidiš|vidi|gledam|gledaš|gleda|učim|učiš|uči|trčim|trčiš|trči|plivam|plivaš|pliva|spavam|spavaš|spava|čitam|čitaš|čita|pišem|pišeš|piše|sviram|sviraš|svira|pjevam|pjevaš|pjeva|plešem|plešeš|pleše|hvatam|hvataš|hvata|kupujem|kupuješ|kupuje|vozim|voziš|vozi|kuham|kuhaš|kuha|hodam|hodaš|hoda|skačem|skače|letim|leti|raste|puše|sja|sjaji|svijetli|teče|miriše|stoji|sjedi|nosi|drži|čuva|traži|otvaram|otvara|zatvara|priprema|kreće|natječe|divi|grije|raduje|penje|vesla|jedri|plovi|slavi|gradi|bere|šeta|igra|crta|pomaže|zove|živi|radim|radi|misli|zna|može|želi|treba|hoće|sanja|sluša|govori|priča|pita|odgovara|smije|plače|pada|grmi|bljeska|zvoni|kuca|donosi|odjekuje|daje|okuplja|spaja|plješće|tjera|štiti|vodi|prati|pokazuje|ulazi|izlazi|prolazi|dolazi|zalazi|spušta|lebdi|kruži|izvire|okreće|zagrijava|usmjerava|visi|darujem|daruje|želim|peče`
 );
 
-const IMPERATIVE_CROATIAN_RE = hrRe(
-  `skoči|trči|otvori|zatvori|pazi|dođi|pogledaj|poslušaj|skreni|kreni|stani|uzmi|daj|reci|idi|idemo|hodaj|plivaj|čitaj|piši|pjevaj|pleši|pomozi|čuvaj|probaj|kupi|vidi|gledaj|čekaj`
+// Unambiguous Croatian imperative forms (never 3rd-sg present indicative)
+const IMPERATIVE_UNAMBIGUOUS_HR_RE = hrRe(
+  `otvori|zatvori|dođi|pogledaj|poslušaj|skreni|kreni|stani|uzmi|daj|reci|idi|hodaj|plivaj|čitaj|piši|pjevaj|pleši|pomozi|čuvaj|probaj|kupi|gledaj|čekaj`
 );
-const IMPERATIVE_ENGLISH_RE = /\b(jump!|run!|turn left|turn right|go straight|listen|look|open|close|come|stop|let's|watch out|be careful)\b/i;
+// Ambiguous forms (e.g. trči/skoči/idemo) that are imperative only when sentence-initial or exclamatory
+const IMPERATIVE_AMBIGUOUS_HR_RE = hrRe(`skoči|trči|pazi|idemo`);
+
+function extractQuotedEnglish(englishQuestion: string): string {
+  const m = englishQuestion.match(/"([^"]+)"/);
+  return (m ? m[1] : englishQuestion).trim();
+}
+
+// Match English imperative only at the START of the translated target phrase (not "I look", "We open", "Near / Close")
+const IMPERATIVE_ENGLISH_START_RE =
+  /^(?:jump!?|run(?:\s+fast)?!?|turn left|turn right|go straight|listen\b|look(?:\s+up|\s+at|\s+out)?!?|open\s+|close\s+|come\s+|stop!?|let's\s+|watch out|be careful)/i;
 
 const ACCUSATIVE_OBJECT_RE = hrRe(
-  `(?:vidim|vidi|vidimo|gledam|gleda|gledamo|volim|voli|volimo|kupujem|kupuje|kupujemo|jedem|jede|jedemo|pijem|pije|pijemo|čitam|čita|čitamo|pišem|piše|pišemo|imam|ima|imamo|nosim|nosi|drži|čuva|čuvaju|čuvamo|tražim|traži|otvara|svira|sviram|pjeva|pjevam|bere|beremo|gradi|gradimo|slavi|slavimo|kuha|kuham|vozi|vozim|crtam|crta|posjećujemo|istražujemo|upoznajemo|donosi|daje|okuplja|spaja|tjeraju|pletu|griju)\\s+(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`
+  `(?:vidim|vidi|vidimo|gledam|gleda|gledamo|volim|voli|volimo|kupujem|kupuje|kupujemo|jedem|jede|jedemo|pijem|pije|pijemo|čitam|čita|čitamo|pišem|piše|pišemo|imam|ima|imamo|nosim|nosi|drži|čuva|čuvaju|čuvamo|tražim|traži|tražimo|otvaram|otvara|svira|sviram|pjeva|pjevam|bere|beremo|gradi|gradimo|slavi|slavimo|kuha|kuham|vozi|vozim|crtam|crta|posjećujemo|istražujemo|upoznajemo|donosi|daje|okuplja|spaja|tjeraju|pletu|griju|hvatam|hvata|darujem|daruje|peče|žanjemo|ulovili|radim|sluša|slušamo|usmjerava)\\s+(?!(?:u|na|o|po|pri|se|s|sa|od|do|iz|za|kroz|pod|nad|pred|među|prema|kod|kraj|pokraj|pored|ispod|iznad|iza|ispred|oko|duž|bez|nakon|k|ka)(?:$|[^${HR_CHAR}]))(?:[${HR_CHAR}]+\\s+)?[${HR_CHAR}]+`
 );
 
 export function analyzeCroatianGrammar(croatianText: string, englishQuestion: string): GrammarFeatureFlags {
@@ -593,23 +715,37 @@ export function analyzeCroatianGrammar(croatianText: string, englishQuestion: st
   const trimmed = croatianText.trim();
 
   const hasPerfektAux = PERFEKT_AUX_RE.test(croatianText);
-  const hasLParticiple = L_PARTICIPLE_RE.test(croatianText);
+  const hasConditionalAux = CONDITIONAL_RE.test(croatianText);
+  const lParticipleTokens = tokens.filter((t) =>
+    isCroatianLParticipleToken(t, hasPerfektAux || hasConditionalAux)
+  );
+  const hasLParticiple = lParticipleTokens.length > 0;
   const pastPerfekt = hasPerfektAux && hasLParticiple;
 
   const futureFuturI = FUTUR_I_RE.test(croatianText);
-  const conditional = CONDITIONAL_RE.test(croatianText) && hasLParticiple;
+  const conditional = hasConditionalAux && hasLParticiple;
   const reflexiveSe = REFLEXIVE_SE_RE.test(croatianText);
 
-  const imperative =
-    (IMPERATIVE_CROATIAN_RE.test(croatianText) && (trimmed.endsWith("!") || wordCount <= 3)) ||
-    IMPERATIVE_ENGLISH_RE.test(englishQuestion);
+  const quotedEnglish = extractQuotedEnglish(englishQuestion);
+  const isAmbiguousImpLeading =
+    wordCount > 0 &&
+    (IMPERATIVE_AMBIGUOUS_HR_RE.test(tokens[0]) ||
+      (wordCount === 2 && IMPERATIVE_AMBIGUOUS_HR_RE.test(tokens[1]) && /^(?:brzo|polako|tiho|sad|sada)$/i.test(tokens[0])));
 
+  const imperative =
+    IMPERATIVE_UNAMBIGUOUS_HR_RE.test(croatianText) ||
+    (isAmbiguousImpLeading && (trimmed.endsWith("!") || IMPERATIVE_ENGLISH_START_RE.test(quotedEnglish))) ||
+    IMPERATIVE_ENGLISH_START_RE.test(quotedEnglish);
+
+  const hasPresentPluralToken = tokens.some(
+    (t) => !NON_VERB_PLURAL_LIKE.has(t) && PRESENT_PLURAL_VERB_RE.test(t)
+  );
   const presentPlural =
     !pastPerfekt &&
     !futureFuturI &&
     !conditional &&
     wordCount >= 2 &&
-    (PRESENT_PLURAL_VERB_RE.test(croatianText) || hrRe(`mi|vi|oni`).test(croatianText));
+    (hasPresentPluralToken || hrRe(`mi|vi|oni`).test(croatianText));
 
   const presentSingular =
     !pastPerfekt &&
@@ -621,12 +757,12 @@ export function analyzeCroatianGrammar(croatianText: string, englishQuestion: st
   const prepositionalPhrase = wordCount >= 2 && PREPOSITION_RE.test(croatianText);
 
   // Count distinct finite verbs to detect true coordinated clauses (e.g. "Plešemo i pjevamo")
-  // rather than simple noun-phrase coordination ("snagu i gostoljubivost")
+  // rather than simple noun/adjective coordination ("snagu i gostoljubivost", "toplo i plavo")
   const verbLikeMatches = tokens.filter(
     (t) =>
       PRESENT_SINGULAR_VERB_RE.test(t) ||
-      PRESENT_PLURAL_VERB_RE.test(t) ||
-      (hasLParticiple && L_PARTICIPLE_RE.test(t))
+      (!NON_VERB_PLURAL_LIKE.has(t) && PRESENT_PLURAL_VERB_RE.test(t)) ||
+      (pastPerfekt && isCroatianLParticipleToken(t, true))
   );
   const hasTwoVerbsCoordinated = verbLikeMatches.length >= 2 && (tokens.includes("i") || croatianText.includes(","));
 
@@ -634,14 +770,36 @@ export function analyzeCroatianGrammar(croatianText: string, englishQuestion: st
     wordCount >= 4 &&
     (SUBORDINATE_CONJ_RE.test(croatianText) || hasTwoVerbsCoordinated);
 
-  const caseLocative = LOCATIVE_PREP_RE.test(croatianText);
+  const hasAccMotionPrep = ACC_MOTION_PREP_RE.test(croatianText);
+  // Static Locative only when u/na/o/po/pri phrase is NOT purely an accusative motion phrase
+  const strippedMotionPrep = hasAccMotionPrep
+    ? croatianText.replace(new RegExp(`(?:u|na)\\s+(?:[${HR_CHAR}]+\\s+)?(?:${ACC_DIRECTION_FEM_NOUNS})`, "gi"), "")
+    : croatianText;
+  const caseLocative = LOCATIVE_PREP_STATIC_RE.test(strippedMotionPrep);
+
   const caseGenitive = GENITIVE_PREP_RE.test(croatianText);
-  const caseInstrumental = INSTRUMENTAL_PREP_RE.test(croatianText) || INSTRUMENTAL_BARE_RE.test(croatianText);
-  const caseDative = DATIVE_RE.test(croatianText);
-  const caseVocative = VOCATIVE_RE.test(croatianText);
+  const caseInstrumental =
+    INSTRUMENTAL_PREP_RE.test(croatianText) ||
+    INSTRUMENTAL_BARE_RE.test(croatianText) ||
+    (INSTRUMENTAL_BARE_PLURAL_RE.test(croatianText) && !LOCATIVE_BEFORE_PLURAL_RE.test(croatianText));
+
+  const hasBareDativeNoun =
+    DATIVE_BARE_NOUN_RE.test(croatianText) && !NON_DATIVE_PREP_BEFORE_NOUN_RE.test(croatianText);
+  const caseDative =
+    DATIVE_PREP_RE.test(croatianText) ||
+    DATIVE_VERB_RE.test(croatianText) ||
+    hasBareDativeNoun;
+
+  const caseVocative =
+    VOCATIVE_RE.test(croatianText) ||
+    (VOCATIVE_AMBIGUOUS_RE.test(croatianText) &&
+      !hrRe(`(?:u|na|o|po|pri|prema|k|ka|s|sa)\\s+(?:[${HR_CHAR}]+\\s+)?(?:prijatelju|kralju)`).test(croatianText) &&
+      (trimmed.endsWith("!") || croatianText.includes(",")));
+
   const caseAccusative =
     ACCUSATIVE_OBJECT_RE.test(croatianText) ||
-    hrRe(`(?:u|na|kroz|za)\\s+[${HR_CHAR}]+(?:u|a)`).test(croatianText);
+    ACC_ALWAYS_PREP_RE.test(croatianText) ||
+    hasAccMotionPrep;
 
   const hasVerb =
     presentSingular || presentPlural || pastPerfekt || futureFuturI || imperative || conditional;
@@ -964,6 +1122,7 @@ export function computePedagogyAuditReport(input: {
   const cumulativeWorldStems = new Set<string>();
   const cumulativeUnitStems = new Set<string>();
   const seenStemsBeforeUnit = new Map<number, Set<string>>();
+  const seenStemsBeforeUnitInWorld = new Map<number, Set<string>>();
 
   const challengesByUnit = new Map<number, AuditChallengeRow[]>();
   for (const ch of sortedChallenges) {
@@ -977,10 +1136,12 @@ export function computePedagogyAuditReport(input: {
     seenStemsBeforeWorld.set(stage, new Set(cumulativeWorldStems));
     const introducedHere = new Set<string>();
     const allInWorld = new Set<string>();
+    const cumulativeWithinWorld = new Set<string>();
 
     const stageTheme = ALL_STAGES.find((s) => s.stage === stage)!;
     for (let uOrder = stageTheme.unitRange[0]; uOrder <= stageTheme.unitRange[1]; uOrder++) {
       seenStemsBeforeUnit.set(uOrder, new Set(cumulativeUnitStems));
+      seenStemsBeforeUnitInWorld.set(uOrder, new Set(cumulativeWithinWorld));
       const unitChs = challengesByUnit.get(uOrder) ?? [];
       for (const ch of unitChs) {
         const opts = optionsByChallenge.get(ch.id) ?? [];
@@ -993,6 +1154,7 @@ export function computePedagogyAuditReport(input: {
             introducedHere.add(st);
           }
           cumulativeUnitStems.add(st);
+          cumulativeWithinWorld.add(st);
           cumulativeWorldStems.add(st);
         }
       }
@@ -1019,9 +1181,11 @@ export function computePedagogyAuditReport(input: {
     const worldStage = getStageThemeForUnit(ch.unitOrder).stage;
     const priorWorldSet = seenStemsBeforeWorld.get(worldStage) ?? new Set<string>();
     const priorUnitSet = seenStemsBeforeUnit.get(ch.unitOrder) ?? new Set<string>();
+    const priorUnitInWorldSet = seenStemsBeforeUnitInWorld.get(ch.unitOrder) ?? new Set<string>();
 
     const priorWorldStemHits = contentStems.filter((s) => priorWorldSet.has(s)).length;
     const priorUnitStemHits = contentStems.filter((s) => priorUnitSet.has(s)).length;
+    const priorUnitInWorldStemHits = contentStems.filter((s) => priorUnitInWorldSet.has(s)).length;
 
     const tokenOverlaps = distractorTexts.map((d) => tokenJaccardSimilarity(correctText, d));
     const charSims = distractorTexts.map((d) => normalizedCharSimilarity(correctText, d));
@@ -1064,6 +1228,7 @@ export function computePedagogyAuditReport(input: {
       contentStems,
       priorWorldStemHits,
       priorUnitStemHits,
+      priorUnitInWorldStemHits,
       avgTokenOverlap,
       avgCharSimilarity,
       wordCountParity,
@@ -1255,7 +1420,7 @@ export function computePedagogyAuditReport(input: {
       priorWorldOcc += c.priorWorldStemHits;
       if (c.unitOrder > stageTheme.unitRange[0]) {
         totalWithinWorldOcc += c.contentStems.length;
-        priorUnitWithinWorldOcc += c.priorUnitStemHits;
+        priorUnitWithinWorldOcc += c.priorUnitInWorldStemHits;
       }
       if (isAbstractConcept(c.correctText, c.question)) {
         abstractCount++;
@@ -1552,12 +1717,12 @@ export function computePedagogyAuditReport(input: {
     learnersReached: w.maxLearnersReachedInWorld,
   }));
 
-  // Diagnostic Flags
+  // Diagnostic Flags (only evaluate worlds that actually contain challenges)
   const complexityDips: PedagogyAuditReport["flags"]["complexityDips"] = [];
   for (let i = 1; i < worldMetricsList.length; i++) {
     const prev = worldMetricsList[i - 1];
     const curr = worldMetricsList[i];
-    if (curr.avgWordsAll < prev.avgWordsAll - 0.15) {
+    if (prev.challengeCount > 0 && curr.challengeCount > 0 && curr.avgWordsAll < prev.avgWordsAll - 0.15) {
       complexityDips.push({
         stage: curr.stage,
         name: curr.name,
@@ -1569,7 +1734,7 @@ export function computePedagogyAuditReport(input: {
   }
 
   const siloedWorlds = worldMetricsList
-    .filter((w) => w.stage > 1 && (w.backwardSpiralChallengePct ?? 0) < 35)
+    .filter((w) => w.challengeCount > 0 && w.stage > 1 && (w.backwardSpiralChallengePct ?? 0) < 35)
     .map((w) => ({
       stage: w.stage,
       name: w.name,
@@ -1577,7 +1742,7 @@ export function computePedagogyAuditReport(input: {
     }));
 
   const lowMinimalPairWorlds = worldMetricsList
-    .filter((w) => w.stage >= 5 && w.minimalPairPct < 20)
+    .filter((w) => w.challengeCount > 0 && w.stage >= 5 && w.minimalPairPct < 20)
     .map((w) => ({
       stage: w.stage,
       name: w.name,
@@ -1585,6 +1750,7 @@ export function computePedagogyAuditReport(input: {
     }));
 
   const missingGrammarMilestones = worldMetricsList
+    .filter((w) => w.challengeCount > 0)
     .map((w) => ({
       stage: w.stage,
       name: w.name,
@@ -1598,6 +1764,7 @@ export function computePedagogyAuditReport(input: {
   const validBwd = worldMetricsList
     .map((w) => w.backwardSpiralChallengePct)
     .filter((v): v is number => v !== null);
+  const populatedWorlds = worldMetricsList.filter((w) => w.challengeCount > 0);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -1621,7 +1788,10 @@ export function computePedagogyAuditReport(input: {
         totalCh > 0
           ? round1((challengeMetricsList.filter((c) => c.isMinimalPair).length / totalCh) * 100)
           : 0,
-      overallCompositeRubric: round1(avg(worldMetricsList.map((w) => w.rubric.compositeScore))),
+      overallCompositeRubric:
+        populatedWorlds.length > 0
+          ? round1(avg(populatedWorlds.map((w) => w.rubric.compositeScore)))
+          : 0,
     },
     worlds: worldMetricsList,
     units: unitMetricsList,
@@ -1685,15 +1855,15 @@ export function formatReportAsMarkdown(report: PedagogyAuditReport): string {
 
   lines.push("## World-by-World Croatian Grammar & CEFR Matrix");
   lines.push(
-    "| World | Target CEFR | Estimated CEFR | PresSg | PresPl | Refl(se) | Past | FuturI | Imp | Cond | Acc | Loc | Gen | Inst | Dat | Prep | Sub/Comp | AvgSyntax |"
+    "| World | Target CEFR | Estimated CEFR | PresSg | PresPl | Refl(se) | Past | FuturI | Imp | Cond | Acc | Loc | Gen | Inst | Dat | Voc | Prep | Sub/Comp | AvgSyntax |"
   );
   lines.push(
-    "| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |"
+    "| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |"
   );
   for (const w of report.worlds) {
     const g = w.grammar;
     lines.push(
-      `| W${w.stage} | ${w.targetCefr} | ${w.estimatedCefr} | ${g.presentSingular} | ${g.presentPlural} | ${g.reflexiveSe} | ${g.pastPerfekt} | ${g.futureFuturI} | ${g.imperative} | ${g.conditional} | ${g.caseAccusative} | ${g.caseLocative} | ${g.caseGenitive} | ${g.caseInstrumental} | ${g.caseDative} | ${g.prepositionalPhrase} | ${g.subordinateOrCompound} | ${g.avgSyntaxTier} |`
+      `| W${w.stage} | ${w.targetCefr} | ${w.estimatedCefr} | ${g.presentSingular} | ${g.presentPlural} | ${g.reflexiveSe} | ${g.pastPerfekt} | ${g.futureFuturI} | ${g.imperative} | ${g.conditional} | ${g.caseAccusative} | ${g.caseLocative} | ${g.caseGenitive} | ${g.caseInstrumental} | ${g.caseDative} | ${g.caseVocative} | ${g.prepositionalPhrase} | ${g.subordinateOrCompound} | ${g.avgSyntaxTier} |`
     );
   }
   lines.push("");

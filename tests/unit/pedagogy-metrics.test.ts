@@ -8,6 +8,7 @@ import {
   formatUnitsAsCsv,
   formatWorldsAsCsv,
   getIdealDifficultyForUnit,
+  isAbstractConcept,
   levenshteinDistance,
   normalizedCharSimilarity,
   tokenJaccardSimilarity,
@@ -39,6 +40,23 @@ describe("Pedagogy Metrics Engine (CR-094)", () => {
       // Short words are preserved intact
       expect(croatianStem("pas")).toBe("pas");
       expect(croatianStem("vrh")).toBe("vrh");
+      // Croatian palatalization & fleeting-a alternations
+      expect(croatianStem("otok")).toBe("otok");
+      expect(croatianStem("otoci")).toBe("otok");
+      expect(croatianStem("knjiga")).toBe("knjig");
+      expect(croatianStem("knjizi")).toBe("knjig");
+      expect(croatianStem("oblak")).toBe("oblak");
+      expect(croatianStem("oblaci")).toBe("oblak");
+      expect(croatianStem("san")).toBe("san");
+      expect(croatianStem("snovi")).toBe("san");
+    });
+
+    it("does not misclassify concrete A1 words/numbers as abstract concepts", () => {
+      expect(isAbstractConcept("Pet", 'Which one of these is "Five (5)"?')).toBe(false);
+      expect(isAbstractConcept("Veliki pas", 'Which one means "Big dog"?')).toBe(false);
+      expect(isAbstractConcept("Mala mačka", '"Little cat"')).toBe(false);
+      expect(isAbstractConcept("Svijetla svjetlost", 'How do you say "Bright light"?')).toBe(true);
+      expect(isAbstractConcept("Petak", '"Friday"')).toBe(true);
     });
 
     it("excludes Croatian stopwords from content stems", () => {
@@ -98,15 +116,71 @@ describe("Pedagogy Metrics Engine (CR-094)", () => {
       const cond = analyzeCroatianGrammar("Htio bih čašu vode.", 'Select: "I would like a glass of water."');
       expect(cond.conditional).toBe(true);
       expect(cond.caseGenitive).toBe(true);
+
+      // Regression guards against non-participle -la/-lo/-le false positives
+      expect(analyzeCroatianGrammar("Gdje su mi cipele", '"Where are my shoes?"').pastPerfekt).toBe(false);
+      expect(analyzeCroatianGrammar("More je toplo i plavo danas.", '"The sea is warm and blue today."').pastPerfekt).toBe(false);
+      expect(analyzeCroatianGrammar("Nikola Tesla je slavni izumitelj.", '"Nikola Tesla is a famous inventor."').pastPerfekt).toBe(false);
+      expect(analyzeCroatianGrammar("Zidine su vrlo visoke.", '"The fortress walls are very high."').pastPerfekt).toBe(false);
     });
 
-    it("distinguishes true coordinated/subordinate clauses from simple noun coordination", () => {
+    it("distinguishes true imperatives from declarative verbs/adjectives", () => {
+      expect(analyzeCroatianGrammar("Otvori prozor", '"Open the window"').imperative).toBe(true);
+      expect(analyzeCroatianGrammar("Skreni lijevo.", 'Translate to Croatian: "Turn left."').imperative).toBe(true);
+      expect(analyzeCroatianGrammar("Skoči", '"Jump!"').imperative).toBe(true);
+      // Regression guards: declarative sentences & adjectives MUST NOT trigger imperative
+      expect(analyzeCroatianGrammar("Gledam", 'Which one of these is "I watch / look"?').imperative).toBe(false);
+      expect(analyzeCroatianGrammar("Blizu", '"Near / Close"').imperative).toBe(false);
+      expect(analyzeCroatianGrammar("Otvaram teška vrata ključem.", '"I open the heavy door with a key."').imperative).toBe(false);
+      expect(analyzeCroatianGrammar("Slušamo valove na šetnici.", '"We listen to the waves on the promenade."').imperative).toBe(false);
+    });
+
+    it("separates Locative vs Accusative, Dative, Vocative, Genitive, and Instrumental accurately", () => {
+      // Static u/na + masc/neut -u is Locative ONLY, not Accusative
+      const loc = analyzeCroatianGrammar("Bili smo u dvorcu.", '"We were in the castle."');
+      expect(loc.caseLocative).toBe(true);
+      expect(loc.caseAccusative).toBe(false);
+
+      // Motion u/na + fem -u is Accusative ONLY, not Locative
+      const accMotion = analyzeCroatianGrammar("Brod ulazi u luku.", '"The ship enters the port."');
+      expect(accMotion.caseAccusative).toBe(true);
+      expect(accMotion.caseLocative).toBe(false);
+
+      // o vitezu / na konju are Locative, NOT Dative
+      expect(analyzeCroatianGrammar("Slušamo staru legendu o vitezu.", '"We listen to a legend about a knight."').caseDative).toBe(false);
+      expect(analyzeCroatianGrammar("Pobjednik se raduje na konju.", '"The winner rejoices on the horse."').caseDative).toBe(false);
+      // Genuine Dative
+      expect(analyzeCroatianGrammar("Radujemo se vikendu.", '"We look forward to the weekend."').caseDative).toBe(true);
+      expect(analyzeCroatianGrammar("Utočište pomaže mladim medvjedima.", '"The sanctuary helps young bears."').caseDative).toBe(true);
+
+      // Vocative vs Nominative adjective "Hrvatska"
+      expect(analyzeCroatianGrammar("Hrvatska zastava", '"Croatian flag"').caseVocative).toBe(false);
+      expect(analyzeCroatianGrammar("Dobra večer bako.", '"Good evening grandma."').caseVocative).toBe(true);
+
+      // Genitive vs Nominative "Puna baterija"
+      expect(analyzeCroatianGrammar("Puna baterija", '"Full battery"').caseGenitive).toBe(false);
+      expect(analyzeCroatianGrammar("Nakon škole radim zadaću.", '"After school I do my homework."').caseGenitive).toBe(true);
+      expect(analyzeCroatianGrammar("Kuhinja je puna topline.", '"The kitchen is full of warmth."').caseGenitive).toBe(true);
+
+      // Instrumental (with intervening adjective & bare nouns) vs Locative plural "na stijenama"
+      expect(analyzeCroatianGrammar("Sunce sja nad zlatnim poljem.", '"The sun shines over the golden field."').caseInstrumental).toBe(true);
+      expect(analyzeCroatianGrammar("Otvaram teška vrata ključem.", '"I open the heavy door with a key."').caseInstrumental).toBe(true);
+      expect(analyzeCroatianGrammar("Žuta degenija raste na stijenama.", '"Yellow degenia grows on the rocks."').caseInstrumental).toBe(false);
+    });
+
+    it("distinguishes true coordinated/subordinate clauses from simple noun or adjective coordination", () => {
       const nounCoord = analyzeCroatianGrammar(
         "Gorštaci čuvaju snagu i gostoljubivost.",
         'Select: "Highlanders preserve strength and hospitality."'
       );
       expect(nounCoord.subordinateOrCompound).toBe(false);
       expect(nounCoord.syntaxTier).toBe(3);
+
+      const adjCoord = analyzeCroatianGrammar(
+        "More je toplo i plavo danas.",
+        '"The sea is warm and blue today."'
+      );
+      expect(adjCoord.subordinateOrCompound).toBe(false);
 
       const twoVerbs = analyzeCroatianGrammar(
         "Plešemo i pjevamo na karnevalu.",
@@ -115,6 +189,12 @@ describe("Pedagogy Metrics Engine (CR-094)", () => {
       expect(twoVerbs.subordinateOrCompound).toBe(true);
       expect(twoVerbs.syntaxTier).toBe(5);
       expect(twoVerbs.caseLocative).toBe(true);
+
+      const twoSgVerbs = analyzeCroatianGrammar(
+        "Skačem u more i hvatam val.",
+        '"I jump into the sea and catch the wave."'
+      );
+      expect(twoSgVerbs.subordinateOrCompound).toBe(true);
 
       const subord = analyzeCroatianGrammar(
         "Idemo u šumu jer volimo prirodu.",
@@ -230,13 +310,82 @@ describe("Pedagogy Metrics Engine (CR-094)", () => {
       // Ch 11 has 2 mistakes / 4 attempts = 50% mistake rate -> early difficulty spike
       expect(report.telemetry.earlyDifficultySpikes.some((c) => c.challengeId === 11 && c.mistakeRatePct === 50)).toBe(true);
 
-      // Verify formatters handle commas and quotes properly
+      // Verify formatters handle commas and quotes properly and include Vocative column
       const md = formatReportAsMarkdown(report);
       expect(md).toContain("# CroLingo Pedagogical Telemetry Audit (CR-094)");
+      expect(md).toContain("| Voc |");
+      // Empty worlds (W4..W12) MUST NOT trigger phantom complexity dips
+      expect(report.flags.complexityDips.some((d) => d.stage >= 4)).toBe(false);
       const unitsCsv = formatUnitsAsCsv(report);
       expect(unitsCsv).toContain('"Intro, ""Basics"""');
       const worldsCsv = formatWorldsAsCsv(report);
       expect(worldsCsv.split("\n").length).toBe(13); // header + 12 worlds
+    });
+
+    it("measures withinWorldCrossUnitSpiralPct strictly within the same world (excluding prior worlds) and handles empty DB cleanly", () => {
+      // World 1 U1 introduces "voda"; World 2 U6 introduces "planina"; World 2 U7 uses ONLY "voda" (from W1, NOT U6)
+      const report = computePedagogyAuditReport({
+        units: [
+          { id: 1, order: 1, title: "U1", description: "W1 U1" },
+          { id: 2, order: 6, title: "U6", description: "W2 U6" },
+          { id: 3, order: 7, title: "U7", description: "W2 U7" },
+        ],
+        lessons: [
+          { id: 1, unitId: 1, order: 1, title: "L1" },
+          { id: 2, unitId: 2, order: 1, title: "L1" },
+          { id: 3, unitId: 3, order: 2, title: "L2" },
+        ],
+        challenges: [
+          { id: 1, lessonId: 1, unitOrder: 1, lessonOrder: 1, order: 1, type: "SELECT", question: '"Water"' },
+          { id: 2, lessonId: 2, unitOrder: 6, lessonOrder: 1, order: 1, type: "SELECT", question: '"Mountain"' },
+          { id: 3, lessonId: 3, unitOrder: 7, lessonOrder: 2, order: 1, type: "ASSIST", question: '"Water"' },
+        ],
+        options: [
+          { id: 1, challengeId: 1, text: "Voda", correct: true, imageSrc: "/voda.svg", audioSrc: "/a.mp3" },
+          { id: 2, challengeId: 2, text: "Planina", correct: true, imageSrc: "/p.svg", audioSrc: "/b.mp3" },
+          { id: 3, challengeId: 3, text: "Voda", correct: true, imageSrc: null, audioSrc: "/a.mp3" },
+        ],
+        progressAgg: [],
+        mistakeAgg: [],
+        telemetryOverview: {
+          totalLearners: 0,
+          activeLearnersWithProgress: 0,
+          activeLearnersWithMistakes: 0,
+          totalCompletedChallenges: 0,
+          totalMistakes: 0,
+          unitReach: [],
+          funnelByMaxUnit: [],
+        },
+      });
+      const w2 = report.worlds.find((w) => w.stage === 2)!;
+      // "Voda" came from W1, NOT earlier units of W2 -> within-world spiral MUST be 0%!
+      expect(w2.withinWorldCrossUnitSpiralPct).toBe(0);
+      expect(w2.backwardSpiralChallengePct).toBe(100);
+
+      // Empty DB input must produce zero NaNs and zero phantom flags
+      const empty = computePedagogyAuditReport({
+        units: [],
+        lessons: [],
+        challenges: [],
+        options: [],
+        progressAgg: [],
+        mistakeAgg: [],
+        telemetryOverview: {
+          totalLearners: 0,
+          activeLearnersWithProgress: 0,
+          activeLearnersWithMistakes: 0,
+          totalCompletedChallenges: 0,
+          totalMistakes: 0,
+          unitReach: [],
+          funnelByMaxUnit: [],
+        },
+      });
+      expect(empty.totals.challenges).toBe(0);
+      expect(empty.totals.overallCompositeRubric).toBe(0);
+      expect(Number.isNaN(empty.totals.overallAvgWords)).toBe(false);
+      expect(empty.flags.complexityDips).toEqual([]);
+      expect(empty.flags.siloedWorlds).toEqual([]);
+      expect(empty.flags.missingGrammarMilestones).toEqual([]);
     });
   });
 });
