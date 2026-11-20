@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useSignIn, useClerk } from "@clerk/nextjs";
 import { QrCode, Loader2, ArrowLeft, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { exchangeQrTokenForSignInTicket } from "@/actions/v2/qr-auth";
 
 function QRLoginContent() {
   const { isLoaded, signIn, setActive } = useSignIn();
@@ -14,6 +15,7 @@ function QRLoginContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  const token = searchParams.get("token");
   const u = searchParams.get("u");
   const p = searchParams.get("p");
 
@@ -21,6 +23,36 @@ function QRLoginContent() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
+    // CroLingo v2 Passwordless QR Token Flow (zero password resets!)
+    if (isLoaded && token && status === "idle") {
+      setStatus("authenticating");
+      exchangeQrTokenForSignInTicket(token)
+        .then(async (res) => {
+          if (res.error || !res.ticket || !signIn || !setActive) {
+            setStatus("error");
+            setErrorMessage(res.error || "Invalid QR badge token.");
+            return;
+          }
+          const result = await signIn.create({
+            strategy: "ticket",
+            ticket: res.ticket,
+          });
+          if (result.status === "complete") {
+            await setActive({ session: result.createdSessionId });
+            setStatus("success");
+            setTimeout(() => router.push("/learn"), 600);
+          } else {
+            setStatus("error");
+            setErrorMessage("Unable to complete badge sign-in. Please try again.");
+          }
+        })
+        .catch(() => {
+          setStatus("error");
+          setErrorMessage("Invalid or expired QR badge token.");
+        });
+      return;
+    }
+
     if (isLoaded && u && status === "idle") {
       setStatus("authenticating");
 
@@ -83,7 +115,7 @@ function QRLoginContent() {
           setErrorMessage(err?.errors?.[0]?.message || "Invalid QR credentials.");
         });
     }
-  }, [isLoaded, u, p, status, signIn, setActive, client, router]);
+  }, [isLoaded, token, u, p, status, signIn, setActive, client, router]);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">

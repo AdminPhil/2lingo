@@ -20,6 +20,7 @@ import { WorldNavigator } from "./world-navigator";
 import { LevelMilestoneGateway } from "./level-milestone-gateway";
 import { CheerBanner } from "@/components/cheer-banner";
 import { ParentModeBanner } from "@/components/parent-mode-banner";
+import { getLevelForUnitOrder, getUnitRangeForLevel } from "@/lib/v2/lesson-helpers";
 import { getUnseenCheers } from "@/db/queries";
 
 type Props = {
@@ -82,6 +83,25 @@ const LearnPage = async ({ searchParams }: Props) => {
 
   const isPro = !!userSubscription?.isActive;
 
+  const activeUnitOrder =
+    (courseProgress.activeLesson as { unit?: { order?: number } })?.unit?.order ?? 1;
+  const maxAvailableLevel = Math.max(
+    1,
+    ...units.map((u) => getLevelForUnitOrder(u.order))
+  );
+  const requestedLevelRaw = Number(resolvedSearchParams?.level);
+  const selectedLevel =
+    Number.isInteger(requestedLevelRaw) &&
+    requestedLevelRaw >= 1 &&
+    requestedLevelRaw <= maxAvailableLevel
+      ? requestedLevelRaw
+      : getLevelForUnitOrder(activeUnitOrder);
+
+  const [levelStartUnit, levelEndUnit] = getUnitRangeForLevel(selectedLevel);
+  const visibleUnits = units.filter(
+    (u) => u.order >= levelStartUnit && u.order <= levelEndUnit
+  );
+
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       <StickyWrapper>
@@ -99,15 +119,16 @@ const LearnPage = async ({ searchParams }: Props) => {
         {userProgress.role === "parent" && <ParentModeBanner />}
         <CheerBanner cheers={unseenCheers} />
         <WorldNavigator
-          activeUnitOrder={
-            (courseProgress.activeLesson as { unit?: { order?: number } })?.unit
-              ?.order ?? 1
-          }
+          activeUnitOrder={activeUnitOrder}
+          selectedLevel={selectedLevel}
         />
-        {units.map((unit) => (
+        {selectedLevel > 1 && visibleUnits.length > 0 && (
+          <div className="mb-8">
+            <LevelMilestoneGateway level={selectedLevel === 2 ? 2 : 3} />
+          </div>
+        )}
+        {visibleUnits.map((unit) => (
           <div key={unit.id} id={`unit-${unit.order}`} className="mb-10">
-            {unit.order === 21 && <LevelMilestoneGateway level={2} />}
-            {unit.order === 41 && <LevelMilestoneGateway level={3} />}
             <Unit
               id={unit.id}
               order={unit.order}

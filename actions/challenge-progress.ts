@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 
 import db from "@/db/drizzle";
 import { calculateStreak } from "@/lib/streak";
+import { isSuperIzazovLesson } from "@/lib/v2/lesson-helpers";
 import { awardPodXp } from "@/actions/pod";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
@@ -48,9 +49,9 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   const lesson = challenge.lesson;
   const lessonId = challenge.lessonId;
 
-  // Determine if this lesson is a Super Izazov (Lesson 4 of unit or titled Super Izazov)
-  const isSuperIzazov = lesson 
-    ? (lesson.order === 4 || lesson.title.toLowerCase().includes("super izazov")) 
+  // Determine if this lesson is a Super Izazov (dynamic for 4-lesson and 5-lesson units)
+  const isSuperIzazov = lesson
+    ? isSuperIzazovLesson(lesson, lesson.order >= 5 ? 5 : 4)
     : false;
 
   // Check if all other challenges in this lesson have already been completed
