@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { InfinityIcon } from "lucide-react";
+import { InfinityIcon, Pencil } from "lucide-react";
 import { toast } from "sonner";
 
 import { courses } from "@/db/schema";
 import { Button } from "@/components/ui/button";
+import { AvatarPickerModal } from "@/components/modals/avatar-picker-modal";
 import {
   Dialog,
   DialogContent,
@@ -23,6 +24,8 @@ type Props = {
   points: number;
   streak?: number;
   hasActiveSubscription: boolean;
+  userImageSrc?: string;
+  userName?: string;
 };
 
 export const UserProgress = ({ 
@@ -30,11 +33,15 @@ export const UserProgress = ({
   points, 
   hearts, 
   streak = 0,
-  hasActiveSubscription
+  hasActiveSubscription,
+  userImageSrc,
+  userName,
 }: Props) => {
   const router = useRouter();
   const [isHeartModalOpen, setIsHeartModalOpen] = useState(false);
   const [isStreakModalOpen, setIsStreakModalOpen] = useState(false);
+  const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
+  const [avatarSrc, setAvatarSrc] = useState(userImageSrc || "/avatars/pasko.png");
 
   const onHeartClick = () => {
     if (hasActiveSubscription) {
@@ -57,8 +64,30 @@ export const UserProgress = ({
 
   return (
     <>
-      <div className="flex items-center justify-between gap-x-2 w-full">
-        <Button variant="ghost" className="pointer-events-none cursor-default" title={activeCourse.title}>
+      <div className="flex items-center justify-between gap-x-1.5 w-full">
+        {userImageSrc !== undefined && (
+          <button
+            type="button"
+            onClick={() => setIsAvatarModalOpen(true)}
+            className="group relative flex items-center justify-center rounded-full p-0.5 border-2 border-blue-200 hover:border-blue-500 transition-all cursor-pointer shrink-0 bg-white shadow-2xs"
+            title="Change your Croatian mascot avatar"
+            aria-label="Change your Croatian mascot avatar"
+          >
+            <div className="relative h-9 w-9 rounded-full overflow-hidden bg-slate-100">
+              <Image
+                src={avatarSrc}
+                alt={userName ? `${userName}'s mascot` : "Your mascot"}
+                fill
+                unoptimized={avatarSrc.startsWith("http")}
+                className="object-cover"
+              />
+            </div>
+            <span className="absolute -bottom-0.5 -right-0.5 h-4 w-4 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+              <Pencil className="h-2.5 w-2.5" />
+            </span>
+          </button>
+        )}
+        <Button variant="ghost" className="pointer-events-none cursor-default px-2" title={activeCourse.title}>
           <Image
             src={activeCourse.imageSrc}
             alt={activeCourse.title}
@@ -171,6 +200,16 @@ export const UserProgress = ({
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      <AvatarPickerModal
+        isOpen={isAvatarModalOpen}
+        onOpenChange={setIsAvatarModalOpen}
+        currentAvatarSrc={avatarSrc}
+        userName={userName}
+        onAvatarUpdated={(newSrc) => {
+          setAvatarSrc(newSrc);
+          router.refresh();
+        }}
+      />
     </>
   );
 };

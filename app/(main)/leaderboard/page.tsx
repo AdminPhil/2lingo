@@ -89,6 +89,8 @@ const LeaderboardPage = async ({ searchParams }: Props) => {
           points={userProgress.points}
           streak={userProgress.streak}
           hasActiveSubscription={isPro}
+          userImageSrc={userProgress.userImageSrc}
+          userName={userProgress.userName}
         />
         <Quests points={userProgress.points} />
       </StickyWrapper>

@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { auth, currentUser } from "@clerk/nextjs/server";
 
 import db from "@/db/drizzle";
+import { CLASSROOM_AVATARS } from "@/lib/classroom-roster";
 import { calculateStreak } from "@/lib/streak";
 import { awardPodXp } from "@/actions/pod";
 import { POINTS_TO_REFILL } from "@/constants";
@@ -285,4 +286,42 @@ export const redeemReward = async (cost: number, rewardTitle: string) => {
   revalidatePath("/leaderboard");
 
   return { success: true, rewardTitle };
+};
+
+const ALLOWED_LEARNER_AVATARS = new Set<string>(CLASSROOM_AVATARS.map((a) => a.src));
+
+/**
+ * CR-088: Self-service learner mascot avatar switcher.
+ * Strictly allowlists the 6 child-safe local Croatian mascot PNGs.
+ */
+export const updateLearnerAvatar = async (
+  avatarSrc: string
+): Promise<{ success?: boolean; avatarSrc?: string; error?: string }> => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const trimmed = typeof avatarSrc === "string" ? avatarSrc.trim() : "";
+  if (!ALLOWED_LEARNER_AVATARS.has(trimmed)) {
+    return { error: "Please choose one of the official CroLingo Croatian mascots." };
+  }
+
+  const currentUserProgress = await getUserProgress();
+  if (!currentUserProgress) {
+    return { error: "Learner profile not found." };
+  }
+
+  await db
+    .update(userProgress)
+    .set({ userImageSrc: trimmed })
+    .where(eq(userProgress.userId, userId));
+
+  revalidatePath("/learn");
+  revalidatePath("/leaderboard");
+  revalidatePath("/quests");
+  revalidatePath("/admin");
+
+  return { success: true, avatarSrc: trimmed };
 };

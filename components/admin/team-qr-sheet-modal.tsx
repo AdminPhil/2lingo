@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
-import { Printer, Download, RefreshCw, ShieldAlert, QrCode } from "lucide-react";
+import { Printer, Download, RefreshCw, ShieldCheck, QrCode } from "lucide-react";
 import QRCode from "qrcode";
 import { toast } from "sonner";
 
@@ -13,7 +13,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { adminGetTeamQrPasses } from "@/actions/child-account";
+import { issueTeamQrTokenBadges } from "@/actions/v2/qr-auth";
+import { buildQrBadgeLoginUrl } from "@/lib/v2/qr-tokens";
 
 type Props = {
   isOpen: boolean;
@@ -26,8 +27,8 @@ type Pass = {
   userId: string;
   name: string;
   username: string;
-  password: string;
   userImageSrc: string;
+  loginUrl: string;
   qrCodeUrl: string;
 };
 
@@ -43,25 +44,30 @@ export const TeamQrSheetModal = ({ isOpen, onOpenChange, podId, podName }: Props
     }
   }, [isOpen]);
 
-  const handleGenerate = () => {
+  const handleGenerate = (revokePrevious = false) => {
     startTransition(async () => {
       try {
-        const res = await adminGetTeamQrPasses(podId);
+        const res = await issueTeamQrTokenBadges(podId, { revokePrevious });
         if (res.error || !res.passes) {
-          toast.error(res.error || "Failed to generate team badges.");
+          toast.error(res.error || "Failed to generate passwordless team badges.");
           return;
         }
         const withQr = await Promise.all(
           res.passes.map(async (p) => {
-            const url = `${window.location.origin}/qr-login?u=${encodeURIComponent(
-              p.username
-            )}&p=${encodeURIComponent(p.password)}`;
-            const qrCodeUrl = await QRCode.toDataURL(url, {
+            const loginUrl = buildQrBadgeLoginUrl(window.location.origin, p.token);
+            const qrCodeUrl = await QRCode.toDataURL(loginUrl, {
               width: 240,
               margin: 1,
               color: { dark: "#1E3A8A", light: "#FFFFFF" },
             });
-            return { ...p, qrCodeUrl };
+            return {
+              userId: p.userId,
+              name: p.name,
+              username: p.username,
+              userImageSrc: p.userImageSrc,
+              loginUrl,
+              qrCodeUrl,
+            };
           })
         );
         setPasses(withQr);
@@ -76,15 +82,15 @@ export const TeamQrSheetModal = ({ isOpen, onOpenChange, podId, podName }: Props
     if (!passes) return;
     const esc = (v: string) => `"${v.replace(/"/g, '""')}"`;
     const rows = [
-      ["Name", "Username", "Password"],
-      ...passes.map((p) => [p.name, p.username, p.password]),
+      ["Name", "Username", "Passwordless Fast Pass Link"],
+      ...passes.map((p) => [p.name, p.username, p.loginUrl]),
     ];
     const csv = rows.map((r) => r.map(esc).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const href = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = href;
-    a.download = `${podName.replace(/[^a-zA-Z0-9]+/g, "-")}-roster.csv`;
+    a.download = `${podName.replace(/[^a-zA-Z0-9]+/g, "-")}-fast-pass-roster.csv`;
     a.click();
     URL.revokeObjectURL(href);
   };
@@ -109,7 +115,7 @@ export const TeamQrSheetModal = ({ isOpen, onOpenChange, podId, podName }: Props
                 Team QR Fast-Pass Sheet
               </DialogTitle>
               <DialogDescription className="text-xs text-slate-500 font-medium">
-                Print login badges for every learner in {podName} at once.
+                Print passwordless login badges for every learner in {podName} at once.
               </DialogDescription>
             </div>
           </div>
@@ -117,34 +123,44 @@ export const TeamQrSheetModal = ({ isOpen, onOpenChange, podId, podName }: Props
 
         {!passes ? (
           <div className="space-y-4 py-2">
-            <div className="p-4 rounded-2xl bg-amber-50 border-2 border-amber-200 flex gap-3">
-              <ShieldAlert className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-              <p className="text-xs text-amber-900 font-semibold leading-relaxed">
-                Generating a sheet <strong>resets every learner&apos;s password</strong> so a fresh
-                QR badge can be printed. Any previously printed badges for this team will stop
-                working. Learner progress is never changed.
+            <div className="p-4 rounded-2xl bg-emerald-50 border-2 border-emerald-200 flex gap-3">
+              <ShieldCheck className="h-5 w-5 text-emerald-700 shrink-0 mt-0.5" />
+              <p className="text-xs text-emerald-950 font-semibold leading-relaxed">
+                <strong>Passwordless &amp; Safe:</strong> Printing this sheet mints secure camera
+                QR tokens for every learner. Existing typed passwords and progress are{" "}
+                <strong>never reset or modified</strong>.
               </p>
             </div>
-            <Button
-              variant="primary"
-              onClick={handleGenerate}
-              disabled={pending}
-              className="w-full bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white font-extrabold"
-            >
-              {pending ? (
-                <>
-                  <RefreshCw className="h-4 w-4 mr-2 animate-spin" /> Generating badges...
-                </>
-              ) : (
-                "Generate Fresh Badges for Whole Team"
-              )}
-            </Button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <Button
+                variant="primary"
+                onClick={() => handleGenerate(false)}
+                disabled={pending}
+                className="w-full bg-blue-600 hover:bg-blue-700 border-b-2 border-blue-800 text-white font-extrabold"
+              >
+                {pending ? (
+                  <>
+                    <RefreshCw className="h-4 w-4 mr-2 animate-spin" /> Minting badges...
+                  </>
+                ) : (
+                  "Generate Fast-Pass Sheet"
+                )}
+              </Button>
+              <Button
+                variant="primaryOutline"
+                onClick={() => handleGenerate(true)}
+                disabled={pending}
+                className="w-full font-bold text-xs border-2 border-slate-300 text-slate-700"
+              >
+                Revoke Prior Badges &amp; Mint Fresh
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-xs font-bold text-slate-600">
-                {passes.length} badge{passes.length === 1 ? "" : "s"} ready
+                {passes.length} passwordless badge{passes.length === 1 ? "" : "s"} ready
                 {failures > 0 ? ` • ${failures} could not be generated` : ""}
               </p>
               <div className="flex items-center gap-2">
@@ -185,10 +201,12 @@ export const TeamQrSheetModal = ({ isOpen, onOpenChange, podId, podName }: Props
                     alt={`Fast Pass QR Code for ${p.name}`}
                     className="w-28 h-28 mx-auto"
                   />
-                  <div className="text-xs font-mono font-bold text-slate-700 leading-snug break-all">
-                    <div>@{p.username}</div>
-                    <div>{p.password}</div>
+                  <div className="text-xs font-mono font-bold text-slate-600 leading-snug truncate">
+                    @{p.username}
                   </div>
+                  <p className="text-[10px] font-bold text-emerald-700">
+                    Scan camera to sign in
+                  </p>
                 </div>
               ))}
             </div>

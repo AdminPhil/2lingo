@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
-import { QrCode, Printer, Copy, Check, RefreshCw, Sparkles, X } from "lucide-react";
+import { QrCode, Printer, Copy, Check, RefreshCw, ShieldCheck } from "lucide-react";
 import QRCode from "qrcode";
 import { toast } from "sonner";
 
@@ -14,7 +14,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { adminGetOrResetStudentQrPass } from "@/actions/child-account";
+import { issueStudentQrTokenBadge, type QrTokenBadgeChild } from "@/actions/v2/qr-auth";
+import { buildQrBadgeLoginUrl } from "@/lib/v2/qr-tokens";
 
 type LearnerData = {
   userId: string;
@@ -30,14 +31,8 @@ type Props = {
 
 export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string | null>(null);
-  const [credentials, setCredentials] = useState<{
-    username: string;
-    password: string;
-    name: string;
-    userImageSrc: string;
-  } | null>(null);
+  const [badge, setBadge] = useState<QrTokenBadgeChild | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
-  const [copiedCreds, setCopiedCreds] = useState(false);
   const [origin, setOrigin] = useState("https://2lingo.onrender.com");
   const [pending, startTransition] = useTransition();
 
@@ -47,17 +42,17 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
     }
   }, []);
 
-  const loadBadge = (targetLearner: LearnerData) => {
+  const loadBadge = (targetLearner: LearnerData, revokePrevious = false) => {
     startTransition(async () => {
       try {
-        const res = await adminGetOrResetStudentQrPass(targetLearner.userId);
+        const res = await issueStudentQrTokenBadge(targetLearner.userId, {
+          revokePrevious,
+        });
         if (res.error || !res.child) {
-          toast.error(res.error || "Failed to load badge credentials.");
+          toast.error(res.error || "Failed to generate passwordless QR badge.");
         } else {
-          setCredentials(res.child);
-          const loginUrl = `${window.location.origin}/qr-login?u=${encodeURIComponent(
-            res.child.username
-          )}&p=${encodeURIComponent(res.child.password)}`;
+          setBadge(res.child);
+          const loginUrl = buildQrBadgeLoginUrl(window.location.origin, res.child.token);
 
           const dataUrl = await QRCode.toDataURL(loginUrl, {
             width: 240,
@@ -65,6 +60,9 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
             color: { dark: "#1E3A8A", light: "#FFFFFF" },
           });
           setQrCodeDataUrl(dataUrl);
+          if (revokePrevious) {
+            toast.success("Previous badges revoked & fresh Fast Pass issued!");
+          }
         }
       } catch {
         toast.error("Error generating QR badge.");
@@ -74,32 +72,20 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
 
   useEffect(() => {
     if (isOpen && learner) {
-      loadBadge(learner);
+      loadBadge(learner, false);
     } else if (!isOpen) {
-      setCredentials(null);
+      setBadge(null);
       setQrCodeDataUrl(null);
     }
   }, [isOpen, learner]);
 
   const handleCopyLink = () => {
-    if (!credentials) return;
-    const loginUrl = `${origin}/qr-login?u=${encodeURIComponent(
-      credentials.username
-    )}&p=${encodeURIComponent(credentials.password)}`;
+    if (!badge) return;
+    const loginUrl = buildQrBadgeLoginUrl(origin, badge.token);
     navigator.clipboard.writeText(loginUrl);
     setCopiedLink(true);
-    toast.success("Fast pass login link copied!");
+    toast.success("Passwordless Fast Pass link copied!");
     setTimeout(() => setCopiedLink(false), 2000);
-  };
-
-  const handleCopyCredentials = () => {
-    if (!credentials) return;
-    navigator.clipboard.writeText(
-      `CroLingo Login\nUsername: ${credentials.username}\nPassword: ${credentials.password}`
-    );
-    setCopiedCreds(true);
-    toast.success("Credentials copied!");
-    setTimeout(() => setCopiedCreds(false), 2000);
   };
 
   const handlePrint = () => {
@@ -121,17 +107,17 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
                 Student Fast Pass Badge
               </DialogTitle>
               <DialogDescription className="text-xs text-slate-500 font-medium">
-                1-tap camera login pass for shared iPads &amp; tablets
+                Passwordless 1-tap camera login for shared iPads &amp; tablets
               </DialogDescription>
             </div>
           </div>
         </DialogHeader>
 
-        {pending || !credentials || !qrCodeDataUrl ? (
+        {pending || !badge || !qrCodeDataUrl ? (
           <div className="py-12 flex flex-col items-center justify-center gap-3">
             <RefreshCw className="h-8 w-8 text-blue-900 animate-spin" />
             <p className="text-xs font-bold text-slate-600">
-              Generating secure student QR badge...
+              Minting passwordless QR Fast Pass...
             </p>
           </div>
         ) : (
@@ -153,7 +139,13 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
               {/* Header */}
               <div className="flex items-center justify-between pb-2 border-b border-slate-100 pt-1">
                 <div className="flex items-center gap-1.5">
-                  <svg width="18" height="18" viewBox="0 0 20 20" className="rounded-xs overflow-hidden shrink-0" aria-label="Hrvatska Šahovnica">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 20 20"
+                    className="rounded-xs overflow-hidden shrink-0"
+                    aria-label="Hrvatska Šahovnica"
+                  >
                     <rect width="20" height="20" fill="#FFFFFF" />
                     <rect x="0" y="0" width="5" height="5" fill="#DC2626" />
                     <rect x="10" y="0" width="5" height="5" fill="#DC2626" />
@@ -168,8 +160,8 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
                     CroLingo Fast Pass
                   </span>
                 </div>
-                <span className="text-xs font-bold text-blue-800 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
-                  Student Badge
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                  Passwordless
                 </span>
               </div>
 
@@ -177,18 +169,19 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
               <div className="flex items-center justify-center gap-3">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-amber-300 bg-slate-100 shrink-0">
                   <Image
-                    src={credentials.userImageSrc || "/avatars/pasko.png"}
-                    alt={credentials.name}
+                    src={badge.userImageSrc || "/avatars/pasko.png"}
+                    alt={badge.name}
                     fill
+                    unoptimized={(badge.userImageSrc || "").startsWith("http")}
                     className="object-cover"
                   />
                 </div>
                 <div className="text-left">
                   <h3 className="text-base font-black text-slate-800 leading-tight">
-                    {credentials.name}
+                    {badge.name}
                   </h3>
                   <p className="text-xs font-mono text-slate-500 font-bold">
-                    @{credentials.username}
+                    @{badge.username}
                   </p>
                 </div>
               </div>
@@ -196,9 +189,10 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
               {/* QR Code Container */}
               <div className="flex flex-col items-center justify-center py-1">
                 <div className="p-2 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={qrCodeDataUrl}
-                    alt={`Fast Pass QR Code for ${credentials.name}`}
+                    alt={`Fast Pass QR Code for ${badge.name}`}
                     className="w-36 h-36 mx-auto"
                   />
                 </div>
@@ -208,23 +202,13 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
                 </p>
               </div>
 
-              {/* Credentials Reference */}
-              <div className="bg-slate-50 rounded-xl p-2.5 text-xs text-left grid grid-cols-2 gap-2 border border-slate-200/80">
-                <div>
-                  <span className="text-xs text-slate-400 font-bold uppercase block">
-                    Username
-                  </span>
-                  <span className="font-mono font-black text-slate-800 text-xs truncate block">
-                    {credentials.username}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-400 font-bold uppercase block">
-                    Password
-                  </span>
-                  <span className="font-mono font-black text-slate-800 text-xs truncate block">
-                    {credentials.password}
-                  </span>
+              {/* Security Assurance */}
+              <div className="bg-emerald-50/70 rounded-xl p-2.5 text-xs text-left flex items-center gap-2 border border-emerald-200/80">
+                <ShieldCheck className="h-4 w-4 text-emerald-700 shrink-0" />
+                <div className="text-emerald-900 font-semibold leading-snug">
+                  Uses a secure token —{" "}
+                  <span className="font-black">never changes or resets</span>{" "}
+                  {badge.name}&apos;s typed password.
                 </div>
               </div>
             </div>
@@ -264,12 +248,12 @@ export const StudentBadgeModal = ({ isOpen, onOpenChange, learner }: Props) => {
             <div className="flex items-center justify-between pt-1">
               <button
                 type="button"
-                onClick={() => learner && loadBadge(learner)}
+                onClick={() => learner && loadBadge(learner, true)}
                 disabled={pending}
                 className="text-xs font-bold text-slate-500 hover:text-slate-800 flex items-center gap-1 cursor-pointer"
               >
                 <RefreshCw className="h-3 w-3" />
-                Reset &amp; Regenerate Pass
+                Revoke Old &amp; Mint New Badge
               </button>
 
               <Button

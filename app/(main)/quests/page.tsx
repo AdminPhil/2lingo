@@ -35,6 +35,8 @@ const QuestsPage = async () => {
           points={userProgress.points}
           streak={userProgress.streak}
           hasActiveSubscription={isPro}
+          userImageSrc={userProgress.userImageSrc}
+          userName={userProgress.userName}
         />
       </StickyWrapper>
       <FeedWrapper>
